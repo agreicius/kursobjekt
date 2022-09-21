@@ -1,0 +1,40 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_double_iterated_integrals">
+
+<title>Iterated integrals and Fubini's theorem</title>
+
+<definition xml:id="d_double_iterated_integral">
+  <title>Doubly iterated integral over rectangle</title>
+  <statement>
+    <p>
+      Let <m>f</m> be defined on the rectangle <m>R=[a,b]\times [c,d]</m> and suppose the single-variable functions
+      <md>
+        <mrow> g(x) \amp =\int_c^d f(x,y)\, dy
+        \amp h(y) \amp =\int_a^b f(x,y)\, dx</mrow>
+      </md>
+      are integrable on <m>[a,b]</m> and <m>[c,d]</m>, respectively. We define the two <term>iterated integrals</term> <m>\int_a^b\int_c^d f(x,y)\, dx\, dy</m> and <m>\int_c^d\int_a^bf(x,y)\, dx\, dy</m> as follows:
+      <mdn xml:id="eq_doubly_iterated">
+        <mrow> \int_a^b\int_c^d f(x,y)\, dy\, dx\amp =\int_a^b g(x)\, dx=\int_a^b\left(\int_c^df(x,y)\, dy\right)dx </mrow>
+        <mrow> \int_c^d\int_a^b f(x,y)\, dx\, dy\amp =\int_c^d h(y)\, dy=\int_c^d\left(\int_a^bf(x,y)\, dx\right)dy </mrow>
+      </mdn>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_Fubini_rect">
+  <title>Fubini's theorem over rectangles</title>
+  <statement>
+    <p>
+      If <m>f</m> is continuous on the rectangle <m>R=[a,b]\times [c,d]</m>, then the functions
+      <md>
+        <mrow> g(x) \amp =\int_c^d f(x,y)\, dy
+        \amp h(y) \amp =\int_a^b f(x,y)\, dx</mrow>
+      </md>
+      are integrable on <m>[a,b]</m> and <m>[c,d]</m>, respectively, and we have
+      <me>
+        \iint_Rf(x,y)\, dA=\int_a^b\int_c^d f(x,y)\, dy\, dx=\int_c^d\int_a^b f(x,y)\, dx\, dy
+      </me>.
+    </p>
+  </statement>
+</theorem>
+<remark>Observe that Fubini's theorem tells us two interesting facts: (1) the two <em>iterated integrals</em> are equal in value, and (2) in fact both are equal to the <em>double integral</em> of <m>f</m> over <m>R</m>.
+</remark>
+</section>

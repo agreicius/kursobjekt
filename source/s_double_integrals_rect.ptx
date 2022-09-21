@@ -1,8 +1,5 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_double_integrals_rect">
-  <title>Double integrals and iterated integrals over rectangles</title>
-<subsection xml:id="ss_doubgle_integral_rect">
   <title>Double integrals over rectangles</title>
-
 <definition xml:id="d_rect_partition">
   <notation>
     <usage><m>\norm{P}</m></usage>
@@ -38,7 +35,7 @@
 </definition>
 <definition xml:id="d_double_integral_rect">
   <title>Double integral over a rectangle</title>
-  <idx><h>double integra</h><h>over a rectangle</h></idx>
+  <idx><h>double integral</h><h>over a rectangle</h></idx>
   <idx><h>integrable</h><h>over a rectangle</h></idx>
   <notation>
     <usage><m>\iint\limits_R f(x,y)\, dA</m></usage>
@@ -58,73 +55,7 @@
   </statement>
 </definition>
 
-<!-- <interactive geogebra="t2tcxjeh" width="60%" aspect="2:3" /> -->
-<project>
-  <sage>
-  <input>
-    from sage.plot.plot3d.shapes import Box
-    from sage.plot.plot3d.plot3d import axes
-    f(x,y)=3-x^2-y^2
-    a=0
-    b=1
-    c=0
-    d=1
-    R=polygon3d([(a,c,0),(a,d,0),(b,c,0),(b,d,0)],color='green',opacity=1)
-    G=plot3d(f(x,y),(a,b),(c,d), opacity=.6)
-    G+=axes(2,.5,color="black")
-    show(G+R)
-  </input>
-  <output>
 
-  </output>
-  </sage>
-
-  <sage>
-  <input>
-  n=5
-  dx=(b-a)/n
-  dy=(d-c)/n
-  G=plot3d(f(x,y),(a-(b-a)/4,b+(b-a)/4),(c-(d-c)/4,d+(d-c)/4), opacity=.6)
-  for i in range(n):
-      for j in range(n):
-          z=f(a+i*dx,c+j*dy)
-          g=Box([dx/2,dy/2,z/2],color='red',opacity='.3').translate((a+i*dx+dx/2,c+j*dy+dy/2,z/2))
-          G+=g
-  G+=axes(2,.5, color='black')
-  show(G+R, frame=True)
-  </input>
-  <output>
-
-  </output>
-  </sage>
-  <sage>
-  <input>
-  f(x,y)=3-x^2-y^2
-  a=0
-  b=1
-  c=0
-  d=1
-  n=40
-  dx=(b-a)/n
-  dy=(d-c)/n
-  i,j=var('i j')
-  approx=sum(sum(f(a+i*dx,c+j*dy)*dx*dy,i,0,n-1),j,0,n-1) #Riemann sum
-  approx, float(approx)
-  </input>
-  <output>
-
-  </output>
-  </sage>
-  <sage>
-  <input>
-  integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
-  integ, float(integ)
-  </input>
-  <output>
-
-  </output>
-  </sage>
-</project>
 
 <!-- <interactive xml:id="geogebra_double_integral" platform="geogebra" width="100%" aspect="4:3">
       <slate surface="geogebra" material="t2tcxjeh" aspect="4:3" marker="train-distance">
@@ -148,7 +79,7 @@
       </me>.
     </p>
     <p>
-      Now consider the sequence of pointed partitions <m>P'_i</m> constructed in exactly the same way, except now the sample points <m>(x'_k, y'_k)</m> are now chosen so that <m>x'_k</m> is irrational. (Yes, this can be done!). Since now <m>f(x'_k,y'_k)=0</m> for all <m>k</m> it follows that we have <m>S'_i=0</m> for the corresponding Riemann sum, and hence
+      Now consider the sequence of pointed partitions <m>P'_i</m> constructed in exactly the same way, except now the sample points <m>(x'_k, y'_k)</m> are now chosen so that <m>x'_k</m> is irrational. (Yes, this can be done!) Since now <m>f(x'_k,y'_k)=0</m> for all <m>k</m> it follows that we have <m>S'_i=0</m> for the corresponding Riemann sum, and hence
       <me>
       \lim_{i\rightarrow \infty}S'_i=\lim_{i\rightarrow \infty} 0=0
       </me>.
@@ -216,43 +147,108 @@
     </ol>
   </statement>
 </algorithm>
-</subsection>
-<subsection xml:id="ss_Fubini_double">
-  <title>Fubini's theorem for double integrals</title>
-<definition xml:id="d_double_iterated_integral">
-  <title>Doubly iterated integral over rectangle</title>
+<definition xml:id="d_volume_surface_rect">
+  <title>Volume between graph and <m>xy</m>-plane (rectangular base)</title>
   <statement>
     <p>
-      Let <m>f</m> be defined on the rectangle <m>R=[a,b]\times [c,d]</m> and suppose the single-variable functions
-      <md>
-        <mrow> g(x) \amp =\int_c^d f(x,y)\, dy
-        \amp h(y) \amp =\int_a^b f(x,y)\, dx</mrow>
-      </md>
-      are integrable on <m>[a,b]</m> and <m>[c,d]</m>, respectively. We define the two <term>iterated integrals</term> <m>\int_a^b\int_c^d f(x,y)\, dx\, dy</m> and <m>\int_c^d\int_a^bf(x,y)\, dx\, dy</m> as follows:
-      <mdn xml:id="eq_doubly_iterated">
-        <mrow> \int_a^b\int_c^d f(x,y)\, dy\, dx\amp =\int_a^b g(x)\, dx=\int_a^b\left(\int_c^df(x,y)\, dy\right)dx </mrow>
-        <mrow> \int_c^d\int_a^b f(x,y)\, dx\, dy\amp =\int_c^d h(y)\, dy=\int_c^d\left(\int_a^bf(x,y)\, dx\right)dy </mrow>
-      </mdn>.
-    </p>
-  </statement>
-</definition>
-<theorem xml:id="th_Fubini_rect">
-  <title>Fubini's theorem over rectangles</title>
-  <statement>
-    <p>
-      If <m>f</m> is continuous on the rectangle <m>R=[a,b]\times [c,d]</m>, then the functions
-      <md>
-        <mrow> g(x) \amp =\int_c^d f(x,y)\, dy
-        \amp h(y) \amp =\int_a^b f(x,y)\, dx</mrow>
-      </md>
-      are integrable on <m>[a,b]</m> and <m>[c,d]</m>, respectively, and we have
+      Let <m>f</m> be nonnegative and integrable on the rectangle <m>R=[a,b]\times[c,d]</m> (<ie />, <m>f(x,y)\geq 0</m> for all <m>(x,y)\in R</m>), and let <m>\mathcal{S}</m> be the region consisting of all points lying on or above <m>R</m> and below the graph of <m>f</m>: <ie />,
       <me>
-        \iint_Rf(x,y)\, dA=\int_a^b\int_c^d f(x,y)\, dy\, dx=\int_c^d\int_a^b f(x,y)\, dx\, dy
+        \mathcal{S}=\{(x,y,z)\colon \R^3\colon a\leq x\leq b, c\leq y\leq d, 0\leq z\leq f(x,y)\}
+      </me>.
+      We define the <term>volume</term> of <m>\mathcal{S}</m>, denoted <m>\operatorname{vol} S</m>, as
+      <me>
+        \operatorname{vol} \mathcal{S}=\iint_R f(x,y)\, dA
       </me>.
     </p>
   </statement>
-</theorem>
-<remark>Observe that Fubini's theorem tells us two interesting facts: (1) the two <em>iterated integrals</em> are equal in value, and (2) in fact both are equal to the <em>double integral</em> of <m>f</m> over <m>>R</m>.
-</remark>
-</subsection>
+</definition>
+<example>
+  <title>Volume between graph and <m>xy</m>-plane</title>
+  <statement>
+    <p>
+      Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above the rectangle <m>R=[0,1]\times[0,1]</m> and below the graph of <m>f</m>. Compute <m>\operatorname{vol} \mathcal{S}</m> using the limit definition of the double integral.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<project>
+  <title>Visualizing/approximating double integrals</title>
+  <sage>
+  <input>
+    from sage.plot.plot3d.shapes import Box
+    from sage.plot.plot3d.plot3d import axes
+    f(x,y)=3-x^2-y^2
+    a=0
+    b=1
+    c=0
+    d=1
+    R=polygon3d([(a,c,0),(a,d,0),(b,d,0),(b,c,0)],color='green',opacity=1)
+    G=plot3d(f(x,y),(a,b),(c,d), opacity=.6)
+    G+=axes(2,.5,color="black")
+    show(G+R)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+
+  <sage>
+  <input>
+  from sage.plot.plot3d.shapes import Box
+  from sage.plot.plot3d.plot3d import axes
+  f(x,y)=3-x^2-y^2
+  a=0
+  b=1
+  c=0
+  d=1
+  n=5
+  dx=(b-a)/n
+  dy=(d-c)/n
+  R=polygon3d([(a,c,0),(a,d,0),(b,d,0),(b,c,0)],color='green',opacity=1)
+  G=plot3d(f(x,y),(a-(b-a)/4,b+(b-a)/4),(c-(d-c)/4,d+(d-c)/4), opacity=.6)
+  for i in range(n):
+      for j in range(n):
+          z=f(a+i*dx,c+j*dy)
+          g=Box([dx/2,dy/2,z/2],color='red',opacity='.3').translate((a+i*dx+dx/2,c+j*dy+dy/2,z/2))
+          G+=g
+  G+=axes(2,.5, color='black')
+  show(G+R, frame=True)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+  <sage>
+  <input>
+  f(x,y)=3-x^2-y^2
+  a=0
+  b=1
+  c=0
+  d=1
+  n=40
+  dx=(b-a)/n
+  dy=(d-c)/n
+  i,j=var('i j')
+  approx=sum(sum(f(a+i*dx,c+j*dy)*dx*dy,i,0,n-1),j,0,n-1) #Riemann sum
+  approx, float(approx)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+  <sage>
+  <input>
+  integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
+  integ, float(integ)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+</project>
+
 </section>
