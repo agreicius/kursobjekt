@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Double integrals and iterated integrals over rectangles</title>
+<title>Double integrals over rectangles</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -176,11 +176,11 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="c_multiple_integrals.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_double_integrals_gen.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="c_multiple_integrals.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_double_iterated_integrals.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="c_multiple_integrals.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_double_integrals_gen.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="c_multiple_integrals.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_double_iterated_integrals.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -196,7 +196,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </li>
 <li class="link">
 <a href="c_multiple_integrals.html" data-scroll="c_multiple_integrals" class="internal"><span class="codenumber">1</span> <span class="title">Multiple integrals</span></a><ul>
-<li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="active">Double integrals and iterated integrals over rectangles</a></li>
+<li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="active">Double integrals over rectangles</a></li>
+<li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
 <li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals and iterated integrals over general regions</a></li>
 <li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Double integrals and area</a></li>
 </ul>
@@ -211,31 +212,28 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="s_double_integrals_rect"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Double integrals and iterated integrals over rectangles</span>
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Double integrals over rectangles</span>
 </h2>
-<section class="subsection" id="ss_doubgle_integral_rect"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Double integrals over rectangles</span>
-</h3>
-<article class="definition definition-like" id="d_rect_partition"><h4 class="heading">
+<article class="definition definition-like" id="d_rect_partition"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Rectangles, partitions, pointed partitions.</span>
-</h4>
+</h3>
 <p id="p-84">Consider the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\subseteq \R^2\text{:}\)</span> i.e.,</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 R=\{(x,y)\in \R^2\colon a\leq x\leq b, c\leq y\leq d\}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">A <dfn class="terminology">partition</dfn> <span class="process-math">\(P\)</span> of the rectangle <span class="process-math">\(R\)</span> is a subdivision <span class="process-math">\(R=R_1\cup R_2\cdots R_n\)</span> of <span class="process-math">\(R\)</span> into smaller subrectangles <span class="process-math">\(R_k\)</span> using a grid of lines parallel to the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-axes. The <dfn class="terminology">norm</dfn> of <span class="process-math">\(P\text{,}\)</span> denoted <span class="process-math">\(\norm{P}\text{,}\)</span> is defined as the maximum width or length of any of the subrectangles of <span class="process-math">\(P\text{.}\)</span> A <dfn class="terminology">pointed partition</dfn> is a partition <span class="process-math">\(P\)</span> along with a choice of <dfn class="terminology">sample points</dfn> <span class="process-math">\((x_k, y_k)\in R_k\)</span> lying in each subrectangle.</p></article><article class="definition definition-like" id="d_double_Riemann_sums"><h4 class="heading">
+<p class="continuation">A <dfn class="terminology">partition</dfn> <span class="process-math">\(P\)</span> of the rectangle <span class="process-math">\(R\)</span> is a subdivision <span class="process-math">\(R=R_1\cup R_2\cdots R_n\)</span> of <span class="process-math">\(R\)</span> into smaller subrectangles <span class="process-math">\(R_k\)</span> using a grid of lines parallel to the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-axes. The <dfn class="terminology">norm</dfn> of <span class="process-math">\(P\text{,}\)</span> denoted <span class="process-math">\(\norm{P}\text{,}\)</span> is defined as the maximum width or length of any of the subrectangles of <span class="process-math">\(P\text{.}\)</span> A <dfn class="terminology">pointed partition</dfn> is a partition <span class="process-math">\(P\)</span> along with a choice of <dfn class="terminology">sample points</dfn> <span class="process-math">\((x_k, y_k)\in R_k\)</span> lying in each subrectangle.</p></article><article class="definition definition-like" id="d_double_Riemann_sums"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann sums in two variables.</span>
-</h4>
+</h3>
 <p id="p-85">Let <span class="process-math">\(f\)</span> be a function of two variables defined on the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\text{.}\)</span> Let <span class="process-math">\(P\)</span> be a pointed partition of <span class="process-math">\(R\)</span> into subrectangles <span class="process-math">\(R_1,R_2,\dots, R_n\)</span> with sample points <span class="process-math">\((x_k, y_k)\in R_k\text{,}\)</span> and let  <span class="process-math">\(\Delta A_k\)</span> be the area of <span class="process-math">\(R_k\)</span> for each <span class="process-math">\(1\leq k\leq n\text{.}\)</span> The <dfn class="terminology">Riemann sum</dfn> <span class="process-math">\(S_P\)</span> associated to this pointed partition is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Riemann_sum_two">
 \begin{equation}
 S_P=\sum_{k=1}^nf(x_k,y_k)\Delta A_k\text{.}\tag{1.1.1}
 \end{equation}
-</div></article><article class="definition definition-like" id="d_double_integral_rect"><h4 class="heading">
+</div></article><article class="definition definition-like" id="d_double_integral_rect"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Double integral over a rectangle.</span>
-</h4>
+</h3>
 <p id="p-86">A function <span class="process-math">\(f\)</span> is said to be <dfn class="terminology">integrable</dfn> over the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\)</span> if there is a number <span class="process-math">\(I\)</span> such that given any sequence of pointed partitions <span class="process-math">\(P_i\)</span>  satisfying <span class="process-math">\(\norm{P_i}\rightarrow 0\text{,}\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_double_integral_rect.html" id="eq_double_integral_rect">
 \begin{equation}
@@ -247,50 +245,9 @@ I=\lim_{i\rightarrow \infty}S_i=\lim_{i\rightarrow\infty}\sum_{k=1}^{n_i}f(x_{ki
 \begin{equation}
 \iint\limits_Rf(x,y)\, dA =\lim_{\norm{P}\rightarrow 0}\sum_{k=1}^nf(x_k, y_k)\Delta A_k\text{.}\tag{1.1.3}
 \end{equation}
-</div></article><article class="project project-like" id="project-1"><h4 class="heading">
-<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
-</h4>
-<pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
-from sage.plot.plot3d.plot3d import axes
-f(x,y)=3-x^2-y^2
-a=0
-b=1
-c=0
-d=1
-R=polygon3d([(a,c,0),(a,d,0),(b,c,0),(b,d,0)],color='green',opacity=1)
-G=plot3d(f(x,y),(a,b),(c,d), opacity=.6)
-G+=axes(2,.5,color="black")
-show(G+R)
-</script></pre>
-<pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">n=5
-dx=(b-a)/n
-dy=(d-c)/n
-G=plot3d(f(x,y),(a-(b-a)/4,b+(b-a)/4),(c-(d-c)/4,d+(d-c)/4), opacity=.6)
-for i in range(n):
-    for j in range(n):
-        z=f(a+i*dx,c+j*dy)
-        g=Box([dx/2,dy/2,z/2],color='red',opacity='.3').translate((a+i*dx+dx/2,c+j*dy+dy/2,z/2))
-        G+=g
-G+=axes(2,.5, color='black')
-show(G+R, frame=True)
-</script></pre>
-<pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">f(x,y)=3-x^2-y^2
-a=0
-b=1
-c=0
-d=1
-n=40
-dx=(b-a)/n
-dy=(d-c)/n
-i,j=var('i j')
-approx=sum(sum(f(a+i*dx,c+j*dy)*dx*dy,i,0,n-1),j,0,n-1) #Riemann sum
-approx, float(approx)
-</script></pre>
-<pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
-integ, float(integ)
-</script></pre></article><article class="example example-like" id="example-8"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-8"><h4 class="heading">
+</div></article><article class="example example-like" id="example-8"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-8"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Nonintegrable functions.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-87">The following nonintegrable example highlights the importance of understanding what exactly the “for all” in <a href="" class="xref" data-knowl="./knowl/d_double_integral_rect.html" title="Definition 1.1.3: Double integral over a rectangle">Definition 1.1.3</a> quantifies over. Define <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> as</p>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-87">The following nonintegrable example highlights the importance of understanding what exactly the “for all” in <a href="" class="xref" data-knowl="./knowl/d_double_integral_rect.html" title="Definition 1.1.3: Double integral over a rectangle">Definition 1.1.3</a> quantifies over. Define <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> as</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_double_integral_rect.html">
 \begin{equation*}
 f(x,y)=\begin{cases}1\amp \text{if } x,y \text{ are both rational}\\ 0 \amp \text{otherwise} \end{cases}\text{.}
@@ -308,25 +265,25 @@ S_i=\sum_{k=1}^{i^2}f(x_k, y_k)\Delta A_k=\sum_{k=1}^{i^2} 1\cdot\Delta A_k=1\te
 \lim_{i\rightarrow \infty}S_i=\lim_{i\rightarrow \infty} 1=1\text{.}
 \end{equation*}
 </div>
-<p id="p-88">Now consider the sequence of pointed partitions <span class="process-math">\(P'_i\)</span> constructed in exactly the same way, except now the sample points <span class="process-math">\((x'_k, y'_k)\)</span> are now chosen so that <span class="process-math">\(x'_k\)</span> is irrational. (Yes, this can be done!). Since now <span class="process-math">\(f(x'_k,y'_k)=0\)</span> for all <span class="process-math">\(k\)</span> it follows that we have <span class="process-math">\(S'_i=0\)</span> for the corresponding Riemann sum, and hence</p>
+<p id="p-88">Now consider the sequence of pointed partitions <span class="process-math">\(P'_i\)</span> constructed in exactly the same way, except now the sample points <span class="process-math">\((x'_k, y'_k)\)</span> are now chosen so that <span class="process-math">\(x'_k\)</span> is irrational. (Yes, this can be done!) Since now <span class="process-math">\(f(x'_k,y'_k)=0\)</span> for all <span class="process-math">\(k\)</span> it follows that we have <span class="process-math">\(S'_i=0\)</span> for the corresponding Riemann sum, and hence</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{i\rightarrow \infty}S'_i=\lim_{i\rightarrow \infty} 0=0\text{.}
 \end{equation*}
 </div>
 <p class="continuation">We have found two sequences of pointed partitions with norm tending to 0 that give rise to two different limits of the corresponding Riemann sums for <span class="process-math">\(f\)</span> over <span class="process-math">\(R\text{.}\)</span> We conclude that <span class="process-math">\(f\)</span> is not integrable over <span class="process-math">\(R\text{!}\)</span></p></article></div>
-<article class="theorem theorem-like" id="th_double_integral_rect"><h4 class="heading">
+<article class="theorem theorem-like" id="th_double_integral_rect"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Integrable over a rectangle.</span>
-</h4>
+</h3>
 <p id="p-89">In each of the following cases the function <span class="process-math">\(f\)</span> is integrable over the rectangle <span class="process-math">\(R\text{:}\)</span></p>
 <ul class="disc">
 <li id="li-20"><p id="p-90"><span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(R\text{;}\)</span></p></li>
 <li id="li-21"><p id="p-91"><span class="process-math">\(f\)</span> is continuous at all but finitely many points of <span class="process-math">\(R\text{;}\)</span></p></li>
 <li id="li-22"><p id="p-92">the set of points in <span class="process-math">\(R\)</span> where <span class="process-math">\(f\)</span> is not continuous forms a smooth curve.</p></li>
 </ul></article><p id="p-93">Once we know a function <span class="process-math">\(f\)</span> is integrable over a rectangle <span class="process-math">\(R\)</span> (for example by using <a href="" class="xref" data-knowl="./knowl/th_double_integral_rect.html" title="Theorem 1.1.5: Integrable over a rectangle">Theorem 1.1.5</a>), we know that we can compute this as the limit of any sequence of pointed partitions of <span class="process-math">\(R\)</span> whose norms tend to zero. <a href="" class="xref" data-knowl="./knowl/proc_double_integral_direct.html" title="Procedure 1.1.6: Limit definition of double integral (equal partition)">Procedure 1.1.6</a> outlines a direct way of computing integrals where the intervals defining <span class="process-math">\(R\)</span> are equally partitioned.</p>
-<article class="algorithm theorem-like" id="proc_double_integral_direct"><h4 class="heading">
+<article class="algorithm theorem-like" id="proc_double_integral_direct"><h3 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Limit definition of double integral (equal partition).</span>
-</h4>
+</h3>
 <p id="p-94">If <span class="process-math">\(f\)</span> is integrable over the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\text{,}\)</span> one way of computing <span class="process-math">\(\iint\limits_R f(x,y)\, dA\)</span> is as follows.</p>
 <ol class="decimal">
 <li id="li-23"><p id="p-95">For each <span class="process-math">\(n\geq 1\)</span> let <span class="process-math">\(P_n\)</span> be the partition obtained by dividing <span class="process-math">\([a,b]\)</span> and <span class="process-math">\([c,d]\)</span> into <span class="process-math">\(n\)</span> equal parts. This partitions <span class="process-math">\(R\)</span> into <span class="process-math">\(n^2\)</span> subrectangles <span class="process-math">\(R_k\text{,}\)</span> each of area <span class="process-math">\(\Delta A_k=\frac{(b-a)(d-c)}{n^2}\text{.}\)</span></p></li>
@@ -341,43 +298,75 @@ S_n=\sum_{k=1}^{n^2} f(x_k, y_k)\Delta A_k=(b-a)(c-d)\sum_{k=1}^{n^2} \frac{f(x_
 <p class="continuation">and attempt to simplify the summation expression as much as possible.</p>
 </li>
 <li id="li-26"><p id="p-98">Compute <span class="process-math">\(\lim\limits_{n\rightarrow\infty}S_n\text{.}\)</span></p></li>
-</ol></article></section><section class="subsection" id="ss_Fubini_double"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Fubini's theorem for double integrals</span>
+</ol></article><article class="definition definition-like" id="d_volume_surface_rect"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Volume between graph and <span class="process-math">\(xy\)</span>-plane (rectangular base).</span>
 </h3>
-<article class="definition definition-like" id="d_double_iterated_integral"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Doubly iterated integral over rectangle.</span>
-</h4>
-<p id="p-99">Let <span class="process-math">\(f\)</span> be defined on the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\)</span> and suppose the single-variable functions</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-10">
-\begin{align*}
-g(x) \amp =\int_c^d f(x,y)\, dy
-\amp h(y) \amp =\int_a^b f(x,y)\, dx
-\end{align*}
-</div>
-<p class="continuation">are integrable on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\([c,d]\text{,}\)</span> respectively. We define the two <dfn class="terminology">iterated integrals</dfn> <span class="process-math">\(\int_a^b\int_c^d f(x,y)\, dx\, dy\)</span> and <span class="process-math">\(\int_c^d\int_a^bf(x,y)\, dx\, dy\)</span> as follows:</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="eq_doubly_iterated">
-\begin{align}
-\int_a^b\int_c^d f(x,y)\, dy\, dx\amp =\int_a^b g(x)\, dx=\int_a^b\left(\int_c^df(x,y)\, dy\right)dx \tag{1.1.4}\\
-\int_c^d\int_a^b f(x,y)\, dx\, dy\amp =\int_c^d h(y)\, dy=\int_c^d\left(\int_a^bf(x,y)\, dx\right)dy \text{.}\tag{1.1.5}
-\end{align}
-</div></article><article class="theorem theorem-like" id="th_Fubini_rect"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem over rectangles.</span>
-</h4>
-<p id="p-100">If <span class="process-math">\(f\)</span> is continuous on the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\text{,}\)</span> then the functions</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-11">
-\begin{align*}
-g(x) \amp =\int_c^d f(x,y)\, dy
-\amp h(y) \amp =\int_a^b f(x,y)\, dx
-\end{align*}
-</div>
-<p class="continuation">are integrable on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\([c,d]\text{,}\)</span> respectively, and we have</p>
+<p id="p-99">Let <span class="process-math">\(f\)</span> be nonnegative and integrable on the rectangle <span class="process-math">\(R=[a,b]\times[c,d]\)</span> (i.e., <span class="process-math">\(f(x,y)\geq 0\)</span> for all <span class="process-math">\((x,y)\in R\)</span>), and let <span class="process-math">\(\mathcal{S}\)</span> be the region consisting of all points lying on or above <span class="process-math">\(R\)</span> and below the graph of <span class="process-math">\(f\text{:}\)</span> i.e.,</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\iint_Rf(x,y)\, dA=\int_a^b\int_c^d f(x,y)\, dy\, dx=\int_c^d\int_a^b f(x,y)\, dx\, dy\text{.}
+\mathcal{S}=\{(x,y,z)\colon \R^3\colon a\leq x\leq b, c\leq y\leq d, 0\leq z\leq f(x,y)\}\text{.}
 \end{equation*}
-</div></article><article class="remark remark-like" id="remark-10"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
-</h4>Observe that Fubini's theorem tells us two interesting facts: (1) the two <em class="emphasis">iterated integrals</em> are equal in value, and (2) in fact both are equal to the <em class="emphasis">double integral</em> of <span class="process-math">\(f\)</span> over <span class="process-math">\(&gt;R\text{.}\)</span></article></section></section></div></main>
+</div>
+<p class="continuation">We define the <dfn class="terminology">volume</dfn> of <span class="process-math">\(\mathcal{S}\text{,}\)</span> denoted <span class="process-math">\(\operatorname{vol} S\text{,}\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{vol} \mathcal{S}=\iint_R f(x,y)\, dA\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="example-9"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-9"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Volume between graph and <span class="process-math">\(xy\)</span>-plane.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-100">Let <span class="process-math">\(f(x,y)=x+y^2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the region lying above the rectangle <span class="process-math">\(R=[0,1]\times[0,1]\)</span> and below the graph of <span class="process-math">\(f\text{.}\)</span> Compute <span class="process-math">\(\operatorname{vol} \mathcal{S}\)</span> using the limit definition of the double integral.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><p id="p-101"></p></div></div>
+</div></article></div>
+<article class="project project-like" id="project-1"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-project-1"><h3 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing/approximating double integrals.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-project-1"><article class="project project-like"><pre class="ptx-sagecell hidden-sagecell-sage" id="sage-1"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
+from sage.plot.plot3d.plot3d import axes
+f(x,y)=3-x^2-y^2
+a=0
+b=1
+c=0
+d=1
+R=polygon3d([(a,c,0),(a,d,0),(b,d,0),(b,c,0)],color='green',opacity=1)
+G=plot3d(f(x,y),(a,b),(c,d), opacity=.6)
+G+=axes(2,.5,color="black")
+show(G+R)
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-2"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
+from sage.plot.plot3d.plot3d import axes
+f(x,y)=3-x^2-y^2
+a=0
+b=1
+c=0
+d=1
+n=5
+dx=(b-a)/n
+dy=(d-c)/n
+R=polygon3d([(a,c,0),(a,d,0),(b,d,0),(b,c,0)],color='green',opacity=1)
+G=plot3d(f(x,y),(a-(b-a)/4,b+(b-a)/4),(c-(d-c)/4,d+(d-c)/4), opacity=.6)
+for i in range(n):
+    for j in range(n):
+        z=f(a+i*dx,c+j*dy)
+        g=Box([dx/2,dy/2,z/2],color='red',opacity='.3').translate((a+i*dx+dx/2,c+j*dy+dy/2,z/2))
+        G+=g
+G+=axes(2,.5, color='black')
+show(G+R, frame=True)
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-3"><script type="text/x-sage">f(x,y)=3-x^2-y^2
+a=0
+b=1
+c=0
+d=1
+n=40
+dx=(b-a)/n
+dy=(d-c)/n
+i,j=var('i j')
+approx=sum(sum(f(a+i*dx,c+j*dy)*dx*dy,i,0,n-1),j,0,n-1) #Riemann sum
+approx, float(approx)
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-4"><script type="text/x-sage">integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
+integ, float(integ)
+</script></pre></article></div></section></div></main>
 </div>
 </body>
 </html>

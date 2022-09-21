@@ -19,9 +19,9 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </head>
 <body class="ignore-math">
 <article class="project project-like"><h3 class="heading">
-<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing/approximating double integrals.</span>
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
 </h3>
-<pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
+<pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
 from sage.plot.plot3d.plot3d import axes
 f(x,y)=3-x^2-y^2
 a=0
@@ -33,7 +33,7 @@ G=plot3d(f(x,y),(a,b),(c,d), opacity=.6)
 G+=axes(2,.5,color="black")
 show(G+R)
 </script></pre>
-<pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
+<pre class="ptx-sagecell sagecell-sage" id="sage-6"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
 from sage.plot.plot3d.plot3d import axes
 f(x,y)=3-x^2-y^2
 a=0
@@ -53,7 +53,7 @@ for i in range(n):
 G+=axes(2,.5, color='black')
 show(G+R, frame=True)
 </script></pre>
-<pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">f(x,y)=3-x^2-y^2
+<pre class="ptx-sagecell sagecell-sage" id="sage-7"><script type="text/x-sage">f(x,y)=3-x^2-y^2
 a=0
 b=1
 c=0
@@ -65,8 +65,8 @@ i,j=var('i j')
 approx=sum(sum(f(a+i*dx,c+j*dy)*dx*dy,i,0,n-1),j,0,n-1) #Riemann sum
 approx, float(approx)
 </script></pre>
-<pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
+<pre class="ptx-sagecell sagecell-sage" id="sage-8"><script type="text/x-sage">integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
 integ, float(integ)
-</script></pre></article><span class="incontext"><a href="s_double_integrals_rect.html#project-1" class="internal">in-context</a></span>
+</script></pre></article><span class="incontext"><a href="s_double_integrals_rect.html#project-2" class="internal">in-context</a></span>
 </body>
 </html>
