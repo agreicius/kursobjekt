@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h4 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4>
+<pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
+from sage.plot.plot3d.plot3d import axes
+f(x,y)=3-x^2-y^2
+a=0
+b=1
+c=0
+d=1
+R=polygon3d([(a,c,0),(a,d,0),(b,c,0),(b,d,0)],color='green',opacity=1)
+G=plot3d(f(x,y),(a,b),(c,d), opacity=.6)
+G+=axes(2,.5,color="black")
+show(G+R)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">n=5
+dx=(b-a)/n
+dy=(d-c)/n
+G=plot3d(f(x,y),(a-(b-a)/4,b+(b-a)/4),(c-(d-c)/4,d+(d-c)/4), opacity=.6)
+for i in range(n):
+    for j in range(n):
+        z=f(a+i*dx,c+j*dy)
+        g=Box([dx/2,dy/2,z/2],color='red',opacity='.3').translate((a+i*dx+dx/2,c+j*dy+dy/2,z/2))
+        G+=g
+G+=axes(2,.5, color='black')
+show(G+R, frame=True)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">f(x,y)=3-x^2-y^2
+a=0
+b=1
+c=0
+d=1
+n=40
+dx=(b-a)/n
+dy=(d-c)/n
+i,j=var('i j')
+approx=sum(sum(f(a+i*dx,c+j*dy)*dx*dy,i,0,n-1),j,0,n-1) #Riemann sum
+approx, float(approx)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
+integ, float(integ)
+</script></pre></article><span class="incontext"><a href="s_double_integrals_rect.html#project-1" class="internal">in-context</a></span>
+</body>
+</html>
