@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_multiple_integrals">
+  <title>Multiple integrals</title>
+  <xi:include href="./s_double_integrals_rect.ptx"/>
+  <xi:include href="./s_double_integrals_gen.ptx"/>
+  <xi:include href="./s_double_integrals_area.ptx"/>
+</chapter>

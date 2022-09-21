@@ -1,0 +1,258 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_double_integrals_rect">
+  <title>Double integrals and iterated integrals over rectangles</title>
+<subsection xml:id="ss_doubgle_integral_rect">
+  <title>Double integrals over rectangles</title>
+
+<definition xml:id="d_rect_partition">
+  <notation>
+    <usage><m>\norm{P}</m></usage>
+    <description>norm of a partition</description>
+  </notation>
+  <idx><h>partition</h></idx>
+  <idx><h>partition</h><h>norm</h></idx>
+  <idx><h>partition</h><h>pointed</h></idx>
+  <idx><h>partition</h><h>sample points</h></idx>
+  <title>Rectangles, partitions, pointed partitions</title>
+
+  <statement>
+    <p>
+      Consider the rectangle <m>R=[a,b]\times [c,d]\subseteq \R^2</m>: <ie />,
+      <me>
+        R=\{(x,y)\in \R^2\colon a\leq x\leq b, c\leq y\leq d\}
+      </me>.
+      A <term>partition</term> <m>P</m> of the rectangle <m>R</m> is a subdivision <m>R=R_1\cup R_2\cdots R_n</m> of <m>R</m> into smaller subrectangles <m>R_k</m> using a grid of lines parallel to the <m>x</m>- and <m>y</m>-axes. The <term>norm</term> of <m>P</m>, denoted <m>\norm{P}</m>, is defined as the maximum width or length of any of the subrectangles of <m>P</m>. A <term>pointed partition</term> is a partition <m>P</m> along with a choice of <term>sample points</term> <m>(x_k, y_k)\in R_k</m> lying in each subrectangle.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_double_Riemann_sums">
+  <title>Riemann sums in two variables</title>
+  <idx><h>partition</h><h>pointed</h></idx>
+  <statement>
+    <p>
+      Let <m>f</m> be a function of two variables defined on the rectangle <m>R=[a,b]\times [c,d]</m>. Let <m>P</m> be a pointed partition of <m>R</m> into subrectangles <m>R_1,R_2,\dots, R_n</m> with sample points <m>(x_k, y_k)\in R_k</m>, and let  <m>\Delta A_k</m> be the area of <m>R_k</m> for each <m>1\leq k\leq n</m>. The <term>Riemann sum</term> <m>S_P</m> associated to this pointed partition is defined as
+      <men xml:id="eq_Riemann_sum_two">
+        S_P=\sum_{k=1}^nf(x_k,y_k)\Delta A_k
+      </men>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_double_integral_rect">
+  <title>Double integral over a rectangle</title>
+  <idx><h>double integra</h><h>over a rectangle</h></idx>
+  <idx><h>integrable</h><h>over a rectangle</h></idx>
+  <notation>
+    <usage><m>\iint\limits_R f(x,y)\, dA</m></usage>
+    <description>double integral over rectangle <m>R</m></description>
+  </notation>
+  <statement>
+    <p>
+      A function <m>f</m> is said to be <term>integrable</term> over the rectangle <m>R=[a,b]\times [c,d]</m> if there is a number <m>I</m> such that given any sequence of pointed partitions <m>P_i</m>  satisfying <m>\norm{P_i}\rightarrow 0</m>, we have
+      <men xml:id="eq_double_integral_rect">
+        I=\lim_{i\rightarrow \infty}S_i=\lim_{i\rightarrow\infty}\sum_{k=1}^{n_i}f(x_{ki},y_{ki})\Delta A_{ki}
+      </men>.
+      In this case <m>I</m> is called the <term>integral</term> of <m>f</m> over <m>R</m>, denoted <m>I=\iint\limits_Rf(x,y)\, dA</m>. As an abbreviated form of <xref ref="eq_double_integral_rect"/>, we will write
+      <men xml:id="eq_double_integral_rect_abbr">
+      \iint\limits_Rf(x,y)\, dA =\lim_{\norm{P}\rightarrow 0}\sum_{k=1}^nf(x_k, y_k)\Delta A_k
+    </men>.
+    </p>
+  </statement>
+</definition>
+
+<!-- <interactive geogebra="t2tcxjeh" width="60%" aspect="2:3" /> -->
+<project>
+  <sage>
+  <input>
+    from sage.plot.plot3d.shapes import Box
+    from sage.plot.plot3d.plot3d import axes
+    f(x,y)=3-x^2-y^2
+    a=0
+    b=1
+    c=0
+    d=1
+    R=polygon3d([(a,c,0),(a,d,0),(b,c,0),(b,d,0)],color='green',opacity=1)
+    G=plot3d(f(x,y),(a,b),(c,d), opacity=.6)
+    G+=axes(2,.5,color="black")
+    show(G+R)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+
+  <sage>
+  <input>
+  n=5
+  dx=(b-a)/n
+  dy=(d-c)/n
+  G=plot3d(f(x,y),(a-(b-a)/4,b+(b-a)/4),(c-(d-c)/4,d+(d-c)/4), opacity=.6)
+  for i in range(n):
+      for j in range(n):
+          z=f(a+i*dx,c+j*dy)
+          g=Box([dx/2,dy/2,z/2],color='red',opacity='.3').translate((a+i*dx+dx/2,c+j*dy+dy/2,z/2))
+          G+=g
+  G+=axes(2,.5, color='black')
+  show(G+R, frame=True)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+  <sage>
+  <input>
+  f(x,y)=3-x^2-y^2
+  a=0
+  b=1
+  c=0
+  d=1
+  n=40
+  dx=(b-a)/n
+  dy=(d-c)/n
+  i,j=var('i j')
+  approx=sum(sum(f(a+i*dx,c+j*dy)*dx*dy,i,0,n-1),j,0,n-1) #Riemann sum
+  approx, float(approx)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+  <sage>
+  <input>
+  integ=integrate(integrate(f(x,y),x,a,b),y,c,d) #iterated integral
+  integ, float(integ)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+</project>
+
+<!-- <interactive xml:id="geogebra_double_integral" platform="geogebra" width="100%" aspect="4:3">
+      <slate surface="geogebra" material="t2tcxjeh" aspect="4:3" marker="train-distance">
+      </slate>
+    </interactive> -->
+<example>
+  <title>Nonintegrable functions</title>
+  <statement>
+    <p>
+      The following nonintegrable example highlights the importance of understanding what exactly the <q>for all</q> in <xref ref="d_double_integral_rect"/> quantifies over. Define <m>f\colon \R^2\rightarrow \R</m> as
+      <me>
+        f(x,y)=\begin{cases}1\amp \text{if } x,y \text{ are both rational}\\ 0 \amp \text{otherwise} \end{cases}
+      </me>.
+      Let <m>R=[0,1]\times [0,1]</m>, and for each <m>i\geq 1</m> let <m>P_i</m> be the pointed partition obtained by subdividing the base and height of <m>R</m> equally into <m>i</m> subintervals, with sample points <m>(x_k, y_k)</m> chosen to lie on the top-right of the <m>k</m>-th subrectangle. It is easy to see that <m>x_k, y_k</m> are both rational for all <m>k</m> (in fact we have <m>(x_k, y_k)=(m/i, n/i)</m> for some integers <m>1\leq m,n\leq i</m>), and hence that <m>f(x_k,y_k)=1</m> for all <m>k</m>. The corresponding Riemann sum for this pointed partition <m>P_i</m> is
+      <me>
+      S_i=\sum_{k=1}^{i^2}f(x_k, y_k)\Delta A_k=\sum_{k=1}^{i^2} 1\cdot\Delta A_k=1
+      </me>,
+      since the sum of the areas of the subrectangles is equal to one.  We have <m>\norm{P_n}=\frac{1}{n}\rightarrow 0</m> and
+      <me>
+        \lim_{i\rightarrow \infty}S_i=\lim_{i\rightarrow \infty} 1=1
+      </me>.
+    </p>
+    <p>
+      Now consider the sequence of pointed partitions <m>P'_i</m> constructed in exactly the same way, except now the sample points <m>(x'_k, y'_k)</m> are now chosen so that <m>x'_k</m> is irrational. (Yes, this can be done!). Since now <m>f(x'_k,y'_k)=0</m> for all <m>k</m> it follows that we have <m>S'_i=0</m> for the corresponding Riemann sum, and hence
+      <me>
+      \lim_{i\rightarrow \infty}S'_i=\lim_{i\rightarrow \infty} 0=0
+      </me>.
+      We have found two sequences of pointed partitions with norm tending to 0 that give rise to two different limits of the corresponding Riemann sums for <m>f</m> over <m>R</m>. We conclude that <m>f</m> is not integrable over <m>R</m>!
+    </p>
+  </statement>
+</example>
+<theorem xml:id="th_double_integral_rect">
+  <title>Integrable over a rectangle</title>
+  <statement>
+    <p>
+      In each of the following cases the function <m>f</m> is integrable over the rectangle <m>R</m>:
+    </p>
+    <ul>
+      <li>
+        <p>
+          <m>f</m> is continuous on <m>R</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f</m> is continuous at all but finitely many points of <m>R</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          the set of points in <m>R</m> where <m>f</m> is not continuous forms a smooth curve.
+        </p>
+      </li>
+    </ul>
+  </statement>
+</theorem>
+<p>
+  Once we know a function <m>f</m> is integrable over a rectangle <m>R</m> (for example by using <xref ref="th_double_integral_rect"/>), we know that we can compute this as the limit of any sequence of pointed partitions of <m>R</m> whose norms tend to zero. <xref ref="proc_double_integral_direct"/> outlines a direct way of computing integrals where the intervals defining <m>R</m> are equally partitioned.
+</p>
+<algorithm xml:id="proc_double_integral_direct">
+  <title>Limit definition of double integral (equal partition)</title>
+  <statement>
+    <p>
+    If <m>f</m> is integrable over the rectangle <m>R=[a,b]\times [c,d]</m>, one way of computing <m>\iint\limits_R f(x,y)\, dA</m> is as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          For each <m>n\geq 1</m> let <m>P_n</m> be the partition obtained by dividing <m>[a,b]</m> and <m>[c,d]</m> into <m>n</m> equal parts. This partitions <m>R</m> into <m>n^2</m> subrectangles <m>R_k</m>, each of area <m>\Delta A_k=\frac{(b-a)(d-c)}{n^2}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each <m>n\geq 1</m> make any convenient choice of sample points <m>(x_k, y_k)</m> lying in the subrectangles <m>R_k</m> of <m>P_n</m>. As an example, choosing the top right of each rectangle would yield sample points of the form <m>(i(b-a)/n, j(c-d)/n)</m>, where <m>1\leq i,j\leq n</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute the Riemann sum
+          <me>S_n=\sum_{k=1}^{n^2} f(x_k, y_k)\Delta A_k=(b-a)(c-d)\sum_{k=1}^{n^2} \frac{f(x_k, y_k)}{n^2}</me>,
+          and attempt to simplify the summation expression as much as possible.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute <m>\lim\limits_{n\rightarrow\infty}S_n</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+</subsection>
+<subsection xml:id="ss_Fubini_double">
+  <title>Fubini's theorem for double integrals</title>
+<definition xml:id="d_double_iterated_integral">
+  <title>Doubly iterated integral over rectangle</title>
+  <statement>
+    <p>
+      Let <m>f</m> be defined on the rectangle <m>R=[a,b]\times [c,d]</m> and suppose the single-variable functions
+      <md>
+        <mrow> g(x) \amp =\int_c^d f(x,y)\, dy
+        \amp h(y) \amp =\int_a^b f(x,y)\, dx</mrow>
+      </md>
+      are integrable on <m>[a,b]</m> and <m>[c,d]</m>, respectively. We define the two <term>iterated integrals</term> <m>\int_a^b\int_c^d f(x,y)\, dx\, dy</m> and <m>\int_c^d\int_a^bf(x,y)\, dx\, dy</m> as follows:
+      <mdn xml:id="eq_doubly_iterated">
+        <mrow> \int_a^b\int_c^d f(x,y)\, dy\, dx\amp =\int_a^b g(x)\, dx=\int_a^b\left(\int_c^df(x,y)\, dy\right)dx </mrow>
+        <mrow> \int_c^d\int_a^b f(x,y)\, dx\, dy\amp =\int_c^d h(y)\, dy=\int_c^d\left(\int_a^bf(x,y)\, dx\right)dy </mrow>
+      </mdn>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_Fubini_rect">
+  <title>Fubini's theorem over rectangles</title>
+  <statement>
+    <p>
+      If <m>f</m> is continuous on the rectangle <m>R=[a,b]\times [c,d]</m>, then the functions
+      <md>
+        <mrow> g(x) \amp =\int_c^d f(x,y)\, dy
+        \amp h(y) \amp =\int_a^b f(x,y)\, dx</mrow>
+      </md>
+      are integrable on <m>[a,b]</m> and <m>[c,d]</m>, respectively, and we have
+      <me>
+        \iint_Rf(x,y)\, dA=\int_a^b\int_c^d f(x,y)\, dy\, dx=\int_c^d\int_a^b f(x,y)\, dx\, dy
+      </me>.
+    </p>
+  </statement>
+</theorem>
+<remark>Observe that Fubini's theorem tells us two interesting facts: (1) the two <em>iterated integrals</em> are equal in value, and (2) in fact both are equal to the <em>double integral</em> of <m>f</m> over <m>>R</m>.
+</remark>
+</subsection>
+</section>
