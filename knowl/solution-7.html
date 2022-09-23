@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
+</h3>
+<p>By Fubini's theorem we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_R \frac{x}{1+xy}\, dA  \amp=\int_0^1\int_1^2 \frac{x}{1+xy}\, dy\, dx \\
+\amp=\int_0^1\ln(1+xy)\Bigr\vert_1^2 dx\\
+\amp = \int_0^1 \ln(1+2x)-\ln(1+x)\, dx \\
+\amp = \left(\frac{1}{2}((1+2x)\ln(1+2x)-(1+2x))-((1+x)\ln(1+x)-(1+x))\right)\Bigr\vert_0^1 \\
+\amp = \frac{3}{2}\ln 3-2\ln 2\text{.}
+\end{align*}
+</div>
+<p class="continuation">The penultimate equality uses the indefinite integral formula <span class="process-math">\(\int \ln u\, du=u\ln u-u\text{.}\)</span> See what happens when you first integrate with respect to <span class="process-math">\(x\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="s_double_iterated_integrals.html#solution-7" class="internal">in-context</a></span>
+</body>
+</html>

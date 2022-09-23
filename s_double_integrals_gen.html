@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Double integrals and iterated integrals over general regions</title>
+<title>Double integrals over general regions</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -192,7 +192,7 @@ window.MathJax = {
 <a href="c_multiple_integrals.html" data-scroll="c_multiple_integrals" class="internal"><span class="codenumber">1</span> <span class="title">Multiple integrals</span></a><ul>
 <li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
 <li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
-<li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="active">Double integrals and iterated integrals over general regions</a></li>
+<li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="active">Double integrals over general regions</a></li>
 <li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Double integrals and area</a></li>
 </ul>
 </li>
@@ -206,8 +206,35 @@ window.MathJax = {
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="s_double_integrals_gen"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Double integrals and iterated integrals over general regions</span>
-</h2></section></div></main>
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Double integrals over general regions</span>
+</h2>
+<section class="introduction" id="introduction-4"><p id="p-113">We want a theory of integration that works not only over rectangles, but over more general regions of the <span class="process-math">\(xy\)</span>-plane.</p></section><article class="definition definition-like" id="d_bounded_region"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h3>
+<p id="p-114">A subset <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> is <dfn class="terminology">bounded</dfn> if there is a constant <span class="process-math">\(C\)</span> such that <span class="process-math">\(\mathcal{R}\)</span> lies within the circle of radius <span class="process-math">\(C\)</span> centered at the origin: equivalently, if</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\abs{(x,y)}=\sqrt{x^2+y^2}\lt C
+\end{equation*}
+</div>
+<p class="continuation">for all points <span class="process-math">\((x,y)\in \mathcal{R}\text{.}\)</span></p></article><article class="definition definition-like" id="d_double_integral_general"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Double integral over bounded region.</span>
+</h3>
+<p id="p-115">Let <span class="process-math">\(f\)</span> be a function of two variables defined over the bounded region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span> Let <span class="process-math">\(R\)</span> be any rectangle containing <span class="process-math">\(\mathcal{R}\)</span> and let <span class="process-math">\(f^*\)</span> be the function defined on the rectangle <span class="process-math">\(R\)</span> as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
+0\amp \text{if } (x,y)\notin \mathcal{R}
+\end{cases}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">integrable</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if the function <span class="process-math">\(f^*\)</span> is integrable over the rectangle <span class="process-math">\(R\text{,}\)</span> and in this case we define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{R}f(x,y)\, dA=\iint\limits_{R}f^*(x,y)\, dA\text{.}
+\end{equation*}
+</div></article><p id="p-116">Observe how <a href="" class="xref" data-knowl="./knowl/d_double_integral_general.html" title="Definition 1.3.2: Double integral over bounded region">Definition 1.3.2</a> cleverly tackles integration of <span class="process-math">\(f\)</span> over a general bounded region <span class="process-math">\(\mathcal{R}\)</span> essentially by (a) defining <span class="process-math">\(f\)</span> to be zero outside of <span class="process-math">\(\mathcal{R}\)</span> and then (b) using the definition of the double integral over rectangles for any rectangle <span class="process-math">\(R\)</span> containing <span class="process-math">\(\mathcal{R}\text{.}\)</span> Of course, by extending <span class="process-math">\(f\)</span> in this manner outside of <span class="process-math">\(\mathcal{R}\text{,}\)</span> we create a function that is most likely not continuous. Indeed, the extended function <span class="process-math">\(f^*\)</span> is created basically by unceremoniously setting all <span class="process-math">\(z\)</span> values to 0 outside <span class="process-math">\(\mathcal{R}\text{.}\)</span> This is bound to create some discontinuities along the boundary of our region <span class="process-math">\(\mathcal{R}\text{.}\)</span></p>
+<p id="p-117">The next definitions introduce types of regions <span class="process-math">\(\mathcal{R}\)</span> where we can be guaranteed <span class="process-math">\(f^*\)</span> is integrable, and furthermore, for which a Fubini theorem result allows us to compute the double integral via iterated integrals.</p></section></div></main>
 </div>
 </body>
 </html>

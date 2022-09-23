@@ -11,9 +11,29 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="solution solution-like"><h3 class="heading">
+<div class="solution solution-like">
+<h3 class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.5.1</span><span class="period">.</span>
-</h3></div>
+</h3>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_double_integral_limit.html">
+\begin{align*}
+\operatorname{vol} S \amp =\iint\limits_Rf(x,y)\, dA \amp (\text{def. of vol})\\
+\amp=\int_0^1\int_0^1f(x,y)\, dx\, dy \amp (\text{Fubini's thm.}) \\
+\amp =\int_0^1\left(\int_0^1 x+y^2\, dx\right) dy \\
+\amp=\int_0^1\left(\left(\frac{1}{2}x^2+xy^2\right)\Bigr\vert_{x=0}^{x=1}\right)dy \\
+\amp = \int_0^1\frac{1}{2}+y^2\, dy\\
+\amp =\left(\frac{1}{2}y+\frac{1}{3}y^3\right)\Bigr\vert_0^1\\
+\amp =\frac{5}{6}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Phew, this is indeed the same answer we got in <a href="" class="xref" data-knowl="./knowl/eg_double_integral_limit.html" title="Example 1.1.8: Volume below graph">Example 1.1.8</a>! For kicks try the other choice of iterated integral:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_double_integral_limit.html">
+\begin{equation*}
+\int_0^1\int_0^1f(x,y)\, dy\, dx\text{.}
+\end{equation*}
+</div>
+</div>
 <span class="incontext"><a href="s_double_iterated_integrals.html#solution-5" class="internal">in-context</a></span>
 </body>
 </html>

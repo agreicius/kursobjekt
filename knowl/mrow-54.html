@@ -12,10 +12,15 @@
 </head>
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-S=\sum_{k=1}^nf(x_k,y_k)\Delta A_k\tag{1.1.1}
-\end{equation}
+\begin{align*}
+\iint\limits_R \frac{x}{1+xy}\, dA  \amp=\int_0^1\int_1^2 \frac{x}{1+xy}\, dy\, dx \\
+\amp=\int_0^1\ln(1+x*y)\Bigr\vert_1^2 dx\\
+\amp = \int_0^1 \ln(1+2x)-\ln(1+x)\, dx \\
+\amp = \frac{1}{2}((1+2x)\ln(1+2x)-(1+2x))-((1+x)\ln(1+x)-(1+x))\Bigr\vert_0^1 \amp (\int \ln u\, du=u\ln u-u+C)\\
+\amp = \\
+\amp =
+\end{align*}
 </div>
-<span class="incontext"><a href="s_double_integrals_rect.html#eq_Riemann_sum_two" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_double_iterated_integrals.html#md-16" class="internal">in-context</a></span>
 </body>
 </html>

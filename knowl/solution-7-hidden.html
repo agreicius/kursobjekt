@@ -14,14 +14,13 @@
 <p>By Fubini's theorem we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\iint\limits_R x\cos(xy)\, dA  \amp=\int_1^2\int_0^\pi x\cos(xy)\, dy\, dx \\
-\amp=\int_1^2(\sin(xy))\Bigr\vert_{y=0}^{y=\pi}\, dx\\
-\amp = \int_1^2 \sin\pi x \\
-\amp = -\frac{1}{\pi}\cos\pi x\Bigr\vert_1^2\\
-\amp = -\frac{1}{\pi}(\cos 2\pi-\cos\pi)\\
-\amp =-\frac{2}{\pi}\text{.}
+\iint\limits_R \frac{x}{1+xy}\, dA  \amp=\int_0^1\int_1^2 \frac{x}{1+xy}\, dy\, dx \\
+\amp=\int_0^1\ln(1+xy)\Bigr\vert_1^2 dx\\
+\amp = \int_0^1 \ln(1+2x)-\ln(1+x)\, dx \\
+\amp = \left(\frac{1}{2}((1+2x)\ln(1+2x)-(1+2x))-((1+x)\ln(1+x)-(1+x))\right)\Bigr\vert_0^1 \\
+\amp = \frac{3}{2}\ln 3-2\ln 2\text{.}
 \end{align*}
 </div>
-<p class="continuation">Note that if we integrated with respect to <span class="process-math">\(x\)</span> first we would have needed to use integration by parts.</p>
+<p class="continuation">The penultimate equality uses the indefinite integral formula <span class="process-math">\(\int \ln u\, du=u\ln u-u\text{.}\)</span> See what happens when you first integrate with respect to <span class="process-math">\(x\text{.}\)</span></p>
 </div></body>
 </html>

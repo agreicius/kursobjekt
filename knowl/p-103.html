@@ -12,19 +12,27 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>If <span class="process-math">\(f\)</span> is continuous on the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\text{,}\)</span> then the functions</p>
+<p>The Riemann sum <span class="process-math">\(S_n\)</span> corresponding to <span class="process-math">\(P_n\)</span> is given by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-g(x) \amp =\int_c^d f(x,y)\, dy
-\amp h(y) \amp =\int_a^b f(x,y)\, dx
+S_n \amp=\sum_i^n\sum_j^nf(i/n,j/n)\cdot \frac{1}{n^2} \\
+\amp=\frac{1}{n^2}\sum_i^n\sum_j^n \frac{i}{n}+\frac{j^2}{n^2}  \amp (f(x,y)=x+y^2)\\
+\amp =\frac{1}{n^2}\sum_{i=1}\frac{n\, i}{n}+\frac{1}{n^2}\left(\frac{n(n+1)(2n+1)}{6}\right) \amp \left(\sum_{j=1}^nj^2=\frac{n(n+1)(2n+1)}{6}\right)\\
+\amp = \frac{1}{n^2}\left(\frac{n(n+1)}{2}+\frac{n(n+1)(2n+1)}{6n}\right)
+\amp \left(\sum_{i=1}^n i=\frac{n(n+1)}{2}\right)\\
+\amp = \frac{1+1/n^2}{2}+\frac{1(1+1/n)(2+1/n)}{6} \amp (\text{algebra})\text{.}
 \end{align*}
 </div>
-<p class="continuation">are integrable on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\([c,d]\text{,}\)</span> respectively, and we have</p>
+<p class="continuation">Lastly, we compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-\iint_Rf(x,y)\, dA=\int_a^b\int_c^d f(x,y)\, dy\, dx=\int_c^d\int_a^b f(x,y)\, dx\, dy\text{.}\tag{1.2.3}
-\end{equation}
+\begin{align*}
+\operatorname{vol} S \amp =\iint\limits_Rf(x,y)\, dA \amp (\text{def. of vol})\\
+\amp=\lim_{n\to\infty}S_n \amp (\text{def. of integral}) \\
+\amp = \lim_{n\to\infty} \frac{1+1/n^2}{2}+\frac{1(1+1/n)(2+1/n)}{6} \\
+\amp = \frac{1+0}{2}+\frac{1(1+0)(2+0)}{6}\\
+\amp = \frac{1}{2}+\frac{2}{6}=\frac{5}{6}\text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_double_iterated_integrals.html#p-103" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_double_integrals_rect.html#p-103" class="internal">in-context</a></span>
 </body>
 </html>

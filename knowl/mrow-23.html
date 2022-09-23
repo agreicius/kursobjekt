@@ -12,11 +12,15 @@
 </head>
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align}
-\int_a^b\int_c^d f(x,y)\, dy\, dx\amp =\int_a^b g(x)\, dx=\int_a^b\left(\int_c^df(x,y)\, dy\right)dx \tag{1.2.1}\\
-\int_c^d\int_a^b f(x,y)\, dx\, dy\amp =\int_c^d h(y)\, dy=\int_c^d\left(\int_a^bf(x,y)\, dx\right)dy \tag{1.2.2}
-\end{align}
+\begin{align*}
+S_n \amp=\sum_i^n\sum_j^nf(i/n,j/n)\cdot \frac{1}{n^2} \\
+\amp=\frac{1}{n^2}\sum_i^n\sum_j^n \frac{i}{n}+\frac{j^2}{n^2}  \amp (f(x,y)=x+y^2)\\
+\amp =\frac{1}{n^2}\sum_{i=1}\frac{n\, i}{n}+\frac{1}{n^2}\left(\frac{n(n+1)(2n+1)}{6}\right) \amp \left(\sum_{j=1}^nj^2=\frac{n(n+1)(2n+1)}{6}\right)\\
+\amp = \frac{1}{n^2}\left(\frac{n(n+1)}{2}+\frac{n(n+1)(2n+1)}{6n}\right)
+\amp \left(\sum_{i=1}^n i=\frac{n(n+1)}{2}\right)\\
+\amp = \frac{1+1/n^2}{2}+\frac{1(1+1/n)(2+1/n)}{6} \amp (\text{algebra})
+\end{align*}
 </div>
-<span class="incontext"><a href="s_double_iterated_integrals.html#eq_doubly_iterated" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_double_integrals_rect.html#md-10" class="internal">in-context</a></span>
 </body>
 </html>

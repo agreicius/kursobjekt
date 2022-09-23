@@ -12,20 +12,13 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Let <span class="process-math">\(f\)</span> be defined on the rectangle <span class="process-math">\(R=[a,b]\times [c,d]\)</span> and suppose the single-variable functions</p>
+<p>Next, for each <span class="process-math">\(n\)</span> let <span class="process-math">\(P_n\)</span> be the pointed partion obtained by dividing both edges of <span class="process-math">\(R\)</span> into <span class="process-math">\(n\)</span> equal subintervals and choosing as sample points the top-right corner of each rectangle. We have <span class="process-math">\(n^2\)</span> rectangles in all, each with area <span class="process-math">\(\Delta A_k=\frac{1}{n^2}\text{.}\)</span> The sample points are given as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-g(x) \amp =\int_c^d f(x,y)\, dy
-\amp h(y) \amp =\int_a^b f(x,y)\, dx
-\end{align*}
+\begin{equation*}
+(i/n, j/n), 1\leq i,j\leq n\text{.}
+\end{equation*}
 </div>
-<p class="continuation">are integrable on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\([c,d]\text{,}\)</span> respectively. We define the two <dfn class="terminology">iterated integrals</dfn> <span class="process-math">\(\int_a^b\int_c^d f(x,y)\, dx\, dy\)</span> and <span class="process-math">\(\int_c^d\int_a^bf(x,y)\, dx\, dy\)</span> as follows:</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align}
-\int_a^b\int_c^d f(x,y)\, dy\, dx\amp =\int_a^b g(x)\, dx=\int_a^b\left(\int_c^df(x,y)\, dy\right)dx \tag{1.2.1}\\
-\int_c^d\int_a^b f(x,y)\, dx\, dy\amp =\int_c^d h(y)\, dy=\int_c^d\left(\int_a^bf(x,y)\, dx\right)dy \text{.}\tag{1.2.2}
-\end{align}
-</div>
-<span class="incontext"><a href="s_double_iterated_integrals.html#p-102" class="internal">in-context</a></span>
+<p class="continuation">Note that <span class="process-math">\(\norm{P_n}=\frac{1}{n}\rightarrow 0\text{,}\)</span> as needed.</p>
+<span class="incontext"><a href="s_double_integrals_rect.html#p-102" class="internal">in-context</a></span>
 </body>
 </html>
