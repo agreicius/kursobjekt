@@ -106,10 +106,10 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
   b=1
   c=0
   d=1
-  integrate(f(x,y),x,0,1)
-  integrate(f(x,y),y,0,1)
-  integrate(integrate(f(x,y),x,0,1),y,0,1)
-  integrate(integrate(f(x,y),y,0,1),x,0,1)
+  show(integrate(f(x,y),x,0,1))
+  show(integrate(f(x,y),y,0,1))
+  show(integrate(integrate(f(x,y),x,0,1),y,0,1))
+  show(integrate(integrate(f(x,y),y,0,1),x,0,1))
   </input>
   <output>
 
