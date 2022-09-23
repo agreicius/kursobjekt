@@ -57,7 +57,7 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
     </p>
   </statement>
   <solution>
-    <!-- <p>
+    <p>
       We have
       <md>
         <mrow>\operatorname{vol} S \amp =\iint\limits_Rf(x,y)\, dA \amp (\text{def. of vol})</mrow>
@@ -68,8 +68,12 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
         <mrow>  \amp =\left(\frac{1}{2}y+\frac{1}{3}y^3\right)\Bigr\vert_0^1</mrow>
         <mrow>  \amp =\frac{5}{6}</mrow>
       </md>.
-      Phew, this is indeed the same answer we got in <xref ref="eg_double_integral_limit"/>!
-    </p> -->
+      Phew, this is indeed the same answer we got in <xref ref="eg_double_integral_limit"/>! For kicks try the other choice of iterated integral:
+      <me>
+        \int_0^1\int_0^1f(x,y)\, dy\, dx
+      </me>.
+
+    </p>
   </solution>
 </example>
 <example xml:id="eg_Fubini_egs">
@@ -83,19 +87,42 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
         <p>
           <m>\iint\limits_R x\cos(xy)\, dA</m>, <m>R=[1,2]\times [0,\pi]</m>
         </p>
+        <!-- <solution>
+          <p>
+            By Fubini's theorem we have
+            <md>
+              <mrow> \iint\limits_R x\cos(xy)\, dA  \amp=\int_1^2\int_0^\pi x\cos(xy)\, dy\, dx </mrow>
+              <mrow> \amp=\int_1^2(\sin(xy))\Bigr\vert_{y=0}^{y=\pi}\, dx</mrow>
+              <mrow>  \amp = \int_1^2 \sin\pi x </mrow>
+              <mrow>  \amp = -\frac{1}{\pi}\cos\pi x\Bigr\vert_1^2</mrow>
+              <mrow>  \amp = -\frac{1}{\pi}(\cos 2\pi-\cos\pi)</mrow>
+              <mrow>  \amp =-\frac{2}{\pi}</mrow>
+            </md>.
+            Note that if we integrated with respect to <m>x</m> first we would have needed to use integration by parts.
+          </p>
+        </solution> -->
       </li>
+
       <li>
         <p>
           <m>\iint\limits_R \frac{x}{1+xy}, dA</m>, <m>R=[0,1]\times [1,2]</m>
         </p>
+        <!-- <solution>
+          <p>
+            By Fubini's theorem we have
+            <md>
+              <mrow> \iint\limits_R \frac{x}{1+xy}\, dA  \amp=\int_0^1\int_1^2 \frac{x}{1+xy}\, dy\, dx </mrow>
+              <mrow> \amp=\int_0^1\ln(1+xy)\Bigr\vert_1^2 dx</mrow>
+              <mrow>  \amp = \int_0^1 \ln(1+2x)-\ln(1+x)\, dx </mrow>
+              <mrow>  \amp = \left(\frac{1}{2}((1+2x)\ln(1+2x)-(1+2x))-((1+x)\ln(1+x)-(1+x))\right)\Bigr\vert_0^1 </mrow>
+              <mrow>  \amp = \frac{3}{2}\ln 3-2\ln 2</mrow>
+            </md>.
+            The penultimate equality uses the indefinite integral formula <m>\int \ln u\, du=u\ln u-u</m>. See what happens when you first integrate with respect to <m>x</m>.
+          </p>
+        </solution> -->
       </li>
     </ol>
   </statement>
-  <solution>
-    <p>
-
-    </p>
-  </solution>
 </example>
 <project>
   <title>Iterated integrals</title>
@@ -106,10 +133,10 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
   b=1
   c=0
   d=1
-  show(integrate(f(x,y),x,0,1))
-  show(integrate(f(x,y),y,0,1))
-  show(integrate(integrate(f(x,y),x,0,1),y,0,1))
-  show(integrate(integrate(f(x,y),y,0,1),x,0,1))
+  show(integrate(f(x,y),x,a,b))
+  show(integrate(f(x,y),y,c,d))
+  show(integrate(integrate(f(x,y),x,a,b),y,c,d))
+  show(integrate(integrate(f(x,y),y,c,d),x,a,b))
   </input>
   <output>
 
