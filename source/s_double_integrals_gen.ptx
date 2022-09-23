@@ -1,4 +1,43 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_double_integrals_gen">
-  <title>Double integrals and iterated integrals over general regions</title>
+  <title>Double integrals over general regions</title>
+  <introduction>
+    <p>
+      We want a theory of integration that works not only over rectangles, but over more general regions of the <m>xy</m>-plane.
+    </p>
+  </introduction>
+  <definition xml:id="d_bounded_region">
+    <statement>
+      <p>
+        A subset <m>\mathcal{R}\subseteq \R^2</m> is <term>bounded</term> if there is a constant <m>C</m> such that <m>\mathcal{R}</m> lies within the circle of radius <m>C</m> centered at the origin: equivalently, if
+        <me>
+          \abs{(x,y)}=\sqrt{x^2+y^2}\lt C
+        </me>
+        for all points <m>(x,y)\in \mathcal{R}</m>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="d_double_integral_general">
+    <title>Double integral over bounded region</title>
+    <statement>
+      <p>
+        Let <m>f</m> be a function of two variables defined over the bounded region <m>\mathcal{R}\subseteq\R^2</m>. Let <m>R</m> be any rectangle containing <m>\mathcal{R}</m> and let <m>f^*</m> be the function defined on the rectangle <m>R</m> as follows:
+        <me>
+          f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
+          0\amp \text{if } (x,y)\notin \mathcal{R}
+        \end{cases}
+        </me>.
+        The function <m>f</m> is <term>integrable</term> over <m>\mathcal{R}</m> if the function <m>f^*</m> is integrable over the rectangle <m>R</m>, and in this case we define
+        <me>
+          \iint\limits_\mathcal{R}f(x,y)\, dA=\iint\limits_{R}f^*(x,y)\, dA
+        </me>.
+      </p>
+    </statement>
+  </definition>
+      <p>
+        Observe how <xref ref="d_double_integral_general"/> cleverly tackles integration of <m>f</m> over a general bounded region <m>\mathcal{R}</m> essentially by (a) defining <m>f</m> to be zero outside of <m>\mathcal{R}</m> and then (b) using the definition of the double integral over rectangles for any rectangle <m>R</m> containing <m>\mathcal{R}</m>. Of course, by extending <m>f</m> in this manner outside of <m>\mathcal{R}</m>, we create a function that is most likely not continuous. Indeed, the extended function <m>f^*</m> is created basically by unceremoniously setting all <m>z</m> values to 0 outside <m>\mathcal{R}</m>. This is bound to create some discontinuities along the boundary of our region <m>\mathcal{R}</m>.
+      </p>
+  <p>
+    The next definitions introduce types of regions <m>\mathcal{R}</m> where we can be guaranteed <m>f^*</m> is integrable, and furthermore, for which a Fubini theorem result allows us to compute the double integral via iterated integrals.
+  </p>
 
 </section>
