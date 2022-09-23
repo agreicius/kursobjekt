@@ -1,7 +1,11 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_double_iterated_integrals">
 
 <title>Iterated integrals and Fubini's theorem</title>
-
+<introduction>
+  <p>
+    As we saw in <xref ref="eg_double_integral_limit"/>, computing double integrals directly using the limit definition (<xref ref="d_double_integral_rect" type="global"/>) is rather onerous. <xref ref="th_Fubini_rect" text="custom">Fubini's theorem</xref> provides us a more convenient means of integrating using iterated integrals.
+  </p>
+</introduction>
 <definition xml:id="d_double_iterated_integral">
   <title>Doubly iterated integral over rectangle</title>
   <statement>
@@ -29,12 +33,88 @@
         \amp h(y) \amp =\int_a^b f(x,y)\, dx</mrow>
       </md>
       are integrable on <m>[a,b]</m> and <m>[c,d]</m>, respectively, and we have
-      <me>
+      <men xml:id="eq_Fubini_double">
         \iint_Rf(x,y)\, dA=\int_a^b\int_c^d f(x,y)\, dy\, dx=\int_c^d\int_a^b f(x,y)\, dx\, dy
-      </me>.
+      </men>.
     </p>
   </statement>
 </theorem>
 <remark>Observe that Fubini's theorem tells us two interesting facts: (1) the two <em>iterated integrals</em> are equal in value, and (2) in fact both are equal to the <em>double integral</em> of <m>f</m> over <m>R</m>.
 </remark>
+  <remark xml:id="rm_Fubini_choose_order">
+  <statement>
+    <p>
+      Along similar lines, Fubini's theorem gives us two potential ways of computing an integral: integrate <em>first</em> with respect to <m>x</m>, and <em>then</em> with respect to <m>y</m>; or integrate <em>first</em> with respect to <m>y</m>, and <em>then</em> with respect to <m>x</m>. Oftentimes one of these choices will lead to easier integration techniques than the other. Choose wisely!
+    </p>
+  </statement>
+</remark>
+
+<example xml:id="eg_double_Fubini_confirm">
+  <title>Volume below graph revisited</title>
+  <statement>
+    <p>
+Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above the rectangle <m>R=[0,1]\times[0,1]</m> and below the graph of <m>f</m>. Compute <m>\operatorname{vol} \mathcal{S}</m> using Fubini's theorem.
+    </p>
+  </statement>
+  <solution>
+    <!-- <p>
+      We have
+      <md>
+        <mrow>\operatorname{vol} S \amp =\iint\limits_Rf(x,y)\, dA \amp (\text{def. of vol})</mrow>
+        <mrow> \amp=\int_0^1\int_0^1f(x,y)\, dx\, dy \amp (\text{Fubini's thm.}) </mrow>
+        <mrow>  \amp =\int_0^1\left(\int_0^1 x+y^2\, dx\right) dy </mrow>
+        <mrow>  \amp=\int_0^1\left(\left(\frac{1}{2}x^2+xy^2\right)\Bigr\vert_{x=0}^{x=1}\right)dy </mrow>
+        <mrow>  \amp = \int_0^1\frac{1}{2}+y^2\, dy</mrow>
+        <mrow>  \amp =\left(\frac{1}{2}y+\frac{1}{3}y^3\right)\Bigr\vert_0^1</mrow>
+        <mrow>  \amp =\frac{5}{6}</mrow>
+      </md>.
+      Phew, this is indeed the same answer we got in <xref ref="eg_double_integral_limit"/>!
+    </p> -->
+  </solution>
+</example>
+<example xml:id="eg_Fubini_egs">
+  <title>Fubini examples</title>
+  <statement>
+    <p>
+      Compute the following integrals using Fubini's theorem.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>\iint\limits_R x\cos(xy)\, dA</m>, <m>R=[1,2]\times [0,\pi]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\iint\limits_R \frac{x}{1+xy}, dA</m>, <m>R=[0,1]\times [1,2]</m>
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<project>
+  <title>Iterated integrals</title>
+  <sage>
+  <input>
+  f(x,y)=x+y^2
+  a=0
+  b=1
+  c=0
+  d=1
+  integrate(f(x,y),x,0,1)
+  integrate(f(x,y),y,0,1)
+  integrate(integrate(f(x,y),x,0,1),y,0,1)
+  integrate(integrate(f(x,y),y,0,1),x,0,1)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+
+</project>
 </section>
