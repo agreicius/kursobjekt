@@ -129,13 +129,13 @@
       </li>
       <li>
         <p>
-          For each <m>n\geq 1</m> make any convenient choice of sample points <m>(x_k, y_k)</m> lying in the subrectangles <m>R_k</m> of <m>P_n</m>. As an example, choosing the top right of each rectangle would yield sample points of the form <m>(i(b-a)/n, j(c-d)/n)</m>, where <m>1\leq i,j\leq n</m>.
+          For each <m>n\geq 1</m> make any convenient choice of sample points <m>(x_k, y_k)</m> lying in the subrectangles <m>R_k</m> of <m>P_n</m>. As an example, choosing the top right of each rectangle would yield sample points of the form <m>(i(b-a)/n, j(d-c)/n)</m>, where <m>1\leq i,j\leq n</m>.
         </p>
       </li>
       <li>
         <p>
           Compute the Riemann sum
-          <me>S_n=\sum_{k=1}^{n^2} f(x_k, y_k)\Delta A_k=(b-a)(c-d)\sum_{k=1}^{n^2} \frac{f(x_k, y_k)}{n^2}</me>,
+          <me>S_n=\sum_{k=1}^{n^2} f(x_k, y_k)\Delta A_k=(b-a)(d-c)\sum_{k=1}^{n^2} \frac{f(x_k, y_k)}{n^2}</me>,
           and attempt to simplify the summation expression as much as possible.
         </p>
       </li>
@@ -171,9 +171,9 @@
   </statement>
   <solution>
     <p>
-      First observe that since <m>f(x,y)</m> is continuous, it is integrable over <m>R</m>, and we can choose any sequence of pointed partiions with norm tending to 0 to compute its integral.
+      First observe that since <m>f(x,y)</m> is continuous, it is integrable over <m>R</m>, and we can choose any sequence of pointed partitions with norm tending to 0 to compute its integral.
     </p>
-    <p>Next, for each <m>n</m> let <m>P_n</m> be the pointed partion obtained by dividing both edges of <m>R</m> into <m>n</m> equal subintervals and choosing as sample points the top-right corner of each rectangle. We have <m>n^2</m> rectangles in all, each with area <m>\Delta A_k=\frac{1}{n^2}</m>. The sample points are given as
+    <p>Next, for each <m>n</m> let <m>P_n</m> be the pointed partition obtained by dividing both edges of <m>R</m> into <m>n</m> equal subintervals and choosing as sample points the top-right corner of each rectangle. We have <m>n^2</m> rectangles in all, each with area <m>\Delta A_k=\frac{1}{n^2}</m>. The sample points are given as
       <me>
         (i/n, j/n), 1\leq i,j\leq n
       </me>.

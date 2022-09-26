@@ -33,11 +33,192 @@
       </p>
     </statement>
   </definition>
+
+
       <p>
         Observe how <xref ref="d_double_integral_general"/> cleverly tackles integration of <m>f</m> over a general bounded region <m>\mathcal{R}</m> essentially by (a) defining <m>f</m> to be zero outside of <m>\mathcal{R}</m> and then (b) using the definition of the double integral over rectangles for any rectangle <m>R</m> containing <m>\mathcal{R}</m>. Of course, by extending <m>f</m> in this manner outside of <m>\mathcal{R}</m>, we create a function that is most likely not continuous. Indeed, the extended function <m>f^*</m> is created basically by unceremoniously setting all <m>z</m> values to 0 outside <m>\mathcal{R}</m>. This is bound to create some discontinuities along the boundary of our region <m>\mathcal{R}</m>.
       </p>
+      <figure>
+        <title>Integrating over general planar region</title>
+        <interactive xml:id="geogebra_double_integral" platform="geogebra" width="100%" aspect="4:3">
+              <slate surface="geogebra" material="n84rytsr" aspect="4:3" marker="train-distance">
+              </slate>
+            </interactive>
+        <caption><url href="https://www.geogebra.org/m/n84rytsr" visual="www.geogebra.org/m/n84rytsr">Integrating over general planar region</url>. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+      </figure>
+      <p>
+        Putting the issue of integrability aside for the moment, we can now generalize our previous notion of volume articulated in <xref ref="d_volume_surface_rect"/>.
+      </p>
+      <definition xml:id="d_volume_surface_general">
+        <title>Volume below graph and over planar region</title>
+        <statement>
+          <p>
+            Let <m>f</m> be nonnegative and integrable over the bounded region <m>\mathcal{R}\subseteq\R^2</m>, and let <m>\mathcal{S}</m> be the region consisting of all points lying on or above <m>\mathcal{R}</m> and below the graph of <m>f</m>: <ie />,
+            <me>
+              \mathcal{S}=\{(x,y,z)\colon \R^3\colon (x,y)\in \mathcal{R}, 0\leq z\leq f(x,y)\}
+            </me>.
+            We define the <term>volume</term> of <m>\mathcal{S}</m>, denoted <m>\operatorname{vol} S</m>, as
+            <me>
+              \operatorname{vol} \mathcal{S}=\iint\limits_\mathcal{R} f(x,y)\, dA
+            </me>.
+          </p>
+        </statement>
+      </definition>
   <p>
-    The next definitions introduce types of regions <m>\mathcal{R}</m> where we can be guaranteed <m>f^*</m> is integrable, and furthermore, for which a Fubini theorem result allows us to compute the double integral via iterated integrals.
+    The <em>elementary regions</em> defined below provide situations where the extended function <m>f^*</m> from <xref ref="d_double_integral_general"/> is guaranteed to be integrable, and furthermore, for which a Fubini-type theorem applies, allowing us to compute the double integral via iterated integrals.
   </p>
+  <definition xml:id="d_elementary_regions">
+    <title>Elementary planar region</title>
+    <statement>
+      <p>
+        An <term>elementary planar region</term> (of <term>type 1</term> or <term>type 2</term>) is a subset <m>\mathcal{R}\subseteq \R^2</m> of one of the following forms.
+        <ul>
+          <li>
+            <title>Type 1</title>
+            <p> We have
+              <me>\mathcal{R}=\{(x,y)\colon a\leq x\leq b, g_1(x)\leq y\leq g_2(x)\}</me>,
+              where <m>g_1, g_2</m> are continuous on <m>[a,b]</m>.
+            </p>
+          </li>
+          <li>
+            <title>Type 2</title>
+            <p> We have
+              <me>\mathcal{R}=\{(x,y)\colon h_1(y)\leq x\leq h_2(y), c\leq y\leq d\}</me>,
+              where <m>h_1, h_2</m> are continuous on <m>[c,d]</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+<theorem xml:id="th_Fubini_elementary">
+  <title>Fubini's theorem over elementary planar regions</title>
+  <statement>
+    <p>
+      Assume <m>f</m> is continous on the bounded planar region <m>\mathcal{R}\subseteq \R^2</m>.
+      <ul>
+        <li>
+          <title>Type 1</title>
+          <p>
+            If   <m>\mathcal{R}=\{(x,y)\colon a\leq x\leq b, g_1(x)\leq y\leq g_2(x)\}</m>,
+              where <m>g_1, g_2</m> are continuous on <m>[a,b]</m>, then
+              <men xml:id="eq_Fubini_planar_type1">
+                \iint\limits_\mathcal{R}f(x,y)\, dA=\int_a^b\int_{g_1(x)}^{g_2(x)}f(x,y)\, dy\, dx:=\int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(x,y)\, dy\right) dx
+              </men>.
+          </p>
+        </li>
+        <li>
+          <title>Type 2</title>
+          <p>
+            If   <m>\mathcal{R}=\{(x,y)\colon h_1(y)\leq x\leq h_2(y), c\leq y\leq d\}</m>,
+              where <m>h_1, h_2</m> are continuous on <m>[c,d]</m>, then
+              <men xml:id="eq_Fubini_planar_type2">
+                \iint\limits_\mathcal{R}f(x,y)\, dA=\int_c^d\int_{h_1(y)}^{h_2(y)}f(x,y)\, dx\, dy:=
+                \int_c^d\left(\int_{h_1(y)}^{h_2(y)}f(x,y)\, dx\right) dy
+              </men>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </statement>
+</theorem>
+    <remark xml:id="rm_colon_equal">
+  <statement>
+    <p>
+      The notation <c>:=</c> appearing in <xref first="eq_Fubini_planar_type1" last="eq_Fubini_planar_type2"/> means that the expression on the left is newly notation that we declare to mean the expression on the right. The notation <c>=:</c> is used similarly.
+    </p>
+  </statement>
+</remark>
+
+<example xml:id="eg_Fubini_elem_planar">
+  <title>Fubini's theorem over elementary planar regions</title>
+  <statement>
+    <p>
+      In each case below the given region <m>\mathcal{R}</m> is elementary of type 1, type 2, or both. Use <xref ref="th_Fubini_elementary"/> to compute <m>\iint\limits_\mathcal{R}f(x,y)\, dA</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>f(x,y)=x+y</m>, <m>\mathcal{R}\colon</m> region in first quadrant bounded by curves <m>y=x^2</m> and <m>y=1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x,y)=x^4-2y</m>, <m>\mathcal{R}\colon</m> region bounded by <m>y=-x^2</m>, <m>y=x^2</m>, <m>x=-1</m>, <m>x=1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x,y)=e^{y^2}</m>, <m>\mathcal{R}\colon</m> triangle with vertices <m>(0,0), (1,0), (1,1)</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</example>
+<theorem xml:id="th_double_integral_props">
+  <title>Properties of double integrals</title>
+  <statement>
+    <p>
+      Assume <m>f</m> and <m>g</m> are integrable over the bounded regions <m>\mathcal{R}, <m>\mathcal{R}_1</m>, <m>\mathcal{R}_2</m></m>.
+    </p>
+    <ol>
+      <li>
+        <title>Linearity</title>
+        <p>
+          Given any constants <m>c,d\in \R</m>, we have
+          <me>
+            \iint\limits_\mathcal{R}cf(x,y)+dg(x,y)\, dA=
+            c  \iint\limits_\mathcal{R}f(x,y)\, dA+d  \iint\limits_\mathcal{R}g(x,y)\, dA
+          </me>
+        </p>
+      </li>
+      <li>
+        <title>Domination</title>
+        <ol>
+          <li>
+            <p>
+              If <m>f\geq 0</m> on <m>\mathcal{R}</m>, then <m>\iint\limits_\mathcal{R}f(x,y)\, dA\geq 0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f\geq g</m> on <m>\mathcal{R}</m>, then <m>\iint\limits_\mathcal{R}f(x,y)\, dA\geq \iint\limits_{\mathcal{R}}g(x,y)\, dA</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <title>Additivity</title>
+        <p>
+          If <m>\mathcal{R}=\mathcal{R}_1\cup \mathcal{R}_2</m>, where <m>\mathcal{R}_1</m> and <m>\mathcal{R}_2</m> are non-overlapping, then
+          <me>
+            \iint\limits_{\mathcal{R}}f(x,y)\, dA=\iint\limits_{\mathcal{R}_1}f(x,y)\, dA+\iint\limits_{\mathcal{R}_2}f(x,y)\, dA
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+<example>
+  <title>Using double integral properties</title>
+
+
+  <statement>
+    <p>
+      Use symmetry properties of <m>f</m> and <xref ref="th_double_integral_props"/> to compute <m>\iint\limits_{\mathcal{R}}f(x,y)\, dA</m>, where <m>f(x,y)=xy</m> and <m>\mathcal{R}</m> is the planar region bounded by the curves <m>x=y^2</m> and <m>x=1+\frac{1}{2}y^2</m>.
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</example>
+
 
 </section>
