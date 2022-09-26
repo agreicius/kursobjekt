@@ -11,8 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<p>Putting the issue of integrability aside for the moment, we can now generalize our previous notion of volume articulated in <a href="" class="xref" data-knowl="./knowl/d_volume_surface_rect.html" title="Definition 1.1.7: Volume between graph and xy-plane (rectangular base)">Definition 1.1.7</a>.</p>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Let <span class="process-math">\(f\)</span> be a function of two variables defined over the bounded region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span> Let <span class="process-math">\(R\)</span> be any rectangle containing <span class="process-math">\(\mathcal{R}\)</span> and let <span class="process-math">\(f^*\)</span> be the function defined on the rectangle <span class="process-math">\(R\)</span> as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
+0\amp \text{if } (x,y)\notin \mathcal{R}
+\end{cases}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">integrable</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if the function <span class="process-math">\(f^*\)</span> is integrable over the rectangle <span class="process-math">\(R\text{,}\)</span> and in this case we define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{R}f(x,y)\, dA=\iint\limits_{R}f^*(x,y)\, dA\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="s_double_integrals_gen.html#p-117" class="internal">in-context</a></span>
 </body>
 </html>

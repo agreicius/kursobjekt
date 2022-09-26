@@ -12,7 +12,18 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p><span class="process-math">\(\iint\limits_R \frac{x}{1+xy}, dA\text{,}\)</span> <span class="process-math">\(R=[0,1]\times [1,2]\)</span></p>
+<p>By Fubini's theorem we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_R x\cos(xy)\, dA  \amp=\int_1^2\int_0^\pi x\cos(xy)\, dy\, dx \\
+\amp=\int_1^2(\sin(xy))\Bigr\vert_{y=0}^{y=\pi}\, dx\\
+\amp = \int_1^2 \sin\pi x \\
+\amp = -\frac{1}{\pi}\cos\pi x\Bigr\vert_1^2\\
+\amp = -\frac{1}{\pi}(\cos 2\pi-\cos\pi)\\
+\amp =-\frac{2}{\pi}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Note that if we integrated with respect to <span class="process-math">\(x\)</span> first we would have needed to use integration by parts.</p>
 <span class="incontext"><a href="s_double_iterated_integrals.html#p-112" class="internal">in-context</a></span>
 </body>
 </html>

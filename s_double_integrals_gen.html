@@ -209,10 +209,10 @@ window.MathJax = {
 <section class="section" id="s_double_integrals_gen"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Double integrals over general regions</span>
 </h2>
-<section class="introduction" id="introduction-4"><p id="p-113">We want a theory of integration that works not only over rectangles, but over more general regions of the <span class="process-math">\(xy\)</span>-plane.</p></section><article class="definition definition-like" id="d_bounded_region"><h3 class="heading">
+<section class="introduction" id="introduction-4"><p id="p-115">We want a theory of integration that works not only over rectangles, but over more general regions of the <span class="process-math">\(xy\)</span>-plane.</p></section><article class="definition definition-like" id="d_bounded_region"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
 </h3>
-<p id="p-114">A subset <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> is <dfn class="terminology">bounded</dfn> if there is a constant <span class="process-math">\(C\)</span> such that <span class="process-math">\(\mathcal{R}\)</span> lies within the circle of radius <span class="process-math">\(C\)</span> centered at the origin: equivalently, if</p>
+<p id="p-116">A subset <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> is <dfn class="terminology">bounded</dfn> if there is a constant <span class="process-math">\(C\)</span> such that <span class="process-math">\(\mathcal{R}\)</span> lies within the circle of radius <span class="process-math">\(C\)</span> centered at the origin: equivalently, if</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \abs{(x,y)}=\sqrt{x^2+y^2}\lt C
@@ -221,7 +221,7 @@ window.MathJax = {
 <p class="continuation">for all points <span class="process-math">\((x,y)\in \mathcal{R}\text{.}\)</span></p></article><article class="definition definition-like" id="d_double_integral_general"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Double integral over bounded region.</span>
 </h3>
-<p id="p-115">Let <span class="process-math">\(f\)</span> be a function of two variables defined over the bounded region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span> Let <span class="process-math">\(R\)</span> be any rectangle containing <span class="process-math">\(\mathcal{R}\)</span> and let <span class="process-math">\(f^*\)</span> be the function defined on the rectangle <span class="process-math">\(R\)</span> as follows:</p>
+<p id="p-117">Let <span class="process-math">\(f\)</span> be a function of two variables defined over the bounded region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span> Let <span class="process-math">\(R\)</span> be any rectangle containing <span class="process-math">\(\mathcal{R}\)</span> and let <span class="process-math">\(f^*\)</span> be the function defined on the rectangle <span class="process-math">\(R\)</span> as follows:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
@@ -234,12 +234,12 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 \begin{equation*}
 \iint\limits_\mathcal{R}f(x,y)\, dA=\iint\limits_{R}f^*(x,y)\, dA\text{.}
 \end{equation*}
-</div></article><p id="p-116">Observe how <a href="" class="xref" data-knowl="./knowl/d_double_integral_general.html" title="Definition 1.3.2: Double integral over bounded region">Definition 1.3.2</a> cleverly tackles integration of <span class="process-math">\(f\)</span> over a general bounded region <span class="process-math">\(\mathcal{R}\)</span> essentially by (a) defining <span class="process-math">\(f\)</span> to be zero outside of <span class="process-math">\(\mathcal{R}\)</span> and then (b) using the definition of the double integral over rectangles for any rectangle <span class="process-math">\(R\)</span> containing <span class="process-math">\(\mathcal{R}\text{.}\)</span> Of course, by extending <span class="process-math">\(f\)</span> in this manner outside of <span class="process-math">\(\mathcal{R}\text{,}\)</span> we create a function that is most likely not continuous. Indeed, the extended function <span class="process-math">\(f^*\)</span> is created basically by unceremoniously setting all <span class="process-math">\(z\)</span> values to 0 outside <span class="process-math">\(\mathcal{R}\text{.}\)</span> This is bound to create some discontinuities along the boundary of our region <span class="process-math">\(\mathcal{R}\text{.}\)</span></p>
-<figure class="figure figure-like" id="figure-1"><iframe id="geogebra_double_integral" width="600" height="450" src="geogebra_double_integral-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.3<span class="period">.</span></span><span class="space"> </span><a class="external" href="https://www.geogebra.org/m/n84rytsr" target="_blank">Integrating over general planar region</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a>. Made with <a class="external" href="https://www.geogebra.org" target="_blank">GeoGebra</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a>.</figcaption></figure><p id="p-117">Putting the issue of integrability aside for the moment, we can now generalize our previous notion of volume articulated in <a href="" class="xref" data-knowl="./knowl/d_volume_surface_rect.html" title="Definition 1.1.7: Volume between graph and xy-plane (rectangular base)">Definition 1.1.7</a>.</p>
+</div></article><p id="p-118">Observe how <a href="" class="xref" data-knowl="./knowl/d_double_integral_general.html" title="Definition 1.3.2: Double integral over bounded region">Definition 1.3.2</a> cleverly tackles integration of <span class="process-math">\(f\)</span> over a general bounded region <span class="process-math">\(\mathcal{R}\)</span> essentially by (a) defining <span class="process-math">\(f\)</span> to be zero outside of <span class="process-math">\(\mathcal{R}\)</span> and then (b) using the definition of the double integral over rectangles for any rectangle <span class="process-math">\(R\)</span> containing <span class="process-math">\(\mathcal{R}\text{.}\)</span> Of course, by extending <span class="process-math">\(f\)</span> in this manner outside of <span class="process-math">\(\mathcal{R}\text{,}\)</span> we create a function that is most likely not continuous. Indeed, the extended function <span class="process-math">\(f^*\)</span> is created basically by unceremoniously setting all <span class="process-math">\(z\)</span> values to 0 outside <span class="process-math">\(\mathcal{R}\text{.}\)</span> This is bound to create some discontinuities along the boundary of our region <span class="process-math">\(\mathcal{R}\text{.}\)</span></p>
+<figure class="figure figure-like" id="figure-1"><iframe id="geogebra_double_integral" width="600" height="450" src="geogebra_double_integral-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.3<span class="period">.</span></span><span class="space"> </span><a class="external" href="https://www.geogebra.org/m/n84rytsr" target="_blank">Integrating over general planar region</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a>. Made with <a class="external" href="https://www.geogebra.org" target="_blank">GeoGebra</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a>.</figcaption></figure><p id="p-119">Putting the issue of integrability aside for the moment, we can now generalize our previous notion of volume articulated in <a href="" class="xref" data-knowl="./knowl/d_volume_surface_rect.html" title="Definition 1.1.7: Volume between graph and xy-plane (rectangular base)">Definition 1.1.7</a>.</p>
 <article class="definition definition-like" id="d_volume_surface_general"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Volume below graph and over planar region.</span>
 </h3>
-<p id="p-118">Let <span class="process-math">\(f\)</span> be nonnegative and integrable over the bounded region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the region consisting of all points lying on or above <span class="process-math">\(\mathcal{R}\)</span> and below the graph of <span class="process-math">\(f\text{:}\)</span> i.e.,</p>
+<p id="p-120">Let <span class="process-math">\(f\)</span> be nonnegative and integrable over the bounded region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the region consisting of all points lying on or above <span class="process-math">\(\mathcal{R}\)</span> and below the graph of <span class="process-math">\(f\text{:}\)</span> i.e.,</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{S}=\{(x,y,z)\colon \R^3\colon (x,y)\in \mathcal{R}, 0\leq z\leq f(x,y)\}\text{.}
@@ -250,14 +250,14 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 \begin{equation*}
 \operatorname{vol} \mathcal{S}=\iint\limits_\mathcal{R} f(x,y)\, dA\text{.}
 \end{equation*}
-</div></article><p id="p-119">The <em class="emphasis">elementary regions</em> defined below provide situations where the extended function <span class="process-math">\(f^*\)</span> from <a href="" class="xref" data-knowl="./knowl/d_double_integral_general.html" title="Definition 1.3.2: Double integral over bounded region">Definition 1.3.2</a> is guaranteed to be integrable, and furthermore, for which a Fubini-type theorem applies, allowing us to compute the double integral via iterated integrals.</p>
+</div></article><p id="p-121">The <em class="emphasis">elementary regions</em> defined below provide situations where the extended function <span class="process-math">\(f^*\)</span> from <a href="" class="xref" data-knowl="./knowl/d_double_integral_general.html" title="Definition 1.3.2: Double integral over bounded region">Definition 1.3.2</a> is guaranteed to be integrable, and furthermore, for which a Fubini-type theorem applies, allowing us to compute the double integral via iterated integrals.</p>
 <article class="definition definition-like" id="d_elementary_regions"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary planar region.</span>
 </h3>
-<p id="p-120">An <dfn class="terminology">elementary planar region</dfn> (of <dfn class="terminology">type 1</dfn> or <dfn class="terminology">type 2</dfn>) is a subset <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of one of the following forms.</p>
+<p id="p-122">An <dfn class="terminology">elementary planar region</dfn> (of <dfn class="terminology">type 1</dfn> or <dfn class="terminology">type 2</dfn>) is a subset <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of one of the following forms.</p>
 <ul class="disc">
 <li id="li-29">
-<span class="heading"><span class="title">Type 1.</span></span><p id="p-121">We have</p>
+<span class="heading"><span class="title">Type 1.</span></span><p id="p-123">We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{R}=\{(x,y)\colon a\leq x\leq b, g_1(x)\leq y\leq g_2(x)\}\text{,}
@@ -266,7 +266,7 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 <p class="continuation">where <span class="process-math">\(g_1, g_2\)</span> are continuous on <span class="process-math">\([a,b]\text{.}\)</span></p>
 </li>
 <li id="li-30">
-<span class="heading"><span class="title">Type 2.</span></span><p id="p-122">We have</p>
+<span class="heading"><span class="title">Type 2.</span></span><p id="p-124">We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{R}=\{(x,y)\colon h_1(y)\leq x\leq h_2(y), c\leq y\leq d\}\text{,}
@@ -277,10 +277,10 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 </ul></article><article class="theorem theorem-like" id="th_Fubini_elementary"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem over elementary planar regions.</span>
 </h3>
-<p id="p-123">Assume <span class="process-math">\(f\)</span> is continuous on the bounded planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\text{.}\)</span></p>
+<p id="p-125">Assume <span class="process-math">\(f\)</span> is continuous on the bounded planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\text{.}\)</span></p>
 <ul class="disc">
 <li id="li-31">
-<span class="heading"><span class="title">Type 1.</span></span><p id="p-124">If   <span class="process-math">\(\mathcal{R}=\{(x,y)\colon a\leq x\leq b, g_1(x)\leq y\leq g_2(x)\}\text{,}\)</span> where <span class="process-math">\(g_1, g_2\)</span> are continuous on <span class="process-math">\([a,b]\text{,}\)</span> then</p>
+<span class="heading"><span class="title">Type 1.</span></span><p id="p-126">If   <span class="process-math">\(\mathcal{R}=\{(x,y)\colon a\leq x\leq b, g_1(x)\leq y\leq g_2(x)\}\text{,}\)</span> where <span class="process-math">\(g_1, g_2\)</span> are continuous on <span class="process-math">\([a,b]\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_planar_type1">
 \begin{equation}
 \iint\limits_\mathcal{R}f(x,y)\, dA=\int_a^b\int_{g_1(x)}^{g_2(x)}f(x,y)\, dy\, dx:=\int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(x,y)\, dy\right) dx\text{.}\tag{1.3.1}
@@ -288,7 +288,7 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 </div>
 </li>
 <li id="li-32">
-<span class="heading"><span class="title">Type 2.</span></span><p id="p-125">If   <span class="process-math">\(\mathcal{R}=\{(x,y)\colon h_1(y)\leq x\leq h_2(y), c\leq y\leq d\}\text{,}\)</span> where <span class="process-math">\(h_1, h_2\)</span> are continuous on <span class="process-math">\([c,d]\text{,}\)</span> then</p>
+<span class="heading"><span class="title">Type 2.</span></span><p id="p-127">If   <span class="process-math">\(\mathcal{R}=\{(x,y)\colon h_1(y)\leq x\leq h_2(y), c\leq y\leq d\}\text{,}\)</span> where <span class="process-math">\(h_1, h_2\)</span> are continuous on <span class="process-math">\([c,d]\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_planar_type2">
 \begin{equation}
 \iint\limits_\mathcal{R}f(x,y)\, dA=\int_c^d\int_{h_1(y)}^{h_2(y)}f(x,y)\, dx\, dy:=
@@ -299,21 +299,21 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 </ul></article><article class="remark remark-like" id="rm_colon_equal"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
 </h3>
-<p id="p-126">The notation <code class="code-inline tex2jax_ignore">:=</code> appearing in <a href="" class="xref" data-knowl="./knowl/eq_Fubini_planar_type1.html" title="Equation 1.3.1">(1.3.1)–(1.3.2)</a> means that the expression on the left is newly notation that we declare to mean the expression on the right. The notation <code class="code-inline tex2jax_ignore">=:</code> is used similarly.</p></article><article class="example example-like" id="eg_Fubini_elem_planar"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_Fubini_elem_planar"><h3 class="heading">
+<p id="p-128">The notation <code class="code-inline tex2jax_ignore">:=</code> appearing in <a href="" class="xref" data-knowl="./knowl/eq_Fubini_planar_type1.html" title="Equation 1.3.1">(1.3.1)–(1.3.2)</a> means that the expression on the left is newly notation that we declare to mean the expression on the right. The notation <code class="code-inline tex2jax_ignore">=:</code> is used similarly.</p></article><article class="example example-like" id="eg_Fubini_elem_planar"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_Fubini_elem_planar"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem over elementary planar regions.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_Fubini_elem_planar"><article class="example example-like"><p id="p-127">In each case below the given region <span class="process-math">\(\mathcal{R}\)</span> is elementary of type 1, type 2, or both. Use <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> to compute <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\text{.}\)</span></p>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_Fubini_elem_planar"><article class="example example-like"><p id="p-129">In each case below the given region <span class="process-math">\(\mathcal{R}\)</span> is elementary of type 1, type 2, or both. Use <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> to compute <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\text{.}\)</span></p>
 <ol class="decimal">
-<li id="li-33"><p id="p-128"><span class="process-math">\(f(x,y)=x+y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region in first quadrant bounded by curves <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=1\text{.}\)</span></p></li>
-<li id="li-34"><p id="p-129"><span class="process-math">\(f(x,y)=x^4-2y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region bounded by <span class="process-math">\(y=-x^2\text{,}\)</span> <span class="process-math">\(y=x^2\text{,}\)</span> <span class="process-math">\(x=-1\text{,}\)</span> <span class="process-math">\(x=1\text{.}\)</span></p></li>
-<li id="li-35"><p id="p-130"><span class="process-math">\(f(x,y)=e^{y^2}\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> triangle with vertices <span class="process-math">\((0,0), (0,1), (1,1)\text{.}\)</span></p></li>
+<li id="li-33"><p id="p-130"><span class="process-math">\(f(x,y)=x+y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region in first quadrant bounded by curves <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=1\text{.}\)</span></p></li>
+<li id="li-34"><p id="p-131"><span class="process-math">\(f(x,y)=x^4-2y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region bounded by <span class="process-math">\(y=-x^2\text{,}\)</span> <span class="process-math">\(y=x^2\text{,}\)</span> <span class="process-math">\(x=-1\text{,}\)</span> <span class="process-math">\(x=1\text{.}\)</span></p></li>
+<li id="li-35"><p id="p-132"><span class="process-math">\(f(x,y)=e^{y^2}\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> triangle with vertices <span class="process-math">\((0,0), (0,1), (1,1)\text{.}\)</span></p></li>
 </ol></article></div>
 <article class="theorem theorem-like" id="th_double_integral_props"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of double integrals.</span>
 </h3>
-<p id="p-131">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded regions <span class="process-math">\(\mathcal{R},  \text{.}\)</span></p>
+<p id="p-133">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded regions <span class="process-math">\(\mathcal{R},  \text{.}\)</span></p>
 <ol class="decimal">
 <li id="li-36">
-<span class="heading"><span class="title">Linearity.</span></span><p id="p-132">Given any constants <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</p>
+<span class="heading"><span class="title">Linearity.</span></span><p id="p-134">Given any constants <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{R}cf(x,y)+dg(x,y)\, dA=
@@ -323,12 +323,12 @@ c  \iint\limits_\mathcal{R}f(x,y)\, dA+d  \iint\limits_\mathcal{R}g(x,y)\, dA
 </li>
 <li id="li-37">
 <span class="heading"><span class="title">Domination.</span></span><p id="p-derived-li-37"><ol class="lower-alpha">
-<li id="li-38"><p id="p-133">If <span class="process-math">\(f\geq 0\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq 0\)</span></p></li>
-<li id="li-39"><p id="p-134">If <span class="process-math">\(f\geq g\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq \iint\limits_{\mathcal{R}}g(x,y)\, dA\text{.}\)</span></p></li>
+<li id="li-38"><p id="p-135">If <span class="process-math">\(f\geq 0\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq 0\)</span></p></li>
+<li id="li-39"><p id="p-136">If <span class="process-math">\(f\geq g\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq \iint\limits_{\mathcal{R}}g(x,y)\, dA\text{.}\)</span></p></li>
 </ol></p>
 </li>
 <li id="li-40">
-<span class="heading"><span class="title">Additivity.</span></span><p id="p-135">If <span class="process-math">\(\mathcal{R}=\mathcal{R}_1\cup \mathcal{R}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span> are non-overlapping, then</p>
+<span class="heading"><span class="title">Additivity.</span></span><p id="p-137">If <span class="process-math">\(\mathcal{R}=\mathcal{R}_1\cup \mathcal{R}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span> are non-overlapping, then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_{\mathcal{R}}f(x,y)\, dA=\iint\limits_{\mathcal{R}_1}f(x,y)\, dA+\iint\limits_{\mathcal{R}_2}f(x,y)\, dA\text{.}
@@ -337,7 +337,7 @@ c  \iint\limits_\mathcal{R}f(x,y)\, dA+d  \iint\limits_\mathcal{R}g(x,y)\, dA
 </li>
 </ol></article><article class="example example-like" id="example-13"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-13"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using double integral properties.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-136">Use symmetry properties of <span class="process-math">\(f\)</span> and <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> to compute <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA\text{,}\)</span> where <span class="process-math">\(f(x,y)=xy\)</span> and <span class="process-math">\(\mathcal{R}\)</span> is the planar region bounded by the curves <span class="process-math">\(x=y^2\)</span> and <span class="process-math">\(x=1+\frac{1}{2}y^2\text{.}\)</span></p></article></div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.geogebra.org/m/n84rytsr</code></div></div>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-138">Use symmetry properties of <span class="process-math">\(f\)</span> and <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> to compute <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA\text{,}\)</span> where <span class="process-math">\(f(x,y)=xy\)</span> and <span class="process-math">\(\mathcal{R}\)</span> is the planar region bounded by the curves <span class="process-math">\(x=y^2\)</span> and <span class="process-math">\(x=1+\frac{1}{2}y^2\text{.}\)</span></p></article></div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.geogebra.org/m/n84rytsr</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn"><code class="code-inline tex2jax_ignore">geogebra.org</code></div></div>
 </div></main>
 </div>
