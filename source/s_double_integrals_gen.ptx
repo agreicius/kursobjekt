@@ -95,7 +95,7 @@
   <title>Fubini's theorem over elementary planar regions</title>
   <statement>
     <p>
-      Assume <m>f</m> is continous on the bounded planar region <m>\mathcal{R}\subseteq \R^2</m>.
+      Assume <m>f</m> is continuous on the bounded planar region <m>\mathcal{R}\subseteq \R^2</m>.
       <ul>
         <li>
           <title>Type 1</title>
@@ -149,7 +149,7 @@
       </li>
       <li>
         <p>
-          <m>f(x,y)=e^{y^2}</m>, <m>\mathcal{R}\colon</m> triangle with vertices <m>(0,0), (1,0), (1,1)</m>.
+          <m>f(x,y)=e^{y^2}</m>, <m>\mathcal{R}\colon</m> triangle with vertices <m>(0,0), (0,1), (1,1)</m>.
         </p>
       </li>
     </ol>
