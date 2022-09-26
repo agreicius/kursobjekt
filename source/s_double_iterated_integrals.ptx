@@ -87,7 +87,7 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
         <p>
           <m>\iint\limits_R x\cos(xy)\, dA</m>, <m>R=[1,2]\times [0,\pi]</m>
         </p>
-        <!-- <solution>
+        <solution>
           <p>
             By Fubini's theorem we have
             <md>
@@ -100,14 +100,14 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
             </md>.
             Note that if we integrated with respect to <m>x</m> first we would have needed to use integration by parts.
           </p>
-        </solution> -->
+        </solution>
       </li>
 
       <li>
         <p>
           <m>\iint\limits_R \frac{x}{1+xy}, dA</m>, <m>R=[0,1]\times [1,2]</m>
         </p>
-        <!-- <solution>
+        <solution>
           <p>
             By Fubini's theorem we have
             <md>
@@ -119,7 +119,7 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
             </md>.
             The penultimate equality uses the indefinite integral formula <m>\int \ln u\, du=u\ln u-u</m>. See what happens when you first integrate with respect to <m>x</m>.
           </p>
-        </solution> -->
+        </solution>
       </li>
     </ol>
   </statement>
