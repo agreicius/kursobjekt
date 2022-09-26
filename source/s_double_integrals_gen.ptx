@@ -206,8 +206,6 @@
 </theorem>
 <example>
   <title>Using double integral properties</title>
-
-
   <statement>
     <p>
       Use symmetry properties of <m>f</m> and <xref ref="th_double_integral_props"/> to compute <m>\iint\limits_{\mathcal{R}}f(x,y)\, dA</m>, where <m>f(x,y)=xy</m> and <m>\mathcal{R}</m> is the planar region bounded by the curves <m>x=y^2</m> and <m>x=1+\frac{1}{2}y^2</m>.
