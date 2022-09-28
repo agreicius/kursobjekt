@@ -26,6 +26,25 @@
     </p>
   </statement>
 </remark>
+<example xml:id="eg_double_integral_area">
+  <statement>
+    <p>
+      Use <xref ref="d_area_planar"/> to compute the area of the given region <m>\mathcal{R}\subseteq \R^2</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>\mathcal{R}</m> is the bounded region between the graphs of <m>x=y^2</m> and <m>x=\frac{1}{2}y^2+1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\mathcal{R}</m> is the circle of radius <m>R</m> centered at the origin.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</example>
 <definition xml:id="d_average_value_planar">
   <idx><h>average value</h><h>planar region</h></idx>
   <notation>
@@ -42,4 +61,12 @@
     </p>
   </statement>
 </definition>
+<example xml:id="eg_average_value_planar">
+  <statement>
+    <p>
+      The temperature <m>T</m> (in degrees Celsius) at a point <m>(x,y)</m> in the bounded region <m>\mathcal{R}</m> between the graphs of <m>y=1-x^2</m> and <m>x^2-1</m> is given by <m>T=f(x,y)=x^2+1</m>. Compute the average temperature over <m>\mathcal{R}</m>.
+    </p>
+  </statement>
+
+</example>
 </section>
