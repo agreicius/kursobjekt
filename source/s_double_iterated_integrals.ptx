@@ -125,7 +125,7 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
   </statement>
 </example>
 <project>
-  <title>Iterated integrals</title>
+  <title>Iterated integrals over rectangle</title>
   <sage>
   <input>
   f(x,y)=x+y^2

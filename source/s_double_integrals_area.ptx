@@ -1,4 +1,45 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_double_integrals_area">
-  <title>Double integrals and area</title>
+  <title>Area of planar regions and average value</title>
+<introduction>
+  <p>
+    Our definitions of <xref ref="d_area_planar" text="custom">area</xref> and <xref ref="d_average_value_planar" text="custom">average value</xref> arise directly from looking at the Riemann sum definition of the integral.
+  </p>
+</introduction>
 
+<definition xml:id="d_area_planar">
+  <idx><h>area</h></idx>
+  <idx><h>measurable</h><h>planar region</h></idx>
+  <title>Area of planar region</title>
+  <statement>
+    <p>
+      A bounded region <m>\mathcal{R}\subseteq \R^2</m> is <term>measurable</term> if the constant function <m>f(x,y)=1</m> is integrable over <m>\mathcal{R}</m>. In this case we define the <term>area</term> of <m>\mathcal{R}</m> as
+      <men xml:id="eq_area_planar">
+        \operatorname{area}\mathcal{R}=\iint_\mathcal{R} 1 \, dA
+      </men>.
+    </p>
+  </statement>
+</definition>
+    <remark xml:id="rm_area_planar">
+  <statement>
+    <p>
+      We have seen other notions of area before in our calculus journey. <xref ref="d_area_planar"/> is more general (it covers a wider family of regions <m>\mathcal{R}\subseteq\R^2</m>) and can be shown to agree to our previous definitions for the cases they cover.
+    </p>
+  </statement>
+</remark>
+<definition xml:id="d_average_value_planar">
+  <idx><h>average value</h><h>planar region</h></idx>
+  <notation>
+    <usage><m>\operatorname{avg}_\mathcal{R}(f)</m></usage>
+    <description>average value of <m>f</m> over <m>\mathcal{R}</m></description>
+  </notation>
+  <title>Average value over planar region</title>
+  <statement>
+    <p>
+      Assume <m>f</m> is integrable over the measurable region <m>\mathcal{R}\subseteq \R^2</m>. The <term>average value</term> of <m>f</m> over <m>\mathcal{R}</m>, denoted <m>\operatorname{avg}_\mathcal{R}(f)</m>, is defined as
+      <men xml:id="eq_average_value_planar">
+        \operatorname{avg}_\mathcal{R}(f)=\frac{1}{\operatorname{area} \mathcal{R}}\iint\limits_\mathcal{R}f(x,y)\, dA
+      </men>.
+    </p>
+  </statement>
+</definition>
 </section>
