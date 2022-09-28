@@ -105,7 +105,7 @@ Let <m>f(x,y)=x+y^2</m>, and let <m>\mathcal{S}</m> be the region lying above th
 
       <li>
         <p>
-          <m>\iint\limits_R \frac{x}{1+xy}, dA</m>, <m>R=[0,1]\times [1,2]</m>
+          <m>\iint\limits_R \frac{x}{1+xy}\, dA</m>, <m>R=[0,1]\times [1,2]</m>
         </p>
         <solution>
           <p>

@@ -326,7 +326,7 @@
     <me>
       y^2=\frac{1}{2}y^2+1\iff y^2=2\iff y=\pm \sqrt{2}
     </me>.
-    Thus the interated integral is
+    Thus the iterated integral is
     <me>
       \iint\limits_\mathcal{R}f(x,y)\, dA=\int_{-\sqrt{2}}^\sqrt{2}\int_{y^2}^{y^2/2+1}xy\, dx\, dy
     </me>,
@@ -366,31 +366,45 @@
 <p>
   Our discussion of oddness in <xref ref="eg_double_integral_props"/> can be generalized to the following result.
 </p>
-<theorem xml:id="th_double_integral_odd">
-  <title>Double integral of odd functions</title>
+<theorem xml:id="th_double_integral_even_odd">
+  <title>Double integral of even/odd functions</title>
   <statement>
     <p>
       Let <m>f</m> be integrable on the bounded region <m>\mathcal{R}\subseteq \R^2</m>.
     </p>
     <ul>
       <li>
-        <title>Odd with respect to <m>x</m></title>
+        <title>Odd functions</title>
         <p>
           If <m>f</m> is odd with respect to <m>x</m> (<ie /> <m>f(-x,y)=-f(x,y)</m> for all <m>(x,y)\in \mathcal{R}</m>) and <m>\mathcal{R}</m> satisfies
-          <me>
+          <m>
             (x,y)\in \mathcal{R} \iff (-x,y)\in \mathcal{R}
-          </me>,
+          </m>,
+          then <m>\iint\limits_{\mathcal{R}}f(x,y)\, dA=0</m>.
+        </p>
+        <p>
+          Similarly, if <m>f</m> is odd with respect to <m>y</m> (<ie /> <m>f(x,-y)=-f(x,y)</m> for all <m>(x,y)\in \mathcal{R}</m>) and <m>\mathcal{R}</m> satisfies
+          <m>
+            (x,y)\in \mathcal{R} \iff (x,-y)\in \mathcal{R}
+          </m>,
           then <m>\iint\limits_{\mathcal{R}}f(x,y)\, dA=0</m>.
         </p>
       </li>
       <li>
-        <title>Odd with respect to <m>y</m></title>
+        <title>Even functions</title>
         <p>
-          If <m>f</m> is odd with respect to <m>y</m> (<ie /> <m>f(x,-y)=-f(x,y)</m> for all <m>(x,y)\in \mathcal{R}</m>) and <m>\mathcal{R}</m> satisfies
-          <me>
+          If <m>f</m> is even with respect to <m>x</m> (<ie /> <m>f(-x,y)=f(x,y)</m> for all <m>(x,y)\in \mathcal{R}</m>) and <m>\mathcal{R}</m> satisfies
+          <m>
+            (x,y)\in \mathcal{R} \iff (-x,y)\in \mathcal{R}
+          </m>,
+          then <m>\iint\limits_{\mathcal{R}}f(x,y)\, dA=2\iint\limits_{\mathcal{R_1}}f(x,y)\, dA</m>.
+        </p>
+        <p>
+          Similarly, if <m>f</m> is even with respect to <m>y</m> (<ie /> <m>f(x,-y)=f(x,y)</m> for all <m>(x,y)\in \mathcal{R}</m>) and <m>\mathcal{R}</m> satisfies
+          <m>
             (x,y)\in \mathcal{R} \iff (x,-y)\in \mathcal{R}
-          </me>,
-          then <m>\iint\limits_{\mathcal{R}}f(x,y)\, dA=0</m>.
+          </m>,
+          then <m>\iint\limits_{\mathcal{R}}f(x,y)\, dA=2\iint\limits_{\mathcal{R_1}}f(x,y)\, dA</m>.
         </p>
       </li>
     </ul>

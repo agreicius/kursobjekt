@@ -64,7 +64,7 @@
 <example xml:id="eg_average_value_planar">
   <statement>
     <p>
-      The temperature <m>T</m> (in degrees Celsius) at a point <m>(x,y)</m> in the bounded region <m>\mathcal{R}</m> between the graphs of <m>y=1-x^2</m> and <m>x^2-1</m> is given by <m>T=f(x,y)=x^2+1</m>. Compute the average temperature over <m>\mathcal{R}</m>.
+      The temperature <m>T</m> (in degrees Celsius) at a point <m>(x,y)</m> in the bounded region <m>\mathcal{R}</m> between the graphs of <m>y=1-x^2</m> and <m>y=x^2-1</m> is given by <m>T=f(x,y)=x^2+1</m>. Compute the average temperature over <m>\mathcal{R}</m>.
     </p>
   </statement>
 
