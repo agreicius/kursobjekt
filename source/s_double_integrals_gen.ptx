@@ -304,7 +304,7 @@
   </statement>
   <solution>
     <p>
-      Here is a diagram of <m>\mathcal{R}</m>, which we see is of type 2.
+      Here is a diagram of <m>\mathcal{R}</m>, which we see is of type 2 and <em>not</em> of type 1.
     </p>
     <image xml:id="sageplot_region_props" label="sageplot_region_props" width="60%">
       <sageplot>
@@ -328,7 +328,7 @@
     </me>.
     Thus the interated integral is
     <me>
-      \iint\limits_\mathcal{R}f(x,y)\, dA=\int_{-\sqrt{2}}^\sqrt{2}xy\, dx\, dy
+      \iint\limits_\mathcal{R}f(x,y)\, dA=\int_{-\sqrt{2}}^\sqrt{2}\int_{y^2}^{y^2/2+1}xy\, dx\, dy
     </me>,
     which is not very difficult to compute. On the other hand we see that <m>f(x,y)=xy</m> is <em>odd with respect to <m>y</m></em>, in the sense that <m>f(x,-y)=-f(x,y)</m>. Furthermore the region <m>\mathcal{R}</m> is divided into two symmetric regions <m>\mathcal{R}_1</m> and <m>\mathcal{R}_2</m> based on the <m>y</m>-coordinate of a point being positive or negative.
   </p>

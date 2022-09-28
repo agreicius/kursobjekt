@@ -14,7 +14,7 @@
     <p>
       A bounded region <m>\mathcal{R}\subseteq \R^2</m> is <term>measurable</term> if the constant function <m>f(x,y)=1</m> is integrable over <m>\mathcal{R}</m>. In this case we define the <term>area</term> of <m>\mathcal{R}</m> as
       <men xml:id="eq_area_planar">
-        \operatorname{area}\mathcal{R}=\iint_\mathcal{R} 1 \, dA
+        \operatorname{area}\mathcal{R}=\iint\limits_\mathcal{R} 1 \, dA
       </men>.
     </p>
   </statement>
@@ -22,7 +22,7 @@
     <remark xml:id="rm_area_planar">
   <statement>
     <p>
-      We have seen other notions of area before in our calculus journey. <xref ref="d_area_planar"/> is more general (it covers a wider family of regions <m>\mathcal{R}\subseteq\R^2</m>) and can be shown to agree to our previous definitions for the cases they cover.
+      We have seen other notions of area before in our calculus journey. <xref ref="d_area_planar"/> is more general (it covers a wider family of regions <m>\mathcal{R}\subseteq\R^2</m>) and can be shown to agree to the previous definitions for the cases they cover.
     </p>
   </statement>
 </remark>
