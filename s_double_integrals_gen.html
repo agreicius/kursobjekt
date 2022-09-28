@@ -57,7 +57,13 @@ window.MathJax = {
     )}
 },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
@@ -193,7 +199,7 @@ window.MathJax = {
 <li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
 <li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
 <li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="active">Double integrals over general regions</a></li>
-<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Double integrals and area</a></li>
+<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Area of planar regions and average value</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -299,21 +305,64 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 </ul></article><article class="remark remark-like" id="rm_colon_equal"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
 </h3>
-<p id="p-128">The notation <code class="code-inline tex2jax_ignore">:=</code> appearing in <a href="" class="xref" data-knowl="./knowl/eq_Fubini_planar_type1.html" title="Equation 1.3.1">(1.3.1)–(1.3.2)</a> means that the expression on the left is newly notation that we declare to mean the expression on the right. The notation <code class="code-inline tex2jax_ignore">=:</code> is used similarly.</p></article><article class="example example-like" id="eg_Fubini_elem_planar"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_Fubini_elem_planar"><h3 class="heading">
+<p id="p-128">The notation <code class="code-inline tex2jax_ignore">:=</code> appearing in <a href="" class="xref" data-knowl="./knowl/eq_Fubini_planar_type1.html" title="Equation 1.3.1">(1.3.1)–(1.3.2)</a> means that the expression on the left is newly notation that we declare to mean the expression on the right. The notation <code class="code-inline tex2jax_ignore">=:</code> is used similarly.</p></article><article class="example example-like" id="eg_Fubini_elem_planar"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-eg_Fubini_elem_planar"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem over elementary planar regions.</span>
 </h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_Fubini_elem_planar"><article class="example example-like"><p id="p-129">In each case below the given region <span class="process-math">\(\mathcal{R}\)</span> is elementary of type 1, type 2, or both. Use <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> to compute <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\text{.}\)</span></p>
 <ol class="decimal">
-<li id="li-33"><p id="p-130"><span class="process-math">\(f(x,y)=x+y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region in first quadrant bounded by curves <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=1\text{.}\)</span></p></li>
-<li id="li-34"><p id="p-131"><span class="process-math">\(f(x,y)=x^4-2y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region bounded by <span class="process-math">\(y=-x^2\text{,}\)</span> <span class="process-math">\(y=x^2\text{,}\)</span> <span class="process-math">\(x=-1\text{,}\)</span> <span class="process-math">\(x=1\text{.}\)</span></p></li>
-<li id="li-35"><p id="p-132"><span class="process-math">\(f(x,y)=e^{y^2}\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> triangle with vertices <span class="process-math">\((0,0), (0,1), (1,1)\text{.}\)</span></p></li>
+<li id="li-33">
+<p id="p-130"><span class="process-math">\(f(x,y)=x+y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region in first quadrant bounded by curves <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=1\text{.}\)</span></p>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
+<p id="p-131">The region <span class="process-math">\(\mathcal{R}\)</span> is both of type 1 and type 2. The figure below indicates some of the details in its type-1 description. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_type1.svg" role="img" class="contained"></div> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Fubini_elementary.html" id="md-17">
+\begin{align*}
+\iint\limits_\mathcal{R}f(x,y)\, dA \amp =\int_0^1\int_{x^2}^1x+y\, dy\, dx\amp \knowl{./knowl/th_Fubini_elementary.html}{\text{Theorem 1.3.6}}\\
+\amp=\int_0^1 xy+\frac{1}{2}y^2\Bigr\vert_{y=x^2}^{y=1}\, dx \\
+\amp = \int_0^1 x+\frac{1}{2}-(x^3+\frac{1}{2}x^4)\, dx\\
+\amp = \frac{1}{2}x^2+\frac{1}{2}x-\frac{1}{4}x^4-\frac{1}{10}x^5\Bigr\vert_0^1\\
+\amp =\frac{1}{2}+\frac{1}{2}-(\frac{1}{4}-\frac{1}{10})=\frac{13}{20}\text{.}
+\end{align*}
+</div>
+</div></div>
+</li>
+<li id="li-34">
+<p id="p-132"><span class="process-math">\(f(x,y)=x^4-2y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region bounded by <span class="process-math">\(y=-x^2\text{,}\)</span> <span class="process-math">\(y=x^2\text{,}\)</span> <span class="process-math">\(x=-1\text{,}\)</span> <span class="process-math">\(x=1\text{.}\)</span></p>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
+<p id="p-133">The given <span class="process-math">\(\mathcal{R}\)</span> is type 1, but not type 2. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_type1_2.svg" role="img" class="contained"></div> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Fubini_elementary.html" id="md-18">
+\begin{align*}
+\iint\limits_\mathcal{R}f(x,y)\, dA\amp = \int_{-1}^1\int_{-x^2}^{x^2}(x^4-2y)\, dy\, dx \amp \knowl{./knowl/th_Fubini_elementary.html}{\text{Theorem 1.3.6}}\\
+\amp=\int_{-1}^1x^4y-y^2\Bigr\vert_{y=-x^2}^{y=x^2}\, dx  \\
+\amp =\int_{-1}^1 x^6-x^4-(-x^6-x^4)\, dx\\
+\amp =\frac{2}{7}x^7\Bigr\vert_{-1}^1\\
+\amp =\frac{4}{7}\text{.}
+\end{align*}
+</div>
+</div></div>
+</li>
+<li id="li-35">
+<p id="p-134"><span class="process-math">\(f(x,y)=e^{y^2}\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> triangle with vertices <span class="process-math">\((0,0), (0,1), (1,1)\text{.}\)</span></p>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
+<p id="p-135">The region <span class="process-math">\(\mathcal{R}\)</span> is of type 1 and 2, and thank goodness for that! <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_type12.svg" role="img" class="contained"></div> Indeed, notice that if we tried to integrate with respect to <span class="process-math">\(y\)</span> first, as in the last two examples, we would get nowhere (by hand). This is because although the function <span class="process-math">\(g(y)=e^{y^2}\)</span> does indeed have an antiderivative, it does not have one that we can write down in terms of our library of familiar functions. (We say <span class="process-math">\(g(y)=e^{y^2}\)</span> does not have an <em class="emphasis">elementary</em> antiderivative.)</p>
+<p id="p-136">However, we can certainly integrate with respect to <span class="process-math">\(x\text{,}\)</span> and since <span class="process-math">\(\mathcal{R}=\{(x,y)\colon 0\leq x\leq y, 0\leq y\leq 1\}\)</span> is also of type 2, <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> allows us to do just that:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Fubini_elementary.html" id="md-19">
+\begin{align*}
+\iint\limits_\mathcal{R}f(x,y)\, dA \amp =\int_{0}^1\int_0^ye^{y^2}\, dx\, dy\\
+\amp=\int_0^1 xe^{y^2}\Bigr\vert_{x=0}^{x=y}\, dy \\
+\amp =\int_0^1 ye^{y^2}\, dy\\
+\amp =\frac{1}{2}e^{y^2}\Bigr\vert_0^1\\
+\amp =\frac{1}{2}(e-1)\text{.}
+\end{align*}
+</div>
+</div></div>
+</li>
 </ol></article></div>
 <article class="theorem theorem-like" id="th_double_integral_props"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of double integrals.</span>
 </h3>
-<p id="p-133">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded regions <span class="process-math">\(\mathcal{R},  \text{.}\)</span></p>
+<p id="p-137">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded regions <span class="process-math">\(\mathcal{R},  \text{.}\)</span></p>
 <ol class="decimal">
 <li id="li-36">
-<span class="heading"><span class="title">Linearity.</span></span><p id="p-134">Given any constants <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</p>
+<span class="heading"><span class="title">Linearity.</span></span><p id="p-138">Given any constants <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{R}cf(x,y)+dg(x,y)\, dA=
@@ -323,21 +372,122 @@ c  \iint\limits_\mathcal{R}f(x,y)\, dA+d  \iint\limits_\mathcal{R}g(x,y)\, dA
 </li>
 <li id="li-37">
 <span class="heading"><span class="title">Domination.</span></span><p id="p-derived-li-37"><ol class="lower-alpha">
-<li id="li-38"><p id="p-135">If <span class="process-math">\(f\geq 0\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq 0\)</span></p></li>
-<li id="li-39"><p id="p-136">If <span class="process-math">\(f\geq g\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq \iint\limits_{\mathcal{R}}g(x,y)\, dA\text{.}\)</span></p></li>
+<li id="li-38"><p id="p-139">If <span class="process-math">\(f\geq 0\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq 0\)</span></p></li>
+<li id="li-39"><p id="p-140">If <span class="process-math">\(f\geq g\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\geq \iint\limits_{\mathcal{R}}g(x,y)\, dA\text{.}\)</span></p></li>
 </ol></p>
 </li>
 <li id="li-40">
-<span class="heading"><span class="title">Additivity.</span></span><p id="p-137">If <span class="process-math">\(\mathcal{R}=\mathcal{R}_1\cup \mathcal{R}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span> are non-overlapping, then</p>
+<span class="heading"><span class="title">Additivity.</span></span><p id="p-141">If <span class="process-math">\(\mathcal{R}=\mathcal{R}_1\cup \mathcal{R}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span> are non-overlapping, then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_{\mathcal{R}}f(x,y)\, dA=\iint\limits_{\mathcal{R}_1}f(x,y)\, dA+\iint\limits_{\mathcal{R}_2}f(x,y)\, dA\text{.}
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="example example-like" id="example-13"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-13"><h3 class="heading">
+<li id="li-41">
+<span class="heading"><span class="title">Absolute value.</span></span><p id="p-142">The function <span class="process-math">\(\abs{f}\)</span> is integrable, and we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\vert \iint\limits_\mathcal{R}f(x,y)\, dA\right\vert\leq
+\iint\limits_\mathcal{R}\vert f(x,y)\vert \, dA\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="example example-like" id="eg_double_integral_props"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-eg_double_integral_props"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using double integral properties.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-138">Use symmetry properties of <span class="process-math">\(f\)</span> and <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> to compute <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA\text{,}\)</span> where <span class="process-math">\(f(x,y)=xy\)</span> and <span class="process-math">\(\mathcal{R}\)</span> is the planar region bounded by the curves <span class="process-math">\(x=y^2\)</span> and <span class="process-math">\(x=1+\frac{1}{2}y^2\text{.}\)</span></p></article></div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.geogebra.org/m/n84rytsr</code></div></div>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_double_integral_props"><article class="example example-like"><p id="p-143">Use symmetry properties of <span class="process-math">\(f\)</span> and <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> to compute <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA\text{,}\)</span> where <span class="process-math">\(f(x,y)=xy\)</span> and <span class="process-math">\(\mathcal{R}\)</span> is the planar region bounded by the curves <span class="process-math">\(x=y^2\)</span> and <span class="process-math">\(x=1+\frac{1}{2}y^2\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<p id="p-144">Here is a diagram of <span class="process-math">\(\mathcal{R}\text{,}\)</span> which we see is of type 2 and <em class="emphasis">not</em> of type 1.</p>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_props.svg" role="img" class="contained"></div>
+<p id="p-145">One option would be to set up a type-2 iterated integral. We need to find the <span class="process-math">\(y\)</span>-coordinates of the points of intersection of the two curves in order to get the bounds for <span class="process-math">\(y\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y^2=\frac{1}{2}y^2+1\iff y^2=2\iff y=\pm \sqrt{2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus the iterated integral is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{R}f(x,y)\, dA=\int_{-\sqrt{2}}^\sqrt{2}\int_{y^2}^{y^2/2+1}xy\, dx\, dy\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is not very difficult to compute. On the other hand we see that <span class="process-math">\(f(x,y)=xy\)</span> is <em class="emphasis">odd with respect to <span class="process-math">\(y\)</span></em>, in the sense that <span class="process-math">\(f(x,-y)=-f(x,y)\text{.}\)</span> Furthermore the region <span class="process-math">\(\mathcal{R}\)</span> is divided into two symmetric regions <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span> based on the <span class="process-math">\(y\)</span>-coordinate of a point being positive or negative.</p>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_props2.svg" role="img" class="contained"></div>
+<p id="p-146">Now using additivity (<a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">1.3.9</a>) of the integral, we have the following persuasive looking chain of equalities:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_double_integral_props.html" id="md-20">
+\begin{align*}
+\iint\limits_\mathcal{R}f(x,y)\, dA \amp = \iint\limits_{\mathcal{R}_1}f(x,y)\, dA+\iint\limits_{\mathcal{R}_2}f(x,y)\, dA\\
+\amp= \iint\limits_{\mathcal{R}_1}f(x,y)\, dA-\iint\limits_{\mathcal{R}_1}f(x,y)\, dA\amp (f(x,-y)=-f(x,y))\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p class="continuation">My use of “persuasive” should be a red flag. The question is whether this chain of equalities is actually valid; and this boils down to whether <span class="process-math">\(\iint\limits_{\mathcal{R}_2}f(x,y)\, dA=-\iint\limits_{\mathcal{R}_1}f(x,y)\, dA\text{,}\)</span> as claimed. Here is a graphical argument: we have <span class="process-math">\(f(x,y)\geq 0\)</span> on <span class="process-math">\(\mathcal{R}_1\text{,}\)</span> and thus <span class="process-math">\(\iint\limits_{\mathcal{R}_1}f(x,y)\, dA\)</span> computes the volume <span class="process-math">\(V\)</span> of the solid region above <span class="process-math">\(\mathcal{R}_1\)</span> and below the graph of <span class="process-math">\(f\text{;}\)</span> since <span class="process-math">\(f(x,-y)=-f(x,y)\text{,}\)</span> it follows that <span class="process-math">\(-f(x,y)\geq 0\)</span> on <span class="process-math">\(\mathcal{R}_2\text{,}\)</span> and <span class="process-math">\(\iint\limits_{\mathcal{R}_2}-f(x,y)\, dA\)</span> computes the same volume <span class="process-math">\(V\)</span> (by symmetry of <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span>); we conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_double_integral_props.html">
+\begin{equation*}
+\iint\limits_{\mathcal{R}_1}f(x,y)\, dA=\iint\limits_{\mathcal{R}_2}-f(x,y)\, dA=-\iint\limits_{\mathcal{R}_2}f(x,y)\, dA\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We could make this argument even more persuasive by appealing to the limit definition of the double integral: indeed, the oddness of <span class="process-math">\(f(x,y)\)</span> with respect to <span class="process-math">\(y\text{,}\)</span> and symmetry of <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span> allow us to choose sequences of Riemann sums for <span class="process-math">\(S_n\)</span> and <span class="process-math">\(S_n'\)</span> for both integrals for which <span class="process-math">\(S_n=-S_n\)</span> for all <span class="process-math">\(n\text{.}\)</span></p>
+</div></div>
+</div></article></div>
+<p id="p-147">Our discussion of oddness in <a href="" class="xref" data-knowl="./knowl/eg_double_integral_props.html" title="Example 1.3.10: Using double integral properties">Example 1.3.10</a> can be generalized to the following result.</p>
+<article class="theorem theorem-like" id="th_double_integral_even_odd"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Double integral of even/odd functions.</span>
+</h3>
+<p id="p-148">Let <span class="process-math">\(f\)</span> be integrable on the bounded region <span class="process-math">\(\mathcal{R}\subseteq \R^2\text{.}\)</span></p>
+<ul class="disc">
+<li id="li-42">
+<span class="heading"><span class="title">Odd functions.</span></span><p id="p-149">If <span class="process-math">\(f\)</span> is odd with respect to <span class="process-math">\(x\)</span> (i.e. <span class="process-math">\(f(-x,y)=-f(x,y)\)</span> for all <span class="process-math">\((x,y)\in \mathcal{R}\)</span>) and <span class="process-math">\(\mathcal{R}\)</span> satisfies <span class="process-math">\((x,y)\in \mathcal{R} \iff (-x,y)\in \mathcal{R}
+\text{,}\)</span> then <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA=0\text{.}\)</span></p>
+<p id="p-150">Similarly, if <span class="process-math">\(f\)</span> is odd with respect to <span class="process-math">\(y\)</span> (i.e. <span class="process-math">\(f(x,-y)=-f(x,y)\)</span> for all <span class="process-math">\((x,y)\in \mathcal{R}\)</span>) and <span class="process-math">\(\mathcal{R}\)</span> satisfies <span class="process-math">\((x,y)\in \mathcal{R} \iff (x,-y)\in \mathcal{R}
+\text{,}\)</span> then <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA=0\text{.}\)</span></p>
+</li>
+<li id="li-43">
+<span class="heading"><span class="title">Even functions.</span></span><p id="p-151">If <span class="process-math">\(f\)</span> is even with respect to <span class="process-math">\(x\)</span> (i.e. <span class="process-math">\(f(-x,y)=f(x,y)\)</span> for all <span class="process-math">\((x,y)\in \mathcal{R}\)</span>) and <span class="process-math">\(\mathcal{R}\)</span> satisfies <span class="process-math">\((x,y)\in \mathcal{R} \iff (-x,y)\in \mathcal{R}
+\text{,}\)</span> then <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA=2\iint\limits_{\mathcal{R_1}}f(x,y)\, dA\text{.}\)</span></p>
+<p id="p-152">Similarly, if <span class="process-math">\(f\)</span> is even with respect to <span class="process-math">\(y\)</span> (i.e. <span class="process-math">\(f(x,-y)=f(x,y)\)</span> for all <span class="process-math">\((x,y)\in \mathcal{R}\)</span>) and <span class="process-math">\(\mathcal{R}\)</span> satisfies <span class="process-math">\((x,y)\in \mathcal{R} \iff (x,-y)\in \mathcal{R}
+\text{,}\)</span> then <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA=2\iint\limits_{\mathcal{R_1}}f(x,y)\, dA\text{.}\)</span></p>
+</li>
+</ul></article><article class="project project-like" id="sage_iter_elementary_region"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_iter_elementary_region"><h3 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Iterated integrals over elementary regions.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_iter_elementary_region"><article class="project project-like"><p id="p-153">Sage can compute the iterated integrals appearing in <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> for regions of type 1 and 2. The cells below compute the first and third integrals from <a href="" class="xref" data-knowl="./knowl/eg_Fubini_elem_planar.html" title="Example 1.3.8: Fubini's theorem over elementary planar regions">Example 1.3.8</a>: the first as over a region of type 1, the second as over a region of type 2.</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-6"><script type="text/x-sage">f(x,y)=x+y
+a=0
+b=1
+c=x^2
+d=1
+show(integrate(f(x,y),y,c,d))
+show(integrate(integrate(f(x,y),y,c,d),x,a,b))
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-7"><script type="text/x-sage">f(x,y)=e^(y^2)
+a=0
+b=y
+c=0
+d=1
+show(integrate(f(x,y),x,a,b))
+show(integrate(integrate(f(x,y),x,a,b),y,c,d))
+</script></pre>
+<p id="p-154">We mentioned that we can't get far by hand integrating <span class="process-math">\(e^{y^2}\)</span> with respect to <span class="process-math">\(y\text{,}\)</span> but Sage can handle it.</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-8"><script type="text/x-sage">f(x,y)=e^(y^2)
+a=0
+b=1
+c=x
+d=1
+show(integrate(f(x,y),y,c,d))
+show(integrate(integrate(f(x,y),y,c,d),x,a,b))
+</script></pre>
+<p id="p-155">What is <span class="process-math">\(\operatorname{erf}\text{?}\)</span> You can ask Sage (as we do below), and it tells you that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{erf}(x)=\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}
+dt\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Equivalently, using the fundamental theorem of calculus, we see that <span class="process-math">\(\operatorname{erf}(x)\)</span> is the unique antiderivative of <span class="process-math">\(\frac{2}{\sqrt{\pi}}e^{-x^2}\)</span> whose value at <span class="process-math">\(x=0\)</span> is zero.</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-9"><script type="text/x-sage">erf?
+</script></pre>
+<p id="p-156"></p></article></div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.geogebra.org/m/n84rytsr</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn"><code class="code-inline tex2jax_ignore">geogebra.org</code></div></div>
 </div></main>
 </div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h3 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Iterated integrals over elementary regions.</span>
+</h3>
+<p>Sage can compute the iterated integrals appearing in <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> for regions of type 1 and 2. The cells below compute the first and third integrals from <a href="" class="xref" data-knowl="./knowl/eg_Fubini_elem_planar.html" title="Example 1.3.8: Fubini's theorem over elementary planar regions">Example 1.3.8</a>: the first as over a region of type 1, the second as over a region of type 2.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-6"><script type="text/x-sage">f(x,y)=x+y
+a=0
+b=1
+c=x^2
+d=1
+show(integrate(f(x,y),y,c,d))
+show(integrate(integrate(f(x,y),y,c,d),x,a,b))
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-7"><script type="text/x-sage">f(x,y)=e^(y^2)
+a=0
+b=y
+c=0
+d=1
+show(integrate(f(x,y),x,a,b))
+show(integrate(integrate(f(x,y),x,a,b),y,c,d))
+</script></pre>
+<p>We mentioned that we can't get far by hand integrating <span class="process-math">\(e^{y^2}\)</span> with respect to <span class="process-math">\(y\text{,}\)</span> but Sage can handle it.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-8"><script type="text/x-sage">f(x,y)=e^(y^2)
+a=0
+b=1
+c=x
+d=1
+show(integrate(f(x,y),y,c,d))
+show(integrate(integrate(f(x,y),y,c,d),x,a,b))
+</script></pre>
+<p>What is <span class="process-math">\(\operatorname{erf}\text{?}\)</span> You can ask Sage (as we do below), and it tells you that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{erf}(x)=\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}
+dt\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Equivalently, using the fundamental theorem of calculus, we see that <span class="process-math">\(\operatorname{erf}(x)\)</span> is the unique antiderivative of <span class="process-math">\(\frac{2}{\sqrt{\pi}}e^{-x^2}\)</span> whose value at <span class="process-math">\(x=0\)</span> is zero.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-9"><script type="text/x-sage">erf?
+</script></pre>
+<p></p></article><span class="incontext"><a href="s_double_integrals_gen.html#sage_iter_elementary_region" class="internal">in-context</a></span>
+</body>
+</html>

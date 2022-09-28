@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Double integrals and area</title>
+<title>Area of planar regions and average value</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -193,7 +193,7 @@ window.MathJax = {
 <li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
 <li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
 <li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals over general regions</a></li>
-<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="active">Double integrals and area</a></li>
+<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="active">Area of planar regions and average value</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -206,8 +206,37 @@ window.MathJax = {
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="s_double_integrals_area"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Double integrals and area</span>
-</h2></section></div></main>
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Area of planar regions and average value</span>
+</h2>
+<section class="introduction" id="introduction-5"><p id="p-157">Our definitions of <a href="" class="xref" data-knowl="./knowl/d_area_planar.html" title="Definition 1.4.1: Area of planar region">area</a> and <a href="" class="xref" data-knowl="./knowl/d_average_value_planar.html" title="Definition 1.4.4: Average value over planar region">average value</a> arise directly from looking at the Riemann sum definition of the integral.</p></section><article class="definition definition-like" id="d_area_planar"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Area of planar region.</span>
+</h3>
+<p id="p-158">A bounded region <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> is <dfn class="terminology">measurable</dfn> if the constant function <span class="process-math">\(f(x,y)=1\)</span> is integrable over <span class="process-math">\(\mathcal{R}\text{.}\)</span> In this case we define the <dfn class="terminology">area</dfn> of <span class="process-math">\(\mathcal{R}\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_area_planar">
+\begin{equation}
+\operatorname{area}\mathcal{R}=\iint\limits_\mathcal{R} 1 \, dA\text{.}\tag{1.4.1}
+\end{equation}
+</div></article><article class="remark remark-like" id="rm_area_planar"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h3>
+<p id="p-159">We have seen other notions of area before in our calculus journey. <a href="" class="xref" data-knowl="./knowl/d_area_planar.html" title="Definition 1.4.1: Area of planar region">Definition 1.4.1</a> is more general (it covers a wider family of regions <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span>) and can be shown to agree to the previous definitions for the cases they cover.</p></article><article class="example example-like" id="eg_double_integral_area"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_double_integral_area"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_double_integral_area"><article class="example example-like"><p id="p-160">Use <a href="" class="xref" data-knowl="./knowl/d_area_planar.html" title="Definition 1.4.1: Area of planar region">Definition 1.4.1</a> to compute the area of the given region <span class="process-math">\(\mathcal{R}\subseteq \R^2\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-44"><p id="p-161"><span class="process-math">\(\mathcal{R}\)</span> is the bounded region between the graphs of <span class="process-math">\(x=y^2\)</span> and <span class="process-math">\(x=\frac{1}{2}y^2+1\text{.}\)</span></p></li>
+<li id="li-45"><p id="p-162"><span class="process-math">\(\mathcal{R}\)</span> is the circle of radius <span class="process-math">\(R\)</span> centered at the origin.</p></li>
+</ol></article></div>
+<article class="definition definition-like" id="d_average_value_planar"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over planar region.</span>
+</h3>
+<p id="p-163">Assume <span class="process-math">\(f\)</span> is integrable over the measurable region <span class="process-math">\(\mathcal{R}\subseteq \R^2\text{.}\)</span> The <dfn class="terminology">average value</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{R}\text{,}\)</span> denoted <span class="process-math">\(\operatorname{avg}_\mathcal{R}(f)\text{,}\)</span> is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_average_value_planar">
+\begin{equation}
+\operatorname{avg}_\mathcal{R}(f)=\frac{1}{\operatorname{area} \mathcal{R}}\iint\limits_\mathcal{R}f(x,y)\, dA\text{.}\tag{1.4.2}
+\end{equation}
+</div></article><article class="example example-like" id="eg_average_value_planar"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_average_value_planar"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_average_value_planar"><article class="example example-like"><p id="p-164">The temperature <span class="process-math">\(T\)</span> (in degrees Celsius) at a point <span class="process-math">\((x,y)\)</span> in the bounded region <span class="process-math">\(\mathcal{R}\)</span> between the graphs of <span class="process-math">\(y=1-x^2\)</span> and <span class="process-math">\(y=x^2-1\)</span> is given by <span class="process-math">\(T=f(x,y)=x^2+1\text{.}\)</span> Compute the average temperature over <span class="process-math">\(\mathcal{R}\text{.}\)</span></p></article></div></section></div></main>
 </div>
 </body>
 </html>

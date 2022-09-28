@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span>
+</h3>
+<p>The region <span class="process-math">\(\mathcal{R}\)</span> is of type 1 and 2, and thank goodness for that! <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_type12.svg" role="img" class="contained"></div> Indeed, notice that if we tried to integrate with respect to <span class="process-math">\(y\)</span> first, as in the last two examples, we would get nowhere (by hand). This is because although the function <span class="process-math">\(g(y)=e^{y^2}\)</span> does indeed have an antiderivative, it does not have one that we can write down in terms of our library of familiar functions. (We say <span class="process-math">\(g(y)=e^{y^2}\)</span> does not have an <em class="emphasis">elementary</em> antiderivative.)</p>
+<p>However, we can certainly integrate with respect to <span class="process-math">\(x\text{,}\)</span> and since <span class="process-math">\(\mathcal{R}=\{(x,y)\colon 0\leq x\leq y, 0\leq y\leq 1\}\)</span> is also of type 2, <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> allows us to do just that:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Fubini_elementary.html">
+\begin{align*}
+\iint\limits_\mathcal{R}f(x,y)\, dA \amp =\int_{0}^1\int_0^ye^{y^2}\, dx\, dy\\
+\amp=\int_0^1 xe^{y^2}\Bigr\vert_{x=0}^{x=y}\, dy \\
+\amp =\int_0^1 ye^{y^2}\, dy\\
+\amp =\frac{1}{2}e^{y^2}\Bigr\vert_0^1\\
+\amp =\frac{1}{2}(e-1)\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_double_integrals_gen.html#solution-10" class="internal">in-context</a></span>
+</body>
+</html>
