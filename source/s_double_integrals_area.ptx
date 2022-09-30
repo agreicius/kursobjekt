@@ -7,7 +7,7 @@
 </introduction>
 
 <definition xml:id="d_area_planar">
-  <idx><h>area</h></idx>
+  <idx><h>area</h><h>via double integral</h></idx>
   <idx><h>measurable</h><h>planar region</h></idx>
   <title>Area of planar region</title>
   <statement>

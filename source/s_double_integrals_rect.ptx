@@ -5,7 +5,7 @@
     <usage><m>\norm{P}</m></usage>
     <description>norm of a partition</description>
   </notation>
-  <idx><h>partition</h></idx>
+  <idx><h>partition</h><h>of rectangle</h></idx>
   <idx><h>partition</h><h>norm</h></idx>
   <idx><h>partition</h><h>pointed</h></idx>
   <idx><h>partition</h><h>sample points</h></idx>
@@ -17,7 +17,7 @@
       <me>
         R=\{(x,y)\in \R^2\colon a\leq x\leq b, c\leq y\leq d\}
       </me>.
-      A <term>partition</term> <m>P</m> of the rectangle <m>R</m> is a subdivision <m>R=R_1\cup R_2\cdots R_n</m> of <m>R</m> into smaller subrectangles <m>R_k</m> using a grid of lines parallel to the <m>x</m>- and <m>y</m>-axes. The <term>norm</term> of <m>P</m>, denoted <m>\norm{P}</m>, is defined as the maximum width or length of any of the subrectangles of <m>P</m>. A <term>pointed partition</term> is a partition <m>P</m> along with a choice of <term>sample points</term> <m>(x_k, y_k)\in R_k</m> lying in each subrectangle.
+      A <term>partition</term> <m>P</m> of the rectangle <m>R</m> is a subdivision <m>R=R_1\cup R_2\cdots R_n</m> of <m>R</m> into smaller subrectangles <m>R_k</m> using a grid of lines parallel to the <m>x</m>- and <m>y</m>-axes. The <term>norm</term> of <m>P</m>, denoted <m>\norm{P}</m>, is defined as the maximum width or length of any of the subrectangles of <m>P</m>. A <term>pointed partition</term> is a partition <m>P</m> along with a selection of <term>sample points</term> <m>(x_k, y_k)\in R_k</m> from each subrectangle.
     </p>
   </statement>
 </definition>
@@ -37,10 +37,6 @@
   <title>Double integral over a rectangle</title>
   <idx><h>double integral</h><h>over a rectangle</h></idx>
   <idx><h>integrable</h><h>over a rectangle</h></idx>
-  <notation>
-    <usage><m>\iint\limits_R f(x,y)\, dA</m></usage>
-    <description>double integral over rectangle <m>R</m></description>
-  </notation>
   <statement>
     <p>
       A function <m>f</m> is said to be <term>integrable</term> over the rectangle <m>R=[a,b]\times [c,d]</m> if there is a number <m>I</m> such that given any sequence of pointed partitions <m>P_i</m>  satisfying <m>\norm{P_i}\rightarrow 0</m>, we have

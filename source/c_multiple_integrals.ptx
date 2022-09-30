@@ -4,4 +4,5 @@
   <xi:include href="./s_double_iterated_integrals.ptx"/>
   <xi:include href="./s_double_integrals_gen.ptx"/>
   <xi:include href="./s_double_integrals_area.ptx"/>
+  <xi:include href="./s_triple_integrals.ptx"/>
 </chapter>

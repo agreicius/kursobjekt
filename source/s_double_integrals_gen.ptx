@@ -17,6 +17,12 @@
     </statement>
   </definition>
   <definition xml:id="d_double_integral_general">
+    <idx><h>double integral</h><h>over bounded region</h></idx>
+    <idx><h>integralable</h><h>over bounded planar region</h></idx>
+    <notation>
+      <usage><m>\iint\limits_\mathcal{R} f(x,y)\, dA</m></usage>
+      <description>double integral over region <m>\mathcal{R}</m></description>
+    </notation>
     <title>Double integral over bounded region</title>
     <statement>
       <p>
