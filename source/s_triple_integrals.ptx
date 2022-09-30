@@ -248,10 +248,10 @@
 
 
   <li>
-    <title>Type B2</title>
+    <title>Type B1</title>
     <p>
       If <m>\mathcal{D}=\{(x,y,z)\in \R^3, a\leq y\leq b, g_1(y)\leq z\leq g_2(y),q_1(y,z)\leq x\leq q_2(y,z)\}</m>, then
-      <men xml:id="eq_Fubini_A2">
+      <men xml:id="eq_Fubini_B1">
         \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(y)}^{g_2(y)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.
       </men>
     </p>
@@ -260,7 +260,7 @@
     <title>Type B2</title>
     <p>
       If <m>\mathcal{D}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq y\leq h_2(z), q_1(y,z)\leq x\leq q_2(y,z)\}</m>, then
-      <men xml:id="eq_Fubini_A2">
+      <men xml:id="eq_Fubini_B2">
         \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.
       </men>
     </p>
@@ -269,7 +269,7 @@
     <title>Type C1</title>
     <p>
       If <m>\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq z\leq g_2(x), r_1(x,z)\leq y\leq r_2(y,z)\}</m>, then
-      <men xml:id="eq_Fubini_A2">
+      <men xml:id="eq_Fubini_C1">
         \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.
       </men>
     </p>
@@ -278,7 +278,7 @@
     <title>Type C2</title>
     <p>
       If <m>\mathcal{R}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq x\leq h_2(z), r_1(x,z)\leq y\leq r_2(y,z)\}</m>, then
-      <men xml:id="eq_Fubini_A2">
+      <men xml:id="eq_Fubini_C2">
         \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.
       </men>
     </p>
