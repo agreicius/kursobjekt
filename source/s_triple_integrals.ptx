@@ -10,7 +10,7 @@
 </p>
 <definition xml:id="d_triple_integral_box">
   <idx><h>triple integral</h><h>over box</h></idx>
-  <title>Triple integral</title>
+  <title>Triple integral over a box</title>
   <statement>
     <p>
       Let <m>f</m> be a function of three variables. Given a box
