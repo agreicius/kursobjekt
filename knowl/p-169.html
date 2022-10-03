@@ -12,13 +12,18 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>As with double integrals, it is best to consider any given Riemann sum</p>
+<p>The function <span class="process-math">\(f\)</span> is <dfn class="terminology">integrable</dfn> over <span class="process-math">\(B\)</span> if there is a number <span class="process-math">\(I\in \R\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+I=\lim_{\norm{P}\to 0}\sum_{k=1}^nf(x_k,y_k,z_k)\Delta V_k\tag{1.5.1}
+\end{equation}
+</div>
+<p class="continuation">for any sequence of partitions <span class="process-math">\(P\)</span> of <span class="process-math">\(B\)</span> with norm tending to 0. When this is the case we call <span class="process-math">\(I\)</span> the integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(B\text{,}\)</span> denoted</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-S=\sum_{k=1}^n f(x_k,y_k,z_k)\, \Delta V_k
+I=\iiint\limits_{B}f(x,y,z)\, dV\text{.}
 \end{equation*}
 </div>
-<p class="continuation">of <span class="process-math">\(f\)</span> over a box <span class="process-math">\(B\subseteq \R^3\)</span> as an <em class="emphasis">approximation</em> of the integral <span class="process-math">\(\iiint\limits_{B}f(x,y,z)\, dV\text{.}\)</span> As the partitions <span class="process-math">\(P\)</span> become finer and finer (<span class="process-math">\(\norm{P}\rightarrow 0\)</span>), these approximations get better and better. In the limit we get the integral precisely.</p>
 <span class="incontext"><a href="s_triple_integrals.html#p-169" class="internal">in-context</a></span>
 </body>
 </html>

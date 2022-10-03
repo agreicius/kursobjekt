@@ -12,12 +12,13 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h4 class="heading">
-<span class="type">Item</span><span class="period">.</span><span class="space"> </span><span class="title">Type A1.</span>
+<span class="type">Item</span><span class="period">.</span><span class="space"> </span><span class="title">Type C.</span>
 </h4>
-<p>If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq y\leq g_2(x), p_1(x,y)\leq z\leq p_2(x,y)\}\text{,}\)</span> then</p>
+<p>If <span class="process-math">\(D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}
+\text{,}\)</span> where <span class="process-math">\(\mathcal{R}\)</span> is an elementary region of <span class="process-math">\(\R^2\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation}
-\iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\, dy\, dx.\tag{1.5.7}
+\iiint\limits_\mathcal{D}f(x,y,z)\, dV=\iint\limits_{\mathcal{R}}\left(\int_{r_1(x,z)}^{r_2(y,z)}f(x,y,z)\, dy\right)\, dA\text{.}\tag{1.5.6}
 \end{equation}
 </div></article><span class="incontext"><a href="s_triple_integrals.html#li-55" class="internal">in-context</a></span>
 </body>

@@ -12,13 +12,20 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>The key to understanding the meaning of a double (<span class="process-math">\(n=2\)</span>) or triple (<span class="process-math">\(n=3\)</span>) integral  in a given context lies in going back to the Riemann sums</p>
+<p>Let <span class="process-math">\(f\)</span> be a function of three variables defined over the bounded region <span class="process-math">\(\mathcal{D}\subseteq\R^3\text{.}\)</span> Let <span class="process-math">\(B\)</span> be any box containing <span class="process-math">\(\mathcal{D}\)</span> and let <span class="process-math">\(f^*\)</span> be the function defined on the box <span class="process-math">\(B\)</span> as follows:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align}
-n=2:\amp \sum_{k=1}^n f(x_k,y_k)\Delta A_k \amp n=3:\amp \sum_{k=1}^n f(x_k,y_k,z_k)\Delta V_k \text{.}\tag{1.5.2}
-\end{align}
+\begin{equation*}
+f^*(x,y,z)=\begin{cases}f(x,y,z)\amp \text{if } (x,y,z)\in \mathcal{D}\\
+0\amp \text{if } (x,y,z)\notin \mathcal{D}
+\end{cases}\text{.}
+\end{equation*}
 </div>
-<p class="continuation">If we can understand what the Riemann sums compute, then we understand what the integral computes, as the former are simply approximations of the latter. The following list of common interpretation schema illustrates this principle.</p>
+<p class="continuation">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">integrable</dfn> over <span class="process-math">\(\mathcal{D}\)</span> if the function <span class="process-math">\(f^*\)</span> is integrable over the box <span class="process-math">\(B\text{,}\)</span> and in this case we define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_\mathcal{D}f(x,y,z)\, dV=\iiint\limits_{B}f^*(x,y,z)\, dV\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="s_triple_integrals.html#p-171" class="internal">in-context</a></span>
 </body>
 </html>

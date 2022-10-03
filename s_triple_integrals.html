@@ -215,11 +215,11 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="s_triple_integrals"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Triple integrals</span>
 </h2>
-<section class="introduction" id="introduction-6"><p id="p-165">The definition of a double integral of a function of two variables extends easily to that of a triple integral of a function of three variables, and indeed more generally to integrals of functions of <span class="process-math">\(n\)</span> variables for any <span class="process-math">\(n\geq 1\text{.}\)</span> In this course we will stop at <span class="process-math">\(n=3\text{.}\)</span> As you will see the double and triple integral serve as the foundation for all further types of integrals we treat in this course (e.g., line, surface and volume integrals).</p></section><p id="p-166">The definition of the triple integral is exactly analogous to that of the double integral, only with more subindices! As such we will give a more compressed treatment.</p>
+<section class="introduction" id="introduction-6"><p id="p-166">The definition of a double integral of a function of two variables extends easily to that of a triple integral of a function of three variables, and indeed more generally to integrals of functions of <span class="process-math">\(n\)</span> variables for any <span class="process-math">\(n\geq 1\text{.}\)</span> In this course we will stop at <span class="process-math">\(n=3\text{.}\)</span> As you will see the double and triple integral serve as the foundation for all further types of integrals we treat in this course (e.g., line, surface and volume integrals).</p></section><p id="p-167">The definition of the triple integral is exactly analogous to that of the double integral, only with more subindices! As such we will give a more compressed treatment.</p>
 <article class="definition definition-like" id="d_triple_integral_box"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Triple integral over a box.</span>
 </h3>
-<p id="p-167">Let <span class="process-math">\(f\)</span> be a function of three variables. Given a box</p>
+<p id="p-168">Let <span class="process-math">\(f\)</span> be a function of three variables. Given a box</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 B=[a,b]\times[c,d]\times [e,f]=\{(x,y,z)\in\R^3\colon a\leq x\leq b, c\leq y\leq d, e\leq z\leq f\}
@@ -232,7 +232,7 @@ S=\sum_{k=1}^n f(x_k,y_k,z_k)\, \Delta V_k\text{.}
 \end{equation*}
 </div>
 <p class="continuation">The <dfn class="terminology">norm</dfn> of <span class="process-math">\(P\text{,}\)</span> denoted <span class="process-math">\(\norm{P}\)</span> is the largest value of any width, depth, or height of any subbox of <span class="process-math">\(P\text{.}\)</span></p>
-<p id="p-168">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">integrable</dfn> over <span class="process-math">\(B\)</span> if there is a number <span class="process-math">\(I\in \R\)</span> such that</p>
+<p id="p-169">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">integrable</dfn> over <span class="process-math">\(B\)</span> if there is a number <span class="process-math">\(I\in \R\)</span> such that</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_triple_int">
 \begin{equation}
 I=\lim_{\norm{P}\to 0}\sum_{k=1}^nf(x_k,y_k,z_k)\Delta V_k\tag{1.5.1}
@@ -246,7 +246,7 @@ I=\iiint\limits_{B}f(x,y,z)\, dV\text{.}
 </div></article><article class="convention remark-like" id="interp_Riemann_to_triple"><h3 class="heading">
 <span class="type">Interpretation</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann sums as approximations.</span>
 </h3>
-<p id="p-169">As with double integrals, it is best to consider any given Riemann sum</p>
+<p id="p-170">As with double integrals, it is best to consider any given Riemann sum</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S=\sum_{k=1}^n f(x_k,y_k,z_k)\, \Delta V_k
@@ -255,7 +255,7 @@ S=\sum_{k=1}^n f(x_k,y_k,z_k)\, \Delta V_k
 <p class="continuation">of <span class="process-math">\(f\)</span> over a box <span class="process-math">\(B\subseteq \R^3\)</span> as an <em class="emphasis">approximation</em> of the integral <span class="process-math">\(\iiint\limits_{B}f(x,y,z)\, dV\text{.}\)</span> As the partitions <span class="process-math">\(P\)</span> become finer and finer (<span class="process-math">\(\norm{P}\rightarrow 0\)</span>), these approximations get better and better. In the limit we get the integral precisely.</p></article><article class="definition definition-like" id="d_triple_integral_general"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Triple integral over bounded region.</span>
 </h3>
-<p id="p-170">Let <span class="process-math">\(f\)</span> be a function of three variables defined over the bounded region <span class="process-math">\(\mathcal{D}\subseteq\R^3\text{.}\)</span> Let <span class="process-math">\(B\)</span> be any box containing <span class="process-math">\(\mathcal{D}\)</span> and let <span class="process-math">\(f^*\)</span> be the function defined on the box <span class="process-math">\(B\)</span> as follows:</p>
+<p id="p-171">Let <span class="process-math">\(f\)</span> be a function of three variables defined over the bounded region <span class="process-math">\(\mathcal{D}\subseteq\R^3\text{.}\)</span> Let <span class="process-math">\(B\)</span> be any box containing <span class="process-math">\(\mathcal{D}\)</span> and let <span class="process-math">\(f^*\)</span> be the function defined on the box <span class="process-math">\(B\)</span> as follows:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f^*(x,y,z)=\begin{cases}f(x,y,z)\amp \text{if } (x,y,z)\in \mathcal{D}\\
@@ -271,7 +271,7 @@ f^*(x,y,z)=\begin{cases}f(x,y,z)\amp \text{if } (x,y,z)\in \mathcal{D}\\
 </div></article><article class="convention remark-like" id="interp_integrals"><h3 class="heading">
 <span class="type">Interpretation</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Interpreting integrals.</span>
 </h3>
-<p id="p-171">The key to understanding the meaning of a double (<span class="process-math">\(n=2\)</span>) or triple (<span class="process-math">\(n=3\)</span>) integral  in a given context lies in going back to the Riemann sums</p>
+<p id="p-172">The key to understanding the meaning of a double (<span class="process-math">\(n=2\)</span>) or triple (<span class="process-math">\(n=3\)</span>) integral  in a given context lies in going back to the Riemann sums</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="mdn-2">
 \begin{align}
 n=2:\amp \sum_{k=1}^n f(x_k,y_k)\Delta A_k \amp n=3:\amp \sum_{k=1}^n f(x_k,y_k,z_k)\Delta V_k \text{.}\tag{1.5.2}
@@ -279,25 +279,25 @@ n=2:\amp \sum_{k=1}^n f(x_k,y_k)\Delta A_k \amp n=3:\amp \sum_{k=1}^n f(x_k,y_k,
 </div>
 <p class="continuation">If we can understand what the Riemann sums compute, then we understand what the integral computes, as the former are simply approximations of the latter. The following list of common interpretation schema illustrates this principle.</p>
 <ol class="decimal">
-<li id="li-46">
-<span class="heading"><span class="title">Physical: density functions.</span></span><p id="p-172">Assume <span class="process-math">\(f\)</span> is a denisty function of some quantity <span class="process-math">\(Q\text{:}\)</span> e.g. <span class="process-math">\(f\)</span> computes the mass per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at a given point in the region; or <span class="process-math">\(f\)</span> computes the charge per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at a given input in the region. In this case the Riemann sums can be understood as approximations of the total quanty <span class="process-math">\(Q\)</span> over the region; and thus the integral computes the total quantity <span class="process-math">\(Q\)</span> for the region.</p>
-</li>
 <li id="li-47">
-<span class="heading"><span class="title">Geometric: integrating 1.</span></span><p id="p-173">Assume we are integrating the constant function <span class="process-math">\(f(x,y)=1\)</span> (<span class="process-math">\(n=2\)</span>) or <span class="process-math">\(f(x,y,z)=1\)</span> (<span class="process-math">\(n=3\)</span>). Here the Riemann sums <a href="" class="xref" data-knowl="./knowl/eq_Riemann_sums.html" title="Equation 1.5.2">(1.5.2)</a> can be understood as approximations of the area (<span class="process-math">\(n=2\)</span>) or volume (<span class="process-math">\(n=3\)</span>) of the region. We conclude</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_Riemann_sums.html" id="md-21">
+<span class="heading"><span class="title">Physical: density functions.</span></span><p id="p-173">Assume <span class="process-math">\(f\)</span> is a denisty function of some quantity <span class="process-math">\(Q\text{:}\)</span> e.g. <span class="process-math">\(f\)</span> computes the mass per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at a given point in the region; or <span class="process-math">\(f\)</span> computes the charge per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at a given input in the region. In this case the Riemann sums can be understood as approximations of the total quanty <span class="process-math">\(Q\)</span> over the region; and thus the integral computes the total quantity <span class="process-math">\(Q\)</span> for the region.</p>
+</li>
+<li id="li-48">
+<span class="heading"><span class="title">Geometric: integrating 1.</span></span><p id="p-174">Assume we are integrating the constant function <span class="process-math">\(f(x,y)=1\)</span> (<span class="process-math">\(n=2\)</span>) or <span class="process-math">\(f(x,y,z)=1\)</span> (<span class="process-math">\(n=3\)</span>). Here the Riemann sums <a href="" class="xref" data-knowl="./knowl/eq_Riemann_sums.html" title="Equation 1.5.2">(1.5.2)</a> can be understood as approximations of the area (<span class="process-math">\(n=2\)</span>) or volume (<span class="process-math">\(n=3\)</span>) of the region. We conclude</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_Riemann_sums.html" id="md-22">
 \begin{align*}
 \iint\limits_{\mathcal{R}}1\, dA\amp=\operatorname{area} \mathcal{R} \amp
 \iiint\limits_\mathcal{D}1\, dV=\operatorname{vol} \mathcal{D} 
 \end{align*}
 </div>
 </li>
-<li id="li-48">
-<span class="heading"><span class="title">Geometric: integrating nonnegative <span class="process-math">\(f(x,y)\)</span>.</span></span><p id="p-174">If <span class="process-math">\(f(x,y)\geq 0\)</span> on the region <span class="process-math">\(\mathcal{R}\text{,}\)</span> we can interpret it as the height of the graph of <span class="process-math">\(f\)</span> over the point <span class="process-math">\((x,y)\text{.}\)</span> Riemann sums of <span class="process-math">\(f(x,y)\)</span> can then be thought of approximations of the volume of the solid region <span class="process-math">\(\mathcal{S}\)</span> lying above <span class="process-math">\(\mathcal{R}\)</span> and below the graph of <span class="process-math">\(f\text{;}\)</span> the integral <span class="process-math">\(\iint\limits_Rf(x,y)\, dA\)</span> is thus understood as the precise volume of this region.</p>
+<li id="li-49">
+<span class="heading"><span class="title">Geometric: integrating nonnegative <span class="process-math">\(f(x,y)\)</span>.</span></span><p id="p-175">If <span class="process-math">\(f(x,y)\geq 0\)</span> on the region <span class="process-math">\(\mathcal{R}\text{,}\)</span> we can interpret it as the height of the graph of <span class="process-math">\(f\)</span> over the point <span class="process-math">\((x,y)\text{.}\)</span> Riemann sums of <span class="process-math">\(f(x,y)\)</span> can then be thought of approximations of the volume of the solid region <span class="process-math">\(\mathcal{S}\)</span> lying above <span class="process-math">\(\mathcal{R}\)</span> and below the graph of <span class="process-math">\(f\text{;}\)</span> the integral <span class="process-math">\(\iint\limits_Rf(x,y)\, dA\)</span> is thus understood as the precise volume of this region.</p>
 </li>
 </ol></article><article class="definition definition-like" id="d_volume_triple"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of solid region.</span>
 </h3>
-<p id="p-175">A bounded region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> is <dfn class="terminology">measurable</dfn> if the constant function <span class="process-math">\(f(x,y,z)=1\)</span> is integrable over <span class="process-math">\(\mathcal{D}\text{.}\)</span> In this case we define the <dfn class="terminology">volume</dfn> of <span class="process-math">\(\mathcal{D}\)</span> as</p>
+<p id="p-176">A bounded region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> is <dfn class="terminology">measurable</dfn> if the constant function <span class="process-math">\(f(x,y,z)=1\)</span> is integrable over <span class="process-math">\(\mathcal{D}\text{.}\)</span> In this case we define the <dfn class="terminology">volume</dfn> of <span class="process-math">\(\mathcal{D}\)</span> as</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_volume_triple">
 \begin{equation}
 \operatorname{vol}\mathcal{D}=\iiint\limits_\mathcal{D} 1 \, dV\text{.}\tag{1.5.3}
@@ -305,10 +305,10 @@ n=2:\amp \sum_{k=1}^n f(x_k,y_k)\Delta A_k \amp n=3:\amp \sum_{k=1}^n f(x_k,y_k,
 </div></article><article class="definition definition-like" id="d_elementary_sold_regions"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary solid region.</span>
 </h3>
-<p id="p-176">An <dfn class="terminology">elementary solid region</dfn>  is a subset <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> of one of the following forms.</p>
+<p id="p-177">An <dfn class="terminology">elementary solid region</dfn>  is a subset <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> of one of the following forms.</p>
 <ul class="disc">
-<li id="li-49">
-<span class="heading"><span class="title">Type A.</span></span><p id="p-177">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xy\)</span>-plane is a planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of type 1 or 2, and we have</p>
+<li id="li-50">
+<span class="heading"><span class="title">Type A.</span></span><p id="p-178">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xy\)</span>-plane is a planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of type 1 or 2, and we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 D=\{(x,y,z)\colon (x,y)\in \mathcal{R}, p_1(x,y)\leq z\leq p_2(x,y)\}\text{,}
@@ -316,8 +316,8 @@ D=\{(x,y,z)\colon (x,y)\in \mathcal{R}, p_1(x,y)\leq z\leq p_2(x,y)\}\text{,}
 </div>
 <p class="continuation">where <span class="process-math">\(p_1, p_2\)</span> are continuous on <span class="process-math">\(\mathcal{R}\text{.}\)</span></p>
 </li>
-<li id="li-50">
-<span class="heading"><span class="title">Type B.</span></span><p id="p-178">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(yz\)</span>-plane is a planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of type 1 or 2, and we have</p>
+<li id="li-51">
+<span class="heading"><span class="title">Type B.</span></span><p id="p-179">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(yz\)</span>-plane is a planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of type 1 or 2, and we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 D=\{(x,y,z)\colon (y,z)\in \mathcal{R}, q_1(y,z)\leq x\leq q_2(y,z)\}\text{,}
@@ -325,8 +325,8 @@ D=\{(x,y,z)\colon (y,z)\in \mathcal{R}, q_1(y,z)\leq x\leq q_2(y,z)\}\text{,}
 </div>
 <p class="continuation">where <span class="process-math">\(q_1, q_2\)</span> are continuous on <span class="process-math">\(\mathcal{R}\text{.}\)</span></p>
 </li>
-<li id="li-51">
-<span class="heading"><span class="title">Type C.</span></span><p id="p-179">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xz\)</span>-plane is a planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of type 1 or 2, and we have</p>
+<li id="li-52">
+<span class="heading"><span class="title">Type C.</span></span><p id="p-180">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xz\)</span>-plane is a planar region <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> of type 1 or 2, and we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}\text{,}
@@ -334,14 +334,14 @@ D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}\text{,}
 </div>
 <p class="continuation">where <span class="process-math">\(r_1, r_2\)</span> are continuous on <span class="process-math">\(\mathcal{R}\text{.}\)</span></p>
 </li>
-</ul></article><p id="p-180">Observe that there are in fact 6 distinct types of elementary regions, depending on (a) which coordinate plane we project onto (3 choices), and (b) whether the projection <span class="process-math">\(\mathcal{R}\)</span> is of type 1 or type 2. At the risk of going too far in our taxonomy, we could label these different types as A1, A2, B1, B2, C1, etc..</p>
+</ul></article><p id="p-181">Observe that there are in fact 6 distinct types of elementary regions, depending on (a) which coordinate plane we project onto (3 choices), and (b) whether the projection <span class="process-math">\(\mathcal{R}\)</span> is of type 1 or type 2. At the risk of going too far in our taxonomy, we could label these different types as A1, A2, B1, B2, C1, etc..</p>
 <article class="theorem theorem-like" id="th_Fubini_elementary_solid"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem over elementary solid regions.</span>
 </h3>
-<p id="p-181">Assume <span class="process-math">\(f\)</span> is continuous on the elementary region <span class="process-math">\(\mathcal{D}\subseteq \R^3\text{.}\)</span></p>
+<p id="p-182">Assume <span class="process-math">\(f\)</span> is continuous on the elementary region <span class="process-math">\(\mathcal{D}\subseteq \R^3\text{.}\)</span></p>
 <ul class="disc">
-<li id="li-52">
-<span class="heading"><span class="title">Type A.</span></span><p id="p-182">If <span class="process-math">\(D=\{(x,y,z)\colon (x,y)\in \mathcal{R}, p_1(x,y)\leq z\leq p_2(x,y)\}
+<li id="li-53">
+<span class="heading"><span class="title">Type A.</span></span><p id="p-183">If <span class="process-math">\(D=\{(x,y,z)\colon (x,y)\in \mathcal{R}, p_1(x,y)\leq z\leq p_2(x,y)\}
 \text{,}\)</span> where <span class="process-math">\(\mathcal{R}\)</span> is an elementary region of <span class="process-math">\(\R^2\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_A">
 \begin{equation}
@@ -349,8 +349,8 @@ D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}\text{,}
 \end{equation}
 </div>
 </li>
-<li id="li-53">
-<span class="heading"><span class="title">Type B.</span></span><p id="p-183">If <span class="process-math">\(D=\{(x,y,z)\colon (y,z)\in \mathcal{R}, q_1(y,z)\leq x\leq q_2(y,z)\}
+<li id="li-54">
+<span class="heading"><span class="title">Type B.</span></span><p id="p-184">If <span class="process-math">\(D=\{(x,y,z)\colon (y,z)\in \mathcal{R}, q_1(y,z)\leq x\leq q_2(y,z)\}
 \text{,}\)</span> where <span class="process-math">\(\mathcal{R}\)</span> is an elementary region of <span class="process-math">\(\R^2\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_B">
 \begin{equation}
@@ -358,8 +358,8 @@ D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}\text{,}
 \end{equation}
 </div>
 </li>
-<li id="li-54">
-<span class="heading"><span class="title">Type C.</span></span><p id="p-184">If <span class="process-math">\(D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}
+<li id="li-55">
+<span class="heading"><span class="title">Type C.</span></span><p id="p-185">If <span class="process-math">\(D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}
 \text{,}\)</span> where <span class="process-math">\(\mathcal{R}\)</span> is an elementary region of <span class="process-math">\(\R^2\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_C">
 \begin{equation}
@@ -370,65 +370,65 @@ D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}\text{,}
 </ul></article><article class="remark remark-like" id="rm_Fubini_iteration"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
 </h3>
-<p id="p-185">Observe that equations <a href="" class="xref" data-knowl="./knowl/eq_Fubini_A.html" title="Equation 1.5.4">(1.5.4)–(1.5.6)</a> each describe the triple integral as an iterated integral, just as in our earlier Fubini theorems. Only now the inner one is a single integral, and the outer one is a <em class="emphasis">double integral</em>! Since the double integral is computed over an elementart region <span class="process-math">\(\mathcal{R}\text{,}\)</span> we can finish the computation by using <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a>. Furthermore, since <span class="process-math">\(\mathcal{R}\)</span> is either of type 1 or type 2, we can expand the equations <a href="" class="xref" data-knowl="./knowl/eq_Fubini_A.html" title="Equation 1.5.4">(1.5.4)–(1.5.6)</a> into six integral identities involving only single integrals. <a href="" class="xref" data-knowl="./knowl/th_Fubini_expanded.html" title="Theorem 1.5.9: Fubini's theorem expanded">Theorem 1.5.9</a> does precisely this for your convenience.</p></article><article class="theorem theorem-like" id="th_Fubini_expanded"><h3 class="heading">
+<p id="p-186">Observe that equations <a href="" class="xref" data-knowl="./knowl/eq_Fubini_A.html" title="Equation 1.5.4">(1.5.4)–(1.5.6)</a> each describe the triple integral as an iterated integral, just as in our earlier Fubini theorems. Only now the inner one is a single integral, and the outer one is a <em class="emphasis">double integral</em>! Since the double integral is computed over an elementart region <span class="process-math">\(\mathcal{R}\text{,}\)</span> we can finish the computation by using <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a>. Furthermore, since <span class="process-math">\(\mathcal{R}\)</span> is either of type 1 or type 2, we can expand the equations <a href="" class="xref" data-knowl="./knowl/eq_Fubini_A.html" title="Equation 1.5.4">(1.5.4)–(1.5.6)</a> into six integral identities involving only single integrals. <a href="" class="xref" data-knowl="./knowl/th_Fubini_expanded.html" title="Theorem 1.5.9: Fubini's theorem expanded">Theorem 1.5.9</a> does precisely this for your convenience.</p></article><article class="theorem theorem-like" id="th_Fubini_expanded"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem expanded.</span>
 </h3>
-<p id="p-186">Assume <span class="process-math">\(f\)</span> is continuous on the elementary region <span class="process-math">\(\mathcal{D}\subseteq\R^3\text{.}\)</span></p>
+<p id="p-187">Assume <span class="process-math">\(f\)</span> is continuous on the elementary region <span class="process-math">\(\mathcal{D}\subseteq\R^3\text{.}\)</span></p>
 <ul class="disc">
-<li id="li-55">
-<span class="heading"><span class="title">Type A1.</span></span><p id="p-187">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq y\leq g_2(x), p_1(x,y)\leq z\leq p_2(x,y)\}\text{,}\)</span> then</p>
+<li id="li-56">
+<span class="heading"><span class="title">Type A1.</span></span><p id="p-188">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq y\leq g_2(x), p_1(x,y)\leq z\leq p_2(x,y)\}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_A1">
 \begin{equation}
 \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\, dy\, dx.\tag{1.5.7}
 \end{equation}
 </div>
 </li>
-<li id="li-56">
-<span class="heading"><span class="title">Type A2.</span></span><p id="p-188">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, c\leq y\leq d, h_1(y)\leq x\leq h_2(y), p_1(x,y)\leq z\leq p_2(x,y)\}\text{,}\)</span> then</p>
+<li id="li-57">
+<span class="heading"><span class="title">Type A2.</span></span><p id="p-189">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, c\leq y\leq d, h_1(y)\leq x\leq h_2(y), p_1(x,y)\leq z\leq p_2(x,y)\}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_A2">
 \begin{equation}
 \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(y)}^{h_2(y)}\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\, dx\, dy.\tag{1.5.8}
 \end{equation}
 </div>
 </li>
-<li id="li-57">
-<span class="heading"><span class="title">Type B1.</span></span><p id="p-189">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, a\leq y\leq b, g_1(y)\leq z\leq g_2(y),q_1(y,z)\leq x\leq q_2(y,z)\}\text{,}\)</span> then</p>
+<li id="li-58">
+<span class="heading"><span class="title">Type B1.</span></span><p id="p-190">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, a\leq y\leq b, g_1(y)\leq z\leq g_2(y),q_1(y,z)\leq x\leq q_2(y,z)\}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_B1">
 \begin{equation}
 \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(y)}^{g_2(y)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.\tag{1.5.9}
 \end{equation}
 </div>
 </li>
-<li id="li-58">
-<span class="heading"><span class="title">Type B2.</span></span><p id="p-190">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq y\leq h_2(z), q_1(y,z)\leq x\leq q_2(y,z)\}\text{,}\)</span> then</p>
+<li id="li-59">
+<span class="heading"><span class="title">Type B2.</span></span><p id="p-191">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq y\leq h_2(z), q_1(y,z)\leq x\leq q_2(y,z)\}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_B2">
 \begin{equation}
 \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.\tag{1.5.10}
 \end{equation}
 </div>
 </li>
-<li id="li-59">
-<span class="heading"><span class="title">Type C1.</span></span><p id="p-191">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq z\leq g_2(x), r_1(x,z)\leq y\leq r_2(y,z)\}\text{,}\)</span> then</p>
+<li id="li-60">
+<span class="heading"><span class="title">Type C1.</span></span><p id="p-192">If <span class="process-math">\(\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq z\leq g_2(x), r_1(x,z)\leq y\leq r_2(y,z)\}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_C1">
 \begin{equation}
 \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.\tag{1.5.11}
 \end{equation}
 </div>
 </li>
-<li id="li-60">
-<span class="heading"><span class="title">Type C2.</span></span><p id="p-192">If <span class="process-math">\(\mathcal{R}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq x\leq h_2(z), r_1(x,z)\leq y\leq r_2(y,z)\}\text{,}\)</span> then</p>
+<li id="li-61">
+<span class="heading"><span class="title">Type C2.</span></span><p id="p-193">If <span class="process-math">\(\mathcal{R}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq x\leq h_2(z), r_1(x,z)\leq y\leq r_2(y,z)\}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Fubini_C2">
 \begin{equation}
 \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.\tag{1.5.12}
 \end{equation}
 </div>
 </li>
-</ul></article><p id="p-193">Observe that a box <span class="process-math">\(B=[a,b]\times [c,d]\times [e,f]\)</span> is itself an elementary region of <span class="process-math">\(\R^3\)</span> of a particularly simple type: all of the defining boundary functions are constant. Furthermore, we see that <span class="process-math">\(B\)</span> is elementary of any the six types. Fubini's theorem over boxes then follows as a direct corollary of <a href="" class="xref" data-knowl="./knowl/th_Fubini_expanded.html" title="Theorem 1.5.9: Fubini's theorem expanded">Theorem 1.5.9</a>.</p>
+</ul></article><p id="p-194">Observe that a box <span class="process-math">\(B=[a,b]\times [c,d]\times [e,f]\)</span> is itself an elementary region of <span class="process-math">\(\R^3\)</span> of a particularly simple type: all of the defining boundary functions are constant. Furthermore, we see that <span class="process-math">\(B\)</span> is elementary of any the six types. Fubini's theorem over boxes then follows as a direct corollary of <a href="" class="xref" data-knowl="./knowl/th_Fubini_expanded.html" title="Theorem 1.5.9: Fubini's theorem expanded">Theorem 1.5.9</a>.</p>
 <article class="corollary theorem-like" id="cor_Fubini_box"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem for boxes.</span>
 </h3>
-<p id="p-194">If <span class="process-math">\(f\)</span> is continuous on the box <span class="process-math">\(B=[a,b]\times [c,d]\times [e,f]\)</span> then</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-22">
+<p id="p-195">If <span class="process-math">\(f\)</span> is continuous on the box <span class="process-math">\(B=[a,b]\times [c,d]\times [e,f]\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-23">
 \begin{align*}
 \iiint\limits_B f(x,y,z)\, dV \amp =\int_a^b\int_c^d\int_e^f f(x,y,z)\, dz\, dy\, dx\\
 \amp =\int_c^d\int_a^b \int_e^ff(x,y,z)\, dz\, dx\, dy\\
@@ -438,33 +438,33 @@ D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}\text{,}
 \end{align*}
 </div></article><article class="example example-like" id="eg_triple_int_box"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_triple_int_box"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Triple integral over a box.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_triple_int_box"><article class="example example-like"><p id="p-195">Compute the integral of <span class="process-math">\(f(x,y,z)=xz^2\sin(\pi xyz)\)</span> over the box <span class="process-math">\(B=[0,1]\times [0,1]\times [0,1]\text{.}\)</span></p></article></div>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_triple_int_box"><article class="example example-like"><p id="p-196">Compute the integral of <span class="process-math">\(f(x,y,z)=xz^2\sin(\pi xyz)\)</span> over the box <span class="process-math">\(B=[0,1]\times [0,1]\times [0,1]\text{.}\)</span></p></article></div>
 <article class="example example-like" id="eg_volume_tetrahedron"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_volume_tetrahedron"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of tetrahedron.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_volume_tetrahedron"><article class="example example-like"><p id="p-196">Let <span class="process-math">\(\mathcal{D}\)</span> be the tetrahedron with vertices <span class="process-math">\((0,0,0), (0,1,0), (1,1,0), (0,1,1) \text{.}\)</span></p>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_volume_tetrahedron"><article class="example example-like"><p id="p-197">Let <span class="process-math">\(\mathcal{D}\)</span> be the tetrahedron with vertices <span class="process-math">\((0,0,0), (0,1,0), (1,1,0), (0,1,1) \text{.}\)</span></p>
 <ol class="decimal">
-<li id="li-61"><p id="p-197">Set up three separate integrals, of type A, B, and C, that compute the volume of <span class="process-math">\(\mathcal{D}\text{.}\)</span></p></li>
-<li id="li-62"><p id="p-198">Compute the volume of <span class="process-math">\(\mathcal{D}\)</span> using one of the integrals above.</p></li>
+<li id="li-62"><p id="p-198">Set up three separate integrals, of type A, B, and C, that compute the volume of <span class="process-math">\(\mathcal{D}\text{.}\)</span></p></li>
+<li id="li-63"><p id="p-199">Compute the volume of <span class="process-math">\(\mathcal{D}\)</span> using one of the integrals above.</p></li>
 </ol></article></div>
 <article class="example example-like" id="eg_volume_slice_para_cyl"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_volume_slice_para_cyl"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of slice of parabolic cylinder.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_volume_slice_para_cyl"><article class="example example-like"><p id="p-199">Let <span class="process-math">\(\mathcal{D}\subseteq\R^3\)</span> be the region bounded by the parabolic cylinder <span class="process-math">\(x=y^2\text{,}\)</span> the plane <span class="process-math">\(x+z=1\text{,}\)</span> and the <span class="process-math">\(xy\)</span>-plane.</p></article></div>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_volume_slice_para_cyl"><article class="example example-like"><p id="p-200">Let <span class="process-math">\(\mathcal{D}\subseteq\R^3\)</span> be the region bounded by the parabolic cylinder <span class="process-math">\(x=y^2\text{,}\)</span> the plane <span class="process-math">\(x+z=1\text{,}\)</span> and the <span class="process-math">\(xy\)</span>-plane.</p></article></div>
 <article class="example example-like" id="example-19"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-19"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.14</span><span class="period">.</span><span class="space"> </span><span class="title">Region from iterated integral.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-202">Sketch the region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> whose volume is computed by the iterated integral</p>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-203">Sketch the region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> whose volume is computed by the iterated integral</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \int_0^1\, \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\, \int_2^{3-y^2-z^2}1\, dx\, dz\, dy\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-203">Not surprisingly <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> and <a href="" class="xref" data-knowl="./knowl/d_average_value_planar.html" title="Definition 1.4.4: Average value over planar region">Definition 1.4.4</a> extend easily to the case of triple integrals. We make these generalizations official below.</p>
+<p id="p-204">Not surprisingly <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> and <a href="" class="xref" data-knowl="./knowl/d_average_value_planar.html" title="Definition 1.4.4: Average value over planar region">Definition 1.4.4</a> extend easily to the case of triple integrals. We make these generalizations official below.</p>
 <article class="theorem theorem-like" id="th_triple_integral_props"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.15</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of triple integrals.</span>
 </h3>
-<p id="p-204">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded solid regions <span class="process-math">\(\mathcal{D},  \text{.}\)</span></p>
+<p id="p-205">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded solid regions <span class="process-math">\(\mathcal{D},  \text{.}\)</span></p>
 <ol class="decimal">
-<li id="li-65">
-<span class="heading"><span class="title">Linearity.</span></span><p id="p-205">Given any constants <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</p>
+<li id="li-66">
+<span class="heading"><span class="title">Linearity.</span></span><p id="p-206">Given any constants <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iiint\limits_\mathcal{D}cf(x,y,z)+dg(x,y,z)\, dV=
@@ -472,22 +472,22 @@ c  \iiint\limits_\mathcal{D}f(x,y,z)\, dV+d  \iiint\limits_\mathcal{D}g(x,y,z)\,
 \end{equation*}
 </div>
 </li>
-<li id="li-66">
-<span class="heading"><span class="title">Domination.</span></span><p id="p-derived-li-66"><ol class="lower-alpha">
-<li id="li-67"><p id="p-206">If <span class="process-math">\(f\geq 0\)</span> on <span class="process-math">\(\mathcal{D}\text{,}\)</span> then <span class="process-math">\(\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq 0\)</span></p></li>
-<li id="li-68"><p id="p-207">If <span class="process-math">\(f\geq g\)</span> on <span class="process-math">\(\mathcal{D}\text{,}\)</span> then <span class="process-math">\(\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq \iiint\limits_{\mathcal{D}}g(x,y,z)\, dV\text{.}\)</span></p></li>
+<li id="li-67">
+<span class="heading"><span class="title">Domination.</span></span><p id="p-derived-li-67"><ol class="lower-alpha">
+<li id="li-68"><p id="p-207">If <span class="process-math">\(f\geq 0\)</span> on <span class="process-math">\(\mathcal{D}\text{,}\)</span> then <span class="process-math">\(\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq 0\)</span></p></li>
+<li id="li-69"><p id="p-208">If <span class="process-math">\(f\geq g\)</span> on <span class="process-math">\(\mathcal{D}\text{,}\)</span> then <span class="process-math">\(\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq \iiint\limits_{\mathcal{D}}g(x,y,z)\, dV\text{.}\)</span></p></li>
 </ol></p>
 </li>
-<li id="li-69">
-<span class="heading"><span class="title">Additivity.</span></span><p id="p-208">If <span class="process-math">\(\mathcal{D}=\mathcal{D}_1\cup \mathcal{D}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{D}_1\)</span> and <span class="process-math">\(\mathcal{D}_2\)</span> are non-overlapping, then</p>
+<li id="li-70">
+<span class="heading"><span class="title">Additivity.</span></span><p id="p-209">If <span class="process-math">\(\mathcal{D}=\mathcal{D}_1\cup \mathcal{D}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{D}_1\)</span> and <span class="process-math">\(\mathcal{D}_2\)</span> are non-overlapping, then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iiint\limits_{\mathcal{D}}f(x,y,z)\, dV=\iiint\limits_{\mathcal{D}_1}f(x,y,z)\, dV+\iiint\limits_{\mathcal{D}_2}f(x,y,z)\, dV\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-70">
-<span class="heading"><span class="title">Absolute value.</span></span><p id="p-209">The function <span class="process-math">\(\abs{f}\)</span> is integrable, and we have</p>
+<li id="li-71">
+<span class="heading"><span class="title">Absolute value.</span></span><p id="p-210">The function <span class="process-math">\(\abs{f}\)</span> is integrable, and we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left\vert \iiint\limits_\mathcal{D}f(x,y,z)\, dV\right\vert\leq
@@ -498,14 +498,14 @@ c  \iiint\limits_\mathcal{D}f(x,y,z)\, dV+d  \iiint\limits_\mathcal{D}g(x,y,z)\,
 </ol></article><article class="definition definition-like" id="d_average_value_solid"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.16</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over solid region.</span>
 </h3>
-<p id="p-210">Assume <span class="process-math">\(f\)</span> is integrable over the measurable solid region <span class="process-math">\(\mathcal{D}\subseteq \R^3\text{.}\)</span> The <dfn class="terminology">average value</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{D}\text{,}\)</span> denoted <span class="process-math">\(\operatorname{avg}_\mathcal{D}(f)\text{,}\)</span> is defined as</p>
+<p id="p-211">Assume <span class="process-math">\(f\)</span> is integrable over the measurable solid region <span class="process-math">\(\mathcal{D}\subseteq \R^3\text{.}\)</span> The <dfn class="terminology">average value</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{D}\text{,}\)</span> denoted <span class="process-math">\(\operatorname{avg}_\mathcal{D}(f)\text{,}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_average_value_solid">
 \begin{equation}
 \operatorname{avg}_\mathcal{D}(f)=\frac{1}{\operatorname{vol} \mathcal{D}}\iiint\limits_\mathcal{D}f(x,y,z)\, dV\text{.}\tag{1.5.13}
 \end{equation}
 </div></article><article class="project project-like" id="sage_plot3d"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_plot3d"><h3 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Three-dimensional plots.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_plot3d"><article class="project project-like"><p id="p-211">Although I want you to practice sketching three-dimensional regions by hand, it is also helpful to use Sage as assistance. The cell below uses Sage's <code class="code-inline tex2jax_ignore">implicit_plot3d</code> routine, which creates a graph of a surface defined by an equation. Sage also has a <code class="code-inline tex2jax_ignore">plot3d</code> which graphs functions <span class="process-math">\(z=f(x,y)\text{,}\)</span> which is also useful. (See <a href="" class="xref" data-knowl="./knowl/sage_double_integral_Riemann.html" title="Sage example 1.1.1: Visualizing/approximating double integrals">Sage example 1.1.1</a> for an example using <code class="code-inline tex2jax_ignore">plot3d</code>.)</p>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_plot3d"><article class="project project-like"><p id="p-212">Although I want you to practice sketching three-dimensional regions by hand, it is also helpful to use Sage as assistance. The cell below uses Sage's <code class="code-inline tex2jax_ignore">implicit_plot3d</code> routine, which creates a graph of a surface defined by an equation. Sage also has a <code class="code-inline tex2jax_ignore">plot3d</code> which graphs functions <span class="process-math">\(z=f(x,y)\text{,}\)</span> which is also useful. (See <a href="" class="xref" data-knowl="./knowl/sage_double_integral_Riemann.html" title="Sage example 1.1.1: Visualizing/approximating double integrals">Sage example 1.1.1</a> for an example using <code class="code-inline tex2jax_ignore">plot3d</code>.)</p>
 <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-10"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
 var('x y z')
 s1=implicit_plot3d(y^2-x, (x,-1,1),(y,-1,1),(z,0,1),color='blue', opacity=.3)
@@ -515,7 +515,7 @@ s1+s2+axes(1,.5, color='black')
 </script></pre></article></div>
 <article class="project project-like" id="sage_triple_integral_elementary"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_triple_integral_elementary"><h3 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Iterated integrals over solid regions.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_triple_integral_elementary"><article class="project project-like"><p id="p-212">Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <a href="" class="xref" data-knowl="./knowl/eg_volume_slice_para_cyl.html" title="Example 1.5.13: Volume of slice of parabolic cylinder">Example 1.5.13</a>, where we needed to compute <span class="process-math">\(\iiint\limits_\mathcal{D}1\, dV\text{.}\)</span> The hard part was coming up with a suitable description of <span class="process-math">\(\mathcal{D}\text{:}\)</span> e.g.,</p>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_triple_integral_elementary"><article class="project project-like"><p id="p-213">Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <a href="" class="xref" data-knowl="./knowl/eg_volume_slice_para_cyl.html" title="Example 1.5.13: Volume of slice of parabolic cylinder">Example 1.5.13</a>, where we needed to compute <span class="process-math">\(\iiint\limits_\mathcal{D}1\, dV\text{.}\)</span> The hard part was coming up with a suitable description of <span class="process-math">\(\mathcal{D}\text{:}\)</span> e.g.,</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
 \begin{equation*}
 D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}\text{.}
