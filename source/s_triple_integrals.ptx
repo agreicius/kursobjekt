@@ -116,7 +116,7 @@
     <title>Volume of solid region</title>
     <statement>
       <p>
-        A bounded region <m>\mathcal{D}\subseteq \R^3</m> is <term>measurable</term> if the constant function <m>f(x,y)=1</m> is integrable over <m>\mathcal{D}</m>. In this case we define the <term>volume</term> of <m>\mathcal{D}</m> as
+        A bounded region <m>\mathcal{D}\subseteq \R^3</m> is <term>measurable</term> if the constant function <m>f(x,y,z)=1</m> is integrable over <m>\mathcal{D}</m>. In this case we define the <term>volume</term> of <m>\mathcal{D}</m> as
         <men xml:id="eq_volume_triple">
           \operatorname{vol}\mathcal{D}=\iiint\limits_\mathcal{D} 1 \, dV
         </men>.
@@ -304,5 +304,194 @@
     </p>
   </statement>
 </corollary>
+<example xml:id="eg_triple_int_box">
+  <title>Triple integral over a box</title>
+  <statement>
+    <p>
+      Compute the integral of <m>f(x,y,z)=xz^2\sin(\pi xyz)</m> over the box <m>B=[0,1]\times [0,1]\times [0,1]</m>.
+    </p>
+  </statement>
+</example>
+<example xml:id="eg_volume_tetrahedron">
+  <title>Volume of tetrahedron</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{D}</m> be the tetrahedron with vertices <m>(0,0,0), (0,1,0), (1,1,0), (0,1,1) </m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Set up three separate integrals, of type A, B, and C, that compute the volume of <m>\mathcal{D}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute the volume of <m>\mathcal{D}</m> using one of the integrals above.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <!-- <solution>
+    <p>
 
+    </p>
+  </solution> -->
+</example>
+<example xml:id="eg_volume_slice_para_cyl">
+  <title>Volume of slice of parabolic cylinder</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{D}\subseteq\R^3</m> be the region bounded by the parabolic cylinder <m>x=y^2</m>, the plane <m>x+z=1</m>, and the <m>xy</m>-plane.
+    </p>
+  </statement>
+  <ol>
+    <li>
+      <p>
+        Set up three separate integrals, of type A, B, and C, that compute the volume of <m>\mathcal{D}</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Compute the volume of <m>\mathcal{D}</m> using one of the integrals above.
+      </p>
+    </li>
+  </ol>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</example>
+<example>
+  <title>Region from iterated integral</title>
+  <statement>
+    <p>
+      Sketch the region <m>\mathcal{D}\subseteq \R^3</m> whose volume is computed by the iterated integral
+      <me>\int_0^1\, \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\, \int_2^{3-y^2-z^2}1\, dx\, dz\, dy
+      </me>.
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</example>
+
+<p>
+  Not surprisingly <xref ref="th_double_integral_props"/> and <xref ref="d_average_value_planar"/> extend easily to the case of triple integrals. We make these generalizations official below.
+</p>
+<theorem xml:id="th_triple_integral_props">
+  <title>Properties of triple integrals</title>
+  <statement>
+    <p>
+      Assume <m>f</m> and <m>g</m> are integrable over the bounded solid regions <m>\mathcal{D}, <m>\mathcal{D}_1</m>, <m>\mathcal{D}_2</m></m>.
+    </p>
+    <ol>
+      <li>
+        <title>Linearity</title>
+        <p>
+          Given any constants <m>c,d\in \R</m>, we have
+          <me>
+            \iiint\limits_\mathcal{D}cf(x,y,z)+dg(x,y,z)\, dV=
+            c  \iiint\limits_\mathcal{D}f(x,y,z)\, dV+d  \iiint\limits_\mathcal{D}g(x,y,z)\, dV
+          </me>
+        </p>
+      </li>
+      <li>
+        <title>Domination</title>
+        <ol>
+          <li>
+            <p>
+              If <m>f\geq 0</m> on <m>\mathcal{D}</m>, then <m>\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq 0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f\geq g</m> on <m>\mathcal{D}</m>, then <m>\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq \iiint\limits_{\mathcal{D}}g(x,y,z)\, dV</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <title>Additivity</title>
+        <p>
+          If <m>\mathcal{D}=\mathcal{D}_1\cup \mathcal{D}_2</m>, where <m>\mathcal{D}_1</m> and <m>\mathcal{D}_2</m> are non-overlapping, then
+          <me>
+            \iiint\limits_{\mathcal{D}}f(x,y,z)\, dV=\iiint\limits_{\mathcal{D}_1}f(x,y,z)\, dV+\iiint\limits_{\mathcal{D}_2}f(x,y,z)\, dV
+          </me>.
+        </p>
+      </li>
+      <li>
+        <title>Absolute value</title>
+        <p>
+          The function <m>\abs{f}</m> is integrable, and we have
+          <me>
+            \left\vert \iiint\limits_\mathcal{D}f(x,y,z)\, dV\right\vert\leq
+            \iiint\limits_\mathcal{D}\vert f(x,y,z)\vert \, dV
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+<definition xml:id="d_average_value_solid">
+  <idx><h>average value</h><h>solid region</h></idx>
+  <notation>
+    <usage><m>\operatorname{avg}_\mathcal{R}(f)</m></usage>
+    <description>average value of <m>f</m> over <m>\mathcal{R}</m></description>
+  </notation>
+  <title>Average value over solid region</title>
+  <statement>
+    <p>
+      Assume <m>f</m> is integrable over the measurable solid region <m>\mathcal{D}\subseteq \R^3</m>. The <term>average value</term> of <m>f</m> over <m>\mathcal{D}</m>, denoted <m>\operatorname{avg}_\mathcal{D}(f)</m>, is defined as
+      <men xml:id="eq_average_value_solid">
+        \operatorname{avg}_\mathcal{D}(f)=\frac{1}{\operatorname{vol} \mathcal{D}}\iiint\limits_\mathcal{D}f(x,y,z)\, dV
+      </men>.
+    </p>
+  </statement>
+</definition>
+<project xml:id="sage_plot3d">
+  <title>Three-dimensional plots</title>
+  <p>
+    Although I want you to practice sketching three-dimensional regions by hand, it is also helpful to use Sage as assistance. The cell below uses Sage's <c>implicit_plot3d</c> routine, which creates a graph of a surface defined by an equation. Sage also has a <c>plot3d</c> which graphs functions <m>z=f(x,y)</m>, which is also useful. (See <xref ref="sage_double_integral_Riemann"/> for an example using <c>plot3d</c>.)
+  </p>
+  <sage>
+  <input>
+  from sage.plot.plot3d.plot3d import axes
+  var('x y z')
+  s1=implicit_plot3d(y^2-x, (x,-1,1),(y,-1,1),(z,0,1),color='blue', opacity=.3)
+  s2=implicit_plot3d(x+z==1,(x,-1,1),(y,-1,1),(z,0,1),color='red',opacity=.3)
+  s3=implicit_plot3d(z,(x,-1,1),(y,-1,1),(z,0,1),color='green')
+  s1+s2+axes(1,.5, color='black')
+  </input>
+  <output>
+
+  </output>
+  </sage>
+</project>
+<project xml:id="sage_triple_integral_elementary">
+  <title>Iterated integrals over solid regions</title>
+  <p>
+    Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <xref ref="eg_volume_slice_para_cyl"/>, where we needed to compute <m>\iiint\limits_\mathcal{D}1\, dV</m>. The hard part was coming up with a suitable description of <m>\mathcal{D}</m>: <eg />,
+    <me>
+      D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}
+    </me>.
+    Once this step is completed, the relevant triply iterated integral
+    <me>
+      \int_{-1}^1\int_{y^2}^1\int_0^{1-x}1\, dz\, dx\, dy
+    </me>
+     is easy enough to compute.
+  </p>
+  <sage>
+  <input>
+  var('x y z')
+  integrate(integrate(integrate(1,z,0,1-x),x,y^2,1),y,-1,1)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+
+</project>
 </section>
