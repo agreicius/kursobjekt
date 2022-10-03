@@ -44,6 +44,21 @@
       </li>
     </ol>
   </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          The region is type 2. (See solution to <xref ref="eg_Fubini_elem_planar"/> for diagram and details.) We have
+          <md>
+            <mrow>\operatorname{area}\mathcal{R}  \amp =\iint\limits_\mathcal{R} 1\, dA </mrow>
+            <mrow> \amp = \int_{-\sqrt{2}}^{\sqrt{2}}\int\limits_{y^2}^{y^2/2+1}1\, dx\, dy </mrow>
+            <mrow>  \amp = \int_{-\sqrt{2}}^{\sqrt{2}}1-\frac{1}{2}y^2\, dy</mrow>
+            <mrow>  \amp = \frac{4\sqrt{2}}{3}</mrow>
+          </md> .
+        </p>
+      </li>
+    </ol>
+  </solution>
 </example>
 <definition xml:id="d_average_value_planar">
   <idx><h>average value</h><h>planar region</h></idx>
