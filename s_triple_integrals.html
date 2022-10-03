@@ -57,7 +57,13 @@ window.MathJax = {
     )}
 },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
@@ -291,7 +297,7 @@ n=2:\amp \sum_{k=1}^n f(x_k,y_k)\Delta A_k \amp n=3:\amp \sum_{k=1}^n f(x_k,y_k,
 </ol></article><article class="definition definition-like" id="d_volume_triple"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of solid region.</span>
 </h3>
-<p id="p-175">A bounded region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> is <dfn class="terminology">measurable</dfn> if the constant function <span class="process-math">\(f(x,y)=1\)</span> is integrable over <span class="process-math">\(\mathcal{D}\text{.}\)</span> In this case we define the <dfn class="terminology">volume</dfn> of <span class="process-math">\(\mathcal{D}\)</span> as</p>
+<p id="p-175">A bounded region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> is <dfn class="terminology">measurable</dfn> if the constant function <span class="process-math">\(f(x,y,z)=1\)</span> is integrable over <span class="process-math">\(\mathcal{D}\text{.}\)</span> In this case we define the <dfn class="terminology">volume</dfn> of <span class="process-math">\(\mathcal{D}\)</span> as</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_volume_triple">
 \begin{equation}
 \operatorname{vol}\mathcal{D}=\iiint\limits_\mathcal{D} 1 \, dV\text{.}\tag{1.5.3}
@@ -430,7 +436,101 @@ D=\{(x,y,z)\colon (x,z)\in \mathcal{R}, r_1(x,z)\leq y\leq r_2(x,z)\}\text{,}
 \amp =\int_a^b\int_e^f\int_c^d f(x,y,z)\, dy\, dz\, dx\\
 \amp =\int_e^f\int_a^b \int_c^df(x,y,z)\, dy\, dx\, dz\text{.}
 \end{align*}
-</div></article></section></div></main>
+</div></article><article class="example example-like" id="eg_triple_int_box"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_triple_int_box"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Triple integral over a box.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_triple_int_box"><article class="example example-like"><p id="p-195">Compute the integral of <span class="process-math">\(f(x,y,z)=xz^2\sin(\pi xyz)\)</span> over the box <span class="process-math">\(B=[0,1]\times [0,1]\times [0,1]\text{.}\)</span></p></article></div>
+<article class="example example-like" id="eg_volume_tetrahedron"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_volume_tetrahedron"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of tetrahedron.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_volume_tetrahedron"><article class="example example-like"><p id="p-196">Let <span class="process-math">\(\mathcal{D}\)</span> be the tetrahedron with vertices <span class="process-math">\((0,0,0), (0,1,0), (1,1,0), (0,1,1) \text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-61"><p id="p-197">Set up three separate integrals, of type A, B, and C, that compute the volume of <span class="process-math">\(\mathcal{D}\text{.}\)</span></p></li>
+<li id="li-62"><p id="p-198">Compute the volume of <span class="process-math">\(\mathcal{D}\)</span> using one of the integrals above.</p></li>
+</ol></article></div>
+<article class="example example-like" id="eg_volume_slice_para_cyl"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_volume_slice_para_cyl"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of slice of parabolic cylinder.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_volume_slice_para_cyl"><article class="example example-like"><p id="p-199">Let <span class="process-math">\(\mathcal{D}\subseteq\R^3\)</span> be the region bounded by the parabolic cylinder <span class="process-math">\(x=y^2\text{,}\)</span> the plane <span class="process-math">\(x+z=1\text{,}\)</span> and the <span class="process-math">\(xy\)</span>-plane.</p></article></div>
+<article class="example example-like" id="example-19"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-19"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.14</span><span class="period">.</span><span class="space"> </span><span class="title">Region from iterated integral.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-202">Sketch the region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> whose volume is computed by the iterated integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^1\, \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\, \int_2^{3-y^2-z^2}1\, dx\, dz\, dy\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-203">Not surprisingly <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> and <a href="" class="xref" data-knowl="./knowl/d_average_value_planar.html" title="Definition 1.4.4: Average value over planar region">Definition 1.4.4</a> extend easily to the case of triple integrals. We make these generalizations official below.</p>
+<article class="theorem theorem-like" id="th_triple_integral_props"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.15</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of triple integrals.</span>
+</h3>
+<p id="p-204">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded solid regions <span class="process-math">\(\mathcal{D},  \text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-65">
+<span class="heading"><span class="title">Linearity.</span></span><p id="p-205">Given any constants <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_\mathcal{D}cf(x,y,z)+dg(x,y,z)\, dV=
+c  \iiint\limits_\mathcal{D}f(x,y,z)\, dV+d  \iiint\limits_\mathcal{D}g(x,y,z)\, dV
+\end{equation*}
+</div>
+</li>
+<li id="li-66">
+<span class="heading"><span class="title">Domination.</span></span><p id="p-derived-li-66"><ol class="lower-alpha">
+<li id="li-67"><p id="p-206">If <span class="process-math">\(f\geq 0\)</span> on <span class="process-math">\(\mathcal{D}\text{,}\)</span> then <span class="process-math">\(\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq 0\)</span></p></li>
+<li id="li-68"><p id="p-207">If <span class="process-math">\(f\geq g\)</span> on <span class="process-math">\(\mathcal{D}\text{,}\)</span> then <span class="process-math">\(\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq \iiint\limits_{\mathcal{D}}g(x,y,z)\, dV\text{.}\)</span></p></li>
+</ol></p>
+</li>
+<li id="li-69">
+<span class="heading"><span class="title">Additivity.</span></span><p id="p-208">If <span class="process-math">\(\mathcal{D}=\mathcal{D}_1\cup \mathcal{D}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{D}_1\)</span> and <span class="process-math">\(\mathcal{D}_2\)</span> are non-overlapping, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_{\mathcal{D}}f(x,y,z)\, dV=\iiint\limits_{\mathcal{D}_1}f(x,y,z)\, dV+\iiint\limits_{\mathcal{D}_2}f(x,y,z)\, dV\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-70">
+<span class="heading"><span class="title">Absolute value.</span></span><p id="p-209">The function <span class="process-math">\(\abs{f}\)</span> is integrable, and we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\vert \iiint\limits_\mathcal{D}f(x,y,z)\, dV\right\vert\leq
+\iiint\limits_\mathcal{D}\vert f(x,y,z)\vert \, dV\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="definition definition-like" id="d_average_value_solid"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.16</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over solid region.</span>
+</h3>
+<p id="p-210">Assume <span class="process-math">\(f\)</span> is integrable over the measurable solid region <span class="process-math">\(\mathcal{D}\subseteq \R^3\text{.}\)</span> The <dfn class="terminology">average value</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{D}\text{,}\)</span> denoted <span class="process-math">\(\operatorname{avg}_\mathcal{D}(f)\text{,}\)</span> is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_average_value_solid">
+\begin{equation}
+\operatorname{avg}_\mathcal{D}(f)=\frac{1}{\operatorname{vol} \mathcal{D}}\iiint\limits_\mathcal{D}f(x,y,z)\, dV\text{.}\tag{1.5.13}
+\end{equation}
+</div></article><article class="project project-like" id="sage_plot3d"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_plot3d"><h3 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Three-dimensional plots.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_plot3d"><article class="project project-like"><p id="p-211">Although I want you to practice sketching three-dimensional regions by hand, it is also helpful to use Sage as assistance. The cell below uses Sage's <code class="code-inline tex2jax_ignore">implicit_plot3d</code> routine, which creates a graph of a surface defined by an equation. Sage also has a <code class="code-inline tex2jax_ignore">plot3d</code> which graphs functions <span class="process-math">\(z=f(x,y)\text{,}\)</span> which is also useful. (See <a href="" class="xref" data-knowl="./knowl/sage_double_integral_Riemann.html" title="Sage example 1.1.1: Visualizing/approximating double integrals">Sage example 1.1.1</a> for an example using <code class="code-inline tex2jax_ignore">plot3d</code>.)</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-10"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+var('x y z')
+s1=implicit_plot3d(y^2-x, (x,-1,1),(y,-1,1),(z,0,1),color='blue', opacity=.3)
+s2=implicit_plot3d(x+z==1,(x,-1,1),(y,-1,1),(z,0,1),color='red',opacity=.3)
+s3=implicit_plot3d(z,(x,-1,1),(y,-1,1),(z,0,1),color='green')
+s1+s2+axes(1,.5, color='black')
+</script></pre></article></div>
+<article class="project project-like" id="sage_triple_integral_elementary"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_triple_integral_elementary"><h3 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Iterated integrals over solid regions.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_triple_integral_elementary"><article class="project project-like"><p id="p-212">Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <a href="" class="xref" data-knowl="./knowl/eg_volume_slice_para_cyl.html" title="Example 1.5.13: Volume of slice of parabolic cylinder">Example 1.5.13</a>, where we needed to compute <span class="process-math">\(\iiint\limits_\mathcal{D}1\, dV\text{.}\)</span> The hard part was coming up with a suitable description of <span class="process-math">\(\mathcal{D}\text{:}\)</span> e.g.,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
+\begin{equation*}
+D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Once this step is completed, the relevant triply iterated integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
+\begin{equation*}
+\int_{-1}^1\int_{y^2}^1\int_0^{1-x}1\, dz\, dx\, dy
+\end{equation*}
+</div>
+<p class="continuation">is easy enough to compute.</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-11"><script type="text/x-sage">var('x y z')
+integrate(integrate(integrate(1,z,0,1-x),x,y^2,1),y,-1,1)
+</script></pre></article></div></section></div></main>
 </div>
 </body>
 </html>

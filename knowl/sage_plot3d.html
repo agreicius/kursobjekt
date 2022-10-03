@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h3 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Three-dimensional plots.</span>
+</h3>
+<p>Although I want you to practice sketching three-dimensional regions by hand, it is also helpful to use Sage as assistance. The cell below uses Sage's <code class="code-inline tex2jax_ignore">implicit_plot3d</code> routine, which creates a graph of a surface defined by an equation. Sage also has a <code class="code-inline tex2jax_ignore">plot3d</code> which graphs functions <span class="process-math">\(z=f(x,y)\text{,}\)</span> which is also useful. (See <a href="" class="xref" data-knowl="./knowl/sage_double_integral_Riemann.html" title="Sage example 1.1.1: Visualizing/approximating double integrals">Sage example 1.1.1</a> for an example using <code class="code-inline tex2jax_ignore">plot3d</code>.)</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-10"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+var('x y z')
+s1=implicit_plot3d(y^2-x, (x,-1,1),(y,-1,1),(z,0,1),color='blue', opacity=.3)
+s2=implicit_plot3d(x+z==1,(x,-1,1),(y,-1,1),(z,0,1),color='red',opacity=.3)
+s3=implicit_plot3d(z,(x,-1,1),(y,-1,1),(z,0,1),color='green')
+s1+s2+axes(1,.5, color='black')
+</script></pre></article><span class="incontext"><a href="s_triple_integrals.html#sage_plot3d" class="internal">in-context</a></span>
+</body>
+</html>
