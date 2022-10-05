@@ -1,0 +1,213 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_substitution_linear">
+  <title>Substitution: linear transformations</title>
+<introduction>
+  <p>
+    In this section we provide a generalization of sorts of the substitution technique from single-variable calculus. Recall the set up in that context: given a continuous function <m>f</m> and differentiable function <m>g\colon [a,b]\colon\rightarrow \R</m> we have
+    <md>
+      <mrow> \int_{g(a)}^{g(b)} f(u)\, du \amp =\int_{a}^{b}f(g(x))g'(x)\, dx \amp \left(\begin{array}{c}u=g(x)\\ du=g'(x)\, dx\end{array}\right)</mrow>
+    </md>.
+    <xref ref="th_substitution"/> is our generalization of this result to double and triple integrals.
+  </p>
+</introduction>
+<definition xml:id="d_transformation">
+  <idx><h>transformation</h></idx>
+  <idx><h>continuously differentiable</h></idx>
+  <title>Transformations</title>
+  <statement>
+    <p>
+      Let <m>D, D'\subseteq \R^n</m>, where <m>n=2</m> or <m>n=3</m>. A function
+      <md>
+        <mrow>G\colon D \amp\rightarrow D' </mrow>
+        <mrow> (x_1,x_2,\dots, x_n) \amp\mapsto (g_1(x_1,x_2,\dots, x_n),\dots, g_n(x_1,x_2,\dots, x_n)) </mrow>
+      </md>
+      is a <term>transformation</term> if it satisfies the following properties.
+      <ol>
+          <li>
+            <p>
+              <m>G</m> is <xref ref="d_injective_surjective_bijective" text="custom">one-to-one (injective)</xref> on the interior of <m>D</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>G(D)=D'</m>: <ie />, <m>G\colon D\rightarrow D'</m> is <xref ref="d_injective_surjective_bijective" text="custom">onto (surjective)</xref>.
+            </p>
+          </li>
+      </ol>
+      The function <m>G</m> is <term>continuously differentiable</term> at a point <m>(x_1,x_2,\dots, x_n)\in D</m> if for all <m>1\leq i,j\leq n</m> the partial derivative <m>\partial g_i/\partial x_j</m> is continuous at <m>(x_1,x_2,\dots, x_n)</m>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_Jacobian_det">
+  <idx><h>determinant</h><h>for <m>n=2,3</m></h></idx>
+  <idx><h>Jacobian</h></idx>
+  <notation>
+    <usage><m>\frac{\partial(g_1,g_2,\dots, g_n)}{\partial(x_1,x_2,\dots, x_n)}</m></usage>
+    <description>Jacobian of <m>G=(g_1,g_2,\dots, g_n)</m></description>
+  </notation>
+  <title>Determinant and Jacobian</title>
+  <statement>
+    <p>
+      Recall that the <term>determinant</term> map on <m>n\times n</m> matrices, denoted <m>\det</m>, is defined in the <m>n=2,3</m> cases as
+      <md>
+        <mrow> \det\begin{pmatrix}
+          a\amp b\\ c\amp d
+        \end{pmatrix}\amp=ad-bc </mrow>
+        <mrow>\det \begin{pmatrix}a\amp b\amp c\\
+        d\amp e\amp f\\ g\amp h\amp i
+        \end{pmatrix} \amp =a(ei-gh)-b(di-fg)+c(dh-eg) </mrow>
+      </md>.
+    Let <m>D, D'\subseteq \R^n</m>, where <m>n=2</m> or <m>n=3</m>. Given a function
+    <md>
+      <mrow>G\colon D \amp\rightarrow D' </mrow>
+      <mrow> (x_1,x_2,\dots, x_n) \amp\mapsto (g_1(x_1,x_2,\dots, x_n),\dots, g_n(x_1,x_2,\dots, x_n)) </mrow>
+    </md>
+    its Jacobian <m>J(G)=\frac{\partial(g_1,g_2,\dots, g_n)}{\partial(x_1,x_2,\dots, x_n)}</m> is the function defined as follows:
+    <md>
+      <mrow>J(G)=\frac{\partial(g_1,g_2)}{\partial(x_1,x_2)} \amp=\det \begin{pmatrix}
+      \frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\\
+      \frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}
+      \end{pmatrix} \amp (n=2)</mrow>
+      <mrow> J(G)=\frac{\partial(g_1,g_2,g_3)}{\partial(x_1,x_2,x_3)}\amp=\det
+      \begin{pmatrix}
+        \frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\amp \frac{\partial g_1}{\partial z}\\
+        \frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}\amp \frac{\partial g_2}{\partial z}\\
+        \frac{\partial g_3}{\partial x}\amp \frac{\partial g_3}{\partial y}\amp \frac{\partial g_3}{\partial z}
+        \end{pmatrix}
+        \amp (n=3)  </mrow>
+    </md>
+    </p>
+  </statement>
+</definition>
+    <remark xml:id="rm_Jacobian_notation">
+  <title>Jacobian notation</title>
+  <statement>
+    <p>
+      To ease notation we will often give names to the outputs of the component functions <m>g_1, g_2, \dots, g_n</m>. For example, given a function of the form <m>G(x,y,z)=(g_1(x,y,z),g_2(x,y,z),g_3(x,y,z))</m> we might write
+      <md>
+        <mrow> u \amp=g_1(x,y,z) </mrow>
+        <mrow> v\amp=g_2(x,y,z) </mrow>
+        <mrow> w \amp=g_3(x,y,z) </mrow>
+      </md>
+      for short, in which case the Jacobian of <m>G</m> is denoted
+      <m>
+        J(G)=\frac{\partial(u,v,w)}{\partial(x,y,z)}
+      </m>.
+    </p>
+  </statement>
+</remark>
+
+<example>
+  <title>Linear transformations</title>
+  <statement>
+    <p>
+      Functions of the form
+      <md>
+        <mrow>G(x,y) \amp = (ax+by, cx+dy)=(u,v) \amp (n=2)</mrow>
+        <mrow> H(x,y,z)\amp= (ax+by+cz,dx+ey+fz, gx+hy+iz)=(u,v,w) \amp (n=3)</mrow>
+      </md>
+      where <m>a,b,c,\dots, g,h,i</m> are fixed constants, are called <term>linear</term>. We can easily compute their Jacobians:
+      <md>
+        <mrow>\frac{\partial(u,v)}{\partial(x,y)} \amp=\det\begin{pmatrix}
+          a\amp b\\ c\amp d
+        \end{pmatrix}=ad-bc</mrow>
+        <mrow> \frac{\partial(u,v,w)}{\partial(x,y,z)}\amp= \det \begin{pmatrix}a\amp b\amp c\\
+        d\amp e\amp f\\ g\amp h\amp i
+        \end{pmatrix} =a(ei-gh)-b(di-fg)+c(dh-eg) </mrow>
+      </md>.
+      In linear algebra you learn that the <m>G</m> and <m>H</m> are one-to-one every if and only if these Jacobians <m>J(G)</m> and <m>J(H)</m> are nonzero. This gives us a convenient family of continuously differentiable transformations, called <term>linear transformations</term>.
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</example>
+    <remark xml:id="rm_det_notation">
+  <statement>
+    <p>
+      The textbook's determinant notation looks a lot like absolute value notation: <eg />, it writes <m>\det \begin{pmatrix}
+        a\amp b\\ c\amp d
+      \end{pmatrix}</m> as <m>\abs{\begin{array}{cc} a\amp b\\ c\amp d\end{array}}</m>. This can lead to confusion in the statement of <xref ref="th_substitution"/>, which involves taking the absolute value of the Jacobian of a function. Accordingly, we will stick with our <m>\det</m> notation.
+    </p>
+  </statement>
+</remark>
+
+<theorem xml:id="th_substitution">
+  <title>Substitution</title>
+  <statement>
+    <p>
+      Let <m>D, D'</m> be elementary regions of <m>\R^n</m>, where <m>n=2</m> or <m>n=3</m>. If
+      <md>
+        <mrow>G\colon D \amp\rightarrow D' </mrow>
+        <mrow> (x_1,x_2,\dots, x_n) \amp\mapsto (g_1(x_1,x_2,\dots, x_n),\dots, g_n(x_1,x_2,\dots, x_n)) </mrow>
+      </md>
+      is a transformation that is continuously differentiable at all points in the interior of <m>D</m>, then
+      <mdn>
+      <mrow xml:id="eq_subst_2_J"> \iint\limits_{\mathcal{D'}}f(x,y)\, dA \amp =\iint\limits_{\mathcal{D}}f\left(F(x,y)\right)
+      \left\vert J(G) \right\vert\, dA
+      \amp (n=2)</mrow>
+      <mrow xml:id="eq_subst_2_partial">  \amp =\iint\limits_{\mathcal{D}}f(g_1(x,y),g_2(x,y))
+      \left\vert\det \begin{pmatrix}
+        \frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\\
+        \frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}
+        \end{pmatrix}\right\vert\, dA
+        </mrow>
+        <mrow xml:id="eq_subst_3_J"> \iiint\limits_{\mathcal{D'}}f(x,y,z)\, dV \amp =\iiint\limits_{\mathcal{D}}f\left(F(x,y,z)\right)
+        \left\vert J(G)\right\vert\, dV
+        \amp (n=3)</mrow>
+        <mrow xml:id="eq_subst_3_partial">  \amp =\iiint\limits_{\mathcal{D}}f(g_1(x,y,z),g_2(x,y,z),g_3(x,y,z))
+        \left\vert\det \begin{pmatrix}
+          \frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\amp \frac{\partial g_1}{\partial z}\\
+          \frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}\amp \frac{\partial g_2}{\partial z}\\
+          \frac{\partial g_3}{\partial x}\amp \frac{\partial g_3}{\partial y}\amp \frac{\partial g_3}{\partial z}
+          \end{pmatrix}\right\vert\, dV
+          </mrow>
+      </mdn>.
+    </p>
+  </statement>
+</theorem>
+    <remark xml:id="rm_substitution_as_changeofvar">
+  <title>Substitution as change of variable</title>
+  <statement>
+    <p>
+      Substitution is often described as a <em>change of variable</em> technique. Let's see why, treating the <m>n=2</m> case. Treat the region <m>D</m> as living in the <m>uv</m>-plane, and the region <m>D</m> as living in the <m>xy</m>-plane. Given a transformation <m>G=(g_1,g_2)</m> from <m>D</m> to <m>D'</m>, we have
+      <mdn>
+        <mrow>x \amp=g_1(u,v) </mrow>
+        <mrow>y \amp=g_2(u,v) </mrow>
+      </mdn>.
+      Furthermore, since <m>G</m> is one-to-one and onto we can solve for <m>u</m> and <m>v</m> in terms of <m>x</m> and <m>y</m>, obtaining expressions
+      <mdn>
+        <mrow>u \amp=h_1(x,y) </mrow>
+        <mrow>v \amp=h_2(x,y) </mrow>
+      </mdn>.
+      With this notation,
+      <xref ref="eq_subst_2_J"/> can be expressed as
+      <me>
+        \iint\limits_\mathcal{D'}f(x,y)\, dA=\iint\limits_\mathcal{D'}f(g_1(u,v),g_2(u,v))\abs{\frac{\partial(x,y)}{\partial(u,v)}}\, dA
+      </me>.
+      We think of this equation as asserting that the original (or given) integral <m>\iint\limits_{D'}f(x,y)\, dA</m> can be computed via the change of variables
+      
+    </p>
+  </statement>
+</remark>
+
+<example>
+  <title>Substitution: linear, two variables</title>
+  <statement>
+    <p>
+      Define <m>\mathcal{R}</m> be the trapezoid with vertices <m>(0,1),(0,2),(1,0),(2,0)</m>. Use a substitution to compute
+      <me>
+        \iint\limits_\mathcal{R}e^{(x-y)/(x+y)}\, dA
+      </me>
+
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+
+</section>
