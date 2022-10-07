@@ -279,9 +279,10 @@ w \amp=g_3(x,y,z)
 \end{align*}
 </div>
 <p class="continuation">for short, in which case the Jacobian of <span class="process-math">\(G\)</span> is denoted <span class="process-math">\(J(G)=\frac{\partial(u,v,w)}{\partial(x,y,z)}
-\text{.}\)</span></p></article><article class="example example-like" id="example-20"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-20"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Linear transformations.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-220">Functions of the form</p>
+\text{.}\)</span></p></article><article class="definition definition-like" id="d_invertible_linear_transformations"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible linear transformations.</span>
+</h3>
+<p id="p-220">Functions of the form</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-30">
 \begin{align*}
 G(x,y) \amp = (ax+by, cx+dy)=(u,v) \amp (n=2)\\
@@ -299,8 +300,7 @@ d\amp e\amp f\\ g\amp h\amp i
 \end{pmatrix} =a(ei-gh)-b(di-fg)+c(dh-eg) \text{.}
 \end{align*}
 </div>
-<p class="continuation">In linear algebra you learn that the <span class="process-math">\(G\)</span> and <span class="process-math">\(H\)</span> are one-to-one every if and only if these Jacobians <span class="process-math">\(J(G)\)</span> and <span class="process-math">\(J(H)\)</span> are nonzero. This gives us a convenient family of continuously differentiable transformations, called <dfn class="terminology">linear transformations</dfn>.</p></article></div>
-<article class="remark remark-like" id="rm_det_notation"><h3 class="heading">
+<p class="continuation">In linear algebra you learn that the <span class="process-math">\(G\)</span> and <span class="process-math">\(H\)</span> are one-to-one everywhere if and only if the Jacobians <span class="process-math">\(J(G)\)</span> and <span class="process-math">\(J(H)\)</span> are nonzero. This gives us a convenient family of continuously differentiable transformations, called <dfn class="terminology">invertible linear transformations</dfn>.</p></article><article class="remark remark-like" id="rm_det_notation"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span>
 </h3>
 <p id="p-221">The textbook's determinant notation looks a lot like absolute value notation: e.g., it writes <span class="process-math">\(\det \begin{pmatrix}
@@ -318,57 +318,128 @@ G\colon D \amp\rightarrow D' \\
 <p class="continuation">is a transformation that is continuously differentiable at all points in the interior of <span class="process-math">\(D\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="mdn-3">
 \begin{align}
-\iint\limits_{\mathcal{D'}}f(x,y)\, dA \amp =\iint\limits_{\mathcal{D}}f\left(F(x,y)\right)
-\left\vert J(G) \right\vert\, dA
-\amp (n=2)\tag{1.6.1}\\
+\iint\limits_{\mathcal{D'}}f(x,y)\, dA \amp =\iint\limits_{\mathcal{D}}f\left(G(x,y)\right)
+\left\vert J(G) \right\vert\, dA\tag{1.6.1}\\
 \amp =\iint\limits_{\mathcal{D}}f(g_1(x,y),g_2(x,y))
 \left\vert\det \begin{pmatrix}
 \frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\\
 \frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}
-\end{pmatrix}\right\vert\, dA\tag{1.6.2}\\
-\iiint\limits_{\mathcal{D'}}f(x,y,z)\, dV \amp =\iiint\limits_{\mathcal{D}}f\left(F(x,y,z)\right)
-\left\vert J(G)\right\vert\, dV
-\amp (n=3)\tag{1.6.3}\\
+\end{pmatrix}\right\vert\, dA\tag{1.6.2}
+\end{align}
+</div>
+<p class="continuation">in the <span class="process-math">\(n=2\)</span> case, and</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="mdn-4">
+\begin{align}
+\iiint\limits_{\mathcal{D'}}f(x,y,z)\, dV \amp =\iiint\limits_{\mathcal{D}}f\left(G(x,y,z)\right)
+\left\vert J(G)\right\vert\, dV\tag{1.6.3}\\
 \amp =\iiint\limits_{\mathcal{D}}f(g_1(x,y,z),g_2(x,y,z),g_3(x,y,z))
 \left\vert\det \begin{pmatrix}
 \frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\amp \frac{\partial g_1}{\partial z}\\
 \frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}\amp \frac{\partial g_2}{\partial z}\\
 \frac{\partial g_3}{\partial x}\amp \frac{\partial g_3}{\partial y}\amp \frac{\partial g_3}{\partial z}
-\end{pmatrix}\right\vert\, dV\text{.}\tag{1.6.4}
+\end{pmatrix}\right\vert\, dV\text{,}\tag{1.6.4}
 \end{align}
-</div></article><article class="remark remark-like" id="rm_substitution_as_changeofvar"><h3 class="heading">
+</div>
+<p class="continuation">in the <span class="process-math">\(n=3\)</span> case.</p></article><article class="remark remark-like" id="rm_substitution_as_changeofvar"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Substitution as change of variable.</span>
 </h3>
-<p id="p-223">Substitution is often described as a <em class="emphasis">change of variable</em> technique. Let's see why, treating the <span class="process-math">\(n=2\)</span> case. Treat the region <span class="process-math">\(D\)</span> as living in the <span class="process-math">\(uv\)</span>-plane, and the region <span class="process-math">\(D\)</span> as living in the <span class="process-math">\(xy\)</span>-plane. Given a transformation <span class="process-math">\(G=(g_1,g_2)\)</span> from <span class="process-math">\(D\)</span> to <span class="process-math">\(D'\text{,}\)</span> we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_subst_2_J.html" id="mdn-4">
+<p id="p-223">Substitution is often described as a <em class="emphasis">change of variable</em> technique. Let's see why, treating the <span class="process-math">\(n=2\)</span> case. Suppose we are asked to compute <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> over the region <span class="process-math">\(\mathcal{R}'\text{.}\)</span> If we want to make use of <a href="" class="xref" data-knowl="./knowl/eq_subst_2_J.html" title="Equation 1.6.1">(1.6.1)</a> to transform this integral to a simpler one, we should treat <span class="process-math">\(\mathcal{R}\)</span> as <span class="process-math">\(\mathcal{D'}\text{,}\)</span> the <em class="emphasis">target</em> region in our substitution setup.</p>
+<p id="p-224">Next, suppose that in terms of the expressions</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html ./knowl/th_substitution.html" id="md-33">
+\begin{align*}
+u \amp = h_1(x,y)\\
+v \amp = h_2(x,y)
+\end{align*}
+</div>
+<p class="continuation">we have <span class="process-math">\(f(x,y)=q(h_1(x,y),h_2(x,y))=q(u,v)\text{.}\)</span> Substitution allows us to compute the original integral in terms of an integral involving the new function <span class="process-math">\(q\)</span> as follows:</p>
+<ol class="decimal">
+<li id="li-74"><p id="p-225">Let <span class="process-math">\(H=(h_1(x,y),h_2(x,y))\text{.}\)</span> The function <span class="process-math">\(H\)</span> maps our original region <span class="process-math">\(\mathcal{R}\)</span> to a new region <span class="process-math">\(\mathcal{S}\)</span> that we consider to live in the <span class="process-math">\(uv\)</span>-plane.</p></li>
+<li id="li-75"><p id="p-226">Since <span class="process-math">\(\mathcal{R}=\mathcal{D}'\)</span> in the <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> setup, we identify <span class="process-math">\(\mathcal{S}=\mathcal{D}\)</span> in this setup.</p></li>
+<li id="li-76">
+<p id="p-227">If <span class="process-math">\(H\)</span> is a <em class="emphasis">transformation</em>, then it is invertible, and there is an inverse function <span class="process-math">\(H^{-1}=G=(g_1(u,v),g_2(u,v))\text{,}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-34">
+\begin{align*}
+x \amp = g_1(u,v)\\
+y \amp = g_2(u,v)
+\end{align*}
+</div>
+<p class="continuation">are equations expressing <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span> By inverse properties, <span class="process-math">\(G\)</span> maps <span class="process-math">\(\mathcal{S}\)</span> (in the <span class="process-math">\(uv\)</span>-plane) onto <span class="process-math">\(\mathcal{R}\)</span> (in the <span class="process-math">\(xy\)</span>-plane).</p>
+</li>
+<li id="li-77">
+<p id="p-228">Using <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="md-35">
+\begin{align*}
+\iint\limits_{\mathcal{R}}f(x,y)\, dA \amp =\iint\limits_{\mathcal{S}}f(g_1(u,v),g_2(u,v))\vert J(G)\vert\,dA \\
+\amp = \iint\limits_{\mathcal{S}}q(u,v)\left\vert\frac{\partial(x,y)}{\partial(u,v)}\right\vert\, dA\text{.}
+\end{align*}
+</div>
+</li>
+</ol></article><p id="p-229">Let's make the discussion above official with a procedure. As above, it is expressed for <span class="process-math">\(n=2\)</span> case, but generalizes easily to <span class="process-math">\(n=3\text{.}\)</span></p>
+<article class="algorithm theorem-like" id="proc_subst_change_of_variable"><h3 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Substitution as change of variable.</span>
+</h3>
+<p id="p-230">Suppose <span class="process-math">\(f\)</span> is defined over the region <span class="process-math">\(\mathcal{R}\subseteq \R^2\text{,}\)</span> and we have <span class="process-math">\(f(x,y)=q(u,v)\text{,}\)</span> where <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are expressions of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="mdn-5">
 \begin{align}
-x \amp=g_1(u,v) \tag{1.6.5}\\
-y \amp=g_2(u,v) \text{.}\tag{1.6.6}
+u \amp = h_1(x,y)\tag{1.6.5}\\
+v \amp = h_2(x,y)\text{.}\tag{1.6.6}
 \end{align}
 </div>
-<p class="continuation">Furthermore, since <span class="process-math">\(G\)</span> is one-to-one and onto we can solve for <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> in terms of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> obtaining expressions</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_subst_2_J.html" id="mdn-5">
-\begin{align}
-u \amp=h_1(x,y) \tag{1.6.7}\\
-v \amp=h_2(x,y) \text{.}\tag{1.6.8}
-\end{align}
+<p class="continuation">To transform the integral <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\,dA\)</span> using the change of variables <a href="" class="xref" data-knowl="./knowl/eqs_change_var1.html" title="Equation 1.6.5">(1.6.5)–(1.6.6)</a>, proceed as follows.</p>
+<ol class="decimal">
+<li id="li-78"><p id="p-231">Let <span class="process-math">\(H=(h_1,h_2)\text{.}\)</span> Determine the region <span class="process-math">\(\mathcal{S}\)</span> that <span class="process-math">\(\mathcal{R}\)</span> is mapped onto by <span class="process-math">\(H\text{:}\)</span> i.e., compute  <span class="process-math">\(\mathcal{S}=H(\mathcal{R})\text{.}\)</span></p></li>
+<li id="li-79">
+<p id="p-232">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_subst_change_var">
+\begin{equation}
+\iint\limits_{\mathcal{R}}f(x,y)\, dA=\iint\limits_{\mathcal{S}}q(u,v)\left\vert\frac{\partial(x,y)}{\partial(u,v)}\right\vert\, dA\text{.}\tag{1.6.7}
+\end{equation}
 </div>
-<p class="continuation">With this notation, <a href="" class="xref" data-knowl="./knowl/eq_subst_2_J.html" title="Equation 1.6.1">(1.6.1)</a> can be expressed as</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_subst_2_J.html">
+</li>
+<li id="li-80">
+<p id="p-233">To compute <span class="process-math">\(\frac{\partial(x,y)}{\partial(u,v)}\)</span> you can either:</p>
+<ol class="lower-alpha">
+<li id="li-81">
+<p id="p-234">determine the inverse function <span class="process-math">\(H^{-1}=G=(g_1,g_2)\)</span> by solving for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-36">
+\begin{align*}
+x \amp = g_1(u,v)\\
+y \amp = g_2(u,v)
+\end{align*}
+</div>
+<p class="continuation">and compute <span class="process-math">\(J(G)=\partial(g_1,g_2)/\partial(u,v)\)</span> directly, or</p>
+</li>
+<li id="li-82">
+<p id="p-235">assuming <span class="process-math">\(H\)</span> and <span class="process-math">\(G\)</span> are both continuously differentiable, compute <span class="process-math">\(J(G)\)</span> <em class="emphasis">indirectly</em>, using the fact that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\iint\limits_\mathcal{D'}f(x,y)\, dA=\iint\limits_\mathcal{D'}f(g_1(u,v),g_2(u,v))\abs{\frac{\partial(x,y)}{\partial(u,v)}}\, dA\text{.}
+J(G)=\frac{1}{J(H)}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">We think of this equation as asserting that the original (or given) integral <span class="process-math">\(\iint\limits_{D'}f(x,y)\, dA\)</span> can be computed via the change of variables</p></article><article class="example example-like" id="example-21"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-21"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Substitution: linear, two variables.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-224">Define <span class="process-math">\(\mathcal{R}\)</span> be the trapezoid with vertices <span class="process-math">\((0,1),(0,2),(1,0),(2,0)\text{.}\)</span> Use a substitution to compute</p>
+</li>
+</ol>
+</li>
+</ol></article><article class="example example-like" id="example-20"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-20"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Substitution: linear, two variables.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-236">Define <span class="process-math">\(\mathcal{R}\)</span> be the trapezoid with vertices <span class="process-math">\((0,1),(0,2),(1,0),(2,0)\text{.}\)</span> Use a substitution to compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{R}e^{(x-y)/(x+y)}\, dA
 \end{equation*}
+</div></article></div>
+<article class="example example-like" id="example-21"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-21"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of paraboloid.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-237">Let <span class="process-math">\(\mathcal{R}\)</span> be the solid paraboloid defined by the inequality</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+ax^2+by^2+cz^2\leq 1\text{,}
+\end{equation*}
 </div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-225"></p></div></div>
+<p class="continuation">where <span class="process-math">\(a,b,c\in \R\)</span> are fixed constants. Use change of variables to compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{vol} \mathcal{R}=\iiint\limits_\mathcal{R}1\, dV\text{.}
+\end{equation*}
 </div></article></div></section></div></main>
 </div>
 </body>
