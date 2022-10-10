@@ -1,0 +1,136 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_substitution_polar_cylindrical">
+  <title>Substitution: polar and cylindrical coordinates</title>
+<introduction>
+  <p>
+
+  </p>
+</introduction>
+<theorem xml:id="th_substition_polar">
+  <idx><h>substition</h><h>polar coordinates</h></idx>
+  <title>Polar change of variables</title>
+  <statement>
+    <p>
+      The function
+      <md>
+        <mrow>G\colon \R^2 \amp\rightarrow \R^2 </mrow>
+        <mrow> (r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) </mrow>
+      </md>
+    </p>
+    is a continuously differentiable transformation on any subset of the <m>r\theta</m>-plane:
+    <me>
+      \{(r,\theta)\colon r\gt 0, 0\leq \theta\lt 2\pi\}
+    </me>.
+    Given a region <m>\mathcal{R}</m> whose interior lies within this set, let <m>\mathcal{S}=G(\mathcal{R})</m> be its image under the polar transformation <m>G</m>. The Jacobian of <m>G</m> is
+    <men xml:id="eq_Jacobian_polar">
+      \frac{\partial(x,y)}{\partial(r,\theta)}=\det\begin{pmatrix}
+        \cos\theta \amp -r\sin\theta\\ \sin\theta\amp r\cos\theta
+    \end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r.
+  </men>
+    By <xref ref="th_substitution"/>, we have
+    <mdn>
+      <mrow xml:id="eq_substition_polar">  \iint\limits_\mathcal{S}f(x,y)\, dA \amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, r\, dA \amp (r\gt 0\implies \abs{r}=r) </mrow>
+    </mdn>.
+
+   </statement>
+</theorem>
+
+<theorem xml:id="th_substition_cylindrical">
+  <idx><h>substition</h><h>polar coordinates</h></idx>
+  <title>Cylindrical change of variables</title>
+  <statement>
+    <p>
+      The function
+      <md>
+        <mrow>G\colon \R^3 \amp\rightarrow \R^3 </mrow>
+        <mrow> (r,\theta, z)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z) </mrow>
+      </md>
+    </p>
+    is a continuously differentiable transformation on any region <m>\mathcal{R}</m> contained in the following subset of the <m>r\theta z</m>-plane:
+    <men>
+      \{(r,\theta,z)\in \R^3\colon r\gt 0, 0\leq \theta\lt 2\pi\}
+    </men>.
+    Given a region <m>\mathcal{R}</m> whose interior lies within this set, let <m>\mathcal{S}=G(\mathcal{R})</m> be its image under the polar transformation <m>G</m>. The Jacobian of <m>G</m> is
+    <men xml:id="eq_Jacobian_cylindrical">
+      \frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\det\begin{pmatrix}
+        \cos\theta \amp -r\sin\theta\amp 0\\ \sin\theta\amp r\cos\theta\amp 0\\ 0\amp 0\amp 1
+    \end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r.
+  </men>
+      By <xref ref="th_substitution"/>, we have
+    <mdn xml:id="eq_substitution_cylindrical">
+      <mrow>  \iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, r\, dV \amp (r\gt 0\implies \abs{r}=r) </mrow>
+    </mdn>.
+
+   </statement>
+</theorem>
+<example>
+  <title>Area between cardioid and circle</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}\subseteq \R^2</m> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation
+      <me>
+        r=1+2\sin\theta
+      </me>.
+       Compute the area of <m>\mathcal{S}</m>.
+      <!-- <image xml:id="sageplot_region_cardioid" width="60%" label="sageplot_region_cardioid">
+      <sageplot>
+        polar_plot((1 + 2*sin(x),2), (x, 0, 2*pi), color=('red','blue'), thickness=2)
+      </sageplot>
+       </image> -->
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</example>
+<example>
+  <title>Average value over semicircle</title>
+  <statement>
+    <p>
+      Compute the average value of <m>f(x,y)=x</m> over the semicircular region
+      <me>
+        \mathcal{R}=\{(x,y)\in \R^2\colon x^2+y^2\leq R^2, x\geq 0\}
+      </me>,
+      where <m>R\in \R</m> is a fixed constant.
+
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Volume of sphere: cylindrical coordinates</title>
+  <statement>
+    <p>
+      Consider the solid spherical ball
+      <me>\mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2\}</me>,
+      where <m>R\in \R</m> is a fixed constant. Compute the volume of <m>\mathcal{S}</m> using cylindrical coordinates.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Average value over hemisphere: cylindrical coordinates</title>
+  <statement>
+    <p>
+      Consider the solid hemisphere
+      <me>\mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2, z\geq 0\}
+      </me>,
+      where <m>R\in \R</m> is a fixed constant.  Find the average value of the function <m>f(x,y,z)=z</m> over <m>\mathcal{S}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+</section>

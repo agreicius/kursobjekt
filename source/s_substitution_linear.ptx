@@ -1,5 +1,5 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_substitution_linear">
-  <title>Substitution: linear transformations</title>
+  <title>Substitution: introduction</title>
 <introduction>
   <p>
     In this section we provide a generalization of sorts of the substitution technique from single-variable calculus. Recall the set up in that context: given a continuous function <m>f</m> and differentiable function <m>g\colon [a,b]\colon\rightarrow \R</m> we have
@@ -298,7 +298,7 @@ Let's make the discussion above official with a procedure. As above, it is expre
     <p>
       Let <m>\mathcal{R}</m> be the solid paraboloid defined by the inequality
       <me>
-        ax^2+by^2+cz^2\leq 1
+        \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\leq 1
       </me>,
       where <m>a,b,c\in \R</m> are fixed constants.
       Use change of variables to compute
