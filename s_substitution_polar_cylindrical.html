@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Substitution: polar and cylindrical coordinates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 230-2">
+<meta property="book:author" content="Aaron Greicius">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 230-2:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_substitution_linear.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_substitution_spherical.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_substitution_linear.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_substitution_spherical.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li></ul>
+</li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic" class="internal">Logic</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_multiple_integrals.html" data-scroll="c_multiple_integrals" class="internal"><span class="codenumber">1</span> <span class="title">Multiple integrals</span></a><ul>
+<li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
+<li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
+<li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals over general regions</a></li>
+<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Area of planar regions and average value</a></li>
+<li><a href="s_triple_integrals.html" data-scroll="s_triple_integrals" class="internal">Triple integrals</a></li>
+<li><a href="s_substitution_linear.html" data-scroll="s_substitution_linear" class="internal">Substitution: introduction</a></li>
+<li><a href="s_substitution_polar_cylindrical.html" data-scroll="s_substitution_polar_cylindrical" class="active">Substitution: polar and cylindrical coordinates</a></li>
+<li><a href="s_substitution_spherical.html" data-scroll="s_substitution_spherical" class="internal">Substitution: spherical coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-sage.html" data-scroll="appendix-sage" class="internal"><span class="codenumber">E</span> <span class="title">Sage examples</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_substitution_polar_cylindrical"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Substitution: polar and cylindrical coordinates</span>
+</h2>
+<section class="introduction" id="introduction-8"><p id="p-238">Theorems <a href="" class="xref" data-knowl="./knowl/th_substition_polar.html" title="Theorem 1.7.3: Polar change of variables">1.7.3–1.7.9</a> result from applying <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> to particular transformations, called the <em class="emphasis">polar</em> and <em class="emphasis">cylindrical</em> transformations:</p>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/th_substitution.html" id="md-37">
+\begin{align*}
+G\colon \R^2 \amp\rightarrow  \R^2 \amp \text{(polar transformation)}\\
+(r,\theta)\amp\mapsto (r\cos\theta, r\sin\theta) \\
+G\colon \R^3 \amp \rightarrow \R^3 \amp \text{(cylindrical transformation)}\\
+(r,\theta,z)\amp\mapsto (r\cos\theta, r\sin\theta,z) \text{.}
+\end{align*}
+</div></section><section class="subsection" id="ss_polar"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Polar transformation</span>
+</h3>
+<p id="p-239">We will think of the polar coordinate equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-38">
+\begin{align*}
+x \amp=r\cos\theta \\
+y \amp=r\sin\theta 
+\end{align*}
+</div>
+<p class="continuation">as defining a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-39">
+\begin{align*}
+G\colon \R^2  \amp \rightarrow \R^2\\
+(r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) 
+\end{align*}
+</div>
+<p class="continuation">from one copy of <span class="process-math">\(\R^2\text{,}\)</span> called the <span class="process-math">\(r\theta\)</span>-plane, to another, called the <span class="process-math">\(xy\)</span>-plane. Earlier in your calculus career you learned to translate back and forth between polar equations and Cartesian (or rectangular) ones. We will now think of these translations as evaluations of the function <span class="process-math">\(G\)</span> or its inverse to regions of the <span class="process-math">\(r\theta\)</span>- or <span class="process-math">\(xy\)</span>-plane. For example, <span class="process-math">\(G\)</span> takes the rectangle</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R=[r_1,r_2]\times [\theta_1, \theta_2]=\{(r,\theta)\colon r_1\leq r\leq r_2, \theta_1\leq \theta\leq\theta_2\}
+\end{equation*}
+</div>
+<p class="continuation">lying in the <span class="process-math">\(r\theta\)</span>-plane, and maps it to the set of all points in the <span class="process-math">\(xy\)</span>-plane lying between the circles of radius <span class="process-math">\(r=r_1\)</span> and <span class="process-math">\(r=r_2\text{,}\)</span> centered at the origin, and between the two rays obtained by rotating the positive <span class="process-math">\(x\)</span>-axis by an angle of <span class="process-math">\(\theta=\theta_1\)</span> and <span class="process-math">\(\theta=\theta_2\text{,}\)</span> respectively. <figure class="figure figure-like" id="fig_polar_square"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/polar_square.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.1<span class="period">.</span></span><span class="space"> </span>Action of polar transformation on a rectangle in <span class="process-math">\(r\theta\)</span>-plane.</figcaption></figure> From this observation we can then understand how <span class="process-math">\(G\)</span> transforms an entire rectangular grid in the <span class="process-math">\(r\theta\)</span>-plane to a <em class="emphasis">polar grid</em> in the <span class="process-math">\(xy\)</span>-plane. <figure class="figure figure-like" id="fig_polar_transform"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/polar_transform.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Action of polar transformation on a grid in <span class="process-math">\(r\theta\)</span>-plane.</figcaption></figure></p>
+<p id="p-240">It is easy to see that <span class="process-math">\(G\)</span> is continuously differentiable, and hence is a candidate for an application of <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a>. The only thing we need to be careful about is restricting ourselves to regions <span class="process-math">\(\mathcal{R}\)</span> where <span class="process-math">\(G\)</span> is one-to-one, and hence defines a transformation.</p>
+<article class="theorem theorem-like" id="th_substition_polar"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Polar change of variables.</span>
+</h4>
+<p id="p-241">The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-40">
+\begin{align*}
+G\colon \R^2 \amp\rightarrow \R^2 \\
+(r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) 
+\end{align*}
+</div> is continuously differentiable everywhere. The Jacobian of <span class="process-math">\(G\)</span> is<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="eq_Jacobian_polar">
+\begin{equation}
+\frac{\partial(x,y)}{\partial(r,\theta)}=\det\begin{pmatrix}
+\cos\theta \amp -r\sin\theta\\ \sin\theta\amp r\cos\theta
+\end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r\text{.}\tag{1.7.1}
+\end{equation}
+</div>Assume <span class="process-math">\(G\)</span> is one-to-one on the interior of <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{,}\)</span> and  let <span class="process-math">\(\mathcal{S}=G(\mathcal{R})\)</span> be the image under <span class="process-math">\(G\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="mdn-6">
+\begin{align}
+\iint\limits_\mathcal{S}f(x,y)\, dA \amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, \abs{r}\, dA  \tag{1.7.2}\\
+\amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, r\, dA \amp (\text{assuming } r\geq 0)\text{.}\tag{1.7.3}
+\end{align}
+</div></article><article class="remark remark-like" id="rm_polar_transformation"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Polar transformation.</span>
+</h4>
+<p id="p-242">It is not difficult to show that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_polar_injective.html" id="eq_polar_injective">
+\begin{equation}
+(r\cos\theta_1, r\sin\theta_1)=(s\cos\theta_2,s\sin\theta_2)\iff \begin{cases}
+r=s \text{ and } \theta_2=\theta_1+2\pi n, n\in \Z\\
+\text{ or } \\
+r=-s \text{ and } \theta_2=-\theta_1+2\pi n, n\in \Z
+\end{cases}\text{.}\tag{1.7.4}
+\end{equation}
+</div>
+<p class="continuation">It follows that the polar function <span class="process-math">\(G(r,\theta)=(r\cos\theta, r\sin\theta)\)</span> is one-to-one on a given set as long as it doesn't contain pairs of points satisfying one of the conditions in <a href="" class="xref" data-knowl="./knowl/eq_polar_injective.html" title="Equation 1.7.4">(1.7.4)</a>. Below you find two common types of sets where <span class="process-math">\(G\)</span> is one-to-one:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_polar_injective.html" id="md-41">
+\begin{align*}
+X \amp = \{(r,\theta)\colon r &gt; 0, \alpha \leq \theta &lt; \alpha+2\pi\}\\
+Y \amp = \{(r,\theta)\colon r\ne 0, \alpha\leq \theta &lt; \alpha+\pi\}\\
+\amp \text{.}
+\end{align*}
+</div>
+<p class="continuation">Observe that <span class="process-math">\(r\)</span> values are allowed to be positive or negative in the set <span class="process-math">\(Y\text{,}\)</span> and so the range of <span class="process-math">\(\theta\)</span> needs to be restricted accordingly.</p></article><article class="example example-like" id="example-22"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-22"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Area between limaçon and circle.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-22"><article class="example example-like"><p id="p-243">Let <span class="process-math">\(\mathcal{S}\subseteq \R^2\)</span> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+r=1+2\sin\theta\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Compute the area of <span class="process-math">\(\mathcal{S}\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_cardioid.svg" role="img" class="contained"></div></p></article></div>
+<article class="example example-like" id="example-23"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-23"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over semicircle.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-244">Compute the average value of <span class="process-math">\(f(x,y)=x\)</span> over the semicircular region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{R}=\{(x,y)\in \R^2\colon x^2+y^2\leq R^2, x\geq 0\}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-245"></p></div></div>
+</div></article></div></section><section class="subsection" id="ss_substitution_cylindrical"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Cylindrical transformation</span>
+</h3>
+<p id="p-246">Our discussion in <a href="s_substitution_polar_cylindrical.html#ss_polar" class="internal" title="Subsection 1.7.1: Polar transformation">Subsection 1.7.1</a> generalizes easily to cylindrical coordinates:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html" id="md-42">
+\begin{align*}
+x   \amp=r\cos\theta \\
+y \amp =r\sin\theta\\
+z \amp = z \text{.}
+\end{align*}
+</div>
+<p class="continuation"><figure class="figure figure-like" id="fig_cylindrical_coordinates"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/cylindrical_coordinates.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.7<span class="period">.</span></span><span class="space"> </span>Cylindrical coordinates</figcaption></figure> As before, we now think of these equations as defining a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html" id="md-43">
+\begin{align*}
+G\colon \R^3 \amp \rightarrow \R^3\\
+(r,\theta,z) \amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z)
+\end{align*}
+</div>
+<p class="continuation">from <span class="process-math">\(r\theta z\)</span>-space to <span class="process-math">\(xyz\)</span>-space. Recalling some of our translation exercises from cylindrical to and from Cartesian coordinates we see that <span class="process-math">\(G\)</span> maps the box</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html">
+\begin{equation*}
+B=[r_1,r_2]\times[\theta_1,\theta_2]\times[z_1,z_2]
+\end{equation*}
+</div>
+<p class="continuation">lying in <span class="process-math">\(r\theta z\)</span>-space, to a certain region of <span class="process-math">\(xyz\)</span>-space trapped between two vertical circular cylinders of radius <span class="process-math">\(r_1\)</span> and <span class="process-math">\(r_2\text{.}\)</span> <figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/cylindrical_transform.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.8<span class="period">.</span></span><span class="space"> </span>Action of cylindrical transformation on box in <span class="process-math">\(r\theta z\)</span>-space.</figcaption></figure></p>
+<article class="theorem theorem-like" id="th_substition_cylindrical"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Cylindrical change of variables.</span>
+</h4>
+<p id="p-247">The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-44">
+\begin{align*}
+G\colon \R^3 \amp\rightarrow \R^3 \\
+(r,\theta, z)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z) 
+\end{align*}
+</div> is continuously differentiable everywhere. The Jacobian of <span class="process-math">\(G\)</span> is<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="eq_Jacobian_cylindrical">
+\begin{equation}
+\frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\det\begin{pmatrix}
+\cos\theta \amp -r\sin\theta\amp 0\\ \sin\theta\amp r\cos\theta\amp 0\\ 0\amp 0\amp 1
+\end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r\text{.}\tag{1.7.5}
+\end{equation}
+</div>Assume <span class="process-math">\(G\)</span> is one-to-one on the interior of <span class="process-math">\(\mathcal{R}\subseteq\R^3\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}=G(\mathcal{R})\)</span> be the image under <span class="process-math">\(G\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="eq_substitution_cylindrical">
+\begin{align}
+\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, \abs{r}\, dV \tag{1.7.6}\\
+\amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, r\, dV \amp (\text{assuming } r\geq 0) \text{.}\tag{1.7.7}
+\end{align}
+</div></article><article class="example example-like" id="example-24"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-24"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of sphere: cylindrical coordinates.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-248">Consider the solid spherical ball</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2\}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant. Compute the volume of <span class="process-math">\(\mathcal{S}\)</span> using cylindrical coordinates.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><p id="p-249"></p></div></div>
+</div></article></div>
+<article class="example example-like" id="example-25"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-25"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over hemisphere: cylindrical coordinates.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-250">Consider the solid hemisphere</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2, z\geq 0\}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant.  Find the average height (distance to <span class="process-math">\(xy\)</span>-plane) of points in <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><p id="p-251"></p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

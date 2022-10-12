@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Polar change of variables.</span>
+</h4>
+<p>The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+G\colon \R^2 \amp\rightarrow \R^2 \\
+(r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) 
+\end{align*}
+</div> is continuously differentiable everywhere. The Jacobian of <span class="process-math">\(G\)</span> is<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
+\begin{equation}
+\frac{\partial(x,y)}{\partial(r,\theta)}=\det\begin{pmatrix}
+\cos\theta \amp -r\sin\theta\\ \sin\theta\amp r\cos\theta
+\end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r\text{.}\tag{1.7.1}
+\end{equation}
+</div>Assume <span class="process-math">\(G\)</span> is one-to-one on the interior of <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{,}\)</span> and  let <span class="process-math">\(\mathcal{S}=G(\mathcal{R})\)</span> be the image under <span class="process-math">\(G\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
+\begin{align}
+\iint\limits_\mathcal{S}f(x,y)\, dA \amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, \abs{r}\, dA  \tag{1.7.2}\\
+\amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, r\, dA \amp (\text{assuming } r\geq 0)\text{.}\tag{1.7.3}
+\end{align}
+</div></article><span class="incontext"><a href="s_substitution_polar_cylindrical.html#th_substition_polar" class="internal">in-context</a></span>
+</body>
+</html>

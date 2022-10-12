@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Substitution: linear transformations</title>
+<title>Substitution: introduction</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -162,7 +162,7 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href="" target="_blank"><img src="external/images/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 230-2:</span> <span class="subtitle">Kursobjekt</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
@@ -170,11 +170,11 @@ window.MathJax = {
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_triple_integrals.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_triple_integrals.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_substitution_polar_cylindrical.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_triple_integrals.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_triple_integrals.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_substitution_polar_cylindrical.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -195,7 +195,9 @@ window.MathJax = {
 <li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals over general regions</a></li>
 <li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Area of planar regions and average value</a></li>
 <li><a href="s_triple_integrals.html" data-scroll="s_triple_integrals" class="internal">Triple integrals</a></li>
-<li><a href="s_substitution_linear.html" data-scroll="s_substitution_linear" class="active">Substitution: linear transformations</a></li>
+<li><a href="s_substitution_linear.html" data-scroll="s_substitution_linear" class="active">Substitution: introduction</a></li>
+<li><a href="s_substitution_polar_cylindrical.html" data-scroll="s_substitution_polar_cylindrical" class="internal">Substitution: polar and cylindrical coordinates</a></li>
+<li><a href="s_substitution_spherical.html" data-scroll="s_substitution_spherical" class="internal">Substitution: spherical coordinates</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -208,7 +210,7 @@ window.MathJax = {
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="s_substitution_linear"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Substitution: linear transformations</span>
+<span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Substitution: introduction</span>
 </h2>
 <section class="introduction" id="introduction-7"><p id="p-214">In this section we provide a generalization of sorts of the substitution technique from single-variable calculus. Recall the set up in that context: given a continuous function <span class="process-math">\(f\)</span> and differentiable function <span class="process-math">\(g\colon [a,b]\colon\rightarrow \R\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="md-24">
@@ -432,7 +434,7 @@ J(G)=\frac{1}{J(H)}\text{.}
 </h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-237">Let <span class="process-math">\(\mathcal{R}\)</span> be the solid paraboloid defined by the inequality</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-ax^2+by^2+cz^2\leq 1\text{,}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\leq 1\text{,}
 \end{equation*}
 </div>
 <p class="continuation">where <span class="process-math">\(a,b,c\in \R\)</span> are fixed constants. Use change of variables to compute</p>
