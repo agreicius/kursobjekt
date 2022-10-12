@@ -1,0 +1,77 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_substitution_spherical">
+  <title>Substitution: spherical coordinates</title>
+  <p>
+    As our last application of <xref ref="th_substitution"/> we consider the spherical coordinate equations
+    <mdn>
+      <mrow xml:id="eq_spherical_x"> x \amp = \rho\sin\phi\cos\theta</mrow>
+      <mrow xml:id="eq_spherical_y"> y\amp =\rho\sin\phi\sin\theta </mrow>
+      <mrow xml:id="eq_spherical_z"> z \amp =\rho\cos\phi </mrow>
+    </mdn>,
+    where we assume <m>\rho\geq 0</m> and <m>0\leq \phi\leq \pi</m>.
+    <figure xml:id="fig_spherical_coordinates">
+      <image xml:id="im_spherical_coordinates" width="60%" source="spherical_coordinates.png">
+      </image>
+      <caption>Spherical coordinates</caption>
+    </figure>
+    As before we think of these equations as definining a function
+    <md>
+      <mrow>G\colon \R^3 \amp\rightarrow \R^3 </mrow>
+      <mrow> (\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) </mrow>
+    </md>
+    from <m>\rho\phi\theta</m>-space to <m>xyz</m>-space.
+</p>
+  <theorem xml:id="th_substition_cylindrical">
+    <idx><h>substitution</h><h>spherical</h></idx>
+    <title>Spherical change of variables</title>
+    <statement>
+      <p>
+        The function
+        <md>
+          <mrow>G\colon \R^3 \amp\rightarrow \R^3 </mrow>
+          <mrow> (\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) </mrow>
+        </md>
+      </p>
+      is continuously differentiable everywhere. The Jacobian of <m>G</m> is
+      <men xml:id="eq_Jacobian_cylindrical">
+        \frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\det\begin{pmatrix}
+          \sin\phi\cos\theta \amp\rho\cos\phi\cos\theta\amp -\rho\sin\phi\sin\theta\\
+          \sin\phi\sin\theta\amp \rho\cos\phi\sin\theta\amp \rho\sin\phi\cos\theta\\
+          \cos\phi\amp -\rho\sin\phi\amp 0
+      \end{pmatrix}=\rho^2\sin\phi
+    </men>.
+     Assume <m>G</m> is one-to-one on the interior of <m>\mathcal{R}\subseteq\R^3</m>, and let <m>\mathcal{S}=G(\mathcal{R})</m> be the image under <m>G</m>. If <m>f</m> is continuous on the interior of <m>\mathcal{R}</m>, then by <xref ref="th_substitution"/> we have
+      <mdn xml:id="eq_substitution_spherical">
+        <mrow>  \iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \abs{\sin\phi}\, dV </mrow>
+        <mrow>  \amp = \iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \sin\phi\, dV
+        \amp (\text{assuming } 0\leq \phi\leq \pi)</mrow>
+      </mdn>.
+     </statement>
+  </theorem>
+  <example xml:id="eg_avg_distance_sphere">
+    <title>Average distance over a solid sphere</title>
+    <statement>
+      <p>
+        Compute the average distance to the origin of points <m>(x,y,z)</m> lying within the solid sphere <m>x^2+y^2+z^2= R^2</m>, where <m>R</m> is a fixed positive constant.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+  <example xml:id="eg_volume_icecream">
+    <title>Volume of ice cream cone</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{R}</m> be the region lying above the cone <m>z=\sqrt{x^2+y^2}</m> and within the sphere <m>x^2+y^2+(z-R)^2=R^2</m>, where <m>R</m> is a fixed positive constant. Compute the volume of <m>\mathcal{R}</m> as a triple integral.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+
+</section>

@@ -7,4 +7,6 @@
   <xi:include href="./s_triple_integrals.ptx"/>
   <xi:include href="./s_substitution_linear.ptx"/>
   <xi:include href="./s_substitution_polar_cylindrical.ptx"/>
+  <xi:include href="./s_substitution_spherical.ptx"/>
+
 </chapter>

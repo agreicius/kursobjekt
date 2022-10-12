@@ -2,11 +2,48 @@
   <title>Substitution: polar and cylindrical coordinates</title>
 <introduction>
   <p>
-
+Theorems <xref first="th_substition_polar" last="th_substition_cylindrical" text="global"/> result from applying <xref ref="th_substitution"/> to particular transformations, called the <em>polar</em> and <em>cylindrical</em> transformations:
+<md>
+  <mrow>G\colon \R^2 \amp\rightarrow  \R^2 \amp \text{(polar transformation)}</mrow>
+  <mrow> (r,\theta)\amp\mapsto (r\cos\theta, r\sin\theta) </mrow>
+  <mrow>G\colon \R^3 \amp \rightarrow \R^3 \amp \text{(cylindrical transformation)}</mrow>
+  <mrow> (r,\theta,z)\amp\mapsto (r\cos\theta, r\sin\theta,z) </mrow>
+</md>.
   </p>
 </introduction>
+<subsection xml:id="ss_polar">
+  <title>Polar transformation</title>
+  <p>
+    We will think of the polar coordinate equations
+    <md>
+      <mrow>x \amp=r\cos\theta </mrow>
+      <mrow>y \amp=r\sin\theta </mrow>
+    </md>
+    as defining a function
+    <md>
+      <mrow>G\colon \R^2  \amp \rightarrow \R^2</mrow>
+      <mrow> (r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) </mrow>
+    </md>
+    from one copy of <m>\R^2</m>, called the <m>r\theta</m>-plane, to another, called the <m>xy</m>-plane. Earlier in your calculus career you learned to translate back and forth between polar equations and Cartesian (or rectangular) ones. We will now think of these translations as evaluations of the function <m>G</m> or its inverse to regions of the <m>r\theta</m>- or <m>xy</m>-plane. For example, <m>G</m> takes the rectangle
+    <me>
+      R=[r_1,r_2]\times [\theta_1, \theta_2]=\{(r,\theta)\colon r_1\leq r\leq r_2, \theta_1\leq \theta\leq\theta_2\}
+    </me>
+    lying in the <m>r\theta</m>-plane, and maps it to the set of all points in the <m>xy</m>-plane lying between the circles of radius <m>r=r_1</m> and <m>r=r_2</m>, centered at the origin, and between the two rays obtained by rotating the positive <m>x</m>-axis by an angle of <m>\theta=\theta_1</m> and <m>\theta=\theta_2</m>, respectively.
+    <figure xml:id="fig_polar_square">
+      <image xml:id="im_polar_square" width="60%" source="polar_square.png"/>
+      <caption>Action of polar transformation on a rectangle in <m>r\theta</m>-plane.</caption>
+    </figure>
+    From this observation we can then understand how <m>G</m> transforms an entire rectangular grid in the <m>r\theta</m>-plane to a <em>polar grid</em> in the <m>xy</m>-plane.
+    <figure xml:id="fig_polar_transform">
+      <image xml:id="im_polar_transform" width="60%" source="polar_transform.png"/>
+      <caption>Action of polar transformation on a grid in <m>r\theta</m>-plane.</caption>
+    </figure>
+  </p>
+<p>
+It is easy to see that <m>G</m> is continuously differentiable, and hence is a candidate for an application of <xref ref="th_substitution"/>. The only thing we need to be careful about is restricting ourselves to regions <m>\mathcal{R}</m> where <m>G</m> is one-to-one, and hence defines a transformation.
+</p>
 <theorem xml:id="th_substition_polar">
-  <idx><h>substition</h><h>polar coordinates</h></idx>
+  <idx><h>substitution</h><h>polar coordinates</h></idx>
   <title>Polar change of variables</title>
   <statement>
     <p>
@@ -16,54 +53,46 @@
         <mrow> (r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) </mrow>
       </md>
     </p>
-    is a continuously differentiable transformation on any subset of the <m>r\theta</m>-plane:
-    <me>
-      \{(r,\theta)\colon r\gt 0, 0\leq \theta\lt 2\pi\}
-    </me>.
-    Given a region <m>\mathcal{R}</m> whose interior lies within this set, let <m>\mathcal{S}=G(\mathcal{R})</m> be its image under the polar transformation <m>G</m>. The Jacobian of <m>G</m> is
+    is continuously differentiable everywhere. The Jacobian of <m>G</m> is
     <men xml:id="eq_Jacobian_polar">
       \frac{\partial(x,y)}{\partial(r,\theta)}=\det\begin{pmatrix}
         \cos\theta \amp -r\sin\theta\\ \sin\theta\amp r\cos\theta
-    \end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r.
-  </men>
-    By <xref ref="th_substitution"/>, we have
+    \end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r
+  </men>.
+    Assume <m>G</m> is one-to-one on the interior of <m>\mathcal{R}\subseteq\R^2</m>, and  let <m>\mathcal{S}=G(\mathcal{R})</m> be the image under <m>G</m>.
+    If <m>f</m> is continuous on the interior of <m>\mathcal{R}</m>, then by <xref ref="th_substitution"/> we have
     <mdn>
-      <mrow xml:id="eq_substition_polar">  \iint\limits_\mathcal{S}f(x,y)\, dA \amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, r\, dA \amp (r\gt 0\implies \abs{r}=r) </mrow>
+      <mrow xml:id="eq_substition_polar">  \iint\limits_\mathcal{S}f(x,y)\, dA \amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, \abs{r}\, dA  </mrow>
+      <mrow>  \amp =\iint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta) \, r\, dA \amp (\text{assuming } r\geq 0)</mrow>
     </mdn>.
-
    </statement>
 </theorem>
+    <remark xml:id="rm_polar_transformation">
+  <title>Polar transformation</title>
 
-<theorem xml:id="th_substition_cylindrical">
-  <idx><h>substition</h><h>polar coordinates</h></idx>
-  <title>Cylindrical change of variables</title>
   <statement>
     <p>
-      The function
-      <md>
-        <mrow>G\colon \R^3 \amp\rightarrow \R^3 </mrow>
-        <mrow> (r,\theta, z)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z) </mrow>
-      </md>
-    </p>
-    is a continuously differentiable transformation on any region <m>\mathcal{R}</m> contained in the following subset of the <m>r\theta z</m>-plane:
-    <men>
-      \{(r,\theta,z)\in \R^3\colon r\gt 0, 0\leq \theta\lt 2\pi\}
+      It is not difficult to show that
+      <men xml:id="eq_polar_injective">
+        (r\cos\theta_1, r\sin\theta_1)=(s\cos\theta_2,s\sin\theta_2)\iff \begin{cases}
+          r=s \text{ and } \theta_2=\theta_1+2\pi n, n\in \Z\\
+          \text{ or } \\
+          r=-s \text{ and } \theta_2=-\theta_1+2\pi n, n\in \Z
+      \end{cases}
     </men>.
-    Given a region <m>\mathcal{R}</m> whose interior lies within this set, let <m>\mathcal{S}=G(\mathcal{R})</m> be its image under the polar transformation <m>G</m>. The Jacobian of <m>G</m> is
-    <men xml:id="eq_Jacobian_cylindrical">
-      \frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\det\begin{pmatrix}
-        \cos\theta \amp -r\sin\theta\amp 0\\ \sin\theta\amp r\cos\theta\amp 0\\ 0\amp 0\amp 1
-    \end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r.
-  </men>
-      By <xref ref="th_substitution"/>, we have
-    <mdn xml:id="eq_substitution_cylindrical">
-      <mrow>  \iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, r\, dV \amp (r\gt 0\implies \abs{r}=r) </mrow>
-    </mdn>.
+    It follows that the polar function <m>G(r,\theta)=(r\cos\theta, r\sin\theta)</m> is one-to-one on a given set as long as it doesn't contain pairs of points satisfying one of the conditions in <xref ref="eq_polar_injective"/>. Below you find two common types of sets where <m>G</m> is one-to-one:
+    <md>
+      <mrow> X \amp = \{(r,\theta)\colon r &gt; 0, \alpha \leq \theta &lt; \alpha+2\pi\}</mrow>
+      <mrow> Y \amp = \{(r,\theta)\colon r\ne 0, \alpha\leq \theta &lt; \alpha+\pi\}</mrow>
+      <mrow> \amp </mrow>
+    </md>.
+    Observe that <m>r</m> values are allowed to be positive or negative in the set <m>Y</m>, and so the range of <m>\theta</m> needs to be restricted accordingly.
+    </p>
+  </statement>
+</remark>
 
-   </statement>
-</theorem>
 <example>
-  <title>Area between cardioid and circle</title>
+  <title>Area between limaçon and circle</title>
   <statement>
     <p>
       Let <m>\mathcal{S}\subseteq \R^2</m> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation
@@ -71,11 +100,12 @@
         r=1+2\sin\theta
       </me>.
        Compute the area of <m>\mathcal{S}</m>.
-      <!-- <image xml:id="sageplot_region_cardioid" width="60%" label="sageplot_region_cardioid">
+      <image xml:id="sageplot_region_cardioid" width="60%" label="sageplot_region_cardioid">
       <sageplot>
+        var('x')
         polar_plot((1 + 2*sin(x),2), (x, 0, 2*pi), color=('red','blue'), thickness=2)
       </sageplot>
-       </image> -->
+       </image>
     </p>
   </statement>
   <!-- <solution>
@@ -102,6 +132,62 @@
     </p>
   </solution>
 </example>
+</subsection>
+<subsection xml:id="ss_substitution_cylindrical">
+  <title>Cylindrical transformation</title>
+  <p>
+    Our discussion in <xref ref="ss_polar"/> generalizes easily to cylindrical coordinates:
+    <md>
+      <mrow>x   \amp=r\cos\theta </mrow>
+      <mrow>y \amp =r\sin\theta</mrow>
+      <mrow> z \amp = z </mrow>
+    </md>.
+    <figure xml:id="fig_cylindrical_coordinates">
+      <image xml:id="im_cylindrical_coordinates" width="60%" source="cylindrical_coordinates.png">
+
+      </image>
+      <caption>Cylindrical coordinates</caption>
+    </figure>
+    As before, we now think of these equations as defining a function
+    <md>
+      <mrow>G\colon \R^3 \amp \rightarrow \R^3</mrow>
+      <mrow>(r,\theta,z) \amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z)</mrow>
+    </md>
+    from <m>r\theta z</m>-space to <m>xyz</m>-space. Recalling some of our translation exercises from cylindrical to and from Cartesian coordinates we see that <m>G</m> maps the box
+    <me>
+      B=[r_1,r_2]\times[\theta_1,\theta_2]\times[z_1,z_2]
+    </me>
+    lying in <m>r\theta z</m>-space, to a certain region of <m>xyz</m>-space trapped between two vertical circular cylinders of radius <m>r_1</m> and <m>r_2</m>.
+    <figure>
+      <image xml:id="im_cylindrical_transform" width="60%" source="cylindrical_transform.png"/>
+        <caption>Action of cylindrical transformation on box in <m>r\theta z</m>-space.</caption>
+    </figure>
+  </p>
+  <theorem xml:id="th_substition_cylindrical">
+    <idx><h>substitution</h><h>polar coordinates</h></idx>
+    <title>Cylindrical change of variables</title>
+    <statement>
+      <p>
+        The function
+        <md>
+          <mrow>G\colon \R^3 \amp\rightarrow \R^3 </mrow>
+          <mrow> (r,\theta, z)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z) </mrow>
+        </md>
+      </p>
+      is continuously differentiable everywhere. The Jacobian of <m>G</m> is
+      <men xml:id="eq_Jacobian_cylindrical">
+        \frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\det\begin{pmatrix}
+          \cos\theta \amp -r\sin\theta\amp 0\\ \sin\theta\amp r\cos\theta\amp 0\\ 0\amp 0\amp 1
+      \end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r
+    </men>.
+     Assume <m>G</m> is one-to-one on the interior of <m>\mathcal{R}\subseteq\R^3</m>, and let <m>\mathcal{S}=G(\mathcal{R})</m> be the image under <m>G</m>. If <m>f</m> is continuous on the interior of <m>\mathcal{R}</m>, then by <xref ref="th_substitution"/> we have
+      <mdn xml:id="eq_substitution_cylindrical">
+        <mrow>  \iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, \abs{r}\, dV </mrow>
+        <mrow>  \amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, r\, dV \amp (\text{assuming } r\geq 0) </mrow>
+      </mdn>.
+
+     </statement>
+  </theorem>
 <example>
   <title>Volume of sphere: cylindrical coordinates</title>
   <statement>
@@ -124,7 +210,7 @@
       Consider the solid hemisphere
       <me>\mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2, z\geq 0\}
       </me>,
-      where <m>R\in \R</m> is a fixed constant.  Find the average value of the function <m>f(x,y,z)=z</m> over <m>\mathcal{S}</m>.
+      where <m>R\in \R</m> is a fixed constant.  Find the average height (distance to <m>xy</m>-plane) of points in <m>\mathcal{S}</m>.
     </p>
   </statement>
   <solution>
@@ -133,4 +219,5 @@
     </p>
   </solution>
 </example>
+</subsection>
 </section>
