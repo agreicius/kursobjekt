@@ -1,5 +1,5 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_substitution_linear">
-  <title>Substitution: introduction</title>
+  <title>Substitution: general</title>
 <introduction>
   <p>
     In this section we provide a generalization of sorts of the substitution technique from single-variable calculus. Recall the set up in that context: given a continuous function <m>f</m> and differentiable function <m>g\colon [a,b]\colon\rightarrow \R</m> we have
@@ -293,10 +293,10 @@ Let's make the discussion above official with a procedure. As above, it is expre
   </solution> -->
 </example>
 <example>
-  <title>Volume of paraboloid</title>
+  <title>Volume of ellipsoid</title>
   <statement>
     <p>
-      Let <m>\mathcal{R}</m> be the solid paraboloid defined by the inequality
+      Let <m>\mathcal{R}</m> be the solid ellipsoid defined by the inequality
       <me>
         \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\leq 1
       </me>,
