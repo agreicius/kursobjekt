@@ -13,7 +13,7 @@
       </image>
       <caption>Spherical coordinates</caption>
     </figure>
-    As before we think of these equations as definining a function
+    As before we think of these equations as defining a function
     <md>
       <mrow>G\colon \R^3 \amp\rightarrow \R^3 </mrow>
       <mrow> (\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) </mrow>
@@ -47,6 +47,50 @@
       </mdn>.
      </statement>
   </theorem>
+  <algorithm xml:id="proc_spherical_coord">
+    <title>Integrating using spherical change of variables</title>
+    <statement>
+      <p>
+        When computing an integral <m>\iiint\limits_Df(x,y,z)\, dV</m> using a spherical change of variables, we often end up describing the corresponding region in <m>\rho\phi\theta</m>-space in type-B form. In this case, proceed as follows.
+      </p>
+      <ol>
+        <li>
+          <title>Sketch</title>
+          <p>
+            Sketch <m>D</m> along with its projection <m>\mathcal{R}</m> onto the <m>xy</m>-plane.
+          </p>
+        </li>
+        <li>
+          <title><m>\rho</m>-limits of integration</title>
+          <p>
+            For each <m>\phi\in [0,\pi]</m> and <m>\theta\in [0,2\pi]</m>, let <m>R_{\phi,\theta}</m> be the ray through the origin that makes an angle of <m>\phi</m> with the positive <m>z</m>-axis, and whose projection on the <m>xy</m>-plane makes an angle of <m>\theta</m> with the positive <m>x</m>-axis. The <m>\rho</m>-values of the points where the ray <m>R_{\phi,\theta}</m> enters and leaves <m>D</m> give us our <m>\rho</m>-bounds <m>p_1(\phi,\theta)\leq \rho\leq p_2(\phi,\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <title><m>\phi</m>-limits of integration</title>
+          <p>
+            For each <m>\theta\in [0,2\pi]</m>, as we let <m>\phi</m> vary the ray <m>R_{\phi,\theta}</m> sweeps through <m>D</m>. The <m>\phi</m> values <m>g_1(\theta), g_2(\theta)</m> of the points where the sweeping ray enters and leaves <m>D</m> give us our <m>\phi</m>-bounds <m>g_1(\theta)\leq \phi\leq g_2(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <title><m>\theta</m>-limits of integration</title>
+          <p>
+            As we let <m>\theta</m> vary, the ray <m>L_\theta</m> in the <m>xy</m>-plane making an angle of <m>\theta</m> with the positive <m>x</m>-axis rotates around the <m>z</m>-axis and sweeps across <m>\mathcal{R}</m>. The <m>theta</m>-values <m>\theta_1, \theta_2</m> of the points where the sweeping ray enters and leaves <m>\mathcal{R}</m> give us our <m>\theta</m>-bounds
+            <m>\theta_1\leq \theta\leq \theta_2</m>.
+          </p>
+        </li>
+        <li>
+          <title>Integrate</title>
+          <p>
+            Use cylindrical substitution and Fubini's theorem to conclude
+            <me>
+              \iiint\limits_Df(x,y,z)\, dV=\int_{\theta_1}^{\theta_2}\int_{g_1(\theta)}^{g_2(\theta)}\int_{p_1(\phi,\theta)}^{p_2(\phi,\theta)}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi)\rho^2\sin\phi\, d\rho\, d\phi\, d\theta
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </algorithm>
   <example xml:id="eg_avg_distance_sphere">
     <title>Average distance over a solid sphere</title>
     <statement>

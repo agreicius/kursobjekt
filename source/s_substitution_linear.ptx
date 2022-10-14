@@ -266,6 +266,7 @@ Let's make the discussion above official with a procedure. As above, it is expre
                 <me>
                   J(G)=\frac{1}{J(H)}
                 </me>.
+                Observe that <m>1/J(H)</m> is an expression in <m>x</m> and <m>y</m> that you will need to express in terms of <m>u</m> and <m>v</m>!
               </p>
             </li>
           </ol>

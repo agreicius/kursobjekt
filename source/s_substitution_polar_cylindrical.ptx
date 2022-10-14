@@ -188,6 +188,50 @@ It is easy to see that <m>G</m> is continuously differentiable, and hence is a c
 
      </statement>
   </theorem>
+  <algorithm xml:id="proc_cylindrical_coord">
+    <title>Integrating using cylindrical change of variables</title>
+    <statement>
+      <p>
+        When computing an integral <m>\iiint\limits_Df(x,y,z)\, dV</m> using a cylindrical change of variables, we often end up describing the corresponding region in <m>r\theta z</m>-space in type-A form. In this case, proceed as follows.
+      </p>
+      <ol>
+        <li>
+          <title>Sketch</title>
+          <p>
+            Sketch <m>D</m> along with its projection <m>\mathcal{R}</m> onto the <m>xy</m>-plane.
+          </p>
+        </li>
+        <li>
+          <title><m>z</m>-limits of integration</title>
+          <p>
+            For each point <m>(r,\theta,0)\in \mathcal{R}</m> visualize the line parallel to the <m>z</m>-axis passing through it, and observe where this line enters and exits <m>D</m>. The <m>z</m>-values <m>p_1(r,\theta), p_2(r,\theta)</m> give us our <m>z</m>-bounds <m>p_1(r,\theta)\leq z\leq p_2(r,\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <title><m>r</m>-limits of integration</title>
+          <p>
+            For each <m>\theta\in [0,2\pi]</m>, imagine the ray <m>L_\theta</m> in the <m>xy</m>-plane that makes an angle of <m>\theta</m> with the positive <m>x</m>-axis. The <m>r</m>-values <m>g_1(\theta), g_2(\theta)</m> of the points where <m>L_\theta</m> enters and leaves <m>\mathcal{R}</m> give us our <m>r</m>-bounds <m>g_1(\theta)\leq r\leq g_2(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <title><m>\theta</m>-limits of integration</title>
+          <p>
+            As we let <m>\theta</m> vary, the ray <m>L_\theta</m> rotates around the <m>z</m>-axis and sweeps across <m>\mathcal{R}</m>. The <m>theta</m>-values <m>\theta_1, \theta_2</m> of the points where the sweeping ray enters and leaves <m>\mathcal{R}</m> give us our <m>\theta</m>-bounds
+            <m>\theta_1\leq \theta\leq \theta_2</m>.
+          </p>
+        </li>
+        <li>
+          <title>Integrate</title>
+          <p>
+            Use cylindrical substitution and Fubini's theorem to conclude
+            <me>
+              \iiint\limits_Df(x,y,z)\, dV=\int_{\theta_1}^{\theta_2}\int_{g_1(\theta)}^{g_2(\theta)}\int_{p_1(r,\theta)}^{p_2(r,\theta)}f(r\cos\theta, r\sin\theta, z)\, r\,  dz\, dr\, d\theta
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </algorithm>
 <example>
   <title>Volume of sphere: cylindrical coordinates</title>
   <statement>
