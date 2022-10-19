@@ -11,29 +11,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Spherical change of variables.</span>
-</h3>
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Cylindrical change of variables.</span>
+</h4>
 <p>The function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
 G\colon \R^3 \amp\rightarrow \R^3 \\
-(\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) 
+(r,\theta, z)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z) 
 \end{align*}
 </div> is continuously differentiable everywhere. The Jacobian of <span class="process-math">\(G\)</span> is<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
 \begin{equation}
 \frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\det\begin{pmatrix}
-\sin\phi\cos\theta \amp\rho\cos\phi\cos\theta\amp -\rho\sin\phi\sin\theta\\
-\sin\phi\sin\theta\amp \rho\cos\phi\sin\theta\amp \rho\sin\phi\cos\theta\\
-\cos\phi\amp -\rho\sin\phi\amp 0
-\end{pmatrix}=\rho^2\sin\phi\text{.}\tag{1.8.4}
+\cos\theta \amp -r\sin\theta\amp 0\\ \sin\theta\amp r\cos\theta\amp 0\\ 0\amp 0\amp 1
+\end{pmatrix}=r(\cos^2\theta+\sin\theta^2)=r\text{.}\tag{1.7.5}
 \end{equation}
 </div>Assume <span class="process-math">\(G\)</span> is one-to-one on the interior of <span class="process-math">\(\mathcal{R}\subseteq\R^3\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}=G(\mathcal{R})\)</span> be the image under <span class="process-math">\(G\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
 \begin{align}
-\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \abs{\sin\phi}\, dV \tag{1.8.5}\\
-\amp = \iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \sin\phi\, dV
-\amp (\text{assuming } 0\leq \phi\leq \pi)\text{.}\tag{1.8.6}
+\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, \abs{r}\, dV \tag{1.7.6}\\
+\amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, r\, dV \amp (\text{assuming } r\geq 0) \text{.}\tag{1.7.7}
 \end{align}
-</div></article><span class="incontext"><a href="s_substitution_spherical.html#th_substition_cylindrical" class="internal">in-context</a></span>
+</div></article><span class="incontext"><a href="s_substitution_polar_cylindrical.html#th_substition_cylindrical" class="internal">in-context</a></span>
 </body>
 </html>

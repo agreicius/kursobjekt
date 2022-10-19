@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="algorithm theorem-like"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using cylindrical change of variables.</span>
+</h4>
+<p>When computing an integral <span class="process-math">\(\iiint\limits_Df(x,y,z)\, dV\)</span> using a cylindrical change of variables, we often end up describing the corresponding region in <span class="process-math">\(r\theta z\)</span>-space in type-A form. In this case, proceed as follows.</p>
+<ol class="decimal">
+<li>
+<span class="heading"><span class="title">Sketch.</span></span><p>Sketch <span class="process-math">\(D\)</span> along with its projection <span class="process-math">\(\mathcal{R}\)</span> onto the <span class="process-math">\(xy\)</span>-plane.</p>
+</li>
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(z\)</span>-limits of integration.</span></span><p>For each point <span class="process-math">\((r,\theta,0)\in \mathcal{R}\)</span> visualize the line parallel to the <span class="process-math">\(z\)</span>-axis passing through it, and observe where this line enters and exits <span class="process-math">\(D\text{.}\)</span> The <span class="process-math">\(z\)</span>-values <span class="process-math">\(p_1(r,\theta), p_2(r,\theta)\)</span> give us our <span class="process-math">\(z\)</span>-bounds <span class="process-math">\(p_1(r,\theta)\leq z\leq p_2(r,\theta)\text{.}\)</span></p>
+</li>
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(r\)</span>-limits of integration.</span></span><p>For each <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> imagine the ray <span class="process-math">\(L_\theta\)</span> in the <span class="process-math">\(xy\)</span>-plane that makes an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis. The <span class="process-math">\(r\)</span>-values <span class="process-math">\(g_1(\theta), g_2(\theta)\)</span> of the points where <span class="process-math">\(L_\theta\)</span> enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(r\)</span>-bounds <span class="process-math">\(g_1(\theta)\leq r\leq g_2(\theta)\text{.}\)</span></p>
+</li>
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(\theta\)</span>-limits of integration.</span></span><p>As we let <span class="process-math">\(\theta\)</span> vary, the ray <span class="process-math">\(L_\theta\)</span> rotates around the <span class="process-math">\(z\)</span>-axis and sweeps across <span class="process-math">\(\mathcal{R}\text{.}\)</span> The <span class="process-math">\(theta\)</span>-values <span class="process-math">\(\theta_1, \theta_2\)</span> of the points where the sweeping ray enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(\theta\)</span>-bounds <span class="process-math">\(\theta_1\leq \theta\leq \theta_2\text{.}\)</span></p>
+</li>
+<li>
+<span class="heading"><span class="title">Integrate.</span></span><p>Use cylindrical substitution and Fubini's theorem to conclude</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_Df(x,y,z)\, dV=\int_{\theta_1}^{\theta_2}\int_{g_1(\theta)}^{g_2(\theta)}\int_{p_1(r,\theta)}^{p_2(r,\theta)}f(r\cos\theta, r\sin\theta, z)\, r\,  dz\, dr\, d\theta\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><span class="incontext"><a href="s_substitution_polar_cylindrical.html#proc_cylindrical_coord" class="internal">in-context</a></span>
+</body>
+</html>

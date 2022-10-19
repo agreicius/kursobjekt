@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applications of multiple integrals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 230-2">
+<meta property="book:author" content="Aaron Greicius">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 230-2:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_substitution_spherical.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="c_integrals_vectorfields.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_substitution_spherical.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_multiple_integrals.html" title="Up">Up</a><a class="next-button button toolbar-item" href="c_integrals_vectorfields.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li></ul>
+</li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic" class="internal">Logic</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_multiple_integrals.html" data-scroll="c_multiple_integrals" class="internal"><span class="codenumber">1</span> <span class="title">Multiple integrals</span></a><ul>
+<li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
+<li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
+<li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals over general regions</a></li>
+<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Area of planar regions and average value</a></li>
+<li><a href="s_triple_integrals.html" data-scroll="s_triple_integrals" class="internal">Triple integrals</a></li>
+<li><a href="s_substitution_linear.html" data-scroll="s_substitution_linear" class="internal">Substitution: general</a></li>
+<li><a href="s_substitution_polar_cylindrical.html" data-scroll="s_substitution_polar_cylindrical" class="internal">Substitution: polar and cylindrical coordinates</a></li>
+<li><a href="s_substitution_spherical.html" data-scroll="s_substitution_spherical" class="internal">Substitution: spherical coordinates</a></li>
+<li><a href="s_multiple_integrals_applications.html" data-scroll="s_multiple_integrals_applications" class="active">Applications of multiple integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_integrals_vectorfields.html" data-scroll="c_integrals_vectorfields" class="internal"><span class="codenumber">2</span> <span class="title">Integrals and Vector Fields</span></a><ul><li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li></ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-sage.html" data-scroll="appendix-sage" class="internal"><span class="codenumber">E</span> <span class="title">Sage examples</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_multiple_integrals_applications"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Applications of multiple integrals</span>
+</h2>
+<section class="subsection" id="ss_center_of_mass"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.9.1</span> <span class="title">Center of mass</span>
+</h3>
+<article class="definition definition-like" id="d_center_of_mass"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Center of mass.</span>
+</h4>
+<p id="p-270">Let <span class="process-math">\(\mathcal{R}\subseteq \R^n\)</span> (<span class="process-math">\(n=2,3\)</span>) represent a solid object, and suppose the function <span class="process-math">\(\delta\colon\mathcal{R}\rightarrow \R\)</span> defines the mass density per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at points in <span class="process-math">\(\mathcal{R}\text{.}\)</span> We define the <dfn class="terminology">mass</dfn>, <dfn class="terminology">first moments</dfn>, and <dfn class="terminology">center of mass</dfn> of <span class="process-math">\(\mathcal{R}\)</span> as follows.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-47">
+\begin{align*}
+n =2 \\
+\text{Mass: } M\amp=\iint\limits_\mathcal{R}\delta(x,y)\, dA \\
+\text{First moments}\colon  M_{y}\amp=\iint\limits_\mathcal{R}x\delta(x,y)\, dA
+\amp  M_{x}\amp=\iint\limits_\mathcal{R}y\delta(x,y)\, dA \\
+\text{Center of mass}\colon (\overline{x},\overline{y})\amp=\frac{1}{M}(M_y, M_x) \\
+n =3 \\
+\text{Mass: } M\amp=\iiint\limits_\mathcal{R}\delta(x,y,z)\, dV \\
+\text{First moments}\colon  M_{yz}\amp=\iiint\limits_\mathcal{R}x\delta(x,y,z)\, dV
+\amp  M_{xz}\amp=\iiint\limits_\mathcal{R}y\delta(x,y,z)\, dV
+\amp  M_{xy}\amp=\iiint\limits_\mathcal{R}z\delta(x,y,z)\, dV\\
+\text{Center of mass}\colon (\overline{x},\overline{y},\overline{z})\amp=\frac{1}{M}(M_{yz}, M_{xz}, M_{xy}) \text{.}
+\end{align*}
+</div>When the mass density function <span class="process-math">\(\delta\)</span> is a constant function (i.e., <span class="process-math">\(\delta(x_1,x_2,\dots, x_n)=c\)</span> for fixed <span class="process-math">\(c\in \R\)</span>), we call the center of mass of <span class="process-math">\(\mathcal{R}\)</span> its <dfn class="terminology">centroid</dfn>. Equivalently, the centroid of <span class="process-math">\(\mathcal{R}\)</span> is its center of mass, assuming <span class="process-math">\(\delta=1\)</span> everywhere.</article><article class="example example-like" id="example-28"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-28"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="period">.</span><span class="space"> </span><span class="title">Centroids of triangles.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-28"><article class="example example-like"><p id="p-271">Let <span class="process-math">\(T\)</span> be the solid triangular region with vertices <span class="process-math">\((0,0),(1,0),(0,1)\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-93"><p id="p-272">Compute the center of mass of <span class="process-math">\(T\)</span> when the density function <span class="process-math">\(\delta(x,y)=c\)</span> is constant. (In other words, compute the centroid of <span class="process-math">\(T\)</span>).</p></li>
+<li id="li-94"><p id="p-273">Compute the center of mass of <span class="process-math">\(T\)</span> when the denisty function is given by <span class="process-math">\(\delta(x,y)=x+y\text{.}\)</span></p></li>
+<li id="li-95"><p id="p-274">Let <span class="process-math">\(T'\)</span> be the solid triangular region with vertices <span class="process-math">\((0,0),(a,b),(c,d)\text{.}\)</span> Give a formula for the centroid of <span class="process-math">\(T'\)</span> in terms of <span class="process-math">\(a,b,c,d\text{.}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><p id="p-275"></p></div></div>
+</div></article></div>
+<article class="example example-like" id="example-29"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-29"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">Centroid of hemisphere.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><p id="p-276">Let <span class="process-math">\(D\)</span> be the hemisphere <span class="process-math">\(x^2+y^2+z^2\leq 4\text{,}\)</span> <span class="process-math">\(z\geq 0\text{.}\)</span> Find the center of mass of <span class="process-math">\(D\)</span> assuming the mass density function is given by <span class="process-math">\(\delta(x,y,z)=z\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><p id="p-277"></p></div></div>
+</div></article></div></section><section class="subsection" id="ss_joint_probability_function"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Probability and density functions</span>
+</h3>
+<article class="definition definition-like" id="d_random_variable"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">Random variable.</span>
+</h4>
+<p id="p-278">Let <span class="process-math">\(S\)</span> be any set, which we will consider to be a sample space. A <dfn class="terminology">random variable</dfn> is a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-48">
+\begin{align*}
+X\colon S \amp\rightarrow \R \\
+s\amp \mapsto X(s)\text{.}
+\end{align*}
+</div></article><article class="definition definition-like" id="d_probability_functions"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.5</span><span class="period">.</span>
+</h4>
+<p id="p-279">Let <span class="process-math">\(X, Y\)</span> be random variables defined on the sample space <span class="process-math">\(S\text{.}\)</span>  A <dfn class="terminology">joint probability density function</dfn> for <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> is a function <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> satisfying the following properties.</p>
+<ol class="decimal">
+<li id="li-96"><p id="p-280"><span class="process-math">\(\displaystyle f(x,y)\geq 0\)</span></p></li>
+<li id="li-97"><p id="p-281"><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p></li>
+<li id="li-98"><p id="p-282"><span class="process-math">\(\operatorname{Prob}\left( \{s\in S\colon (X(s),Y(s))\in \mathcal{R}\} \right)=\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> for any <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> over which <span class="process-math">\(f\)</span> is integrable.</p></li>
+</ol></article><article class="example example-like" id="example-30"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-30"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-283">Verify that the function f(x,y)=\begin{cases} 6x^2y\amp (x,y)\in [0,1]\times [0,1]\\ 0\amp (x,y)\notin [0,1]\times [0,1] \end{cases} is a joint probability distribution function.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><p id="p-284"></p></div></div>
+</div></article></div>
+<article class="definition definition-like" id="d_uniformly_distibuted"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="period">.</span>
+</h4>
+<p id="p-285">Let <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> have area <span class="process-math">\(A\text{.}\)</span> The random variables <span class="process-math">\(X, Y\)</span> are <dfn class="terminology">uniformly distributed</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if their joint probabiltity disribution function is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y)=\begin{cases}
+\frac{1}{A}\amp \text{if } (x,y)\in \mathcal{R}\\
+0 \amp \text{if } (x,y)\not\in \mathcal{R}
+\end{cases}.
+\end{equation*}
+</div></article><article class="definition definition-like" id="d_expected_value"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.8</span><span class="period">.</span><span class="space"> </span><span class="title">Expected value.</span>
+</h4>
+<p id="p-286">Assume the random variables <span class="process-math">\(X,Y\)</span> on the sample set <span class="process-math">\(S\)</span> have joint probability density function <span class="process-math">\(f(x,y)\text{.}\)</span> We define the <dfn class="terminology">expected values</dfn> of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> denoted <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\text{,}\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-49">
+\begin{align*}
+\mu_X\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty x\, f(x,y)\, dx\, dy\\
+\mu_Y\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty y\, f(x,y)\, dx\, dy
+\end{align*}
+</div></article><article class="example example-like" id="example-31"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-31"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-287">Let</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y)=\begin{cases}
+6x^2y\amp (x,y)\in [0,1]\times [0,1]\\
+0\amp (x,y)\notin [0,1]\times [0,1]
+\end{cases}\text{.}
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-99"><p id="p-288">Verify that <span class="process-math">\(f\)</span> is a probability distribution function.</p></li>
+<li id="li-100"><p id="p-289">Compute <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\)</span> for any two random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> with joint probabilty distribution function <span class="process-math">\(f\text{.}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><p id="p-290"></p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>
