@@ -20,7 +20,7 @@
     </md>
     from <m>\rho\phi\theta</m>-space to <m>xyz</m>-space.
 </p>
-  <theorem xml:id="th_substition_cylindrical">
+  <theorem xml:id="th_substition_spherical">
     <idx><h>substitution</h><h>spherical</h></idx>
     <title>Spherical change of variables</title>
     <statement>
@@ -32,7 +32,7 @@
         </md>
       </p>
       is continuously differentiable everywhere. The Jacobian of <m>G</m> is
-      <men xml:id="eq_Jacobian_cylindrical">
+      <men xml:id="eq_Jacobian_spherical">
         \frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\det\begin{pmatrix}
           \sin\phi\cos\theta \amp\rho\cos\phi\cos\theta\amp -\rho\sin\phi\sin\theta\\
           \sin\phi\sin\theta\amp \rho\cos\phi\sin\theta\amp \rho\sin\phi\cos\theta\\

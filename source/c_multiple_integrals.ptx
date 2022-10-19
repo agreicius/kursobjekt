@@ -8,5 +8,6 @@
   <xi:include href="./s_substitution_linear.ptx"/>
   <xi:include href="./s_substitution_polar_cylindrical.ptx"/>
   <xi:include href="./s_substitution_spherical.ptx"/>
+  <xi:include href="./s_multiple_integrals_applications.ptx"/>
 
 </chapter>

@@ -25,6 +25,7 @@
 
     <xi:include href="./c_foundations.ptx" />
     <xi:include href="./c_multiple_integrals.ptx" />
+    <xi:include href="./c_integrals_vectorfields.ptx" />
 
     <backmatter>
         <appendix xml:id="appendix-notation">

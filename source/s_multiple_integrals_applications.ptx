@@ -1,0 +1,187 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_multiple_integrals_applications">
+  <title>Applications of multiple integrals</title>
+<subsection xml:id="ss_center_of_mass">
+  <title>Center of mass</title>
+  <idx><h>mass</h><h>of soli</h></idx>
+  <definition xml:id="d_center_of_mass">
+    <title>Center of mass</title>
+    <statement>
+      <p>
+      Let <m>\mathcal{R}\subseteq \R^n</m> (<m>n=2,3</m>) represent a solid object, and suppose the function <m>\delta\colon\mathcal{R}\rightarrow \R</m> defines the mass density per unit area (<m>n=2</m>) or unit volume (<m>n=3</m>) at points in <m>\mathcal{R}</m>. We define the <term>mass</term>, <term>first moments</term>, and <term>center of mass</term> of <m>\mathcal{R}</m> as follows.
+      </p>
+      <md>
+        <mrow>n =2 </mrow>
+        <mrow> \text{Mass: } M\amp=\iint\limits_\mathcal{R}\delta(x,y)\, dA </mrow>
+        <mrow> \text{First moments}\colon  M_{y}\amp=\iint\limits_\mathcal{R}x\delta(x,y)\, dA
+        \amp  M_{x}\amp=\iint\limits_\mathcal{R}y\delta(x,y)\, dA </mrow>
+        <mrow> \text{Center of mass}\colon (\overline{x},\overline{y})\amp=\frac{1}{M}(M_y, M_x) </mrow>
+        <mrow>n =3 </mrow>
+        <mrow> \text{Mass: } M\amp=\iiint\limits_\mathcal{R}\delta(x,y,z)\, dV </mrow>
+        <mrow> \text{First moments}\colon  M_{yz}\amp=\iiint\limits_\mathcal{R}x\delta(x,y,z)\, dV
+        \amp  M_{xz}\amp=\iiint\limits_\mathcal{R}y\delta(x,y,z)\, dV
+        \amp  M_{xy}\amp=\iiint\limits_\mathcal{R}z\delta(x,y,z)\, dV</mrow>
+        <mrow> \text{Center of mass}\colon (\overline{x},\overline{y},\overline{z})\amp=\frac{1}{M}(M_{yz}, M_{xz}, M_{xy}) </mrow>
+      </md>.
+      When the mass density function <m>\delta</m> is a constant function (<ie />, <m>\delta(x_1,x_2,\dots, x_n)=c</m> for fixed <m>c\in \R</m>), we call the center of mass of <m>\mathcal{R}</m> its <term>centroid</term>. Equivalently, the centroid of <m>\mathcal{R}</m> is its center of mass, assuming <m>\delta=1</m> everywhere.
+    </statement>
+  </definition>
+  <example>
+    <title>Centroids of triangles</title>
+    <statement>
+      <p>
+        Let <m>T</m> be the solid triangular region with vertices <m>(0,0),(1,0),(0,1)</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute the center of mass of <m>T</m> when the density function <m>\delta(x,y)=c</m> is constant. (In other words, compute the centroid of <m>T</m>).
+          </p>
+        </li>
+          <li>
+            <p>
+              Compute the center of mass of <m>T</m> when the denisty function is given by <m>\delta(x,y)=x+y</m>.
+            </p>
+        </li>
+        <li>
+          <p>
+            Let <m>T'</m> be the solid triangular region with vertices <m>(0,0),(a,b),(c,d)</m>. Give a formula for the centroid of <m>T'</m> in terms of <m>a,b,c,d</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+  <example>
+    <title>Centroid of hemisphere</title>.
+    <statement>
+      <p>
+        Let <m>D</m> be the hemisphere <m>x^2+y^2+z^2\leq 4</m>, <m>z\geq 0</m>. Find the center of mass of <m>D</m> assuming the mass density function is given by <m>\delta(x,y,z)=z</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+</subsection>
+<subsection xml:id="ss_joint_probability_function">
+  <title>Probability and density functions</title>
+  <definition xml:id="d_random_variable">
+    <title>Random variable</title>
+    <statement>
+      <p>
+        Let <m>S</m> be any set, which we will consider to be a sample space. A <term>random variable</term> is a function
+        <md>
+          <mrow>X\colon S \amp\rightarrow \R </mrow>
+          <mrow> s\amp \mapsto X(s)</mrow>
+        </md>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="d_probability_functions">
+    <statement>
+      <p>
+        Let <m>X, Y</m> be random variables defined on the sample space <m>S</m>.  A <term>joint probability density function</term> for <m>X</m> and <m>Y</m> is a function <m>f\colon \R^2\rightarrow \R</m> satisfying the following properties.
+        <ol>
+          <li>
+            <p>
+              <m>f(x,y)\geq 0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\operatorname{Prob}\left( \{s\in S\colon (X(s),Y(s))\in \mathcal{R}\} \right)=\iint\limits_\mathcal{R}f(x,y)\, dA</m> for any <m>\mathcal{R}\subseteq \R^2</m> over which <m>f</m> is integrable.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <title>Joint probability density function </title>
+    <statement>
+      <p>
+        Verify that the function
+        f(x,y)=\begin{cases}
+          6x^2y\amp (x,y)\in [0,1]\times [0,1]\\
+          0\amp (x,y)\notin [0,1]\times [0,1]
+        \end{cases}
+        is a joint probability distribution function.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+  <definition xml:id="d_uniformly_distibuted">
+    <statement>
+      <p>
+        Let <m>\mathcal{R}\subseteq\R^2</m> have area <m>A</m>. The random variables <m>X, Y</m> are <term>uniformly distributed</term> over <m>\mathcal{R}</m> if their joint probabiltity disribution function is given by
+        <me>
+          f(x,y)=\begin{cases}
+            \frac{1}{A}\amp \text{if } (x,y)\in \mathcal{R}\\
+            0 \amp \text{if } (x,y)\not\in \mathcal{R}
+        \end{cases}.
+        </me>
+
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="d_expected_value">
+    <title>Expected value</title>
+    <statement>
+      <p>
+        Assume the random variables <m>X,Y</m> on the sample set <m>S</m> have joint probability density function <m>f(x,y)</m>. We define the <term>expected values</term> of <m>X</m> and <m>Y</m>, denoted <m>\mu_X</m> and <m>\mu_Y</m>, as
+        <md>
+          <mrow>\mu_X\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty x\, f(x,y)\, dx\, dy</mrow>
+          <mrow>\mu_Y\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty y\, f(x,y)\, dx\, dy</mrow>
+        </md>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <title>Joint probability density function </title>
+    <statement>
+      <p>
+        Let
+        <me>
+        f(x,y)=\begin{cases}
+          6x^2y\amp (x,y)\in [0,1]\times [0,1]\\
+          0\amp (x,y)\notin [0,1]\times [0,1]
+        \end{cases}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Verify that <m>f</m> is a probability distribution function.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>\mu_X</m> and <m>\mu_Y</m> for any two random variables <m>X</m> and <m>Y</m> with joint probabilty distribution function <m>f</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+</subsection>
+
+</section>

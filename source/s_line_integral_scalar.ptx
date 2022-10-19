@@ -1,0 +1,265 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_line_integal_scalar">
+  <title>Line integrals of scalar functions</title>
+  <subsection xml:id="ss_curve_parametrizations">
+    <idx><h>path</h></idx>
+    <idx><h>parametrization</h><h>of a curve</h></idx>
+    <title>Paths</title>
+    <idx><h>path</h></idx>
+    <idx><h>parametrization</h><h>of a curve</h></idx>
+    <definition xml:id="d_curve_parametrization">
+      <title>Paths</title>
+
+      <statement>
+        <p>
+          A <term>path</term> (or <term>parametrized curve</term>) is a continuous function
+          <md>
+          <mrow>\boldr\colon I \amp\rightarrow \R^n  </mrow>
+          <mrow> t \amp\mapsto (x_1(t),x_2(t),\dots, x_n(t)) </mrow>
+          </md>,
+          where <m>I\subseteq \R</m> is an interval. The functions <m>x_i(t)</m> defining <m>\boldr</m> are called <term>component functions</term>.</p>  The set
+          <me>
+          \mathcal{C}=\{(x_1(t),x_2(t),\dots, x_n(t))\colon t\in I\}
+          </me>
+          of outputs of <m>\boldr</m>is called the <term>curve</term> parametrized by <m>\boldr</m>.
+
+          <p>When <m>n=2</m> we call <m>\boldr\colon I\rightarrow \R^2</m> a <term>parametrized planar curve</term>; when <m>n=3</m> we call <m>\boldr\colon I\rightarrow \R^3</m> a <term>parametrized space curve</term>.
+        </p>
+        <p>
+          A path <m>\boldr(t)=(x_1(t),x_2(t),\dots, x_n(t))</m> is <term>smooth</term> on an interval <m>I</m> if the functions <m>x_i(t)</m> are continuously differentiable on <m>I</m> and <m>\boldr'(t)\ne \boldzero</m> for all <m>t\in I</m>.
+        </p>
+      </statement>
+    </definition>
+    <remark xml:id="rm_paths_vector_valued_function">
+      <statement>
+        <p>
+          Qualitatively, a path <m>\boldr\colon I\rightarrow \R^n</m> takes as an input a real number <m>t</m>, and returns as an output a tuple <m>\boldr(t)=(x_1(t),x_2(t),\dots, x_n(t))</m>. This is an example of what we call a <term>vector-valued function</term>, as the output of the function is not a scalar, but a tuple (pair if <m>n=2</m>, triple if <m>n=3</m>).
+        </p>
+        <p>
+          Geometrically, we can think of a tuple either as a <em>point</em> <m>P</m> in <m>\R^n</m>, or as an <m>n</m>-vector <m>\boldv=\langle v_1,v_2,\dots, v_n\rangle</m>. When visualizing a path <m>\boldr</m> and its outputs, we will make use of <em>both</em> interpretations. The table below recalls some standard interpretations of <m>\boldr(t)</m> and <m>\boldr'(t)</m> along these lines. For simplicity, we assume <m>n=3</m>.
+          <me>
+          \begin{array}{c|c|c}
+            \amp \text{As point} \amp \text{As vector}\\
+            \hline
+            \boldr(t)=(a,b,c) \amp \begin{array}{c}
+            \text{point } P=(a,b,c)\\ \text{ on curve } \mathcal{C}
+          \end{array}
+          \amp
+          \begin{array}{c}
+            \text{position vector } \overrightarrow{OP}=\angvec{a,b,c}\\ \text{ of point  } P\in \mathcal{C}
+            \end{array} \\
+            \hline
+            \boldr'(t)=(d,e,f)\amp ---\amp
+            \begin{array}{c}
+              \text{tangent vector } \boldv=\angvec{d,e,f} \\
+              text{to curve } \mathcal{C}\\
+              \text{at point } \boldr(t)=P.
+            \end{array}
+          \end{array}
+
+
+          </me>
+
+        </p>
+      </statement>
+    </remark>
+
+    <remark xml:id="rm_paths">
+      <title>Parametrizations you should know</title>
+      <statement>
+        <ol>
+          <li>
+            <p>
+              Line through <m>P=(a,b,c)</m> with direction vector <m>\boldv=(v_1,v_2,v_3)</m>:
+              <me>
+              \boldr(t)=(a,b,c)+t\boldv=(a+tv_1,b+tv_2,c+tv_3)
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Line segment between points <m>P=(a,b,c), Q=(d,e,f)</m>:
+              <me>
+              \boldr(t)=P+t(Q-P)=(1-t)P+tQ, \ 0\leq t\leq 1
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Circle of radius <m>R</m> centered at <m>(a,b)</m>:
+              <me>
+              \boldr(t)=(a,b)+R(\cos t, \sin t)=(a+R\cos t, b+R\sin t), \ 0\leq t\leq 2\pi
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Ellipse <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>:
+              <me>
+              \boldr(t)=(a\cos t, b\sin t), \ 0\leq t\leq 2\pi
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Helix of radius <m>R</m> along a given coordinate axis in <m>3</m>-space. Example:
+              <me>
+              \boldr(t)=(R\cos t, t, R\sin t)
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </remark>
+    <project xml:id="sage_parametrized_curves">
+      <title>Parametrized curves</title>
+      It is easy to plot parametrized curves in Sage using either <c>parametric_plot</c> (<m>n=2</m>) or <c>parametric_plot3d</c> (<m>n=3</m>). The cell below graphs parametrizations of circles confined in various planes in <m>3</m>-space.
+      <sage>
+        <input>
+          from sage.plot.plot3d.plot3d import axes
+          r(t)=[1+cos(t), sin(t), 0]
+          s(t)=[3,1+2*cos(t),1+2*sin(t)]
+          p(t)=[-1+cos(t),-1+sin(t),2]
+          p1=parametric_plot3d(r(t),(t,0,2*pi),color='blue',thickness=2)
+          p2=parametric_plot3d(s(t),(t,0,2*pi),color='red',thickness=2)
+          p3=parametric_plot3d(p(t),(t,0,2*pi),color='green',thickness=2)
+          p1+p2+p3+axes(1,1,color='black')
+        </input>
+        <output>
+
+        </output>
+      </sage>
+      The next cell illustrates line parametrizations.
+      <sage>
+        <input>
+          from sage.plot.plot3d.plot3d import axes
+          P=[1,2,3]
+          Q=[-2,0,1]
+          v=vector(Q)-vector(P) #direction vector of line segment
+          r(t)=vector(P)+t*v
+          point(P, size=10, color='blue')+point(Q,size=10,color='blue')+parametric_plot3d(r(t),(t,0,1))+plot(v/2, color='red', ).translate(vector(P))+axes(1,1,color='black')
+        </input>
+        <output>
+        </output>
+      </sage>
+      Try plotting the remaining examples of parametrizations from <xref ref="rm_paths"/> in the cell below. If using a plane curve parametrization, delete the <c>#</c> in front of <c>parametric_plot(r(t), (t,a,b))</c>; if using a space curve parametrization, delete the <c>#</c> in front of <c>parametric_plot3d(r(t), (t,a,b))</c>.
+      <sage>
+        <input>
+          a=   #Enter endpoints of your interval
+          b=
+          r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
+          #parametric_plot(r(t), (t,a,b))
+          #parametric_plot(r(t),(t,a,b))
+        </input>
+        <output>
+
+        </output>
+      </sage>
+    </project>
+
+  </subsection>
+  <subsection xml:id="ss_line_integral_scalar">
+    <idx><h>line integral</h><h>of scalar function</h></idx>
+    <title>Line integrals of a scalar function</title>
+    <definition xml:id="d_line_integral_scalar">
+      <title>Line integral of scalar function</title>
+      <statement>
+        <p>
+          Let <m>\boldr\colon [a,b]\rightarrow \R^3</m> be a parametrization of the curve <m>\mathcal{C}</m>, and let <m>f(x,y,z)</m> be a scalar function defined on <m>\mathcal{C}</m>.
+        </p>
+        <p>Let <m>P=\boldr(a)</m> and <m>Q=\boldr(b)</m> be the start and end points of the path <m>\boldr</m>. A <term>pointed partition</term> of of the path <m>\boldr</m> along <m>\mathcal{C}</m> is the sequence of points <m>P=\boldr(a), P_1=\boldr(t_1), P_2=\boldr(t_2), \dots, Q=\boldr(b)</m> corresponding to a partition <m>a=t_0 &lt; t_1&lt; t_2\dots &lt; t_n=b </m> of the interval <m>[a,b]</m>, along with a selection of points <m>(x_k,y_k,z_k)</m> lying in the <m>k</m>-th segment of the partitioned path. We define <m>\Delta s_k</m> to be the arc length of the curve segment between <m>P_{k-1}</m> and <m>P_k</m>.
+        </p>
+        <p>
+        The <term>line integral</term> of <m>f</m> over <m>\mathcal{C}</m>, denoted <m>\int\limits_\mathcal{C}f(x,y,z)\, ds</m>, is defined as
+        <me>
+          \int\limits_\mathcal{C} f(x,y,z)\, ds=\lim_{n\to\infty}\sum_{k=1}^n f(x_k,y_k,z_k)\Delta s_k
+        </me>,
+        where the limit is understood to be taken over any sequence of pointed partitions <m>P_n</m> of <m>\mathcal{C}</m> into <m>n</m> curve segments, provided this limit exists and is independent of our choice of partitions.
+        </p>
+      </statement>
+    </definition>
+    <figure>
+      <image xml:id="im_line_integral_scalar" source="line_integral_scalar.png">
+
+      </image>
+      <caption>Partition of curve parametrization <m>\boldr\colon[a,b]\rightarrow\R^3</m></caption>
+    </figure>
+<p>
+  As with double and triple integrals, the limit definition of line integrals is useful for interpretation purposes, but not so convenient for computation. The following theorem is the essential tool we will use for computing line integrals.
+</p>
+<theorem xml:id="th_line_integral_scalar">
+  <title>Scalar line integrals</title>
+  <statement>
+    <p>
+      Let <m>\boldr\colon [a,b]\rightarrow \R^n</m> be a parametrization of the curve <m>\mathcal{C}\subseteq \R^n</m>, and let <m>f(x_1,x_2,\dots, x_n)</m> be a scalar function defined on <m>\mathcal{C}</m>. If (a) <m>\boldr</m> is <em>smooth</em> on <m>[a,b]</m> and (b) <m>f(x,y,z)</m> is <em>continuous</em> on <m>\mathcal{C}</m>, then
+      <md>
+        <mrow>\int\limits_\mathcal{C}f(x_1,x_2,\dots, x_n)\, ds  \amp= \int_a^b f(\boldr(t))\abs{\boldr'(t)}\, dt </mrow>
+        <mrow> \amp = \int_a^b f(x_1(t),x_2(t),\dots, x_n(t))\sqrt{(x_1'(t))^2+(x_2'(t))^2+\cdots +(x_n'(t))^2}\, dt </mrow>
+      </md>.
+    </p>
+  </statement>
+</theorem>
+    <remark xml:id="rm_line_integral_independence">
+  <title>Independence of parametrization</title>
+  <statement>
+    <p>
+      Do different parametrizations of the same curve <m>\mathcal{C}</m> lead to different line integrals of a function <m>f</m>? Absolutely! Consider
+      <md>
+        <mrow>\boldr(t) \amp= (\cos t, \sin t),\ 0\leq t\leq 2\pi </mrow>
+        <mrow> \bolds(t) \amp =  (\cos 2t, \sin 2t), \ 0\leq t\leq 2\pi </mrow>
+      </md>.
+      Both parametrize the unit circle <m>\mathcal{C}\colon x^2+y^2=1</m>. However, the integral of the constant function <m>f(x,y)=1</m> over <m>\boldr(t)</m> yields <m>2\pi</m> (the arc length of <m>\mathcal{C}</m>), while the integral of <m>\bolds(t)</m> yields <m>4\pi</m> (twice the arc length of <m>\mathcal{C}</m>). This makes sense, since <m>\bolds(t)</m> traverses <m>\mathcal{C}</m> twice!
+    </p>
+    <p>
+      On the other hand, you can show that if the parametrizations <m>\boldr</m> and <m>\bolds</m> are smooth and one-to-one on <m>[a,b]</m>, except possibly at the endpoints, then indeed the two line integrals will be equal. Thus, we say the line integral is <em>independent</em> of your choice of smooth, one-to-one parametrization. 
+    </p>
+  </statement>
+</remark>
+
+<theorem xml:id="th_line_integral_interpretations">
+  <title>Interpretations</title>
+  <statement>
+    <p>
+      Assume <m>\boldr\colon [a,b]\rightarrow \R^n</m> is a smooth parametrization of <m>\mathcal{C}</m> and that <m>\boldr</m> is one-to-one on <m>[a,b]</m>, except potentially at the endpoints (<ie />, <q><m>\boldr</m> traverses <m>\mathcal{C}</m> exactly once</q>).
+    </p>
+    <ol>
+      <li>
+        <p>
+          The line integral <m>\int_\mathcal{C} 1\, ds</m> computes the arc length of <m>\mathcal{C}</m> between <m>P=\boldr(a)</m> and <m>Q=\boldr(b)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>n=2</m> and <m>f(x,y)\geq 0</m> is continuous on <m>\mathcal{C}</m>, then <m>\int_\mathcal{C}f(x,y)\, ds</m> computes the area of the <q>curtain</q> over <m>\mathcal{C}</m> with heights given by <m>f(x,y)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\delta(x_1,x_2,\dots, x_n)\geq 0</m> is a continuous mass density on <m>\mathcal{C}</m>, where <m>\mathcal{C}</m> is treated as an infinitely thin wire, then <m>\int_\mathcal{C}\delta(x_1,x_2,\dots, x_n)\, ds</m> computes the mass of <m>\mathcal{C}</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+<figure>
+  <image xml:id="im_curtain" width="50%" source="curtain.png">
+
+  </image>
+  <caption>Area of a curtain over <m>\mathcal{C}</m></caption>
+</figure>
+
+<example>
+  <statement>
+    <p>
+
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+
+  </subsection>
+
+</section>
