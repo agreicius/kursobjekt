@@ -1,0 +1,79 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_line_integal_scalar_vector_fields">
+  <title>Line integrals of vector fields</title>
+  <subsection xml:id="ss_vector_fields">
+    <title>Vector fields</title>
+    <definition xml:id="d_vector_field">
+      <idx><h>vector field</h></idx>
+      <title>Vector fields</title>
+      <statement>
+        <p>
+          A <term>vector field</term> is a function
+          <md>
+            <mrow>\boldF\colon \R^n \amp \rightarrow \R^n</mrow>
+            <mrow> (x_1,x_2,\dots, x_n)\amp\mapsto \left\langle F_1\langle x_1,x_2,\dots, x_n),F_2(x_1,x_2,\dots, x_n),\dots ,F_n(x_1,x_2,\dots, x_n)\right\rangle </mrow>
+          </md>.
+          The scalar functions <m>F_i</m> are called the <term>component functions</term>. The vector field <m>\boldF</m> is <term>continuous</term>, <term>differentiable</term>, <term>continuously differentiable</term>, etc., if each of the component functions is continuous, differentiable, continuously differentiable, etc.
+        </p>
+      </statement>
+    </definition>
+        <algorithm xml:id="proc_visualize_vector_fields">
+      <title>Visualizing vector fields</title>
+      <statement>
+        <p>
+          Like a curve parametrization, a vector field <m>\boldF\colon \R^n\rightarrow \R^n</m> is yet another example of a <em>vector-valued function</em>. In contrast to parametrizations, however, note that both the input and output of <m>\boldF</m> are <m>n</m>-tuples. This makes visualizing <m>F</m> slightly more complicated. We use the following method to do so. As always, <m>n</m> is equal to 2 or 3 for us.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Interpret the input tuple <m>P=(x_1,x_2,\dots, x_n)</m> as a <em>point</em> in <m>n</m>-space.
+            </p>
+          </li>
+          <li>
+            <p>
+              Treat the output tuple <m>\boldv=\boldF(P)=\langle F_1(P),F_2(P),\dots, F_n(P)\rangle </m> as an <em><m>n</m>-vector</em>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For a given input <m>P\in \R^n</m>, draw the output <m>\boldv=\boldF(P)</m> as a vector with <em>initial point</em> equal to <m>P</m>: <ie />, the <q>tail</q> of the vector <m>\boldF(P)</m> is chosen to be the point <m>P</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Sketch the entire vector field by performing Step 3 for <em>many</em> input points!
+            </p>
+          </li>
+        </ol>
+
+      </statement>
+    </algorithm>
+
+  </subsection>
+  <subsection xml:id="ss_line_integral_vector_field">
+    <title>Line integrals of vector fields </title>
+    <definition xml:id="d_line_integral_vector">
+      <idx><h>line integral</h><h>of a vector field</h></idx>
+      <title>Line integral of a vector field</title>
+      <statement>
+        <p>
+          Let <m>\boldr\colon \R\rightarrow \R^n</m> be a smooth parametrization of the curve <m>\mathcal{C}\subseteq\R^n</m>, and let <m>\boldT(t)=\boldr'(t)/\abs{\boldr'(t)}</m> be the unit tangent vector of <m>\boldr</m>. Given a vector field <m>\boldF\colon \R^n\rightarrow \R^n</m> that is continuous on the curve <m>\mathcal{C}\subseteq \R^n</m>, we define its <term>line integral</term>, denoted <m>\int_\mathcal{C}\boldF\cdot d\boldr</m>, as
+          <mdn>
+            <mrow xml:id="eq_line_integral_vector_1">\int_\mathcal{C}\boldF\cdot d\boldr\amp=\int_\mathcal{C}\boldF\cdot\boldT\, ds</mrow>
+            <mrow xml:id="eq_line_integral_vector_2">  \amp =\int_a^b\boldF(\boldr(t))\cdot\frac{\boldr'(t)}{\abs{\boldr'(t)}}\, \abs{\boldr'(t)}\, dt </mrow>
+            <mrow xml:id="eq_line_integral_vector_3">  \amp = \int_a^b\boldF(\boldr(t))\cdot \boldr'(t)\, dt</mrow>
+          </mdn>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_line_integral_vector_notation_1">
+          <title>Vector field line integral notation</title>
+      <statement>
+        <p>
+          The first equality among <xref first="eq_line_integral_vector_1" last="eq_line_integral_vector_3"/> should be considered purely notational: <ie />, it states simply that the integral being defined can be denoted by either of the expressions <m>\int_C \boldF\cdot d\boldr</m> or <m>\int_\mathcal{C}\boldF\cdot \boldT\, ds</m>. The remaining equalities <xref first="eq_line_integral_vector_2" last="eq_line_integral_vector_3"/> then give actual meaning to these two expressions.
+        </p>
+      </statement>
+    </remark>
+
+  </subsection>
+
+</section>

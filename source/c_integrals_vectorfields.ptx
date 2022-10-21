@@ -1,5 +1,5 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_integrals_vectorfields">
   <title>Integrals and Vector Fields</title>
   <xi:include href="./s_line_integral_scalar.ptx"/>
-
+  <xi:include href="./s_line_integral_vector_field.ptx"/>
 </chapter>
