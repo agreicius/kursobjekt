@@ -77,7 +77,7 @@
   </corollary>
   <proof>
     <p>
-      Let <m>P</m> be the intial and end point of the closed curve <m>\mathcal{C}</m>. According to <xref ref="th_fund_thm_line_integrals"/> we have
+      Let <m>P</m> be the initial and end point of the closed curve <m>\mathcal{C}</m>. According to <xref ref="th_fund_thm_line_integrals"/> we have
       <me>
         \int_\mathcal{C}\boldF\cdot d\boldr=f(P)-f(P)=0
       </me>.
@@ -189,7 +189,7 @@
   <title>Conservative field=gradient field on open connected sets</title>
   <statement>
     <p>
-      If <m>\boldF</m> is a continuous vector field on the open connected set <m>D</m>, then <m>\boldF</m> is conservative if and only if <m>\boldF=\nabla f</m> for some function <m>f</m> defined on <m>D</m>. Using logical notation:
+      If <m>\boldF</m> is a continuous vector field on the open connected set <m>D</m>, then <m>\boldF</m> is conservative if and only if <m>\boldF=\nabla f</m> for some function <m>f</m> defined on <m>D</m>. Using logical shorthand:
       <men xml:id="eq_conservative_iff_gradient">
         \boldF=\nabla f \iff \boldF \text{ conservative}
       </men>.
@@ -202,7 +202,7 @@
     </p>
   </proof>
   <proof>
-    <title>Proof of implication <m>\boldF \text{ conservative}\implies \boldF=\nabla f</m></title>
+    <title>Proof of implication <m>\boldF</m> conservative <m>\implies \boldF=\nabla f</m></title>
     <p>
       Thus
     </p>
