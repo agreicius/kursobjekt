@@ -53,7 +53,7 @@
     <title>Line integrals of vector fields </title>
     <definition xml:id="d_line_integral_vector">
       <idx><h>line integral</h><h>of a vector field</h></idx>
-      <title>Line integral of a vector field</title>
+      <title>Integral of a vector field along a curve</title>
       <statement>
         <p>
           Let <m>\boldr\colon \R\rightarrow \R^n</m> be a smooth parametrization of the curve <m>\mathcal{C}\subseteq\R^n</m>, and let <m>\boldT(t)=\boldr'(t)/\abs{\boldr'(t)}</m> be the unit tangent vector of <m>\boldr</m>. Given a vector field <m>\boldF\colon \R^n\rightarrow \R^n</m> that is continuous on the curve <m>\mathcal{C}\subseteq \R^n</m>, we define its <term>line integral</term>, denoted <m>\int_\mathcal{C}\boldF\cdot d\boldr</m>, as
@@ -65,7 +65,8 @@
         </p>
       </statement>
     </definition>
-        <remark xml:id="rm_line_integral_vector_notation_1">
+
+    <remark xml:id="rm_line_integral_vector_notation_1">
           <title>Vector field line integral notation</title>
       <statement>
         <p>
@@ -74,6 +75,148 @@
       </statement>
     </remark>
 
+    <example xml:id="eg_vector_line_integral_2d">
+      <title>Vector line integral in plane</title>
+      <statement>
+        <p>
+          Let <m>\boldF(x,y)=(xy,x+y)</m>. Let <m>\mathcal{C}</m> be the curve <m>x=y^2</m>.
+          <ol>
+            <li>
+              <p>
+                Compute the integral of <m>\boldF</m> along the segment of <m>\mathcal{C}</m> starting at <m>(1,-1)</m> and ending at <m>(4,2)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Compute the integral of <m>\boldF</m> along the segment of <m>\mathcal{C}</m> starting at <m>(4,-2)</m> and ending at <m>(1,-1)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+    <remark xml:id="rm_vector_line_integral_independence">
+    <title>Independence of parametrization</title>
+        <p>
+          Let <m>\boldr</m> and <m>\bolds</m> be two parametrization of <m>\mathcal{C}</m>
+          <ol>
+            <li>
+              <p>
+                If <m>\boldr, \bolds</m> both traverse the segement of <m>\mathcal{C}</m> starting at <m>P</m> and ending at <m>Q</m> exactly once, then
+                <me>
+                  \int_\mathcal{C}\boldF\cdot d\boldr=\int_\mathcal{C}\boldF\cdot d\bolds
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\boldr, \bolds</m> both traverse the segement of <m>\mathcal{C}</m> between <m>P</m> and ending at <m>Q</m> exactly once, but <m>\bolds</m> starts where <m>\boldr</m> ends, and vice-versa, then
+                <me>
+                  \int_\mathcal{C}\boldF\cdot d\boldr=-\int_\mathcal{C}\boldF\cdot d\bolds
+                </me>.
+              </p>
+            </li>
+          </ol>
+        </p>
+    </remark>
+    <example>
+      <statement>
+        <p>
+          Let <m>\mathcal{C}</m> be the helix with parametrization <m>\boldr(t)=(\cos t, \sin t, t)</m>, <m>0\leq t\leq 2\pi</m>. Compute <m>\int_\mathcal{C}\boldF\cdot d\boldr</m>, where <m>\boldF=\angvec{-y,z,2x}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+    <definition xml:id="d_line_integrals_dxdydz">
+      <title>Line integrals with respect to <m>dx, dy, dz</m></title>
+      <statement>
+        <p>
+          Let <m>\boldr(t)=(g_1(t),g_2(t),g_3(t))</m>, <m>a\leq t\leq b</m>, be a smooth parametrization of the curve <m>\mathcal{C}\subseteq\R^n</m>. Given a vector field <m>\boldF=(F_1, F_2,F_3)</m> that is continuous on the curve <m>\mathcal{C}\subseteq \R^n</m>, we define the line integrals with respect to <m>dx, dy, dz</m> as follows.
+          <md>
+            <mrow>\int_\mathcal{C}\boldF\, dx \amp :=\int_a^b F_1(\boldr(t))\, g_1'(t)\, dt </mrow>
+            <mrow>\int_\mathcal{C}\boldF\, dy \amp :=\int_a^b F_2(\boldr(t))\, g_2'(t)\, dt </mrow>
+            <mrow>\int_\mathcal{C}\boldF\, dz \amp :=\int_a^b F_3(\boldr(t))\, g_3'(t)\, dt </mrow>
+          </md>.
+        From <xref ref="d_line_integral_vector"/> we see that we have
+        <me>
+          \int_\mathcal{C}\boldF\cdot d\boldr=\int_\mathcal{C}\boldF\, dx +\int_\mathcal{C}\boldF\, dy +\int_\mathcal{C}\boldF\, dz
+        </me>.
+        </p>
+      </statement>
+    </definition>
+    <definition xml:id="d_work_flow_circulation">
+      <title>Work and flow</title>
+      <statement>
+        <p>
+          Let <m>\boldr\colon [a,b]\rightarrow \R^m</m> be a a smooth parametrization of the curve <m>\mathcal{C}\subseteq\R^n</m>, and assume the vector field <m>\boldF\colon \R^n\rightarrow \R^n</m> is continuous on <m>\mathcal{C}</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              If <m>\boldF(x_1,x_2,\dots, x_n)</m> is the force acting at the point <m>(x_1,x_2,\dots, x_n)</m>, then <m>\int_\mathcal{C}\boldF\cdot d\boldr</m> is the <term>work</term> done in moving an object along the path <m>\boldr</m> from <m>\boldr(a)</m> to <m>\boldr(b)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>\boldF(x_1,x_2,\dots, x_n)</m> is the velocity vector of a fluid at the point <m>(x_1,x_2,\dots, x_n)</m>, then <m>\int_\mathcal{C}\boldF\cdot d\boldr</m> is the <term>flow</term> along the path <m>\boldr</m> from <m>\boldr(a)</m> to <m>\boldr(b)</m>. The path <m>\boldr</m> is <term>simple</term> (one-to-one except possibly at the endpoints) and <term>closed</term> (<m>\boldr(a)=\boldr(b)</m>), then <m>\int_\mathcal{C}\boldF\cdot d\boldr</m> is called the <term>circulation</term> around <m>\mathcal{C}</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          Let <m>\mathcal{C}</m> be the unit circle <m>x^2+y^2=1</m>. Compute the the circulation around <m>\mathcal{C}</m> for the given fluid velocity field.
+          <ol>
+            <li>
+              <p>
+                <m>\boldF(x,y,)=\angvec{x-y,x+y}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+              <m>\boldF(x,y)=\angvec{x,y}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+
+    <definition xml:id="d_flux">
+      <title>Flux</title>
+      <statement>
+        <p>
+          Let <m>\boldr=(g_1(t),g_2(t))</m>, <m>a\leq t\leq b</m> be a smooth simple closed parametrization of the curve <m>\mathcal{C}\subseteq\R^2</m>, and assume <m>\boldF=(F_1,F_2)</m> is continuous on <m>\mathcal{C}</m>. For all <m>a\leq t\leq b</m>, the <term>unit normal vector</term> to <m>\mathcal{C}</m> with positive orientation is defined as
+          <me>
+            \boldn(t)=\frac{\angvec{g_2'(t),-g_1'(t)}}{\sqrt{g_1^2(t)+g_2^2(t)}}
+          </me>.
+          The <term>flux</term> of <m>\boldF</m> across <m>\mathcal{C}</m> is defined as
+          <md>
+            <mrow>\operatorname{Flux}_\mathcal{C} \boldF \amp =\int_\mathcal{C}\boldF\cdot \boldn \, ds </mrow>
+            <mrow> \amp=\int_a^b\boldF(\boldr(t))\cdot \boldn(t) \abs{\boldr'(t)}\, dt </mrow>
+            <mrow>  \amp = \int_a^b F_1(\boldr(t))g_2'(t)-F_2(\boldr(t))g_1'(t)\, dt</mrow>
+            <mrow>  \amp = \oint_\mathcal{C} F_1\, dy-F_2\, dx</mrow>
+          </md>.
+
+        </p>
+      </statement>
+    </definition>
   </subsection>
 
 </section>
