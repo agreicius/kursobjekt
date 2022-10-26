@@ -2,4 +2,6 @@
   <title>Integrals and Vector Fields</title>
   <xi:include href="./s_line_integral_scalar.ptx"/>
   <xi:include href="./s_line_integral_vector_field.ptx"/>
+  <xi:include href="./s_pathind_conservative_potential.ptx"/>
+
 </chapter>

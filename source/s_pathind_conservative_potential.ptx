@@ -1,0 +1,215 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_pathind_conservative_potential">
+  <title>Path independence, conservative fields, potential functions</title>
+<subsection xml:id="ss_gradient_fields">
+  <idx><h>gradient vector field</h></idx>
+  <idx><h>potential function</h></idx>
+  <title>Gradient vector fields and the fundamental theorem of line integrals</title>
+  <definition xml:id="d_gradient_field_potential">
+    <title>Gradient vector fields and potential functions</title>
+    <statement>
+      <p>
+        A vector field <m>\boldF\colon \R^n\rightarrow \R^n</m> is a <term>gradient vector field</term> if there is a scalar function <m>f\colon \R^n\rightarrow \R</m> such that
+        <men xml:id="eq_gradient_field">
+          \nabla f=\boldF
+        </men>.
+      A function <m>f</m> satisfying <xref ref="eq_gradient_field"/> is a <term>potential function</term> of <m>\boldF</m>.
+      </p>
+    </statement>
+  </definition>
+  <example xml:id="eg_gradient_vector_fields">
+    <title>Gradient vector fields</title>
+    <statement>
+      <p>
+        The vector field
+        <me>\boldF=\angvec{yz, xz, xy}
+        </me>
+         is a gradient vector field. Indeed, we have <m>\boldF=\nabla f</m>, where <me>f(x,y,z)=xyz
+         </me>. Thus <m>f</m> is a potential function for <m>\boldF</m>. The function <m>g(x,y,z)=xyz+5</m> is another potential function of <m>\boldF</m>.
+      </p>
+      <p>
+        The vector field
+        <me>\boldF=\angvec{-\frac{x}{\sqrt{x^2+y^2}}, -\frac{y}{\sqrt{x^2+y^2}}}, (x,y)\ne (0,0)
+        </me>
+        is a gradient vector field, with potential function
+        <me>
+          f(x,y)=\frac{1}{\sqrt{x^2+y^2}}=\frac{1}{\abs{(x,y)}}
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    Gradient vector fields <m>\boldF=\nabla f</m> are nice to compute with, as the following theorem indicates.
+  </p>
+  <theorem xml:id="th_fund_thm_line_integrals">
+    <title>Fundamental theorem of line integrals</title>
+    <statement>
+      <p>
+       Let <m>\boldr\colon [a,b]\rightarrow \R^n</m> be a smooth parametrization of the curve <m>\mathcal{C}\subseteq\R^n</m> with initial point <m>P=\boldr(a)</m> and end point <m>Q=\boldr(b)</m>, and assume the vector field  <m>\boldF\colon \R^n\rightarrow \R^n</m> is continuous on a set containing <m>\mathcal{C}</m>. If <m>\boldF=\nabla f</m> for some function <m>f</m>, then
+       <men xml:id="eq_fund_thm_line_integrals">
+         \int_\mathcal{C}\boldF\cdot d\boldr=f(Q)-f(P)
+       </men>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We have
+        <md>
+          <mrow>\int_\mathcal{C}\boldF\cdot d\boldr   \amp = \int_a^b\boldF(\boldr(t))\boldr'(t)\, dt </mrow>
+          <mrow> \amp= \int_a^b \nabla f(\boldr(t))\cdot \boldr'(t)\, dt </mrow>
+          <mrow>  \amp = \int_a^b (f(\boldr(t))'\, dt \amp \text{(chain rule)}</mrow>
+          <mrow>  \amp = f(\boldr(b))-f(\boldr(a)) \amp \text{(FTC)}</mrow>
+          <mrow>  \amp =f(Q)-f(P)</mrow>
+        </md>.
+      </p>
+    </proof>
+
+  </theorem>
+  <corollary xml:id="cor_fund_thm_line_integrals">
+    <title>Integral of gradient field over closed curve</title>
+    <statement>
+      <p>
+        If <m>\mathcal{C}\subseteq\R^n</m> is a smooth closed curve, and if <m>\boldF=\nabla f</m> is a gradient vector field that is continuous on a set containing <m>\mathcal{C}</m>, then
+        <me>
+          \oint_\mathcal{C}\boldF\cdot\, d\boldr=0
+        </me>.
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Let <m>P</m> be the intial and end point of the closed curve <m>\mathcal{C}</m>. According to <xref ref="th_fund_thm_line_integrals"/> we have
+      <me>
+        \int_\mathcal{C}\boldF\cdot d\boldr=f(P)-f(P)=0
+      </me>.
+    </p>
+  </proof>
+  <p>
+    <xref ref="cor_fund_thm_line_integrals"/> provides a potential way of showing a vector field <m>\boldF</m> is <em>not</em> a gradient field: namely, show that <m>\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0</m> for a suitably chosen closed curve <m>\mathcal{C}</m>.
+  </p>
+  <example>
+    <title>A non-gradient vector field</title>
+    <statement>
+      <p>
+        Use <xref ref="cor_fund_thm_line_integrals"/> to show that <m>\boldF=\angvec{-y,x}</m> is not a gradient vector field.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>\mathcal{C}</m> be the unit circle <m>x^2+y^2=1</m>, with parametrization <m>\boldr(t)=(\cos t, \sin t)</m>. We have
+        <md>
+          <mrow>\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt</mrow>
+          <mrow>  \amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt</mrow>
+          <mrow> \amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt </mrow>
+          <mrow>  \amp = 2\pi</mrow>
+        </md>.
+        Since <m>\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0</m>, <xref ref="cor_fund_thm_line_integrals"/> implies that we cannot have <m>\boldF=\nabla f</m>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <title>Work done by gravity</title>
+    <statement>
+      <p>
+        Given a point particle of mass M at the origin in <m>\R^3</m>, the gravitational force <m>\boldF(x,y,z)</m> acting on a point particle of mass <m>m</m> at position <m>(x,y,z)</m> is
+        <me>
+          \boldF(x,y,z)=-\frac{GmM}{\abs{\boldx}^3}\boldx=-\frac{GmM}{(x^2+y^2+z^2)^{3/2}}\angvec{x,y,z}
+        </me>,
+        where <m>G</m> is the gravitational constant and <m>\boldx=\angvec{x,y,z}</m> is the position vector of the object.
+        Compute the work done by gravity if the point particle of mass <m>m</m> travels from position <m>P=(x_1,y_1,z_1)</m> to position <m>Q=(x_2,y_2,z_2)</m> along a smooth curve <m>\mathcal{C}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        As suggested by the setup, we suspect <m>\boldF</m> is a gradient vector field. Indeed, we have <m>\boldF=\nabla f</m>, where
+        <me>
+          f(x,y,z)=\frac{GmM}{\sqrt{x^2+y^2+z^2}}=\frac{GmM}{\abs{(x,y,z)}}
+        </me>,
+        as you can easily check. According to <xref ref="th_fund_thm_line_integrals"/>, we have
+        <md>
+          <mrow> W\amp =\int_\mathcal{C}\boldF\cdot d\boldr</mrow>
+          <mrow>  \amp = f(Q)-f(P) </mrow>
+          <mrow>  \amp = GmM\left (\frac{1}{\sqrt{x_2^2+y_2^2+z_2^2}}-\frac{1}{\sqrt{x_1^2+y_1^2+z_1^2}}\right ) </mrow>
+          <mrow>  \amp = GmM\left(\frac{1}{\abs{Q}} -\frac{1}{\abs{P}}\right)</mrow>
+        </md>.
+        Observe that this expression for the work <m>W</m> is equal to the change in the object's kinetic energy the object undergoes as it moves from position <m>P</m> to <m>Q</m>.
+      </p>
+    </solution>
+  </example>
+</subsection>
+<subsection xml:id="ss_conservative_vector_fields">
+  <title>Conservative vector fields</title>
+  <p>
+    <xref ref="th_fund_thm_line_integrals"/> can be summarized by saying that if <m>\boldF=\nabla f</m> is a gradient vector field, then the line integrals along any two paths connecting points <m>P</m> and <m>Q</m> are always equal: <ie /> that the line integral from <m>P</m> to <m>Q</m> of <m>\boldF</m> is <em>independent of the path</em>.
+  </p>
+  <definition xml:id="d_conservative_field">
+    <title>Conservative vector field</title>
+    <statement>
+      <p>
+        Let <m>\boldF</m> be a continuous vector field on the open set <m>D</m>. We say <m>\boldF</m> is <term>conservative</term> if for any points <m>P, Q\in D</m>, and any piecewise smooth curves <m>\mathcal{C}_1, \mathcal{C}_2\subseteq D</m> starting at <m>P</m> and ending at <m>Q</m>, we have
+        <men xml:id="eq_path_ind">
+          \int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr.
+        </men>
+        When <xref ref="eq_path_ind"/> holds, we say that line integrals of <m>\boldF</m> between points in <m>D</m> are <term>path independent</term>.
+      </p>
+    </statement>
+  </definition>
+  <corollary xml:id="cor_gradient_implies_conservative">
+    <title>Gradient fields are conservative</title>
+    <statement>
+      <p>
+        If <m>\boldF=\nabla f</m> is a continuous gradient vector field on the open set <m>D</m>, then <m>\boldF</m> is conservative on <m>D</m>. Using logical shorthand:
+        <men xml:id="eq_gradient_implies_conservative">
+          \boldF=\nabla f \implies \boldF \text{ conservative}
+        </men>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Take any piecewise smooth curve <m>\mathcal{C}\subseteq D</m> from point <m>P</m> to <m>Q</m>, and let <m>P=P_0, P_1,\dots, P_{n-1}, P_n=Q</m> be a partition of <m>\mathcal{C}</m> into <m>n</m> smooth curve segments <m>\mathcal{C}_k</m> from <m>P_{k-1}</m> to <m>P_k</m>. We have
+        <md>
+          <mrow>\int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr</mrow>
+          <mrow> \amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp <xref ref="th_fund_thm_line_integrals" text='global'/> </mrow>
+          <mrow>  \amp = f(P_n)-f(P_0) \amp \text{(telescoping sum)} </mrow>
+          <mrow>  \amp = f(Q)-f(P)</mrow>
+        </md>.
+        This shows that the line integral of <m>\boldF</m> between any two points in <m>D</m> is path independent, and hence that <m>\boldF</m> is conservative on <m>D</m>.
+      </p>
+    </proof>
+
+  </corollary>
+  <definition xml:id="d_open_connected">
+    <title>Open connected sets</title>
+    <statement>
+      <p>
+        An open set <m>D\subseteq\R^n</m> is <term>connected</term> if for any two points <m>P, Q\in D</m> there is a piecewise smooth curve <m>\mathcal{C}\subseteq D</m> from <m>P</m> to <m>Q</m>.
+      </p>
+    </statement>
+  </definition>
+<theorem xml:id="th_conservative_iff_gradient">
+  <title>Conservative field=gradient field on open connected sets</title>
+  <statement>
+    <p>
+      If <m>\boldF</m> is a continuous vector field on the open connected set <m>D</m>, then <m>\boldF</m> is conservative if and only if <m>\boldF=\nabla f</m> for some function <m>f</m> defined on <m>D</m>. Using logical notation:
+      <men xml:id="eq_conservative_iff_gradient">
+        \boldF=\nabla f \iff \boldF \text{ conservative}
+      </men>.
+    </p>
+  </statement>
+  <proof>
+    <title>Proof of implication <m>\boldF=\nabla f\implies \boldF</m> conservative</title>
+    <p>
+      This implication follows directly from <xref ref="cor_gradient_implies_conservative"/>.
+    </p>
+  </proof>
+  <proof>
+    <title>Proof of implication <m>\boldF \text{ conservative}\implies \boldF=\nabla f</m></title>
+    <p>
+      Thus
+    </p>
+  </proof>
+
+
+</theorem>
+
+</subsection>
+</section>
