@@ -170,11 +170,11 @@ window.MathJax = {
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_line_integal_scalar.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_line_integal_scalar.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_pathind_conservative_potential.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_line_integal_scalar.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_line_integal_scalar.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_pathind_conservative_potential.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -205,6 +205,7 @@ window.MathJax = {
 <a href="c_integrals_vectorfields.html" data-scroll="c_integrals_vectorfields" class="internal"><span class="codenumber">2</span> <span class="title">Integrals and Vector Fields</span></a><ul>
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="active">Line integrals of vector fields</a></li>
+<li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -257,7 +258,28 @@ window.MathJax = {
 </div></article><article class="remark remark-like" id="rm_line_integral_vector_notation_1"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Vector field line integral notation.</span>
 </h4>
-<p id="p-327">The first equality among <a href="" class="xref" data-knowl="./knowl/eq_line_integral_vector_1.html" title="Equation 2.2.1">(2.2.1)–(2.2.3)</a> should be considered purely notational: i.e., it states simply that the integral being defined can be denoted by either of the expressions <span class="process-math">\(\int_C \boldF\cdot d\boldr\)</span> or <span class="process-math">\(\int_\mathcal{C}\boldF\cdot \boldT\, ds\text{.}\)</span> The remaining equalities <a href="" class="xref" data-knowl="./knowl/eq_line_integral_vector_2.html" title="Equation 2.2.2">(2.2.2)–(2.2.3)</a> then give actual meaning to these two expressions.</p></article></section></section></div></main>
+<p id="p-327">The first equality among <a href="" class="xref" data-knowl="./knowl/eq_line_integral_vector_1.html" title="Equation 2.2.1">(2.2.1)–(2.2.3)</a> should be considered purely notational: i.e., it states simply that the integral being defined can be denoted by either of the expressions <span class="process-math">\(\int_C \boldF\cdot d\boldr\)</span> or <span class="process-math">\(\int_\mathcal{C}\boldF\cdot \boldT\, ds\text{.}\)</span> The remaining equalities <a href="" class="xref" data-knowl="./knowl/eq_line_integral_vector_2.html" title="Equation 2.2.2">(2.2.2)–(2.2.3)</a> then give actual meaning to these two expressions.</p></article><p id="p-328">To make sense of what a vector field line integral computes in a given context, it is best to consider its formulation as the <em class="emphasis">scalar line integral</em> of the scalar function <span class="process-math">\(\boldF\cdot \boldT\text{.}\)</span> Given a partition of a parametrized curve into curve segments with endpoints</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(a), P_1=\boldr(t_1),\dots, P_{n-1}=\boldr(t_{n-1}), P_n=\boldr(t_n)
+\end{equation*}
+</div>
+<p class="continuation">we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_\mathcal{C}\boldF\cdot T\, ds\approx \sum_{k=1}^n \boldF(x_k, y_k, z_k)\cdot \boldT(x_k, y_k, z_k)\Delta s_k,
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\((x_k,y_k,z_k)\)</span> is a sample point in the <span class="process-math">\(k\)</span>-th segment of the partition of <span class="process-math">\(\mathcal{C}\text{,}\)</span> and <span class="process-math">\(\Delta s_k\)</span> is the arc length of that segment. Focusing in on one term <span class="process-math">\(\boldF(x_k, y_k, z_k)\cdot \boldT(x_k, y_k, z_k)\Delta s_k\)</span> and recalling our dot product cosine formula</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldF\cdot \boldT=\abs{\boldF}\abs{\boldT}\cos\theta\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\theta\)</span> is the angle between <span class="process-math">\(\boldF\)</span> and <span class="process-math">\(\boldT\)</span> at <span class="process-math">\((x_k, y_k, z_k)\text{,}\)</span> we see that this term multiplies the <em class="emphasis">component</em> of <span class="process-math">\(\boldF\)</span> in the direction of <span class="process-math">\(\boldT\)</span> by the arc length <span class="process-math">\(\Delta s_k\)</span> of the <span class="process-math">\(k\)</span>-th segment. We have thus reduced our interpretation problem to understanding what type of quantity is obtained by summing these products. The definition of <em class="emphasis">work</em> and <em class="emphasis">circulation</em> below are two examples of doing just this. <figure class="figure figure-like" id="figure-9"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/interp_vector_line_integral.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.5<span class="period">.</span></span><span class="space"> </span>Interpreting <span class="process-math">\(\int_\mathcal{C}\boldF\cdot \boldT\, ds\)</span></figcaption></figure></p></section><section class="subsection" id="ss_"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title"></span>
+</h3></section></section></div></main>
 </div>
 </body>
 </html>
