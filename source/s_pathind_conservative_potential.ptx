@@ -173,7 +173,7 @@
           <mrow>  \amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_1}\boldF\cdot d\boldr \amp (\boldF \text{ conservative})</mrow>
           <mrow>  \amp = 0</mrow>
         </md>.
-        How is the conservative property used in the penulimate equality? The parametrizations <m>\mathcal{C}_1</m> and <m>-\mathcal{C}_2</m> both start at <m>P</m> and end at <m>Q</m>; since <m>\boldF</m> is conservative, the corresponding line integrals are equal.
+        How is the conservative property used in the penultimate equality? The parametrizations <m>\mathcal{C}_1</m> and <m>-\mathcal{C}_2</m> both start at <m>P</m> and end at <m>Q</m>; since <m>\boldF</m> is conservative, the corresponding line integrals are equal.
       </p>
     </proof>
     <proof>
@@ -238,7 +238,7 @@
   <proof>
     <title>Proof of implication <m>\boldF=\nabla f\implies \boldF</m> conservative</title>
     <p>
-      This implication follows directly from <xref ref="cor_gradient_implies_conservative"/>.
+      This implication follows directly from <xref ref="th_gradient_implies_conservative"/>.
     </p>
   </proof>
   <proof>
@@ -282,13 +282,13 @@
   <title>Curl of a vector field</title>
   <statement>
     <p>
-      Let <m>\boldF=\angvec{F_1, F_2, F_3}</m> be a vector field on the set <m>D\subseteq \R^3</m>, and assume the first order partial derivatives of the component functions exist. We define the <term>curl</term> of <m>\boldF</m>, denoted <m>\curl \boldF</m> or <m>\nabla \times \boldF</m> as the vector field
+      Let <m>\boldF=\angvec{F_1, F_2, F_3}</m> be a vector field on the set <m>D\subseteq \R^3</m>, and assume the first order partial derivatives of the component functions exist. We define the <term>curl</term> of <m>\boldF</m>, denoted <m>\curl \boldF</m> or <m>\nabla \times \boldF</m>, as the vector field
       <me>
         \nabla\times \boldF=\det \begin{pmatrix}
           \boldi \amp \boldj \amp \boldk \\
-          \frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp \frac{\partial}{\partial z}\\
+          \frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
           F_1 \amp F_2 \amp F_3
-      \end{pmatrix}=\angvec{\frac{\partial F_3 }{\partial y}-\frac{\partial F_2}{\partial z},-(\frac{\partial F_3 }{\partial x}-\frac{\partial F_1 }{\partial z}, \frac{\partial F_2 }{\partial x}-\frac{\partial F_1}{\partial y}}
+      \end{pmatrix}=\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
       </me>.
     </p>
   </statement>
@@ -361,14 +361,37 @@
   <title>Logical housekeeping</title>
   <statement>
     <p>
-     Let <m>\boldF</m> be a vector field on the set <m>D\subseteq\R^n</m>. For statements involving curl, assume the partial derivatives of the component functions of <m>\boldF</m> are continuous.
-    </p>
-    <md>
-      <mrow>D \text{ open}\colon \boldF=\nabla F\amp\implies \boldF \ \text{ conservative} \impliedby \nabla\times \boldF=\boldzero
-      </mrow>
-    </md>
-  </statement>
-</theorem>
+     Let <m>\boldF</m> be a vector field on the set <m>D\subseteq\R^n</m>. We use the abbreviations <sq>o</sq>, <sq>c</sq>, <sq>sc</sq> for open, connected, and simply connected. For statements involving curl, assume the partial derivatives of the component functions of <m>\boldF</m> are continuous.
 
+    <!-- <md>
+      <mrow>D \text{ open}\colon \ \boldF=\nabla F\amp\implies \boldF \ \text{ conservative} \impliedby \nabla\times \boldF=\boldzero
+      </mrow>
+      <mrow>D \text{ open and connected}\colon \ \boldF=\nabla F\amp\iff \boldF \ \text{ conservative} \impliedby \nabla\times \boldF=\boldzero
+      </mrow>
+      <mrow>D \text{ open, connected, simply connected}\colon \ \boldF=\nabla F\amp\iff \boldF \ \text{ conservative} \impliedby \nabla\times \boldF=\boldzero
+      </mrow>
+    </md> -->
+    <me>
+      \begin{array}{rccccc}
+        D \text{ is o}\colon \amp \boldF \operatorname{ conservative} \amp \impliedby \amp \boldF=\nabla f\amp \implies\amp  \nabla\times \boldF=\boldzero. \\
+        D \text{ is o+c}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \implies\amp  \nabla\times \boldF=\boldzero. \\
+        D \text{ is o+c+sc}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \iff\amp  \nabla\times \boldF=\boldzero.
+      \end{array}
+    </me>
+</p>
+</statement>
+</theorem>
+<example>
+  <statement>
+    <p>
+
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
 </subsection>
 </section>

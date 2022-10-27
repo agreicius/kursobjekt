@@ -89,7 +89,7 @@
       </me>,
       where <m>\theta</m> is the angle between <m>\boldF</m> and <m>\boldT</m> at <m>(x_k, y_k, z_k)</m>, we see that this term multiplies the <em>component</em> of <m>\boldF</m> in the direction of <m>\boldT</m> by the arc length <m>\Delta s_k</m> of the <m>k</m>-th segment. We have thus reduced our interpretation problem to understanding what type of quantity is obtained by summing these products. The definition of <em>work</em> and <em>circulation</em> below are two examples of doing just this.
       <figure>
-        <image xml:id="im_interp_vector_line integral" source="interp_vector_line_integral.png" width="100%">
+        <image xml:id="im_interp_vector_line_integral" source="interp_vector_line_integral.png" width="100%">
         </image>
         <caption>Interpreting <m>\int_\mathcal{C}\boldF\cdot \boldT\, ds</m></caption>
       </figure>
