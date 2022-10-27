@@ -12,13 +12,21 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A vector field <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> is a <dfn class="terminology">gradient vector field</dfn> if there is a scalar function <span class="process-math">\(f\colon \R^n\rightarrow \R\)</span> such that</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_gradient_field.html">
-\begin{equation}
-\nabla f=\boldF\text{.}\tag{2.3.1}
-\end{equation}
+<p>Let <span class="process-math">\(\boldr=(g_1(t),g_2(t))\text{,}\)</span> <span class="process-math">\(a\leq t\leq b\)</span> be a smooth simple closed parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq\R^2\text{,}\)</span> and assume <span class="process-math">\(\boldF=(F_1,F_2)\)</span> is continuous on <span class="process-math">\(\mathcal{C}\text{.}\)</span> For all <span class="process-math">\(a\leq t\leq b\text{,}\)</span> the <dfn class="terminology">unit normal vector</dfn> to <span class="process-math">\(\mathcal{C}\)</span> with positive orientation is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldn(t)=\frac{\angvec{g_2'(t),-g_1'(t)}}{\sqrt{g_1^2(t)+g_2^2(t)}}\text{.}
+\end{equation*}
 </div>
-<p class="continuation">A function <span class="process-math">\(f\)</span> satisfying <a href="" class="xref" data-knowl="./knowl/eq_gradient_field.html" title="Equation 2.3.1">(2.3.1)</a> is a <dfn class="terminology">potential function</dfn> of <span class="process-math">\(\boldF\text{.}\)</span></p>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#p-347" class="internal">in-context</a></span>
+<p class="continuation">The <dfn class="terminology">flux</dfn> of <span class="process-math">\(\boldF\)</span> across <span class="process-math">\(\mathcal{C}\)</span> is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\operatorname{Flux}_\mathcal{C} \boldF \amp =\int_\mathcal{C}\boldF\cdot \boldn \, ds \\
+\amp=\int_a^b\boldF(\boldr(t))\cdot \boldn(t) \abs{\boldr'(t)}\, dt \\
+\amp = \int_a^b F_1(\boldr(t))g_2'(t)-F_2(\boldr(t))g_1'(t)\, dt\\
+\amp = \oint_\mathcal{C} F_1\, dy-F_2\, dx\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-347" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,8 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>We will study curl in more detail later, but for now we observe that it provides a partial check for whether a vector field is a gradient field.</p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Let <span class="process-math">\(\boldF=\angvec{F_1, F_2, F_3}\)</span> be a vector field on the set <span class="process-math">\(D\subseteq \R^3\text{,}\)</span> and assume the first order partial derivatives of the component functions exist. We define the <dfn class="terminology">curl</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\curl \boldF\)</span> or <span class="process-math">\(\nabla \times \boldF\text{,}\)</span> as the vector field</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\nabla\times \boldF=\det \begin{pmatrix}
+\boldi \amp \boldj \amp \boldk \\
+\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
+F_1 \amp F_2 \amp F_3
+\end{pmatrix}=\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-372" class="internal">in-context</a></span>
 </body>
 </html>

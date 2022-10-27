@@ -12,11 +12,17 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>If <span class="process-math">\(\boldF=\nabla f\)</span> is a continuous gradient vector field on the open set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
+<p>The proof is very similar to the first implication. Given any two curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2\)</span> connecting points <span class="process-math">\(P,Q\text{,}\)</span> the curve <span class="process-math">\(\mathcal{C}\)</span> obtained by first travelling along <span class="process-math">\(\mathcal{C}_1\)</span> and then along the reverse<span class="process-math">\(-\mathcal{C}_2\)</span> of <span class="process-math">\(\mathcal{C}_2\)</span> is closed. We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-\boldF=\nabla f \implies \boldF \ \text{conservative}\tag{2.3.5}
-\end{equation}
+\begin{equation*}
+0=\oint_\mathcal{C}\boldF\cdot d\boldr=\int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_2}\boldF\cdot d\boldr\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr\text{.}
+\end{equation*}
 </div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-365" class="internal">in-context</a></span>
 </body>

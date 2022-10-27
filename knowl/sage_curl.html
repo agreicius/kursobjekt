@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h4 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Computing curl.</span>
+</h4>
+<p>Sage allows us to easily compute the curl of vector fields. Below we compute the curl of the vector field from <a href="" class="xref" data-knowl="./knowl/eg_curltest_complete.html" title="Example 2.3.20: Curl test: complete">Example 2.3.20</a>. The command <code class="code-inline tex2jax_ignore">vector</code> in the cell below turns our symbolic list into a vector object.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-17"><script type="text/x-sage">(x,y,z)=var('x y z')
+F(x,y,z)=vector([y, x+z*cos(y*z), y*cos(y*z)])
+G(x,y,z)=F.curl()
+G(x,y,z)
+</script></pre>
+<p>The same command works for vector fields of dimension 2: for <span class="process-math">\(\boldF=\angvec{F_1,F_2}\text{,}\)</span> the <code class="code-inline tex2jax_ignore">curl</code> method returns <span class="process-math">\(\partial F_2/\partial x-\partial F_1/\partial y\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-18"><script type="text/x-sage">(x,y)=var('x y')
+F(x,y)=vector([x*e^y, sqrt(sin(x*y))])
+G(x,y)=F.curl()
+G(x,y)
+</script></pre></article><span class="incontext"><a href="s_pathind_conservative_potential.html#sage_curl" class="internal">in-context</a></span>
+</body>
+</html>

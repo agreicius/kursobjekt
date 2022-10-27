@@ -12,18 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The proof is very similar to the first implication. Given any two curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2\)</span> connecting points <span class="process-math">\(P,Q\text{,}\)</span> the curve <span class="process-math">\(\mathcal{C}\)</span> obtained by first travelling along <span class="process-math">\(\mathcal{C}_1\)</span> and then along the reverse<span class="process-math">\(-\mathcal{C}_2\)</span> of <span class="process-math">\(\mathcal{C}_2\)</span> is closed. We have</p>
+<p>Assume <span class="process-math">\(\boldF\)</span> is conservative. Given a closed curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> pick two points <span class="process-math">\(P, Q\in \mathcal{C}\)</span> and consider <span class="process-math">\(\mathcal{C}\)</span> as a parametrize curve <span class="process-math">\(\mathcal{C}_1\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> followed by a parametrized curve <span class="process-math">\(\mathcal{C}_2\)</span> from <span class="process-math">\(Q\)</span> to <span class="process-math">\(P\text{.}\)</span> We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-0=\oint_\mathcal{C}\boldF\cdot d\boldr=\int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_2}\boldF\cdot d\boldr\text{,}
-\end{equation*}
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr  \amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr+\int_{\mathcal{C}_2}\boldF\cdot d\boldr \\
+\amp= \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{-\mathcal{C}_2}\boldF\cdot d\boldr \amp \text{(prop. of reverse curves)}\\
+\amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_1}\boldF\cdot d\boldr \amp (\boldF \text{ conservative})\\
+\amp = 0\text{.}
+\end{align*}
 </div>
-<p class="continuation">and hence</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr\text{.}
-\end{equation*}
-</div>
+<p class="continuation">How is the conservative property used in the penultimate equality? The parametrizations <span class="process-math">\(\mathcal{C}_1\)</span> and <span class="process-math">\(-\mathcal{C}_2\)</span> both start at <span class="process-math">\(P\)</span> and end at <span class="process-math">\(Q\text{;}\)</span> since <span class="process-math">\(\boldF\)</span> is conservative, the corresponding line integrals are equal.</p>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-364" class="internal">in-context</a></span>
 </body>
 </html>

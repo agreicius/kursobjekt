@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>It is straightforward, if somewhat tiresome, to show <span class="process-math">\(\nabla\times \boldF=\angvec{0,0,0}\text{.}\)</span> Thus <span class="process-math">\(\boldF\)</span> is a gradient vector field. Let <span class="process-math">\(f\)</span> be a potential function for <span class="process-math">\(\boldF\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) \\
+f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}\\
+\amp \implies \partial/\partial y (G(y,z))=z\cos(yz)\\
+\amp \implies G(y,z)=\sin(yz)+H(z) \text{ for some } H(z)\\
+\amp \implies f(x,y,z)=xy+\sin(yz)+H(z) \text{ for some } H(z)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Looking at the partial formula for <span class="process-math">\(f\)</span> in our last line, we observe that setting <span class="process-math">\(H(z)=0\)</span> results in the function <span class="process-math">\(f(x,y,z)=xy+\sin(yz)\text{,}\)</span> which satisfies <span class="process-math">\(\nabla f=\boldF\text{.}\)</span></p>
+</div></body>
+</html>

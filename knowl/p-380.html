@@ -11,8 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>As you see, depending on how nice the domain <span class="process-math">\(D\)</span> of a vector field is, we get weaker or stronger statements about the relationship between conservative vector fields, gradient vector fields, and curl-zero vector fields. We summarize this with some logical housekeeping.</p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>The curl of <span class="process-math">\(\boldF\)</span> is the vector field</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_gradient_implies_curlzero.html">
+\begin{align*}
+\nabla\times \boldF (x,y,z) \amp =\angvec{\partial/\partial y (y)-\partial/\partial z (z), -(\partial/\partial x(y)-\partial/\partial z (x+xy^2)), \partial/\partial x (z)-\partial/\partial y (x+xy^2)}\\
+\amp=\angvec{0,0,-2xy}\ne \boldzero \text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\boldF\)</span> is not a gradient vector field by <a href="" class="xref" data-knowl="./knowl/th_gradient_implies_curlzero.html" title="Theorem 2.3.13: Gradient implies zero curl">Theorem 2.3.13</a>.</p>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-380" class="internal">in-context</a></span>
 </body>
 </html>
