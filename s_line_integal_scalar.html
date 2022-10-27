@@ -161,6 +161,10 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
   \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
   \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
   \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
