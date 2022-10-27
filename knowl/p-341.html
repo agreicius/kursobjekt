@@ -12,22 +12,7 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>As suggested by the setup, we suspect <span class="process-math">\(\boldF\)</span> is a gradient vector field. Indeed, we have <span class="process-math">\(\boldF=\nabla f\text{,}\)</span> where</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
-\begin{equation*}
-f(x,y,z)=\frac{GmM}{\sqrt{x^2+y^2+z^2}}=\frac{GmM}{\abs{(x,y,z)}}\text{,}
-\end{equation*}
-</div>
-<p class="continuation">as you can easily check. According to <a href="" class="xref" data-knowl="./knowl/th_fund_thm_line_integrals.html" title="Theorem 2.3.3: Fundamental theorem of line integrals">Theorem 2.3.3</a>, we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
-\begin{align*}
-W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
-\amp = f(Q)-f(P) \\
-\amp = GmM\left (\frac{1}{\sqrt{x_2^2+y_2^2+z_2^2}}-\frac{1}{\sqrt{x_1^2+y_1^2+z_1^2}}\right ) \\
-\amp = GmM\left(\frac{1}{\abs{Q}} -\frac{1}{\abs{P}}\right)\text{.}
-\end{align*}
-</div>
-<p class="continuation">Observe that this expression for the work <span class="process-math">\(W\)</span> is equal to the change in the object's kinetic energy the object undergoes as it moves from position <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span></p>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#p-341" class="internal">in-context</a></span>
+<p>If <span class="process-math">\(\boldF(x_1,x_2,\dots, x_n)\)</span> is the velocity vector of a fluid at the point <span class="process-math">\((x_1,x_2,\dots, x_n)\text{,}\)</span> then <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\)</span> is the <dfn class="terminology">flow</dfn> along the path <span class="process-math">\(\boldr\)</span> from <span class="process-math">\(\boldr(a)\)</span> to <span class="process-math">\(\boldr(b)\text{.}\)</span> The path <span class="process-math">\(\boldr\)</span> is <dfn class="terminology">simple</dfn> (one-to-one except possibly at the endpoints) and <dfn class="terminology">closed</dfn> (<span class="process-math">\(\boldr(a)=\boldr(b)\)</span>), then <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\)</span> is called the <dfn class="terminology">circulation</dfn> around <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-341" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,14 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
-\amp = f(Q)-f(P) \\
-\amp = GmM\left (\frac{1}{\sqrt{x_2^2+y_2^2+z_2^2}}-\frac{1}{\sqrt{x_1^2+y_1^2+z_1^2}}\right ) \\
-\amp = GmM\left(\frac{1}{\abs{Q}} -\frac{1}{\abs{P}}\right)
+\int_\mathcal{C}\boldF\cdot d\boldr   \amp = \int_a^b\boldF(\boldr(t))\boldr'(t)\, dt \\
+\amp= \int_a^b \nabla f(\boldr(t))\cdot \boldr'(t)\, dt \\
+\amp = \int_a^b (f(\boldr(t))'\, dt \amp \text{(chain rule)}\\
+\amp = f(\boldr(b))-f(\boldr(a)) \amp \text{(FTC)}\\
+\amp =f(Q)-f(P)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-62" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-63" class="internal">in-context</a></span>
 </body>
 </html>

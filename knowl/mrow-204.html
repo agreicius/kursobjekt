@@ -11,14 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
-\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
-\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
-\amp = 2\pi
+\operatorname{Flux}_\mathcal{C} \boldF \amp =\int_\mathcal{C}\boldF\cdot \boldn \, ds \\
+\amp=\int_a^b\boldF(\boldr(t))\cdot \boldn(t) \abs{\boldr'(t)}\, dt \\
+\amp = \int_a^b F_1(\boldr(t))g_2'(t)-F_2(\boldr(t))g_1'(t)\, dt\\
+\amp = \oint_\mathcal{C} F_1\, dy-F_2\, dx
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-61" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#md-62" class="internal">in-context</a></span>
 </body>
 </html>

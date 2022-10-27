@@ -226,7 +226,7 @@ window.MathJax = {
 <article class="definition definition-like" id="d_gradient_field_potential"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient vector fields and potential functions.</span>
 </h4>
-<p id="p-329">A vector field <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> is a <dfn class="terminology">gradient vector field</dfn> if there is a scalar function <span class="process-math">\(f\colon \R^n\rightarrow \R\)</span> such that</p>
+<p id="p-347">A vector field <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> is a <dfn class="terminology">gradient vector field</dfn> if there is a scalar function <span class="process-math">\(f\colon \R^n\rightarrow \R\)</span> such that</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_gradient_field.html" id="eq_gradient_field">
 \begin{equation}
 \nabla f=\boldF\text{.}\tag{2.3.1}
@@ -234,7 +234,7 @@ window.MathJax = {
 </div>
 <p class="continuation">A function <span class="process-math">\(f\)</span> satisfying <a href="" class="xref" data-knowl="./knowl/eq_gradient_field.html" title="Equation 2.3.1">(2.3.1)</a> is a <dfn class="terminology">potential function</dfn> of <span class="process-math">\(\boldF\text{.}\)</span></p></article><article class="example example-like" id="eg_gradient_vector_fields"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_gradient_vector_fields"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient vector fields.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_gradient_vector_fields"><article class="example example-like"><p id="p-330">The vector field</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_gradient_vector_fields"><article class="example example-like"><p id="p-348">The vector field</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldF=\angvec{yz, xz, xy}
@@ -247,7 +247,7 @@ f(x,y,z)=xyz\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Thus <span class="process-math">\(f\)</span> is a potential function for <span class="process-math">\(\boldF\text{.}\)</span> The function <span class="process-math">\(g(x,y,z)=xyz+5\)</span> is another potential function of <span class="process-math">\(\boldF\text{.}\)</span></p>
-<p id="p-331">The vector field</p>
+<p id="p-349">The vector field</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldF=\angvec{-\frac{x}{\sqrt{x^2+y^2}}, -\frac{y}{\sqrt{x^2+y^2}}}, (x,y)\ne (0,0)
@@ -259,17 +259,17 @@ f(x,y,z)=xyz\text{.}
 f(x,y)=\frac{1}{\sqrt{x^2+y^2}}=\frac{1}{\abs{(x,y)}}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-332">Gradient vector fields <span class="process-math">\(\boldF=\nabla f\)</span> are nice to compute with, as the following theorem indicates.</p>
+<p id="p-350">Gradient vector fields <span class="process-math">\(\boldF=\nabla f\)</span> are nice to compute with, as the following theorem indicates.</p>
 <article class="theorem theorem-like" id="th_fund_thm_line_integrals"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental theorem of line integrals.</span>
 </h4>
-<p id="p-333">Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\)</span> be a smooth parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq\R^n\)</span> with initial point <span class="process-math">\(P=\boldr(a)\)</span> and end point <span class="process-math">\(Q=\boldr(b)\text{,}\)</span> and assume the vector field  <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> is continuous on a set containing <span class="process-math">\(\mathcal{C}\text{.}\)</span> If <span class="process-math">\(\boldF=\nabla f\)</span> for some function <span class="process-math">\(f\text{,}\)</span> then</p>
+<p id="p-351">Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\)</span> be a smooth parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq\R^n\)</span> with initial point <span class="process-math">\(P=\boldr(a)\)</span> and end point <span class="process-math">\(Q=\boldr(b)\text{,}\)</span> and assume the vector field  <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> is continuous on a set containing <span class="process-math">\(\mathcal{C}\text{.}\)</span> If <span class="process-math">\(\boldF=\nabla f\)</span> for some function <span class="process-math">\(f\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_fund_thm_line_integrals">
 \begin{equation}
 \int_\mathcal{C}\boldF\cdot d\boldr=f(Q)-f(P)\text{.}\tag{2.3.2}
 \end{equation}
-</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-334">We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-60">
+</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-352">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-63">
 \begin{align*}
 \int_\mathcal{C}\boldF\cdot d\boldr   \amp = \int_a^b\boldF(\boldr(t))\boldr'(t)\, dt \\
 \amp= \int_a^b \nabla f(\boldr(t))\cdot \boldr'(t)\, dt \\
@@ -281,25 +281,25 @@ f(x,y)=\frac{1}{\sqrt{x^2+y^2}}=\frac{1}{\abs{(x,y)}}\text{.}
 <article class="corollary theorem-like" id="cor_fund_thm_line_integrals"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Integral of gradient field over closed curve.</span>
 </h4>
-<p id="p-335">If <span class="process-math">\(\mathcal{C}\subseteq\R^n\)</span> is a smooth closed curve, and if <span class="process-math">\(\boldF=\nabla f\)</span> is a gradient vector field that is continuous on a set containing <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
+<p id="p-353">If <span class="process-math">\(\mathcal{C}\subseteq\R^n\)</span> is a smooth closed curve, and if <span class="process-math">\(\boldF=\nabla f\)</span> is a gradient vector field that is continuous on a set containing <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \oint_\mathcal{C}\boldF\cdot\, d\boldr=0\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-336">Let <span class="process-math">\(P\)</span> be the initial and end point of the closed curve <span class="process-math">\(\mathcal{C}\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/th_fund_thm_line_integrals.html" title="Theorem 2.3.3: Fundamental theorem of line integrals">Theorem 2.3.3</a> we have</p>
+</div></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-354">Let <span class="process-math">\(P\)</span> be the initial and end point of the closed curve <span class="process-math">\(\mathcal{C}\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/th_fund_thm_line_integrals.html" title="Theorem 2.3.3: Fundamental theorem of line integrals">Theorem 2.3.3</a> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
 \begin{equation*}
 \int_\mathcal{C}\boldF\cdot d\boldr=f(P)-f(P)=0\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-337"><a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> provides a potential way of showing a vector field <span class="process-math">\(\boldF\)</span> is <em class="emphasis">not</em> a gradient field: namely, show that <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0\)</span> for a suitably chosen closed curve <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
-<article class="example example-like" id="example-36"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-36"><h4 class="heading">
+<p id="p-355"><a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> provides a potential way of showing a vector field <span class="process-math">\(\boldF\)</span> is <em class="emphasis">not</em> a gradient field: namely, show that <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0\)</span> for a suitably chosen closed curve <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+<article class="example example-like" id="example-39"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-39"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">A non-gradient vector field.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-36"><article class="example example-like"><p id="p-338">Use <a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> to show that <span class="process-math">\(\boldF=\angvec{-y,x}\)</span> is not a gradient vector field.</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-356">Use <a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> to show that <span class="process-math">\(\boldF=\angvec{-y,x}\)</span> is not a gradient vector field.</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like">
-<p id="p-339">Let <span class="process-math">\(\mathcal{C}\)</span> be the unit circle <span class="process-math">\(x^2+y^2=1\text{,}\)</span> with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html" id="md-61">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like">
+<p id="p-357">Let <span class="process-math">\(\mathcal{C}\)</span> be the unit circle <span class="process-math">\(x^2+y^2=1\text{,}\)</span> with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html" id="md-64">
 \begin{align*}
 \oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
 \amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
@@ -310,9 +310,9 @@ f(x,y)=\frac{1}{\sqrt{x^2+y^2}}=\frac{1}{\abs{(x,y)}}\text{.}
 <p class="continuation">Since <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> implies that we cannot have <span class="process-math">\(\boldF=\nabla f\text{.}\)</span></p>
 </div></div>
 </div></article></div>
-<article class="example example-like" id="example-37"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-37"><h4 class="heading">
+<article class="example example-like" id="example-40"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-40"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Work done by gravity.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-340">Given a point particle of mass M at the origin in <span class="process-math">\(\R^3\text{,}\)</span> the gravitational force <span class="process-math">\(\boldF(x,y,z)\)</span> acting on a point particle of mass <span class="process-math">\(m\)</span> at position <span class="process-math">\((x,y,z)\)</span> is</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-358">Given a point particle of mass M at the origin in <span class="process-math">\(\R^3\text{,}\)</span> the gravitational force <span class="process-math">\(\boldF(x,y,z)\)</span> acting on a point particle of mass <span class="process-math">\(m\)</span> at position <span class="process-math">\((x,y,z)\)</span> is</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldF(x,y,z)=-\frac{GmM}{\abs{\boldx}^3}\boldx=-\frac{GmM}{(x^2+y^2+z^2)^{3/2}}\angvec{x,y,z}\text{,}
@@ -320,15 +320,15 @@ f(x,y)=\frac{1}{\sqrt{x^2+y^2}}=\frac{1}{\abs{(x,y)}}\text{.}
 </div>
 <p class="continuation">where <span class="process-math">\(G\)</span> is the gravitational constant and <span class="process-math">\(\boldx=\angvec{x,y,z}\)</span> is the position vector of the object. Compute the work done by gravity if the point particle of mass <span class="process-math">\(m\)</span> travels from position <span class="process-math">\(P=(x_1,y_1,z_1)\)</span> to position <span class="process-math">\(Q=(x_2,y_2,z_2)\)</span> along a smooth curve <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like">
-<p id="p-341">As suggested by the setup, we suspect <span class="process-math">\(\boldF\)</span> is a gradient vector field. Indeed, we have <span class="process-math">\(\boldF=\nabla f\text{,}\)</span> where</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like">
+<p id="p-359">As suggested by the setup, we suspect <span class="process-math">\(\boldF\)</span> is a gradient vector field. Indeed, we have <span class="process-math">\(\boldF=\nabla f\text{,}\)</span> where</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
 \begin{equation*}
 f(x,y,z)=\frac{GmM}{\sqrt{x^2+y^2+z^2}}=\frac{GmM}{\abs{(x,y,z)}}\text{,}
 \end{equation*}
 </div>
 <p class="continuation">as you can easily check. According to <a href="" class="xref" data-knowl="./knowl/th_fund_thm_line_integrals.html" title="Theorem 2.3.3: Fundamental theorem of line integrals">Theorem 2.3.3</a>, we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html" id="md-62">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html" id="md-65">
 \begin{align*}
 W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
 \amp = f(Q)-f(P) \\
@@ -341,11 +341,11 @@ W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
 </div></article></div></section><section class="subsection" id="ss_conservative_vector_fields"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Conservative vector fields</span>
 </h3>
-<p id="p-342"><a href="" class="xref" data-knowl="./knowl/th_fund_thm_line_integrals.html" title="Theorem 2.3.3: Fundamental theorem of line integrals">Theorem 2.3.3</a> can be summarized by saying that if <span class="process-math">\(\boldF=\nabla f\)</span> is a gradient vector field, then the line integrals along any two paths connecting points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are always equal: i.e. that the line integral from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> of <span class="process-math">\(\boldF\)</span> is <em class="emphasis">independent of the path</em>.</p>
+<p id="p-360"><a href="" class="xref" data-knowl="./knowl/th_fund_thm_line_integrals.html" title="Theorem 2.3.3: Fundamental theorem of line integrals">Theorem 2.3.3</a> can be summarized by saying that if <span class="process-math">\(\boldF=\nabla f\)</span> is a gradient vector field, then the line integrals along any two paths connecting points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are always equal: i.e. that the line integral from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> of <span class="process-math">\(\boldF\)</span> is <em class="emphasis">independent of the path</em>.</p>
 <article class="definition definition-like" id="d_conservative_field"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Conservative vector field.</span>
 </h4>
-<p id="p-343">Let <span class="process-math">\(\boldF\)</span> be a continuous vector field on the open set <span class="process-math">\(D\text{.}\)</span> We say <span class="process-math">\(\boldF\)</span> is <dfn class="terminology">conservative</dfn> if for any points <span class="process-math">\(P, Q\in D\text{,}\)</span> and any piecewise smooth curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2\subseteq D\)</span> starting at <span class="process-math">\(P\)</span> and ending at <span class="process-math">\(Q\text{,}\)</span> we have</p>
+<p id="p-361">Let <span class="process-math">\(\boldF\)</span> be a continuous vector field on the open set <span class="process-math">\(D\text{.}\)</span> We say <span class="process-math">\(\boldF\)</span> is <dfn class="terminology">conservative</dfn> if for any points <span class="process-math">\(P, Q\in D\text{,}\)</span> and any piecewise smooth curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2\subseteq D\)</span> starting at <span class="process-math">\(P\)</span> and ending at <span class="process-math">\(Q\text{,}\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_path_ind.html" id="eq_path_ind">
 \begin{equation}
 \int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr.\tag{2.3.3}
@@ -354,13 +354,13 @@ W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
 <p class="continuation">When <a href="" class="xref" data-knowl="./knowl/eq_path_ind.html" title="Equation 2.3.3">(2.3.3)</a> holds, we say that line integrals of <span class="process-math">\(\boldF\)</span> between points in <span class="process-math">\(D\)</span> are <dfn class="terminology">path independent</dfn>.</p></article><article class="corollary theorem-like" id="cor_gradient_implies_conservative"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient fields are conservative.</span>
 </h4>
-<p id="p-344">If <span class="process-math">\(\boldF=\nabla f\)</span> is a continuous gradient vector field on the open set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
+<p id="p-362">If <span class="process-math">\(\boldF=\nabla f\)</span> is a continuous gradient vector field on the open set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_gradient_implies_conservative">
 \begin{equation}
 \boldF=\nabla f \implies \boldF \text{ conservative}\text{.}\tag{2.3.4}
 \end{equation}
-</div></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-345">Take any piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from point <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and let <span class="process-math">\(P=P_0, P_1,\dots, P_{n-1}, P_n=Q\)</span> be a partition of <span class="process-math">\(\mathcal{C}\)</span> into <span class="process-math">\(n\)</span> smooth curve segments <span class="process-math">\(\mathcal{C}_k\)</span> from <span class="process-math">\(P_{k-1}\)</span> to <span class="process-math">\(P_k\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html" id="md-63">
+</div></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-363">Take any piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from point <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and let <span class="process-math">\(P=P_0, P_1,\dots, P_{n-1}, P_n=Q\)</span> be a partition of <span class="process-math">\(\mathcal{C}\)</span> into <span class="process-math">\(n\)</span> smooth curve segments <span class="process-math">\(\mathcal{C}_k\)</span> from <span class="process-math">\(P_{k-1}\)</span> to <span class="process-math">\(P_k\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html" id="md-66">
 \begin{align*}
 \int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
 \amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
@@ -372,16 +372,16 @@ W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
 <article class="definition definition-like" id="d_open_connected"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Open connected sets.</span>
 </h4>
-<p id="p-346">An open set <span class="process-math">\(D\subseteq\R^n\)</span> is <dfn class="terminology">connected</dfn> if for any two points <span class="process-math">\(P, Q\in D\)</span> there is a piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_conservative_iff_gradient"><h4 class="heading">
+<p id="p-364">An open set <span class="process-math">\(D\subseteq\R^n\)</span> is <dfn class="terminology">connected</dfn> if for any two points <span class="process-math">\(P, Q\in D\)</span> there is a piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_conservative_iff_gradient"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Conservative field=gradient field on open connected sets.</span>
 </h4>
-<p id="p-347">If <span class="process-math">\(\boldF\)</span> is a continuous vector field on the open connected set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative if and only if <span class="process-math">\(\boldF=\nabla f\)</span> for some function <span class="process-math">\(f\)</span> defined on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
+<p id="p-365">If <span class="process-math">\(\boldF\)</span> is a continuous vector field on the open connected set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative if and only if <span class="process-math">\(\boldF=\nabla f\)</span> for some function <span class="process-math">\(f\)</span> defined on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_conservative_iff_gradient">
 \begin{equation}
 \boldF=\nabla f \iff \boldF \text{ conservative}\text{.}\tag{2.3.5}
 \end{equation}
-</div></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF=\nabla f\implies \boldF\)</span> conservative.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-348">This implication follows directly from <a href="" class="xref" data-knowl="./knowl/cor_gradient_implies_conservative.html" title="Corollary 2.3.8: Gradient fields are conservative">Corollary 2.3.8</a>.</p></article></div>
-<article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF\)</span> conservative <span class="process-math">\(\implies \boldF=\nabla f\)</span>.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-349">Thus</p></article></div></section></section></div></main>
+</div></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF=\nabla f\implies \boldF\)</span> conservative.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-366">This implication follows directly from <a href="" class="xref" data-knowl="./knowl/cor_gradient_implies_conservative.html" title="Corollary 2.3.8: Gradient fields are conservative">Corollary 2.3.8</a>.</p></article></div>
+<article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF\)</span> conservative <span class="process-math">\(\implies \boldF=\nabla f\)</span>.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-367">Thus</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

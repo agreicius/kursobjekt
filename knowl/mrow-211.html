@@ -11,14 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
 \begin{align*}
-\int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
-\amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
-\amp = f(P_n)-f(P_0) \amp \text{(telescoping sum)} \\
-\amp = f(Q)-f(P)
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
+\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
+\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
+\amp = 2\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-63" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-64" class="internal">in-context</a></span>
 </body>
 </html>
