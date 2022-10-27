@@ -11,12 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
-\amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
-\amp = f(P_n)-f(P_0) \amp \text{(telescoping sum)} \\
-\amp = f(Q)-f(P)
+\oint_\mathcal{C}\boldF\cdot d\boldr  \amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr+\int_{\mathcal{C}_2}\boldF\cdot d\boldr \\
+\amp= \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{-\mathcal{C}_2}\boldF\cdot d\boldr \amp \text{(prop. of reverse curves)}\\
+\amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_1}\boldF\cdot d\boldr \amp (\boldF \text{ conservative})\\
+\amp = 0
 \end{align*}
 </div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#md-66" class="internal">in-context</a></span>

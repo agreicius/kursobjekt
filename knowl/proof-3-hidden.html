@@ -10,14 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><p>Take any piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from point <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and let <span class="process-math">\(P=P_0, P_1,\dots, P_{n-1}, P_n=Q\)</span> be a partition of <span class="process-math">\(\mathcal{C}\)</span> into <span class="process-math">\(n\)</span> smooth curve segments <span class="process-math">\(\mathcal{C}_k\)</span> from <span class="process-math">\(P_{k-1}\)</span> to <span class="process-math">\(P_k\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<body class="ignore-math"><article class="hiddenproof"><p>Assume <span class="process-math">\(\boldF\)</span> is conservative. Given a closed curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> pick two points <span class="process-math">\(P, Q\in \mathcal{C}\)</span> and consider <span class="process-math">\(\mathcal{C}\)</span> as a parametrize curve <span class="process-math">\(\mathcal{C}_1\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> followed by a parametrized curve <span class="process-math">\(\mathcal{C}_2\)</span> from <span class="process-math">\(Q\)</span> to <span class="process-math">\(P\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
-\amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
-\amp = f(P_n)-f(P_0) \amp \text{(telescoping sum)} \\
-\amp = f(Q)-f(P)\text{.}
+\oint_\mathcal{C}\boldF\cdot d\boldr  \amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr+\int_{\mathcal{C}_2}\boldF\cdot d\boldr \\
+\amp= \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{-\mathcal{C}_2}\boldF\cdot d\boldr \amp \text{(prop. of reverse curves)}\\
+\amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_1}\boldF\cdot d\boldr \amp (\boldF \text{ conservative})\\
+\amp = 0\text{.}
 \end{align*}
 </div>
-<p class="continuation">This shows that the line integral of <span class="process-math">\(\boldF\)</span> between any two points in <span class="process-math">\(D\)</span> is path independent, and hence that <span class="process-math">\(\boldF\)</span> is conservative on <span class="process-math">\(D\text{.}\)</span></p></article></body>
+<p class="continuation">How is the conservative property used in the penulimate equality? The parametrizations <span class="process-math">\(\mathcal{C}_1\)</span> and <span class="process-math">\(-\mathcal{C}_2\)</span> both start at <span class="process-math">\(P\)</span> and end at <span class="process-math">\(Q\text{;}\)</span> since <span class="process-math">\(\boldF\)</span> is conservative, the corresponding line integrals are equal.</p></article></body>
 </html>

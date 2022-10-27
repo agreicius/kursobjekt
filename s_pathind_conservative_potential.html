@@ -351,16 +351,46 @@ W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
 \int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr.\tag{2.3.3}
 \end{equation}
 </div>
-<p class="continuation">When <a href="" class="xref" data-knowl="./knowl/eq_path_ind.html" title="Equation 2.3.3">(2.3.3)</a> holds, we say that line integrals of <span class="process-math">\(\boldF\)</span> between points in <span class="process-math">\(D\)</span> are <dfn class="terminology">path independent</dfn>.</p></article><article class="corollary theorem-like" id="cor_gradient_implies_conservative"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient fields are conservative.</span>
+<p class="continuation">When <a href="" class="xref" data-knowl="./knowl/eq_path_ind.html" title="Equation 2.3.3">(2.3.3)</a> holds, we say that line integrals of <span class="process-math">\(\boldF\)</span> between points in <span class="process-math">\(D\)</span> are <dfn class="terminology">path independent</dfn>.</p></article><article class="theorem theorem-like" id="th_conservative_loops"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Loop property of conservative fields.</span>
 </h4>
-<p id="p-362">If <span class="process-math">\(\boldF=\nabla f\)</span> is a continuous gradient vector field on the open set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
+<p id="p-362">If <span class="process-math">\(\boldF\)</span> is a continuous vector field on the open set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative if and only if <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr=0\)</span> for all piecewise smooth closed curves <span class="process-math">\(\mathcal{C}\subseteq D\text{.}\)</span> Using logical shorthand:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="men-31">
+\begin{equation}
+\boldF \ \text{ conservative } \iff \oint_\mathcal{C}\boldF\cdot d\boldr=0\text{.}\tag{2.3.4}
+\end{equation}
+</div></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h4 class="heading"><span class="title">Proof: conservative <span class="process-math">\(\ \implies \oint_\mathcal{C}\boldF\cdot d\boldr=0\)</span>.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-363">Assume <span class="process-math">\(\boldF\)</span> is conservative. Given a closed curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> pick two points <span class="process-math">\(P, Q\in \mathcal{C}\)</span> and consider <span class="process-math">\(\mathcal{C}\)</span> as a parametrize curve <span class="process-math">\(\mathcal{C}_1\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> followed by a parametrized curve <span class="process-math">\(\mathcal{C}_2\)</span> from <span class="process-math">\(Q\)</span> to <span class="process-math">\(P\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-66">
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr  \amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr+\int_{\mathcal{C}_2}\boldF\cdot d\boldr \\
+\amp= \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{-\mathcal{C}_2}\boldF\cdot d\boldr \amp \text{(prop. of reverse curves)}\\
+\amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_1}\boldF\cdot d\boldr \amp (\boldF \text{ conservative})\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p class="continuation">How is the conservative property used in the penulimate equality? The parametrizations <span class="process-math">\(\mathcal{C}_1\)</span> and <span class="process-math">\(-\mathcal{C}_2\)</span> both start at <span class="process-math">\(P\)</span> and end at <span class="process-math">\(Q\text{;}\)</span> since <span class="process-math">\(\boldF\)</span> is conservative, the corresponding line integrals are equal.</p></article></div>
+<article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h4 class="heading"><span class="title">Proof: <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr=0 \implies\)</span> conservative.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-364">The proof is very similar to the first implication. Given any two curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2\)</span> connecting points <span class="process-math">\(P,Q\text{,}\)</span> the curve <span class="process-math">\(\mathcal{C}\)</span> obtained by first travelling along <span class="process-math">\(\mathcal{C}_1\)</span> and then along the reverse<span class="process-math">\(-\mathcal{C}_2\)</span> of <span class="process-math">\(\mathcal{C}_2\)</span> is closed. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0=\oint_\mathcal{C}\boldF\cdot d\boldr=\int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_2}\boldF\cdot d\boldr\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr\text{.}
+\end{equation*}
+</div></article></div>
+<article class="theorem theorem-like" id="th_gradient_implies_conservative"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient implies conservative.</span>
+</h4>
+<p id="p-365">If <span class="process-math">\(\boldF=\nabla f\)</span> is a continuous gradient vector field on the open set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_gradient_implies_conservative">
 \begin{equation}
-\boldF=\nabla f \implies \boldF \text{ conservative}\text{.}\tag{2.3.4}
+\boldF=\nabla f \implies \boldF \ \text{conservative}\tag{2.3.5}
 \end{equation}
-</div></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-363">Take any piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from point <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and let <span class="process-math">\(P=P_0, P_1,\dots, P_{n-1}, P_n=Q\)</span> be a partition of <span class="process-math">\(\mathcal{C}\)</span> into <span class="process-math">\(n\)</span> smooth curve segments <span class="process-math">\(\mathcal{C}_k\)</span> from <span class="process-math">\(P_{k-1}\)</span> to <span class="process-math">\(P_k\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html" id="md-66">
+</div></article><article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-366">Take any piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from point <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and let <span class="process-math">\(P=P_0, P_1,\dots, P_{n-1}, P_n=Q\)</span> be a partition of <span class="process-math">\(\mathcal{C}\)</span> into <span class="process-math">\(n\)</span> smooth curve segments <span class="process-math">\(\mathcal{C}_k\)</span> from <span class="process-math">\(P_{k-1}\)</span> to <span class="process-math">\(P_k\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html" id="md-67">
 \begin{align*}
 \int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
 \amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
@@ -370,18 +400,95 @@ W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
 </div>
 <p class="continuation">This shows that the line integral of <span class="process-math">\(\boldF\)</span> between any two points in <span class="process-math">\(D\)</span> is path independent, and hence that <span class="process-math">\(\boldF\)</span> is conservative on <span class="process-math">\(D\text{.}\)</span></p></article></div>
 <article class="definition definition-like" id="d_open_connected"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Open connected sets.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Open connected sets.</span>
 </h4>
-<p id="p-364">An open set <span class="process-math">\(D\subseteq\R^n\)</span> is <dfn class="terminology">connected</dfn> if for any two points <span class="process-math">\(P, Q\in D\)</span> there is a piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_conservative_iff_gradient"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Conservative field=gradient field on open connected sets.</span>
+<p id="p-367">An open set <span class="process-math">\(D\subseteq\R^n\)</span> is <dfn class="terminology">connected</dfn> if for any two points <span class="process-math">\(P, Q\in D\)</span> there is a piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_conservative_iff_gradient"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient iff conservative (connected domain).</span>
 </h4>
-<p id="p-365">If <span class="process-math">\(\boldF\)</span> is a continuous vector field on the open connected set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative if and only if <span class="process-math">\(\boldF=\nabla f\)</span> for some function <span class="process-math">\(f\)</span> defined on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
+<p id="p-368">If <span class="process-math">\(\boldF\)</span> is a continuous vector field on the open connected set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative if and only if <span class="process-math">\(\boldF=\nabla f\)</span> for some function <span class="process-math">\(f\)</span> defined on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_conservative_iff_gradient">
 \begin{equation}
-\boldF=\nabla f \iff \boldF \text{ conservative}\text{.}\tag{2.3.5}
+\boldF=\nabla f \iff \boldF \text{ conservative}\text{.}\tag{2.3.6}
 \end{equation}
-</div></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF=\nabla f\implies \boldF\)</span> conservative.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-366">This implication follows directly from <a href="" class="xref" data-knowl="./knowl/cor_gradient_implies_conservative.html" title="Corollary 2.3.8: Gradient fields are conservative">Corollary 2.3.8</a>.</p></article></div>
-<article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF\)</span> conservative <span class="process-math">\(\implies \boldF=\nabla f\)</span>.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-367">Thus</p></article></div></section></section></div></main>
+</div></article><article class="hiddenproof" id="proof-6"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-6"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF=\nabla f\implies \boldF\)</span> conservative.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-369">This implication follows directly from <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor_gradient_implies_conservative" missing or not unique]</code>.</p></article></div>
+<article class="hiddenproof" id="proof-7"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h4 class="heading"><span class="title">Proof of implication <span class="process-math">\(\boldF\)</span> conservative <span class="process-math">\(\implies \boldF=\nabla f\)</span>.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-370">Our proof will assume <span class="process-math">\(n=2\)</span> for simplicity of notation; it works just as well for <span class="process-math">\(n=3\text{.}\)</span> Assume <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> is conservative. We define the scalar function <span class="process-math">\(f\)</span> as follows: fix any <span class="process-math">\(P=(x_0,y_0)\)</span> in <span class="process-math">\(D\text{;}\)</span> for any <span class="process-math">\((x,y)\in D\)</span> define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y)=\int_P^{(x,y)}\boldF\cdot d\boldr\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where the notation <span class="process-math">\(\int_P^{(x,y)}\boldF\cdot d\boldr\)</span> is understood to mean the line integral of <span class="process-math">\(\boldF\)</span> over any choice of piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\text{.}\)</span> That <span class="process-math">\(f(x,y)\)</span> is a well-defined function follows from the fact that (a) there is <em class="emphasis">some</em> choice of curve <span class="process-math">\(\mathcal{C}\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\((x,y)\)</span> (<span class="process-math">\(D\)</span> is connected), and (b) the value of the line integral <em class="emphasis">does not depend</em> on this choice (<span class="process-math">\(\boldF\)</span> is conservative). Next, we claim that <span class="process-math">\(f\)</span> is a potential function for <span class="process-math">\(\boldF\text{:}\)</span> i.e., <span class="process-math">\(\nabla f=\boldF\text{.}\)</span> Indeed, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-68">
+\begin{align*}
+f_x(x,y) \amp =\lim_{h\rightarrow 0}\frac{1}{h}(f(x+h,y)-f(x,y)) \amp \text{def. of } f_x\\
+\amp=\lim_{h\rightarrow 0}\frac{1}{h}(\int_P^{(x+h,y)}\boldF\cdot d\boldr-\int_P^{(x,y)}\boldF\cdot d\boldr) \\
+\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_{(x,y)}^{(x+h,y)}\boldF\cdot d\boldr \amp \text{(integral props.)}\\
+\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_0^h\boldF(x+t, y)\cdot \angvec{1,0}\, dt \amp \boldr(t)=(x+t,y), 0\leq t\leq h \\
+\amp =\lim_{h\rightarrow 0}\frac{1}{h}\int_0^hF_1(x+t, y)\, dt\\
+\amp = \frac{d}{dh}\left( \int_0^h F_1(x+t,y)\, dt \right)\Bigr\vert_{h=0}\\
+\amp = F_1(x+0, y) \amp \text{(FTC!)}\\
+\amp = F_1(x,y)\text{.}
+\end{align*}
+</div>
+<p class="continuation">This proves <span class="process-math">\(f_x=F_1\text{;}\)</span> the argument that <span class="process-math">\(f_y=F_2\)</span> is exactly similar. We conclude <span class="process-math">\(\nabla f=\angvec{F_1, F_2}=\boldF\text{.}\)</span></p></article></div></section><section class="subsection" id="ss_curl_conservative"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Curl test for conservative fields</span>
+</h3>
+<article class="definition definition-like" id="d_curl"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Curl of a vector field.</span>
+</h4>
+<p id="p-371">Let <span class="process-math">\(\boldF=\angvec{F_1, F_2, F_3}\)</span> be a vector field on the set <span class="process-math">\(D\subseteq \R^3\text{,}\)</span> and assume the first order partial derivatives of the component functions exist. We define the <dfn class="terminology">curl</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\curl \boldF\)</span> or <span class="process-math">\(\nabla \times \boldF\)</span> as the vector field</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\nabla\times \boldF=\det \begin{pmatrix}
+\boldi \amp \boldj \amp \boldk \\
+\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp \frac{\partial}{\partial z}\\
+F_1 \amp F_2 \amp F_3
+\end{pmatrix}=\angvec{\frac{\partial F_3 }{\partial y}-\frac{\partial F_2}{\partial z},-(\frac{\partial F_3 }{\partial x}-\frac{\partial F_1 }{\partial z}, \frac{\partial F_2 }{\partial x}-\frac{\partial F_1}{\partial y}}\text{.}
+\end{equation*}
+</div></article><p id="p-372">We will study curl in more detail later, but for now we observe that it provides a partial check for whether a vector field is a gradient field.</p>
+<article class="theorem theorem-like" id="th_gradient_implies_curlzero"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient implies zero curl.</span>
+</h4>
+<p id="p-373">Let <span class="process-math">\(\boldF\colon \R^3\rightarrow \R^3\)</span> be a vector field whose component functions have continuous partial derivatives on the set <span class="process-math">\(D\text{.}\)</span> If <span class="process-math">\(\boldF=\nabla f\)</span> for some scalar function <span class="process-math">\(f\text{,}\)</span> then <span class="process-math">\(\curl \boldF(x,y,z)=\nabla\times \boldF(x,y,z)=\angvec{0,0,0}\)</span> for all <span class="process-math">\((x,y,z)\in D\)</span> . Using logical shorthand:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_gradient_implies_curlzero">
+\begin{equation}
+\boldF=\nabla f\implies \nabla\times \boldF=\boldzero\text{.}\tag{2.3.7}
+\end{equation}
+</div></article><article class="hiddenproof" id="proof-8"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-8"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-374">If <span class="process-math">\(\boldF=\angvec{F_1,F_2,F_3}=\nabla f\)</span> for some some <span class="process-math">\(f\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-69">
+\begin{align*}
+\frac{\partial F_3 }{\partial y}-\frac{\partial F_2}{\partial z} \amp = \frac{\partial^2 f }{\partial y\partial z}-\frac{\partial f}{\partial z\partial y} \amp (F_3=f_z, F_2=f_y)\\
+\amp=0 \amp \left( \frac{\partial^2 f }{\partial y\partial z}=\frac{\partial^2 f }{\partial z\partial y}\right) \text{.}
+\end{align*}
+</div>
+<p class="continuation">This shows the first component of <span class="process-math">\(\nabla\times \boldF\)</span> is the zero function. Similar reasoning shows the same is true for the second and third components.</p></article></div>
+<article class="corollary theorem-like" id="cor_gradient_implies_curlzero"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient implies zero curl (<span class="process-math">\(n=2\)</span>).</span>
+</h4>
+<p id="p-375">Let <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y), F_2(x,y)}\)</span> be a vector field whose component functions have continuous partial derivatives on the set <span class="process-math">\(D\text{.}\)</span> If <span class="process-math">\(\boldF=\nabla f\)</span> for some scalar function, then <span class="process-math">\(\partial F_2/\partial x(x,y)-\partial F_1/\partial y(x,y)=0\)</span> for all <span class="process-math">\((x,y)\in D\)</span></p></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-376">Identify <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y), F_2(x,y)}\)</span> with the 3-dimensional vector field <span class="process-math">\(\boldF(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}\text{.}\)</span> The result follows easily from <a href="" class="xref" data-knowl="./knowl/th_gradient_implies_curlzero.html" title="Theorem 2.3.13: Gradient implies zero curl">Theorem 2.3.13</a>.</p></article></div>
+<p id="p-377">Is the implication <a href="" class="xref" data-knowl="./knowl/eq_gradient_implies_curlzero.html" title="Equation 2.3.7">(2.3.7)</a> in fact an equivalence: i.e., is the converse implication also true? It turns out that in general the answer is no, unless the domain under consideration is nice enough: namely, connected and <em class="emphasis">simply connected</em>.</p>
+<article class="definition definition-like" id="def"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
+</h4>
+<p id="p-378">A set <span class="process-math">\(D\subseteq \R^n\)</span> is <dfn class="terminology">simply connected</dfn> if each closed curve in <span class="process-math">\(D\)</span> can be contracted to a point without leaving <span class="process-math">\(D\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_gradient_iff_curlzero"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient iff zero curl (connected and simply connected domain).</span>
+</h4>
+<p id="p-379">Let <span class="process-math">\(D\subseteq \R^n\)</span> be open, connected and simply connected. If the component functions of <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> have continuous partial derivatives on <span class="process-math">\(D\)</span> then <span class="process-math">\(\boldF=\nabla f\)</span> if and only if <span class="process-math">\(\curl\times \boldF=\boldzero\text{.}\)</span> Using logical shortand:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_gradient_iff_curlzero">
+\begin{equation}
+\boldF=\nabla f\iff \nabla\times \boldF=\boldzero\text{.}\tag{2.3.8}
+\end{equation}
+</div>
+<p class="continuation">Note: if <span class="process-math">\(n=2\text{,}\)</span> we understand <span class="process-math">\(\nabla\times \boldF=\boldzero\)</span> to mean <span class="process-math">\(\partial F_2/\partial x-\partial F_1/\partial y=0\text{.}\)</span></p></article><p id="p-380">As you see, depending on how nice the domain <span class="process-math">\(D\)</span> of a vector field is, we get weaker or stronger statements about the relationship between conservative vector fields, gradient vector fields, and curl-zero vector fields. We summarize this with some logical housekeeping.</p>
+<article class="theorem theorem-like" id="th_logical_housekeeping"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Logical housekeeping.</span>
+</h4>
+<p id="p-381">Let <span class="process-math">\(\boldF\)</span> be a vector field on the set <span class="process-math">\(D\subseteq\R^n\text{.}\)</span> For statements involving curl, assume the partial derivatives of the component functions of <span class="process-math">\(\boldF\)</span> are continuous.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-70">
+\begin{align*}
+D \text{ open}\colon \boldF=\nabla F\amp\implies \boldF \ \text{ conservative} \impliedby \nabla\times \boldF=\boldzero
+\end{align*}
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>
