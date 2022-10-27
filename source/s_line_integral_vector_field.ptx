@@ -123,21 +123,21 @@
     <remark xml:id="rm_vector_line_integral_independence">
     <title>Independence of parametrization</title>
         <p>
-          Let <m>\boldr</m> and <m>\bolds</m> be two parametrization of <m>\mathcal{C}</m>
+          Let <m>\boldr</m> and <m>\bolds</m> be two smooth parametrizations of the curve <m>\mathcal{C}</m> between the points <m>P</m> and <m>Q</m>.
           <ol>
             <li>
               <p>
-                If <m>\boldr, \bolds</m> both traverse the segement of <m>\mathcal{C}</m> starting at <m>P</m> and ending at <m>Q</m> exactly once, then
+                Denote by <m>\mathcal{C}_1</m> the curve <m>\mathcal{C}</m> with parametrization <m>\boldr</m>, and <m>\mathcal{C}_2</m> the curve <m>\mathcal{C}</m> with parametrization <m>\bolds</m>. If <m>\boldr, \bolds</m> both traverse <m>\mathcal{C}</m> exactly once, and in the same direction (<eg />, both start at <m>P</m> and end at <m>Q</m>),  then
                 <me>
-                  \int_\mathcal{C}\boldF\cdot d\boldr=\int_\mathcal{C}\boldF\cdot d\bolds
+                  \int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr
                 </me>.
               </p>
             </li>
             <li>
               <p>
-                If <m>\boldr, \bolds</m> both traverse the segement of <m>\mathcal{C}</m> between <m>P</m> and ending at <m>Q</m> exactly once, but <m>\bolds</m> starts where <m>\boldr</m> ends, and vice-versa, then
+                If <m>\boldr, \bolds</m> both traverse <m>\mathcal{C}</m> exactly once, but <m>\bolds</m> starts where <m>\boldr</m> ends, and vice-versa, then we call the parametrization <m>\bolds</m> a <term>reverse</term> of <m>\boldr</m>. Denote by <m>\mathcal{C}</m> the curve as parametrized by <m>\boldr</m>, <m>-\mathcal{C}</m> the curve as parametrized by the reverse path <m>\bolds</m>. We have
                 <me>
-                  \int_\mathcal{C}\boldF\cdot d\boldr=-\int_\mathcal{C}\boldF\cdot d\bolds
+                  \int_{-\mathcal{C}}\boldF\cdot d\boldr=-\int_\mathcal{C}\boldF\cdot d\boldr
                 </me>.
               </p>
             </li>
@@ -162,14 +162,15 @@
         <p>
           Let <m>\boldr(t)=(g_1(t),g_2(t),g_3(t))</m>, <m>a\leq t\leq b</m>, be a smooth parametrization of the curve <m>\mathcal{C}\subseteq\R^n</m>. Given a vector field <m>\boldF=(F_1, F_2,F_3)</m> that is continuous on the curve <m>\mathcal{C}\subseteq \R^n</m>, we define the line integrals with respect to <m>dx, dy, dz</m> as follows.
           <md>
-            <mrow>\int_\mathcal{C}\boldF\, dx \amp :=\int_a^b F_1(\boldr(t))\, g_1'(t)\, dt </mrow>
-            <mrow>\int_\mathcal{C}\boldF\, dy \amp :=\int_a^b F_2(\boldr(t))\, g_2'(t)\, dt </mrow>
-            <mrow>\int_\mathcal{C}\boldF\, dz \amp :=\int_a^b F_3(\boldr(t))\, g_3'(t)\, dt </mrow>
+            <mrow>\int_\mathcal{C}F_1\, dx \amp :=\int_a^b F_1(\boldr(t))\, g_1'(t)\, dt </mrow>
+            <mrow>\int_\mathcal{C}F_2\, dy \amp :=\int_a^b F_2(\boldr(t))\, g_2'(t)\, dt </mrow>
+            <mrow>\int_\mathcal{C}F_3\, dz \amp :=\int_a^b F_3(\boldr(t))\, g_3'(t)\, dt </mrow>
           </md>.
         From <xref ref="d_line_integral_vector"/> we see that we have
-        <me>
-          \int_\mathcal{C}\boldF\cdot d\boldr=\int_\mathcal{C}\boldF\, dx +\int_\mathcal{C}\boldF\, dy +\int_\mathcal{C}\boldF\, dz
-        </me>.
+        <md>
+          <mrow> \int_\mathcal{C}\boldF\cdot d\boldr \amp =\int_\mathcal{C}F_1\, dx +\int_\mathcal{C}F_2\, dy +\int_\mathcal{C}F_3\, dz </mrow>
+          <mrow> \amp=\int_\mathcal{C}F_1\, dx+F_2\, dy+F_3\, dz \amp \text{(abbreviated notation)} </mrow>
+        </md>.
         </p>
       </statement>
     </definition>
