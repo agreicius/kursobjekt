@@ -144,7 +144,8 @@
           </ol>
         </p>
     </remark>
-    <example>
+    <example xml:id="eg_vector_line_integral_helix">
+      <title>Vector field integral over helix</title>
       <statement>
         <p>
           Let <m>\mathcal{C}</m> be the helix with parametrization <m>\boldr(t)=(\cos t, \sin t, t)</m>, <m>0\leq t\leq 2\pi</m>. Compute <m>\int_\mathcal{C}\boldF\cdot d\boldr</m>, where <m>\boldF=\angvec{-y,z,2x}</m>.
@@ -218,7 +219,32 @@
         </p>
       </solution>
     </example>
+    <project xml:id="sage_vector_line_integral">
+      <title>Vector line integral</title>
+      <p>
+        It is not difficult to modify our Sage cell from <xref ref="sage_line_integrals_scalar"/> to compute vector line integrals. As in that example, we use the <c>vector()</c> function to make vector objects out of our lists: this is essential for using vector operations like dot product, norm, <etc />. Here is the line integral from <xref ref="eg_vector_line_integral_helix"/>.
+      </p>
+      <sage>
+      <input>
+        (x,y,z,t)=var('x y z t')
+        r(t)=vector([cos(t), sin(t), t])
+        a=0
+        b=2*pi
+        exp=(-y, z, 2*x)
+        F(x,y,z)=vector(exp)
+        rderiv=diff(r,t) # compute r'(t)
+        print('Vector integral=', integrate(F(r[0],r[1],r[2])*rderiv, t,a,b).factor())
+        p1=parametric_plot3d(r,(t,a,b),color='blue', thickness=2)
+        p2=plot_vector_field3d(exp,(x,-2,2),(y,-2,2),(z,0,2*pi), plot_points=5)
+        print('A plot of the curve and vector field:')
+        p1+p2
+      </input>
+      <output>
 
+      </output>
+      </sage>
+
+    </project>
     <definition xml:id="d_flux">
       <title>Flux</title>
       <statement>
@@ -238,9 +264,5 @@
         </p>
       </statement>
     </definition>
-  </subsection>
-  <subsection xml:id="ss_">
-    <title></title>
-
   </subsection>
 </section>
