@@ -375,7 +375,7 @@
 </p>
 <definition xml:id="def">
   <idx><h>simply connected</h></idx>
-  <title>Simply connected</title>
+  <title>Simply connected sets</title>
   <statement>
     <p>
       A set <m>D\subseteq \R^n</m> is <term>simply connected</term> if each closed curve in <m>D</m> can be contracted to a point without leaving <m>D</m>.
