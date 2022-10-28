@@ -153,14 +153,55 @@
       </p>
     </statement>
   </definition>
-  <corollary xml:id="cor_gradient_implies_conservative">
-    <title>Gradient fields are conservative</title>
+  <theorem xml:id="th_conservative_loops">
+    <title>Loop property of conservative fields</title>
+    <statement>
+      <p>
+        If <m>\boldF</m> is a continuous vector field on the open set <m>D</m>, then <m>\boldF</m> is conservative if and only if <m>\oint_\mathcal{C}\boldF\cdot d\boldr=0</m> for all piecewise smooth closed curves <m>\mathcal{C}\subseteq D</m>. Using logical shorthand:
+        <men>
+          \boldF \ \text{ conservative } \iff \oint_\mathcal{C}\boldF\cdot d\boldr=0
+        </men>.
+      </p>
+    </statement>
+    <proof>
+      <title>Proof: conservative <m>\ \implies \oint_\mathcal{C}\boldF\cdot d\boldr=0</m></title>
+      <p>
+        Assume <m>\boldF</m> is conservative. Given a closed curve <m>\mathcal{C}</m>, pick two points <m>P, Q\in \mathcal{C}</m> and consider <m>\mathcal{C}</m> as a parametrize curve <m>\mathcal{C}_1</m> from <m>P</m> to <m>Q</m> followed by a parametrized curve <m>\mathcal{C}_2</m> from <m>Q</m> to <m>P</m>. We have
+        <md>
+          <mrow>\oint_\mathcal{C}\boldF\cdot d\boldr  \amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr+\int_{\mathcal{C}_2}\boldF\cdot d\boldr </mrow>
+          <mrow> \amp= \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{-\mathcal{C}_2}\boldF\cdot d\boldr \amp \text{(prop. of reverse curves)}</mrow>
+          <mrow>  \amp = \int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_1}\boldF\cdot d\boldr \amp (\boldF \text{ conservative})</mrow>
+          <mrow>  \amp = 0</mrow>
+        </md>.
+        How is the conservative property used in the penultimate equality? The parametrizations <m>\mathcal{C}_1</m> and <m>-\mathcal{C}_2</m> both start at <m>P</m> and end at <m>Q</m>; since <m>\boldF</m> is conservative, the corresponding line integrals are equal.
+      </p>
+    </proof>
+    <proof>
+      <title>Proof: <m>\oint_\mathcal{C}\boldF\cdot d\boldr=0 \implies</m> conservative </title>
+      <p>
+        The proof is very similar to the first implication. Given any two curves <m>\mathcal{C}_1, \mathcal{C}_2</m> connecting points <m>P,Q</m>, the curve <m>\mathcal{C}</m> obtained by first travelling along <m>\mathcal{C}_1</m> and then along the reverse<m>-\mathcal{C}_2</m> of <m>\mathcal{C}_2</m> is closed. We have
+        <me>
+          0=\oint_\mathcal{C}\boldF\cdot d\boldr=\int_{\mathcal{C}_1}\boldF\cdot d\boldr-\int_{\mathcal{C}_2}\boldF\cdot d\boldr
+        </me>,
+        and hence
+        <me>
+          \int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr
+        </me>.
+      </p>
+    </proof>
+
+
+  </theorem>
+
+
+  <theorem xml:id="th_gradient_implies_conservative">
+    <title>Gradient implies conservative</title>
     <statement>
       <p>
         If <m>\boldF=\nabla f</m> is a continuous gradient vector field on the open set <m>D</m>, then <m>\boldF</m> is conservative on <m>D</m>. Using logical shorthand:
         <men xml:id="eq_gradient_implies_conservative">
-          \boldF=\nabla f \implies \boldF \text{ conservative}
-        </men>.
+          \boldF=\nabla f \implies \boldF \ \text{conservative}
+        </men>
       </p>
     </statement>
     <proof>
@@ -175,8 +216,7 @@
         This shows that the line integral of <m>\boldF</m> between any two points in <m>D</m> is path independent, and hence that <m>\boldF</m> is conservative on <m>D</m>.
       </p>
     </proof>
-
-  </corollary>
+  </theorem>
   <definition xml:id="d_open_connected">
     <title>Open connected sets</title>
     <statement>
@@ -186,7 +226,7 @@
     </statement>
   </definition>
 <theorem xml:id="th_conservative_iff_gradient">
-  <title>Conservative field=gradient field on open connected sets</title>
+  <title>Gradient iff conservative (connected domain)</title>
   <statement>
     <p>
       If <m>\boldF</m> is a continuous vector field on the open connected set <m>D</m>, then <m>\boldF</m> is conservative if and only if <m>\boldF=\nabla f</m> for some function <m>f</m> defined on <m>D</m>. Using logical shorthand:
@@ -198,18 +238,235 @@
   <proof>
     <title>Proof of implication <m>\boldF=\nabla f\implies \boldF</m> conservative</title>
     <p>
-      This implication follows directly from <xref ref="cor_gradient_implies_conservative"/>.
+      This implication follows directly from <xref ref="th_gradient_implies_conservative"/>.
     </p>
   </proof>
   <proof>
     <title>Proof of implication <m>\boldF</m> conservative <m>\implies \boldF=\nabla f</m></title>
     <p>
-      Thus
+      Our proof will assume <m>n=2</m> for simplicity of notation; it works just as well for <m>n=3</m>. Assume <m>\boldF=\angvec{F_1, F_2}</m> is conservative. We define the scalar function <m>f</m> as follows: fix any <m>P=(x_0,y_0)</m> in <m>D</m>; for any <m>(x,y)\in D</m> define
+      <me>
+        f(x,y)=\int_P^{(x,y)}\boldF\cdot d\boldr
+      </me>,
+      where the notation <m>\int_P^{(x,y)}\boldF\cdot d\boldr</m> is understood to mean the line integral of <m>\boldF</m> over any choice of piecewise smooth curve <m>\mathcal{C}\subseteq D</m>. That <m>f(x,y)</m> is a well-defined function follows from the fact that (a) there is <em>some</em> choice of curve <m>\mathcal{C}</m> from <m>P</m> to <m>(x,y)</m> (<m>D</m> is connected), and (b) the value of the line integral <em>does not depend</em> on this choice (<m>\boldF</m> is conservative). Next, we claim that <m>f</m> is a potential function for <m>\boldF</m>: <ie />, <m>\nabla f=\boldF</m>. Indeed, we have
+      <md>
+        <mrow>f_x(x,y) \amp =\lim_{h\rightarrow 0}\frac{1}{h}(f(x+h,y)-f(x,y)) \amp \text{def. of } f_x</mrow>
+        <mrow> \amp=\lim_{h\rightarrow 0}\frac{1}{h}(\int_P^{(x+h,y)}\boldF\cdot d\boldr-\int_P^{(x,y)}\boldF\cdot d\boldr) </mrow>
+        <mrow>  \amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_{(x,y)}^{(x+h,y)}\boldF\cdot d\boldr \amp \text{(integral props.)}</mrow>
+        <mrow>  \amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_0^h\boldF(x+t, y)\cdot \angvec{1,0}\, dt \amp \boldr(t)=(x+t,y), 0\leq t\leq h </mrow>
+        <mrow>  \amp =\lim_{h\rightarrow 0}\frac{1}{h}\int_0^hF_1(x+t, y)\, dt</mrow>
+        <mrow>  \amp = \frac{d}{dh}\left( \int_0^h F_1(x+t,y)\, dt \right)\Bigr\vert_{h=0}</mrow>
+        <mrow>  \amp = F_1(x+0, y) \amp \text{(FTC!)}</mrow>
+        <mrow>  \amp = F_1(x,y)</mrow>
+      </md>.
+      This proves <m>f_x=F_1</m>; the argument that <m>f_y=F_2</m> is exactly similar. We conclude <m>\nabla f=\angvec{F_1, F_2}=\boldF</m>.
     </p>
   </proof>
 
 
 </theorem>
 
+</subsection>
+<subsection xml:id="ss_curl_conservative">
+  <title>Curl test for conservative fields</title>
+<definition xml:id="d_curl">
+  <idx><h>curl</h></idx>
+  <notation>
+    <usage><m>\nabla\times \boldF</m></usage>
+    <description>curl of vector field <m>\boldF</m></description>
+  </notation>
+  <notation>
+    <usage><m>\curl \boldF</m></usage>
+    <description>curl of vector field <m>\boldF</m></description>
+  </notation>
+  <title>Curl of a vector field</title>
+  <statement>
+    <p>
+      Let <m>\boldF=\angvec{F_1, F_2, F_3}</m> be a vector field on the set <m>D\subseteq \R^3</m>, and assume the first order partial derivatives of the component functions exist. We define the <term>curl</term> of <m>\boldF</m>, denoted <m>\curl \boldF</m> or <m>\nabla \times \boldF</m>, as the vector field
+      <me>
+        \nabla\times \boldF=\det \begin{pmatrix}
+          \boldi \amp \boldj \amp \boldk \\
+          \frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
+          F_1 \amp F_2 \amp F_3
+      \end{pmatrix}=\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
+      </me>.
+    </p>
+  </statement>
+</definition>
+<p>
+  We will study curl in more detail later, but for now we observe that it provides a partial check for whether a vector field is a gradient field.
+</p>
+<theorem xml:id="th_gradient_implies_curlzero">
+  <title>Gradient implies zero curl</title>
+  <statement>
+    <p>
+      Let <m>\boldF\colon \R^3\rightarrow \R^3</m> be a vector field whose component functions have continuous partial derivatives on the set <m>D</m>. If <m>\boldF=\nabla f</m> for some scalar function <m>f</m>, then <m>\curl \boldF(x,y,z)=\nabla\times \boldF(x,y,z)=\angvec{0,0,0}</m> for all <m>(x,y,z)\in D</m> . Using logical shorthand:
+      <men xml:id="eq_gradient_implies_curlzero">
+        \boldF=\nabla f\implies \nabla\times \boldF=\boldzero
+      </men>.
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    If <m>\boldF=\angvec{F_1,F_2,F_3}=\nabla f</m> for some some <m>f</m>, then
+    <md>
+      <mrow>\frac{\partial F_3 }{\partial y}-\frac{\partial F_2}{\partial z} \amp = \frac{\partial^2 f }{\partial y\partial z}-\frac{\partial f}{\partial z\partial y} \amp (F_3=f_z, F_2=f_y)</mrow>
+      <mrow> \amp=0 \amp \left( \frac{\partial^2 f }{\partial y\partial z}=\frac{\partial^2 f }{\partial z\partial y}\right) </mrow>
+    </md>.
+    This shows the first component of <m>\nabla\times \boldF</m> is the zero function. Similar reasoning shows the same is true for the second and third components.
+  </p>
+</proof>
+
+<corollary xml:id="cor_gradient_implies_curlzero">
+  <title>Gradient implies zero curl (<m>n=2</m>)</title>
+  <statement>
+    <p>
+      Let <m>\boldF(x,y)=\angvec{F_1(x,y), F_2(x,y)}</m> be a vector field whose component functions have continuous partial derivatives on the set <m>D</m>. If <m>\boldF=\nabla f</m> for some scalar function, then <m>\partial F_2/\partial x(x,y)-\partial F_1/\partial y(x,y)=0</m> for all <m>(x,y)\in D</m>.
+    </p>
+    <p>
+      By way of shorthand, we will understand the statement <m>\nabla\times \boldF=\boldzero</m> to mean <m>\partial F_2/\partial x-\partial F_1/\partial y=0</m> when <m>\boldF=\angvec{F_1, F_2}</m> is a 2-dimensional vector field.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Identify <m>\boldF(x,y)=\angvec{F_1(x,y), F_2(x,y)}</m> with the 3-dimensional vector field <m>\boldF(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}</m>. The result follows easily from <xref ref="th_gradient_implies_curlzero"/>.
+    </p>
+  </proof>
+</corollary>
+<example xml:id="eg_curltest_conclusive">
+  <title>Curl test: conclusive</title>
+  <statement>
+    <p>
+      Show that <m>\boldF(x,y,z)=\angvec{x+xy^2,z,y}</m> is not a gradient vector field.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The curl of <m>\boldF</m> is the vector field
+      <md>
+        <mrow>\nabla\times \boldF (x,y,z) \amp =\angvec{\partial/\partial y (y)-\partial/\partial z (z), -(\partial/\partial x(y)-\partial/\partial z (x+xy^2)), \partial/\partial x (z)-\partial/\partial y (x+xy^2)}</mrow>
+        <mrow> \amp=\angvec{0,0,-2xy}\ne \boldzero </mrow>
+      </md>.
+      Thus <m>\boldF</m> is not a gradient vector field by <xref ref="th_gradient_implies_curlzero"/>.
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_curltest_inconclusive">
+  <title>Curl test: inconclusive</title>
+  <statement>
+    <p>
+     Let <m>\boldF=\angvec{-y/(x^2+y^2), x/(x^2+y^2)}</m>. Show that (a) <m>\nabla\times \boldF=\boldzero</m>, but (b) <m>\boldF</m> is not a gradient vector field.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The curl computation in (a) is straightforward. To see that <m>\boldF</m> is not a gradient vector field, we find a closed curve <m>\mathcal{C}</m> for which <m>\int_\mathcal{C}\boldF\cdot d\boldr\ne 0</m>. Take <m>\mathcal{C}</m> to be the unit circle with parametrization <m>\boldr(t)=(\cos t, \sin t)</m>, <m>0\leq t\leq 2\pi</m>. We have
+      <md>
+        <mrow>\oint_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t}\, dt </mrow>
+        <mrow> \amp = \int_0^{2\pi}\frac{\sin^2 t+\cos^2 t}{\sin^2 t+\cos^2 t}\, dt </mrow>
+        <mrow>  \amp = 2\pi\ne 0</mrow>
+      </md>.
+    </p>
+  </solution>
+</example>
+<p>
+  <xref ref="eg_curltest_inconclusive"/> shows that the implication <xref ref="eq_gradient_implies_curlzero"/> is not an equivalence. In other words, it is possible to have <m>\nabla\times \boldF=\boldzero</m> and yet <m>\boldF</m> is <em>not</em> a gradient vector field. However, we do get an equivalence if the domain under consideration is assumed to be nice enough: namely, connected and <em>simply connected</em>.
+</p>
+<definition xml:id="def">
+  <idx><h>simply connected</h></idx>
+  <title>Simply connected sets</title>
+  <statement>
+    <p>
+      A set <m>D\subseteq \R^n</m> is <term>simply connected</term> if each closed curve in <m>D</m> can be contracted to a point without leaving <m>D</m>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_gradient_iff_curlzero">
+  <title>Gradient iff zero curl (connected and simply connected domain)</title>
+  <statement>
+    <p>
+      Let <m>D\subseteq \R^n</m> be open, connected and simply connected. If the component functions of <m>\boldF\colon \R^n\rightarrow \R^n</m> have continuous partial derivatives on <m>D</m> then <m>\boldF=\nabla f</m> if and only if <m>\curl\times \boldF=\boldzero</m>. Using logical shortand:
+      <men xml:id="eq_gradient_iff_curlzero">
+        \boldF=\nabla f\iff \nabla\times \boldF=\boldzero
+      </men>.
+      Note: if <m>n=2</m>, we understand <m>\nabla\times \boldF=\boldzero</m> to mean <m>\partial F_2/\partial x-\partial F_1/\partial y=0</m>.
+    </p>
+  </statement>
+</theorem>
+<p>
+  As you see, depending on how nice the domain <m>D</m> of a vector field is, we get weaker or stronger statements about the relationship between conservative vector fields, gradient vector fields, and curl-zero vector fields. We summarize this with some logical housekeeping.
+</p>
+<theorem xml:id="th_logical_housekeeping">
+  <title>Logical housekeeping</title>
+  <statement>
+    <p>
+     Let <m>\boldF</m> be a vector field on the set <m>D\subseteq\R^n</m>. We use the abbreviations <sq>o</sq>, <sq>c</sq>, <sq>sc</sq> for open, connected, and simply connected. For statements involving curl, assume the partial derivatives of the component functions of <m>\boldF</m> are continuous.
+    <me>
+      \begin{array}{rccccc}
+        D \text{ is o}\colon \amp \boldF \operatorname{ conservative} \amp \impliedby \amp \boldF=\nabla f\amp \implies\amp  \nabla\times \boldF=\boldzero. \\
+        D \text{ is o+c}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \implies\amp  \nabla\times \boldF=\boldzero. \\
+        D \text{ is o+c+sc}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \iff\amp  \nabla\times \boldF=\boldzero.
+      \end{array}
+    </me>
+    Additionally, for any domain <m>D</m> we always have the following loop property equivalence:
+    <me>
+      \boldF \ \operatorname{ conservative}\iff \oint_\mathcal{C}\boldF\cdot d\boldr=0
+    </me>.
+</p>
+</statement>
+</theorem>
+<example xml:id="eg_curltest_complete">
+  <title>Curl test: complete</title>
+  <statement>
+    <p>
+      Let <m>\boldF(x,y,z)=\angvec{y, z\cos(yz)+x, y\cos(yz)}</m>. Decide whether  <m>\boldF</m> is a gradient vector field. If yes, find a potential function for <m>\boldF</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      It is straightforward, if somewhat tiresome, to show <m>\nabla\times \boldF=\angvec{0,0,0}</m>. Since the domain of <m>\boldF</m> is <m>\R^3</m>, which is connected and simply connected, we conclude from <xref ref="th_conservative_iff_gradient"/> that <m>\boldF</m> is a gradient vector field. Let <m>f</m> be a potential function for <m>\boldF</m>.
+      <md>
+        <mrow>f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) </mrow>
+        <mrow> f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}</mrow>
+        <mrow>  \amp \implies \partial/\partial y (G(y,z))=z\cos(yz)</mrow>
+        <mrow>  \amp \implies G(y,z)=\sin(yz)+H(z) \text{ for some } H(z)</mrow>
+        <mrow>  \amp \implies f(x,y,z)=xy+\sin(yz)+H(z) \text{ for some } H(z)</mrow>
+      </md>.
+      Looking at the partial formula for <m>f</m> in our last line, we observe that setting <m>H(z)=0</m> results in the function <m>f(x,y,z)=xy+\sin(yz)</m>, which satisfies <m>\nabla f=\boldF</m>.
+    </p>
+  </solution>
+</example>
+<project xml:id="sage_curl">
+  <title>Computing curl</title>
+  <p>
+    Sage allows us to easily compute the curl of vector fields. Below we compute the curl of the vector field from <xref ref="eg_curltest_complete"/>. The command <c>vector</c> in the cell below turns our symbolic list into a vector object.
+  </p>
+  <sage>
+  <input>
+  (x,y,z)=var('x y z')
+  F(x,y,z)=vector([y, x+z*cos(y*z), y*cos(y*z)])
+  G(x,y,z)=F.curl()
+  G(x,y,z)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+  <p>
+    The same command works for vector fields of dimension 2: for <m>\boldF=\angvec{F_1,F_2}</m>, the <c>curl</c> method returns <m>\partial F_2/\partial x-\partial F_1/\partial y</m>.
+  </p>
+  <sage>
+  <input>
+  (x,y)=var('x y')
+  F(x,y)=vector([x*e^y, sqrt(sin(x*y))])
+  G(x,y)=F.curl()
+  G(x,y)
+  </input>
+  <output>
+
+  </output>
+  </sage>
+</project>
 </subsection>
 </section>
