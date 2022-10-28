@@ -375,6 +375,7 @@
 </p>
 <definition xml:id="def">
   <idx><h>simply connected</h></idx>
+  <title>Simply connected</title>
   <statement>
     <p>
       A set <m>D\subseteq \R^n</m> is <term>simply connected</term> if each closed curve in <m>D</m> can be contracted to a point without leaving <m>D</m>.
@@ -408,6 +409,10 @@
         D \text{ is o+c+sc}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \iff\amp  \nabla\times \boldF=\boldzero.
       \end{array}
     </me>
+    Additionally, for any domain <m>D</m> we always have the following loop property equivalence:
+    <me>
+      \boldF \ \operatorname{ conservative}\iff \oint_\mathcal{C}\boldF\cdot d\boldr=0
+    </me>.
 </p>
 </statement>
 </theorem>
@@ -449,7 +454,7 @@
   </output>
   </sage>
   <p>
-    The same command works for vector fields of dimension 2: for <m>\boldF=\angvec{F_1,F_2}</m>, the <c>curl</c> method returns <m>\partial F_2/\partial x-\partial F_1/\partial y</m>. 
+    The same command works for vector fields of dimension 2: for <m>\boldF=\angvec{F_1,F_2}</m>, the <c>curl</c> method returns <m>\partial F_2/\partial x-\partial F_1/\partial y</m>.
   </p>
   <sage>
   <input>
