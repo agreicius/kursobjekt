@@ -509,7 +509,7 @@ F_1 \amp F_2 \amp F_3
 </div></article></div>
 <p id="p-383"><a href="" class="xref" data-knowl="./knowl/eg_curltest_inconclusive.html" title="Example 2.3.16: Curl test: inconclusive">Example 2.3.16</a> shows that the implication <a href="" class="xref" data-knowl="./knowl/eq_gradient_implies_curlzero.html" title="Equation 2.3.7">(2.3.7)</a> is not an equivalence. In other words, it is possible to have <span class="process-math">\(\nabla\times \boldF=\boldzero\)</span> and yet <span class="process-math">\(\boldF\)</span> is <em class="emphasis">not</em> a gradient vector field. However, we do get an equivalence if the domain under consideration is assumed to be nice enough: namely, connected and <em class="emphasis">simply connected</em>.</p>
 <article class="definition definition-like" id="def"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Simply connected sets.</span>
 </h4>
 <p id="p-384">A set <span class="process-math">\(D\subseteq \R^n\)</span> is <dfn class="terminology">simply connected</dfn> if each closed curve in <span class="process-math">\(D\)</span> can be contracted to a point without leaving <span class="process-math">\(D\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_gradient_iff_curlzero"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient iff zero curl (connected and simply connected domain).</span>
@@ -532,6 +532,12 @@ D \text{ is o}\colon \amp \boldF \operatorname{ conservative} \amp \impliedby \a
 D \text{ is o+c}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \implies\amp  \nabla\times \boldF=\boldzero. \\
 D \text{ is o+c+sc}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \iff\amp  \nabla\times \boldF=\boldzero.
 \end{array}
+\end{equation*}
+</div>
+<p class="continuation">Additionally, for any domain <span class="process-math">\(D\)</span> we always have the following loop property equivalence:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldF \ \operatorname{ conservative}\iff \oint_\mathcal{C}\boldF\cdot d\boldr=0\text{.}
 \end{equation*}
 </div></article><article class="example example-like" id="eg_curltest_complete"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_curltest_complete"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">Curl test: complete.</span>

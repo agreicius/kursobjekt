@@ -29,7 +29,7 @@ b=2*pi
 exp=(-y, z, 2*x)
 F(x,y,z)=vector(exp)
 rderiv=diff(r,t) # compute r'(t)
-print('Vector integral=', integrate(F(r[0],r[1],r[2])*rderiv, t,a,b).factor())
+print('Vector line integral=', integrate(F(r[0],r[1],r[2])*rderiv, t,a,b).factor())
 p1=parametric_plot3d(r,(t,a,b),color='blue', thickness=2)
 p2=plot_vector_field3d(exp,(x,-2,2),(y,-2,2),(z,0,2*pi), plot_points=5)
 print('A plot of the curve and vector field:')
