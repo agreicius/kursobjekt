@@ -420,12 +420,12 @@
   <title>Curl test: complete</title>
   <statement>
     <p>
-      Let <m>\boldF(x,y,z)=\angvec{y, z\cos(yz)+x, y\cos(yz)}</m>. Decide whether Show <m>\boldF</m> is a gradient vector field. If yes, find a potential function for <m>\boldF</m>.
+      Let <m>\boldF(x,y,z)=\angvec{y, z\cos(yz)+x, y\cos(yz)}</m>. Decide whether  <m>\boldF</m> is a gradient vector field. If yes, find a potential function for <m>\boldF</m>.
     </p>
   </statement>
   <solution>
     <p>
-      It is straightforward, if somewhat tiresome, to show <m>\nabla\times \boldF=\angvec{0,0,0}</m>. Thus <m>\boldF</m> is a gradient vector field. Let <m>f</m> be a potential function for <m>\boldF</m>.
+      It is straightforward, if somewhat tiresome, to show <m>\nabla\times \boldF=\angvec{0,0,0}</m>. Since the domain of <m>\boldF</m> is <m>\R^3</m>, which is connected and simply connected, we conclude from <xref ref="th_conservative_iff_gradient"/> that <m>\boldF</m> is a gradient vector field. Let <m>f</m> be a potential function for <m>\boldF</m>.
       <md>
         <mrow>f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) </mrow>
         <mrow> f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}</mrow>
