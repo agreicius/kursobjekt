@@ -66,35 +66,6 @@
       </statement>
     </definition>
 
-    <remark xml:id="rm_line_integral_vector_notation_1">
-          <title>Vector field line integral notation</title>
-      <statement>
-        <p>
-          The first equality among <xref first="eq_line_integral_vector_1" last="eq_line_integral_vector_3"/> should be considered purely notational: <ie />, it states simply that the integral being defined can be denoted by either of the expressions <m>\int_C \boldF\cdot d\boldr</m> or <m>\int_\mathcal{C}\boldF\cdot \boldT\, ds</m>. The remaining equalities <xref first="eq_line_integral_vector_2" last="eq_line_integral_vector_3"/> then give actual meaning to these two expressions.
-        </p>
-      </statement>
-    </remark>
-    <p>
-      To make sense of what a vector field line integral computes in a given context, it is best to consider its formulation as the <em>scalar line integral</em> of the scalar function <m>\boldF\cdot \boldT</m>. Given a partition of a parametrized curve into curve segments with endpoints
-      <me>
-        P=\boldr(a), P_1=\boldr(t_1),\dots, P_{n-1}=\boldr(t_{n-1}), P_n=\boldr(t_n)
-      </me>
-      we have
-      <me>
-        \int_\mathcal{C}\boldF\cdot T\, ds\approx \sum_{k=1}^n \boldF(x_k, y_k, z_k)\cdot \boldT(x_k, y_k, z_k)\Delta s_k,
-      </me>
-      where <m>(x_k,y_k,z_k)</m> is a sample point in the <m>k</m>-th segment of the partition of <m>\mathcal{C}</m>, and <m>\Delta s_k</m> is the arc length of that segment. Focusing in on one term <m>\boldF(x_k, y_k, z_k)\cdot \boldT(x_k, y_k, z_k)\Delta s_k</m> and recalling our dot product cosine formula
-      <me>
-        \boldF\cdot \boldT=\abs{\boldF}\abs{\boldT}\cos\theta
-      </me>,
-      where <m>\theta</m> is the angle between <m>\boldF</m> and <m>\boldT</m> at <m>(x_k, y_k, z_k)</m>, we see that this term multiplies the <em>component</em> of <m>\boldF</m> in the direction of <m>\boldT</m> by the arc length <m>\Delta s_k</m> of the <m>k</m>-th segment. We have thus reduced our interpretation problem to understanding what type of quantity is obtained by summing these products. The definition of <em>work</em> and <em>circulation</em> below are two examples of doing just this.
-      <figure>
-        <image xml:id="im_interp_vector_line_integral" source="interp_vector_line_integral.png" width="100%">
-        </image>
-        <caption>Interpreting <m>\int_\mathcal{C}\boldF\cdot \boldT\, ds</m></caption>
-      </figure>
-    </p>
-
     <example xml:id="eg_vector_line_integral_2d">
       <title>Vector line integral in plane</title>
       <statement>
@@ -194,7 +165,8 @@
           \int_\mathcal{C}\boldF\cdot d\boldr\amp =\int_\mathcal{C}F_1\, dx +\int_\mathcal{C}F_2\, dy +\int_\mathcal{C}F_3\, dz
           </mrow>
           <mrow>
-          \amp = \int_{\mathcal{C}}F_1\, dx+F_2\, dy+F_3\, dz \amp \text{(abbreviated notation)}
+          \amp = \ointctrclockwise_{\mathcal{C}}F_1\, dx+F_2\, dy+F_3\, dz \amp \text{(abbreviated notation)}
+          </mrow>
         </md>.
         </p>
       </statement>
