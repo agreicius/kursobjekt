@@ -66,6 +66,7 @@
       </statement>
     </definition>
 
+<<<<<<< HEAD
     <remark xml:id="rm_line_integral_vector_notation_1">
           <title>Vector field line integral notation</title>
       <statement>
@@ -75,6 +76,8 @@
       </statement>
     </remark>
 
+=======
+>>>>>>> db2c43d80bdbe4237383cafd167c7291d9b7bec4
     <example xml:id="eg_vector_line_integral_2d">
       <title>Vector line integral in plane</title>
       <statement>
@@ -155,7 +158,11 @@
           \int_\mathcal{C}\boldF\cdot d\boldr\amp =\int_\mathcal{C}F_1\, dx +\int_\mathcal{C}F_2\, dy +\int_\mathcal{C}F_3\, dz
           </mrow>
           <mrow>
+<<<<<<< HEAD
           \amp = \int_{\mathcal{C}}F_1\, dx+F_2\, dy+F_3\, dz \amp \text{(abbreviated notation)}
+=======
+          \amp = \ointctrclockwise_{\mathcal{C}}F_1\, dx+F_2\, dy+F_3\, dz \amp \text{(abbreviated notation)}
+>>>>>>> db2c43d80bdbe4237383cafd167c7291d9b7bec4
           </mrow>
         </md>.
         </p>

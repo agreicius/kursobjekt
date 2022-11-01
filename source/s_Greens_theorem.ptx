@@ -1,0 +1,111 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Greens_theorem">
+  <title>Green's theorem in the plane</title>
+  <subsection xml:id="ss_Greens_tangential">
+    <title>Tangential form of Green's theorem and curl</title>
+
+  <theorem xml:id="th_Greens">
+    <title>Green's theorem (tangential form)</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{C}\subseteq\R^2</m> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <m>\mathcal{R}\subseteq \R^2</m> be the region it encloses. If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing <m>\mathcal{R}</m>, then
+        <men xml:id="eq_Greens_thm_tangent">
+          \iint_\mathcal{R} \left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y} \right)\, dA=\oint_\mathcal{C}\boldF\cdot \boldT\,  ds
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Use Green's theorem to Compute <m>\oint_\mathcal{C}\boldF\cdot d\boldr</m>, where <m>\boldF=\angvec{y^2, 3xy}</m> and <m>\mathcal{C}</m> is the simple positively oriented curve obtained by joining the line segment from <m>(-1,0)</m> to <m>(1,0)</m> the the upper half of the circle <m>x^2+y^2=1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+  <definition xml:id="d_scalar_curl">
+    <idx><h>scalar curl</h></idx>
+    <idx><h><m>k</m>-component of curl</h></idx>
+    <idx><h>circulation density</h></idx>
+    <title>Scalar curl</title>
+    <statement>
+      <p>
+        Assume the component functions of the vector field <m>\boldF=\angvec{F_1, F_2}</m> have first-order partial derivatives on a domain <m>D</m>. The <term>scalar curl</term> (or <term><m>k</m> component of curl</term> or <term>circulation density</term>) of <m>\boldF</m>, denoted <m>(\curl \boldF)\cdot \boldk</m>, is defined as
+        <me>
+        (\curl \boldF\cdot \boldk)=  \frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}
+        </me>.
+        The vector field is <term>irrotational</term> on the domain <m>D</m> if
+        <me>
+          (\curl\boldF)\cdot \boldk\, (x,y)=\frac{\partial F_2}{\partial x}(x,y)-\frac{\partial F_1}{\partial y}(x,y)=0
+        </me>
+        for all <m>(x,y)\in D</m>.
+      </p>
+    </statement>
+  </definition>
+  <corollary xml:id="cor_Greens_theorem">
+    <title>Area via line integral</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{C}\subseteq\R^2</m> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <m>\mathcal{R}\subseteq \R^2</m> be the region it encloses. If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing <m>\mathcal{R}</m>, and if <m>\boldF</m> satisfies
+        <me>
+          \frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}=1
+        </me>,
+        then
+        <me>
+          \operatorname{area}\mathcal{R}=\oint_\mathcal{C}\boldF\cdot \boldT\, ds
+        </me>.
+        A typical example of such a vector field is <m>\boldF=\frac{1}{2}\angvec{-y,x}</m>.
+      </p>
+    </statement>
+  </corollary>
+  <example>
+    <statement>
+      <p>
+        Use <xref ref="cor_Greens_theorem"/> to compute the area of the astroid curve <m>\mathcal{C}\colon x^{2/3}+y^{2/3}=4</m> with parametrization <m>\boldr(t)=\angvec{8\cos^3 t,8\sin^3 t}</m>, <m>0\leq t\leq 2\pi</m>.
+        <image xml:id="im_astroid" source='astroid.png' width="60%">
+        </image>
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+
+
+<theorem xml:id="th_Greens_theorem_interpretation">
+  <title>Scalar curl interpretation</title>
+  <statement>
+    <p>
+      If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order parial derivatives on an open set containing the point <m>P=(x,y)</m>, then
+      <men xml:id="eq_Greens_theorem_interpretation">
+        (\curl\boldF)\cdot \boldk (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldT\, ds
+      </men>,
+      where <m>C_R</m> is the simple positively oriented circle of radius <m>R</m> centered at <m>P</m>.
+    </p>
+  </statement>
+</theorem>
+<remark xml:id="rm_Greens_theorem_interpretation">
+<title>Scalar curl interpretation</title>
+    <p>
+      From the limit expression <xref ref="eq_Greens_theorem_interpretation"/> we extract the valuable approximation formula
+      <me>
+        (\curl\boldF)\cdot \boldk\,  (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)\approx \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot\boldT\, ds
+      </me>.
+      This can be understood as saying that the scalar component of curl at a point <m>P=(x,y)</m> is approximated by the circulation density quantity
+      <me>
+        \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot d\boldr
+      </me>,
+      whose units are of the form unit circulation per unit area. This gives us a more concrete understanding of how <m>\curl \boldF(P)</m> is a measure of the fluid's tendency to rotate about the point <m>P</m>.
+    </p>
+</remark>
+</subsection>
+<subsection xml:id="ss_Greens_normal">
+  <title>Normal form of Green's theorem and divergence</title>
+
+</subsection>
+</section>
