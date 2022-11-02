@@ -4,12 +4,12 @@
     <title>Tangential form of Green's theorem and curl</title>
 
   <theorem xml:id="th_Greens">
-    <title>Green's theorem (tangential form)</title>
+    <title>Green's theorem (circulation or tangential form)</title>
     <statement>
       <p>
         Let <m>\mathcal{C}\subseteq\R^2</m> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <m>\mathcal{R}\subseteq \R^2</m> be the region it encloses. If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing <m>\mathcal{R}</m>, then
         <men xml:id="eq_Greens_thm_tangent">
-          \iint_\mathcal{R} \left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y} \right)\, dA=\oint_\mathcal{C}\boldF\cdot \boldT\,  ds
+          \underset{\operatorname{curl integral}}{\underbrace{\iint_\mathcal{R} \left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y} \right)\, dA}}=\underset{\operatorname{circulation}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldT\,  ds}}=\ointctrclockwise_\mathcal{C}F_1\, dx+F_2\, dy
         </men>.
       </p>
     </statement>
@@ -77,11 +77,11 @@
   </example>
 
 
-<theorem xml:id="th_Greens_theorem_interpretation">
+<theorem xml:id="th_Greens_theorem__curl_interpretation">
   <title>Scalar curl interpretation</title>
   <statement>
     <p>
-      If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order parial derivatives on an open set containing the point <m>P=(x,y)</m>, then
+      If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing the point <m>P=(x,y)</m>, then
       <men xml:id="eq_Greens_theorem_interpretation">
         (\curl\boldF)\cdot \boldk (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldT\, ds
       </men>,
@@ -100,12 +100,123 @@
       <me>
         \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot d\boldr
       </me>,
-      whose units are of the form unit circulation per unit area. This gives us a more concrete understanding of how <m>\curl \boldF(P)</m> is a measure of the fluid's tendency to rotate about the point <m>P</m>.
+      whose units are of the form unit circulation per unit area. This gives us a more concrete understanding curl as a measure of the fluid's tendency to rotate about a given <m>P</m>. In particular if the fluid is assumed to be <em>irrotational</em> (<m>\partial F_2/\partial x-\partial F_1/y=0</m>), this means that the region contains no <em>vortices</em>, points about which the fluid rotates like a whirlpool.
     </p>
 </remark>
 </subsection>
 <subsection xml:id="ss_Greens_normal">
   <title>Normal form of Green's theorem and divergence</title>
+  <corollary xml:id="cor_Greens_normal">
+    <title>Green's theorem (flux or normal form)</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{C}\subseteq\R^2</m> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <m>\mathcal{R}\subseteq \R^2</m> be the region it encloses. If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing <m>\mathcal{R}</m>, then
+        <men xml:id="eq_Greens_thm_normal">
+          \underset{\text{divergence integral}}{\underbrace{\iint_\mathcal{R} \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\, dA}}=\underset{\operatorname{outward flux}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldn\,  ds}}=\ointctrclockwise_\mathcal{C}-F_2\, dx+F_1\, dy
+        </men>.
+        Here <m>\boldn</m> is understood to be the outward unit normal vector to <m>\mathcal{C}</m>.
+      </p>
+    </statement>
+  </corollary>
+  <definition xml:id="d_divergence">
+    <idx><h>divergence</h></idx>
+    <notation>
+      <usage><m>\nabla\cdot \boldF</m></usage>
+      <description>divergence of vector field <m>\boldF</m></description>
+    </notation>
+    <title>Divergence</title>
+    <statement>
+      <p>
+        Assume the component functions of the vector field <m>\boldF=\angvec{F_1, F_2,\dots, F_n}</m> have first-order partial derivatives on a domain <m>D\subseteq \R^n</m>. The <term>divergence</term> of <m>\boldF</m>, denoted <m>\nabla\cdot \boldF</m>, is defined as
+        <me>
+        \nabla \cdot \boldF= \frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}+\cdots +\frac{\partial F_n}{\partial x_n}
+        </me>.
+        The vector field is <term>incompressible</term> on the domain <m>D</m> if
+        <me>
+          \nabla \cdot \boldF(x_1,x_2,\dots, x_n)= \frac{\partial F_1}{\partial x_1}(x_1,x_2,\dots, x_n)+\frac{\partial F_2}{\partial x_2}(x_1,x_2,\dots, x_n)+\cdots +\frac{\partial F_n}{\partial x_n}(x_1,x_2,\dots, x_n)=0
+        </me>
+        for all <m>((x_1,x_2,\dots, x_n)\in D</m>.
+      </p>
+    </statement>
+  </definition>
+<example>
+  <statement>
+    <p>
+      Compute the outward flux of <m>\boldF(x,y)=\angvec{2e^{xy},y^3}</m> across the square bounded by the lines <m>x=\pm 1</m>, <m>y=\pm 1</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
 
+    </p>
+  </solution>
+</example>
+<theorem xml:id="th_Greens_theorem_div_interpretation">
+  <title>Divergence interpretation</title>
+  <statement>
+    <p>
+      If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing the point <m>P=(x,y)</m>, then
+      <men xml:id="eq_Greens_theorem_normal_interpretation">
+        \nabla\cdot \boldF (x,y)=\frac{\partial F_1}{\partial x}(x,y)+\frac{\partial F_2}{\partial y}(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldn\, ds
+      </men>,
+      where <m>C_R</m> is the simple positively oriented circle of radius <m>R</m> centered at <m>P</m>, and <m>\boldn</m> is the unit outward normal vector to <m>C_R</m>.
+    </p>
+  </statement>
+</theorem>
+<remark xml:id="rm_Greens_theorem__normal_interpretation">
+<title>Divergence interpretation</title>
+    <p>
+      From the limit expression <xref ref="eq_Greens_theorem_normal_interpretation"/> we extract the valuable approximation formula
+      <me>
+        \nabla\cdot \boldF (x,y)=\left(\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\right)(x,y)\approx \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot\boldn\, ds
+      </me>.
+      This can be understood as saying that the divergence of <m>\boldF</m> at a point <m>P=(x,y)</m> is approximated by the flux quantity
+      <me>
+        \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot d\boldr
+      </me>,
+      whose units are of the form unit flux per unit area. This allows us to understand the divergence at <m>P</m> to be a measure of how the fluid flows out from or in toward <m>P</m>. Even more concretely, if <m>\nabla \cdot \boldF(x,y)=0</m> for all <m>(x,y)</m>, then it follows from <xref ref="cor_Greens_normal"/> that the flux through any closed curve around <m>P=(x,y)=0</m>. Thus a fluid's being incompressible (<m>\nabla\cdot \boldF=0</m>) means that whatever amount of fluid enters a given enclosed region is equal to the amount that leaves it. In fluid dynamics this is sometimes described as there being no <em>sources</em> or <em>sinks</em> in the region.
+    </p>
+</remark>
+<example>
+  <statement>
+    <p>
+      The vector field diagram is provided for each <m>\boldF</m> below. Using our interpretations of curl and divergence, try your best to visually identify points <m>P</m> where <m>(\curl F)\cdot\boldk(P)=0</m> and/or <m>\nabla\cdot \boldF(P)=0</m>. Confirm your answers by computing <m>(\curl F)\cdot\boldk</m> and <m>\nabla\cdot \boldF</m> algebraically. Assume <m>c</m> is a nonzero fixed constant.
+    </p>
+    <ol>
+      <li>
+        <title>Uniform expansion/compression</title>
+        <p>
+          <m>\boldF(x,y)=\angvec{cx, cy}</m>
+        </p>
+      </li>
+      <li>
+        <title>Uniform rotation</title>
+        <p>
+          <m>\boldF(x,y)=\angvec{-cy, cx}</m>
+        </p>
+      </li>
+      <li>
+        <title>Shearing flow</title>
+        <p>
+          <m>\boldF(x,y)=\angvec{cy, 0}</m>
+        </p>
+      </li>
+      <li>
+        <title>Whirlpool</title>
+        <p>
+          <m>\boldF(x,y)=\frac{1}{x^2+y^2}\angvec{-y, x}</m>
+        </p>
+      </li>
+    </ol>
+    <image xml:id="im_curl_div" source="vector_fields_curl.png" width='80%'>
+
+    </image>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
 </subsection>
 </section>
