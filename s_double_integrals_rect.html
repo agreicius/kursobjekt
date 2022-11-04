@@ -216,6 +216,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -261,9 +263,10 @@ I=\lim_{i\rightarrow \infty}S_i=\lim_{i\rightarrow\infty}\sum_{k=1}^{n_i}f(x_{ki
 \begin{equation}
 \iint\limits_Rf(x,y)\, dA =\lim_{\norm{P}\rightarrow 0}\sum_{k=1}^nf(x_k, y_k)\Delta A_k\text{.}\tag{1.1.3}
 \end{equation}
-</div></article><article class="example example-like" id="eg_double_nonintegrable"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_double_nonintegrable"><h3 class="heading">
+</div></article><article class="example example-like" id="eg_double_nonintegrable"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Nonintegrable functions.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_double_nonintegrable"><article class="example example-like"><p id="p-87">The following nonintegrable example highlights the importance of understanding what exactly the “for all” in <a href="" class="xref" data-knowl="./knowl/d_double_integral_rect.html" title="Definition 1.1.3: Double integral over a rectangle">Definition 1.1.3</a> quantifies over. Define <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> as</p>
+</h3>
+<p id="p-87">The following nonintegrable example highlights the importance of understanding what exactly the “for all” in <a href="" class="xref" data-knowl="./knowl/d_double_integral_rect.html" title="Definition 1.1.3: Double integral over a rectangle">Definition 1.1.3</a> quantifies over. Define <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> as</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_double_integral_rect.html">
 \begin{equation*}
 f(x,y)=\begin{cases}1\amp \text{if } x,y \text{ are both rational}\\ 0 \amp \text{otherwise} \end{cases}\text{.}
@@ -287,8 +290,7 @@ S_i=\sum_{k=1}^{i^2}f(x_k, y_k)\Delta A_k=\sum_{k=1}^{i^2} 1\cdot\Delta A_k=1\te
 \lim_{i\rightarrow \infty}S'_i=\lim_{i\rightarrow \infty} 0=0\text{.}
 \end{equation*}
 </div>
-<p class="continuation">We have found two sequences of pointed partitions with norm tending to 0 that give rise to two different limits of the corresponding Riemann sums for <span class="process-math">\(f\)</span> over <span class="process-math">\(R\text{.}\)</span> We conclude that <span class="process-math">\(f\)</span> is not integrable over <span class="process-math">\(R\text{!}\)</span></p></article></div>
-<article class="theorem theorem-like" id="th_double_integral_rect"><h3 class="heading">
+<p class="continuation">We have found two sequences of pointed partitions with norm tending to 0 that give rise to two different limits of the corresponding Riemann sums for <span class="process-math">\(f\)</span> over <span class="process-math">\(R\text{.}\)</span> We conclude that <span class="process-math">\(f\)</span> is not integrable over <span class="process-math">\(R\text{!}\)</span></p></article><article class="theorem theorem-like" id="th_double_integral_rect"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Integrable over a rectangle.</span>
 </h3>
 <p id="p-89">In each of the following cases the function <span class="process-math">\(f\)</span> is integrable over the rectangle <span class="process-math">\(R\text{:}\)</span></p>
@@ -328,9 +330,10 @@ S_n=\sum_{k=1}^{n^2} f(x_k, y_k)\Delta A_k=(b-a)(d-c)\sum_{k=1}^{n^2} \frac{f(x_
 \begin{equation*}
 \operatorname{vol} \mathcal{S}=\iint_R f(x,y)\, dA\text{.}
 \end{equation*}
-</div></article><article class="example example-like" id="eg_double_integral_limit"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_double_integral_limit"><h3 class="heading">
+</div></article><article class="example example-like" id="eg_double_integral_limit"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Volume below graph.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_double_integral_limit"><article class="example example-like"><p id="p-100">Let <span class="process-math">\(f(x,y)=x+y^2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the region lying above the rectangle <span class="process-math">\(R=[0,1]\times[0,1]\)</span> and below the graph of <span class="process-math">\(f\text{.}\)</span> Compute <span class="process-math">\(\operatorname{vol} \mathcal{S}\)</span> using the limit definition of the double integral.</p>
+</h3>
+<p id="p-100">Let <span class="process-math">\(f(x,y)=x+y^2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the region lying above the rectangle <span class="process-math">\(R=[0,1]\times[0,1]\)</span> and below the graph of <span class="process-math">\(f\text{.}\)</span> Compute <span class="process-math">\(\operatorname{vol} \mathcal{S}\)</span> using the limit definition of the double integral.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
 <p id="p-101">First observe that since <span class="process-math">\(f(x,y)\)</span> is continuous, it is integrable over <span class="process-math">\(R\text{,}\)</span> and we can choose any sequence of pointed partitions with norm tending to 0 to compute its integral.</p>
@@ -363,8 +366,7 @@ S_n \amp=\sum_i^n\sum_j^nf(i/n,j/n)\cdot \frac{1}{n^2} \\
 \end{align*}
 </div>
 </div></div>
-</div></article></div>
-<article class="project project-like" id="sage_double_integral_Riemann"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_double_integral_Riemann"><h3 class="heading">
+</div></article><article class="project project-like" id="sage_double_integral_Riemann"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_double_integral_Riemann"><h3 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing/approximating double integrals.</span>
 </h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_double_integral_Riemann"><article class="project project-like"><pre class="ptx-sagecell hidden-sagecell-sage" id="sage-1"><script type="text/x-sage">from sage.plot.plot3d.shapes import Box
 from sage.plot.plot3d.plot3d import axes

@@ -210,6 +210,8 @@ window.MathJax = {
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -300,18 +302,19 @@ Y \amp = \{(r,\theta)\colon r\ne 0, \alpha\leq \theta &lt; \alpha+\pi\}\\
 \amp \text{.}
 \end{align*}
 </div>
-<p class="continuation">Observe that <span class="process-math">\(r\)</span> values are allowed to be positive or negative in the set <span class="process-math">\(Y\text{,}\)</span> and so the range of <span class="process-math">\(\theta\)</span> needs to be restricted accordingly.</p></article><article class="example example-like" id="example-22"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-22"><h4 class="heading">
+<p class="continuation">Observe that <span class="process-math">\(r\)</span> values are allowed to be positive or negative in the set <span class="process-math">\(Y\text{,}\)</span> and so the range of <span class="process-math">\(\theta\)</span> needs to be restricted accordingly.</p></article><article class="example example-like" id="example-22"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Area between limaçon and circle.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-22"><article class="example example-like"><p id="p-243">Let <span class="process-math">\(\mathcal{S}\subseteq \R^2\)</span> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation</p>
+</h4>
+<p id="p-243">Let <span class="process-math">\(\mathcal{S}\subseteq \R^2\)</span> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 r=1+2\sin\theta\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Compute the area of <span class="process-math">\(\mathcal{S}\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_cardioid.svg" role="img" class="contained"></div></p></article></div>
-<article class="example example-like" id="example-23"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-23"><h4 class="heading">
+<p class="continuation">Compute the area of <span class="process-math">\(\mathcal{S}\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_cardioid.svg" role="img" class="contained"></div></p></article><article class="example example-like" id="example-23"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over semicircle.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-244">Compute the average value of <span class="process-math">\(f(x,y)=x\)</span> over the semicircular region</p>
+</h4>
+<p id="p-244">Compute the average value of <span class="process-math">\(f(x,y)=x\)</span> over the semicircular region</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{R}=\{(x,y)\in \R^2\colon x^2+y^2\leq R^2, x\geq 0\}\text{,}
@@ -320,7 +323,7 @@ r=1+2\sin\theta\text{.}
 <p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-245"></p></div></div>
-</div></article></div></section><section class="subsection" id="ss_substitution_cylindrical"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="ss_substitution_cylindrical"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Cylindrical transformation</span>
 </h3>
 <p id="p-246">Our discussion in <a href="s_substitution_polar_cylindrical.html#ss_polar" class="internal" title="Subsection 1.7.1: Polar transformation">Subsection 1.7.1</a> generalizes easily to cylindrical coordinates:</p>
@@ -392,9 +395,10 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="example example-like" id="example-24"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-24"><h4 class="heading">
+</ol></article><article class="example example-like" id="example-24"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of sphere: cylindrical coordinates.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-254">Consider the solid spherical ball</p>
+</h4>
+<p id="p-254">Consider the solid spherical ball</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2\}\text{,}
@@ -403,10 +407,10 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 <p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant. Compute the volume of <span class="process-math">\(\mathcal{S}\)</span> using cylindrical coordinates.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><p id="p-255"></p></div></div>
-</div></article></div>
-<article class="example example-like" id="example-25"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-25"><h4 class="heading">
+</div></article><article class="example example-like" id="example-25"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over hemisphere: cylindrical coordinates.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-256">Consider the solid hemisphere</p>
+</h4>
+<p id="p-256">Consider the solid hemisphere</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2, z\geq 0\}\text{,}
@@ -415,7 +419,7 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 <p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant.  Find the average height (distance to <span class="process-math">\(xy\)</span>-plane) of points in <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><p id="p-257"></p></div></div>
-</div></article></div></section></section></div></main>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

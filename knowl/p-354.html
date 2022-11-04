@@ -12,11 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>If <span class="process-math">\(\mathcal{C}\subseteq\R^n\)</span> is a smooth closed curve, and if <span class="process-math">\(\boldF=\nabla f\)</span> is a gradient vector field that is continuous on a set containing <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
+<p>We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\oint_\mathcal{C}\boldF\cdot\, d\boldr=0\text{.}
-\end{equation*}
+\begin{align*}
+\int_\mathcal{C}\boldF\cdot d\boldr   \amp = \int_a^b\boldF(\boldr(t))\boldr'(t)\, dt \\
+\amp= \int_a^b \nabla f(\boldr(t))\cdot \boldr'(t)\, dt \\
+\amp = \int_a^b (f(\boldr(t))'\, dt \amp \text{(chain rule)}\\
+\amp = f(\boldr(b))-f(\boldr(a)) \amp \text{(FTC)}\\
+\amp =f(Q)-f(P)\text{.}
+\end{align*}
 </div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-354" class="internal">in-context</a></span>
 </body>

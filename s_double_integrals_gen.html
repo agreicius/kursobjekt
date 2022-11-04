@@ -216,6 +216,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -321,9 +323,10 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 </ul></article><article class="remark remark-like" id="rm_colon_equal"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
 </h3>
-<p id="p-128">The notation <code class="code-inline tex2jax_ignore">:=</code> appearing in <a href="" class="xref" data-knowl="./knowl/eq_Fubini_planar_type1.html" title="Equation 1.3.1">(1.3.1)–(1.3.2)</a> means that the expression on the left is newly notation that we declare to mean the expression on the right. The notation <code class="code-inline tex2jax_ignore">=:</code> is used similarly.</p></article><article class="example example-like" id="eg_Fubini_elem_planar"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-eg_Fubini_elem_planar"><h3 class="heading">
+<p id="p-128">The notation <code class="code-inline tex2jax_ignore">:=</code> appearing in <a href="" class="xref" data-knowl="./knowl/eq_Fubini_planar_type1.html" title="Equation 1.3.1">(1.3.1)–(1.3.2)</a> means that the expression on the left is newly notation that we declare to mean the expression on the right. The notation <code class="code-inline tex2jax_ignore">=:</code> is used similarly.</p></article><article class="example example-like" id="eg_Fubini_elem_planar"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini's theorem over elementary planar regions.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_Fubini_elem_planar"><article class="example example-like"><p id="p-129">In each case below the given region <span class="process-math">\(\mathcal{R}\)</span> is elementary of type 1, type 2, or both. Use <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> to compute <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\text{.}\)</span></p>
+</h3>
+<p id="p-129">In each case below the given region <span class="process-math">\(\mathcal{R}\)</span> is elementary of type 1, type 2, or both. Use <a href="" class="xref" data-knowl="./knowl/th_Fubini_elementary.html" title="Theorem 1.3.6: Fubini's theorem over elementary planar regions">Theorem 1.3.6</a> to compute <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\text{.}\)</span></p>
 <ol class="decimal">
 <li id="li-33">
 <p id="p-130"><span class="process-math">\(f(x,y)=x+y\text{,}\)</span> <span class="process-math">\(\mathcal{R}\colon\)</span> region in first quadrant bounded by curves <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=1\text{.}\)</span></p>
@@ -371,8 +374,7 @@ f^*(x,y)=\begin{cases}f(x,y)\amp \text{if } (x,y)\in \mathcal{R}\\
 </div>
 </div></div>
 </li>
-</ol></article></div>
-<article class="theorem theorem-like" id="th_double_integral_props"><h3 class="heading">
+</ol></article><article class="theorem theorem-like" id="th_double_integral_props"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of double integrals.</span>
 </h3>
 <p id="p-137">Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded regions <span class="process-math">\(\mathcal{R},  \text{.}\)</span></p>
@@ -409,9 +411,10 @@ c  \iint\limits_\mathcal{R}f(x,y)\, dA+d  \iint\limits_\mathcal{R}g(x,y)\, dA
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="example example-like" id="eg_double_integral_props"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-eg_double_integral_props"><h3 class="heading">
+</ol></article><article class="example example-like" id="eg_double_integral_props"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using double integral properties.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_double_integral_props"><article class="example example-like"><p id="p-143">Use symmetry properties of <span class="process-math">\(f\)</span> and <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> to compute <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA\text{,}\)</span> where <span class="process-math">\(f(x,y)=xy\)</span> and <span class="process-math">\(\mathcal{R}\)</span> is the planar region bounded by the curves <span class="process-math">\(x=y^2\)</span> and <span class="process-math">\(x=1+\frac{1}{2}y^2\text{.}\)</span></p>
+</h3>
+<p id="p-143">Use symmetry properties of <span class="process-math">\(f\)</span> and <a href="" class="xref" data-knowl="./knowl/th_double_integral_props.html" title="Theorem 1.3.9: Properties of double integrals">Theorem 1.3.9</a> to compute <span class="process-math">\(\iint\limits_{\mathcal{R}}f(x,y)\, dA\text{,}\)</span> where <span class="process-math">\(f(x,y)=xy\)</span> and <span class="process-math">\(\mathcal{R}\)</span> is the planar region bounded by the curves <span class="process-math">\(x=y^2\)</span> and <span class="process-math">\(x=1+\frac{1}{2}y^2\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
 <p id="p-144">Here is a diagram of <span class="process-math">\(\mathcal{R}\text{,}\)</span> which we see is of type 2 and <em class="emphasis">not</em> of type 1.</p>
@@ -446,8 +449,7 @@ y^2=\frac{1}{2}y^2+1\iff y^2=2\iff y=\pm \sqrt{2}\text{.}
 </div>
 <p class="continuation">We could make this argument even more persuasive by appealing to the limit definition of the double integral: indeed, the oddness of <span class="process-math">\(f(x,y)\)</span> with respect to <span class="process-math">\(y\text{,}\)</span> and symmetry of <span class="process-math">\(\mathcal{R}_1\)</span> and <span class="process-math">\(\mathcal{R}_2\)</span> allow us to choose sequences of Riemann sums for <span class="process-math">\(S_n\)</span> and <span class="process-math">\(S_n'\)</span> for both integrals for which <span class="process-math">\(S_n=-S_n\)</span> for all <span class="process-math">\(n\text{.}\)</span></p>
 </div></div>
-</div></article></div>
-<p id="p-147">Our discussion of oddness in <a href="" class="xref" data-knowl="./knowl/eg_double_integral_props.html" title="Example 1.3.10: Using double integral properties">Example 1.3.10</a> can be generalized to the following result.</p>
+</div></article><p id="p-147">Our discussion of oddness in <a href="" class="xref" data-knowl="./knowl/eg_double_integral_props.html" title="Example 1.3.10: Using double integral properties">Example 1.3.10</a> can be generalized to the following result.</p>
 <article class="theorem theorem-like" id="th_double_integral_even_odd"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Double integral of even/odd functions.</span>
 </h3>

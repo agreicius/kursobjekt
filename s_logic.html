@@ -210,6 +210,8 @@ window.MathJax = {
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -264,9 +266,10 @@ window.MathJax = {
 \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\iff\mathcal{Q} \\
 \hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp T\end{array}
 \end{align*}
-</div></article><article class="example example-like" id="example-5"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h4 class="heading">
+</div></article><article class="example example-like" id="example-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.3</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-60">Use a truth table to find all truth value assignments of <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> making the compound proposition</p>
+</h4>
+<p id="p-60">Use a truth table to find all truth value assignments of <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> making the compound proposition</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \neg\mathcal{P}\implies (\mathcal{Q}\implies P)
@@ -284,8 +287,7 @@ window.MathJax = {
 </div>
 <p class="continuation">We conclude that <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\)</span> is false exactly when <span class="process-math">\(\mathcal{P}\)</span> is false and <span class="process-math">\(\mathcal{Q}\)</span> is true. (It follows that <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\)</span> is equivalent to <span class="process-math">\(Q\implies P\text{.}\)</span> )</p>
 </div></div>
-</div></article></div>
-<article class="remark remark-like" id="rm_logic_vs_vernacular"><h4 class="heading">
+</div></article><article class="remark remark-like" id="rm_logic_vs_vernacular"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.2.4</span><span class="period">.</span>
 </h4>
 <p id="p-62">Our definitions of the logical operators above are chosen to agree with their usage in a very particular type of discourse: namely, <em class="emphasis">mathematical</em> discourse. They do not always agree with their use in natural language: hence the modifier “logical” in their titles.</p>
@@ -311,9 +313,10 @@ window.MathJax = {
 </h4>
 <p id="p-70">Just as a function is not properly defined before its domain is specified, we do not have a well-defined propositional function, nor well-defined truth values of propositions built from this propositional function, until its domain of discourse is given.</p>
 <p id="p-71">For example, let <span class="process-math">\(P(x)\)</span> be “x&gt;0”. If we declare <span class="process-math">\(D=(0,\infty)\text{,}\)</span> then the proposition <span class="process-math">\(\forall x P(x)\)</span> is true, since by definition every <span class="process-math">\(d\in (0,\infty)\)</span> is positive. On the other hand,  if we declare <span class="process-math">\(D=\R\text{,}\)</span> the proposition <span class="process-math">\(\forall x P(x)\)</span> is false since not all elements of <span class="process-math">\(\R\)</span> are positive: indeed, <span class="process-math">\(-1\)</span> is negative, making <span class="process-math">\(P(-1)\)</span> false.</p>
-<p id="p-72">Because of the important role played by the domain of discourse <span class="process-math">\(D\text{,}\)</span> we sometimes include it in our quantifier expressions: e.g., <span class="process-math">\(\forall x\in D P(x)\text{,}\)</span> <span class="process-math">\(\exists x\in D P(x)\text{.}\)</span>  Using this convention allows us to see more immediately that  <span class="process-math">\(\forall\, x\in (0,\infty)\, P(x)\)</span> is true and <span class="process-math">\(\forall\, x\in\mathbb{R}\, P(x)\)</span> is false.</p></article><article class="example example-like" id="ex_model_quant"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_model_quant"><h4 class="heading">
+<p id="p-72">Because of the important role played by the domain of discourse <span class="process-math">\(D\text{,}\)</span> we sometimes include it in our quantifier expressions: e.g., <span class="process-math">\(\forall x\in D P(x)\text{,}\)</span> <span class="process-math">\(\exists x\in D P(x)\text{.}\)</span>  Using this convention allows us to see more immediately that  <span class="process-math">\(\forall\, x\in (0,\infty)\, P(x)\)</span> is true and <span class="process-math">\(\forall\, x\in\mathbb{R}\, P(x)\)</span> is false.</p></article><article class="example example-like" id="ex_model_quant"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Modeling “Every positive number has a square-root”.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_model_quant"><article class="example example-like"><p id="p-73">Model the sentence “Every positive real number has a square-root” in the form <span class="process-math">\(\forall x P(x)\text{,}\)</span> where <span class="process-math">\(P\)</span> is a propositional function with domain of discourse <span class="process-math">\(D=\R\text{.}\)</span> Determine the truth value of <span class="process-math">\(\forall x\, P(x)\)</span> using <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 0.2.5">Definition 0.2.5</a>.</p>
+</h4>
+<p id="p-73">Model the sentence “Every positive real number has a square-root” in the form <span class="process-math">\(\forall x P(x)\text{,}\)</span> where <span class="process-math">\(P\)</span> is a propositional function with domain of discourse <span class="process-math">\(D=\R\text{.}\)</span> Determine the truth value of <span class="process-math">\(\forall x\, P(x)\)</span> using <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 0.2.5">Definition 0.2.5</a>.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
 <p id="p-74">Fix our domain of discourse to be <span class="process-math">\(D=\R\text{.}\)</span> For any <span class="process-math">\(r,s\in \R\text{,}\)</span> let <span class="process-math">\(Q(r,s)\)</span> be the proposition that <span class="process-math">\(s\)</span> is a square-root of <span class="process-math">\(r\text{.}\)</span> Define <span class="process-math">\(P(x)\)</span> to be the propositional function</p>
@@ -325,8 +328,7 @@ x&gt;0 \implies \exists y\, Q(x,y)\text{.}
 <p class="continuation">Thus for any <span class="process-math">\(r\in\R\text{,}\)</span> <span class="process-math">\(P(r)\)</span> is the proposition that if <span class="process-math">\(r\)</span> is positive, then <span class="process-math">\(r\)</span> has a square-root. It follows that <span class="process-math">\(\forall x\in\R\, P(x)\)</span> is the proposition that for all real numbers <span class="process-math">\(x\text{,}\)</span> if <span class="process-math">\(x\)</span> is positive, then  <span class="process-math">\(x\)</span> has a square-root. This is clearly equivalent to the proposition that every positive real number has a square-root, as desired.</p>
 <p id="p-75">Lastly, we use <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 0.2.5">Definition 0.2.5</a> to show <span class="process-math">\(\forall x\in \R\, P(x)\)</span> is true. Take any <span class="process-math">\(r\in \R\text{.}\)</span> The real number <span class="process-math">\(r\)</span> is either positive or not positive. If <span class="process-math">\(r\)</span> is not positive, then <span class="process-math">\(r&gt;0\)</span> is false and hence <span class="process-math">\(P(r)\text{,}\)</span> which is the implication <span class="process-math">\(r&gt;0\implies \exists y\, Q(r,y)\text{,}\)</span> is true vacuously.  If <span class="process-math">\(r\)</span> is positive, then <span class="process-math">\(r&gt;0\)</span> is true, and <span class="process-math">\(\exists y\, Q(r,y)\)</span> is true, since <span class="process-math">\(r\)</span> has a square-root in this case: namely, <span class="process-math">\(\sqrt{r}\text{.}\)</span> But if <span class="process-math">\(r&gt;0\)</span> is true and <span class="process-math">\(\exists y\, Q(r,y)\)</span> is true, then the implication <span class="process-math">\(r&gt;0\implies \exists y\, Q(r,y)\)</span> is true. We have proved <span class="process-math">\(P(r)\)</span> is true for all <span class="process-math">\(r\in \R\text{.}\)</span> Thus <span class="process-math">\(\forall x\in\R\, P(x)\)</span> is true.</p>
 </div></div>
-</div></article></div>
-<article class="warning remark-like" id="warning_order_quantifiers"><h4 class="heading">
+</div></article><article class="warning remark-like" id="warning_order_quantifiers"><h4 class="heading">
 <span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Order of quantifiers matters.</span>
 </h4>
 <p id="p-76">As <a href="" class="xref" data-knowl="./knowl/ex_model_quant.html" title='Example 0.2.7: Modeling "Every positive number has a square-root"'>Example 0.2.7</a> illustrates, we can take a propositional function <span class="process-math">\(Q(x,y)\)</span> in two variables and quantify one of the two variables to obtain a propositional function in one variable: e.g., <span class="process-math">\(P(x)=\exists y\, Q(x,y)\)</span> or <span class="process-math">\(R(y)=\forall x\, Q(x,y)\text{.}\)</span> Proceeding in this manner we engender propositions involving sequences of quantifiers. Mark well that the order of the quantifiers in such sequences is important!</p>
@@ -347,9 +349,10 @@ x&gt;0 \implies \exists y\, Q(x,y)\text{.}
 \end{equation*}
 </div>
 <p class="continuation">These equivalences can be understood as rules of negating quantifier statements. They can be summarized as follow: “swap quantifiers and negate the predicate.”</p></article><p id="p-80">The example below taken from calculus nicely illustrates how to negate  a proposition that involves a sequence of quantifiers.</p>
-<article class="example example-like" id="ex_limit_doesnt_exist"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_limit_doesnt_exist"><h4 class="heading">
+<article class="example example-like" id="ex_limit_doesnt_exist"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">The limit does not exist.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_limit_doesnt_exist"><article class="example example-like"><p id="p-81">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</p>
+</h4>
+<p id="p-81">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_proposition">
 \begin{equation}
 \exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\text{.}\tag{0.2.1}
@@ -371,7 +374,7 @@ x&gt;0 \implies \exists y\, Q(x,y)\text{.}
 </div>
 <p class="continuation">(The last link in our chain uses the fact that <span class="process-math">\(\neg(\mathcal{Q}\implies\mathcal{R})\)</span> is equivalent to <span class="process-math">\(\mathcal{Q}\land\neg\mathcal{R}\text{,}\)</span> as a truth table easily shows.) Translating back into English, we conclude that the limit not existing (<span class="process-math">\(\neg\mathcal{P}\)</span>) is equivalent to the following: for every <span class="process-math">\(L\in \mathbb{R}\)</span> there is an <span class="process-math">\(\epsilon\gt 0\)</span> such that for all <span class="process-math">\(\delta\gt 0\)</span> there exists an <span class="process-math">\(x\in\mathbb{R}\)</span> satisfying <span class="process-math">\(\val{x-c}\lt \delta\)</span> and <span class="process-math">\(\val{f(x)-L}\not\gt\epsilon\text{.}\)</span> Quite a mouthful!</p>
 </div></div>
-</div></article></div></section></section></div></main>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

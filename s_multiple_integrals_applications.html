@@ -210,6 +210,8 @@ window.MathJax = {
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -245,9 +247,10 @@ n =3 \\
 \amp  M_{xy}\amp=\iiint\limits_\mathcal{R}z\delta(x,y,z)\, dV\\
 \text{Center of mass}\colon (\overline{x},\overline{y},\overline{z})\amp=\frac{1}{M}(M_{yz}, M_{xz}, M_{xy}) \text{.}
 \end{align*}
-</div>When the mass density function <span class="process-math">\(\delta\)</span> is a constant function (i.e., <span class="process-math">\(\delta(x_1,x_2,\dots, x_n)=c\)</span> for fixed <span class="process-math">\(c\in \R\)</span>), we call the center of mass of <span class="process-math">\(\mathcal{R}\)</span> its <dfn class="terminology">centroid</dfn>. Equivalently, the centroid of <span class="process-math">\(\mathcal{R}\)</span> is its center of mass, assuming <span class="process-math">\(\delta=1\)</span> everywhere.</article><article class="example example-like" id="example-28"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-28"><h4 class="heading">
+</div>When the mass density function <span class="process-math">\(\delta\)</span> is a constant function (i.e., <span class="process-math">\(\delta(x_1,x_2,\dots, x_n)=c\)</span> for fixed <span class="process-math">\(c\in \R\)</span>), we call the center of mass of <span class="process-math">\(\mathcal{R}\)</span> its <dfn class="terminology">centroid</dfn>. Equivalently, the centroid of <span class="process-math">\(\mathcal{R}\)</span> is its center of mass, assuming <span class="process-math">\(\delta=1\)</span> everywhere.</article><article class="example example-like" id="example-28"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="period">.</span><span class="space"> </span><span class="title">Centroids of triangles.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-28"><article class="example example-like"><p id="p-271">Let <span class="process-math">\(T\)</span> be the solid triangular region with vertices <span class="process-math">\((0,0),(1,0),(0,1)\text{.}\)</span></p>
+</h4>
+<p id="p-271">Let <span class="process-math">\(T\)</span> be the solid triangular region with vertices <span class="process-math">\((0,0),(1,0),(0,1)\text{.}\)</span></p>
 <ol class="decimal">
 <li id="li-93"><p id="p-272">Compute the center of mass of <span class="process-math">\(T\)</span> when the density function <span class="process-math">\(\delta(x,y)=c\)</span> is constant. (In other words, compute the centroid of <span class="process-math">\(T\)</span>).</p></li>
 <li id="li-94"><p id="p-273">Compute the center of mass of <span class="process-math">\(T\)</span> when the denisty function is given by <span class="process-math">\(\delta(x,y)=x+y\text{.}\)</span></p></li>
@@ -255,13 +258,13 @@ n =3 \\
 </ol>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><p id="p-275"></p></div></div>
-</div></article></div>
-<article class="example example-like" id="example-29"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-29"><h4 class="heading">
+</div></article><article class="example example-like" id="example-29"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">Centroid of hemisphere.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><p id="p-276">Let <span class="process-math">\(D\)</span> be the hemisphere <span class="process-math">\(x^2+y^2+z^2\leq 4\text{,}\)</span> <span class="process-math">\(z\geq 0\text{.}\)</span> Find the center of mass of <span class="process-math">\(D\)</span> assuming the mass density function is given by <span class="process-math">\(\delta(x,y,z)=z\text{.}\)</span></p>
+</h4>
+<p id="p-276">Let <span class="process-math">\(D\)</span> be the hemisphere <span class="process-math">\(x^2+y^2+z^2\leq 4\text{,}\)</span> <span class="process-math">\(z\geq 0\text{.}\)</span> Find the center of mass of <span class="process-math">\(D\)</span> assuming the mass density function is given by <span class="process-math">\(\delta(x,y,z)=z\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><p id="p-277"></p></div></div>
-</div></article></div></section><section class="subsection" id="ss_joint_probability_function"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="ss_joint_probability_function"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Probability and density functions</span>
 </h3>
 <article class="definition definition-like" id="d_random_variable"><h4 class="heading">
@@ -281,13 +284,13 @@ s\amp \mapsto X(s)\text{.}
 <li id="li-96"><p id="p-280"><span class="process-math">\(\displaystyle f(x,y)\geq 0\)</span></p></li>
 <li id="li-97"><p id="p-281"><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p></li>
 <li id="li-98"><p id="p-282"><span class="process-math">\(\operatorname{Prob}\left( \{s\in S\colon (X(s),Y(s))\in \mathcal{R}\} \right)=\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> for any <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> over which <span class="process-math">\(f\)</span> is integrable.</p></li>
-</ol></article><article class="example example-like" id="example-30"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-30"><h4 class="heading">
+</ol></article><article class="example example-like" id="example-30"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-283">Verify that the function f(x,y)=\begin{cases} 6x^2y\amp (x,y)\in [0,1]\times [0,1]\\ 0\amp (x,y)\notin [0,1]\times [0,1] \end{cases} is a joint probability distribution function.</p>
+</h4>
+<p id="p-283">Verify that the function f(x,y)=\begin{cases} 6x^2y\amp (x,y)\in [0,1]\times [0,1]\\ 0\amp (x,y)\notin [0,1]\times [0,1] \end{cases} is a joint probability distribution function.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><p id="p-284"></p></div></div>
-</div></article></div>
-<article class="definition definition-like" id="d_uniformly_distibuted"><h4 class="heading">
+</div></article><article class="definition definition-like" id="d_uniformly_distibuted"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="period">.</span>
 </h4>
 <p id="p-285">Let <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> have area <span class="process-math">\(A\text{.}\)</span> The random variables <span class="process-math">\(X, Y\)</span> are <dfn class="terminology">uniformly distributed</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if their joint probabiltity disribution function is given by</p>
@@ -307,9 +310,10 @@ f(x,y)=\begin{cases}
 \mu_X\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty x\, f(x,y)\, dx\, dy\\
 \mu_Y\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty y\, f(x,y)\, dx\, dy
 \end{align*}
-</div></article><article class="example example-like" id="example-31"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-31"><h4 class="heading">
+</div></article><article class="example example-like" id="example-31"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-287">Let</p>
+</h4>
+<p id="p-287">Let</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f(x,y)=\begin{cases}
@@ -324,7 +328,7 @@ f(x,y)=\begin{cases}
 </ol>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><p id="p-290"></p></div></div>
-</div></article></div></section></section></div></main>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

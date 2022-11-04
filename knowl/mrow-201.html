@@ -13,10 +13,9 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\operatorname{Flux}_\mathcal{C} \boldF \amp =\int_\mathcal{C}\boldF\cdot \boldn \, ds \\
-\amp=\int_a^b\boldF(\boldr(t))\cdot \boldn(t) \abs{\boldr'(t)}\, dt \\
-\amp = \int_a^b F_1(\boldr(t))g_2'(t)-F_2(\boldr(t))g_1'(t)\, dt\\
-\amp = \oint_\mathcal{C} F_1\, dy-F_2\, dx
+\oint_\mathcal{C}\boldF\cdot \boldn \, ds\amp =  \int_a^b\angvec{F_1(\boldr(t)),F_2(\boldr(t))}\cdot \angvec{g_2'(t),-g_1'(t)}\, dt\\
+\amp =  \int_a^b F_1(g_1(t),g_2(t))g_2'(t)-F(g_1(t),g_2(t))g_1'(t)\, dt\\
+\amp = \oint_\mathcal{C} F_1\, dy -F_2\, dx
 \end{align*}
 </div>
 <span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#md-62" class="internal">in-context</a></span>

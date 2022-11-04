@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h4 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Plane parametrization.</span>
+</h4>
+<p>The Sage cell below caries out <a href="" class="xref" data-knowl="./knowl/proc_surface_plane.html" title="Procedure 2.5.3: Plane parametrization">Procedure 2.5.3</a> and produces a plot of the plane <span class="process-math">\(\mathcal{S}\)</span> (using <code class="code-inline tex2jax_ignore">parametric_plot3d()</code>) along with a chosen point <span class="process-math">\(P\text{,}\)</span> the chosen vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> (normalized), and the grid on the plane these two vectors define. To solve for <span class="process-math">\(P, \boldw_1, \boldw_2\)</span> we use some linear algebra functions: e.g., <code class="code-inline tex2jax_ignore">solve_right()</code>, <code class="code-inline tex2jax_ignore">right_kernel().basis()</code>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-19"><script type="text/x-sage">  (u,v,r)=var('u v r')
+n=[1,1,1] #normal vector
+A=matrix([n])
+d=vector([5]) # d in ax+by+cz=d
+P=A.solve_right(d) #Find a point
+B=A.right_kernel().basis()
+v1=B[0] #Two vectors orth. to n that
+v2=B[1] #are not scalar multiples
+w1=B[0].normalized()
+w2=B[1].normalized()
+r(u,v)=P+u*v1+v*v2 #The parametrization
+S=parametric_plot3d(P+u*w1+v*w2,(u,-3,3),(v,-3,3), color='red',opacity=.1)
+gridu=sum(line([P+r*w2-3*w1,P+r*w2+3*w1],color='red') for r in srange(-3,4,1))
+gridv=sum(line([P+r*w1-3*w2,P+r*w1+3*w2],color='red') for r in srange(-3,4,1))
+t1=text3d("w1",P+.75*w1+vector([0,0,.2]), fontsize=16)
+t2=text3d("w2",P+.75*w2+vector([0,0,.2]), fontsize=16)
+t3=text3d("P",P+vector([0,0,.2]), fontsize=16)
+t4=text3d("n",P+1.2*vector(n).normalized(), fontsize=16)
+show(r"$\mathbf{r}(u,v)=%s$" % latex(r(u,v)))
+show(S+point3d(P,size=10, opacity=1)+arrow(P,P+w1)+arrow(P,P+w2)+gridu+gridv+arrow(P,P+vector(n).normalized(),color='red')+t1+t2+t3+t4)
+</script></pre></article><span class="incontext"><a href="s_surfaces_area.html#sage_plane_parametrization" class="internal">in-context</a></span>
+</body>
+</html>

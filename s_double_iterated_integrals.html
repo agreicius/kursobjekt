@@ -216,6 +216,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -266,9 +268,10 @@ g(x) \amp =\int_c^d f(x,y)\, dy
 </h3>Observe that Fubini's theorem tells us two interesting facts: (1) the two <em class="emphasis">iterated integrals</em> are equal in value, and (2) in fact both are equal to the <em class="emphasis">double integral</em> of <span class="process-math">\(f\)</span> over <span class="process-math">\(R\text{.}\)</span></article><article class="remark remark-like" id="rm_Fubini_choose_order"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
 </h3>
-<p id="p-107">Along similar lines, Fubini's theorem gives us two potential ways of computing an integral: integrate <em class="emphasis">first</em> with respect to <span class="process-math">\(x\text{,}\)</span> and <em class="emphasis">then</em> with respect to <span class="process-math">\(y\text{;}\)</span> or integrate <em class="emphasis">first</em> with respect to <span class="process-math">\(y\text{,}\)</span> and <em class="emphasis">then</em> with respect to <span class="process-math">\(x\text{.}\)</span> Oftentimes one of these choices will lead to easier integration techniques than the other. Choose wisely!</p></article><article class="example example-like" id="eg_double_Fubini_confirm"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_double_Fubini_confirm"><h3 class="heading">
+<p id="p-107">Along similar lines, Fubini's theorem gives us two potential ways of computing an integral: integrate <em class="emphasis">first</em> with respect to <span class="process-math">\(x\text{,}\)</span> and <em class="emphasis">then</em> with respect to <span class="process-math">\(y\text{;}\)</span> or integrate <em class="emphasis">first</em> with respect to <span class="process-math">\(y\text{,}\)</span> and <em class="emphasis">then</em> with respect to <span class="process-math">\(x\text{.}\)</span> Oftentimes one of these choices will lead to easier integration techniques than the other. Choose wisely!</p></article><article class="example example-like" id="eg_double_Fubini_confirm"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Volume below graph revisited.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_double_Fubini_confirm"><article class="example example-like"><p id="p-108">Let <span class="process-math">\(f(x,y)=x+y^2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the region lying above the rectangle <span class="process-math">\(R=[0,1]\times[0,1]\)</span> and below the graph of <span class="process-math">\(f\text{.}\)</span> Compute <span class="process-math">\(\operatorname{vol} \mathcal{S}\)</span> using Fubini's theorem.</p>
+</h3>
+<p id="p-108">Let <span class="process-math">\(f(x,y)=x+y^2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the region lying above the rectangle <span class="process-math">\(R=[0,1]\times[0,1]\)</span> and below the graph of <span class="process-math">\(f\text{.}\)</span> Compute <span class="process-math">\(\operatorname{vol} \mathcal{S}\)</span> using Fubini's theorem.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
 <p id="p-109">We have</p>
@@ -290,10 +293,10 @@ g(x) \amp =\int_c^d f(x,y)\, dy
 \end{equation*}
 </div>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="eg_Fubini_egs"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_Fubini_egs"><h3 class="heading">
+</div></article><article class="example example-like" id="eg_Fubini_egs"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Fubini examples.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_Fubini_egs"><article class="example example-like"><p id="p-110">Compute the following integrals using Fubini's theorem.</p>
+</h3>
+<p id="p-110">Compute the following integrals using Fubini's theorem.</p>
 <ol class="decimal">
 <li id="li-27">
 <p id="p-111"><span class="process-math">\(\iint\limits_R x\cos(xy)\, dA\text{,}\)</span> <span class="process-math">\(R=[1,2]\times [0,\pi]\)</span></p>
@@ -328,8 +331,7 @@ g(x) \amp =\int_c^d f(x,y)\, dy
 <p class="continuation">The penultimate equality uses the indefinite integral formula <span class="process-math">\(\int \ln u\, du=u\ln u-u\text{.}\)</span> See what happens when you first integrate with respect to <span class="process-math">\(x\text{.}\)</span></p>
 </div></div>
 </li>
-</ol></article></div>
-<article class="project project-like" id="project-2"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-project-2"><h3 class="heading">
+</ol></article><article class="project project-like" id="project-2"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-project-2"><h3 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Iterated integrals over rectangle.</span>
 </h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-project-2"><article class="project project-like"><pre class="ptx-sagecell hidden-sagecell-sage" id="sage-5"><script type="text/x-sage">f(x,y)=x+y^2
 a=0

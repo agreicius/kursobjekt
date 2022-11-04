@@ -210,6 +210,8 @@ window.MathJax = {
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -260,9 +262,10 @@ window.MathJax = {
 <li id="li-3"><p id="p-13">‘<span class="process-math">\(\colon\)</span>’ is read as “such that”</p></li>
 <li id="li-4"><p id="p-14">‘<span class="process-math">\(P(x)\)</span>’ is read as “<span class="process-math">\(P(x)\)</span> is true”.</p></li>
 </ul>
-<p class="continuation">Taken altogether we get: “The set of elements of <span class="process-math">\(A\)</span> such that <span class="process-math">\(P(x)\)</span> is true”.</p></article><article class="example example-like" id="ex_set_builder"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_set_builder"><h4 class="heading">
+<p class="continuation">Taken altogether we get: “The set of elements of <span class="process-math">\(A\)</span> such that <span class="process-math">\(P(x)\)</span> is true”.</p></article><article class="example example-like" id="ex_set_builder"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.7</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_set_builder"><article class="example example-like"><p id="p-15">Let <span class="process-math">\(A=\{0,1,2,\dots \}\)</span> be the set of nonnegative integers. The subset <span class="process-math">\(B=\{0,2,4,\dots\}\)</span> of <em class="emphasis">even</em> positive integers can be described using set-builder notation as</p>
+</h4>
+<p id="p-15">Let <span class="process-math">\(A=\{0,1,2,\dots \}\)</span> be the set of nonnegative integers. The subset <span class="process-math">\(B=\{0,2,4,\dots\}\)</span> of <em class="emphasis">even</em> positive integers can be described using set-builder notation as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 B=\{x\in A\colon x \text{ is even}\}\text{,}
@@ -273,8 +276,7 @@ B=\{x\in A\colon x \text{ is even}\}\text{,}
 \begin{equation*}
 B=\{x\in A\colon x=2k \text{ for some integer} k\}\text{.}
 \end{equation*}
-</div></article></div>
-<p id="p-16">Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.</p>
+</div></article><p id="p-16">Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.</p>
 <article class="definition definition-like" id="d_set_operations"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Basic set operations.</span>
 </h4>
@@ -371,19 +373,20 @@ f\colon X \amp\rightarrow Y\\
 x \amp\mapsto f(x)\text{.}
 \end{align*}
 </div>
-<p class="continuation">This is read as “The function <span class="process-math">\(f\)</span> with domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\)</span> maps an input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(f(x)\)</span>”.</p></article><article class="example example-like" id="example-2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h4 class="heading">
+<p class="continuation">This is read as “The function <span class="process-math">\(f\)</span> with domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\)</span> maps an input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(f(x)\)</span>”.</p></article><article class="example example-like" id="example-2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.14</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-33">Consider the function</p>
+</h4>
+<p id="p-33">Consider the function</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-3">
 \begin{align*}
 f\colon \mathbb{Z}\amp \rightarrow \mathbb{Z}\\
 x\amp\mapsto x^2 \text{.}
 \end{align*}
 </div>
-<p class="continuation">This function has domain and codomain equal to <span class="process-math">\(\mathbb{Z}\)</span> and maps an integer to its square.</p></article></div>
-<article class="example example-like" id="example-3"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-3"><h4 class="heading">
+<p class="continuation">This function has domain and codomain equal to <span class="process-math">\(\mathbb{Z}\)</span> and maps an integer to its square.</p></article><article class="example example-like" id="example-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic operations as functions.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-34">Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function</p>
+</h4>
+<p id="p-34">Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-4">
 \begin{align*}
 a\colon \R\times \R \amp\rightarrow \R \\
@@ -396,8 +399,7 @@ a\colon \R\times \R \amp\rightarrow \R \\
 m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
 (x,y)\amp\mapsto  xy 
 \end{align*}
-</div></article></div>
-<article class="remark remark-like" id="rm_function_as_relation"><h4 class="heading">
+</div></article><article class="remark remark-like" id="rm_function_as_relation"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.1.16</span><span class="period">.</span>
 </h4>
 <p id="p-35">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we define a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to be a subset <span class="process-math">\(f\subseteq X\times Y\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> there is a unique element <span class="process-math">\((x,y)\in f\text{.}\)</span> The uniqueness of the pair <span class="process-math">\((x,y)\)</span> then allows us to define the value <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> as <span class="process-math">\(y\text{,}\)</span> denoted <span class="process-math">\(f(x)=y\text{.}\)</span></p></article><p id="p-36">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.</p>
@@ -431,17 +433,17 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 <li id="li-10"><p id="p-43">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all <span class="process-math">\(x,x'\in X\text{,}\)</span> if <span class="process-math">\(f(x)=f(x')\text{,}\)</span> then <span class="process-math">\(x=x'\text{:}\)</span> equivalently, if <span class="process-math">\(x\ne x'\text{,}\)</span> then <span class="process-math">\(f(x)\ne f(x')\text{.}\)</span></p></li>
 <li id="li-11"><p id="p-44">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all <span class="process-math">\(y\in Y\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{:}\)</span> equivalently, <span class="process-math">\(\im f=Y\text{.}\)</span></p></li>
 <li id="li-12"><p id="p-45">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</p></li>
-</ul></article><article class="example example-like" id="example-4"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-4"><h4 class="heading">
+</ul></article><article class="example example-like" id="example-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.20</span><span class="period">.</span><span class="space"> </span><span class="title">Role of domain and codomain in injectivity and surjectivity.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-46">Consider the following three functions</p>
+</h4>
+<p id="p-46">Consider the following three functions</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-6">
 \begin{align*}
 f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) \\
 x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
 \end{align*}
 </div>
-<p class="continuation">Although all three functions are defined using the same rule (<span class="process-math">\(x\mapsto x^2\)</span>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <span class="process-math">\(f\)</span> is neither injective (<span class="process-math">\(f(-2)=f(2)=4\)</span>) nor surjective (<span class="process-math">\(f(X)=[0,\infty)\ne \R\)</span>); the function <span class="process-math">\(g\)</span> is injective but not surjective; the function <span class="process-math">\(h\)</span> is both injective and surjective, hence bijective.</p></article></div>
-<article class="definition definition-like" id="d_function_composition"><h4 class="heading">
+<p class="continuation">Although all three functions are defined using the same rule (<span class="process-math">\(x\mapsto x^2\)</span>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <span class="process-math">\(f\)</span> is neither injective (<span class="process-math">\(f(-2)=f(2)=4\)</span>) nor surjective (<span class="process-math">\(f(X)=[0,\infty)\ne \R\)</span>); the function <span class="process-math">\(g\)</span> is injective but not surjective; the function <span class="process-math">\(h\)</span> is both injective and surjective, hence bijective.</p></article><article class="definition definition-like" id="d_function_composition"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Function composition.</span>
 </h4>
 <p id="p-47">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))

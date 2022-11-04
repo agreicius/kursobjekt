@@ -11,8 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p><a href="" class="xref" data-knowl="./knowl/eg_curltest_inconclusive.html" title="Example 2.3.16: Curl test: inconclusive">Example 2.3.16</a> shows that the implication <a href="" class="xref" data-knowl="./knowl/eq_gradient_implies_curlzero.html" title="Equation 2.3.7">(2.3.7)</a> is not an equivalence. In other words, it is possible to have <span class="process-math">\(\nabla\times \boldF=\boldzero\)</span> and yet <span class="process-math">\(\boldF\)</span> is <em class="emphasis">not</em> a gradient vector field. However, we do get an equivalence if the domain under consideration is assumed to be nice enough: namely, connected and <em class="emphasis">simply connected</em>.</p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>The curl computation in (a) is straightforward. To see that <span class="process-math">\(\boldF\)</span> is not a gradient vector field, we find a closed curve <span class="process-math">\(\mathcal{C}\)</span> for which <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{.}\)</span> Take <span class="process-math">\(\mathcal{C}\)</span> to be the unit circle with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t}\, dt \\
+\amp = \int_0^{2\pi}\frac{\sin^2 t+\cos^2 t}{\sin^2 t+\cos^2 t}\, dt \\
+\amp = 2\pi\ne 0\text{.}
+\end{align*}
+</div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-383" class="internal">in-context</a></span>
 </body>
 </html>

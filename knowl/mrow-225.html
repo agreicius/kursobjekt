@@ -11,14 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
-\amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
-\amp = f(P_n)-f(P_0) \amp \text{(telescoping sum)} \\
-\amp = f(Q)-f(P)
+f_x(x,y) \amp =\lim_{h\rightarrow 0}\frac{1}{h}(f(x+h,y)-f(x,y)) \amp \text{def. of } f_x\\
+\amp=\lim_{h\rightarrow 0}\frac{1}{h}(\int_P^{(x+h,y)}\boldF\cdot d\boldr-\int_P^{(x,y)}\boldF\cdot d\boldr) \\
+\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_{(x,y)}^{(x+h,y)}\boldF\cdot d\boldr \amp \text{(integral props.)}\\
+\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_0^h\boldF(x+t, y)\cdot \angvec{1,0}\, dt \amp \boldr(t)=(x+t,y), 0\leq t\leq h \\
+\amp =\lim_{h\rightarrow 0}\frac{1}{h}\int_0^hF_1(x+t, y)\, dt\\
+\amp = \frac{d}{dh}\left( \int_0^h F_1(x+t,y)\, dt \right)\Bigr\vert_{h=0}\\
+\amp = F_1(x+0, y) \amp \text{(FTC!)}\\
+\amp = F_1(x,y)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-67" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-68" class="internal">in-context</a></span>
 </body>
 </html>

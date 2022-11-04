@@ -216,6 +216,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="active">Line integrals of scalar functions</a></li>
 <li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -258,19 +260,19 @@ t \amp\mapsto (x_1(t),x_2(t),\dots, x_n(t)) \text{,}
 \begin{array}{c|c|c}
 \amp \text{As point} \amp \text{As vector}\\
 \hline
-\boldr(t)=(a,b,c) \amp \begin{array}{c}
-\text{point } P=(a,b,c)\\ \text{ on curve } \mathcal{C}
+\boldr(t)=(a,b,c) \amp \begin{array}{l}
+\text{point } P=(a,b,c)\\ \text{on curve } \mathcal{C}
 \end{array}
 \amp
-\begin{array}{c}
-\text{position vector } \overrightarrow{OP}=\angvec{a,b,c}\\ \text{ of point  } P\in \mathcal{C}
+\begin{array}{l}
+\text{position vector } \overrightarrow{OP}=\angvec{a,b,c}\\ \text{of point  } P\in \mathcal{C}
 \end{array} \\
 \hline
 \boldr'(t)=(d,e,f)\amp ---\amp
-\begin{array}{c}
+\begin{array}{l}
 \text{tangent vector } \boldv=\angvec{d,e,f} \\
-text{to curve } \mathcal{C}\\
-\text{at point } \boldr(t)=P.
+\text{to curve } \mathcal{C}
+\text{ at point } \boldr(t)=P.
 \end{array}
 \end{array}
 \end{equation*}
@@ -392,9 +394,10 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 \begin{equation*}
 \int\limits_\mathcal{C}f\, ds=\int\limits_{\mathcal{C}_1}f\, ds+\int\limits_{\mathcal{C}_2}f\, ds+\cdots +\int\limits_{\mathcal{C}_r}f\, ds\text{.}
 \end{equation*}
-</div></article><article class="example example-like" id="example-32"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-32"><h4 class="heading">
+</div></article><article class="example example-like" id="example-32"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Line integral of helix.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-313">Let <span class="process-math">\(\mathcal{C}\)</span> be the helix with parametrization <span class="process-math">\(\colon \boldr(t)=(2\sin t, t, 2\cos t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq \pi\text{,}\)</span> and let <span class="process-math">\(f(x,y,z)=x^2+y^2+z^2\text{.}\)</span> Compute <span class="process-math">\(\int\limits_\mathcal{C}f(x,y,z)\, ds\text{.}\)</span></p>
+</h4>
+<p id="p-313">Let <span class="process-math">\(\mathcal{C}\)</span> be the helix with parametrization <span class="process-math">\(\colon \boldr(t)=(2\sin t, t, 2\cos t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq \pi\text{,}\)</span> and let <span class="process-math">\(f(x,y,z)=x^2+y^2+z^2\text{.}\)</span> Compute <span class="process-math">\(\int\limits_\mathcal{C}f(x,y,z)\, ds\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
 <p id="p-314">Assemble the ingredients:</p>
@@ -414,10 +417,10 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 \end{align*}
 </div>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-33"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-33"><h4 class="heading">
+</div></article><article class="example example-like" id="example-33"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Area of a curtain.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-33"><article class="example example-like"><p id="p-315">Compute the area of the curtain over the curve <span class="process-math">\(x=y^2\)</span> between the points <span class="process-math">\(P=(1,-1)\)</span> and <span class="process-math">\(Q=(4,2)\text{,}\)</span> with height function given by <span class="process-math">\(f(x,y)=\sqrt{x}+\abs{y}\)</span></p>
+</h4>
+<p id="p-315">Compute the area of the curtain over the curve <span class="process-math">\(x=y^2\)</span> between the points <span class="process-math">\(P=(1,-1)\)</span> and <span class="process-math">\(Q=(4,2)\text{,}\)</span> with height function given by <span class="process-math">\(f(x,y)=\sqrt{x}+\abs{y}\)</span></p>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><iframe width="300" height="300" src="generated/sageplot/im_curtain_eg.html"></iframe></div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
@@ -434,10 +437,10 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 \end{align*}
 </div>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-34"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-34"><h4 class="heading">
+</div></article><article class="example example-like" id="example-34"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Mass of wire.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-317">Let <span class="process-math">\(P=(1,1,0), Q=(1,2,2), R=(2,2,5)\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the polygonal wire connecting <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> and <span class="process-math">\(Q\)</span> to <span class="process-math">\(R\text{.}\)</span> Compute the mass <span class="process-math">\(M\)</span> of the wire assuming its density function is given by <span class="process-math">\(\delta(x,y,z)=x(y+z)\text{.}\)</span></p>
+</h4>
+<p id="p-317">Let <span class="process-math">\(P=(1,1,0), Q=(1,2,2), R=(2,2,5)\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the polygonal wire connecting <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> and <span class="process-math">\(Q\)</span> to <span class="process-math">\(R\text{.}\)</span> Compute the mass <span class="process-math">\(M\)</span> of the wire assuming its density function is given by <span class="process-math">\(\delta(x,y,z)=x(y+z)\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
 <p id="p-318">The path in question is piecewise smooth, allowing us to use <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar_piecwise.html" title="Theorem 2.1.10: Piecewise smooth line integral">Theorem 2.1.10</a>. We use the straight line parametrizations</p>
@@ -470,8 +473,7 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 \end{align*}
 </div>
 </div></div>
-</div></article></div>
-<article class="project project-like" id="sage_line_integrals_scalar"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_line_integrals_scalar"><h4 class="heading">
+</div></article><article class="project project-like" id="sage_line_integrals_scalar"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_line_integrals_scalar"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar line integral.</span>
 </h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_line_integrals_scalar"><article class="project project-like"><p id="p-319">The basic ingredients of a line integral are an expression <span class="process-math">\(\boldr(t)\)</span> defining a parametrized curve, the domain <span class="process-math">\([a,b]\)</span> of <span class="process-math">\(\boldr\text{,}\)</span> and the function <span class="process-math">\(f\)</span> we are integrating. You can see how the Sage cell below assembles these basic ingredients, along with the further ingredients <span class="process-math">\(\boldr'(t)\)</span> and  <span class="process-math">\(\abs{\boldr'(t)}\text{,}\)</span> before computing the line integral using <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar.html" title="Theorem 2.1.6: Scalar line integrals">Theorem 2.1.6</a>. Note how we use the <code class="code-inline tex2jax_ignore">vector()</code> command to create vector objects. This is essential for doing any further vector operations: e.g., dot product, norm, etc..</p>
 <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-15"><script type="text/x-sage">(x,y,z,t)=var('x y z t')

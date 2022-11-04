@@ -13,16 +13,10 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-f_x(x,y) \amp =\lim_{h\rightarrow 0}\frac{1}{h}(f(x+h,y)-f(x,y)) \amp \text{def. of } f_x\\
-\amp=\lim_{h\rightarrow 0}\frac{1}{h}(\int_P^{(x+h,y)}\boldF\cdot d\boldr-\int_P^{(x,y)}\boldF\cdot d\boldr) \\
-\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_{(x,y)}^{(x+h,y)}\boldF\cdot d\boldr \amp \text{(integral props.)}\\
-\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_0^h\boldF(x+t, y)\cdot \angvec{1,0}\, dt \amp \boldr(t)=(x+t,y), 0\leq t\leq h \\
-\amp =\lim_{h\rightarrow 0}\frac{1}{h}\int_0^hF_1(x+t, y)\, dt\\
-\amp = \frac{d}{dh}\left( \int_0^h F_1(x+t,y)\, dt \right)\Bigr\vert_{h=0}\\
-\amp = F_1(x+0, y) \amp \text{(FTC!)}\\
-\amp = F_1(x,y)
+\frac{\partial F_3 }{\partial y}-\frac{\partial F_2}{\partial z} \amp = \frac{\partial^2 f }{\partial y\partial z}-\frac{\partial f}{\partial z\partial y} \amp (F_3=f_z, F_2=f_y)\\
+\amp=0 \amp \left( \frac{\partial^2 f }{\partial y\partial z}=\frac{\partial^2 f }{\partial z\partial y}\right) 
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-68" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-69" class="internal">in-context</a></span>
 </body>
 </html>
