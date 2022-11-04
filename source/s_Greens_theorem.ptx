@@ -9,7 +9,7 @@
       <p>
         Let <m>\mathcal{C}\subseteq\R^2</m> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <m>\mathcal{R}\subseteq \R^2</m> be the region it encloses. If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing <m>\mathcal{R}</m>, then
         <men xml:id="eq_Greens_thm_tangent">
-          \underset{\operatorname{curl integral}}{\underbrace{\iint_\mathcal{R} \left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y} \right)\, dA}}=\underset{\operatorname{circulation}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldT\,  ds}}=\ointctrclockwise_\mathcal{C}F_1\, dx+F_2\, dy
+          \underset{\operatorname{curl integral}}{\underbrace{\iint_\mathcal{R} \left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y} \right)\, dA}}=\underset{\operatorname{circulation}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldT\,  ds}}=\oint_\mathcal{C}F_1\, dx+F_2\, dy
         </men>.
       </p>
     </statement>
@@ -112,7 +112,7 @@
       <p>
         Let <m>\mathcal{C}\subseteq\R^2</m> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <m>\mathcal{R}\subseteq \R^2</m> be the region it encloses. If the component functions of <m>\boldF=\angvec{F_1, F_2}</m> have continuous first-order partial derivatives on an open set containing <m>\mathcal{R}</m>, then
         <men xml:id="eq_Greens_thm_normal">
-          \underset{\text{divergence integral}}{\underbrace{\iint_\mathcal{R} \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\, dA}}=\underset{\operatorname{outward flux}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldn\,  ds}}=\ointctrclockwise_\mathcal{C}-F_2\, dx+F_1\, dy
+          \underset{\text{divergence integral}}{\underbrace{\iint_\mathcal{R} \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\, dA}}=\underset{\operatorname{outward flux}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldn\,  ds}}=\oint_\mathcal{C}-F_2\, dx+F_1\, dy
         </men>.
         Here <m>\boldn</m> is understood to be the outward unit normal vector to <m>\mathcal{C}</m>.
       </p>

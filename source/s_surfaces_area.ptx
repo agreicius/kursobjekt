@@ -1,0 +1,180 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_surfaces_area">
+  <title>Surfaces and their area</title>
+  <subsection xml:id="ss_surface_parametrizations">
+    <title>Surface parametrizations</title>
+<introduction>
+  <p>
+    We use two distinct methods of describing curves in <m>\R^2</m> or <m>\R^3</m>: <em>implicitly</em>, as the set of solutions to an equation, and <em>parametrically</em> as the image of a parametrization <m>\boldr\colon [a,b]\rightarrow \R^n</m>. For example, we typically describe the unit circle <m>\mathcal{C}</m> centered at the origin either as <m>\mathcal{C}\colon x^2+y^2=1</m> or <m>\mathcal{C}\colon \boldr(t)=(\cos t, \sin t), 0\leq t\leq 2\pi</m>. These are abbreviated forms of the following implicit and parametric representations of <m>\mathcal{C}</m>:
+    <md>
+      <mrow>\text{Implicit: } \ \mathcal{C}\amp=\{(x,y)\in \R^2\colon x^2+y^2=1\}
+      </mrow>
+      <mrow>\text{Parametric: } \ \mathcal{C}\amp=\{(\cos t, \sin t)\colon  0\leq t\leq 2\pi\}  </mrow>
+    </md>.
+    The first description is called <em>implicit</em>, as it is up to us to find actual pairs <m>(x,y)</m> satisfying the defining equation; the parametrization, in contrast, gives us an <em>explit</em> recipe for producing points on <m>\mathcal{C}</m>.
+  </p>
+  <p>
+    When dealing with surfaces <m>\mathcal{S}\subseteq \R^3</m>, we have for the most part used implicit descriptions: <eg />,
+    <md>
+      <mrow>\mathcal{S}_1\ \amp \colon x^2+y^2+z^2=1</mrow>
+      <mrow> \mathcal{S}_2\  \amp \colon z=\sqrt{x^2+y^2}</mrow>
+      <mrow> \mathcal{S}_3\ \amp \colon 3x+2y+5z=0 </mrow>
+    </md>.
+  We now supplement this method with <em>parametric</em> descriptions of surfaces.
+  </p>
+</introduction>
+<definition xml:id="d_surface_parametrizations">
+  <idx><h>parametrization</h><h>of a surface</h></idx>
+  <title>Surface parametrization</title>
+  <statement>
+    <p>
+      A <term>surface parametrization</term> with <term>parameter domain</term>  <m>\mathcal{R}\subseteq \R^2</m> is a continuous function
+      <md>
+      <mrow>\boldr\colon \mathcal{R} \amp\rightarrow \R^3  </mrow>
+      <mrow> (u,v) \amp\mapsto (f_1(u,v),f_2(u,v),f_3(u,v)) </mrow>
+      </md>,
+      that is one-to-one on the interior of <m>\mathcal{R}</m>. The functions <m>f_i(t)</m> defining <m>\boldr</m> are called <term>component functions</term>.
+    </p>
+    <p>
+      The set
+      <me>
+      \mathcal{S}=\{(f_1(u,v),f_2(u,v),f_3(u,v)\colon (u,v)\in \mathcal{R}\}
+      </me>
+      of outputs of <m>\boldr</m> is called the <term>surface</term> parametrized by <m>\boldr</m>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_tangent_vectors">
+  <title>Parametrization tangent vectors</title>
+  <statement>
+    <p>
+      Given a surface parametrization <m>\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))</m>, its <term><m>\boldu</m>- and <m>\boldv</m>-tangent vectors</term> are the functions <m>\boldr_u, \boldr_v</m> defined as
+      <md>
+        <mrow>\boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}</mrow>
+        <mrow>\boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}</mrow>
+      </md>.
+    </p>
+  </statement>
+</definition>
+<algorithm xml:id="proc_surface_plane">
+  <title>Plane parametrization</title>
+  <statement>
+    <p>
+      Recall that a plane <m>\mathcal{S}</m> is defined (implicitly) as the set of solutions to an equation of the form
+      <men xml:id="eq_plane">
+        \mathcal{S}\colon ax+by+cz=d
+      </men>,
+      where <m>\boldn=\angvec{a,b,c}\ne \angvec{0,0,0}</m>, is called a normal vector of the plane. More geometrically, given a particular point <m>P=(x_0,y_0,z_0)</m> satisfying  <xref ref="eq_plane"/>, we can describe <m>\mathcal{P}</m> as the set of points <m>Q=(x,y,z)</m> for which the vector <m>\overrightarrow{PQ}=\angvec{x-x_0,y-y_0,z-z_0}</m> is orthogonal to <m>\boldn</m>, which we call a normal vector to the plane.
+      </p>
+      <p>
+        To parametrize a plane <m>\mathcal{S}</m> defined by <xref ref="eq_plane"/> proceed as follows.
+        <ol>
+          <li>
+            <p>
+              Find a point <m>P=(x_0,y_0,z_0)</m> on <m>\mathcal{S}</m>: <ie />, find one solution to <xref ref="eq_plane"/>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Pick two nonzero vectors <m>\boldw_1, \boldw_2</m> that are orthogonal to <m>\boldn</m> and are not scalar multiples of one another: <ie />,
+              <me>
+                \boldn\cdot \boldw_1=\boldn\cdot \boldw_2=0, \boldv_1\ne c\boldv_2
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The plane <m>\mathcal{S}</m> is the set of points <m>Q</m> of the form
+              <me>
+                Q=P+u\boldw_1+v\boldw_2
+              </me>,
+              for some choice of scalars <m>u,v\in \R</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>\boldw_1=\angvec{r_1,r_2,r_3}</m> and <m>\boldw_2=\angvec{s_1,s_2,s_3}</m>, then the function <m>\boldr\colon \R^2\rightarrow \R^3</m> defined as
+              <me>
+                \boldr(u,v)=(x_0,y_0,z_0)+u\boldw_1+v\boldw_2=(x_0+ur_1+vs_1,y_0+ur_2+vs_2,z_0+ur_3+vs_3)
+              </me>
+              is a parametrization of the plane <m>\mathcal{S}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+  </statement>
+</algorithm>
+<definition xml:id="d_smooth_surface_parametrization">
+  <title>Smooth surface parametrization</title>
+  <statement>
+    <p>
+      A surface parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m> is smooth if on the interior of <m>\mathcal{R}</m> (i) the tangent vector functions <m>\boldr_u</m> and <m>\boldr_v</m> are continuous and (ii) <m>\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}</m>.
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_plane_parametrization">
+  <title>Plane parametrization</title>
+  <statement>
+    <p>
+      Find a parametrization of the plane <m>\mathcal{S}\colon x+2y-3=5</m>
+    </p>.
+  </statement>
+  <solution>
+    <p>
+      Looking at the equation, we can take <m>\boldn=\angvec{1,2,-3}</m> to be our normal vector. Next, the point <m>P=(5,0,0)</m> is easily seen to be a point of <m>\mathcal{S}</m>. To find vectors <m>\boldw=\angvec{w_1,w_2,w_3}</m> orthogonal to <m>\boldn</m> we solve <em>by inspection</em> the linear equation
+      <me>
+        \boldn\cdot\angvec{w_1,w_2,w_3}=w_1+2w_2-3w_3=0
+      </me>.
+      The vectors <m>\boldw_1=\angvec{2,-1,0}</m> and <m>\boldw_2=\angvec{3,0,1}</m> are two such solutions, and clearly <m>\boldw_1\ne c\boldw_2</m> for any <m>c\in \R</m>. We conclude that
+      <me>
+        \boldr(u,v)=(5,0,0)+u\boldw_1+v\boldw_2=(5+2u+3v,-u, v)
+      </me>
+      is a parametrization of <m>\mathcal{S}</m>.
+
+    </p>
+  </solution>
+</example>
+<project xml:id="sage_plane_parametrization">
+  <title>Plane parametrization</title>
+  <p>
+    The Sage cell below caries out <xref ref="proc_surface_plane"/> and produces a plot of the plane <m>\mathcal{S}</m> (using <c>parametric_plot3d()</c>) along with a chosen point <m>P</m>, the chosen vectors <m>\boldw_1, \boldw_2</m> (normalized), and the grid on the plane these two vectors define. To solve for <m>P, \boldw_1, \boldw_2</m> we use some linear algebra functions: <eg />, <c>solve_right()</c>, <c>right_kernel().basis()</c>. 
+  </p>
+  <sage>
+  <input>
+    (u,v,r)=var('u v r')
+  n=[1,1,1] #normal vector
+  A=matrix([n])
+  d=vector([5]) # d in ax+by+cz=d
+  P=A.solve_right(d) #Find a point
+  B=A.right_kernel().basis()
+  v1=B[0] #Two vectors orth. to n that
+  v2=B[1] #are not scalar multiples
+  w1=B[0].normalized()
+  w2=B[1].normalized()
+  r(u,v)=P+u*v1+v*v2 #The parametrization
+  S=parametric_plot3d(P+u*w1+v*w2,(u,-3,3),(v,-3,3), color='red',opacity=.1)
+  gridu=sum(line([P+r*w2-3*w1,P+r*w2+3*w1],color='red') for r in srange(-3,4,1))
+  gridv=sum(line([P+r*w1-3*w2,P+r*w1+3*w2],color='red') for r in srange(-3,4,1))
+  t1=text3d("w1",P+.75*w1+vector([0,0,.2]), fontsize=16)
+  t2=text3d("w2",P+.75*w2+vector([0,0,.2]), fontsize=16)
+  t3=text3d("P",P+vector([0,0,.2]), fontsize=16)
+  t4=text3d("n",P+1.2*vector(n).normalized(), fontsize=16)
+  show(r"$\mathbf{r}(u,v)=%s$" % latex(r(u,v)))
+  show(S+point3d(P,size=10, opacity=1)+arrow(P,P+w1)+arrow(P,P+w2)+gridu+gridv+arrow(P,P+vector(n).normalized(),color='red')+t1+t2+t3+t4)
+</input>
+  <output>
+
+  </output>
+  </sage>
+
+</project>
+<definition xml:id="d_tangent_plane">
+  <idx><h>tangent plane</h><h>of smooth surface parametrization</h></idx>
+  <title>Tangent plane to smooth surface</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be a surface with smooth parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m>, let <m>(u,v)</m> be a point of the interior of <m>\mathcal{R}</m>, and let <m>P=\boldr(u,v)</m> be the corresponding point on <m>\mathcal{S}</m>. The <term>tangent plane</term> to <m>\mathcal{S}</m> at <m>P</m> is the plane passing through <m>P</m> with normal vector <m>\boldr_u(u,v)\times \boldr_v(u,v)</m>.
+    </p>
+  </statement>
+</definition>
+</subsection>
+</section>
