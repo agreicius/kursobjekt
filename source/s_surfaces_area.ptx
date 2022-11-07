@@ -185,8 +185,8 @@
   </statement>
 </example>
 
-<example xml:id="eq_function_parametrization">
-  <title>Cylinder parametrization</title>
+<example xml:id="eg_function_parametrization">
+  <title>Parametrizing graphs of functions</title>
   <statement>
     <p>
       Recall that given a function <m>z=f(x,y)</m> with domain <m>D</m> we define its graph to the be the surface
@@ -212,6 +212,11 @@
       Let <m>\mathcal{S}_1</m> be the half-cone <m>y=\sqrt{x^2+z^2}</m>, and let <m>\mathcal{S}_2</m> be the full cone <m>y^2=x^2+z^2</m>. Find parametrizations of <m>\mathcal{S}_1</m> and <m>\mathcal{S}_2</m>.
     </p>
   </statement>
+  <solution>
+    <p>
+      Following <xref ref="eg_function_parametrization"/>, we easily see that <m>\mathcal{S}_1</m> is parametrized by <m>\boldr(u,v)=(u,\sqrt{u^2+v^2})</m>
+    </p>
+  </solution>
 </example>
 <project xml:id="sage_surface_parametrizations">
 <title>Surface parametrizations</title>
@@ -280,36 +285,75 @@ S+grid1+grid2
   </output>
 </sage>
 </project>
-<definition xml:id="d_tangent_vectors">
-  <title>Parametrization tangent vectors</title>
-  <statement>
-    <p>
-      Given a surface parametrization <m>\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))</m>, its <term><m>\boldu</m>- and <m>\boldv</m>-tangent vectors</term> are the functions <m>\boldr_u, \boldr_v</m> defined as
-      <md>
-        <mrow>\boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}</mrow>
-        <mrow>\boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}</mrow>
-      </md>.
-    </p>
-  </statement>
-</definition>
+</subsection>
+<subsection xml:id="ss_tangent_planes_area">
+  <title>Tangent planes and area</title>
+  <definition xml:id="d_tangent_vectors">
+    <title>Parametrization tangent vectors</title>
+    <statement>
+      <p>
+        Given a surface parametrization <m>\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))</m>, its <term><m>\boldu</m>- and <m>\boldv</m>-tangent vectors</term> are the functions <m>\boldr_u, \boldr_v</m> defined as
+        <md>
+          <mrow>\boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}</mrow>
+          <mrow>\boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}</mrow>
+        </md>.
+      </p>
+    </statement>
+  </definition>
 
-<definition xml:id="d_smooth_surface_parametrization">
-  <title>Smooth surface parametrization</title>
-  <statement>
-    <p>
-      A surface parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m> is smooth if on the interior of <m>\mathcal{R}</m> (i) the tangent vector functions <m>\boldr_u</m> and <m>\boldr_v</m> are continuous and (ii) <m>\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}</m>.
-    </p>
-  </statement>
-</definition>
+  <definition xml:id="d_smooth_surface_parametrization">
+    <title>Smooth surface parametrization</title>
+    <statement>
+      <p>
+        A surface parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m> is smooth if on the interior of <m>\mathcal{R}</m> (i) the tangent vector functions <m>\boldr_u</m> and <m>\boldr_v</m> are continuous and (ii) <m>\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}</m>.
+      </p>
+    </statement>
+  </definition>
 
-<definition xml:id="d_tangent_plane">
-  <idx><h>tangent plane</h><h>of smooth surface parametrization</h></idx>
-  <title>Tangent plane to smooth surface</title>
-  <statement>
-    <p>
-      Let <m>\mathcal{S}</m> be a surface with smooth parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m>, let <m>(u,v)</m> be a point of the interior of <m>\mathcal{R}</m>, and let <m>P=\boldr(u,v)</m> be the corresponding point on <m>\mathcal{S}</m>. The <term>tangent plane</term> to <m>\mathcal{S}</m> at <m>P</m> is the plane passing through <m>P</m> with normal vector <m>\boldr_u(u,v)\times \boldr_v(u,v)</m>.
-    </p>
-  </statement>
-</definition>
+  <definition xml:id="d_tangent_plane">
+    <idx><h>tangent plane</h><h>of smooth surface parametrization</h></idx>
+    <title>Tangent plane to smooth surface</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{S}</m> be a surface with smooth parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m>, let <m>(u,v)</m> be a point of the interior of <m>\mathcal{R}</m>, and let <m>P=\boldr(u,v)</m> be the corresponding point on <m>\mathcal{S}</m>. The <term>tangent plane</term> to <m>\mathcal{S}</m> at <m>P</m> is the plane passing through <m>P</m> with normal vector <m>\boldr_u(u,v)\times \boldr_v(u,v)</m>.
+      </p>
+    </statement>
+  </definition>
+  <example xml:id="eg_tangent_plane">
+    <statement>
+      <p>
+        Let <m>\mathcal{S}</m> be the surface with parametrization <m>\boldr(u,v)=(u^2, v^2, uv)</m>. Find an equation of the tangent plane to <m>\mathcal{S}</m> at the point <m>P=(1,1,1)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+
+  <definition xml:id="d_surface_area">
+    <title>Surface area</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{S}</m> be a surface with smooth parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m>, where <m>\mathcal{R}\subseteq\R^2</m> is a bounded set. The <term>area</term> of <m>\mathcal{S}</m> is defined as
+        <me>
+          \operatorname{area}=\iint\limits_\mathcal{R}\abs{\boldr_u\times \boldr_v}\, dA
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <statement>
+      <p>
+        Fix <m>R&gt; 0</m>. Compute the area of the sphere <m>\mathcal{S}\colon x^2+y^2+z^2=R^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
 </subsection>
 </section>
