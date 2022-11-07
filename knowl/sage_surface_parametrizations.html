@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h4 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Surface parametrizations.</span>
+</h4>
+<p>The Sage cells below use <code class="code-inline tex2jax_ignore">paramatric_plot3d()</code> to graph some of the surfaces from the examples above, along with the level curves coming from the usual rectangular grid in the parameter domain.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-20"><script type="text/x-sage">    (phi,theta,s,t)=var('phi theta s t')
+R=4
+r(phi,theta)=vector([R*sin(phi)*cos(theta),R*sin(phi)*sin(theta),R*cos(phi)])
+S=parametric_plot3d(r(s,t),(s,0,pi),(t,0,2*pi), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(c*pi/8,t),(t,0,2*pi),color='red') for c in range(16)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,c*pi/8),(t,0,pi),color='blue') for c in range(16)) #theta-level curves
+S+grid1+grid2
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-21"><script type="text/x-sage">(v,theta,s,t)=var('v theta s t')
+R=4
+a=-2
+b=2
+r(theta,v)=vector([R*cos(theta),R*sin(theta),v])
+S=parametric_plot3d(r(s,t),(s,0,2*pi),(t,a,b), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(c*pi/8,t),(t,a,b),color='red') for c in range(16)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,a+(b-a)*c/5),(t,0,2*pi),color='blue') for c in range(0,6)) #theta-level curves
+S+grid1+grid2
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-22"><script type="text/x-sage">(x,y,s,t)=var('x y s t')
+a=-4
+b=4
+r(x,y)=vector([x,y,sqrt(x^2+y^2)])
+S=parametric_plot3d(r(x,y),(x,a,b),(y,a,b), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,a,b),color='red') for c in range(11))
+grid2=sum(parametric_plot3d(r(t,a+(b-a)*c/10),(t,a,b),color='blue') for c in range(11))
+S+grid1+grid2
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-23"><script type="text/x-sage">    (rho,theta,s,t)=var('phi theta s t')
+phi=pi/4
+a=-4
+b=4
+r(rho,theta)=vector([rho*sin(phi)*cos(theta),rho*sin(phi)*sin(theta),rho*cos(phi)])
+S=parametric_plot3d(r(s,t),(s,a,b),(t,0,2*pi), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,0,2*pi),color='red') for c in range(11)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,c*pi/8),(t,a,b),color='blue') for c in range(16)) #theta-level curves
+S+grid1+grid2
+</script></pre></article><span class="incontext"><a href="s_surfaces_area.html#sage_surface_parametrizations" class="internal">in-context</a></span>
+</body>
+</html>

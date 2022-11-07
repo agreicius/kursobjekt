@@ -268,30 +268,21 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \mathcal{S}=\{(f_1(u,v),f_2(u,v),f_3(u,v)\colon (u,v)\in \mathcal{R}\}
 \end{equation*}
 </div>
-<p class="continuation">of outputs of <span class="process-math">\(\boldr\)</span> is called the <dfn class="terminology">surface</dfn> parametrized by <span class="process-math">\(\boldr\text{.}\)</span></p></article><article class="definition definition-like" id="d_tangent_vectors"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Parametrization tangent vectors.</span>
+<p class="continuation">of outputs of <span class="process-math">\(\boldr\)</span> is called the <dfn class="terminology">surface</dfn> parametrized by <span class="process-math">\(\boldr\text{.}\)</span></p></article><article class="algorithm theorem-like" id="proc_surface_plane"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Plane parametrization.</span>
 </h4>
-<p id="p-418">Given a surface parametrization <span class="process-math">\(\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))\text{,}\)</span> its <dfn class="terminology"><span class="process-math">\(\boldu\)</span>- and <span class="process-math">\(\boldv\)</span>-tangent vectors</dfn> are the functions <span class="process-math">\(\boldr_u, \boldr_v\)</span> defined as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-76">
-\begin{align*}
-\boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}\\
-\boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}\text{.}
-\end{align*}
-</div></article><article class="algorithm theorem-like" id="proc_surface_plane"><h4 class="heading">
-<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Plane parametrization.</span>
-</h4>
-<p id="p-419">Recall that a plane <span class="process-math">\(\mathcal{S}\)</span> is defined (implicitly) as the set of solutions to an equation of the form</p>
+<p id="p-418">Recall that a plane <span class="process-math">\(\mathcal{S}\)</span> is defined (implicitly) as the set of solutions to an equation of the form</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_plane.html" id="eq_plane">
 \begin{equation}
 \mathcal{S}\colon ax+by+cz=d\text{,}\tag{2.5.1}
 \end{equation}
 </div>
 <p class="continuation">where <span class="process-math">\(\boldn=\angvec{a,b,c}\ne \angvec{0,0,0}\text{,}\)</span> is called a normal vector of the plane. More geometrically, given a particular point <span class="process-math">\(P=(x_0,y_0,z_0)\)</span> satisfying  <a href="" class="xref" data-knowl="./knowl/eq_plane.html" title="Equation 2.5.1">(2.5.1)</a>, we can describe <span class="process-math">\(\mathcal{P}\)</span> as the set of points <span class="process-math">\(Q=(x,y,z)\)</span> for which the vector <span class="process-math">\(\overrightarrow{PQ}=\angvec{x-x_0,y-y_0,z-z_0}\)</span> is orthogonal to <span class="process-math">\(\boldn\text{,}\)</span> which we call a normal vector to the plane.</p>
-<p id="p-420">To parametrize a plane <span class="process-math">\(\mathcal{S}\)</span> defined by <a href="" class="xref" data-knowl="./knowl/eq_plane.html" title="Equation 2.5.1">(2.5.1)</a> proceed as follows.</p>
+<p id="p-419">To parametrize a plane <span class="process-math">\(\mathcal{S}\)</span> defined by <a href="" class="xref" data-knowl="./knowl/eq_plane.html" title="Equation 2.5.1">(2.5.1)</a> proceed as follows.</p>
 <ol class="decimal">
-<li id="li-125"><p id="p-421">Find a point <span class="process-math">\(P=(x_0,y_0,z_0)\)</span> on <span class="process-math">\(\mathcal{S}\text{:}\)</span> i.e., find one solution to <a href="" class="xref" data-knowl="./knowl/eq_plane.html" title="Equation 2.5.1">(2.5.1)</a>.</p></li>
+<li id="li-125"><p id="p-420">Find a point <span class="process-math">\(P=(x_0,y_0,z_0)\)</span> on <span class="process-math">\(\mathcal{S}\text{:}\)</span> i.e., find one solution to <a href="" class="xref" data-knowl="./knowl/eq_plane.html" title="Equation 2.5.1">(2.5.1)</a>.</p></li>
 <li id="li-126">
-<p id="p-422">Pick two nonzero vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> that are orthogonal to <span class="process-math">\(\boldn\)</span> and are not scalar multiples of one another: i.e.,</p>
+<p id="p-421">Pick two nonzero vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> that are orthogonal to <span class="process-math">\(\boldn\)</span> and are not scalar multiples of one another: i.e.,</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldn\cdot \boldw_1=\boldn\cdot \boldw_2=0, \boldv_1\ne c\boldv_2\text{.}
@@ -299,7 +290,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div>
 </li>
 <li id="li-127">
-<p id="p-423">The plane <span class="process-math">\(\mathcal{S}\)</span> is the set of points <span class="process-math">\(Q\)</span> of the form</p>
+<p id="p-422">The plane <span class="process-math">\(\mathcal{S}\)</span> is the set of points <span class="process-math">\(Q\)</span> of the form</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 Q=P+u\boldw_1+v\boldw_2\text{,}
@@ -308,7 +299,7 @@ Q=P+u\boldw_1+v\boldw_2\text{,}
 <p class="continuation">for some choice of scalars <span class="process-math">\(u,v\in \R\text{.}\)</span></p>
 </li>
 <li id="li-128">
-<p id="p-424">If <span class="process-math">\(\boldw_1=\angvec{r_1,r_2,r_3}\)</span> and <span class="process-math">\(\boldw_2=\angvec{s_1,s_2,s_3}\text{,}\)</span> then the function <span class="process-math">\(\boldr\colon \R^2\rightarrow \R^3\)</span> defined as</p>
+<p id="p-423">If <span class="process-math">\(\boldw_1=\angvec{r_1,r_2,r_3}\)</span> and <span class="process-math">\(\boldw_2=\angvec{s_1,s_2,s_3}\text{,}\)</span> then the function <span class="process-math">\(\boldr\colon \R^2\rightarrow \R^3\)</span> defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldr(u,v)=(x_0,y_0,z_0)+u\boldw_1+v\boldw_2=(x_0+ur_1+vs_1,y_0+ur_2+vs_2,z_0+ur_3+vs_3)
@@ -316,15 +307,12 @@ Q=P+u\boldw_1+v\boldw_2\text{,}
 </div>
 <p class="continuation">is a parametrization of the plane <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 </li>
-</ol></article><article class="definition definition-like" id="d_smooth_surface_parametrization"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Smooth surface parametrization.</span>
+</ol></article><article class="example example-like" id="eg_plane_parametrization"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Plane parametrization.</span>
 </h4>
-<p id="p-425">A surface parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> is smooth if on the interior of <span class="process-math">\(\mathcal{R}\)</span> (i) the tangent vector functions <span class="process-math">\(\boldr_u\)</span> and <span class="process-math">\(\boldr_v\)</span> are continuous and (ii) <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}\text{.}\)</span></p></article><article class="example example-like" id="eg_plane_parametrization"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Plane parametrization.</span>
-</h4>
-<p id="p-426">Find a parametrization of the plane <span class="process-math">\(\mathcal{S}\colon x+2y-3=5\)</span></p>.<div class="solutions">
+<p id="p-424">Find a parametrization of the plane <span class="process-math">\(\mathcal{S}\colon x+2y-3=5\)</span></p>.<div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like">
-<p id="p-427">Looking at the equation, we can take <span class="process-math">\(\boldn=\angvec{1,2,-3}\)</span> to be our normal vector. Next, the point <span class="process-math">\(P=(5,0,0)\)</span> is easily seen to be a point of <span class="process-math">\(\mathcal{S}\text{.}\)</span> To find vectors <span class="process-math">\(\boldw=\angvec{w_1,w_2,w_3}\)</span> orthogonal to <span class="process-math">\(\boldn\)</span> we solve <em class="emphasis">by inspection</em> the linear equation</p>
+<p id="p-425">Looking at the equation, we can take <span class="process-math">\(\boldn=\angvec{1,2,-3}\)</span> to be our normal vector. Next, the point <span class="process-math">\(P=(5,0,0)\)</span> is easily seen to be a point of <span class="process-math">\(\mathcal{S}\text{.}\)</span> To find vectors <span class="process-math">\(\boldw=\angvec{w_1,w_2,w_3}\)</span> orthogonal to <span class="process-math">\(\boldn\)</span> we solve <em class="emphasis">by inspection</em> the linear equation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldn\cdot\angvec{w_1,w_2,w_3}=w_1+2w_2-3w_3=0\text{.}
@@ -340,12 +328,12 @@ Q=P+u\boldw_1+v\boldw_2\text{,}
 </div></div>
 </div></article><article class="project project-like" id="sage_plane_parametrization"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_plane_parametrization"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Plane parametrization.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_plane_parametrization"><article class="project project-like"><p id="p-428">The Sage cell below caries out <a href="" class="xref" data-knowl="./knowl/proc_surface_plane.html" title="Procedure 2.5.3: Plane parametrization">Procedure 2.5.3</a> and produces a plot of the plane <span class="process-math">\(\mathcal{S}\)</span> along with a chosen point <span class="process-math">\(P\text{,}\)</span> the chosen vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> (normalized), and the grid on the plane these two vectors define. To solve for <span class="process-math">\(P, \boldw_1, \boldw_2\)</span> we use some linear algebra functions: e.g., <code class="code-inline tex2jax_ignore">solve_right()</code>, <code class="code-inline tex2jax_ignore">right_kernel().basis()</code>.</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_plane_parametrization"><article class="project project-like"><p id="p-426">The Sage cell below caries out <a href="" class="xref" data-knowl="./knowl/proc_surface_plane.html" title="Procedure 2.5.2: Plane parametrization">Procedure 2.5.2</a> and produces a plot of the plane <span class="process-math">\(\mathcal{S}\)</span> (using <code class="code-inline tex2jax_ignore">parametric_plot3d()</code>) along with a chosen point <span class="process-math">\(P\text{,}\)</span> the chosen vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> (normalized), and the grid on the plane these two vectors define. To solve for <span class="process-math">\(P, \boldw_1, \boldw_2\)</span> we use some linear algebra functions: e.g., <code class="code-inline tex2jax_ignore">solve_right()</code>, <code class="code-inline tex2jax_ignore">right_kernel().basis()</code>.</p>
 <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-19"><script type="text/x-sage">  (u,v,r)=var('u v r')
-n=[1,2,-3] #normal vector n=(a,b,c)
+n=[1,1,1] #normal vector
 A=matrix([n])
 d=vector([5]) # d in ax+by+cz=d
-P=A.solve_right(b) #Find a point
+P=A.solve_right(d) #Find a point
 B=A.right_kernel().basis()
 v1=B[0] #Two vectors orth. to n that
 v2=B[1] #are not scalar multiples
@@ -354,18 +342,138 @@ w2=B[1].normalized()
 r(u,v)=P+u*v1+v*v2 #The parametrization
 S=parametric_plot3d(P+u*w1+v*w2,(u,-3,3),(v,-3,3), color='red',opacity=.1)
 gridu=sum(line([P+r*w2-3*w1,P+r*w2+3*w1],color='red') for r in srange(-3,4,1))
-gridv=sum(line([P+r*w1-3*w2,P+r*w1+3*w2],color='red') for r in srange(-3,4,1))
+gridv=sum(line([P+r*w1-3*w2,P+r*w1+3*w2],color='blue') for r in srange(-3,4,1))
 t1=text3d("w1",P+.75*w1+vector([0,0,.2]), fontsize=16)
 t2=text3d("w2",P+.75*w2+vector([0,0,.2]), fontsize=16)
 t3=text3d("P",P+vector([0,0,.2]), fontsize=16)
 t4=text3d("n",P+1.2*vector(n).normalized(), fontsize=16)
-show(r"$\mathbf{r}(u,v)=$",r(u,v))
+print("r(u,v)=",r(u,v))
 show(S+point3d(P,size=10, opacity=1)+arrow(P,P+w1)+arrow(P,P+w2)+gridu+gridv+arrow(P,P+vector(n).normalized(),color='red')+t1+t2+t3+t4)
 </script></pre></article></div>
-<article class="definition definition-like" id="d_tangent_plane"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent plane to smooth surface.</span>
+<article class="remark remark-like" id="rm_uv_level_curves"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(u,v\)</span>-level curves.</span>
 </h4>
-<p id="p-429">Let <span class="process-math">\(\mathcal{S}\)</span> be a surface with smooth parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\text{,}\)</span> let <span class="process-math">\((u,v)\)</span> be a point of the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> and let <span class="process-math">\(P=\boldr(u,v)\)</span> be the corresponding point on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">tangent plane</dfn> to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\)</span> is the plane passing through <span class="process-math">\(P\)</span> with normal vector <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\text{.}\)</span></p></article></section></section></div></main>
+<p id="p-427">Given a surface parametrization <span class="process-math">\(\boldr(u,v)\)</span> a useful tool for visualizing the corresponding surface <span class="process-math">\(\mathcal{S}\)</span> is to consider the curves with parametrizations <span class="process-math">\(\bolds(v)=\boldr(c,v)\)</span> obtained by setting <span class="process-math">\(u=c\)</span> for different choices of <span class="process-math">\(c\text{,}\)</span> or similarly, curves with parametrizations <span class="process-math">\(\bolds(u)=\boldr(u,d)\)</span> obtained by setting <span class="process-math">\(v=d\)</span> for different choices of <span class="process-math">\(d\text{.}\)</span> We call such curves <span class="process-math">\(u\)</span>- and <span class="process-math">\(v\)</span>-level curves of the surface. They are the images under <span class="process-math">\(\boldr(u,v)\)</span> of the rectangular grid in the parameter domain defined by the equations <span class="process-math">\(u=c\)</span> and <span class="process-math">\(v=d\text{,}\)</span> and they make a sort of (usually nonrectangular) grid of the surface <span class="process-math">\(\mathcal{S}\text{.}\)</span></p></article><article class="example example-like" id="eg_sphere_parametrization"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Sphere of radius <span class="process-math">\(R\)</span> parametrization.</span>
+</h4>
+<p id="p-428">Fix <span class="process-math">\(R&gt;0\text{.}\)</span> Spherical coordinates tells us that the points of the sphere <span class="process-math">\(\mathcal{S}\colon x^2+y^2+z^2=R^2\)</span> can be described in the form <span class="process-math">\(P=(R\sin\phi\cos\theta, R\sin\phi\sin\theta,R\cos\phi)\)</span> for <span class="process-math">\(0\leq \phi\leq \pi\)</span> and <span class="process-math">\(0\leq \theta\leq 2\pi\text{.}\)</span> This gives rise to the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-76">
+\begin{align*}
+\boldr\colon [0,\pi]\times [0,2\pi] \amp \rightarrow \R^3\\
+(\phi, \theta) \amp\mapsto (R\sin\phi\cos\theta, R\sin\phi\sin\theta,R\cos\phi) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Line of the form <span class="process-math">\(\phi=c\)</span> and <span class="process-math">\(\theta=d\)</span> in the parameter domain <span class="process-math">\(\mathcal{R}=[0,\pi]\times [0,2\pi]\)</span> get mapped by <span class="process-math">\(\boldr\)</span> to latitudinal and longitudinal circles on the sphere, respectively; these are the <span class="process-math">\(phi\)</span>- and <span class="process-math">\(\theta\)</span>-level curves of the parametrization.</p></article><article class="example example-like" id="example-50"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Circular cylinder.</span>
+</h4>
+<p id="p-429">Fix <span class="process-math">\(R&gt;0\)</span> and consider the surface parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-77">
+\begin{align*}
+\boldr\colon [0,2\pi]\times [-2, 2] \amp \rightarrow \R^3 \\
+(\theta,v)  \amp\mapsto (R\cos \theta, R\sin \theta, v) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Fixing <span class="process-math">\(v=d\)</span> for any <span class="process-math">\(-2\leq d\leq 2\text{,}\)</span> we see that the corresponding curve parametrization <span class="process-math">\(\bolds(\theta)=(R\cos \theta, R\sin \theta, d)\)</span> is a circle of radius <span class="process-math">\(R\)</span> centered around the <span class="process-math">\(z\)</span>-axis. Thus as we let <span class="process-math">\(d\)</span> range between <span class="process-math">\(-2\)</span> and <span class="process-math">\(2\)</span> the <span class="process-math">\(v=d\)</span>-level curves sweep out the cylinder of radius <span class="process-math">\(R\text{,}\)</span> centered around the <span class="process-math">\(z\)</span>-axis, between the planes <span class="process-math">\(z=-2\)</span> and <span class="process-math">\(z=2\text{.}\)</span></p></article><article class="example example-like" id="eg_function_parametrization"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Parametrizing graphs of functions.</span>
+</h4>
+<p id="p-430">Recall that given a function <span class="process-math">\(z=f(x,y)\)</span> with domain <span class="process-math">\(D\)</span> we define its graph to the be the surface</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{S}=\{(x,y,f(x,y))\colon (x,y)\in D\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">It follows directly from this description that <span class="process-math">\(\mathcal{S}\)</span> is parametrized by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-78">
+\begin{align*}
+\boldr\colon D \amp\rightarrow \R^3 \\
+(x,y)\amp\mapsto (x,y,f(x,y)) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus all graphs of functions <span class="process-math">\(z=f(x,y)\)</span> can be thought of as parametrized surfaces. The converse is not true: the sphere <span class="process-math">\(x^2+y^2+z^2=1\)</span> has a surface parametrization, but it is not the graph of a function.</p>
+<p id="p-431">More generally, if a surface is defined implicitly in the form <span class="process-math">\(z=f(x,y)\)</span> or <span class="process-math">\(x=g(y,z)\)</span> or <span class="process-math">\(y=h(x,z)\)</span> (i.e., one variable is described as a function of the others), then we have immediate parametrizations of the form <span class="process-math">\(\boldr(x,y)=(x,y,f(x,y))\text{,}\)</span> <span class="process-math">\(\bolds(y,z)=(g(y,z),y,z)\text{,}\)</span> <span class="process-math">\(\boldp(x,z)=(x,h(x,z),z)\text{.}\)</span> This is <em class="emphasis">sometimes</em> a useful trick.</p></article><article class="example example-like" id="example-52"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Cone parametrization.</span>
+</h4>
+<p id="p-432">Let <span class="process-math">\(\mathcal{S}_1\)</span> be the half-cone <span class="process-math">\(y=\sqrt{x^2+z^2}\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}_2\)</span> be the full cone <span class="process-math">\(y^2=x^2+z^2\text{.}\)</span> Find parametrizations of <span class="process-math">\(\mathcal{S}_1\)</span> and <span class="process-math">\(\mathcal{S}_2\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><p id="p-433">Following <a href="" class="xref" data-knowl="./knowl/eg_function_parametrization.html" title="Example 2.5.7: Parametrizing graphs of functions">Example 2.5.7</a>, we easily see that <span class="process-math">\(\mathcal{S}_1\)</span> is parametrized by <span class="process-math">\(\boldr(u,v)=(u,\sqrt{u^2+v^2})\)</span></p></div></div>
+</div></article><article class="project project-like" id="sage_surface_parametrizations"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_surface_parametrizations"><h4 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Surface parametrizations.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_surface_parametrizations"><article class="project project-like"><p id="p-434">The Sage cells below use <code class="code-inline tex2jax_ignore">paramatric_plot3d()</code> to graph some of the surfaces from the examples above, along with the level curves coming from the usual rectangular grid in the parameter domain.</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-20"><script type="text/x-sage">    (phi,theta,s,t)=var('phi theta s t')
+R=4
+r(phi,theta)=vector([R*sin(phi)*cos(theta),R*sin(phi)*sin(theta),R*cos(phi)])
+S=parametric_plot3d(r(s,t),(s,0,pi),(t,0,2*pi), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(c*pi/8,t),(t,0,2*pi),color='red') for c in range(16)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,c*pi/8),(t,0,pi),color='blue') for c in range(16)) #theta-level curves
+S+grid1+grid2
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-21"><script type="text/x-sage">(v,theta,s,t)=var('v theta s t')
+R=4
+a=-2
+b=2
+r(theta,v)=vector([R*cos(theta),R*sin(theta),v])
+S=parametric_plot3d(r(s,t),(s,0,2*pi),(t,a,b), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(c*pi/8,t),(t,a,b),color='red') for c in range(16)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,a+(b-a)*c/5),(t,0,2*pi),color='blue') for c in range(0,6)) #theta-level curves
+S+grid1+grid2
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-22"><script type="text/x-sage">(x,y,s,t)=var('x y s t')
+a=-4
+b=4
+r(x,y)=vector([x,y,sqrt(x^2+y^2)])
+S=parametric_plot3d(r(x,y),(x,a,b),(y,a,b), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,a,b),color='red') for c in range(11))
+grid2=sum(parametric_plot3d(r(t,a+(b-a)*c/10),(t,a,b),color='blue') for c in range(11))
+S+grid1+grid2
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-23"><script type="text/x-sage">    (rho,theta,s,t)=var('phi theta s t')
+phi=pi/4
+a=-4
+b=4
+r(rho,theta)=vector([rho*sin(phi)*cos(theta),rho*sin(phi)*sin(theta),rho*cos(phi)])
+S=parametric_plot3d(r(s,t),(s,a,b),(t,0,2*pi), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,0,2*pi),color='red') for c in range(11)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,c*pi/8),(t,a,b),color='blue') for c in range(16)) #theta-level curves
+S+grid1+grid2
+</script></pre></article></div></section><section class="subsection" id="ss_tangent_planes_area"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Tangent planes and area</span>
+</h3>
+<article class="definition definition-like" id="d_tangent_vectors"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Parametrization tangent vectors.</span>
+</h4>
+<p id="p-435">Given a surface parametrization <span class="process-math">\(\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))\text{,}\)</span> its <dfn class="terminology"><span class="process-math">\(\boldu\)</span>- and <span class="process-math">\(\boldv\)</span>-tangent vectors</dfn> are the functions <span class="process-math">\(\boldr_u, \boldr_v\)</span> defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-79">
+\begin{align*}
+\boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}\\
+\boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}\text{.}
+\end{align*}
+</div></article><article class="definition definition-like" id="d_smooth_surface_parametrization"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Smooth surface parametrization.</span>
+</h4>
+<p id="p-436">A surface parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> is smooth if on the interior of <span class="process-math">\(\mathcal{R}\)</span> (i) the tangent vector functions <span class="process-math">\(\boldr_u\)</span> and <span class="process-math">\(\boldr_v\)</span> are continuous and (ii) <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}\text{.}\)</span></p></article><article class="definition definition-like" id="d_tangent_plane"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent plane to smooth surface.</span>
+</h4>
+<p id="p-437">Let <span class="process-math">\(\mathcal{S}\)</span> be a surface with smooth parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\text{,}\)</span> let <span class="process-math">\((u,v)\)</span> be a point of the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> and let <span class="process-math">\(P=\boldr(u,v)\)</span> be the corresponding point on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">tangent plane</dfn> to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\)</span> is the plane passing through <span class="process-math">\(P\)</span> with normal vector <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\text{.}\)</span></p></article><article class="example example-like" id="eg_tangent_plane"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.12</span><span class="period">.</span>
+</h4>
+<p id="p-438">Let <span class="process-math">\(\mathcal{S}\)</span> be the surface with parametrization <span class="process-math">\(\boldr(u,v)=(u^2, v^2, uv)\text{.}\)</span> Find an equation of the tangent plane to <span class="process-math">\(\mathcal{S}\)</span> at the point <span class="process-math">\(P=(1,1,1)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like"><p id="p-439"></p></div></div>
+</div></article><article class="definition definition-like" id="d_surface_area"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Surface area.</span>
+</h4>
+<p id="p-440">Let <span class="process-math">\(\mathcal{S}\)</span> be a surface with smooth parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\text{,}\)</span> where <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> is a bounded set. The <dfn class="terminology">area</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{area}=\iint\limits_\mathcal{R}\abs{\boldr_u\times \boldr_v}\, dA\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="example-54"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.14</span><span class="period">.</span>
+</h4>
+<p id="p-441">Fix <span class="process-math">\(R&gt; 0\text{.}\)</span> Compute the area of the sphere <span class="process-math">\(\mathcal{S}\colon x^2+y^2+z^2=R^2\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><p id="p-442"></p></div></div>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>
