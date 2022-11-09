@@ -127,7 +127,7 @@
                   <mrow>  \amp =4\pi\int_0^{\pi/2}\sin z\cos z\sqrt{1+\sin^2 z}\, dz
                   , \hspace{5pt} \ (\abs{\sin z} \text{ even})</mrow>
                   <mrow>  \amp =4\pi\left( \frac{1}{3}(1+\sin^2 z)^{3/2}\right)\Bigr\vert_0^{\pi/2}</mrow>
-                  <mrow> \amp =\frac{4\pi}{3}(2^{3/2}-1) </mrow>
+                  <mrow> \amp =\frac{4\pi}{3}(2^{3/2}-1)\ \operatorname{grams} </mrow>
                 </md>.
               </p>
             </li>
@@ -135,7 +135,89 @@
         </p>
       </solution>
     </example>
+    <definition xml:id="d_surface_integral_piecewise">
+      <title>Surface integral for piecewise smooth surfaces</title>
+      <statement>
+        <p>
+          Assume <m>\mathcal{S}</m> is the union of smoothly parametrized surfaces <m>\mathcal{S}_1, \mathcal{S}_2,\dots \mathcal{S}_n</m> whose interiors do not intersect. If <m>f</m> is a continuous function defined on <m>\mathcal{S}</m>, we define the surface integral of <m>f</m> over <m>S</m> as
+          <me>
+            \iint\limits_\mathcal{S}f\, d\sigma=\sum_{k=1}^n \iint\limits_{S_k}f\, d\sigma
+          </me>.
+        </p>
+      </statement>
+    </definition>
+<example>
+  <statement>
+    <p>
+      Compute the surface integral of <m>f(x,y,z)=xy</m> over the tetrahedron <m>\mathcal{T}</m> with vertices <m>(0,0,0),(1,0,0),(0,1,0),(0,0,1)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+     We have <m>\mathcal{T}=T_1\cup T_2\cup T_3\cup T_4</m>, where the <m>T_k</m> are the four triangular faces of <m>\mathcal{T}</m>, and thus
+     <me>
+       \iint\limits_\mathcal{T}f\, d\sigma=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma+\iint\limits_{T_3}f\, d\sigma+\iint\limits_{T_4}f\, d\sigma
+     </me>.
+     Let <m>T_1, T_2</m> be the triangular faces lying in the coordinate planes <m>x=0</m> and <m>y=0</m>, respectively. Since <m>f(x,y,z)=0</m> for all points in these two surfaces, the corresponding surface integrals <m>\iint_{T_k}f\, d\sigma</m>, <m>k=1,2</m>, are equal to zero. Thus we need only compute the integrals of <m>f</m> over <m>T_3</m> and <m>T_4</m>.
+    </p>
+    <ul>
+      <li>
+        <title>Integral over <m>T_3</m> </title>
+        <p>
+          Let <m>T_3</m> be the face of the tetrahedron in the <m>xy</m>-plane. We parametrize as
+          <md>
+            <mrow>\boldr(x,y) \amp =(x,y,0)</mrow>
+            <mrow> \mathcal{R}_1\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x </mrow>
+          </md>.
+          A simple computation shows <m>\abs{\boldr_x\times \boldr_y}=1</m>. Thus
+          <md>
+            <mrow>\iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx
+            </mrow>
+            <mrow> \amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx </mrow>
+            <mrow>  \amp =-\frac{1}{2}\int_1^0 (1-u)u^2\, du \amp (u=1-x, du=-dx)</mrow>
+            <mrow>  \amp =\frac{1}{2}(1/3-1/4)=\frac{1}{24}</mrow>.
+          </md>
 
+        </p>
+      </li>
+      <li>
+        <title>Integral over <m>T_4</m></title>
+        <p>
+          Let <m>T_4</m> be triangle with vertices <m>(1,0,0), (1,0,0),(0,1,0)</m>. This is the region of the plane <m>z=x+y</m> lying over the planar triangle with vertices <m>(0,0,0), (1,0,0), (0,1,0)</m>. Since <m>z</m> is expressed as a function of <m>x,y</m> we parametrize easily as
+          <md>
+            <mrow>\bolds(x,y) \amp =(x,y,x+y)</mrow>
+            <mrow> \mathcal{R}_{2}\colon  0 \amp\leq x\leq 1, 0\leq y\leq 1-x </mrow>
+          </md>.
+          Again, a straightforward computation shows <m>\abs{\bolds_x\times \bolds_y}=\sqrt{3}</m>, and thus
+          <md>
+            <mrow>\iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp </mrow>
+            <mrow> \amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx </mrow>
+            <mrow>  \amp =\frac{\sqrt{3}}{24}</mrow>
+          </md>,
+          where we use our work from above for the last equality.
+        </p>
+      </li>
+    </ul>
+    In conclusion we have
+    <me>
+      \iint\limits_{\mathcal{T}}=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma =\frac{\sqrt{3}+1}{24}
+    </me>.
+  </solution>
+</example>
+<!-- <project>
+  <title>Scalar surface integrals</title>
+  <p>
+    As with line integrals (<xref ref="sage_line_integrals_scalar"/>) we can use Sage to assemble all the many ingredients necessary to compute a surface integral. The cell below takes a parametrization <c>r(u,v)</c> of a surface <m>\mathcal{S}</m>, a parameter domain <c>R</c>, and function <c>f(x,y,z)</c>, and computes the surface integral over <m>\mathcal{S}</m>.
+  </p>
+  <sage>
+  <input>
 
+  </input>
+  <output>
+
+  </output>
+  </sage>
+
+</project> -->
   </subsection>
 </section>
