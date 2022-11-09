@@ -220,4 +220,33 @@
 
 </project> -->
   </subsection>
+  <subsection xml:id="ss_vector_surface_integral">
+    <title>Surface integrals of vector fields</title>
+    <definition xml:id="d_orientation">
+      <title>Surface orientation</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{S}\subseteq\R^3</m> be a smoothly parametrized surface. Informally, an <term>orientation</term> of <m>\mathcal{S}</m> is a continuous choice of normal vectors to points on the surface. More precisely, an orientation is a continuous function
+          <md>
+            <mrow>\boldn \colon \mathcal{S}\amp\rightarrow \R^3 </mrow>
+            <mrow> (x,y,z)\amp\mapsto \boldn(x,y,z) </mrow>
+          </md>,
+          where for each <m>P=(x,y,z)\in \mathcal{S}</m>, <m>\boldn(P)</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>. The surface <m>\mathcal{S}</m> is <term>orientable</term> if an orientation <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> exists for <m>\mathcal{S}</m>. If no orientation function exists, the surface is <term>nonorientable</term>. 
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <title>Orientations of the sphere</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{S}</m> be the unit sphere <m>x^2+y^2+z^2=1</m>. We have seen previously that for a point <m>P=(x,y,z)</m> on <m>\mathcal{S}</m> the vector <m>\overrightarrow{OP}=\angvec{x,y,z}</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>. Since the function <m>\boldn_1(x,y,z)=\angvec{x,y,z}</m> is clearly continuous, it defines an orientation on <m>\mathcal{S}</m>, called an <term>outward</term> orientation. The function <m>\boldn_2(x,y,z)=-\angvec{x,y,z}</m> also defines an orientation on the sphere, called the <term>inward</term> orientation.
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+  </subsection>
 </section>
