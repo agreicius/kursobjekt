@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Surface integrals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 230-2">
+<meta property="book:author" content="Aaron Greicius">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 230-2:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<ol id="searchresults"></ol>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_surfaces_area.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_surfaces_area.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li></ul>
+</li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic" class="internal">Logic</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_multiple_integrals.html" data-scroll="c_multiple_integrals" class="internal"><span class="codenumber">1</span> <span class="title">Multiple integrals</span></a><ul>
+<li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
+<li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
+<li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals over general regions</a></li>
+<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Area of planar regions and average value</a></li>
+<li><a href="s_triple_integrals.html" data-scroll="s_triple_integrals" class="internal">Triple integrals</a></li>
+<li><a href="s_substitution_linear.html" data-scroll="s_substitution_linear" class="internal">Substitution: general</a></li>
+<li><a href="s_substitution_polar_cylindrical.html" data-scroll="s_substitution_polar_cylindrical" class="internal">Substitution: polar and cylindrical coordinates</a></li>
+<li><a href="s_substitution_spherical.html" data-scroll="s_substitution_spherical" class="internal">Substitution: spherical coordinates</a></li>
+<li><a href="s_multiple_integrals_applications.html" data-scroll="s_multiple_integrals_applications" class="internal">Applications of multiple integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_integrals_vectorfields.html" data-scroll="c_integrals_vectorfields" class="internal"><span class="codenumber">2</span> <span class="title">Integrals and Vector Fields</span></a><ul>
+<li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
+<li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
+<li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
+<li><a href="s_surfaces_integrals.html" data-scroll="s_surfaces_integrals" class="active">Surface integrals</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-sage.html" data-scroll="appendix-sage" class="internal"><span class="codenumber">E</span> <span class="title">Sage examples</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_surfaces_integrals"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Surface integrals</span>
+</h2>
+<section class="subsection" id="ss_scalar_surface_integrals"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Surface integrals of scalar functions</span>
+</h3>
+<article class="definition definition-like" id="d_scalar_surface_integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral of scalar function.</span>
+</h4>
+<p id="p-451">Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> be a smooth parametrization of the surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(f\)</span> be a continuous function defined on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{S}f(x,y,z)\, d\sigma=\iint\limits_{\mathcal{R}}f(\boldr(u,v))\abs{\boldr_u\times \boldr_v}\, dA\text{.}
+\end{equation*}
+</div></article><article class="remark remark-like" id="rm_scalar_integrals"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Taxonomy of scalar integrals.</span>
+</h4>
+<p id="p-452">It might be useful to list (and organize) all the different forms of scalar integrals we have met thus far.</p>
+<figure class="figure figure-like" id="figure-10"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{c|c|c}
+\text{Region} \amp \text{Type}\amp \text{Notation}\\
+\hline
+\text{interval } [a,b] \amp \text{integral} \amp \int_a^b f(x)\, dx\\
+\text{planar region } \mathcal{R}\subseteq\R^2 \amp \text{double integral} \amp \iint\limits_\mathcal{R} f(x,y)\, dA\\
+\text{solid region } \mathcal{R}\subseteq\R^3 \amp \text{triple integral} \amp \iiint\limits_\mathcal{R}f(x,y,z)\, dV\\
+\text{parametrized curve } \mathcal{C}\subseteq\R^n \amp \text{line integral} \amp \int\limits_\mathcal{C}f\, ds \\
+\text{parametrized surface } \mathcal{S}\subseteq\R^3 \amp \text{surface integral} \amp \iint\limits_\mathcal{S}f(x,y,z)\, d\sigma
+\end{array}
+\end{equation*}
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.3<span class="period">.</span></span><span class="space"> </span>Taxonomy of scalar integrals</figcaption></figure></article><article class="remark remark-like" id="rm_surface_integral_ind"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of parametrization.</span>
+</h4>
+<p id="p-453">As with scalar line integrals, it is possible to show that our definition of the surface integral of <span class="process-math">\(f\)</span> over a smoothly parametrized surface <span class="process-math">\(\mathcal{S}\)</span> is independent of the parametrization chosen. (Recall that by definition a surface parametrization is one-to-one on the interior of the parameter domain.)</p></article><article class="convention remark-like" id="interp_surface_integral_interp"><h4 class="heading">
+<span class="type">Interpretation</span><span class="space"> </span><span class="codenumber">2.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral interpretation.</span>
+</h4>
+<p id="p-454">As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_surface_integral_approx.html ./knowl/eq_surface_integral_approx.html" id="eq_surface_integral_approx">
+\begin{equation}
+\iint\limits_\mathcal{S}f\, d\sigma\approx \sum_{k=1}^{n}f(\boldr(u_k,v_k))\underset{\operatorname{approx. area of} \Delta\sigma_k}{\underbrace{\abs{\boldr_u\times \boldr_v}\Delta u\Delta v}}\text{.}\tag{2.6.1}
+\end{equation}
+</div>
+<p class="continuation">Understanding <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\)</span> as an approximation of the area of one of the subpatches of <span class="process-math">\(\mathcal{S}\text{,}\)</span> the interpretation then depends on what the function <span class="process-math">\(f\)</span> is. Here are two typical examples.</p>
+<ol class="decimal">
+<li id="li-135">
+<span class="heading"><span class="title">Geometric: surface area.</span></span><p id="p-455">If <span class="process-math">\(f=1\)</span> (the constant function), then the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> simply adds up <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\text{,}\)</span> yielding an approximation of the area of <span class="process-math">\(S\text{.}\)</span> The integral of <span class="process-math">\(f=1\)</span> computes this area exactly.</p>
+</li>
+<li id="li-136">
+<span class="heading"><span class="title">Physical: density function.</span></span><p id="p-456">Assume <span class="process-math">\(f(x,y,z)\geq 0\)</span> gives us the density of quantity <span class="process-math">\(Q\)</span> per unit area at position <span class="process-math">\((x,y,z)\text{.}\)</span> In this case the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> can be understood as an approximation of the total quantity <span class="process-math">\(Q\)</span> over <span class="process-math">\(\mathcal{S}\text{,}\)</span> and thus the integral computes this total quantity exactly.</p>
+</li>
+</ol></article><article class="example example-like" id="example-56"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
+</h4>
+<p id="p-457">Let <span class="process-math">\(\mathcal{S}\)</span> be the surface obtained by rotating the curve</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{C}\colon x=\cos z, y=0, -\pi/2\leq z\leq \pi/2
+\end{equation*}
+</div>
+<p class="continuation">around the <span class="process-math">\(z\)</span>-axis. Assume the mass density at a point <span class="process-math">\((x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> is given by <span class="process-math">\(f(x,y,z)=\sqrt{1-x^2-y^2}\text{.}\)</span> Compute the total mass of <span class="process-math">\(\mathcal{S}\)</span> assuming the variables <span class="process-math">\(x,y,z\)</span> are measured in cm, and <span class="process-math">\(f(x,y,z)\)</span> is measured in g per cm<span class="process-math">\(^2\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><ol id="p-458" class="decimal">
+<li id="li-137">
+<p id="p-459">First we parametrize <span class="process-math">\(\mathcal{S}\text{.}\)</span> Observe that intersecting <span class="process-math">\(\mathcal{S}\)</span> with the plane <span class="process-math">\(z=z_0\)</span>  yields a circle centered at <span class="process-math">\((0,0,z_0)\)</span> of radius <span class="process-math">\(R=\cos z_0 \text{,}\)</span> which we can parametrize as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(R\cos\theta, R\sin\theta, z_0)=(\cos z_0\cos\theta, \cos z_0\sin\theta, z_0)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Letting <span class="process-math">\(z\)</span> vary between <span class="process-math">\(-\pi/2\)</span> and <span class="process-math">\(\pi/2\text{,}\)</span> we get the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-89">
+\begin{align*}
+\boldr(\theta, z) \amp = (\cos z\cos\theta, \cos z\sin\theta, z) \\
+\mathcal{R} \colon 0\amp \leq \theta\leq 2\pi, -\pi/2\leq z\leq \pi/2 \text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-138">
+<p id="p-460">Assemble the necessary ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-90">
+\begin{align*}
+\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
+\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
+\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
+\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
+\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
+\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
+\amp =\cos z\sqrt{1+\sin^2z} \text{,}
+\end{align*}
+</div>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\cos z\geq 0\)</span> for <span class="process-math">\(z\in [-\pi/2, \pi/2]\text{.}\)</span></p>
+</li>
+<li id="li-139">
+<p id="p-461">According to <a href="" class="xref" data-knowl="./knowl/interp_surface_integral_interp.html" title="Interpretation 2.6.5: Surface integral interpretation">Interpretation 2.6.5</a>, integrating a mass density function over <span class="process-math">\(\mathcal{S}\)</span> gives us the total mass of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/interp_surface_integral_interp.html" id="md-91">
+\begin{align*}
+\operatorname{mass}\mathcal{S} \amp = \iint\limits_{\mathcal{S}}f(x,y,z)\, d\sigma \\
+\amp=\iint\limits_{\mathcal{R}}f(\boldr(\theta, z))\, \abs{\boldr_\theta\times \boldr_z}\, dA \\
+\amp = \int_0^{2\pi}\int_{-\pi/2}^{\pi/2}\cos z\sqrt{1-\cos^2 z\cos^2\theta-\cos^2z\sin^2\theta}\sqrt{1+\sin^2z}\, dz\, d\theta\\
+\amp =2\pi\int_{-\pi/2}^{\pi/2}\cos z\sqrt{\sin^2z(1+\sin^2z)}\, dz\\
+\amp = 2\pi \int_{-\pi/2}^{\pi/2}\abs{\sin z}\cos z\sqrt{1+\sin^2z}\, dz\\
+\amp =4\pi\int_0^{\pi/2}\sin z\cos z\sqrt{1+\sin^2 z}\, dz
+, \hspace{5pt} \ (\abs{\sin z} \text{ even})\\
+\amp =4\pi\left( \frac{1}{3}(1+\sin^2 z)^{3/2}\right)\Bigr\vert_0^{\pi/2}\\
+\amp =\frac{4\pi}{3}(2^{3/2}-1) \text{.}
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

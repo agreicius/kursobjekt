@@ -63,7 +63,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
                        linked: true,
                        languages: ['sage'],
                        evalButtonText: 'Evaluate (Sage)'});
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
@@ -176,15 +177,23 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 230-2:</span> <span class="subtitle">Kursobjekt</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<ol id="searchresults"></ol>
+</div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_Greens_theorem.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_Greens_theorem.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_surfaces_integrals.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_Greens_theorem.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_Greens_theorem.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_surfaces_integrals.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -218,6 +227,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
 <li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
 <li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="active">Surfaces and their area</a></li>
+<li><a href="s_surfaces_integrals.html" data-scroll="s_surfaces_integrals" class="internal">Surface integrals</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -395,10 +405,29 @@ show(S+point3d(P,size=10, opacity=1)+arrow(P,P+w1)+arrow(P,P+w2)+gridu+gridv+arr
 </h4>
 <p id="p-432">Let <span class="process-math">\(\mathcal{S}_1\)</span> be the half-cone <span class="process-math">\(y=\sqrt{x^2+z^2}\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}_2\)</span> be the full cone <span class="process-math">\(y^2=x^2+z^2\text{.}\)</span> Find parametrizations of <span class="process-math">\(\mathcal{S}_1\)</span> and <span class="process-math">\(\mathcal{S}_2\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><p id="p-433">Following <a href="" class="xref" data-knowl="./knowl/eg_function_parametrization.html" title="Example 2.5.7: Parametrizing graphs of functions">Example 2.5.7</a>, we easily see that <span class="process-math">\(\mathcal{S}_1\)</span> is parametrized by <span class="process-math">\(\boldr(u,v)=(u,\sqrt{u^2+v^2})\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like">
+<p id="p-433">Following <a href="" class="xref" data-knowl="./knowl/eg_function_parametrization.html" title="Example 2.5.7: Parametrizing graphs of functions">Example 2.5.7</a>, we easily see that <span class="process-math">\(\mathcal{S}_1\)</span> is parametrized by <span class="process-math">\(\boldr(u,v)=(u,\sqrt{u^2+v^2})\)</span></p>
+<p id="p-434">If we wanted to settle for a piecewise parametrization of <span class="process-math">\(\mathcal{S}_2\)</span> we could proceed exactly as above, parametrizing the right half of <span class="process-math">\(\mathcal{S}_2\)</span> as <span class="process-math">\(\boldr_1(u,v)=(u,\sqrt{u^2+v^2})\)</span> and the left half as <span class="process-math">\(\boldr_2(u,v)=(u,v,-(u^2+v^2))\text{.}\)</span> Instead, we use a variant of spherical coordinates. For <span class="process-math">\(P=(x,y,z)\in \R^3\text{,}\)</span> let <span class="process-math">\(\rho=\abs{(x,y,z)}\text{,}\)</span> let <span class="process-math">\(\phi\)</span> be the angle between <span class="process-math">\(\overrightarrow{OP}\)</span> and the positive <span class="process-math">\(y\)</span>-axis (as opposed to the <span class="process-math">\(z\)</span>-axis), and let <span class="process-math">\(\theta\)</span> be the angle between the positive <span class="process-math">\(z\)</span>-axis and the projection of <span class="process-math">\(\overrightarrow{OP}\)</span> onto the <span class="process-math">\(xz\)</span>-plane. With this setup we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-79">
+\begin{align*}
+x \amp=\rho\sin\phi\sin\theta \\
+y \amp=\rho\cos\phi \\
+z \amp=\rho\sin\phi\cos\theta \\
+r^2 \amp=z^2+x^2=\rho^2\sin^2\phi \text{.}
+\end{align*}
+</div>
+<p class="continuation">(Essentially this is just the usual spherical coordinates along with the “cyclical” renaming of the axes <span class="process-math">\(y\rightarrow z, z\rightarrow x, x\rightarrow y\text{.}\)</span>) With respect to these coordinates, the half-cone <span class="process-math">\(\mathcal{S}_1\)</span> can be described implicitly as <span class="process-math">\(\phi=\pi/4\text{,}\)</span> <span class="process-math">\(0\leq \rho\text{.}\)</span> To get the full cone <span class="process-math">\(\mathcal{S}_2\)</span> we simply remove the restriction that <span class="process-math">\(\rho\)</span> be nonnegative. This gives rise to the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-80">
+\begin{align*}
+\boldr(\rho,\theta)\amp=(\rho\sin(\pi/4)\sin\theta, \rho\cos(\pi/4), \rho\sin(\pi/4)\cos\theta) \\
+\amp=\frac{\sqrt{2}}{2}(\rho\cos\theta, \rho, \rho\sin\theta) \\
+\mathcal{R}\amp\colon 0\leq \phi\leq \pi, -\infty &lt; \rho &lt; \infty \text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article><article class="project project-like" id="sage_surface_parametrizations"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_surface_parametrizations"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Surface parametrizations.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_surface_parametrizations"><article class="project project-like"><p id="p-434">The Sage cells below use <code class="code-inline tex2jax_ignore">paramatric_plot3d()</code> to graph some of the surfaces from the examples above, along with the level curves coming from the usual rectangular grid in the parameter domain.</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_surface_parametrizations"><article class="project project-like"><p id="p-435">The Sage cells below use <code class="code-inline tex2jax_ignore">paramatric_plot3d()</code> to graph some of the surfaces from the examples above, along with the level curves coming from the usual rectangular grid in the parameter domain.</p>
 <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-20"><script type="text/x-sage">    (phi,theta,s,t)=var('phi theta s t')
 R=4
 r(phi,theta)=vector([R*sin(phi)*cos(theta),R*sin(phi)*sin(theta),R*cos(phi)])
@@ -420,7 +449,7 @@ S+grid1+grid2
 <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-22"><script type="text/x-sage">(x,y,s,t)=var('x y s t')
 a=-4
 b=4
-r(x,y)=vector([x,y,sqrt(x^2+y^2)])
+r(x,y)=vector([x,sqrt(x^2+y^2),y])
 S=parametric_plot3d(r(x,y),(x,a,b),(y,a,b), color='red', opacity=.1)
 grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,a,b),color='red') for c in range(11))
 grid2=sum(parametric_plot3d(r(t,a+(b-a)*c/10),(t,a,b),color='blue') for c in range(11))
@@ -430,7 +459,7 @@ S+grid1+grid2
 phi=pi/4
 a=-4
 b=4
-r(rho,theta)=vector([rho*sin(phi)*cos(theta),rho*sin(phi)*sin(theta),rho*cos(phi)])
+r(rho,theta)=vector([rho*sin(phi)*sin(theta),rho*cos(phi),rho*sin(phi)*cos(theta)])
 S=parametric_plot3d(r(s,t),(s,a,b),(t,0,2*pi), color='red', opacity=.1)
 grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,0,2*pi),color='red') for c in range(11)) #phi-level curves
 grid2=sum(parametric_plot3d(r(t,c*pi/8),(t,a,b),color='blue') for c in range(16)) #theta-level curves
@@ -441,8 +470,8 @@ S+grid1+grid2
 <article class="definition definition-like" id="d_tangent_vectors"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Parametrization tangent vectors.</span>
 </h4>
-<p id="p-435">Given a surface parametrization <span class="process-math">\(\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))\text{,}\)</span> its <dfn class="terminology"><span class="process-math">\(\boldu\)</span>- and <span class="process-math">\(\boldv\)</span>-tangent vectors</dfn> are the functions <span class="process-math">\(\boldr_u, \boldr_v\)</span> defined as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-79">
+<p id="p-436">Given a surface parametrization <span class="process-math">\(\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))\text{,}\)</span> its <dfn class="terminology"><span class="process-math">\(\boldu\)</span>- and <span class="process-math">\(\boldv\)</span>-tangent vectors</dfn> are the functions <span class="process-math">\(\boldr_u, \boldr_v\)</span> defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-81">
 \begin{align*}
 \boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}\\
 \boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}\text{.}
@@ -450,19 +479,40 @@ S+grid1+grid2
 </div></article><article class="definition definition-like" id="d_smooth_surface_parametrization"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Smooth surface parametrization.</span>
 </h4>
-<p id="p-436">A surface parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> is smooth if on the interior of <span class="process-math">\(\mathcal{R}\)</span> (i) the tangent vector functions <span class="process-math">\(\boldr_u\)</span> and <span class="process-math">\(\boldr_v\)</span> are continuous and (ii) <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}\text{.}\)</span></p></article><article class="definition definition-like" id="d_tangent_plane"><h4 class="heading">
+<p id="p-437">A surface parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> is smooth if on the interior of <span class="process-math">\(\mathcal{R}\)</span> (i) the tangent vector functions <span class="process-math">\(\boldr_u\)</span> and <span class="process-math">\(\boldr_v\)</span> are continuous and (ii) <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}\text{.}\)</span></p></article><article class="definition definition-like" id="d_tangent_plane"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent plane to smooth surface.</span>
 </h4>
-<p id="p-437">Let <span class="process-math">\(\mathcal{S}\)</span> be a surface with smooth parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\text{,}\)</span> let <span class="process-math">\((u,v)\)</span> be a point of the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> and let <span class="process-math">\(P=\boldr(u,v)\)</span> be the corresponding point on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">tangent plane</dfn> to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\)</span> is the plane passing through <span class="process-math">\(P\)</span> with normal vector <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\text{.}\)</span></p></article><article class="example example-like" id="eg_tangent_plane"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.12</span><span class="period">.</span>
+<p id="p-438">Let <span class="process-math">\(\mathcal{S}\)</span> be a surface with smooth parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\text{,}\)</span> let <span class="process-math">\((u,v)\)</span> be a point of the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> and let <span class="process-math">\(P=\boldr(u,v)\)</span> be the corresponding point on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">tangent plane</dfn> to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\)</span> is the plane passing through <span class="process-math">\(P\)</span> with normal vector <span class="process-math">\(\boldr_u(u,v)\times \boldr_v(u,v)\text{.}\)</span></p></article><article class="example example-like" id="eg_tangent_plane"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent plane.</span>
 </h4>
-<p id="p-438">Let <span class="process-math">\(\mathcal{S}\)</span> be the surface with parametrization <span class="process-math">\(\boldr(u,v)=(u^2, v^2, uv)\text{.}\)</span> Find an equation of the tangent plane to <span class="process-math">\(\mathcal{S}\)</span> at the point <span class="process-math">\(P=(1,1,1)\text{.}\)</span></p>
+<p id="p-439">Let <span class="process-math">\(\mathcal{S}\)</span> be the surface with parametrization <span class="process-math">\(\boldr(u,v)=(u^2, v^2, uv)\text{.}\)</span> Find an equation of the tangent plane to <span class="process-math">\(\mathcal{S}\)</span> at the point <span class="process-math">\(P=(1,1,1)\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like"><p id="p-439"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-440">We compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-82">
+\begin{align*}
+\boldr_u \amp= \angvec{2u, 0, v}  \\
+\boldr_v\amp=\angvec{0,2v, u} \\
+\boldr_u\times\boldr_v \amp=\angvec{-2v^2, -2u^2, 4uv} \text{.}
+\end{align*}
+</div>
+<p class="continuation">At <span class="process-math">\(P=(1,1,1)=\boldr(1,1)\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldr_u\times\boldr_v(1,1)=\angvec{-2,-2,4}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This <span class="process-math">\(\angvec{-2,-2,4}\)</span> is <em class="emphasis">a</em> normal vector of the tangent plane. We can always scale this by any nonzero constant to get another, more convenient normal vector: e.g., <span class="process-math">\(\boldn=-\frac{1}{2}\angvec{-2,-2,4}=\angvec{1,1,-2}\text{.}\)</span> Lastly, the plane passing through <span class="process-math">\(P=(1,1,1)\)</span> with normal vector <span class="process-math">\(\boldn=\angvec{1,1,-2}\)</span> has defining equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x-1)+(y-1)-2(z-1)=0\text{.}
+\end{equation*}
+</div>
+</div></div>
 </div></article><article class="definition definition-like" id="d_surface_area"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Surface area.</span>
 </h4>
-<p id="p-440">Let <span class="process-math">\(\mathcal{S}\)</span> be a surface with smooth parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\text{,}\)</span> where <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> is a bounded set. The <dfn class="terminology">area</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
+<p id="p-441">Let <span class="process-math">\(\mathcal{S}\)</span> be a surface with smooth parametrization <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\text{,}\)</span> where <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> is a bounded set. The <dfn class="terminology">area</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \operatorname{area}=\iint\limits_\mathcal{R}\abs{\boldr_u\times \boldr_v}\, dA\text{.}
@@ -470,9 +520,85 @@ S+grid1+grid2
 </div></article><article class="example example-like" id="example-54"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.14</span><span class="period">.</span>
 </h4>
-<p id="p-441">Fix <span class="process-math">\(R&gt; 0\text{.}\)</span> Compute the area of the sphere <span class="process-math">\(\mathcal{S}\colon x^2+y^2+z^2=R^2\text{.}\)</span></p>
+<p id="p-442">Fix <span class="process-math">\(R&gt; 0\text{.}\)</span> Compute the area of the sphere <span class="process-math">\(\mathcal{S}\colon x^2+y^2+z^2=R^2\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><p id="p-442"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><ol id="p-443" class="decimal">
+<li id="li-129">
+<p id="p-444">First we parametrize <span class="process-math">\(\mathcal{S}\)</span> using</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_sphere_parametrization.html" id="md-83">
+\begin{align*}
+\boldr(\phi,\theta)\amp =(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi)\\
+\mathcal{R}\amp\colon 0\leq \phi\leq \pi, 0\leq \theta\leq 2\pi\text{,}
+\end{align*}
+</div>
+<p class="continuation">as in <a href="" class="xref" data-knowl="./knowl/eg_sphere_parametrization.html" title="Example 2.5.5: Sphere of radius R parametrization">Example 2.5.5</a>.</p>
+</li>
+<li id="li-130">
+<p id="p-445">Now assemble ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-84">
+\begin{align*}
+\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle \\
+\boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle\\
+\boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} \\
+\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}\\
+\amp=R^2\sin\phi\text{,}
+\end{align*}
+</div>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\sin\phi\geq 0\)</span> for <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta,\cos\phi}\)</span> parametrizes points on the unit sphere!</p>
+</li>
+<li id="li-131">
+<p id="p-446">Finally, we integrate</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-85">
+\begin{align*}
+\operatorname{area} \mathcal{S} \amp=\iint\limits_\mathcal{R}R^2\sin\phi\, dA \\
+\amp=\int_0^\pi\int_0^{2\pi}R^2\sin\phi\, d\theta\, d\phi \\
+\amp = 2\pi\, R^2(-\cos\phi)\Bigr\vert_0^{\pi}\\
+\amp = 4\pi R^2\text{.}
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="example example-like" id="example-55"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.15</span><span class="period">.</span>
+</h4>
+<p id="p-447">Find the surface area of the portion of the paraboloid <span class="process-math">\(\mathcal{S}\colon z=x^2+y^2\)</span> that lies below the plane <span class="process-math">\(z=4\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like">
+<ol class="decimal">
+<li id="li-132">
+<p id="p-448">First parametrize, using cylindrical coordinates:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-86">
+\begin{align*}
+\bolds(r, \theta) \amp = (r\cos\theta, r\sin\theta, r^2)\\
+\mathcal{R}\amp\colon 0\leq r\leq 2, 0\leq \theta\leq 2\pi \text{.}
+\end{align*}
+</div>
+<p class="continuation">Here the region <span class="process-math">\(\mathcal{R}\)</span> is a polar description of the projection of <span class="process-math">\(\mathcal{S}\)</span> on the <span class="process-math">\(xy\)</span>-plane, obtained by first observing that the intersection of the paraboloid with the plane <span class="process-math">\(z=4\)</span> is given by <span class="process-math">\(z=r^2=4\text{,}\)</span> or <span class="process-math">\(r=2\text{.}\)</span></p>
+</li>
+<li id="li-133">
+<p id="p-449">Now assemble ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-87">
+\begin{align*}
+\bolds_r \amp = \langle\cos\theta, \sin\theta, 2r\rangle)\\
+\bolds_\theta \amp= \angvec{-r\sin\theta, r\cos\theta, 0}\\
+\bolds_r\times \bolds_\theta \amp=\angvec{-2r^2\cos\theta, -2r^2\sin\theta, r} \\
+\abs{\bolds_r\times \bolds_\theta} \amp=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2}\\
+\amp = \sqrt{4r^4+r^2}=r\sqrt{4r^2+1}\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-134">
+<p id="p-450">Finally, we integrate</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-88">
+\begin{align*}
+\operatorname{area}\mathcal{S}  \amp= \iint\limits_\mathcal{R}r\sqrt{4r^2+1}\, dA \\
+\amp=\int_0^{2\pi}\int_0^2r\sqrt{4r^2+1}\, dr\, d\theta \\
+\amp =2\pi \left(\frac{1}{12}(4r^2+1)^{3/2}\right)\Bigr\vert_0^2\\
+\amp= \frac{\pi}{6}(17^{3/2}-1) \text{.}
+\end{align*}
+</div>
+</li>
+</ol> Note: we could have used the more straightforward parametrization <span class="process-math">\(\boldr(x,y)=(x,y,x^2+y^2)\text{,}\)</span> noticing that <span class="process-math">\(z=x^2+y^2\)</span> expresses <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> (see <a href="" class="xref" data-knowl="./knowl/eg_function_parametrization.html" title="Example 2.5.7: Parametrizing graphs of functions">Example 2.5.7</a>). Interestingly, the integral in (3) for this choice of parametrization is best computed using a polar coordinates change of variable.</div></div>
 </div></article></section></section></div></main>
 </div>
 </body>

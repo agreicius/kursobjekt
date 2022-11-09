@@ -43,7 +43,7 @@ S+grid1+grid2
 <pre class="ptx-sagecell sagecell-sage" id="sage-22"><script type="text/x-sage">(x,y,s,t)=var('x y s t')
 a=-4
 b=4
-r(x,y)=vector([x,y,sqrt(x^2+y^2)])
+r(x,y)=vector([x,sqrt(x^2+y^2),y])
 S=parametric_plot3d(r(x,y),(x,a,b),(y,a,b), color='red', opacity=.1)
 grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,a,b),color='red') for c in range(11))
 grid2=sum(parametric_plot3d(r(t,a+(b-a)*c/10),(t,a,b),color='blue') for c in range(11))
@@ -53,7 +53,7 @@ S+grid1+grid2
 phi=pi/4
 a=-4
 b=4
-r(rho,theta)=vector([rho*sin(phi)*cos(theta),rho*sin(phi)*sin(theta),rho*cos(phi)])
+r(rho,theta)=vector([rho*sin(phi)*sin(theta),rho*cos(phi),rho*sin(phi)*cos(theta)])
 S=parametric_plot3d(r(s,t),(s,a,b),(t,0,2*pi), color='red', opacity=.1)
 grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,0,2*pi),color='red') for c in range(11)) #phi-level curves
 grid2=sum(parametric_plot3d(r(t,c*pi/8),(t,a,b),color='blue') for c in range(16)) #theta-level curves
