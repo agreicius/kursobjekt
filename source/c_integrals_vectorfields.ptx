@@ -5,4 +5,5 @@
   <xi:include href="./s_pathind_conservative_potential.ptx"/>
   <xi:include href="./s_Greens_theorem.ptx"/>
   <xi:include href="./s_surfaces_area.ptx"/>
+  <xi:include href="./s_surface_integrals.ptx"/>
 </chapter>

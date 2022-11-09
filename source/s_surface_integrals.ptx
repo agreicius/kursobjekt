@@ -1,0 +1,141 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_surfaces_integrals">
+  <title>Surface integrals</title>
+  <subsection xml:id="ss_scalar_surface_integrals">
+    <title>Surface integrals of scalar functions</title>
+    <definition xml:id="d_scalar_surface_integral">
+      <idx><h>surface integral</h><h>scalar</h>
+    </idx>
+    <notation>
+      <usage><m>\iint\limits_\mathcal{S}f(x,y,z)\, d\sigma</m></usage>
+      <description>surface integral of scalar function</description>
+    </notation><title>Surface integral of scalar function</title>
+      <statement>
+        <p>
+          Let <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m> be a smooth parametrization of the surface <m>\mathcal{S}</m>, and let <m>f</m> be a continuous function defined on <m>\mathcal{S}</m>. The <term>surface integral</term> of <m>f</m> over <m>\mathcal{S}</m> is defined as
+          <me>
+            \iint\limits_\mathcal{S}f(x,y,z)\, d\sigma=\iint\limits_{\mathcal{R}}f(\boldr(u,v))\abs{\boldr_u\times \boldr_v}\, dA
+          </me>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_scalar_integrals">
+      <title>Taxonomy of scalar integrals</title>
+      <statement>
+        <p>
+        It might be useful to list (and organize) all the different forms of scalar integrals we have met thus far.
+        </p>
+        <figure>
+          <me>
+            \begin{array}{c|c|c}
+              \text{Region} \amp \text{Type}\amp \text{Notation}\\
+              \hline
+              \text{interval } [a,b] \amp \text{integral} \amp \int_a^b f(x)\, dx\\
+              \text{planar region } \mathcal{R}\subseteq\R^2 \amp \text{double integral} \amp \iint\limits_\mathcal{R} f(x,y)\, dA\\
+              \text{solid region } \mathcal{R}\subseteq\R^3 \amp \text{triple integral} \amp \iiint\limits_\mathcal{R}f(x,y,z)\, dV\\
+              \text{parametrized curve } \mathcal{C}\subseteq\R^n \amp \text{line integral} \amp \int\limits_\mathcal{C}f\, ds \\
+              \text{parametrized surface } \mathcal{S}\subseteq\R^3 \amp \text{surface integral} \amp \iint\limits_\mathcal{S}f(x,y,z)\, d\sigma
+            \end{array}
+          </me>
+          <caption>Taxonomy of scalar integrals</caption>
+        </figure>
+      </statement>
+    </remark>
+        <remark xml:id="rm_surface_integral_ind">
+      <title>Independence of parametrization</title>
+      <statement>
+        <p>
+          As with scalar line integrals, it is possible to show that our definition of the surface integral of <m>f</m> over a smoothly parametrized surface <m>\mathcal{S}</m> is independent of the parametrization chosen. (Recall that by definition a surface parametrization is one-to-one on the interior of the parameter domain.)
+        </p>
+      </statement>
+    </remark>
+        <convention xml:id="interp_surface_integral_interp">
+      <title>Surface integral interpretation</title>
+      <statement>
+        <p>
+          As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula
+          <men xml:id="eq_surface_integral_approx">
+            \iint\limits_\mathcal{S}f\, d\sigma\approx \sum_{k=1}^{n}f(\boldr(u_k,v_k))\underset{\operatorname{approx. area of} \Delta\sigma_k}{\underbrace{\abs{\boldr_u\times \boldr_v}\Delta u\Delta v}}
+          </men>.
+        Understanding <m>\abs{\boldr_u\times \boldr_v}\Delta u\Delta v</m> as an approximation of the area of one of the subpatches of <m>\mathcal{S}</m>, the interpretation then depends on what the function <m>f</m> is. Here are two typical examples.
+        <ol>
+          <li>
+            <title>Geometric: surface area</title>
+            <p>
+              If <m>f=1</m> (the constant function), then the right-hand side of <xref ref="eq_surface_integral_approx"/> simply adds up <m>\abs{\boldr_u\times \boldr_v}\Delta u\Delta v</m>, yielding an approximation of the area of <m>S</m>. The integral of <m>f=1</m> computes this area exactly.
+            </p>
+          </li>
+
+          <li>
+            <title>Physical: density function</title>
+            <p>
+              Assume <m>f(x,y,z)\geq 0</m> gives us the density of quantity <m>Q</m> per unit area at position <m>(x,y,z)</m>. In this case the right-hand side of <xref ref="eq_surface_integral_approx"/> can be understood as an approximation of the total quantity <m>Q</m> over <m>\mathcal{S}</m>, and thus the integral computes this total quantity exactly.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </statement>
+    </convention>
+
+    <example>
+      <statement>
+        <p>
+          Let <m>\mathcal{S}</m> be the surface obtained by rotating the curve  <me>
+          \mathcal{C}\colon x=\cos z, y=0, -\pi/2\leq z\leq \pi/2
+          </me>
+          around the <m>z</m>-axis. Assume the mass density at a point <m>(x,y,z)</m> on <m>\mathcal{S}</m> is given by <m>f(x,y,z)=\sqrt{1-x^2-y^2}</m>. Compute the total mass of <m>\mathcal{S}</m> assuming the variables <m>x,y,z</m> are measured in cm, and <m>f(x,y,z)</m> is measured in g per cm<m>^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                First we parametrize <m>\mathcal{S}</m>. Observe that intersecting <m>\mathcal{S}</m> with the plane <m>z=z_0</m>  yields a circle centered at <m>(0,0,z_0)</m> of radius <m>R=\cos z_0 </m>, which we can parametrize as
+                <me>(R\cos\theta, R\sin\theta, z_0)=(\cos z_0\cos\theta, \cos z_0\sin\theta, z_0)
+                </me>.
+                Letting <m>z</m> vary between <m>-\pi/2</m> and <m>\pi/2</m>, we get the parametrization
+                <md>
+                  <mrow>\boldr(\theta, z) \amp = (\cos z\cos\theta, \cos z\sin\theta, z) </mrow>
+                  <mrow> \mathcal{R} \colon 0\amp \leq \theta\leq 2\pi, -\pi/2\leq z\leq \pi/2 </mrow>
+                </md>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Assemble the necessary ingredients:
+                <md>
+                  <mrow> \boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}</mrow>
+                  <mrow> \boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} </mrow>
+                  <mrow> \boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} </mrow>
+                  <mrow>  \amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}</mrow>
+                  <mrow> \abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} </mrow>
+                  <mrow>  \amp =\abs{\cos z}\sqrt{1+\sin^2 z}</mrow>
+                  <mrow>  \amp =\cos z\sqrt{1+\sin^2z} </mrow>
+                </md>,
+                where the last equality follows since <m>\cos z\geq 0</m> for <m>z\in [-\pi/2, \pi/2]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                According to <xref ref="interp_surface_integral_interp"/>, integrating a mass density function over <m>\mathcal{S}</m> gives us the total mass of <m>\mathcal{S}</m>. Thus
+                <md>
+                  <mrow>\operatorname{mass}\mathcal{S} \amp = \iint\limits_{\mathcal{S}}f(x,y,z)\, d\sigma </mrow>
+                  <mrow> \amp=\iint\limits_{\mathcal{R}}f(\boldr(\theta, z))\, \abs{\boldr_\theta\times \boldr_z}\, dA </mrow>
+                  <mrow>  \amp = \int_0^{2\pi}\int_{-\pi/2}^{\pi/2}\cos z\sqrt{1-\cos^2 z\cos^2\theta-\cos^2z\sin^2\theta}\sqrt{1+\sin^2z}\, dz\, d\theta</mrow>
+                  <mrow>  \amp =2\pi\int_{-\pi/2}^{\pi/2}\cos z\sqrt{\sin^2z(1+\sin^2z)}\, dz</mrow>
+                  <mrow>  \amp = 2\pi \int_{-\pi/2}^{\pi/2}\abs{\sin z}\cos z\sqrt{1+\sin^2z}\, dz</mrow>
+                  <mrow>  \amp =4\pi\int_0^{\pi/2}\sin z\cos z\sqrt{1+\sin^2 z}\, dz
+                  , \hspace{5pt} \ (\abs{\sin z} \text{ even})</mrow>
+                  <mrow>  \amp =4\pi\left( \frac{1}{3}(1+\sin^2 z)^{3/2}\right)\Bigr\vert_0^{\pi/2}</mrow>
+                  <mrow> \amp =\frac{4\pi}{3}(2^{3/2}-1) </mrow>
+                </md>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+
+  </subsection>
+</section>
