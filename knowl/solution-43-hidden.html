@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We have <span class="process-math">\(\mathcal{T}=T_1\cup T_2\cup T_3\cup T_4\text{,}\)</span> where the <span class="process-math">\(T_k\)</span> are the four triangular faces of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{T}f\, d\sigma=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma+\iint\limits_{T_3}f\, d\sigma+\iint\limits_{T_4}f\, d\sigma\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Let <span class="process-math">\(T_1, T_2\)</span> be the triangular faces lying in the coordinate planes <span class="process-math">\(x=0\)</span> and <span class="process-math">\(y=0\text{,}\)</span> respectively. Since <span class="process-math">\(f(x,y,z)=0\)</span> for all points in these two surfaces, the corresponding surface integrals <span class="process-math">\(\iint_{T_k}f\, d\sigma\text{,}\)</span> <span class="process-math">\(k=1,2\text{,}\)</span> are equal to zero. Thus we need only compute the integrals of <span class="process-math">\(f\)</span> over <span class="process-math">\(T_3\)</span> and <span class="process-math">\(T_4\text{.}\)</span></p>
+<ul class="disc">
+<li>
+<span class="heading"><span class="title">Integral over <span class="process-math">\(T_3\)</span>.</span></span><p>Let <span class="process-math">\(T_3\)</span> be the face of the tetrahedron in the <span class="process-math">\(xy\)</span>-plane. We parametrize as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr(x,y) \amp =(x,y,0)\\
+\mathcal{R}_1\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
+\end{align*}
+</div>
+<p class="continuation">A simple computation shows <span class="process-math">\(\abs{\boldr_x\times \boldr_y}=1\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx\\
+\amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx \\
+\amp =-\frac{1}{2}\int_1^0 (1-u)u^2\, du \amp (u=1-x, du=-dx)\\
+\amp =\frac{1}{2}(1/3-1/4)=\frac{1}{24}
+\end{align*}
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Integral over <span class="process-math">\(T_4\)</span>.</span></span><p>Let <span class="process-math">\(T_4\)</span> be triangle with vertices <span class="process-math">\((1,0,0), (1,0,0),(0,1,0)\text{.}\)</span> This is the region of the plane <span class="process-math">\(z=x+y\)</span> lying over the planar triangle with vertices <span class="process-math">\((0,0,0), (1,0,0), (0,1,0)\text{.}\)</span> Since <span class="process-math">\(z\)</span> is expressed as a function of <span class="process-math">\(x,y\)</span> we parametrize easily as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\bolds(x,y) \amp =(x,y,x+y)\\
+\mathcal{R}_{2}\colon  0 \amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
+\end{align*}
+</div>
+<p class="continuation">Again, a straightforward computation shows <span class="process-math">\(\abs{\bolds_x\times \bolds_y}=\sqrt{3}\text{,}\)</span> and thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp \\
+\amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx \\
+\amp =\frac{\sqrt{3}}{24}\text{,}
+\end{align*}
+</div>
+<p class="continuation">where we use our work from above for the last equality.</p>
+</li>
+</ul> In conclusion we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_{\mathcal{T}}=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma =\frac{\sqrt{3}+1}{24}\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>
