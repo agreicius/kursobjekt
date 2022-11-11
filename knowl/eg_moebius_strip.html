@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.13</span><span class="period">.</span><span class="space"> </span><span class="title">Nonorientable surface: Möbius strip.</span>
+</h4>
+<p>Fix a constant <span class="process-math">\(R&gt;1/2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the Möbius strip with parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 15%; margin-right: 5%;"><iframe width="480" height="480" src="generated/sageplot/sageplot_moebius_strip.html"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.14<span class="period">.</span></span><span class="space"> </span>Möbius strip</figcaption></figure> Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+\end{equation*}
+</div>
+<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-24"><script type="text/x-sage">        (theta, t, R)=var('theta t R')
+r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+r_t=diff(r,t) # r_t(theta,t)
+r_theta=diff(r,theta) # r_theta(theta,t)
+g(theta,t)=r_t.cross_product(r_theta) #r_t x r_theta
+show(g(0,0))
+show(g(2*pi,0))
+</script></pre>
+<p>We can see what's going on by plotting some of the normal vectors given by <span class="process-math">\(\boldr_t\times \boldr_\theta\)</span> for points of the form <span class="process-math">\(P=\boldr(\theta, 0)\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 15%; margin-right: 5%;"><iframe width="480" height="480" src="generated/sageplot/sageplot_moebius_strip_normals.html"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.15<span class="period">.</span></span><span class="space"> </span>Möbius strip with normal vectors given by <span class="process-math">\(\frac{r_t\times r_\theta}{\abs{\boldr_t\times\boldr_\theta}}\)</span></figcaption></figure></article><span class="incontext"><a href="s_surfaces_integrals.html#eg_moebius_strip" class="internal">in-context</a></span>
+</body>
+</html>

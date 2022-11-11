@@ -57,7 +57,13 @@ window.MathJax = {
     )}
 },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -413,19 +419,147 @@ window.MathJax = {
 <article class="definition definition-like" id="d_orientation"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Surface orientation.</span>
 </h4>
-<p id="p-467">Let <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> be a smoothly parametrized surface. Informally, an <dfn class="terminology">orientation</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is a continuous choice of normal vectors to points on the surface. More precisely, an orientation is a continuous function</p>
+<p id="p-467">Let <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> be a smoothly parametrized surface. Informally, an <dfn class="terminology">orientation</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is a continuous choice of unit normal vectors to points on the surface. More precisely, an orientation is a continuous function</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-96">
 \begin{align*}
 \boldn \colon \mathcal{S}\amp\rightarrow \R^3 \\
 (x,y,z)\amp\mapsto \boldn(x,y,z) \text{,}
 \end{align*}
 </div>
-<p class="continuation">where for each <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{,}\)</span> <span class="process-math">\(\boldn(P)\)</span> is a normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{.}\)</span> The surface <span class="process-math">\(\mathcal{S}\)</span> is <dfn class="terminology">orientable</dfn> if an orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> exists for <span class="process-math">\(\mathcal{S}\text{.}\)</span> If no orientation function exists, the surface is <dfn class="terminology">nonorientable</dfn>.</p></article><article class="example example-like" id="example-58"><h4 class="heading">
+<p class="continuation">where for each <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{,}\)</span> <span class="process-math">\(\boldn(P)\)</span> is a unit normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{.}\)</span> The surface <span class="process-math">\(\mathcal{S}\)</span> is <dfn class="terminology">orientable</dfn> if an orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> exists for <span class="process-math">\(\mathcal{S}\text{.}\)</span> If no orientation function exists, the surface is <dfn class="terminology">nonorientable</dfn>.</p></article><article class="example example-like" id="eg_orientable_sphere"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Orientations of the sphere.</span>
 </h4>
-<p id="p-468">Let <span class="process-math">\(\mathcal{S}\)</span> be the unit sphere <span class="process-math">\(x^2+y^2+z^2=1\text{.}\)</span> We have seen previously that for a point <span class="process-math">\(P=(x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> the vector <span class="process-math">\(\overrightarrow{OP}=\angvec{x,y,z}\)</span> is a normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{.}\)</span> Since the function <span class="process-math">\(\boldn_1(x,y,z)=\angvec{x,y,z}\)</span> is clearly continuous, it defines an orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> called an <dfn class="terminology">outward</dfn> orientation. The function <span class="process-math">\(\boldn_2(x,y,z)=-\angvec{x,y,z}\)</span> also defines an orientation on the sphere, called the <dfn class="terminology">inward</dfn> orientation.</p>
+<p id="p-468">Let <span class="process-math">\(\mathcal{S}\)</span> be the unit sphere <span class="process-math">\(x^2+y^2+z^2=1\text{.}\)</span> We have seen previously that for a point <span class="process-math">\(P=(x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> the vector <span class="process-math">\(\overrightarrow{OP}=\angvec{x,y,z}\)</span> is a normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{;}\)</span> furthermore, since <span class="process-math">\(P\in \mathcal{S}\text{,}\)</span> its magnitude is <span class="process-math">\(\sqrt{x^2+y^2+z^2}=1\text{.}\)</span> Lastly, since the function <span class="process-math">\(\boldn_1(x,y,z)=\angvec{x,y,z}\)</span> is clearly continuous, it defines an orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> called the <dfn class="terminology">outward</dfn> orientation. The function <span class="process-math">\(\boldn_2(x,y,z)=-\angvec{x,y,z}\)</span> also defines an orientation on the sphere, called the <dfn class="terminology">inward</dfn> orientation.</p>
+<p id="p-469">More generally, if <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface that is the boundary of a bounded solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> then <span class="process-math">\(\mathcal{S}\)</span> has both an outward and inward orientation. In particular, all such surfaces are orientable. Another example of such a surface is the <dfn class="terminology">torus</dfn>, which is the boundary surface of a solid doughnut.</p></article><article class="example example-like" id="eg_orientable_graph"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Graph of function.</span>
+</h4>
+<p id="p-470">Suppose <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface defined as the graph of the function <span class="process-math">\(z=f(x,y)\)</span> for inputs <span class="process-math">\((x,y)\)</span> lying in the region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span>  As usual this gives rise to the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-97">
+\begin{align*}
+\boldr\colon \mathcal{R} \amp \rightarrow \R^3\\
+(x,y)  \amp\mapsto (x,y,f(x,y)) \text{.}
+\end{align*}
+</div>
+<p class="continuation">We have seen that in this case <span class="process-math">\(\boldr_x\times \boldr_y=\angvec{-f_x, -f_y, 1}\text{.}\)</span> It follows that the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}=\frac{\angvec{-f_x,-f_y,1}}{\sqrt{f_x^2+f_y^2+1}}
+\end{equation*}
+</div>
+<p class="continuation">is an orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldn(x,y,z)\)</span> is positive, this is called the <dfn class="terminology">upward</dfn> orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p></article><article class="remark remark-like" id="rm_orientable"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Orientations of orientable surfaces.</span>
+</h4>
+<p id="p-471">Assume <span class="process-math">\(\mathcal{S}\)</span> is a smooth orientable surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow\R^3\)</span> and parametrization <span class="process-math">\(\boldr(u,v)\text{.}\)</span> We have the following facts:</p>
+<ol class="decimal">
+<li id="li-142"><p id="p-472">There are exactly two orientations on <span class="process-math">\(\mathcal{S}\text{:}\)</span> namely, the given orientation <span class="process-math">\(P\mapsto \boldn(P)\)</span> and its opposite <span class="process-math">\(P\mapsto -\boldn(P)\text{.}\)</span></p></li>
+<li id="li-143">
+<p id="p-473">The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(u_0,v_0)\mapsto \frac{\boldr_u\times \boldr_v(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
+\end{equation*}
+</div>
+<p class="continuation">is one orientation on <span class="process-math">\(\mathcal{S}\text{;}\)</span> the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(u_0,v_0)\mapsto \frac{\boldr_v\times \boldr_u(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
+\end{equation*}
+</div>
+<p class="continuation">is the other.</p>
+</li>
+</ol></article><article class="example example-like" id="eg_moebius_strip"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.13</span><span class="period">.</span><span class="space"> </span><span class="title">Nonorientable surface: Möbius strip.</span>
+</h4>
+<p id="p-474">Fix a constant <span class="process-math">\(R&gt;1/2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the Möbius strip with parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}\text{.}\)</span> <figure class="figure figure-like" id="fig_moebius_strip"><div class="image-box" style="width: 80%; margin-left: 15%; margin-right: 5%;"><iframe width="480" height="480" src="generated/sageplot/sageplot_moebius_strip.html"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.14<span class="period">.</span></span><span class="space"> </span>Möbius strip</figcaption></figure> Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+\end{equation*}
+</div>
+<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-24"><script type="text/x-sage">        (theta, t, R)=var('theta t R')
+r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+r_t=diff(r,t) # r_t(theta,t)
+r_theta=diff(r,theta) # r_theta(theta,t)
+g(theta,t)=r_t.cross_product(r_theta) #r_t x r_theta
+show(g(0,0))
+show(g(2*pi,0))
+</script></pre>
+<p id="p-475">We can see what's going on by plotting some of the normal vectors given by <span class="process-math">\(\boldr_t\times \boldr_\theta\)</span> for points of the form <span class="process-math">\(P=\boldr(\theta, 0)\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_moebius_strip_normals"><div class="image-box" style="width: 80%; margin-left: 15%; margin-right: 5%;"><iframe width="480" height="480" src="generated/sageplot/sageplot_moebius_strip_normals.html"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.15<span class="period">.</span></span><span class="space"> </span>Möbius strip with normal vectors given by <span class="process-math">\(\frac{r_t\times r_\theta}{\abs{\boldr_t\times\boldr_\theta}}\)</span></figcaption></figure></article><article class="definition definition-like" id="d_surface_integral_vector"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.16</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral of vector field.</span>
+</h4>
+<p id="p-476">Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth orientable surface, and let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{.}\)</span> We define the <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(\boldF\)</span> over <span class="process-math">\(\mathcal{S}\)</span> with respect to the orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> as the scalar surface integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint_\mathcal{S}\boldF\cdot \boldn\, d\sigma\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This integral is also called the <dfn class="terminology">flux</dfn> of <span class="process-math">\(\boldF\)</span> across <span class="process-math">\(\mathcal{S}\)</span> with respect to the orientation <span class="process-math">\(\boldn\text{.}\)</span></p></article><article class="example example-like" id="example-61"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.17</span><span class="period">.</span><span class="space"> </span><span class="title">Flux across a sphere.</span>
+</h4>
+<p id="p-477">Let <span class="process-math">\(\mathcal{S}\)</span> be the sphere <span class="process-math">\(x^2+y^2+z^2=4\text{.}\)</span> Compute the flux of <span class="process-math">\(\boldF(x,y,z)=\angvec{z,y,x}\)</span> out of the sphere: i.e., with respect to the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like"><p id="p-469"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<p id="p-478">We use the usual parametrization of the sphere of radius 2:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-98">
+\begin{align*}
+\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta)\\
+\amp 
+\end{align*}
+</div>
+<p class="continuation">Given a point <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\)</span> the vector <span class="process-math">\(\angvec{x,y,z}\)</span> is an outward pointing normal vector of magnitude <span class="process-math">\(\sqrt{x^2+y^2+z^2}=2\text{.}\)</span> Thus the function <span class="process-math">\(\boldn(x,y,z)=\frac{1}{2}\angvec{x,y,z}\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> It follows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldF(x,y,z)\cdot \boldn(x,y,z)=\frac{1}{2}\angvec{z,y,x}\cdot \angvec{x,y,z}=\frac{1}{2}(2xz+y^2)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and thus that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-99">
+\begin{align*}
+\iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma\amp
+= \frac{1}{2}\iint\limits_\mathcal{S}2xz+y^2\, d\sigma \\
+\amp = \frac{1}{2}\iint\limits_{\mathcal{R}}(8\sin\phi\cos\phi\cos\theta+4\sin^2\phi\sin^2\theta)(4\sin\phi)\, dA\\
+\amp =8\int_0^{2\pi}\int_0^\pi2\sin^2\phi\cos\phi\cos\theta+\sin^3\phi\sin^2\theta\, d\phi\, d\theta\\\
+\amp =
+8\left(\cancelto{0}{\int_0^{2\pi}\cos\theta\, d\theta}\int_0^{\pi}\sin^2\phi\cos\phi\, d\phi+\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\right)\\
+\amp =8\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\\
+\amp =\frac{32\pi}{3}\text{.}
+\end{align*}
+</div>
+<p class="continuation">The last step above is done using the identity <span class="process-math">\(\sin^2\theta=\frac{1}{2}(1-\cos 2\theta)\)</span> and the fact that <span class="process-math">\(\sin^3\phi=\sin\phi(1-\cos^2\phi)=\sin\phi-\sin\phi\cos^2\phi\)</span> has antiderivative <span class="process-math">\(-\cos\phi+\frac{1}{3}\cos^3\phi\text{.}\)</span></p>
+</div></div>
+</div></article><article class="theorem theorem-like" id="th_surface_integral_vector"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.18</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral of vector field.</span>
+</h4>
+<p id="p-479">Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \mathcal{S}\)</span> be a smooth parametrization of the orientable surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> be the orientation determined by <span class="process-math">\(\frac{\boldr_u\times\boldr_v}{\abs{\boldr_u\times \boldr_v}}\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_surface_integral_vector">
+\begin{equation}
+\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=
+\iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_u\times \boldr_v)\, dA\text{.}\tag{2.6.2}
+\end{equation}
+</div>
+<p class="continuation">Furthermore letting <span class="process-math">\(-\boldn\)</span> be the opposite orientation of <span class="process-math">\(\boldn\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_surface_integral_opposite">
+\begin{equation}
+\iint\limits_\mathcal{S}\boldF\cdot (-\boldn)\, d\sigma=
+\iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_v\times \boldr_u)\, dA=
+-  \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma\text{.}\tag{2.6.3}
+\end{equation}
+</div></article><article class="example example-like" id="eg_surface_integral_vector_cone"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.19</span><span class="period">.</span><span class="space"> </span><span class="title">Flux across a cone.</span>
+</h4>
+<p id="p-480">Let <span class="process-math">\(\mathcal{S}\)</span> be the cone <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> and let <span class="process-math">\(\boldF(x,y,z)=\angvec{xy,0,-z}\text{.}\)</span> Compute the flux of <span class="process-math">\(\boldF\)</span> across <span class="process-math">\(\mathcal{S}\)</span> with respect to the outward (away from the <span class="process-math">\(z\)</span>-axis) orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like"><p id="p-481"></p></div></div>
 </div></article></section></section></div></main>
 </div>
 </body>
