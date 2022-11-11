@@ -18,14 +18,7 @@
 \boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)\text{,}
 \end{equation*}
 </div>
-<p class="continuation">where <span class="process-math">\(\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 15%; margin-right: 5%;"><iframe width="480" height="480" src="generated/sageplot/sageplot_moebius_strip.html"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.14<span class="period">.</span></span><span class="space"> </span>Möbius strip</figcaption></figure> Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
-\end{equation*}
-</div>
-<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<p class="continuation">where <span class="process-math">\(\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}\text{.}\)</span> The Sage cell below depicts <span class="process-math">\(\mathcal{S}\)</span> along with the labeled line segments we used in its original description.</p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-474" class="internal">in-context</a></span>
 </body>
 </html>

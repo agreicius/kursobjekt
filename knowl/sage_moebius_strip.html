@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h4 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Nonorientable surface: Möbius strip.</span>
+</h4>
+<p>Fix a constant <span class="process-math">\(R&gt;1/2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the Möbius strip with parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}\text{.}\)</span> The Sage cell below depicts <span class="process-math">\(\mathcal{S}\)</span> along with the labeled line segments we used in its original description.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-24"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+var('theta t s x y z')
+R=3
+c=-1/2
+d=1/2
+a=0
+b=2*pi
+r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels
+</script></pre>
+<p>Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+\end{equation*}
+</div>
+<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-25"><script type="text/x-sage">(theta, t, R)=var('theta t R')
+r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+r_t=diff(r,t) # r_t(theta,t)
+r_theta=diff(r,theta) # r_theta(theta,t)
+g(theta,t)=r_t.cross_product(r_theta) #r_t x r_theta
+show((g(theta,t)*g(theta,t)).simplify_full()) # |r_t x r_theta|^2
+show(g(0,0))
+show(g(2*pi,0))
+</script></pre>
+<p>We can see what's going on by plotting some of the normal vectors given by <span class="process-math">\(\boldr_t\times \boldr_\theta\)</span> for points of the form <span class="process-math">\(P=\boldr(\theta, 0)\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-26"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+var('theta t s x y z')
+R=3
+c=-1/2
+d=1/2
+a=0
+b=2*pi
+r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+r_t=diff(r,t) # r_t(theta,t)
+r_theta=diff(r,theta) # r_theta(theta,t)
+g(theta,t)=r_t.cross_product(r_theta).normalized() #r_t x r_theta normalized
+S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+Arrows=sum(arrow3d(r(x*2*pi/8,0),r(x*2*pi/8,0)+g(x*2*pi/8,0),color='green') for x in range(8))
+Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
+</script></pre></article><span class="incontext"><a href="s_surfaces_integrals.html#sage_moebius_strip" class="internal">in-context</a></span>
+</body>
+</html>
