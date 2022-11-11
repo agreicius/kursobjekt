@@ -226,27 +226,234 @@
       <title>Surface orientation</title>
       <statement>
         <p>
-          Let <m>\mathcal{S}\subseteq\R^3</m> be a smoothly parametrized surface. Informally, an <term>orientation</term> of <m>\mathcal{S}</m> is a continuous choice of normal vectors to points on the surface. More precisely, an orientation is a continuous function
+          Let <m>\mathcal{S}\subseteq\R^3</m> be a smoothly parametrized surface. Informally, an <term>orientation</term> of <m>\mathcal{S}</m> is a continuous choice of unit normal vectors to points on the surface. More precisely, an orientation is a continuous function
           <md>
             <mrow>\boldn \colon \mathcal{S}\amp\rightarrow \R^3 </mrow>
             <mrow> (x,y,z)\amp\mapsto \boldn(x,y,z) </mrow>
           </md>,
-          where for each <m>P=(x,y,z)\in \mathcal{S}</m>, <m>\boldn(P)</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>. The surface <m>\mathcal{S}</m> is <term>orientable</term> if an orientation <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> exists for <m>\mathcal{S}</m>. If no orientation function exists, the surface is <term>nonorientable</term>. 
+          where for each <m>P=(x,y,z)\in \mathcal{S}</m>, <m>\boldn(P)</m> is a unit normal vector to <m>\mathcal{S}</m> at <m>P</m>. The surface <m>\mathcal{S}</m> is <term>orientable</term> if an orientation <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> exists for <m>\mathcal{S}</m>. If no orientation function exists, the surface is <term>nonorientable</term>.
         </p>
       </statement>
     </definition>
-    <example>
+    <example xml:id="eg_orientable_sphere">
       <title>Orientations of the sphere</title>
       <statement>
         <p>
-          Let <m>\mathcal{S}</m> be the unit sphere <m>x^2+y^2+z^2=1</m>. We have seen previously that for a point <m>P=(x,y,z)</m> on <m>\mathcal{S}</m> the vector <m>\overrightarrow{OP}=\angvec{x,y,z}</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>. Since the function <m>\boldn_1(x,y,z)=\angvec{x,y,z}</m> is clearly continuous, it defines an orientation on <m>\mathcal{S}</m>, called an <term>outward</term> orientation. The function <m>\boldn_2(x,y,z)=-\angvec{x,y,z}</m> also defines an orientation on the sphere, called the <term>inward</term> orientation.
+          Let <m>\mathcal{S}</m> be the unit sphere <m>x^2+y^2+z^2=1</m>. We have seen previously that for a point <m>P=(x,y,z)</m> on <m>\mathcal{S}</m> the vector <m>\overrightarrow{OP}=\angvec{x,y,z}</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>; furthermore, since <m>P\in \mathcal{S}</m>, its magnitude is <m>\sqrt{x^2+y^2+z^2}=1</m>. Lastly, since the function <m>\boldn_1(x,y,z)=\angvec{x,y,z}</m> is clearly continuous, it defines an orientation on <m>\mathcal{S}</m>, called the <term>outward</term> orientation. The function <m>\boldn_2(x,y,z)=-\angvec{x,y,z}</m>
+          also defines an orientation on the sphere, called the <term>inward</term> orientation.
+        </p>
+        <p>
+          More generally, if <m>\mathcal{S}</m> is a smooth surface that is the boundary of a bounded solid region <m>D\subseteq\R^3</m>, then <m>\mathcal{S}</m> has both an outward and inward orientation. In particular, all such surfaces are orientable. Another example of such a surface is the <term>torus</term>, which is the boundary surface of a solid doughnut.
         </p>
       </statement>
-      <solution>
-        <p>
-
-        </p>
-      </solution>
     </example>
+    <example xml:id="eg_orientable_graph">
+      <title>Graph of function</title>
+      <statement>
+        <p>
+          Suppose <m>\mathcal{S}</m> is a smooth surface defined as the graph of the function <m>z=f(x,y)</m> for inputs <m>(x,y)</m> lying in the region <m>\mathcal{R}\subseteq\R^2</m>.  As usual this gives rise to the parametrization
+          <md>
+            <mrow>\boldr\colon \mathcal{R} \amp \rightarrow \R^3</mrow>
+            <mrow> (x,y)  \amp\mapsto (x,y,f(x,y)) </mrow>
+          </md>.
+          We have seen that in this case <m>\boldr_x\times \boldr_y=\angvec{-f_x, -f_y, 1}</m>. It follows that the function
+          <me>
+            \boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}=\frac{\angvec{-f_x,-f_y,1}}{\sqrt{f_x^2+f_y^2+1}}
+          </me>
+          is an orientation of <m>\mathcal{S}</m>. Since the <m>z</m>-component of <m>\boldn(x,y,z)</m> is positive, this is called the <term>upward</term> orientation of <m>\mathcal{S}</m>.
+        </p>
+      </statement>
+    </example>
+        <remark xml:id="rm_orientable">
+      <title>Orientations of orientable surfaces</title>
+      <statement>
+        <p>
+          Assume <m>\mathcal{S}</m> is a smooth orientable surface with orientation <m>\boldn\colon \mathcal{S}\rightarrow\R^3</m> and parametrization <m>\boldr(u,v)</m>. We have the following facts:
+          <ol>
+            <li>
+              <p>
+                There are exactly two orientations on <m>\mathcal{S}</m>: namely, the given orientation <m>P\mapsto \boldn(P)</m> and its opposite <m>P\mapsto -\boldn(P)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The function
+                <me>
+                  P=\boldr(u_0,v_0)\mapsto \frac{\boldr_u\times \boldr_v(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
+                </me>
+                is one orientation on <m>\mathcal{S}</m>; the function
+                <me>
+                  P=\boldr(u_0,v_0)\mapsto \frac{\boldr_v\times \boldr_u(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
+                </me>
+                is the other.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </remark>
+
+    <example xml:id="eg_moebius_strip">
+      <title>Nonorientable surface: Möbius strip</title>
+      <statement>
+        <p>
+          Fix a constant <m>R>1/2</m>, and let <m>\mathcal{S}</m> be the Möbius strip with parametrization
+          <me>
+            \boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)
+          </me>,
+          where <m>\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}</m>.
+          <figure xml:id="fig_moebius_strip">
+      <caption>Möbius strip</caption>
+      <image xml:id="sageplot_moebius_strip" width="80%" margins="15% 5%">
+          <sageplot variant="3d" aspect="1.0">
+      from sage.plot.plot3d.plot3d import axes
+      var('theta t s x y z')
+      R=3
+      c=-1/2
+      d=1/2
+      a=0
+      b=2*pi
+      r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+      S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+      Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+      Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+      Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+      Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+      grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+      grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+      S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels
+          </sageplot>
+      </image>
+    </figure>
+      Fact: <m>\mathcal{S}</m> is a nonorientable surface! If this is so, why doesn't the function
+          <me>
+            P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+          </me>
+          provide us with an orientation? The answer: this is a well-defined function on the <em>parameter domain</em> <m>[0,2\pi]\times[-1/2,1/2]</m>, but not on the actual <em>surface</em> <m>\mathcal{S}</m>! Indeed, the point <m>P=(R,0,0)</m> can be expressed as both <m>\boldr(0,0)</m> and <m>\boldr(2\pi, 0)</m>. As the Sage cell below illustrates the two normal vectors corresponding to <m>(0,0)</m> and <m>(2\pi,0)</m> are <m>\angvec{1,0,0}</m> and <m>\angvec{-1,0,0}</m>!
+        </p>
+        <sage>
+        <input>
+          (theta, t, R)=var('theta t R')
+  r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+  r_t=diff(r,t) # r_t(theta,t)
+  r_theta=diff(r,theta) # r_theta(theta,t)
+  g(theta,t)=r_t.cross_product(r_theta) #r_t x r_theta
+  show(g(0,0))
+  show(g(2*pi,0))
+        </input>
+        <output>
+
+        </output>
+        </sage>
+        <p>
+         We can see what's going on by plotting some of the normal vectors given by <m>\boldr_t\times \boldr_\theta</m> for points of the form <m>P=\boldr(\theta, 0)</m>.
+        </p>
+        <figure xml:id="fig_moebius_strip_normals">
+        <caption>Möbius strip with normal vectors given by <m>\frac{r_t\times r_\theta}{\abs{\boldr_t\times\boldr_\theta}}</m></caption>
+        <image xml:id="sageplot_moebius_strip_normals" width="80%" margins="15% 5%">
+        <sageplot variant="3d" aspect="1.0">
+from sage.plot.plot3d.plot3d import axes
+var('theta t s x y z')
+R=3
+c=-1/2
+d=1/2
+a=0
+b=2*pi
+r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+r_t=diff(r,t) # r_t(theta,t)
+r_theta=diff(r,theta) # r_theta(theta,t)
+g(theta,t)=r_t.cross_product(r_theta).normalized() #r_t x r_theta normalized
+S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+Arrows=sum(arrow3d(r(x*2*pi/8,0),r(x*2*pi/8,0)+g(x*2*pi/8,0),color='green') for x in range(8))
+Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
+</sageplot>
+</image>
+</figure>
+      </statement>
+    </example>
+<definition xml:id="d_surface_integral_vector">
+  <title>Surface integral of vector field</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be a smooth orientable surface, and let <m>\boldF</m> be a vector field that is continuous on <m>\mathcal{S}</m>. We define the <term>surface integral</term> of <m>\boldF</m> over <m>\mathcal{S}</m> with respect to the orientation <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m>
+      as the scalar surface integral
+      <me>
+        \iint_\mathcal{S}\boldF\cdot \boldn\, d\sigma
+      </me>.
+       This integral is also called the <term>flux</term> of <m>\boldF</m> across <m>\mathcal{S}</m> with respect to the orientation <m>\boldn</m>.
+    </p>
+  </statement>
+</definition>
+<example>
+  <title>Flux across a sphere</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be the sphere <m>x^2+y^2+z^2=4</m>. Compute the flux of <m>\boldF(x,y,z)=\angvec{z,y,x}</m> out of the sphere: <ie />, with respect to the outward orientation on <m>\mathcal{S}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We use the usual parametrization of the sphere of radius 2:
+      <md>
+        <mrow>\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta)</mrow>
+        <mrow> \amp </mrow>
+      </md>
+      Given a point <m>P=(x,y,z)\in \mathcal{S}</m> the vector <m>\angvec{x,y,z}</m> is an outward pointing normal vector of magnitude <m>\sqrt{x^2+y^2+z^2}=2</m>. Thus the function <m>\boldn(x,y,z)=\frac{1}{2}\angvec{x,y,z}</m> is the outward orientation on <m>\mathcal{S}</m>. It follows that
+      <me>
+        \boldF(x,y,z)\cdot \boldn(x,y,z)=\frac{1}{2}\angvec{z,y,x}\cdot \angvec{x,y,z}=\frac{1}{2}(2xz+y^2)
+      </me>,
+      and thus that
+      <md>
+        <mrow>  \iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma\amp
+        = \frac{1}{2}\iint\limits_\mathcal{S}2xz+y^2\, d\sigma </mrow>
+        <mrow>  \amp = \frac{1}{2}\iint\limits_{\mathcal{R}}(8\sin\phi\cos\phi\cos\theta+4\sin^2\phi\sin^2\theta)(4\sin\phi)\, dA</mrow>
+        <mrow>  \amp =8\int_0^{2\pi}\int_0^\pi2\sin^2\phi\cos\phi\cos\theta+\sin^3\phi\sin^2\theta\, d\phi\, d\theta\</mrow>
+        <mrow>  \amp =
+        8\left(\cancelto{0}{\int_0^{2\pi}\cos\theta\, d\theta}\int_0^{\pi}\sin^2\phi\cos\phi\, d\phi+\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\right)</mrow>
+        <mrow>  \amp =8\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi</mrow>
+        <mrow>  \amp =\frac{32\pi}{3}</mrow>
+      </md>.
+      The last step above is done using the identity <m>\sin^2\theta=\frac{1}{2}(1-\cos 2\theta)</m> and the fact that <m>\sin^3\phi=\sin\phi(1-\cos^2\phi)=\sin\phi-\sin\phi\cos^2\phi</m> has antiderivative <m>-\cos\phi+\frac{1}{3}\cos^3\phi</m>.
+    </p>
+  </solution>
+</example>
+<theorem xml:id="th_surface_integral_vector">
+  <title>Surface integral of vector field</title>
+  <statement>
+    <p>
+      Let <m>\boldr\colon \mathcal{R}\rightarrow \mathcal{S}</m> be a smooth parametrization of the orientable surface <m>\mathcal{S}</m>, let <m>\boldF</m> be a vector field that is continuous on <m>\mathcal{S}</m>, and let <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> be the orientation determined by <m>\frac{\boldr_u\times\boldr_v}{\abs{\boldr_u\times \boldr_v}}</m>.
+      We have
+      <men xml:id="eq_surface_integral_vector">
+        \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=
+        \iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_u\times \boldr_v)\, dA
+      </men>.
+      Furthermore letting <m>-\boldn</m> be the opposite orientation of <m>\boldn</m>, we have
+      <men xml:id="eq_surface_integral_opposite">
+      \iint\limits_\mathcal{S}\boldF\cdot (-\boldn)\, d\sigma=
+      \iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_v\times \boldr_u)\, dA=
+      -  \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma
+    </men>.
+    </p>
+  </statement>
+</theorem>
+<example xml:id="eg_surface_integral_vector_cone">
+  <title>Flux across a cone</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be the cone <m>z=\sqrt{x^2+y^2}</m> and let <m>\boldF(x,y,z)=\angvec{xy,0,-z}</m>. Compute the flux of <m>\boldF</m> across <m>\mathcal{S}</m> with respect to the outward (away from the <m>z</m>-axis) orientation of <m>\mathcal{S}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
   </subsection>
 </section>
