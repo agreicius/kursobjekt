@@ -136,10 +136,11 @@
       </solution>
     </example>
     <definition xml:id="d_surface_integral_piecewise">
+      <idx><h>piecewise smooth</h><h>surface</h></idx>
       <title>Surface integral for piecewise smooth surfaces</title>
       <statement>
         <p>
-          Assume <m>\mathcal{S}</m> is the union of smoothly parametrized surfaces <m>\mathcal{S}_1, \mathcal{S}_2,\dots \mathcal{S}_n</m> whose interiors do not intersect. If <m>f</m> is a continuous function defined on <m>\mathcal{S}</m>, we define the surface integral of <m>f</m> over <m>S</m> as
+          A <term>piecewise smooth surface</term> is the union of smoothly parametrized surfaces whose interiors are non-overlapping, and whose intersections form piecewise smooth curves. If <m>\mathcal{S}=\mathcal{S}_1\cup\mathcal{S}_2\cdots\cup\mathcal{S}_n</m> is piecewise smooth, and if <m>f</m> is continuous on <m>\mathcal{S}</m>, we define the surface integral of <m>f</m> over <m>S</m> as
           <me>
             \iint\limits_\mathcal{S}f\, d\sigma=\sum_{k=1}^n \iint\limits_{S_k}f\, d\sigma
           </me>.
@@ -147,6 +148,7 @@
       </statement>
     </definition>
 <example>
+  <title>Piecewise smooth surface</title>
   <statement>
     <p>
       Compute the surface integral of <m>f(x,y,z)=xy</m> over the tetrahedron <m>\mathcal{T}</m> with vertices <m>(0,0,0),(1,0,0),(0,1,0),(0,0,1)</m>.
@@ -239,11 +241,11 @@
       <title>Orientations of the sphere</title>
       <statement>
         <p>
-          Let <m>\mathcal{S}</m> be the unit sphere <m>x^2+y^2+z^2=1</m>. We have seen previously that for a point <m>P=(x,y,z)</m> on <m>\mathcal{S}</m> the vector <m>\overrightarrow{OP}=\angvec{x,y,z}</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>; furthermore, since <m>P\in \mathcal{S}</m>, its magnitude is <m>\sqrt{x^2+y^2+z^2}=1</m>. Lastly, since the function <m>\boldn_1(x,y,z)=\angvec{x,y,z}</m> is clearly continuous, it defines an orientation on <m>\mathcal{S}</m>, called the <term>outward</term> orientation. The function <m>\boldn_2(x,y,z)=-\angvec{x,y,z}</m>
+          Let <m>\mathcal{S}</m> be the unit sphere <m>x^2+y^2+z^2=1</m>. We have seen previously that for a point <m>P=(x,y,z)</m> on <m>\mathcal{S}</m> the vector <m>\overrightarrow{OP}=\angvec{x,y,z}</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>; furthermore, since <m>P\in \mathcal{S}</m>, its magnitude is <m>\sqrt{x^2+y^2+z^2}=1</m>. Thus the function <m>\boldn_1(x,y,z)=\angvec{x,y,z}</m> assigns a unit normal vector to each point <m>P=(x,y,z)\in \mathcal{S}</m>. Since <m>\boldn_1</m> is clearly continuous, it defines an orientation on <m>\mathcal{S}</m>, called the <term>outward</term> orientation. The function <m>\boldn_2(x,y,z)=-\angvec{x,y,z}</m>
           also defines an orientation on the sphere, called the <term>inward</term> orientation.
         </p>
         <p>
-          More generally, if <m>\mathcal{S}</m> is a smooth surface that is the boundary of a bounded solid region <m>D\subseteq\R^3</m>, then <m>\mathcal{S}</m> has both an outward and inward orientation. In particular, all such surfaces are orientable. Another example of such a surface is the <term>torus</term>, which is the boundary surface of a solid doughnut.
+          More generally, if <m>\mathcal{S}</m> is a smooth surface that is the boundary of a bounded solid region <m>D\subseteq\R^3</m>, then <m>\mathcal{S}</m> has both an outward and inward orientation. In particular, all such surfaces are orientable. The sphere discussed above is one such surface: it is the boundary of the solid ball <m>x^2+y^2+z^2\leq 1</m>. Another example is the <term>torus</term>: the boundary surface of a solid doughnut.
         </p>
       </statement>
     </example>
@@ -293,7 +295,7 @@
       </statement>
     </remark>
 
-    <example xml:id="eg_moebius_strip">
+    <project xml:id="sage_moebius_strip">
       <title>Nonorientable surface: Möbius strip</title>
       <statement>
         <p>
@@ -301,30 +303,33 @@
           <me>
             \boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)
           </me>,
-          where <m>\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}</m>.
-          <figure xml:id="fig_moebius_strip">
-      <caption>Möbius strip</caption>
-      <image xml:id="sageplot_moebius_strip" width="80%" margins="15% 5%">
-          <sageplot variant="3d" aspect="1.0">
-      from sage.plot.plot3d.plot3d import axes
-      var('theta t s x y z')
-      R=3
-      c=-1/2
-      d=1/2
-      a=0
-      b=2*pi
-      r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
-      S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
-      Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
-      Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
-      Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
-      Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
-      grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
-      grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
-      S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels
-          </sageplot>
-      </image>
-    </figure>
+          where <m>\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}</m>. The Sage cell below depicts <m>\mathcal{S}</m> along with the labeled line segments we used in its original description.
+        </p>
+      <sage>
+      <input>
+        from sage.plot.plot3d.plot3d import axes
+        var('theta t s x y z')
+        R=3
+        c=-1/2
+        d=1/2
+        a=0
+        b=2*pi
+        r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+        S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+        Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+        Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+        Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+        Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+        grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+        grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+        S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels
+      </input>
+      <output>
+
+      </output>
+      </sage>
+
+      <p>
       Fact: <m>\mathcal{S}</m> is a nonorientable surface! If this is so, why doesn't the function
           <me>
             P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
@@ -333,13 +338,15 @@
         </p>
         <sage>
         <input>
-          (theta, t, R)=var('theta t R')
-  r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
-  r_t=diff(r,t) # r_t(theta,t)
-  r_theta=diff(r,theta) # r_theta(theta,t)
-  g(theta,t)=r_t.cross_product(r_theta) #r_t x r_theta
-  show(g(0,0))
-  show(g(2*pi,0))
+      (theta, t, R)=var('theta t R')
+      r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+      r_t=diff(r,t) # r_t(theta,t)
+      r_theta=diff(r,theta) # r_theta(theta,t)
+      g(theta,t)=r_t.cross_product(r_theta) #r_t x r_theta
+      show((g(theta,t)*g(theta,t)).simplify_full()) # |r_t x r_theta|^2
+      show(g(0,0))
+      show(g(2*pi,0))
+
         </input>
         <output>
 
@@ -348,35 +355,36 @@
         <p>
          We can see what's going on by plotting some of the normal vectors given by <m>\boldr_t\times \boldr_\theta</m> for points of the form <m>P=\boldr(\theta, 0)</m>.
         </p>
-        <figure xml:id="fig_moebius_strip_normals">
-        <caption>Möbius strip with normal vectors given by <m>\frac{r_t\times r_\theta}{\abs{\boldr_t\times\boldr_\theta}}</m></caption>
-        <image xml:id="sageplot_moebius_strip_normals" width="80%" margins="15% 5%">
-        <sageplot variant="3d" aspect="1.0">
-from sage.plot.plot3d.plot3d import axes
-var('theta t s x y z')
-R=3
-c=-1/2
-d=1/2
-a=0
-b=2*pi
-r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
-r_t=diff(r,t) # r_t(theta,t)
-r_theta=diff(r,theta) # r_theta(theta,t)
-g(theta,t)=r_t.cross_product(r_theta).normalized() #r_t x r_theta normalized
-S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
-Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
-Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
-Arrows=sum(arrow3d(r(x*2*pi/8,0),r(x*2*pi/8,0)+g(x*2*pi/8,0),color='green') for x in range(8))
-Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
-Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
-grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
-grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
-S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
-</sageplot>
-</image>
-</figure>
+        <sage>
+        <input>
+          from sage.plot.plot3d.plot3d import axes
+          var('theta t s x y z')
+          R=3
+          c=-1/2
+          d=1/2
+          a=0
+          b=2*pi
+          r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+          r_t=diff(r,t) # r_t(theta,t)
+          r_theta=diff(r,theta) # r_theta(theta,t)
+          g(theta,t)=r_t.cross_product(r_theta).normalized() #r_t x r_theta normalized
+          S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+          Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+          Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+          Arrows=sum(arrow3d(r(x*2*pi/8,0),r(x*2*pi/8,0)+g(x*2*pi/8,0),color='green') for x in range(8))
+          Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+          Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+          grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+          grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+          S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
+        </input>
+        <output>
+
+        </output>
+        </sage>
+
       </statement>
-    </example>
+    </project>
 <definition xml:id="d_surface_integral_vector">
   <title>Surface integral of vector field</title>
   <statement>
