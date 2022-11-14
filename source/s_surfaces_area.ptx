@@ -186,7 +186,7 @@
 </example>
 
 <example xml:id="eq_function_parametrization">
-  <title>Cylinder parametrization</title>
+  <title>Graphs of functions</title>
   <statement>
     <p>
       Recall that given a function <m>z=f(x,y)</m> with domain <m>D</m> we define its graph to the be the surface
