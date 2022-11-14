@@ -1,0 +1,467 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_surfaces_integrals">
+  <title>Surface integrals</title>
+  <subsection xml:id="ss_scalar_surface_integrals">
+    <title>Surface integrals of scalar functions</title>
+    <definition xml:id="d_scalar_surface_integral">
+      <idx><h>surface integral</h><h>scalar</h>
+    </idx>
+    <notation>
+      <usage><m>\iint\limits_\mathcal{S}f(x,y,z)\, d\sigma</m></usage>
+      <description>surface integral of scalar function</description>
+    </notation><title>Surface integral of scalar function</title>
+      <statement>
+        <p>
+          Let <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m> be a smooth parametrization of the surface <m>\mathcal{S}</m>, and let <m>f</m> be a continuous function defined on <m>\mathcal{S}</m>. The <term>surface integral</term> of <m>f</m> over <m>\mathcal{S}</m> is defined as
+          <me>
+            \iint\limits_\mathcal{S}f(x,y,z)\, d\sigma=\iint\limits_{\mathcal{R}}f(\boldr(u,v))\abs{\boldr_u\times \boldr_v}\, dA
+          </me>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_scalar_integrals">
+      <title>Taxonomy of scalar integrals</title>
+      <statement>
+        <p>
+        It might be useful to list (and organize) all the different forms of scalar integrals we have met thus far.
+        </p>
+        <figure>
+          <me>
+            \begin{array}{c|c|c}
+              \text{Region} \amp \text{Type}\amp \text{Notation}\\
+              \hline
+              \text{interval } [a,b] \amp \text{integral} \amp \int_a^b f(x)\, dx\\
+              \text{planar region } \mathcal{R}\subseteq\R^2 \amp \text{double integral} \amp \iint\limits_\mathcal{R} f(x,y)\, dA\\
+              \text{solid region } \mathcal{R}\subseteq\R^3 \amp \text{triple integral} \amp \iiint\limits_\mathcal{R}f(x,y,z)\, dV\\
+              \text{parametrized curve } \mathcal{C}\subseteq\R^n \amp \text{line integral} \amp \int\limits_\mathcal{C}f\, ds \\
+              \text{parametrized surface } \mathcal{S}\subseteq\R^3 \amp \text{surface integral} \amp \iint\limits_\mathcal{S}f(x,y,z)\, d\sigma
+            \end{array}
+          </me>
+          <caption>Taxonomy of scalar integrals</caption>
+        </figure>
+      </statement>
+    </remark>
+        <remark xml:id="rm_surface_integral_ind">
+      <title>Independence of parametrization</title>
+      <statement>
+        <p>
+          As with scalar line integrals, it is possible to show that our definition of the surface integral of <m>f</m> over a smoothly parametrized surface <m>\mathcal{S}</m> is independent of the parametrization chosen. (Recall that by definition a surface parametrization is one-to-one on the interior of the parameter domain.)
+        </p>
+      </statement>
+    </remark>
+        <convention xml:id="interp_surface_integral_interp">
+      <title>Surface integral interpretation</title>
+      <statement>
+        <p>
+          As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula
+          <men xml:id="eq_surface_integral_approx">
+            \iint\limits_\mathcal{S}f\, d\sigma\approx \sum_{k=1}^{n}f(\boldr(u_k,v_k))\underset{\operatorname{approx. area of} \Delta\sigma_k}{\underbrace{\abs{\boldr_u\times \boldr_v}\Delta u\Delta v}}
+          </men>.
+        Understanding <m>\abs{\boldr_u\times \boldr_v}\Delta u\Delta v</m> as an approximation of the area of one of the subpatches of <m>\mathcal{S}</m>, the interpretation then depends on what the function <m>f</m> is. Here are two typical examples.
+        <ol>
+          <li>
+            <title>Geometric: surface area</title>
+            <p>
+              If <m>f=1</m> (the constant function), then the right-hand side of <xref ref="eq_surface_integral_approx"/> simply adds up <m>\abs{\boldr_u\times \boldr_v}\Delta u\Delta v</m>, yielding an approximation of the area of <m>S</m>. The integral of <m>f=1</m> computes this area exactly.
+            </p>
+          </li>
+
+          <li>
+            <title>Physical: density function</title>
+            <p>
+              Assume <m>f(x,y,z)\geq 0</m> gives us the density of quantity <m>Q</m> per unit area at position <m>(x,y,z)</m>. In this case the right-hand side of <xref ref="eq_surface_integral_approx"/> can be understood as an approximation of the total quantity <m>Q</m> over <m>\mathcal{S}</m>, and thus the integral computes this total quantity exactly.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </statement>
+    </convention>
+
+    <example>
+      <statement>
+        <p>
+          Let <m>\mathcal{S}</m> be the surface obtained by rotating the curve  <me>
+          \mathcal{C}\colon x=\cos z, y=0, -\pi/2\leq z\leq \pi/2
+          </me>
+          around the <m>z</m>-axis. Assume the mass density at a point <m>(x,y,z)</m> on <m>\mathcal{S}</m> is given by <m>f(x,y,z)=\sqrt{1-x^2-y^2}</m>. Compute the total mass of <m>\mathcal{S}</m> assuming the variables <m>x,y,z</m> are measured in cm, and <m>f(x,y,z)</m> is measured in g per cm<m>^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                First we parametrize <m>\mathcal{S}</m>. Observe that intersecting <m>\mathcal{S}</m> with the plane <m>z=z_0</m>  yields a circle centered at <m>(0,0,z_0)</m> of radius <m>R=\cos z_0 </m>, which we can parametrize as
+                <me>(R\cos\theta, R\sin\theta, z_0)=(\cos z_0\cos\theta, \cos z_0\sin\theta, z_0)
+                </me>.
+                Letting <m>z</m> vary between <m>-\pi/2</m> and <m>\pi/2</m>, we get the parametrization
+                <md>
+                  <mrow>\boldr(\theta, z) \amp = (\cos z\cos\theta, \cos z\sin\theta, z) </mrow>
+                  <mrow> \mathcal{R} \colon 0\amp \leq \theta\leq 2\pi, -\pi/2\leq z\leq \pi/2 </mrow>
+                </md>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Assemble the necessary ingredients:
+                <md>
+                  <mrow> \boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}</mrow>
+                  <mrow> \boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} </mrow>
+                  <mrow> \boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} </mrow>
+                  <mrow>  \amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}</mrow>
+                  <mrow> \abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} </mrow>
+                  <mrow>  \amp =\abs{\cos z}\sqrt{1+\sin^2 z}</mrow>
+                  <mrow>  \amp =\cos z\sqrt{1+\sin^2z} </mrow>
+                </md>,
+                where the last equality follows since <m>\cos z\geq 0</m> for <m>z\in [-\pi/2, \pi/2]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                According to <xref ref="interp_surface_integral_interp"/>, integrating a mass density function over <m>\mathcal{S}</m> gives us the total mass of <m>\mathcal{S}</m>. Thus
+                <md>
+                  <mrow>\operatorname{mass}\mathcal{S} \amp = \iint\limits_{\mathcal{S}}f(x,y,z)\, d\sigma </mrow>
+                  <mrow> \amp=\iint\limits_{\mathcal{R}}f(\boldr(\theta, z))\, \abs{\boldr_\theta\times \boldr_z}\, dA </mrow>
+                  <mrow>  \amp = \int_0^{2\pi}\int_{-\pi/2}^{\pi/2}\cos z\sqrt{1-\cos^2 z\cos^2\theta-\cos^2z\sin^2\theta}\sqrt{1+\sin^2z}\, dz\, d\theta</mrow>
+                  <mrow>  \amp =2\pi\int_{-\pi/2}^{\pi/2}\cos z\sqrt{\sin^2z(1+\sin^2z)}\, dz</mrow>
+                  <mrow>  \amp = 2\pi \int_{-\pi/2}^{\pi/2}\abs{\sin z}\cos z\sqrt{1+\sin^2z}\, dz</mrow>
+                  <mrow>  \amp =4\pi\int_0^{\pi/2}\sin z\cos z\sqrt{1+\sin^2 z}\, dz
+                  , \hspace{5pt} \ (\abs{\sin z} \text{ even})</mrow>
+                  <mrow>  \amp =4\pi\left( \frac{1}{3}(1+\sin^2 z)^{3/2}\right)\Bigr\vert_0^{\pi/2}</mrow>
+                  <mrow> \amp =\frac{4\pi}{3}(2^{3/2}-1)\ \operatorname{grams} </mrow>
+                </md>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <definition xml:id="d_surface_integral_piecewise">
+      <idx><h>piecewise smooth</h><h>surface</h></idx>
+      <title>Surface integral for piecewise smooth surfaces</title>
+      <statement>
+        <p>
+          A <term>piecewise smooth surface</term> is the union of smoothly parametrized surfaces whose interiors are non-overlapping, and whose intersections form piecewise smooth curves. If <m>\mathcal{S}=\mathcal{S}_1\cup\mathcal{S}_2\cdots\cup\mathcal{S}_n</m> is piecewise smooth, and if <m>f</m> is continuous on <m>\mathcal{S}</m>, we define the surface integral of <m>f</m> over <m>S</m> as
+          <me>
+            \iint\limits_\mathcal{S}f\, d\sigma=\sum_{k=1}^n \iint\limits_{S_k}f\, d\sigma
+          </me>.
+        </p>
+      </statement>
+    </definition>
+<example>
+  <title>Piecewise smooth surface</title>
+  <statement>
+    <p>
+      Compute the surface integral of <m>f(x,y,z)=xy</m> over the tetrahedron <m>\mathcal{T}</m> with vertices <m>(0,0,0),(1,0,0),(0,1,0),(0,0,1)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+     We have <m>\mathcal{T}=T_1\cup T_2\cup T_3\cup T_4</m>, where the <m>T_k</m> are the four triangular faces of <m>\mathcal{T}</m>, and thus
+     <me>
+       \iint\limits_\mathcal{T}f\, d\sigma=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma+\iint\limits_{T_3}f\, d\sigma+\iint\limits_{T_4}f\, d\sigma
+     </me>.
+     Let <m>T_1, T_2</m> be the triangular faces lying in the coordinate planes <m>x=0</m> and <m>y=0</m>, respectively. Since <m>f(x,y,z)=0</m> for all points in these two surfaces, the corresponding surface integrals <m>\iint_{T_k}f\, d\sigma</m>, <m>k=1,2</m>, are equal to zero. Thus we need only compute the integrals of <m>f</m> over <m>T_3</m> and <m>T_4</m>.
+    </p>
+    <ul>
+      <li>
+        <title>Integral over <m>T_3</m> </title>
+        <p>
+          Let <m>T_3</m> be the face of the tetrahedron in the <m>xy</m>-plane. We parametrize as
+          <md>
+            <mrow>\boldr(x,y) \amp =(x,y,0)</mrow>
+            <mrow> \mathcal{R}_1\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x </mrow>
+          </md>.
+          A simple computation shows <m>\abs{\boldr_x\times \boldr_y}=1</m>. Thus
+          <md>
+            <mrow>\iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx
+            </mrow>
+            <mrow> \amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx </mrow>
+            <mrow>  \amp =-\frac{1}{2}\int_1^0 (1-u)u^2\, du \amp (u=1-x, du=-dx)</mrow>
+            <mrow>  \amp =\frac{1}{2}(1/3-1/4)=\frac{1}{24}</mrow>.
+          </md>
+
+        </p>
+      </li>
+      <li>
+        <title>Integral over <m>T_4</m></title>
+        <p>
+          Let <m>T_4</m> be triangle with vertices <m>(1,0,0), (1,0,0),(0,1,0)</m>. This is the region of the plane <m>z=x+y</m> lying over the planar triangle with vertices <m>(0,0,0), (1,0,0), (0,1,0)</m>. Since <m>z</m> is expressed as a function of <m>x,y</m> we parametrize easily as
+          <md>
+            <mrow>\bolds(x,y) \amp =(x,y,x+y)</mrow>
+            <mrow> \mathcal{R}_{2}\colon  0 \amp\leq x\leq 1, 0\leq y\leq 1-x </mrow>
+          </md>.
+          Again, a straightforward computation shows <m>\abs{\bolds_x\times \bolds_y}=\sqrt{3}</m>, and thus
+          <md>
+            <mrow>\iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp </mrow>
+            <mrow> \amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx </mrow>
+            <mrow>  \amp =\frac{\sqrt{3}}{24}</mrow>
+          </md>,
+          where we use our work from above for the last equality.
+        </p>
+      </li>
+    </ul>
+    In conclusion we have
+    <me>
+      \iint\limits_{\mathcal{T}}=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma =\frac{\sqrt{3}+1}{24}
+    </me>.
+  </solution>
+</example>
+<!-- <project>
+  <title>Scalar surface integrals</title>
+  <p>
+    As with line integrals (<xref ref="sage_line_integrals_scalar"/>) we can use Sage to assemble all the many ingredients necessary to compute a surface integral. The cell below takes a parametrization <c>r(u,v)</c> of a surface <m>\mathcal{S}</m>, a parameter domain <c>R</c>, and function <c>f(x,y,z)</c>, and computes the surface integral over <m>\mathcal{S}</m>.
+  </p>
+  <sage>
+  <input>
+
+  </input>
+  <output>
+
+  </output>
+  </sage>
+
+</project> -->
+  </subsection>
+  <subsection xml:id="ss_vector_surface_integral">
+    <title>Surface integrals of vector fields</title>
+    <definition xml:id="d_orientation">
+      <title>Surface orientation</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{S}\subseteq\R^3</m> be a smoothly parametrized surface. Informally, an <term>orientation</term> of <m>\mathcal{S}</m> is a continuous choice of unit normal vectors to points on the surface. More precisely, an orientation is a continuous function
+          <md>
+            <mrow>\boldn \colon \mathcal{S}\amp\rightarrow \R^3 </mrow>
+            <mrow> (x,y,z)\amp\mapsto \boldn(x,y,z) </mrow>
+          </md>,
+          where for each <m>P=(x,y,z)\in \mathcal{S}</m>, <m>\boldn(P)</m> is a unit normal vector to <m>\mathcal{S}</m> at <m>P</m>. The surface <m>\mathcal{S}</m> is <term>orientable</term> if an orientation <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> exists for <m>\mathcal{S}</m>. If no orientation function exists, the surface is <term>nonorientable</term>.
+        </p>
+      </statement>
+    </definition>
+    <example xml:id="eg_orientable_sphere">
+      <title>Orientations of the sphere</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{S}</m> be the unit sphere <m>x^2+y^2+z^2=1</m>. We have seen previously that for a point <m>P=(x,y,z)</m> on <m>\mathcal{S}</m> the vector <m>\overrightarrow{OP}=\angvec{x,y,z}</m> is a normal vector to <m>\mathcal{S}</m> at <m>P</m>; furthermore, since <m>P\in \mathcal{S}</m>, its magnitude is <m>\sqrt{x^2+y^2+z^2}=1</m>. Thus the function <m>\boldn_1(x,y,z)=\angvec{x,y,z}</m> assigns a unit normal vector to each point <m>P=(x,y,z)\in \mathcal{S}</m>. Since <m>\boldn_1</m> is clearly continuous, it defines an orientation on <m>\mathcal{S}</m>, called the <term>outward</term> orientation. The function <m>\boldn_2(x,y,z)=-\angvec{x,y,z}</m>
+          also defines an orientation on the sphere, called the <term>inward</term> orientation.
+        </p>
+        <p>
+          More generally, if <m>\mathcal{S}</m> is a smooth surface that is the boundary of a bounded solid region <m>D\subseteq\R^3</m>, then <m>\mathcal{S}</m> has both an outward and inward orientation. In particular, all such surfaces are orientable. The sphere discussed above is one such surface: it is the boundary of the solid ball <m>x^2+y^2+z^2\leq 1</m>. Another example is the <term>torus</term>: the boundary surface of a solid doughnut.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg_orientable_graph">
+      <title>Graph of function</title>
+      <statement>
+        <p>
+          Suppose <m>\mathcal{S}</m> is a smooth surface defined as the graph of the function <m>z=f(x,y)</m> for inputs <m>(x,y)</m> lying in the region <m>\mathcal{R}\subseteq\R^2</m>.  As usual this gives rise to the parametrization
+          <md>
+            <mrow>\boldr\colon \mathcal{R} \amp \rightarrow \R^3</mrow>
+            <mrow> (x,y)  \amp\mapsto (x,y,f(x,y)) </mrow>
+          </md>.
+          We have seen that in this case <m>\boldr_x\times \boldr_y=\angvec{-f_x, -f_y, 1}</m>. It follows that the function
+          <me>
+            \boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}=\frac{\angvec{-f_x,-f_y,1}}{\sqrt{f_x^2+f_y^2+1}}
+          </me>
+          is an orientation of <m>\mathcal{S}</m>. Since the <m>z</m>-component of <m>\boldn(x,y,z)</m> is positive, this is called the <term>upward</term> orientation of <m>\mathcal{S}</m>.
+        </p>
+      </statement>
+    </example>
+        <remark xml:id="rm_orientable">
+      <title>Orientations of orientable surfaces</title>
+      <statement>
+        <p>
+          Assume <m>\mathcal{S}</m> is a smooth orientable surface with orientation <m>\boldn\colon \mathcal{S}\rightarrow\R^3</m> and parametrization <m>\boldr(u,v)</m>. We have the following facts:
+          <ol>
+            <li>
+              <p>
+                There are exactly two orientations on <m>\mathcal{S}</m>: namely, the given orientation <m>P\mapsto \boldn(P)</m> and its opposite <m>P\mapsto -\boldn(P)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The function
+                <me>
+                  P=\boldr(u_0,v_0)\mapsto \frac{\boldr_u\times \boldr_v(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
+                </me>
+                is one orientation on <m>\mathcal{S}</m>; the function
+                <me>
+                  P=\boldr(u_0,v_0)\mapsto \frac{\boldr_v\times \boldr_u(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
+                </me>
+                is the other.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </remark>
+
+    <project xml:id="sage_moebius_strip">
+      <title>Nonorientable surface: Möbius strip</title>
+      <statement>
+        <p>
+          Fix a constant <m>R>1/2</m>, and let <m>\mathcal{S}</m> be the Möbius strip with parametrization
+          <me>
+            \boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)
+          </me>,
+          where <m>\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}</m>. The Sage cell below depicts <m>\mathcal{S}</m> along with the labeled line segments we used in its original description.
+        </p>
+      <sage>
+      <input>
+        from sage.plot.plot3d.plot3d import axes
+        var('theta t s x y z')
+        R=3
+        c=-1/2
+        d=1/2
+        a=0
+        b=2*pi
+        r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+        S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+        Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+        Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+        Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+        Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+        grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+        grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+        S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels
+      </input>
+      <output>
+
+      </output>
+      </sage>
+
+      <p>
+      Fact: <m>\mathcal{S}</m> is a nonorientable surface! If this is so, why doesn't the function
+          <me>
+            P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+          </me>
+          provide us with an orientation? The answer: this is a well-defined function on the <em>parameter domain</em> <m>[0,2\pi]\times[-1/2,1/2]</m>, but not on the actual <em>surface</em> <m>\mathcal{S}</m>! Indeed, the point <m>P=(R,0,0)</m> can be expressed as both <m>\boldr(0,0)</m> and <m>\boldr(2\pi, 0)</m>. As the Sage cell below illustrates the two normal vectors corresponding to <m>(0,0)</m> and <m>(2\pi,0)</m> are <m>\angvec{1,0,0}</m> and <m>\angvec{-1,0,0}</m>!
+        </p>
+        <sage>
+        <input>
+      (theta, t, R)=var('theta t R')
+      r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+      r_t=diff(r,t) # r_t(theta,t)
+      r_theta=diff(r,theta) # r_theta(theta,t)
+      g(theta,t)=r_t.cross_product(r_theta) #r_t x r_theta
+      show((g(theta,t)*g(theta,t)).simplify_full()) # |r_t x r_theta|^2
+      show(g(0,0))
+      show(g(2*pi,0))
+
+        </input>
+        <output>
+
+        </output>
+        </sage>
+        <p>
+         We can see what's going on by plotting some of the normal vectors given by <m>\boldr_t\times \boldr_\theta</m> for points of the form <m>P=\boldr(\theta, 0)</m>.
+        </p>
+        <sage>
+        <input>
+          from sage.plot.plot3d.plot3d import axes
+          var('theta t s x y z')
+          R=3
+          c=-1/2
+          d=1/2
+          a=0
+          b=2*pi
+          r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
+          r_t=diff(r,t) # r_t(theta,t)
+          r_theta=diff(r,theta) # r_theta(theta,t)
+          g(theta,t)=r_t.cross_product(r_theta).normalized() #r_t x r_theta normalized
+          S=parametric_plot3d(r(s,t),(s,a,b),(t,c,d), color='red', opacity=.1, frame=False)
+          Alabels=text3d("A",vector(r(0,12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("A",r(2*pi,12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("A",r(a+(b-a)*x/8,12/16),color='black',fontsize=14) for x in range(1,8))
+          Blabels=text3d("B",vector(r(0,-12/16))+vector([0,.3,0]),color='black',fontsize=14)+text3d("B",r(2*pi,-12/16)+vector([0,-.3,0]),color='black',fontsize=14)+sum(text3d("B",r(a+(b-a)*x/8,-12/16),color='black',fontsize=14) for x in range(1,8))
+          Arrows=sum(arrow3d(r(x*2*pi/8,0),r(x*2*pi/8,0)+g(x*2*pi/8,0),color='green') for x in range(8))
+          Points=sum(point3d(r(a+(b-a)*x/8,1/2),color='blue',pointsize=50) for x in range(9))
+          Points2=sum(point3d(r(a+(b-a)*x/8,-1/2),color='blue',pointsize=50) for x in range(9))
+          grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range(9)) #phi-level curves
+          grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
+          S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
+        </input>
+        <output>
+
+        </output>
+        </sage>
+
+      </statement>
+    </project>
+<definition xml:id="d_surface_integral_vector">
+  <title>Surface integral of vector field</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be a smooth orientable surface, and let <m>\boldF</m> be a vector field that is continuous on <m>\mathcal{S}</m>. We define the <term>surface integral</term> of <m>\boldF</m> over <m>\mathcal{S}</m> with respect to the orientation <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m>
+      as the scalar surface integral
+      <me>
+        \iint_\mathcal{S}\boldF\cdot \boldn\, d\sigma
+      </me>.
+       This integral is also called the <term>flux</term> of <m>\boldF</m> across <m>\mathcal{S}</m> with respect to the orientation <m>\boldn</m>.
+    </p>
+  </statement>
+</definition>
+<example>
+  <title>Flux across a sphere</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be the sphere <m>x^2+y^2+z^2=4</m>. Compute the flux of <m>\boldF(x,y,z)=\angvec{z,y,x}</m> out of the sphere: <ie />, with respect to the outward orientation on <m>\mathcal{S}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We use the usual parametrization of the sphere of radius 2:
+      <md>
+        <mrow>\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta)</mrow>
+        <mrow> \amp </mrow>
+      </md>
+      Given a point <m>P=(x,y,z)\in \mathcal{S}</m> the vector <m>\angvec{x,y,z}</m> is an outward pointing normal vector of magnitude <m>\sqrt{x^2+y^2+z^2}=2</m>. Thus the function <m>\boldn(x,y,z)=\frac{1}{2}\angvec{x,y,z}</m> is the outward orientation on <m>\mathcal{S}</m>. It follows that
+      <me>
+        \boldF(x,y,z)\cdot \boldn(x,y,z)=\frac{1}{2}\angvec{z,y,x}\cdot \angvec{x,y,z}=\frac{1}{2}(2xz+y^2)
+      </me>,
+      and thus that
+      <md>
+        <mrow>  \iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma\amp
+        = \frac{1}{2}\iint\limits_\mathcal{S}2xz+y^2\, d\sigma </mrow>
+        <mrow>  \amp = \frac{1}{2}\iint\limits_{\mathcal{R}}(8\sin\phi\cos\phi\cos\theta+4\sin^2\phi\sin^2\theta)(4\sin\phi)\, dA</mrow>
+        <mrow>  \amp =8\int_0^{2\pi}\int_0^\pi2\sin^2\phi\cos\phi\cos\theta+\sin^3\phi\sin^2\theta\, d\phi\, d\theta\</mrow>
+        <mrow>  \amp =
+        8\left(\cancelto{0}{\int_0^{2\pi}\cos\theta\, d\theta}\int_0^{\pi}\sin^2\phi\cos\phi\, d\phi+\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\right)</mrow>
+        <mrow>  \amp =8\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi</mrow>
+        <mrow>  \amp =\frac{32\pi}{3}</mrow>
+      </md>.
+      The last step above is done using the identity <m>\sin^2\theta=\frac{1}{2}(1-\cos 2\theta)</m> and the fact that <m>\sin^3\phi=\sin\phi(1-\cos^2\phi)=\sin\phi-\sin\phi\cos^2\phi</m> has antiderivative <m>-\cos\phi+\frac{1}{3}\cos^3\phi</m>.
+    </p>
+  </solution>
+</example>
+<theorem xml:id="th_surface_integral_vector">
+  <title>Surface integral of vector field</title>
+  <statement>
+    <p>
+      Let <m>\boldr\colon \mathcal{R}\rightarrow \mathcal{S}</m> be a smooth parametrization of the orientable surface <m>\mathcal{S}</m>, let <m>\boldF</m> be a vector field that is continuous on <m>\mathcal{S}</m>, and let <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> be the orientation determined by <m>\frac{\boldr_u\times\boldr_v}{\abs{\boldr_u\times \boldr_v}}</m>.
+      We have
+      <men xml:id="eq_surface_integral_vector">
+        \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=
+        \iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_u\times \boldr_v)\, dA
+      </men>.
+      Furthermore letting <m>-\boldn</m> be the opposite orientation of <m>\boldn</m>, we have
+      <men xml:id="eq_surface_integral_opposite">
+      \iint\limits_\mathcal{S}\boldF\cdot (-\boldn)\, d\sigma=
+      \iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_v\times \boldr_u)\, dA=
+      -  \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma
+    </men>.
+    </p>
+  </statement>
+</theorem>
+<example xml:id="eg_surface_integral_vector_cone">
+  <title>Flux across a cone</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be the cone <m>z=\sqrt{x^2+y^2}</m> and let <m>\boldF(x,y,z)=\angvec{xy,0,-z}</m>. Compute the flux of <m>\boldF</m> across <m>\mathcal{S}</m> with respect to the outward (away from the <m>z</m>-axis) orientation of <m>\mathcal{S}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+  </subsection>
+</section>

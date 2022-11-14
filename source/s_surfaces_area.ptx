@@ -185,8 +185,13 @@
   </statement>
 </example>
 
+<<<<<<< HEAD
 <example xml:id="eq_function_parametrization">
   <title>Graphs of functions</title>
+=======
+<example xml:id="eg_function_parametrization">
+  <title>Parametrizing graphs of functions</title>
+>>>>>>> e01dba549a80a13f0daa9ca51b54b8a40226e19e
   <statement>
     <p>
       Recall that given a function <m>z=f(x,y)</m> with domain <m>D</m> we define its graph to the be the surface
@@ -212,6 +217,26 @@
       Let <m>\mathcal{S}_1</m> be the half-cone <m>y=\sqrt{x^2+z^2}</m>, and let <m>\mathcal{S}_2</m> be the full cone <m>y^2=x^2+z^2</m>. Find parametrizations of <m>\mathcal{S}_1</m> and <m>\mathcal{S}_2</m>.
     </p>
   </statement>
+  <solution>
+    <p>
+      Following <xref ref="eg_function_parametrization"/>, we easily see that <m>\mathcal{S}_1</m> is parametrized by <m>\boldr(u,v)=(u,\sqrt{u^2+v^2})</m>
+    </p>
+    <p>
+      If we wanted to settle for a piecewise parametrization of <m>\mathcal{S}_2</m> we could proceed exactly as above, parametrizing the right half of <m>\mathcal{S}_2</m> as <m>\boldr_1(u,v)=(u,\sqrt{u^2+v^2})</m> and the left half as <m>\boldr_2(u,v)=(u,v,-(u^2+v^2))</m>. Instead, we use a variant of spherical coordinates. For <m>P=(x,y,z)\in \R^3</m>, let <m>\rho=\abs{(x,y,z)}</m>, let <m>\phi</m> be the angle between <m>\overrightarrow{OP}</m> and the positive <m>y</m>-axis (as opposed to the <m>z</m>-axis), and let <m>\theta</m> be the angle between the positive <m>z</m>-axis and the projection of <m>\overrightarrow{OP}</m> onto the <m>xz</m>-plane. With this setup we have
+      <md>
+        <mrow>x \amp=\rho\sin\phi\sin\theta </mrow>
+        <mrow>y \amp=\rho\cos\phi </mrow>
+        <mrow>z \amp=\rho\sin\phi\cos\theta </mrow>
+        <mrow> r^2 \amp=z^2+x^2=\rho^2\sin^2\phi </mrow>
+      </md>.
+      (Essentially this is just the usual spherical coordinates along with the <q>cyclical</q> renaming of the axes <m>y\rightarrow z, z\rightarrow x, x\rightarrow y</m>.) With respect to these coordinates, the half-cone <m>\mathcal{S}_1</m> can be described implicitly as <m>\phi=\pi/4</m>, <m>0\leq \rho</m>. To get the full cone <m>\mathcal{S}_2</m> we simply remove the restriction that <m>\rho</m> be nonnegative. This gives rise to the parametrization
+      <md>
+        <mrow>\boldr(\rho,\theta)\amp=(\rho\sin(\pi/4)\sin\theta, \rho\cos(\pi/4), \rho\sin(\pi/4)\cos\theta) </mrow>
+        <mrow> \amp=\frac{\sqrt{2}}{2}(\rho\cos\theta, \rho, \rho\sin\theta) </mrow>
+        <mrow>  \mathcal{R}\amp\colon 0\leq \phi\leq \pi, -\infty &lt; \rho &lt; \infty </mrow>
+      </md>.
+    </p>
+  </solution>
 </example>
 <project xml:id="sage_surface_parametrizations">
 <title>Surface parametrizations</title>
@@ -253,7 +278,7 @@ S+grid1+grid2
     (x,y,s,t)=var('x y s t')
     a=-4
     b=4
-    r(x,y)=vector([x,y,sqrt(x^2+y^2)])
+    r(x,y)=vector([x,sqrt(x^2+y^2),y])
     S=parametric_plot3d(r(x,y),(x,a,b),(y,a,b), color='red', opacity=.1)
     grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,a,b),color='red') for c in range(11))
     grid2=sum(parametric_plot3d(r(t,a+(b-a)*c/10),(t,a,b),color='blue') for c in range(11))
@@ -269,7 +294,7 @@ S+grid1+grid2
 phi=pi/4
 a=-4
 b=4
-r(rho,theta)=vector([rho*sin(phi)*cos(theta),rho*sin(phi)*sin(theta),rho*cos(phi)])
+r(rho,theta)=vector([rho*sin(phi)*sin(theta),rho*cos(phi),rho*sin(phi)*cos(theta)])
 S=parametric_plot3d(r(s,t),(s,a,b),(t,0,2*pi), color='red', opacity=.1)
 grid1=sum(parametric_plot3d(r(a+(b-a)*c/10,t),(t,0,2*pi),color='red') for c in range(11)) #phi-level curves
 grid2=sum(parametric_plot3d(r(t,c*pi/8),(t,a,b),color='blue') for c in range(16)) #theta-level curves
@@ -280,36 +305,170 @@ S+grid1+grid2
   </output>
 </sage>
 </project>
-<definition xml:id="d_tangent_vectors">
-  <title>Parametrization tangent vectors</title>
-  <statement>
-    <p>
-      Given a surface parametrization <m>\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))</m>, its <term><m>\boldu</m>- and <m>\boldv</m>-tangent vectors</term> are the functions <m>\boldr_u, \boldr_v</m> defined as
-      <md>
-        <mrow>\boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}</mrow>
-        <mrow>\boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}</mrow>
-      </md>.
-    </p>
-  </statement>
-</definition>
+</subsection>
+<subsection xml:id="ss_tangent_planes_area">
+  <title>Tangent planes and area</title>
+  <definition xml:id="d_tangent_vectors">
+    <title>Parametrization tangent vectors</title>
+    <statement>
+      <p>
+        Given a surface parametrization <m>\boldr(u,v)=(f_1(u,v), f_2(u,v), f_3(u,v))</m>, its <term><m>\boldu</m>- and <m>\boldv</m>-tangent vectors</term> are the functions <m>\boldr_u, \boldr_v</m> defined as
+        <md>
+          <mrow>\boldr_u \amp= \angvec{\frac{\partial f_1}{\partial u}, \frac{\partial f_2}{\partial u}, \frac{\partial f_3}{\partial u}}</mrow>
+          <mrow>\boldr_v \amp= \angvec{\frac{\partial f_1}{\partial v}, \frac{\partial f_2}{\partial v}, \frac{\partial f_3}{\partial v}}</mrow>
+        </md>.
+      </p>
+    </statement>
+  </definition>
 
-<definition xml:id="d_smooth_surface_parametrization">
-  <title>Smooth surface parametrization</title>
-  <statement>
-    <p>
-      A surface parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m> is smooth if on the interior of <m>\mathcal{R}</m> (i) the tangent vector functions <m>\boldr_u</m> and <m>\boldr_v</m> are continuous and (ii) <m>\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}</m>.
-    </p>
-  </statement>
-</definition>
+  <definition xml:id="d_smooth_surface_parametrization">
+    <title>Smooth surface parametrization</title>
+    <statement>
+      <p>
+        A surface parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m> is smooth if on the interior of <m>\mathcal{R}</m> (i) the tangent vector functions <m>\boldr_u</m> and <m>\boldr_v</m> are continuous and (ii) <m>\boldr_u(u,v)\times \boldr_v(u,v)\ne \angvec{0,0,0}</m>.
+      </p>
+    </statement>
+  </definition>
 
-<definition xml:id="d_tangent_plane">
-  <idx><h>tangent plane</h><h>of smooth surface parametrization</h></idx>
-  <title>Tangent plane to smooth surface</title>
-  <statement>
-    <p>
-      Let <m>\mathcal{S}</m> be a surface with smooth parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m>, let <m>(u,v)</m> be a point of the interior of <m>\mathcal{R}</m>, and let <m>P=\boldr(u,v)</m> be the corresponding point on <m>\mathcal{S}</m>. The <term>tangent plane</term> to <m>\mathcal{S}</m> at <m>P</m> is the plane passing through <m>P</m> with normal vector <m>\boldr_u(u,v)\times \boldr_v(u,v)</m>.
-    </p>
-  </statement>
-</definition>
+  <definition xml:id="d_tangent_plane">
+    <idx><h>tangent plane</h><h>of smooth surface parametrization</h></idx>
+    <title>Tangent plane to smooth surface</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{S}</m> be a surface with smooth parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m>, let <m>(u,v)</m> be a point of the interior of <m>\mathcal{R}</m>, and let <m>P=\boldr(u,v)</m> be the corresponding point on <m>\mathcal{S}</m>. The <term>tangent plane</term> to <m>\mathcal{S}</m> at <m>P</m> is the plane passing through <m>P</m> with normal vector <m>\boldr_u(u,v)\times \boldr_v(u,v)</m>.
+      </p>
+    </statement>
+  </definition>
+  <example xml:id="eg_tangent_plane">
+    <title>Tangent plane</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{S}</m> be the surface with parametrization <m>\boldr(u,v)=(u^2, v^2, uv)</m>. Find an equation of the tangent plane to <m>\mathcal{S}</m> at the point <m>P=(1,1,1)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We compute
+        <md>
+          <mrow>\boldr_u \amp= \angvec{2u, 0, v}  </mrow>
+          <mrow> \boldr_v\amp=\angvec{0,2v, u} </mrow>
+          <mrow> \boldr_u\times\boldr_v \amp=\angvec{-2v^2, -2u^2, 4uv} </mrow>
+        </md>.
+        At <m>P=(1,1,1)=\boldr(1,1)</m> we have
+        <me>
+          \boldr_u\times\boldr_v(1,1)=\angvec{-2,-2,4}
+        </me>.
+        This <m>\angvec{-2,-2,4}</m> is <em>a</em> normal vector of the tangent plane. We can always scale this by any nonzero constant to get another, more convenient normal vector: <eg />, <m>\boldn=-\frac{1}{2}\angvec{-2,-2,4}=\angvec{1,1,-2}</m>. Lastly, the plane passing through <m>P=(1,1,1)</m> with normal vector <m>\boldn=\angvec{1,1,-2}</m> has defining equation
+        <me>
+          (x-1)+(y-1)-2(z-1)=0
+        </me>.
+      </p>
+    </solution>
+  </example>
+
+  <definition xml:id="d_surface_area">
+    <title>Surface area</title>
+    <statement>
+      <p>
+        Let <m>\mathcal{S}</m> be a surface with smooth parametrization <m>\boldr\colon \mathcal{R}\rightarrow \R^3</m>, where <m>\mathcal{R}\subseteq\R^2</m> is a bounded set. The <term>area</term> of <m>\mathcal{S}</m> is defined as
+        <me>
+          \operatorname{area}=\iint\limits_\mathcal{R}\abs{\boldr_u\times \boldr_v}\, dA
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <statement>
+      <p>
+        Fix <m>R&gt; 0</m>. Compute the area of the sphere <m>\mathcal{S}\colon x^2+y^2+z^2=R^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              First we parametrize <m>\mathcal{S}</m> using
+              <md>
+                <mrow>\boldr(\phi,\theta)\amp =(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi)</mrow>
+                <mrow>  \mathcal{R}\amp\colon 0\leq \phi\leq \pi, 0\leq \theta\leq 2\pi</mrow>
+              </md>,
+              as in <xref ref="eg_sphere_parametrization"/>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Now assemble ingredients:
+              <md>
+                <mrow>\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle </mrow>
+                <mrow> \boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle</mrow>
+                <mrow> \boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} </mrow>
+                <mrow>\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}</mrow>
+                <mrow>  \amp=R^2\sin\phi</mrow>
+              </md>,
+              where the last equality follows since <m>\sin\phi\geq 0</m> for <m>\phi\in [0,\pi]</m> and <m>\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta,\cos\phi}</m> parametrizes points on the unit sphere!
+            </p>
+          </li>
+          <li>
+            <p>
+              Finally, we integrate
+              <md>
+                <mrow>\operatorname{area} \mathcal{S} \amp=\iint\limits_\mathcal{R}R^2\sin\phi\, dA </mrow>
+                <mrow> \amp=\int_0^\pi\int_0^{2\pi}R^2\sin\phi\, d\theta\, d\phi </mrow>
+                <mrow>  \amp = 2\pi\, R^2(-\cos\phi)\Bigr\vert_0^{\pi}</mrow>
+                <mrow>  \amp = 4\pi R^2</mrow>
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Find the surface area of the portion of the paraboloid <m>\mathcal{S}\colon z=x^2+y^2</m> that lies below the plane <m>z=4</m>.
+      </p>
+    </statement>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            First parametrize, using cylindrical coordinates:
+            <md>
+              <mrow>\bolds(r, \theta) \amp = (r\cos\theta, r\sin\theta, r^2)</mrow>
+              <mrow> \mathcal{R}\amp\colon 0\leq r\leq 2, 0\leq \theta\leq 2\pi </mrow>
+            </md>.
+            Here the region <m>\mathcal{R}</m> is a polar description of the projection of <m>\mathcal{S}</m> on the <m>xy</m>-plane, obtained by first observing that the intersection of the paraboloid with the plane <m>z=4</m> is given by <m>z=r^2=4</m>, or <m>r=2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Now assemble ingredients:
+            <md>
+              <mrow>\bolds_r \amp = \langle\cos\theta, \sin\theta, 2r\rangle)</mrow>
+              <mrow>\bolds_\theta \amp= \angvec{-r\sin\theta, r\cos\theta, 0}</mrow>
+              <mrow> \bolds_r\times \bolds_\theta \amp=\angvec{-2r^2\cos\theta, -2r^2\sin\theta, r} </mrow>
+              <mrow> \abs{\bolds_r\times \bolds_\theta} \amp=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2}
+              </mrow>
+              <mrow>  \amp = \sqrt{4r^4+r^2}=r\sqrt{4r^2+1}</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Finally, we integrate
+            <md>
+              <mrow>\operatorname{area}\mathcal{S}  \amp= \iint\limits_\mathcal{R}r\sqrt{4r^2+1}\, dA </mrow>
+              <mrow> \amp=\int_0^{2\pi}\int_0^2r\sqrt{4r^2+1}\, dr\, d\theta </mrow>
+              <mrow>  \amp =2\pi \left(\frac{1}{12}(4r^2+1)^{3/2}\right)\Bigr\vert_0^2</mrow>
+              <mrow>  \amp= \frac{\pi}{6}(17^{3/2}-1) </mrow>
+            </md>.
+          </p>
+        </li>
+      </ol>
+      Note: we could have used the more straightforward parametrization <m>\boldr(x,y)=(x,y,x^2+y^2)</m>, noticing that <m>z=x^2+y^2</m> expresses <m>z</m> as a function of <m>x</m> and <m>y</m> (see <xref ref="eg_function_parametrization"/>). Interestingly, the integral in (3) for this choice of parametrization is best computed using a polar coordinates change of variable.
+    </solution>
+  </example>
 </subsection>
 </section>
