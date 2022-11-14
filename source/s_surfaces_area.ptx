@@ -185,13 +185,8 @@
   </statement>
 </example>
 
-<<<<<<< HEAD
-<example xml:id="eq_function_parametrization">
-  <title>Graphs of functions</title>
-=======
 <example xml:id="eg_function_parametrization">
   <title>Parametrizing graphs of functions</title>
->>>>>>> e01dba549a80a13f0daa9ca51b54b8a40226e19e
   <statement>
     <p>
       Recall that given a function <m>z=f(x,y)</m> with domain <m>D</m> we define its graph to the be the surface

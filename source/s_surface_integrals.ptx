@@ -225,6 +225,7 @@
   <subsection xml:id="ss_vector_surface_integral">
     <title>Surface integrals of vector fields</title>
     <definition xml:id="d_orientation">
+      <idx><h>orientation</h><h>smooth surface</h></idx>
       <title>Surface orientation</title>
       <statement>
         <p>

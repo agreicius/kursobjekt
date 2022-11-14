@@ -6,4 +6,5 @@
   <xi:include href="./s_Greens_theorem.ptx"/>
   <xi:include href="./s_surfaces_area.ptx"/>
   <xi:include href="./s_surface_integrals.ptx"/>
+  <xi:include href="./s_Stokes.ptx"/>
 </chapter>
