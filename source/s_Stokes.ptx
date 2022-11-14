@@ -1,9 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Stokes">
   <title>Stokes's theorem</title>
-  <subsection xml:id="ss_consistent_orientations">
-    <title>Consistent orientations</title>
-
     <definition xml:id="d_induced_orientation">
+      <title>Induced orientation</title>
       <statement>
         <p>
           Let <m>\mathcal{S}</m> be a smooth surface with orientation <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m>. Given a simple curve <m>\mathcal{C}\subseteq \mathcal{S}</m> lying partly on the boundary of <m>\mathcal{S}</m> the <term>induced</term> orientation on <m>\mathcal{C}</m> is the one given by the following <term>right-hand rule</term>: if your thumb points along <m>\boldn</m>, then your fingers curl in the direction of the orientation of <m>\mathcal{C}</m>. Alternatively, the orientation of
@@ -49,6 +47,4 @@
       </p>
     </statement>
   </corollary>
-
-  </subsection>
 </section>
