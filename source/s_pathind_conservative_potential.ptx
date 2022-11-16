@@ -283,13 +283,16 @@
   <statement>
     <p>
       Let <m>\boldF=\angvec{F_1, F_2, F_3}</m> be a vector field on the set <m>D\subseteq \R^3</m>, and assume the first order partial derivatives of the component functions exist. We define the <term>curl</term> of <m>\boldF</m>, denoted <m>\curl \boldF</m> or <m>\nabla \times \boldF</m>, as the vector field
-      <me>
-        \nabla\times \boldF=\det \begin{pmatrix}
+      <md>
+        <mrow> \curl\boldF \amp= \nabla\times \boldF</mrow>
+        <mrow>  \amp =\det \begin{pmatrix}
           \boldi \amp \boldj \amp \boldk \\
           \frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
           F_1 \amp F_2 \amp F_3
-      \end{pmatrix}=\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
-      </me>.
+      \end{pmatrix}</mrow>
+      <mrow>\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
+      </mrow>
+      </md>.
     </p>
   </statement>
 </definition>

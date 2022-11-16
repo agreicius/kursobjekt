@@ -25,7 +25,7 @@
       <title>Stokes's theorem</title>
       <statement>
         <p>
-          Let <m>\mathcal{S}</m> be a piecewise smooth oriented surface with a boundary curve <m>\partial \mathcal{S}=\mathcal{C}</m> that is piecewise smooth. If <m>\boldF</m> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <m>\mathcal{S}</m>, then
+          Let <m>\mathcal{S}</m> be a piecewise smooth oriented surface whose boundary <m>\partial \mathcal{S}=\mathcal{C}</m> is a union of closed, piecewise smooth, simple curves. If <m>\boldF</m> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <m>\mathcal{S}</m>, then
           <me>
             \oint\limits_\mathcal{C}\boldF\cdot \boldr=\iint\limits_{\mathcal{S}}\curl\boldF\cdot \boldn
           </me>,
@@ -34,12 +34,81 @@
         </p>
       </statement>
     </theorem>
+    <example>
+      <title>Line integral over triangle</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{C}</m> be the triangle with vertices <m>(1,0,0), (0,1,0), (0,0,1)</m> oriented counterclockwise from above. Compute <m>\oint_\mathcal{C}\boldF\cdot \boldr</m>, where <m>\boldF(x,y,z)=\angvec{z^2, y^2, x}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <title>Identify as boundary of surface</title>
+              <p>
+                We have <m>\mathcal{C}=\partial \mathcal{S}</m>, where <m>\mathcal{S}</m> is the triangular region enclosed by <m>\mathcal{C}</m>.
+              </p>
+            </li>
+            <li>
+              <title>Parametrize surface</title>
+              <p>
+                The region <m>\mathcal{S}</m> is the region of the plane <m>x+y+z=1</m> lying above the triangular region <m>\mathcal{R}\colon 0\leq x\leq 1, 0\leq y\leq 1-x</m>. Writing <m>z=1-x-y</m>, we have parametrization
+                <md>
+                  <mrow>\boldr(x,y) \amp=(x,y,1-x-y) </mrow>
+                  <mrow> \mathcal{R}\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x </mrow>
+                </md>.
+              </p>
+            </li>
+            <li>
+              <title>Identify appropriate orientation of surface</title>
+              <p>
+                For the induced orientation on <m>\mathcal{C}</m> to be counterclockwise from above, we want the <em>upward</em> orientation on <m>\mathcal{S}</m>. We know that for a parametrization of the form <m>r(x,y)=(x,y,1-x-y)</m> the orientation
+                <me>
+                  \boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}
+                </me>
+                is the upward one. For the step below we need just the denominator of this expression: <m>\boldr_x\times \boldr_y=\angvec{1,1,1}</m>.
+              </p>
+            </li>
+            <li>
+              <title>Integrate <m>\curl\boldF</m></title>
+              <p>
+                A straightforward computation gives us <m>\curl\boldF=\angvec{0,2z-1,0}</m>. Using <xref ref="th_surface_integral_vector"/> we have
+                <md>
+                  <mrow>\iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=
+                  \iint_{\mathcal{R}}\curl\boldF(\boldr(x,y))\cdot (\boldr_x\times \boldr_y)\, dA </mrow>
+                  <mrow> \amp=\int_0^1\int_0^{1-x}\angvec{0,2(1-x-y)-1,0}\cdot\angvec{1,1,1}\, dy\, dx </mrow>
+                  <mrow>  \amp = \int_0^1\int_0^{1-x}1-2(x+y)\, dy\, dx</mrow>
+                  <mrow>  \amp \int_0^1 \left(y-(x+y)^2\Bigr_0^{1-x}\, dx</mrow>
+                  <mrow>  \amp =\int_0^1 x^2-x\, dx</mrow>
+                  <mrow>  \amp = \frac{1}{3}-\frac{1}{2}=-\frac{1}{6}</mrow>
+                </md>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <example>
+      <title>Stokes over a pringle</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{S}</m> be a portion of the surface <m>z=y^2-x^2</m> lying within the cylinder <m>x^2+y^2=1</m>, and let <m>\mathcal{C}</m> be its boundary. Let <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> be the upward orientation on <m>\mathcal{S}</m>. Verify Stokes's theorem for <m>\mathcal{S}, \mathcal{C}</m>, and the vector field <m>\boldF=y\boldi-x\boldj+x^2\boldk</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+
 
   <corollary xml:id="cor_Stokes_same_boundary">
     <title>Two surfaces, same boundary</title>
     <statement>
       <p>
-        If <m>\mathcal{S}_1, \mathcal{S}_2</m> are two piecewise smooth oriented surfaces with a shared oriented boundary curve that is piecewise smooth, and if <m>\boldF</m> is a continuous vector field satisfying the conditions of Stokes's theorem for both surfaces, then
+        Let <m>\mathcal{S}_1, \mathcal{S}_2</m> be two piecewise smooth oriented surfaces with a shared boundary curve <m>\mathcal{C}</m> satisfying the conditions of Stokes's theorem, and assume that the orientation on <m>\mathcal{C}</m> induced by <m>\mathcal{S}_1</m> is equal to the orientation induced by <m>\mathcal{S}_2</m>. If <m>\boldF</m> is a continuous vector field whose component functions have continuous partial derivatives on an open set containing <m>S_1</m> and <m>S_2</m>, then
         <me>
           \iint_{\mathcal{S}_1}\curl \boldF\cdot \boldn_1\, d\sigma=\iint_{\mathcal{S}_2} \curl\boldF\cdot \boldn_2\, d\sigma
         </me>,
@@ -47,4 +116,41 @@
       </p>
     </statement>
   </corollary>
+  <example>
+    <statement>
+      <p>
+        Let <m>\boldF=\angvec{-y^2, x, z^2}</m>, and let <m>\mathcal{C}</m> be the intersection of the cylinder <m>x^2+y^2=1</m> and the plane <m>y+z=2</m>. Compute <m>\oint_\mathcal{C}\boldF\cdot \boldr</m>, where <m>\mathcal{C}</m> is oriented counterclockwise, viewed from above.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Show that Stokes's theorem implies Green's theorem.
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </example>
+  <theorem xml:id="th_Stokes_interpretation_curl">
+    <title>Curl interpretation</title>
+    <statement>
+      <p>
+        Assume the component functions of <m>\boldF=\angvec{F_1, F_2,F_3}</m> have continuous first-order partial derivatives on an open set containing the point <m>P=(x,y,z)</m>. Let <m>\boldn</m> be any unit vector, and for all <m>R>0</m>, let <m>C_R</m> be the circle of radius <m>R</m> then
+        <men xml:id="eq_Stokes_theorem_interpretation">
+          (\curl\boldF)\cdot \boldk (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldT\, ds
+        </men>,
+        where <m>C_R</m> is the simple positively oriented circle of radius <m>R</m> centered at <m>P</m>.
+      </p>
+    </statement>
+  </theorem>
+
 </section>
