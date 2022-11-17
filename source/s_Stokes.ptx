@@ -98,7 +98,19 @@
       </statement>
       <solution>
         <p>
-
+          I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as
+          <md>
+            <mrow>\boldr(r,\theta) \amp=(r\cos\theta, r\sin\theta, r^2(\sin^2\theta-\cos^2\theta)=(r\cos\theta,r\sin\theta,-r^2\cos 2\theta) </mrow>
+            <mrow> \mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi </mrow>
+          </md>.
+          (Evaluate Sage cell below for a visualization.)
+          Next compute
+          <md>
+            <mrow>\boldr_r \amp =\angvec{\cos\theta,\sin\theta,-2r\cos 2\theta}</mrow>
+            <mrow> \boldr_\theta\amp=\angvec{-r\sin\theta,r\cos\theta,2r^2\sin 2\theta} </mrow>
+            <mrow> \boldr_r\times\boldr_\theta \amp =
+            \angvec{2r^2(\sin\theta\sin 2\theta+\cos\theta\cos 2\theta)}</mrow>
+          </md>
         </p>
       </solution>
     </example>
