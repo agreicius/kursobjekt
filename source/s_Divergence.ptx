@@ -27,7 +27,13 @@
       </statement>
       <solution>
         <p>
-
+          Let <m>D</m> be the solid cube <m>[0,1]\times [0,1]\times [0,1]</m>. Since <m>\boldF</m> clearly satisfies the conditions for the divergence theorem, we have
+          <md>
+            <mrow>\iint\limits_{\mathcal{S}}\boldF\cdot \boldn\, d\sigma \amp =
+            \iiint\limits_D\diver\boldF\, dV</mrow>
+            <mrow> \amp = \int_0^1\int_0^1\int_0^12 2x+4xz+e^x\, dy\, dz\, dx</mrow>
+            <mrow>  \amp =e+1</mrow>
+          </md>.
         </p>
       </solution>
     </example>
@@ -38,6 +44,18 @@
           Assume the solid region <m>D\subseteq\R^3</m>, its boundary <m>\partial D=\mathcal{S}</m>, and the vector field <m>\boldF</m> satisfy the conditions of the divergence theorem. If <m>\diver\boldF(x,y,z)=0</m> for all <m>(x,y,z)\in D</m>, then <m>\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0</m>, for any orientation of <m>\mathcal{S}</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          An easy consequence of the divergence theorem:
+          <md>
+            <mrow>\iint\limits_\mathal{S}\boldF\cdot \boldn\, d\sigma \amp =
+            \iiint\limits_D\diver\boldF\, dV</mrow>
+            <mrow> \amp =\iiint\limits_D 0\, dV</mrow>
+            <mrow>  \amp =0</mrow>
+          </md>.
+        </p>
+      </proof>
+
     </corollary>
     <corollary xml:id="cor_equal_flux">
       <title>Identical flux</title>
@@ -47,9 +65,27 @@
           <me>
             \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma
           </me>,
-          where for both surface integrals <m>\boldn</m> is taken to be the outer oritentation with respect to the surface.
+          where for both surface integrals <m>\boldn</m> is taken to be the outer orientation with respect to the surface.
         </p>
       </statement>
+      <proof>
+        <p>
+          Let <m>D_1, D_2</m> be the solid regions enclosed by <m>\mathcal{S}_1</m> and <m>\mathcal{S}_2</m>, respectively (so that <m>\mathcal{D}=D_2-D_1</m>). Notice that if <m>\boldn</m> is the outward orientation on <m>\mathcal{S}_2</m>, considered as the boundary of <m>D_2</m>, then <m>-\boldn</m> is the outward orientation on <m>\mathcal{S}_2</m> considered as a boundary of <m>D</m>. By the divergence theorem we have
+          <md>
+            <mrow> 0\amp=\iiint\limits_D \diver \boldF\, dV </mrow>
+            <mrow> \amp=\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma +
+            \iint\limits_{\mathcal{S}_2}\boldF\cdot (-\boldn)\, d\sigma
+            </mrow>
+            <mrow>  \amp = \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma-\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma</mrow>
+          </md>.
+          We conclude that
+          <me>
+            \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma
+          </me>,
+          as desired.
+        </p>
+      </proof>
+
     </corollary>
     <theorem xml:id="th_div_curl">
       <title><m>\diver\curl\boldF=0</m></title>
@@ -62,6 +98,19 @@
           for all <m>(x,y,z)\in D</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          We have
+          <md>
+            <mrow>\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle </mrow>
+            <mrow> \amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)</mrow>
+            <mrow>  \amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}</mrow>
+            <mrow>  \amp = 0</mrow>
+          </md>,
+          where in the last step we have used Clairaut's theorem to identify the various <q>mixed partials</q>: <ie />, <m>\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}</m>, <m>\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}</m>, <m>\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}</m>.
+        </p>
+      </proof>
+
     </theorem>
     <corollary xml:id="cor_flux_curl">
       <title>Curl field has zero flux</title>
@@ -73,20 +122,29 @@
           </me>.
         </p>
       </statement>
+      <proof>
+        <p>
+          This is an easy consequence of <xref ref="th_div_curl"/> and <xref ref="cor_divergence_zero"/> since
+          <me>
+            \diver\boldF=\diver\curl \boldG=0
+          </me>.
+        </p>
+      </proof>
+
     </corollary>
     <example>
       <title>Gauss's law</title>
       <statement>
         <p>
-          Given a a point charge of <m>q</m> located at the origin in <m>\R^3</m>, the electrotatic field it produces is given by
+          Given a a point charge <m>q</m> located at the origin in <m>\R^3</m>, the electrostatic field it produces is given by
           <me>
             \boldE(x,y,z)=\frac{q}{4\pi \epsilon_0}\frac{\angvec{x,y,z}}{(x^2+y^2+z^2)^{3/2}}=\frac{q}{4\pi \epsilon_0}\frac{\boldr}{\abs{\boldr}^3},
           </me>
           where <m>\boldr=\angvec{x,y,z}</m> and <m>\epsilon_0</m> is a physical constant called the <em>permittivity of free space</em>. Prove Gauss's law: if <m>\mathcal{S}\subseteq\R^3</m> is a smooth closed surface with outward orientation then
           <me>
             \iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\begin{cases}
-              0 \amp \text{if } \mathcal{S} \text{ encloses point charge;}\\
-              \frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ does not enclose point charge.}
+              0 \amp \text{if } \mathcal{S} \text{ does not enclose the point charge;}\\
+              \frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ encloses the point charge.}
           \end{cases}
           </me>
         Gauss's law can be generalized to a situation where the surface <m>\mathcal{S}</m> encloses a region <m>D</m> with continuous charge density <m>\delta(x,y,z)</m>. If <m>\boldE</m> is the resulting electostatic field, then
@@ -97,9 +155,51 @@
         </p>
       </statement>
       <solution>
-        <p>
-
-        </p>
+        <!-- <p>
+          First observe that <m>\boldE</m> satisfies the conditions of the divergence theorem on any solid region that does not contain the origin. Furthermore, a (somewhat onerous) computation shows that
+          <me>
+            \diver\boldE (x,y,z)=0
+          </me>
+          for all <m>(x,y,z)\ne (0,0,0)</m>. It follows that if <m>\mathcal{S}</m> does not enclose the origin, then the divergence theorem applies to the solid region <m>D</m> it encloses, and we have
+          <md>
+            <mrow>\iint\limits_\mathcal{S}\boldE\cdot\boldn\, d\sigma \amp=
+            \iiint\limits_D\diver\boldE\, dV \amp \text{(divergence thm.)}</mrow>
+            <mrow> \amp=\iiint\limits_D 0\, dV=0 </mrow>
+          </md>.
+          Next, assume <m>\mathcal{S}</m> does enclose the origin. Pick <m>R&gt; 0</m> small enough so that the solid ball <m>B_R</m> centered at the origin lies inside <m>\mathcal{S}</m>, and let <m>D</m> be the region within <m>\mathcal{S}</m> and outside of <m>B_R</m>. Since <m>D</m> does not contain the origin, <m>\boldE</m> satisfies the conditions of the divergence theorem. By <xref ref="cor_equal_flux"/>, it follows that
+          <me>
+            \iint\limits_\mathcal{S}\boldE\cdot\boldn\, d\sigma=
+            \iint\limits_{S_R}\boldE\cdot\boldn\, d\sigma
+          </me>,
+          where <m>S_R</m> is the sphere of radius <m>R</m> centered at the origin. It remains only to show that
+          <me>
+            \iint\limits_{S_R}\boldE\cdot \boldn\, d\sigma=\frac{q}{\epsilon_0}
+          </me>,
+          which one can show directly using the definition of the surface integral and the standard parametrization of <m>S_R</m>. Indeed, the outward unit normal vector on <m>S_R</m>  at a point <m>(x,y,z)</m> is given by <m>\boldn=\frac{1}{R}\angvec{x,y,z}</m>, and thus for all <m>(x,y,z)\in S_R</m> we have
+          <md>
+            <mrow>\boldE\cdot \boldn(x,y,z)\amp=\frac{q}{4\pi R\epsilon_0}\frac{1}{(x^2+y^2+z^2)^{3/2}}(x^2+y^2+z^2)</mrow>
+            <mrow>  \amp = \frac{q}{4\pi R\epsilon_0}\frac{1}{(x^2+y^2+z^2)^{1/2}}</mrow>
+            <mrow>  \amp =\frac{q}{4\pi R\epsilon_0}\frac{1}{R} </mrow>
+            <mrow>  \amp =\frac{q}{4\pi R^2\epsilon_0}</mrow>
+          </md>.
+          Finally, using the usual parametrization
+          <me>
+            \boldr(\phi, \theta) =R(\sin\phi\cos\theta,\sin\phi\sin\theta,\cos\phi)
+          </me>,
+          which satisfies
+          <me>
+            \abs{\boldr_\phi\times \boldr_\theta}=R^2\sin\phi
+          </me>,
+          we have
+          <md>
+            <mrow>\iint\limits_{S_R}\boldE\cdot\boldn\, d\sigma \amp =
+            \int_0^{2\pi}\int_0^\pi \frac{q}{4\pi R^2\epsilon_0}\abs{\boldr_\phi\times r_\theta}\, d\phi\, d\theta </mrow>
+            <mrow> \amp = \int_0^{2\pi}\int_0^\pi \frac{q}{4\pi \cancel{R^2}\epsilon_0}\cancel{R^2}\sin\phi\, d\phi\, d\theta </mrow>
+            <mrow>  \amp=\frac{q}{4\pi\epsilon_0}4\pi  </mrow>
+            <mrow>  \amp =\frac{q}{\epsilon_0}</mrow>
+          </md>,
+          as desired!
+        </p> -->
       </solution>
     </example>
 
@@ -115,4 +215,26 @@
         </p>
       </statement>
     </theorem>
+    <proof>
+      <p>
+        For all <m>R &gt; 0</m> let <m>B_R</m> be the solid ball of radius <m>R</m> centered at <m>P</m>. We have <m>S_R=\partial B_R</m> and so by the divergence theorem
+        <me>
+          \iiint\limits_{B_R}\diver\boldF\, dV=\iint\limits_{S_R}\boldF\cdot \boldn\, d\sigma
+        </me>.
+        Next a generalization of the integral average value theorem to triple integrals imlies
+        <me>
+          \iiint\limits_{B_R}\diver\boldF\, dV=\diver\boldF(P_R)\cdot \operatorname{vol} B_R,
+        </me>
+        for some point <m>P_R</m> in the ball <m>B_R</m> centered around <m>P</m>. Since <m>\diver\boldF</m> is continuous at <m>P</m> we have
+        <md>
+          <mrow>\diver\boldF(P) \amp =\lim_{R\to 0} P_R</mrow>
+          <mrow> \amp=\lim_{R\to 0}\frac{1}{\operatorname{vol} B_R}\iiint\limits_{B_R}\diver \boldF\, dV \amp \text{(avg. value thm.)}</mrow>
+          <mrow>  \amp =\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{\mathcal{S_R}}\boldF\cdot \boldn\, d\sigma
+          \amp \text{(divergence thm.)} </mrow>
+        </md>.
+
+
+      </p>
+    </proof>
+
 </section>
