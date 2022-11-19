@@ -7,4 +7,5 @@
   <xi:include href="./s_surfaces_area.ptx"/>
   <xi:include href="./s_surface_integrals.ptx"/>
   <xi:include href="./s_Stokes.ptx"/>
+  <xi:include href="./s_Divergence.ptx"/>
 </chapter>

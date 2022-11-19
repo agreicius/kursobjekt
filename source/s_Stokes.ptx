@@ -100,17 +100,33 @@
         <p>
           I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as
           <md>
-            <mrow>\boldr(r,\theta) \amp=(r\cos\theta, r\sin\theta, r^2(\sin^2\theta-\cos^2\theta)=(r\cos\theta,r\sin\theta,-r^2\cos 2\theta) </mrow>
+            <mrow>\boldr(r,\theta) \amp=(r\cos\theta, r\sin\theta, r^2(\sin^2\theta-\cos^2\theta))=(r\cos\theta,r\sin\theta,-r^2\cos 2\theta) </mrow>
             <mrow> \mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi </mrow>
-          </md>.
+          </md>,
+          and the boundary curve <m>\mathcal{C}</m> with counterclockwise orientation has parametrization
+          <me>
+            \bolds(t)=\boldr(1,\theta)=(\cos\theta,\sin\theta,-r^2\cos 2\theta)
+          </me>.
           (Evaluate Sage cell below for a visualization.)
           Next compute
           <md>
             <mrow>\boldr_r \amp =\angvec{\cos\theta,\sin\theta,-2r\cos 2\theta}</mrow>
             <mrow> \boldr_\theta\amp=\angvec{-r\sin\theta,r\cos\theta,2r^2\sin 2\theta} </mrow>
             <mrow> \boldr_r\times\boldr_\theta \amp =
-            \angvec{2r^2(\sin\theta\sin 2\theta+\cos\theta\cos 2\theta)}</mrow>
-          </md>
+            \angvec{2r^2(\sin\theta\sin 2\theta+\cos\theta\cos 2\theta),
+            -2r^2(\cos\theta\sin^2\theta+\sin\theta\cos 2\theta),
+            r
+            }</mrow>
+            <mrow> \curl\boldF \amp=\angvec{0,-2x,-2} </mrow>
+            <mrow> \curl\boldF(\boldr(r,\theta)) \amp =\angvec{0,-2r\cos\theta,-2}</mrow>
+          </md>.
+          Since the <m>z</m>-component of <m>\boldr_r\times\boldr_\theta</m> is <m>r\geq 0</m>, we see that it gives rise to the given choice of <em>upward</em> orientation. With all the ingredients assembled, I leave it to you to verify that
+          <md>
+            <mrow>\iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=\iint_\mathcal{R}4r^3\cos\theta(\cos\theta\sin 2\theta+\sin\theta\cos 2\theta)-2r\, dA </mrow>
+            <mrow> \amp=-2\pi </mrow>
+            <mrow> \oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi}\boldF(\bolds(t))\cdot \bolds'(t)\, dt</mrow>
+            <mrow>  \amp =-2\pi</mrow>
+          </md>.
         </p>
       </solution>
     </example>
@@ -135,9 +151,46 @@
       </p>
     </statement>
     <solution>
+      <case>
+       <title>Solution 1</title>
       <p>
-
+        The curve <m>\mathcal{C}</m> is the boundary of the elliptical region <m>\mathcal{S}</m> it encloses in the plane <m>y+z=2</m>. Since <m>z=2-y</m> for points on this plane, we can parametrize as
+        <md>
+          <mrow>\boldr(r,\theta) \amp =(r\cos\theta, r\sin\theta,2-r\sin\theta)</mrow>
+          <mrow> \mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi </mrow>
+        </md>.
+        Assembling ingredients we have
+        <md>
+          <mrow>\boldr_r \amp =\angvec{\cos\theta, \sin\theta,-\sin\theta}</mrow>
+          <mrow>\boldr_\theta\amp =\angvec{-r\sin\theta,r\cos\theta,-r\cos\theta}</mrow>
+          <mrow> \boldr_r\times\boldr_\theta\amp=\angvec{0,r,r} </mrow>
+          <mrow> \curl\boldF \amp=\angvec{0,0,1+2y} </mrow>
+        </md>.
+        Since the <m>z</m>-component of <m>\boldr_r\times\boldr_\theta</m> is nonnegative, we see that this gives rise to the <em>upward</em> orientation on <m>\mathcal{S}</m>, which induces the counterclockwise orientation on <m>\mathcal{C}</m>. We can now use Stokes's theorem to concude
+        <md>
+          <mrow>\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma</mrow>
+          <mrow> \amp=\iint_\mathcal{R}\angvec{0,0,1+2r\sin\theta}\cdot \angvec{0,r,r}\, dA </mrow>
+          <mrow>  \amp =\int_0^{2\pi}\int_0^{1}r+2r^2\sin\theta\, dr\, d\theta</mrow>
+          <mrow>  \amp =\int_0^{2\pi}\frac{1}{2}+\frac{2}{3}\sin\theta\, d\theta</mrow>
+          <mrow>  \amp =\pi</mrow>.
+        </md>
       </p>
+      </case>
+      <case>
+       <title>Solution 2</title>
+      <p>
+      Alternatively, we can treat <m>\mathcal{C}</m> as the boundary of the piecewise smooth surface <m>\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2</m>, where <m>\mathcal{S}_1</m> is the portion of the cylinder <m>x^2+y^2=1</m> above the <m>xy</m>-plane and below the plane <m>y+z=2</m>, and <m>\mathcal{S}_2</m> is the disc <m>x^2+y^2\leq 1</m> in the <m>xy</m>-plane. To have the given orientation of <m>\mathcal{C}</m> be induced by that of <m>\mathcal{S}</m>, we must choose the <em>inward</em> orientation <m>\boldn</m> on <m>\mathcal{S}</m>
+      : this orientation is <em>inward</em> on the cylinder <m>\mathcal{S}_1</m> and <em>upward</em> on the disc <m>\mathcal{S}_2</m>. With this setup we have
+      <md>
+        <mrow>\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma</mrow>
+        <mrow> \amp= \cancelto{0}{\iint_\mathcal{S_1}\curl\boldF\cdot \boldn\, d\sigma}+\iint_\mathcal{S_2}\curl\boldF\cdot \boldn\, d\sigma</mrow>
+        <mrow>  \amp =\iint\limits_{x^2+y^2\leq 1}\angvec{0,0,1+2y}\cdot \angvec{0,0,1}\, dA</mrow>
+        <mrow>  \amp =\int_0^{2\pi}\int_0^1(1+2r\sin\theta)r\, dr\, d\theta\</mrow>
+        <mrow>  \amp =\pi</mrow>
+      </md>.
+      A few comments are in order. We have <m>\iint_{\mathcal{S}_1}\curl\boldF\cdot \boldn\, d\sigma=0</m> because the normal vectors to the cylinder <m>\mathcal{S}_1</m> point horizontally, and thus are orthogonal to the curl vectors <m>\curl\boldF</m>, which point vertically. Secondly, on the disc in the <m>xy</m>-plane we clearly have the upward normal vector equal to <m>\angvec{0,0,1}</m>.
+      </p>
+      </case>
     </solution>
   </example>
   <example>
@@ -148,7 +201,12 @@
     </statement>
     <solution>
       <p>
-
+        Let <m>\mathcal{R}</m> be the region enclosed by a simple, piecewise smooth planar curve <m>\mathcal{C}</m> oriented counterclockwise, and suppose <m>\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}</m> satisfies the conditions of <xref ref="th_Greens"/>. Define <m>G(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}</m>, and think of <m>\mathcal{R}\subseteq\R^3</m> as a planar surface living in the <m>xy</m>-plane, with <m>\mathcal{C}</m> is boundary. We choose the orientation <m>\boldn(x,y,z)=\angvec{0,0,1}=\boldk</m> on <m>\mathcal{R}</m>, which induces the counterclockwise orientation on <m>\mathcal{C}</m>. By Stokes's theorem we have
+        <md>
+          <mrow>\int_\mathcal{C}\boldF\cdot d\boldr\amp=\iint_\mathcal{R}\curl G\cdot \boldn \, d\sigma \amp </mrow>
+          <mrow> \amp =\iint_\mathcal{R}\angvec{0,0,\partial F_2/\partial x-\partial F_1/\partial y}\cdot \angvec{0,0,1} \, dA</mrow>
+          <mrow>  \amp =\iint_\mathcal{R} \partial F_2/\partial x-\partial F_1/\partial y \, dA</mrow>
+        </md>.
       </p>
     </solution>
   </example>
@@ -156,11 +214,11 @@
     <title>Curl interpretation</title>
     <statement>
       <p>
-        Assume the component functions of <m>\boldF=\angvec{F_1, F_2,F_3}</m> have continuous first-order partial derivatives on an open set containing the point <m>P=(x,y,z)</m>. Let <m>\boldn</m> be any unit vector, and for all <m>R>0</m>, let <m>C_R</m> be the circle of radius <m>R</m> then
+        Assume the component functions of <m>\boldF=\angvec{F_1, F_2,F_3}</m> have continuous first-order partial derivatives on an open set containing the point <m>P=(x,y,z)</m>. Let <m>\boldn</m> be any unit vector, and for all <m>R &gt; 0</m>, let <m>C_R</m> be the circle of radius <m>R</m> centered at <m>P</m> and lying in the plane orthogonal to <m>\boldn</m>. We have
         <men xml:id="eq_Stokes_theorem_interpretation">
-          (\curl\boldF)\cdot \boldk (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldT\, ds
+          (\curl\boldF)\cdot \boldn (x,y,z)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot d\boldr
         </men>,
-        where <m>C_R</m> is the simple positively oriented circle of radius <m>R</m> centered at <m>P</m>.
+        where the orientation of <m>\mathcal{C}_R</m> is chosen to be counterclockwise with respect to <m>\boldn</m>. As such, we interpret the quantity <m>\curl\boldF\cdot \boldn(x,y,z)</m> as the <em>circulation density</em> (in units circulation per unit area) of <m>\boldF</m> at <m>P=(x,y,z)</m> with respect to the axis of rotation <m>\boldn</m>.
       </p>
     </statement>
   </theorem>

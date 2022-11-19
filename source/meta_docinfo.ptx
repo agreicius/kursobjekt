@@ -50,6 +50,7 @@
       \newcommand{\boldB}{{\mathbf B}}
       \newcommand{\boldF}{{\mathbf F}}
       \newcommand{\boldS}{{\mathbf S}}
+      \newcommand{\boldE}{{\mathbf E}}
       \newcommand{\boldG}{{\mathbf G}}
       \newcommand{\boldK}{{\mathbf K}}
       \newcommand{\boldL}{{\mathbf L}}

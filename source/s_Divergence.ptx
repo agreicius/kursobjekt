@@ -1,0 +1,118 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Divergence">
+  <title>Divergence theorem</title>
+    <definition xml:id="d_closed_surface">
+      <statement>
+        <p>
+          A piecewise smooth surface <m>\mathcal{S}\subseteq\R^3</m> is <term>closed</term> if it has no boundary curve.
+        </p>
+      </statement>
+    </definition>
+    <theorem xml:id="th_Divergence">
+      <title>Divergence (or Gauss's) theorem</title>
+      <statement>
+        <p>
+          Let <m>D\subseteq\R^3</m> be a bounded solid region whose boundary <m>\partial D=\mathcal{S}</m> is a union of finitely many piecewise smooth surfaces. Let <m>\boldn\colon \mathcal{S}\rightarrow\R^3</m> be the outward orientation on <m>\mathcal{S}</m>. If <m>\boldF</m> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <m>\mathcal{S}</m>, then
+          <me>
+            \iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma=\iiint\limits_D\diver \boldF\, dV
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <example xml:id="eg_Divergence">
+      <title>Flux out of cube</title>
+      <statement>
+        <p>
+        Let <m>\mathcal{S}</m> be the cube in the first octant bounded by the planes <m>x=1,y=1,z=1</m>. Compute the outward flux of <m>\boldF(x,y,z)=x^2\boldi+4xyz\boldj+ze^x\boldk</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+    <corollary xml:id="cor_divergence_zero">
+      <title>Zero divergence implies zero flux</title>
+      <statement>
+        <p>
+          Assume the solid region <m>D\subseteq\R^3</m>, its boundary <m>\partial D=\mathcal{S}</m>, and the vector field <m>\boldF</m> satisfy the conditions of the divergence theorem. If <m>\diver\boldF(x,y,z)=0</m> for all <m>(x,y,z)\in D</m>, then <m>\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0</m>, for any orientation of <m>\mathcal{S}</m>.
+        </p>
+      </statement>
+    </corollary>
+    <corollary xml:id="cor_equal_flux">
+      <title>Identical flux</title>
+      <statement>
+        <p>
+          Suppose the solid region <m>D\subseteq\R^3</m> has piecewise smooth boundary surface <m>\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2</m>, where <m>\mathcal{S}_1</m> is the outer boundary of <m>D</m> and <m>\mathcal{S}_2</m> is its inner boundary. If <m>\boldF</m> satisfies the conditions of the divergence theorem and <m>\diver\boldF=0</m> on <m>D</m>, then
+          <me>
+            \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma
+          </me>,
+          where for both surface integrals <m>\boldn</m> is taken to be the outer oritentation with respect to the surface.
+        </p>
+      </statement>
+    </corollary>
+    <theorem xml:id="th_div_curl">
+      <title><m>\diver\curl\boldF=0</m></title>
+      <statement>
+        <p>
+          If the component functions of <m>\boldF=\angvec{F_1, F_2,F_3}</m> have continuous second-order partial derivatives on the set <m>D</m>, then
+          <me>
+            \diver\curl\boldF(x,y,z)=\nabla\cdot (\nabla\times \boldF)(x,y,z)=0
+          </me>
+          for all <m>(x,y,z)\in D</m>.
+        </p>
+      </statement>
+    </theorem>
+    <corollary xml:id="cor_flux_curl">
+      <title>Curl field has zero flux</title>
+      <statement>
+        <p>
+          Assume the solid region <m>D\subseteq\R^3</m>, its boundary <m>\partial D=\mathcal{S}</m>, and the vector field <m>\boldF</m> satisfy the conditions of the divergence theorem. If <m>\boldF=\curl \boldG</m> for some vector field <m>\boldG</m>, then
+          <me>
+            \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0
+          </me>.
+        </p>
+      </statement>
+    </corollary>
+    <example>
+      <title>Gauss's law</title>
+      <statement>
+        <p>
+          Given a a point charge of <m>q</m> located at the origin in <m>\R^3</m>, the electrotatic field it produces is given by
+          <me>
+            \boldE(x,y,z)=\frac{q}{4\pi \epsilon_0}\frac{\angvec{x,y,z}}{(x^2+y^2+z^2)^{3/2}}=\frac{q}{4\pi \epsilon_0}\frac{\boldr}{\abs{\boldr}^3},
+          </me>
+          where <m>\boldr=\angvec{x,y,z}</m> and <m>\epsilon_0</m> is a physical constant called the <em>permittivity of free space</em>. Prove Gauss's law: if <m>\mathcal{S}\subseteq\R^3</m> is a smooth closed surface with outward orientation then
+          <me>
+            \iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\begin{cases}
+              0 \amp \text{if } \mathcal{S} \text{ encloses point charge;}\\
+              \frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ does not enclose point charge.}
+          \end{cases}
+          </me>
+        Gauss's law can be generalized to a situation where the surface <m>\mathcal{S}</m> encloses a region <m>D</m> with continuous charge density <m>\delta(x,y,z)</m>. If <m>\boldE</m> is the resulting electostatic field, then
+        <me>
+          \iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\frac{1}{\epsilon_0}\iiint\limits_D\delta(x,y,z)\, dV=\frac{Q}{\epsilon_0}
+        </me>,
+        where <m>Q=\iiint_D\delta(x,y,z)\, dV</m> is the total charge enclosed by <m>\mathcal{S}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+
+    <theorem xml:id="th_Divergence_interpretation_curl">
+      <title>Divergence interpretation</title>
+      <statement>
+        <p>
+          Assume the component functions of <m>\boldF=\angvec{F_1, F_2,F_3}</m> have continuous first-order partial derivatives on an open set containing the point <m>P=(x,y,z)</m>. For all <m>R>0</m>, let <m>S_R</m> be the sphere of radius <m>R</m> centered at <m>P</m> with outward orientation. We have
+          <men xml:id="eq_Divergence_theorem_interpretation">
+            \diver\boldF(P)=\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{S_R}\boldF\cdot\boldn\, d\sigma
+          </men>.
+          Thus we interpret <m>\diver\boldF(P)</m> as the <em>flux density</em> of <m>\boldF</m> at <m>P</m>, measured in unit flux per unit volume.
+        </p>
+      </statement>
+    </theorem>
+</section>

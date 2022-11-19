@@ -127,7 +127,7 @@
     <title>Divergence</title>
     <statement>
       <p>
-        Assume the component functions of the vector field <m>\boldF=\angvec{F_1, F_2,\dots, F_n}</m> have first-order partial derivatives on a domain <m>D\subseteq \R^n</m>. The <term>divergence</term> of <m>\boldF</m>, denoted <m>\nabla\cdot \boldF</m>, is defined as
+        Assume the component functions of the vector field <m>\boldF=\angvec{F_1, F_2,\dots, F_n}</m> have first-order partial derivatives on a domain <m>D\subseteq \R^n</m>. The <term>divergence</term> of <m>\boldF</m>, denoted <m>\diver \boldF</m> or <m>\nabla\cdot \boldF</m>, is defined as
         <me>
         \nabla \cdot \boldF= \frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}+\cdots +\frac{\partial F_n}{\partial x_n}
         </me>.
