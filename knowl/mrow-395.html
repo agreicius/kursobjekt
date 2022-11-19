@@ -11,16 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>An easy consequence of the divergence theorem:</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
 \begin{align*}
-\iint\limits_\mathal{S}\boldF\cdot \boldn\, d\sigma \amp =
-\iiint\limits_D\diver\boldF\, dV\\
-\amp =\iiint\limits_D 0\, dV\\
-\amp =0\text{.}
+\iint\limits_{S_R}\boldE\cdot\boldn\, d\sigma \amp =
+\int_0^{2\pi}\int_0^\pi \frac{q}{4\pi R^2\epsilon_0}\abs{\boldr_\phi\times r_\theta}\, d\phi\, d\theta \\
+\amp = \int_0^{2\pi}\int_0^\pi \frac{q}{4\pi \cancel{R^2}\epsilon_0}\cancel{R^2}\sin\phi\, d\phi\, d\theta \\
+\amp=\frac{q}{4\pi\epsilon_0}4\pi  \\
+\amp =\frac{q}{\epsilon_0}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Divergence.html#p-506" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_Divergence.html#md-117" class="internal">in-context</a></span>
 </body>
 </html>

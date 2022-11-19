@@ -255,40 +255,91 @@ window.MathJax = {
 </h3>
 <p id="p-503">Let <span class="process-math">\(\mathcal{S}\)</span> be the cube in the first octant bounded by the planes <span class="process-math">\(x=1,y=1,z=1\text{.}\)</span> Compute the outward flux of <span class="process-math">\(\boldF(x,y,z)=x^2\boldi+4xyz\boldj+ze^x\boldk\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like"><p id="p-504"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like">
+<p id="p-504">Let <span class="process-math">\(D\)</span> be the solid cube <span class="process-math">\([0,1]\times [0,1]\times [0,1]\text{.}\)</span> Since <span class="process-math">\(\boldF\)</span> clearly satisfies the conditions for the divergence theorem, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-111">
+\begin{align*}
+\iint\limits_{\mathcal{S}}\boldF\cdot \boldn\, d\sigma \amp =
+\iiint\limits_D\diver\boldF\, dV\\
+\amp = \int_0^1\int_0^1\int_0^12 2x+4xz+e^x\, dy\, dz\, dx\\
+\amp =e+1\text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article><article class="corollary theorem-like" id="cor_divergence_zero"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Zero divergence implies zero flux.</span>
 </h3>
-<p id="p-505">Assume the solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> its boundary <span class="process-math">\(\partial D=\mathcal{S}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF\)</span> satisfy the conditions of the divergence theorem. If <span class="process-math">\(\diver\boldF(x,y,z)=0\)</span> for all <span class="process-math">\((x,y,z)\in D\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0\text{,}\)</span> for any orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p></article><article class="corollary theorem-like" id="cor_equal_flux"><h3 class="heading">
+<p id="p-505">Assume the solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> its boundary <span class="process-math">\(\partial D=\mathcal{S}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF\)</span> satisfy the conditions of the divergence theorem. If <span class="process-math">\(\diver\boldF(x,y,z)=0\)</span> for all <span class="process-math">\((x,y,z)\in D\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0\text{,}\)</span> for any orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-506">An easy consequence of the divergence theorem:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-112">
+\begin{align*}
+\iint\limits_\mathal{S}\boldF\cdot \boldn\, d\sigma \amp =
+\iiint\limits_D\diver\boldF\, dV\\
+\amp =\iiint\limits_D 0\, dV\\
+\amp =0\text{.}
+\end{align*}
+</div></article></div>
+<article class="corollary theorem-like" id="cor_equal_flux"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Identical flux.</span>
 </h3>
-<p id="p-506">Suppose the solid region <span class="process-math">\(D\subseteq\R^3\)</span> has piecewise smooth boundary surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the outer boundary of <span class="process-math">\(D\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is its inner boundary. If <span class="process-math">\(\boldF\)</span> satisfies the conditions of the divergence theorem and <span class="process-math">\(\diver\boldF=0\)</span> on <span class="process-math">\(D\text{,}\)</span> then</p>
+<p id="p-507">Suppose the solid region <span class="process-math">\(D\subseteq\R^3\)</span> has piecewise smooth boundary surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the outer boundary of <span class="process-math">\(D\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is its inner boundary. If <span class="process-math">\(\boldF\)</span> satisfies the conditions of the divergence theorem and <span class="process-math">\(\diver\boldF=0\)</span> on <span class="process-math">\(D\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma\text{,}
 \end{equation*}
 </div>
-<p class="continuation">where for both surface integrals <span class="process-math">\(\boldn\)</span> is taken to be the outer oritentation with respect to the surface.</p></article><article class="theorem theorem-like" id="th_div_curl"><h3 class="heading">
+<p class="continuation">where for both surface integrals <span class="process-math">\(\boldn\)</span> is taken to be the outer orientation with respect to the surface.</p></article><article class="hiddenproof" id="proof-11"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-11"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><p id="p-508">Let <span class="process-math">\(D_1, D_2\)</span> be the solid regions enclosed by <span class="process-math">\(\mathcal{S}_1\)</span> and <span class="process-math">\(\mathcal{S}_2\text{,}\)</span> respectively (so that <span class="process-math">\(\mathcal{D}=D_2-D_1\)</span>). Notice that if <span class="process-math">\(\boldn\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}_2\text{,}\)</span> considered as the boundary of <span class="process-math">\(D_2\text{,}\)</span> then <span class="process-math">\(-\boldn\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}_2\)</span> considered as a boundary of <span class="process-math">\(D\text{.}\)</span> By the divergence theorem we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-113">
+\begin{align*}
+0\amp=\iiint\limits_D \diver \boldF\, dV \\
+\amp=\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma +
+\iint\limits_{\mathcal{S}_2}\boldF\cdot (-\boldn)\, d\sigma\\
+\amp = \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma-\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma\text{.}
+\end{align*}
+</div>
+<p class="continuation">We conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma\text{,}
+\end{equation*}
+</div>
+<p class="continuation">as desired.</p></article></div>
+<article class="theorem theorem-like" id="th_div_curl"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\diver\curl\boldF=0\)</span>.</span>
 </h3>
-<p id="p-507">If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous second-order partial derivatives on the set <span class="process-math">\(D\text{,}\)</span> then</p>
+<p id="p-509">If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous second-order partial derivatives on the set <span class="process-math">\(D\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \diver\curl\boldF(x,y,z)=\nabla\cdot (\nabla\times \boldF)(x,y,z)=0
 \end{equation*}
 </div>
-<p class="continuation">for all <span class="process-math">\((x,y,z)\in D\text{.}\)</span></p></article><article class="corollary theorem-like" id="cor_flux_curl"><h3 class="heading">
+<p class="continuation">for all <span class="process-math">\((x,y,z)\in D\text{.}\)</span></p></article><article class="hiddenproof" id="proof-12"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><p id="p-510">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-114">
+\begin{align*}
+\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
+\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
+\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
+\amp = 0\text{,}
+\end{align*}
+</div>
+<p class="continuation">where in the last step we have used Clairaut's theorem to identify the various “mixed partials”: i.e., <span class="process-math">\(\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}\text{.}\)</span></p></article></div>
+<article class="corollary theorem-like" id="cor_flux_curl"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.8.7</span><span class="period">.</span><span class="space"> </span><span class="title">Curl field has zero flux.</span>
 </h3>
-<p id="p-508">Assume the solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> its boundary <span class="process-math">\(\partial D=\mathcal{S}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF\)</span> satisfy the conditions of the divergence theorem. If <span class="process-math">\(\boldF=\curl \boldG\)</span> for some vector field <span class="process-math">\(\boldG\text{,}\)</span> then</p>
+<p id="p-511">Assume the solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> its boundary <span class="process-math">\(\partial D=\mathcal{S}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF\)</span> satisfy the conditions of the divergence theorem. If <span class="process-math">\(\boldF=\curl \boldG\)</span> for some vector field <span class="process-math">\(\boldG\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0\text{.}
 \end{equation*}
-</div></article><article class="example example-like" id="example-67"><h3 class="heading">
+</div></article><article class="hiddenproof" id="proof-13"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-512">This is an easy consequence of <a href="" class="xref" data-knowl="./knowl/th_div_curl.html" title="Theorem 2.8.6: \diver\curl\boldF=0">Theorem 2.8.6</a> and <a href="" class="xref" data-knowl="./knowl/cor_divergence_zero.html" title="Corollary 2.8.4: Zero divergence implies zero flux">Corollary 2.8.4</a> since</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_div_curl.html ./knowl/cor_divergence_zero.html">
+\begin{equation*}
+\diver\boldF=\diver\curl \boldG=0\text{.}
+\end{equation*}
+</div></article></div>
+<article class="example example-like" id="example-67"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Gauss's law.</span>
 </h3>
-<p id="p-509">Given a a point charge of <span class="process-math">\(q\)</span> located at the origin in <span class="process-math">\(\R^3\text{,}\)</span> the electrotatic field it produces is given by</p>
+<p id="p-513">Given a a point charge <span class="process-math">\(q\)</span> located at the origin in <span class="process-math">\(\R^3\text{,}\)</span> the electrostatic field it produces is given by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldE(x,y,z)=\frac{q}{4\pi \epsilon_0}\frac{\angvec{x,y,z}}{(x^2+y^2+z^2)^{3/2}}=\frac{q}{4\pi \epsilon_0}\frac{\boldr}{\abs{\boldr}^3},
@@ -298,8 +349,8 @@ window.MathJax = {
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\begin{cases}
-0 \amp \text{if } \mathcal{S} \text{ encloses point charge;}\\
-\frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ does not enclose point charge.}
+0 \amp \text{if } \mathcal{S} \text{ does not enclose the point charge;}\\
+\frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ encloses the point charge.}
 \end{cases}
 \end{equation*}
 </div>
@@ -311,17 +362,37 @@ window.MathJax = {
 </div>
 <p class="continuation">where <span class="process-math">\(Q=\iiint_D\delta(x,y,z)\, dV\)</span> is the total charge enclosed by <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like"><p id="p-510"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like"></div></div>
 </div></article><article class="theorem theorem-like" id="th_Divergence_interpretation_curl"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence interpretation.</span>
 </h3>
-<p id="p-511">Assume the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y,z)\text{.}\)</span> For all <span class="process-math">\(R&gt;0\text{,}\)</span> let <span class="process-math">\(S_R\)</span> be the sphere of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\)</span> with outward orientation. We have</p>
+<p id="p-514">Assume the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y,z)\text{.}\)</span> For all <span class="process-math">\(R&gt;0\text{,}\)</span> let <span class="process-math">\(S_R\)</span> be the sphere of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\)</span> with outward orientation. We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Divergence_theorem_interpretation">
 \begin{equation}
 \diver\boldF(P)=\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{S_R}\boldF\cdot\boldn\, d\sigma\text{.}\tag{2.8.1}
 \end{equation}
 </div>
-<p class="continuation">Thus we interpret <span class="process-math">\(\diver\boldF(P)\)</span> as the <em class="emphasis">flux density</em> of <span class="process-math">\(\boldF\)</span> at <span class="process-math">\(P\text{,}\)</span> measured in unit flux per unit volume.</p></article></section></div></main>
+<p class="continuation">Thus we interpret <span class="process-math">\(\diver\boldF(P)\)</span> as the <em class="emphasis">flux density</em> of <span class="process-math">\(\boldF\)</span> at <span class="process-math">\(P\text{,}\)</span> measured in unit flux per unit volume.</p></article><article class="hiddenproof" id="proof-14"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><p id="p-515">For all <span class="process-math">\(R &gt; 0\)</span> let <span class="process-math">\(B_R\)</span> be the solid ball of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\text{.}\)</span> We have <span class="process-math">\(S_R=\partial B_R\)</span> and so by the divergence theorem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_{B_R}\diver\boldF\, dV=\iint\limits_{S_R}\boldF\cdot \boldn\, d\sigma\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Next a generalization of the integral average value theorem to triple integrals imlies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_{B_R}\diver\boldF\, dV=\diver\boldF(P_R)\cdot \operatorname{vol} B_R,
+\end{equation*}
+</div>
+<p class="continuation">for some point <span class="process-math">\(P_R\)</span> in the ball <span class="process-math">\(B_R\)</span> centered around <span class="process-math">\(P\text{.}\)</span> Since <span class="process-math">\(\diver\boldF\)</span> is continuous at <span class="process-math">\(P\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-115">
+\begin{align*}
+\diver\boldF(P) \amp =\lim_{R\to 0} P_R\\
+\amp=\lim_{R\to 0}\frac{1}{\operatorname{vol} B_R}\iiint\limits_{B_R}\diver \boldF\, dV \amp \text{(avg. value thm.)}\\
+\amp =\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{\mathcal{S_R}}\boldF\cdot \boldn\, d\sigma
+\amp \text{(divergence thm.)} \text{.}
+\end{align*}
+</div></article></div></section></div></main>
 </div>
 </body>
 </html>

@@ -2211,7 +2211,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.8",
   "title": "Divergence theorem",
-  "body": "Divergence theorem closed Divergence (or Gauss's) theorem \n          Let   be a bounded solid region whose boundary   is a union of finitely many piecewise smooth surfaces. Let   be the outward orientation on  . If   is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing  , then\n           .\n         Flux out of cube \n        Let   be the cube in the first octant bounded by the planes  . Compute the outward flux of  .\n         \n\n         Zero divergence implies zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for all  , then  , for any orientation of  .\n         Identical flux \n          Suppose the solid region   has piecewise smooth boundary surface  , where   is the outer boundary of   and   is its inner boundary. If   satisfies the conditions of the divergence theorem and   on  , then\n           ,\n          where for both surface integrals   is taken to be the outer oritentation with respect to the surface.\n         \n          If the component functions of   have continuous second-order partial derivatives on the set  , then\n           \n          for all  .\n         Curl field has zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for some vector field  , then\n           .\n         Gauss's law \n          Given a a point charge of   located at the origin in  , the electrotatic field it produces is given by\n           \n          where   and   is a physical constant called the  permittivity of free space . Prove Gauss's law: if   is a smooth closed surface with outward orientation then\n           \n        Gauss's law can be generalized to a situation where the surface   encloses a region   with continuous charge density  . If   is the resulting electostatic field, then\n         ,\n        where   is the total charge enclosed by  .\n         \n\n         Divergence interpretation \n          Assume the component functions of   have continuous first-order partial derivatives on an open set containing the point  . For all  , let   be the sphere of radius   centered at   with outward orientation. We have\n           .\n          Thus we interpret   as the  flux density  of   at  , measured in unit flux per unit volume.\n         "
+  "body": "Divergence theorem closed Divergence (or Gauss's) theorem \n          Let   be a bounded solid region whose boundary   is a union of finitely many piecewise smooth surfaces. Let   be the outward orientation on  . If   is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing  , then\n           .\n         Flux out of cube \n        Let   be the cube in the first octant bounded by the planes  . Compute the outward flux of  .\n         \n          Let   be the solid cube  . Since   clearly satisfies the conditions for the divergence theorem, we have\n           .\n         Zero divergence implies zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for all  , then  , for any orientation of  .\n         \n          An easy consequence of the divergence theorem:\n           .\n         Identical flux \n          Suppose the solid region   has piecewise smooth boundary surface  , where   is the outer boundary of   and   is its inner boundary. If   satisfies the conditions of the divergence theorem and   on  , then\n           ,\n          where for both surface integrals   is taken to be the outer orientation with respect to the surface.\n         \n          Let   be the solid regions enclosed by   and  , respectively (so that  ). Notice that if   is the outward orientation on  , considered as the boundary of  , then   is the outward orientation on   considered as a boundary of  . By the divergence theorem we have\n           .\n          We conclude that\n           ,\n          as desired.\n         \n          If the component functions of   have continuous second-order partial derivatives on the set  , then\n           \n          for all  .\n         \n          We have\n           ,\n          where in the last step we have used Clairaut's theorem to identify the various  mixed partials :  ,  ,  ,  .\n         Curl field has zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for some vector field  , then\n           .\n         \n          This is an easy consequence of   and   since\n           .\n         Gauss's law \n          Given a a point charge   located at the origin in  , the electrostatic field it produces is given by\n           \n          where   and   is a physical constant called the  permittivity of free space . Prove Gauss's law: if   is a smooth closed surface with outward orientation then\n           \n        Gauss's law can be generalized to a situation where the surface   encloses a region   with continuous charge density  . If   is the resulting electostatic field, then\n         ,\n        where   is the total charge enclosed by  .\n         Divergence interpretation \n          Assume the component functions of   have continuous first-order partial derivatives on an open set containing the point  . For all  , let   be the sphere of radius   centered at   with outward orientation. We have\n           .\n          Thus we interpret   as the  flux density  of   at  , measured in unit flux per unit volume.\n         \n        For all   let   be the solid ball of radius   centered at  . We have   and so by the divergence theorem\n         .\n        Next a generalization of the integral average value theorem to triple integrals imlies\n         \n        for some point   in the ball   centered around  . Since   is continuous at   we have\n         .\n\n\n       "
 },
 {
   "id": "d_closed_surface",
@@ -2238,7 +2238,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.8.3",
   "title": "Flux out of cube.",
-  "body": "Flux out of cube \n        Let   be the cube in the first octant bounded by the planes  . Compute the outward flux of  .\n         \n\n         "
+  "body": "Flux out of cube \n        Let   be the cube in the first octant bounded by the planes  . Compute the outward flux of  .\n         \n          Let   be the solid cube  . Since   clearly satisfies the conditions for the divergence theorem, we have\n           .\n         "
 },
 {
   "id": "cor_divergence_zero",
@@ -2247,7 +2247,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "2.8.4",
   "title": "Zero divergence implies zero flux.",
-  "body": "Zero divergence implies zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for all  , then  , for any orientation of  .\n         "
+  "body": "Zero divergence implies zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for all  , then  , for any orientation of  .\n         \n          An easy consequence of the divergence theorem:\n           .\n         "
 },
 {
   "id": "cor_equal_flux",
@@ -2256,7 +2256,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "2.8.5",
   "title": "Identical flux.",
-  "body": "Identical flux \n          Suppose the solid region   has piecewise smooth boundary surface  , where   is the outer boundary of   and   is its inner boundary. If   satisfies the conditions of the divergence theorem and   on  , then\n           ,\n          where for both surface integrals   is taken to be the outer oritentation with respect to the surface.\n         "
+  "body": "Identical flux \n          Suppose the solid region   has piecewise smooth boundary surface  , where   is the outer boundary of   and   is its inner boundary. If   satisfies the conditions of the divergence theorem and   on  , then\n           ,\n          where for both surface integrals   is taken to be the outer orientation with respect to the surface.\n         \n          Let   be the solid regions enclosed by   and  , respectively (so that  ). Notice that if   is the outward orientation on  , considered as the boundary of  , then   is the outward orientation on   considered as a boundary of  . By the divergence theorem we have\n           .\n          We conclude that\n           ,\n          as desired.\n         "
 },
 {
   "id": "th_div_curl",
@@ -2265,7 +2265,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "2.8.6",
   "title": "<span class=\"process-math\">\\(\\diver\\curl\\boldF=0\\)<\/span>.",
-  "body": "\n          If the component functions of   have continuous second-order partial derivatives on the set  , then\n           \n          for all  .\n         "
+  "body": "\n          If the component functions of   have continuous second-order partial derivatives on the set  , then\n           \n          for all  .\n         \n          We have\n           ,\n          where in the last step we have used Clairaut's theorem to identify the various  mixed partials :  ,  ,  ,  .\n         "
 },
 {
   "id": "cor_flux_curl",
@@ -2274,7 +2274,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "2.8.7",
   "title": "Curl field has zero flux.",
-  "body": "Curl field has zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for some vector field  , then\n           .\n         "
+  "body": "Curl field has zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for some vector field  , then\n           .\n         \n          This is an easy consequence of   and   since\n           .\n         "
 },
 {
   "id": "example-67",
@@ -2283,7 +2283,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.8.8",
   "title": "Gauss's law.",
-  "body": "Gauss's law \n          Given a a point charge of   located at the origin in  , the electrotatic field it produces is given by\n           \n          where   and   is a physical constant called the  permittivity of free space . Prove Gauss's law: if   is a smooth closed surface with outward orientation then\n           \n        Gauss's law can be generalized to a situation where the surface   encloses a region   with continuous charge density  . If   is the resulting electostatic field, then\n         ,\n        where   is the total charge enclosed by  .\n         \n\n         "
+  "body": "Gauss's law \n          Given a a point charge   located at the origin in  , the electrostatic field it produces is given by\n           \n          where   and   is a physical constant called the  permittivity of free space . Prove Gauss's law: if   is a smooth closed surface with outward orientation then\n           \n        Gauss's law can be generalized to a situation where the surface   encloses a region   with continuous charge density  . If   is the resulting electostatic field, then\n         ,\n        where   is the total charge enclosed by  .\n         "
 },
 {
   "id": "th_Divergence_interpretation_curl",
@@ -2293,6 +2293,15 @@ var ptx_lunr_docs = [
   "number": "2.8.9",
   "title": "Divergence interpretation.",
   "body": "Divergence interpretation \n          Assume the component functions of   have continuous first-order partial derivatives on an open set containing the point  . For all  , let   be the sphere of radius   centered at   with outward orientation. We have\n           .\n          Thus we interpret   as the  flux density  of   at  , measured in unit flux per unit volume.\n         "
+},
+{
+  "id": "proof-14",
+  "level": "2",
+  "url": "s_Divergence.html#proof-14",
+  "type": "Proof",
+  "number": "2.8.1",
+  "title": "",
+  "body": "\n        For all   let   be the solid ball of radius   centered at  . We have   and so by the divergence theorem\n         .\n        Next a generalization of the integral average value theorem to triple integrals imlies\n         \n        for some point   in the ball   centered around  . Since   is continuous at   we have\n         .\n\n\n       "
 },
 {
   "id": "appendix-notation",
