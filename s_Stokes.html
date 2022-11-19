@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Stokes's theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 230-2">
+<meta property="book:author" content="Aaron Greicius">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 230-2:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<ol id="searchresults"></ol>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_surfaces_integrals.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_Divergence.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_surfaces_integrals.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_Divergence.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li></ul>
+</li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic" class="internal">Logic</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_multiple_integrals.html" data-scroll="c_multiple_integrals" class="internal"><span class="codenumber">1</span> <span class="title">Multiple integrals</span></a><ul>
+<li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
+<li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
+<li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals over general regions</a></li>
+<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Area of planar regions and average value</a></li>
+<li><a href="s_triple_integrals.html" data-scroll="s_triple_integrals" class="internal">Triple integrals</a></li>
+<li><a href="s_substitution_linear.html" data-scroll="s_substitution_linear" class="internal">Substitution: general</a></li>
+<li><a href="s_substitution_polar_cylindrical.html" data-scroll="s_substitution_polar_cylindrical" class="internal">Substitution: polar and cylindrical coordinates</a></li>
+<li><a href="s_substitution_spherical.html" data-scroll="s_substitution_spherical" class="internal">Substitution: spherical coordinates</a></li>
+<li><a href="s_multiple_integrals_applications.html" data-scroll="s_multiple_integrals_applications" class="internal">Applications of multiple integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_integrals_vectorfields.html" data-scroll="c_integrals_vectorfields" class="internal"><span class="codenumber">2</span> <span class="title">Integrals and Vector Fields</span></a><ul>
+<li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
+<li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
+<li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
+<li><a href="s_surfaces_integrals.html" data-scroll="s_surfaces_integrals" class="internal">Surface integrals</a></li>
+<li><a href="s_Stokes.html" data-scroll="s_Stokes" class="active">Stokes's theorem</a></li>
+<li><a href="s_Divergence.html" data-scroll="s_Divergence" class="internal">Divergence theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-sage.html" data-scroll="appendix-sage" class="internal"><span class="codenumber">E</span> <span class="title">Sage examples</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_Stokes"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.7</span> <span class="title">Stokes's theorem</span>
+</h2>
+<article class="definition definition-like" id="d_induced_orientation"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Induced orientation.</span>
+</h3>
+<p id="p-483">Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\text{.}\)</span> Given a simple curve <span class="process-math">\(\mathcal{C}\subseteq \mathcal{S}\)</span> lying partly on the boundary of <span class="process-math">\(\mathcal{S}\)</span> the <dfn class="terminology">induced</dfn> orientation on <span class="process-math">\(\mathcal{C}\)</span> is the one given by the following <dfn class="terminology">right-hand rule</dfn>: if your thumb points along <span class="process-math">\(\boldn\text{,}\)</span> then your fingers curl in the direction of the orientation of <span class="process-math">\(\mathcal{C}\text{.}\)</span> Alternatively, the orientation of <span class="process-math">\(\mathcal{C}\)</span> is induced by <span class="process-math">\(\boldn\)</span> if looking <em class="emphasis">down</em> along <span class="process-math">\(\boldn\text{,}\)</span> the orientation of <span class="process-math">\(\mathcal{C}\)</span> is such that the portion of <span class="process-math">\(\mathcal{S}\)</span> the curve bounds lies <em class="emphasis">on the left</em>.</p></article><article class="definition definition-like" id="d_orientation_piecewise"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">Orientation of piecewise smooth surface.</span>
+</h3>
+<p id="p-484">Let <span class="process-math">\(\mathcal{S}=\cup_{i=1}^k\mathcal{S}_k\)</span> be a piecewise smooth surface, and assume each surface <span class="process-math">\(\mathcal{S}_k\)</span> is orientable. An orientation of <span class="process-math">\(\mathcal{S}\)</span> is a choice of orientations <span class="process-math">\(\boldn_k\)</span> on each surface <span class="process-math">\(\mathcal{S}_k\)</span> such that the following condition is satisfied: given any two surfaces <span class="process-math">\(\mathcal{S}_{k_1}, \mathcal{S}_{k_2}\)</span> intersecting in the curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> the orientation induced on <span class="process-math">\(\mathcal{C}\)</span> by the orientation <span class="process-math">\(\boldn_{k_1}\)</span> is the opposite of the orientation induced by the orientation <span class="process-math">\(\boldn_{k_2}\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_Stokes"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Stokes's theorem.</span>
+</h3>
+<p id="p-485">Let <span class="process-math">\(\mathcal{S}\)</span> be a piecewise smooth oriented surface whose boundary <span class="process-math">\(\partial \mathcal{S}=\mathcal{C}\)</span> is a union of closed, piecewise smooth, simple curves. If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{S}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\oint\limits_\mathcal{C}\boldF\cdot \boldr=\iint\limits_{\mathcal{S}}\curl\boldF\cdot \boldn\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where (a) <span class="process-math">\(\boldn\)</span> is the orientation of <span class="process-math">\(\mathcal{S}\)</span> and (b) the line integral is computed with respect to the induced orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span></p></article><article class="example example-like" id="example-62"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Line integral over triangle.</span>
+</h3>
+<p id="p-486">Let <span class="process-math">\(\mathcal{C}\)</span> be the triangle with vertices <span class="process-math">\((1,0,0), (0,1,0), (0,0,1)\)</span> oriented counterclockwise from above. Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\boldF(x,y,z)=\angvec{z^2, y^2, x}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like"><ol id="p-487" class="decimal">
+<li id="li-144">
+<span class="heading"><span class="title">Identify as boundary of surface.</span></span><p id="p-488">We have <span class="process-math">\(\mathcal{C}=\partial \mathcal{S}\text{,}\)</span> where <span class="process-math">\(\mathcal{S}\)</span> is the triangular region enclosed by <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+</li>
+<li id="li-145">
+<span class="heading"><span class="title">Parametrize surface.</span></span><p id="p-489">The region <span class="process-math">\(\mathcal{S}\)</span> is the region of the plane <span class="process-math">\(x+y+z=1\)</span> lying above the triangular region <span class="process-math">\(\mathcal{R}\colon 0\leq x\leq 1, 0\leq y\leq 1-x\text{.}\)</span> Writing <span class="process-math">\(z=1-x-y\text{,}\)</span> we have parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-101">
+\begin{align*}
+\boldr(x,y) \amp=(x,y,1-x-y) \\
+\mathcal{R}\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-146">
+<span class="heading"><span class="title">Identify appropriate orientation of surface.</span></span><p id="p-490">For the induced orientation on <span class="process-math">\(\mathcal{C}\)</span> to be counterclockwise from above, we want the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> We know that for a parametrization of the form <span class="process-math">\(r(x,y)=(x,y,1-x-y)\)</span> the orientation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}
+\end{equation*}
+</div>
+<p class="continuation">is the upward one. For the step below we need just the denominator of this expression: <span class="process-math">\(\boldr_x\times \boldr_y=\angvec{1,1,1}\text{.}\)</span></p>
+</li>
+<li id="li-147">
+<span class="heading"><span class="title">Integrate <span class="process-math">\(\curl\boldF\)</span>.</span></span><p id="p-491">A straightforward computation gives us <span class="process-math">\(\curl\boldF=\angvec{0,2z-1,0}\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/th_surface_integral_vector.html" title="Theorem 2.6.15: Surface integral of vector field">Theorem 2.6.15</a> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_surface_integral_vector.html" id="md-102">
+\begin{align*}
+\iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=
+\iint_{\mathcal{R}}\curl\boldF(\boldr(x,y))\cdot (\boldr_x\times \boldr_y)\, dA \\
+\amp=\int_0^1\int_0^{1-x}\angvec{0,2(1-x-y)-1,0}\cdot\angvec{1,1,1}\, dy\, dx \\
+\amp = \int_0^1\int_0^{1-x}1-2(x+y)\, dy\, dx\\
+\amp \int_0^1 \left(y-(x+y)^2\Bigr_0^{1-x}\, dx\\
+\amp =\int_0^1 x^2-x\, dx\\
+\amp = \frac{1}{3}-\frac{1}{2}=-\frac{1}{6}
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="example example-like" id="example-63"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Stokes over a pringle.</span>
+</h3>
+<p id="p-492">Let <span class="process-math">\(\mathcal{S}\)</span> be a portion of the surface <span class="process-math">\(z=y^2-x^2\)</span> lying within the cylinder <span class="process-math">\(x^2+y^2=1\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be its boundary. Let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> be the upward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> Verify Stokes's theorem for <span class="process-math">\(\mathcal{S}, \mathcal{C}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF=y\boldi-x\boldj+x^2\boldk\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-47" id="solution-47"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like">
+<p id="p-493">I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-103">
+\begin{align*}
+\boldr(r,\theta) \amp=(r\cos\theta, r\sin\theta, r^2(\sin^2\theta-\cos^2\theta))=(r\cos\theta,r\sin\theta,-r^2\cos 2\theta) \\
+\mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi \text{,}
+\end{align*}
+</div>
+<p class="continuation">and the boundary curve <span class="process-math">\(\mathcal{C}\)</span> with counterclockwise orientation has parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\bolds(t)=\boldr(1,\theta)=(\cos\theta,\sin\theta,-r^2\cos 2\theta)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(Evaluate Sage cell below for a visualization.) Next compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-104">
+\begin{align*}
+\boldr_r \amp =\angvec{\cos\theta,\sin\theta,-2r\cos 2\theta}\\
+\boldr_\theta\amp=\angvec{-r\sin\theta,r\cos\theta,2r^2\sin 2\theta} \\
+\boldr_r\times\boldr_\theta \amp =
+\angvec{2r^2(\sin\theta\sin 2\theta+\cos\theta\cos 2\theta),
+-2r^2(\cos\theta\sin^2\theta+\sin\theta\cos 2\theta),
+r
+}\\
+\curl\boldF \amp=\angvec{0,-2x,-2} \\
+\curl\boldF(\boldr(r,\theta)) \amp =\angvec{0,-2r\cos\theta,-2}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldr_r\times\boldr_\theta\)</span> is <span class="process-math">\(r\geq 0\text{,}\)</span> we see that it gives rise to the given choice of <em class="emphasis">upward</em> orientation. With all the ingredients assembled, I leave it to you to verify that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-105">
+\begin{align*}
+\iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=\iint_\mathcal{R}4r^3\cos\theta(\cos\theta\sin 2\theta+\sin\theta\cos 2\theta)-2r\, dA \\
+\amp=-2\pi \\
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi}\boldF(\bolds(t))\cdot \bolds'(t)\, dt\\
+\amp =-2\pi\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="corollary theorem-like" id="cor_Stokes_same_boundary"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Two surfaces, same boundary.</span>
+</h3>
+<p id="p-494">Let <span class="process-math">\(\mathcal{S}_1, \mathcal{S}_2\)</span> be two piecewise smooth oriented surfaces with a shared boundary curve <span class="process-math">\(\mathcal{C}\)</span> satisfying the conditions of Stokes's theorem, and assume that the orientation on <span class="process-math">\(\mathcal{C}\)</span> induced by <span class="process-math">\(\mathcal{S}_1\)</span> is equal to the orientation induced by <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous partial derivatives on an open set containing <span class="process-math">\(S_1\)</span> and <span class="process-math">\(S_2\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint_{\mathcal{S}_1}\curl \boldF\cdot \boldn_1\, d\sigma=\iint_{\mathcal{S}_2} \curl\boldF\cdot \boldn_2\, d\sigma\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\boldn_1, \boldn_2\)</span> are the orientations of <span class="process-math">\(\mathcal{S}_1,\mathcal{S}_2\text{,}\)</span> respectively.</p></article><article class="example example-like" id="example-64"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
+</h3>
+<p id="p-495">Let <span class="process-math">\(\boldF=\angvec{-y^2, x, z^2}\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the intersection of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> and the plane <span class="process-math">\(y+z=2\text{.}\)</span> Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\mathcal{C}\)</span> is oriented counterclockwise, viewed from above.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like">
+<article class="case" id="case-1"><h4 class="heading">Solution 1.</h4>
+<p id="p-496">The curve <span class="process-math">\(\mathcal{C}\)</span> is the boundary of the elliptical region <span class="process-math">\(\mathcal{S}\)</span> it encloses in the plane <span class="process-math">\(y+z=2\text{.}\)</span> Since <span class="process-math">\(z=2-y\)</span> for points on this plane, we can parametrize as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-106">
+\begin{align*}
+\boldr(r,\theta) \amp =(r\cos\theta, r\sin\theta,2-r\sin\theta)\\
+\mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi \text{.}
+\end{align*}
+</div>
+<p class="continuation">Assembling ingredients we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-107">
+\begin{align*}
+\boldr_r \amp =\angvec{\cos\theta, \sin\theta,-\sin\theta}\\
+\boldr_\theta\amp =\angvec{-r\sin\theta,r\cos\theta,-r\cos\theta}\\
+\boldr_r\times\boldr_\theta\amp=\angvec{0,r,r} \\
+\curl\boldF \amp=\angvec{0,0,1+2y} \text{.}
+\end{align*}
+</div>
+<p class="continuation">Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldr_r\times\boldr_\theta\)</span> is nonnegative, we see that this gives rise to the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> We can now use Stokes's theorem to concude</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-108">
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
+\amp=\iint_\mathcal{R}\angvec{0,0,1+2r\sin\theta}\cdot \angvec{0,r,r}\, dA \\
+\amp =\int_0^{2\pi}\int_0^{1}r+2r^2\sin\theta\, dr\, d\theta\\
+\amp =\int_0^{2\pi}\frac{1}{2}+\frac{2}{3}\sin\theta\, d\theta\\
+\amp =\pi
+\end{align*}
+</div></article><article class="case" id="case-2"><h4 class="heading">Solution 2.</h4>
+<p id="p-497">Alternatively, we can treat <span class="process-math">\(\mathcal{C}\)</span> as the boundary of the piecewise smooth surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the portion of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> above the <span class="process-math">\(xy\)</span>-plane and below the plane <span class="process-math">\(y+z=2\text{,}\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is the disc <span class="process-math">\(x^2+y^2\leq 1\)</span> in the <span class="process-math">\(xy\)</span>-plane. To have the given orientation of <span class="process-math">\(\mathcal{C}\)</span> be induced by that of <span class="process-math">\(\mathcal{S}\text{,}\)</span> we must choose the <em class="emphasis">inward</em> orientation <span class="process-math">\(\boldn\)</span> on <span class="process-math">\(\mathcal{S}\)</span> : this orientation is <em class="emphasis">inward</em> on the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> and <em class="emphasis">upward</em> on the disc <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> With this setup we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-109">
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
+\amp= \cancelto{0}{\iint_\mathcal{S_1}\curl\boldF\cdot \boldn\, d\sigma}+\iint_\mathcal{S_2}\curl\boldF\cdot \boldn\, d\sigma\\
+\amp =\iint\limits_{x^2+y^2\leq 1}\angvec{0,0,1+2y}\cdot \angvec{0,0,1}\, dA\\
+\amp =\int_0^{2\pi}\int_0^1(1+2r\sin\theta)r\, dr\, d\theta\\\
+\amp =\pi\text{.}
+\end{align*}
+</div>
+<p class="continuation">A few comments are in order. We have <span class="process-math">\(\iint_{\mathcal{S}_1}\curl\boldF\cdot \boldn\, d\sigma=0\)</span> because the normal vectors to the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> point horizontally, and thus are orthogonal to the curl vectors <span class="process-math">\(\curl\boldF\text{,}\)</span> which point vertically. Secondly, on the disc in the <span class="process-math">\(xy\)</span>-plane we clearly have the upward normal vector equal to <span class="process-math">\(\angvec{0,0,1}\text{.}\)</span></p></article>
+</div></div>
+</div></article><article class="example example-like" id="example-65"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.8</span><span class="period">.</span>
+</h3>
+<p id="p-498">Show that Stokes's theorem implies Green's theorem.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-49" id="solution-49"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like">
+<p id="p-499">Let <span class="process-math">\(\mathcal{R}\)</span> be the region enclosed by a simple, piecewise smooth planar curve <span class="process-math">\(\mathcal{C}\)</span> oriented counterclockwise, and suppose <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\)</span> satisfies the conditions of <a href="" class="xref" data-knowl="./knowl/th_Greens.html" title="Theorem 2.4.1: Green's theorem (circulation or tangential form)">Theorem 2.4.1</a>. Define <span class="process-math">\(G(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}\text{,}\)</span> and think of <span class="process-math">\(\mathcal{R}\subseteq\R^3\)</span> as a planar surface living in the <span class="process-math">\(xy\)</span>-plane, with <span class="process-math">\(\mathcal{C}\)</span> is boundary. We choose the orientation <span class="process-math">\(\boldn(x,y,z)=\angvec{0,0,1}=\boldk\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> By Stokes's theorem we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html" id="md-110">
+\begin{align*}
+\int_\mathcal{C}\boldF\cdot d\boldr\amp=\iint_\mathcal{R}\curl G\cdot \boldn \, d\sigma \amp \\
+\amp =\iint_\mathcal{R}\angvec{0,0,\partial F_2/\partial x-\partial F_1/\partial y}\cdot \angvec{0,0,1} \, dA\\
+\amp =\iint_\mathcal{R} \partial F_2/\partial x-\partial F_1/\partial y \, dA\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="theorem theorem-like" id="th_Stokes_interpretation_curl"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Curl interpretation.</span>
+</h3>
+<p id="p-500">Assume the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y,z)\text{.}\)</span> Let <span class="process-math">\(\boldn\)</span> be any unit vector, and for all <span class="process-math">\(R &gt; 0\text{,}\)</span> let <span class="process-math">\(C_R\)</span> be the circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\)</span> and lying in the plane orthogonal to <span class="process-math">\(\boldn\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_Stokes_theorem_interpretation">
+\begin{equation}
+(\curl\boldF)\cdot \boldn (x,y,z)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot d\boldr\text{,}\tag{2.7.1}
+\end{equation}
+</div>
+<p class="continuation">where the orientation of <span class="process-math">\(\mathcal{C}_R\)</span> is chosen to be counterclockwise with respect to <span class="process-math">\(\boldn\text{.}\)</span> As such, we interpret the quantity <span class="process-math">\(\curl\boldF\cdot \boldn(x,y,z)\)</span> as the <em class="emphasis">circulation density</em> (in units circulation per unit area) of <span class="process-math">\(\boldF\)</span> at <span class="process-math">\(P=(x,y,z)\)</span> with respect to the axis of rotation <span class="process-math">\(\boldn\text{.}\)</span></p></article></section></div></main>
+</div>
+</body>
+</html>

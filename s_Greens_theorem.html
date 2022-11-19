@@ -106,6 +106,7 @@ window.MathJax = {
   \newcommand{\boldB}{{\mathbf B}}
   \newcommand{\boldF}{{\mathbf F}}
   \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
   \newcommand{\boldG}{{\mathbf G}}
   \newcommand{\boldK}{{\mathbf K}}
   \newcommand{\boldL}{{\mathbf L}}
@@ -222,6 +223,8 @@ window.MathJax = {
 <li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="active">Green's theorem in the plane</a></li>
 <li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 <li><a href="s_surfaces_integrals.html" data-scroll="s_surfaces_integrals" class="internal">Surface integrals</a></li>
+<li><a href="s_Stokes.html" data-scroll="s_Stokes" class="internal">Stokes's theorem</a></li>
+<li><a href="s_Divergence.html" data-scroll="s_Divergence" class="internal">Divergence theorem</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -328,7 +331,7 @@ window.MathJax = {
 <p class="continuation">Here <span class="process-math">\(\boldn\)</span> is understood to be the outward unit normal vector to <span class="process-math">\(\mathcal{C}\text{.}\)</span></p></article><article class="definition definition-like" id="d_divergence"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence.</span>
 </h4>
-<p id="p-403">Assume the component functions of the vector field <span class="process-math">\(\boldF=\angvec{F_1, F_2,\dots, F_n}\)</span> have first-order partial derivatives on a domain <span class="process-math">\(D\subseteq \R^n\text{.}\)</span> The <dfn class="terminology">divergence</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\nabla\cdot \boldF\text{,}\)</span> is defined as</p>
+<p id="p-403">Assume the component functions of the vector field <span class="process-math">\(\boldF=\angvec{F_1, F_2,\dots, F_n}\)</span> have first-order partial derivatives on a domain <span class="process-math">\(D\subseteq \R^n\text{.}\)</span> The <dfn class="terminology">divergence</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\diver \boldF\)</span> or <span class="process-math">\(\nabla\cdot \boldF\text{,}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \nabla \cdot \boldF= \frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}+\cdots +\frac{\partial F_n}{\partial x_n}\text{.}

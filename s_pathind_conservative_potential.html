@@ -112,6 +112,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
   \newcommand{\boldB}{{\mathbf B}}
   \newcommand{\boldF}{{\mathbf F}}
   \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
   \newcommand{\boldG}{{\mathbf G}}
   \newcommand{\boldK}{{\mathbf K}}
   \newcommand{\boldL}{{\mathbf L}}
@@ -228,6 +229,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
 <li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
 <li><a href="s_surfaces_integrals.html" data-scroll="s_surfaces_integrals" class="internal">Surface integrals</a></li>
+<li><a href="s_Stokes.html" data-scroll="s_Stokes" class="internal">Stokes's theorem</a></li>
+<li><a href="s_Divergence.html" data-scroll="s_Divergence" class="internal">Divergence theorem</a></li>
 </ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
@@ -460,14 +463,16 @@ f_x(x,y) \amp =\lim_{h\rightarrow 0}\frac{1}{h}(f(x+h,y)-f(x,y)) \amp \text{def.
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Curl of a vector field.</span>
 </h4>
 <p id="p-373">Let <span class="process-math">\(\boldF=\angvec{F_1, F_2, F_3}\)</span> be a vector field on the set <span class="process-math">\(D\subseteq \R^3\text{,}\)</span> and assume the first order partial derivatives of the component functions exist. We define the <dfn class="terminology">curl</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\curl \boldF\)</span> or <span class="process-math">\(\nabla \times \boldF\text{,}\)</span> as the vector field</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\nabla\times \boldF=\det \begin{pmatrix}
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-69">
+\begin{align*}
+\curl\boldF \amp= \nabla\times \boldF\\
+\amp =\det \begin{pmatrix}
 \boldi \amp \boldj \amp \boldk \\
 \frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
 F_1 \amp F_2 \amp F_3
-\end{pmatrix}=\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}\text{.}
-\end{equation*}
+\end{pmatrix}\\
+\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}\text{.}
+\end{align*}
 </div></article><p id="p-374">We will study curl in more detail later, but for now we observe that it provides a partial check for whether a vector field is a gradient field.</p>
 <article class="theorem theorem-like" id="th_gradient_implies_curlzero"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient implies zero curl.</span>
@@ -478,7 +483,7 @@ F_1 \amp F_2 \amp F_3
 \boldF=\nabla f\implies \nabla\times \boldF=\boldzero\text{.}\tag{2.3.7}
 \end{equation}
 </div></article><article class="hiddenproof" id="proof-8"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-8"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-376">If <span class="process-math">\(\boldF=\angvec{F_1,F_2,F_3}=\nabla f\)</span> for some some <span class="process-math">\(f\text{,}\)</span> then</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-69">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-70">
 \begin{align*}
 \frac{\partial F_3 }{\partial y}-\frac{\partial F_2}{\partial z} \amp = \frac{\partial^2 f }{\partial y\partial z}-\frac{\partial f}{\partial z\partial y} \amp (F_3=f_z, F_2=f_y)\\
 \amp=0 \amp \left( \frac{\partial^2 f }{\partial y\partial z}=\frac{\partial^2 f }{\partial z\partial y}\right) \text{.}
@@ -497,7 +502,7 @@ F_1 \amp F_2 \amp F_3
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like">
 <p id="p-381">The curl of <span class="process-math">\(\boldF\)</span> is the vector field</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_gradient_implies_curlzero.html" id="md-70">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_gradient_implies_curlzero.html" id="md-71">
 \begin{align*}
 \nabla\times \boldF (x,y,z) \amp =\angvec{\partial/\partial y (y)-\partial/\partial z (z), -(\partial/\partial x(y)-\partial/\partial z (x+xy^2)), \partial/\partial x (z)-\partial/\partial y (x+xy^2)}\\
 \amp=\angvec{0,0,-2xy}\ne \boldzero \text{.}
@@ -512,7 +517,7 @@ F_1 \amp F_2 \amp F_3
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like">
 <p id="p-383">The curl computation in (a) is straightforward. To see that <span class="process-math">\(\boldF\)</span> is not a gradient vector field, we find a closed curve <span class="process-math">\(\mathcal{C}\)</span> for which <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{.}\)</span> Take <span class="process-math">\(\mathcal{C}\)</span> to be the unit circle with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-71">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-72">
 \begin{align*}
 \oint_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t}\, dt \\
 \amp = \int_0^{2\pi}\frac{\sin^2 t+\cos^2 t}{\sin^2 t+\cos^2 t}\, dt \\
@@ -559,7 +564,7 @@ D \text{ is o+c+sc}\colon \amp \boldF \operatorname{ conservative} \amp \iff \am
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like">
 <p id="p-390">It is straightforward, if somewhat tiresome, to show <span class="process-math">\(\nabla\times \boldF=\angvec{0,0,0}\text{.}\)</span> Since the domain of <span class="process-math">\(\boldF\)</span> is <span class="process-math">\(\R^3\text{,}\)</span> which is connected and simply connected, we conclude from <a href="" class="xref" data-knowl="./knowl/th_conservative_iff_gradient.html" title="Theorem 2.3.11: Gradient iff conservative (connected domain)">Theorem 2.3.11</a> that <span class="process-math">\(\boldF\)</span> is a gradient vector field. Let <span class="process-math">\(f\)</span> be a potential function for <span class="process-math">\(\boldF\text{.}\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conservative_iff_gradient.html" id="md-72">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conservative_iff_gradient.html" id="md-73">
 \begin{align*}
 f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) \\
 f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}\\

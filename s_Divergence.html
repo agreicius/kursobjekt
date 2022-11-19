@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Divergence theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 230-2">
+<meta property="book:author" content="Aaron Greicius">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 230-2:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<ol id="searchresults"></ol>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_Stokes.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_Stokes.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_integrals_vectorfields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li></ul>
+</li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic" class="internal">Logic</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_multiple_integrals.html" data-scroll="c_multiple_integrals" class="internal"><span class="codenumber">1</span> <span class="title">Multiple integrals</span></a><ul>
+<li><a href="s_double_integrals_rect.html" data-scroll="s_double_integrals_rect" class="internal">Double integrals over rectangles</a></li>
+<li><a href="s_double_iterated_integrals.html" data-scroll="s_double_iterated_integrals" class="internal">Iterated integrals and Fubini's theorem</a></li>
+<li><a href="s_double_integrals_gen.html" data-scroll="s_double_integrals_gen" class="internal">Double integrals over general regions</a></li>
+<li><a href="s_double_integrals_area.html" data-scroll="s_double_integrals_area" class="internal">Area of planar regions and average value</a></li>
+<li><a href="s_triple_integrals.html" data-scroll="s_triple_integrals" class="internal">Triple integrals</a></li>
+<li><a href="s_substitution_linear.html" data-scroll="s_substitution_linear" class="internal">Substitution: general</a></li>
+<li><a href="s_substitution_polar_cylindrical.html" data-scroll="s_substitution_polar_cylindrical" class="internal">Substitution: polar and cylindrical coordinates</a></li>
+<li><a href="s_substitution_spherical.html" data-scroll="s_substitution_spherical" class="internal">Substitution: spherical coordinates</a></li>
+<li><a href="s_multiple_integrals_applications.html" data-scroll="s_multiple_integrals_applications" class="internal">Applications of multiple integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_integrals_vectorfields.html" data-scroll="c_integrals_vectorfields" class="internal"><span class="codenumber">2</span> <span class="title">Integrals and Vector Fields</span></a><ul>
+<li><a href="s_line_integal_scalar.html" data-scroll="s_line_integal_scalar" class="internal">Line integrals of scalar functions</a></li>
+<li><a href="s_line_integal_scalar_vector_fields.html" data-scroll="s_line_integal_scalar_vector_fields" class="internal">Line integrals of vector fields</a></li>
+<li><a href="s_pathind_conservative_potential.html" data-scroll="s_pathind_conservative_potential" class="internal">Path independence, conservative fields, potential functions</a></li>
+<li><a href="s_Greens_theorem.html" data-scroll="s_Greens_theorem" class="internal">Green's theorem in the plane</a></li>
+<li><a href="s_surfaces_area.html" data-scroll="s_surfaces_area" class="internal">Surfaces and their area</a></li>
+<li><a href="s_surfaces_integrals.html" data-scroll="s_surfaces_integrals" class="internal">Surface integrals</a></li>
+<li><a href="s_Stokes.html" data-scroll="s_Stokes" class="internal">Stokes's theorem</a></li>
+<li><a href="s_Divergence.html" data-scroll="s_Divergence" class="active">Divergence theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-sage.html" data-scroll="appendix-sage" class="internal"><span class="codenumber">E</span> <span class="title">Sage examples</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_Divergence"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Divergence theorem</span>
+</h2>
+<article class="definition definition-like" id="d_closed_surface"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.8.1</span><span class="period">.</span>
+</h3>
+<p id="p-501">A piecewise smooth surface <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> is <dfn class="terminology">closed</dfn> if it has no boundary curve.</p></article><article class="theorem theorem-like" id="th_Divergence"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence (or Gauss's) theorem.</span>
+</h3>
+<p id="p-502">Let <span class="process-math">\(D\subseteq\R^3\)</span> be a bounded solid region whose boundary <span class="process-math">\(\partial D=\mathcal{S}\)</span> is a union of finitely many piecewise smooth surfaces. Let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow\R^3\)</span> be the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{S}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma=\iiint\limits_D\diver \boldF\, dV\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="eg_Divergence"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Flux out of cube.</span>
+</h3>
+<p id="p-503">Let <span class="process-math">\(\mathcal{S}\)</span> be the cube in the first octant bounded by the planes <span class="process-math">\(x=1,y=1,z=1\text{.}\)</span> Compute the outward flux of <span class="process-math">\(\boldF(x,y,z)=x^2\boldi+4xyz\boldj+ze^x\boldk\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like"><p id="p-504"></p></div></div>
+</div></article><article class="corollary theorem-like" id="cor_divergence_zero"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Zero divergence implies zero flux.</span>
+</h3>
+<p id="p-505">Assume the solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> its boundary <span class="process-math">\(\partial D=\mathcal{S}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF\)</span> satisfy the conditions of the divergence theorem. If <span class="process-math">\(\diver\boldF(x,y,z)=0\)</span> for all <span class="process-math">\((x,y,z)\in D\text{,}\)</span> then <span class="process-math">\(\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0\text{,}\)</span> for any orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p></article><article class="corollary theorem-like" id="cor_equal_flux"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Identical flux.</span>
+</h3>
+<p id="p-506">Suppose the solid region <span class="process-math">\(D\subseteq\R^3\)</span> has piecewise smooth boundary surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the outer boundary of <span class="process-math">\(D\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is its inner boundary. If <span class="process-math">\(\boldF\)</span> satisfies the conditions of the divergence theorem and <span class="process-math">\(\diver\boldF=0\)</span> on <span class="process-math">\(D\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where for both surface integrals <span class="process-math">\(\boldn\)</span> is taken to be the outer oritentation with respect to the surface.</p></article><article class="theorem theorem-like" id="th_div_curl"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\diver\curl\boldF=0\)</span>.</span>
+</h3>
+<p id="p-507">If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous second-order partial derivatives on the set <span class="process-math">\(D\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\diver\curl\boldF(x,y,z)=\nabla\cdot (\nabla\times \boldF)(x,y,z)=0
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\((x,y,z)\in D\text{.}\)</span></p></article><article class="corollary theorem-like" id="cor_flux_curl"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.8.7</span><span class="period">.</span><span class="space"> </span><span class="title">Curl field has zero flux.</span>
+</h3>
+<p id="p-508">Assume the solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> its boundary <span class="process-math">\(\partial D=\mathcal{S}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF\)</span> satisfy the conditions of the divergence theorem. If <span class="process-math">\(\boldF=\curl \boldG\)</span> for some vector field <span class="process-math">\(\boldG\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=0\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="example-67"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Gauss's law.</span>
+</h3>
+<p id="p-509">Given a a point charge of <span class="process-math">\(q\)</span> located at the origin in <span class="process-math">\(\R^3\text{,}\)</span> the electrotatic field it produces is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldE(x,y,z)=\frac{q}{4\pi \epsilon_0}\frac{\angvec{x,y,z}}{(x^2+y^2+z^2)^{3/2}}=\frac{q}{4\pi \epsilon_0}\frac{\boldr}{\abs{\boldr}^3},
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\boldr=\angvec{x,y,z}\)</span> and <span class="process-math">\(\epsilon_0\)</span> is a physical constant called the <em class="emphasis">permittivity of free space</em>. Prove Gauss's law: if <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> is a smooth closed surface with outward orientation then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\begin{cases}
+0 \amp \text{if } \mathcal{S} \text{ encloses point charge;}\\
+\frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ does not enclose point charge.}
+\end{cases}
+\end{equation*}
+</div>
+<p class="continuation">Gauss's law can be generalized to a situation where the surface <span class="process-math">\(\mathcal{S}\)</span> encloses a region <span class="process-math">\(D\)</span> with continuous charge density <span class="process-math">\(\delta(x,y,z)\text{.}\)</span> If <span class="process-math">\(\boldE\)</span> is the resulting electostatic field, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\frac{1}{\epsilon_0}\iiint\limits_D\delta(x,y,z)\, dV=\frac{Q}{\epsilon_0}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(Q=\iiint_D\delta(x,y,z)\, dV\)</span> is the total charge enclosed by <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like"><p id="p-510"></p></div></div>
+</div></article><article class="theorem theorem-like" id="th_Divergence_interpretation_curl"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence interpretation.</span>
+</h3>
+<p id="p-511">Assume the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y,z)\text{.}\)</span> For all <span class="process-math">\(R&gt;0\text{,}\)</span> let <span class="process-math">\(S_R\)</span> be the sphere of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\)</span> with outward orientation. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_Divergence_theorem_interpretation">
+\begin{equation}
+\diver\boldF(P)=\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{S_R}\boldF\cdot\boldn\, d\sigma\text{.}\tag{2.8.1}
+\end{equation}
+</div>
+<p class="continuation">Thus we interpret <span class="process-math">\(\diver\boldF(P)\)</span> as the <em class="emphasis">flux density</em> of <span class="process-math">\(\boldF\)</span> at <span class="process-math">\(P\text{,}\)</span> measured in unit flux per unit volume.</p></article></section></div></main>
+</div>
+</body>
+</html>

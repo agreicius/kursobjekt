@@ -1968,7 +1968,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.6",
   "title": "Surface integrals",
-  "body": "Surface integrals Surface integrals of scalar functions surface integral scalar \n     surface integral of scalar function Surface integral of scalar function surface integral Taxonomy of scalar integrals \n        It might be useful to list (and organize) all the different forms of scalar integrals we have met thus far.\n         Taxonomy of scalar integrals Independence of parametrization \n          As with scalar line integrals, it is possible to show that our definition of the surface integral of   over a smoothly parametrized surface   is independent of the parametrization chosen. (Recall that by definition a surface parametrization is one-to-one on the interior of the parameter domain.)\n         Surface integral interpretation \n          As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula\n           .\n        Understanding   as an approximation of the area of one of the subpatches of  , the interpretation then depends on what the function   is. Here are two typical examples.\n         \n             Geometric: surface area \n             \n              If   (the constant function), then the right-hand side of   simply adds up  , yielding an approximation of the area of  . The integral of   computes this area exactly.\n             \n           \n             Physical: density function \n             \n              Assume   gives us the density of quantity   per unit area at position  . In this case the right-hand side of   can be understood as an approximation of the total quantity   over  , and thus the integral computes this total quantity exactly.\n             \n           \n         \n          Let   be the surface obtained by rotating the curve   \n          around the  -axis. Assume the mass density at a point   on   is given by  . Compute the total mass of   assuming the variables   are measured in cm, and   is measured in g per cm .\n         \n           \n               \n                First we parametrize  . Observe that intersecting   with the plane    yields a circle centered at   of radius  , which we can parametrize as\n                 .\n                Letting   vary between   and  , we get the parametrization\n                 .\n               \n             \n               \n                Assemble the necessary ingredients:\n                 ,\n                where the last equality follows since   for  .\n               \n             \n               \n                According to  , integrating a mass density function over   gives us the total mass of  . Thus\n                 .\n               \n             \n         piecewise smooth surface Surface integral for piecewise smooth surfaces piecewise smooth surface Piecewise smooth surface \n      Compute the surface integral of   over the tetrahedron   with vertices  .\n     \n     We have  , where the   are the four triangular faces of  , and thus\n      .\n     Let   be the triangular faces lying in the coordinate planes   and  , respectively. Since   for all points in these two surfaces, the corresponding surface integrals  ,  , are equal to zero. Thus we need only compute the integrals of   over   and  .\n     \n         Integral over    \n         \n          Let   be the face of the tetrahedron in the  -plane. We parametrize as\n           .\n          A simple computation shows  . Thus\n           \n\n         \n       \n         Integral over  \n         \n          Let   be triangle with vertices  . This is the region of the plane   lying over the planar triangle with vertices  . Since   is expressed as a function of   we parametrize easily as\n           .\n          Again, a straightforward computation shows  , and thus\n           ,\n          where we use our work from above for the last equality.\n         \n       \n    In conclusion we have\n     .\n   Surface integrals of vector fields Surface orientation orientation orientable nonorientable Orientations of the sphere outward inward torus Graph of function upward Orientations of orientable surfaces \n          Assume   is a smooth orientable surface with orientation   and parametrization  . We have the following facts:\n           \n               \n                There are exactly two orientations on  : namely, the given orientation   and its opposite  .\n               \n             \n               \n                The function\n                 \n                is one orientation on  ; the function\n                 \n                is the other.\n               \n             \n         Nonorientable surface: Möbius strip \n          Fix a constant  , and let   be the Möbius strip with parametrization\n           ,\n          where  . The Sage cell below depicts   along with the labeled line segments we used in its original description.\n         \n      Fact:   is a nonorientable surface! If this is so, why doesn't the function\n           \n          provide us with an orientation? The answer: this is a well-defined function on the  parameter domain   , but not on the actual  surface   ! Indeed, the point   can be expressed as both   and  . As the Sage cell below illustrates the two normal vectors corresponding to   and   are   and  !\n         \n         We can see what's going on by plotting some of the normal vectors given by   for points of the form  .\n         Surface integral of vector field surface integral flux Flux across a sphere \n      Let   be the sphere  . Compute the flux of   out of the sphere:  , with respect to the outward orientation on  .\n     \n      We use the usual parametrization of the sphere of radius 2:\n       \n      Given a point   the vector   is an outward pointing normal vector of magnitude  . Thus the function   is the outward orientation on  . It follows that\n       ,\n      and thus that\n       .\n      The last step above is done using the identity   and the fact that   has antiderivative  .\n     Surface integral of vector field \n      Let   be a smooth parametrization of the orientable surface  , let   be a vector field that is continuous on  , and let   be the orientation determined by  .\n      We have\n       .\n      Furthermore letting   be the opposite orientation of  , we have\n       .\n     Flux across a cone \n      Let   be the cone   and let  . Compute the flux of   across   with respect to the outward (away from the  -axis) orientation of  .\n     \n\n     "
+  "body": "Surface integrals Surface integrals of scalar functions surface integral scalar \n     surface integral of scalar function Surface integral of scalar function surface integral Taxonomy of scalar integrals \n        It might be useful to list (and organize) all the different forms of scalar integrals we have met thus far.\n         Taxonomy of scalar integrals Independence of parametrization \n          As with scalar line integrals, it is possible to show that our definition of the surface integral of   over a smoothly parametrized surface   is independent of the parametrization chosen. (Recall that by definition a surface parametrization is one-to-one on the interior of the parameter domain.)\n         Surface integral interpretation \n          As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula\n           .\n        Understanding   as an approximation of the area of one of the subpatches of  , the interpretation then depends on what the function   is. Here are two typical examples.\n         \n             Geometric: surface area \n             \n              If   (the constant function), then the right-hand side of   simply adds up  , yielding an approximation of the area of  . The integral of   computes this area exactly.\n             \n           \n             Physical: density function \n             \n              Assume   gives us the density of quantity   per unit area at position  . In this case the right-hand side of   can be understood as an approximation of the total quantity   over  , and thus the integral computes this total quantity exactly.\n             \n           \n         \n          Let   be the surface obtained by rotating the curve   \n          around the  -axis. Assume the mass density at a point   on   is given by  . Compute the total mass of   assuming the variables   are measured in cm, and   is measured in g per cm .\n         \n           \n               \n                First we parametrize  . Observe that intersecting   with the plane    yields a circle centered at   of radius  , which we can parametrize as\n                 .\n                Letting   vary between   and  , we get the parametrization\n                 .\n               \n             \n               \n                Assemble the necessary ingredients:\n                 ,\n                where the last equality follows since   for  .\n               \n             \n               \n                According to  , integrating a mass density function over   gives us the total mass of  . Thus\n                 .\n               \n             \n         piecewise smooth surface Surface integral for piecewise smooth surfaces piecewise smooth surface Piecewise smooth surface \n      Compute the surface integral of   over the tetrahedron   with vertices  .\n     \n     We have  , where the   are the four triangular faces of  , and thus\n      .\n     Let   be the triangular faces lying in the coordinate planes   and  , respectively. Since   for all points in these two surfaces, the corresponding surface integrals  ,  , are equal to zero. Thus we need only compute the integrals of   over   and  .\n     \n         Integral over    \n         \n          Let   be the face of the tetrahedron in the  -plane. We parametrize as\n           .\n          A simple computation shows  . Thus\n           \n\n         \n       \n         Integral over  \n         \n          Let   be triangle with vertices  . This is the region of the plane   lying over the planar triangle with vertices  . Since   is expressed as a function of   we parametrize easily as\n           .\n          Again, a straightforward computation shows  , and thus\n           ,\n          where we use our work from above for the last equality.\n         \n       \n    In conclusion we have\n     .\n   Surface integrals of vector fields orientation smooth surface Surface orientation orientation orientable nonorientable Orientations of the sphere outward inward torus Graph of function upward Orientations of orientable surfaces \n          Assume   is a smooth orientable surface with orientation   and parametrization  . We have the following facts:\n           \n               \n                There are exactly two orientations on  : namely, the given orientation   and its opposite  .\n               \n             \n               \n                The function\n                 \n                is one orientation on  ; the function\n                 \n                is the other.\n               \n             \n         Nonorientable surface: Möbius strip \n          Fix a constant  , and let   be the Möbius strip with parametrization\n           ,\n          where  . The Sage cell below depicts   along with the labeled line segments we used in its original description.\n         \n      Fact:   is a nonorientable surface! If this is so, why doesn't the function\n           \n          provide us with an orientation? The answer: this is a well-defined function on the  parameter domain   , but not on the actual  surface   ! Indeed, the point   can be expressed as both   and  . As the Sage cell below illustrates the two normal vectors corresponding to   and   are   and  !\n         \n         We can see what's going on by plotting some of the normal vectors given by   for points of the form  .\n         Surface integral of vector field surface integral flux Flux across a sphere \n      Let   be the sphere  . Compute the flux of   out of the sphere:  , with respect to the outward orientation on  .\n     \n      We use the usual parametrization of the sphere of radius 2:\n       \n      Given a point   the vector   is an outward pointing normal vector of magnitude  . Thus the function   is the outward orientation on  . It follows that\n       ,\n      and thus that\n       .\n      The last step above is done using the identity   and the fact that   has antiderivative  .\n     Surface integral of vector field \n      Let   be a smooth parametrization of the orientable surface  , let   be a vector field that is continuous on  , and let   be the orientation determined by  .\n      We have\n       .\n      Furthermore letting   be the opposite orientation of  , we have\n       .\n     Flux across a cone \n      Let   be the cone   and let  . Compute the flux of   across   with respect to the outward (away from the  -axis) orientation of  .\n     \n\n     "
 },
 {
   "id": "d_scalar_surface_integral",
@@ -2040,7 +2040,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "2.6.9",
   "title": "Surface orientation.",
-  "body": "Surface orientation orientation orientable nonorientable "
+  "body": "orientation smooth surface Surface orientation orientation orientable nonorientable "
 },
 {
   "id": "eg_orientable_sphere",
@@ -2113,6 +2113,186 @@ var ptx_lunr_docs = [
   "number": "2.6.16",
   "title": "Flux across a cone.",
   "body": "Flux across a cone \n      Let   be the cone   and let  . Compute the flux of   across   with respect to the outward (away from the  -axis) orientation of  .\n     \n\n     "
+},
+{
+  "id": "s_Stokes",
+  "level": "1",
+  "url": "s_Stokes.html",
+  "type": "Section",
+  "number": "2.7",
+  "title": "Stokes's theorem",
+  "body": "Stokes's theorem Induced orientation induced right-hand rule orientation piecewise smooth surface Orientation of piecewise smooth surface \n          Let   be a piecewise smooth surface, and assume each surface   is orientable. An orientation of   is a choice of orientations   on each surface   such that the following condition is satisfied: given any two surfaces   intersecting in the curve  , the orientation induced on   by the orientation  \n          is the opposite of the orientation induced by the orientation  .\n         Stokes's theorem \n          Let   be a piecewise smooth oriented surface whose boundary   is a union of closed, piecewise smooth, simple curves. If   is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing  , then\n           ,\n          where (a)   is the orientation of   and (b) the line integral is computed with respect to the induced orientation on  .\n\n         Line integral over triangle \n          Let   be the triangle with vertices   oriented counterclockwise from above. Compute  , where  .\n         \n           \n               Identify as boundary of surface \n               \n                We have  , where   is the triangular region enclosed by  .\n               \n             \n               Parametrize surface \n               \n                The region   is the region of the plane   lying above the triangular region  . Writing  , we have parametrization\n                 .\n               \n             \n               Identify appropriate orientation of surface \n               \n                For the induced orientation on   to be counterclockwise from above, we want the  upward  orientation on  . We know that for a parametrization of the form   the orientation\n                 \n                is the upward one. For the step below we need just the denominator of this expression:  .\n               \n             \n               Integrate  \n               \n                A straightforward computation gives us  . Using   we have\n                 \n               \n             \n         Stokes over a pringle \n          Let   be a portion of the surface   lying within the cylinder  , and let   be its boundary. Let   be the upward orientation on  . Verify Stokes's theorem for  , and the vector field  .\n         \n          I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as\n           ,\n          and the boundary curve   with counterclockwise orientation has parametrization\n           .\n          (Evaluate Sage cell below for a visualization.)\n          Next compute\n           .\n          Since the  -component of   is  , we see that it gives rise to the given choice of  upward  orientation. With all the ingredients assembled, I leave it to you to verify that\n           .\n         Two surfaces, same boundary \n        Let   be two piecewise smooth oriented surfaces with a shared boundary curve   satisfying the conditions of Stokes's theorem, and assume that the orientation on   induced by   is equal to the orientation induced by  . If   is a continuous vector field whose component functions have continuous partial derivatives on an open set containing   and  , then\n         ,\n         where   are the orientations of  , respectively.\n       \n        Let  , and let   be the intersection of the cylinder   and the plane  . Compute  , where   is oriented counterclockwise, viewed from above.\n       Solution 1 \n        The curve   is the boundary of the elliptical region   it encloses in the plane  . Since   for points on this plane, we can parametrize as\n         .\n        Assembling ingredients we have\n         .\n        Since the  -component of   is nonnegative, we see that this gives rise to the  upward  orientation on  , which induces the counterclockwise orientation on  . We can now use Stokes's theorem to concude\n         \n       Solution 2 \n      Alternatively, we can treat   as the boundary of the piecewise smooth surface  , where   is the portion of the cylinder   above the  -plane and below the plane  , and   is the disc   in the  -plane. To have the given orientation of   be induced by that of  , we must choose the  inward  orientation   on  \n      : this orientation is  inward  on the cylinder   and  upward  on the disc  . With this setup we have\n       .\n      A few comments are in order. We have   because the normal vectors to the cylinder   point horizontally, and thus are orthogonal to the curl vectors  , which point vertically. Secondly, on the disc in the  -plane we clearly have the upward normal vector equal to  .\n       \n        Show that Stokes's theorem implies Green's theorem.\n       \n        Let   be the region enclosed by a simple, piecewise smooth planar curve   oriented counterclockwise, and suppose   satisfies the conditions of  . Define  , and think of   as a planar surface living in the  -plane, with   is boundary. We choose the orientation   on  , which induces the counterclockwise orientation on  . By Stokes's theorem we have\n         .\n       Curl interpretation \n        Assume the component functions of   have continuous first-order partial derivatives on an open set containing the point  . Let   be any unit vector, and for all  , let   be the circle of radius   centered at   and lying in the plane orthogonal to  . We have\n         ,\n        where the orientation of   is chosen to be counterclockwise with respect to  . As such, we interpret the quantity   as the  circulation density  (in units circulation per unit area) of   at   with respect to the axis of rotation  .\n       "
+},
+{
+  "id": "d_induced_orientation",
+  "level": "2",
+  "url": "s_Stokes.html#d_induced_orientation",
+  "type": "Definition",
+  "number": "2.7.1",
+  "title": "Induced orientation.",
+  "body": "Induced orientation induced right-hand rule "
+},
+{
+  "id": "d_orientation_piecewise",
+  "level": "2",
+  "url": "s_Stokes.html#d_orientation_piecewise",
+  "type": "Definition",
+  "number": "2.7.2",
+  "title": "Orientation of piecewise smooth surface.",
+  "body": "orientation piecewise smooth surface Orientation of piecewise smooth surface \n          Let   be a piecewise smooth surface, and assume each surface   is orientable. An orientation of   is a choice of orientations   on each surface   such that the following condition is satisfied: given any two surfaces   intersecting in the curve  , the orientation induced on   by the orientation  \n          is the opposite of the orientation induced by the orientation  .\n         "
+},
+{
+  "id": "th_Stokes",
+  "level": "2",
+  "url": "s_Stokes.html#th_Stokes",
+  "type": "Theorem",
+  "number": "2.7.3",
+  "title": "Stokes's theorem.",
+  "body": "Stokes's theorem \n          Let   be a piecewise smooth oriented surface whose boundary   is a union of closed, piecewise smooth, simple curves. If   is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing  , then\n           ,\n          where (a)   is the orientation of   and (b) the line integral is computed with respect to the induced orientation on  .\n\n         "
+},
+{
+  "id": "example-62",
+  "level": "2",
+  "url": "s_Stokes.html#example-62",
+  "type": "Example",
+  "number": "2.7.4",
+  "title": "Line integral over triangle.",
+  "body": "Line integral over triangle \n          Let   be the triangle with vertices   oriented counterclockwise from above. Compute  , where  .\n         \n           \n               Identify as boundary of surface \n               \n                We have  , where   is the triangular region enclosed by  .\n               \n             \n               Parametrize surface \n               \n                The region   is the region of the plane   lying above the triangular region  . Writing  , we have parametrization\n                 .\n               \n             \n               Identify appropriate orientation of surface \n               \n                For the induced orientation on   to be counterclockwise from above, we want the  upward  orientation on  . We know that for a parametrization of the form   the orientation\n                 \n                is the upward one. For the step below we need just the denominator of this expression:  .\n               \n             \n               Integrate  \n               \n                A straightforward computation gives us  . Using   we have\n                 \n               \n             \n         "
+},
+{
+  "id": "example-63",
+  "level": "2",
+  "url": "s_Stokes.html#example-63",
+  "type": "Example",
+  "number": "2.7.5",
+  "title": "Stokes over a pringle.",
+  "body": "Stokes over a pringle \n          Let   be a portion of the surface   lying within the cylinder  , and let   be its boundary. Let   be the upward orientation on  . Verify Stokes's theorem for  , and the vector field  .\n         \n          I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as\n           ,\n          and the boundary curve   with counterclockwise orientation has parametrization\n           .\n          (Evaluate Sage cell below for a visualization.)\n          Next compute\n           .\n          Since the  -component of   is  , we see that it gives rise to the given choice of  upward  orientation. With all the ingredients assembled, I leave it to you to verify that\n           .\n         "
+},
+{
+  "id": "cor_Stokes_same_boundary",
+  "level": "2",
+  "url": "s_Stokes.html#cor_Stokes_same_boundary",
+  "type": "Corollary",
+  "number": "2.7.6",
+  "title": "Two surfaces, same boundary.",
+  "body": "Two surfaces, same boundary \n        Let   be two piecewise smooth oriented surfaces with a shared boundary curve   satisfying the conditions of Stokes's theorem, and assume that the orientation on   induced by   is equal to the orientation induced by  . If   is a continuous vector field whose component functions have continuous partial derivatives on an open set containing   and  , then\n         ,\n         where   are the orientations of  , respectively.\n       "
+},
+{
+  "id": "example-64",
+  "level": "2",
+  "url": "s_Stokes.html#example-64",
+  "type": "Example",
+  "number": "2.7.7",
+  "title": "",
+  "body": "\n        Let  , and let   be the intersection of the cylinder   and the plane  . Compute  , where   is oriented counterclockwise, viewed from above.\n       Solution 1 \n        The curve   is the boundary of the elliptical region   it encloses in the plane  . Since   for points on this plane, we can parametrize as\n         .\n        Assembling ingredients we have\n         .\n        Since the  -component of   is nonnegative, we see that this gives rise to the  upward  orientation on  , which induces the counterclockwise orientation on  . We can now use Stokes's theorem to concude\n         \n       Solution 2 \n      Alternatively, we can treat   as the boundary of the piecewise smooth surface  , where   is the portion of the cylinder   above the  -plane and below the plane  , and   is the disc   in the  -plane. To have the given orientation of   be induced by that of  , we must choose the  inward  orientation   on  \n      : this orientation is  inward  on the cylinder   and  upward  on the disc  . With this setup we have\n       .\n      A few comments are in order. We have   because the normal vectors to the cylinder   point horizontally, and thus are orthogonal to the curl vectors  , which point vertically. Secondly, on the disc in the  -plane we clearly have the upward normal vector equal to  .\n       "
+},
+{
+  "id": "example-65",
+  "level": "2",
+  "url": "s_Stokes.html#example-65",
+  "type": "Example",
+  "number": "2.7.8",
+  "title": "",
+  "body": "\n        Show that Stokes's theorem implies Green's theorem.\n       \n        Let   be the region enclosed by a simple, piecewise smooth planar curve   oriented counterclockwise, and suppose   satisfies the conditions of  . Define  , and think of   as a planar surface living in the  -plane, with   is boundary. We choose the orientation   on  , which induces the counterclockwise orientation on  . By Stokes's theorem we have\n         .\n       "
+},
+{
+  "id": "th_Stokes_interpretation_curl",
+  "level": "2",
+  "url": "s_Stokes.html#th_Stokes_interpretation_curl",
+  "type": "Theorem",
+  "number": "2.7.9",
+  "title": "Curl interpretation.",
+  "body": "Curl interpretation \n        Assume the component functions of   have continuous first-order partial derivatives on an open set containing the point  . Let   be any unit vector, and for all  , let   be the circle of radius   centered at   and lying in the plane orthogonal to  . We have\n         ,\n        where the orientation of   is chosen to be counterclockwise with respect to  . As such, we interpret the quantity   as the  circulation density  (in units circulation per unit area) of   at   with respect to the axis of rotation  .\n       "
+},
+{
+  "id": "s_Divergence",
+  "level": "1",
+  "url": "s_Divergence.html",
+  "type": "Section",
+  "number": "2.8",
+  "title": "Divergence theorem",
+  "body": "Divergence theorem closed Divergence (or Gauss's) theorem \n          Let   be a bounded solid region whose boundary   is a union of finitely many piecewise smooth surfaces. Let   be the outward orientation on  . If   is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing  , then\n           .\n         Flux out of cube \n        Let   be the cube in the first octant bounded by the planes  . Compute the outward flux of  .\n         \n\n         Zero divergence implies zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for all  , then  , for any orientation of  .\n         Identical flux \n          Suppose the solid region   has piecewise smooth boundary surface  , where   is the outer boundary of   and   is its inner boundary. If   satisfies the conditions of the divergence theorem and   on  , then\n           ,\n          where for both surface integrals   is taken to be the outer oritentation with respect to the surface.\n         \n          If the component functions of   have continuous second-order partial derivatives on the set  , then\n           \n          for all  .\n         Curl field has zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for some vector field  , then\n           .\n         Gauss's law \n          Given a a point charge of   located at the origin in  , the electrotatic field it produces is given by\n           \n          where   and   is a physical constant called the  permittivity of free space . Prove Gauss's law: if   is a smooth closed surface with outward orientation then\n           \n        Gauss's law can be generalized to a situation where the surface   encloses a region   with continuous charge density  . If   is the resulting electostatic field, then\n         ,\n        where   is the total charge enclosed by  .\n         \n\n         Divergence interpretation \n          Assume the component functions of   have continuous first-order partial derivatives on an open set containing the point  . For all  , let   be the sphere of radius   centered at   with outward orientation. We have\n           .\n          Thus we interpret   as the  flux density  of   at  , measured in unit flux per unit volume.\n         "
+},
+{
+  "id": "d_closed_surface",
+  "level": "2",
+  "url": "s_Divergence.html#d_closed_surface",
+  "type": "Definition",
+  "number": "2.8.1",
+  "title": "",
+  "body": "closed "
+},
+{
+  "id": "th_Divergence",
+  "level": "2",
+  "url": "s_Divergence.html#th_Divergence",
+  "type": "Theorem",
+  "number": "2.8.2",
+  "title": "Divergence (or Gauss's) theorem.",
+  "body": "Divergence (or Gauss's) theorem \n          Let   be a bounded solid region whose boundary   is a union of finitely many piecewise smooth surfaces. Let   be the outward orientation on  . If   is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing  , then\n           .\n         "
+},
+{
+  "id": "eg_Divergence",
+  "level": "2",
+  "url": "s_Divergence.html#eg_Divergence",
+  "type": "Example",
+  "number": "2.8.3",
+  "title": "Flux out of cube.",
+  "body": "Flux out of cube \n        Let   be the cube in the first octant bounded by the planes  . Compute the outward flux of  .\n         \n\n         "
+},
+{
+  "id": "cor_divergence_zero",
+  "level": "2",
+  "url": "s_Divergence.html#cor_divergence_zero",
+  "type": "Corollary",
+  "number": "2.8.4",
+  "title": "Zero divergence implies zero flux.",
+  "body": "Zero divergence implies zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for all  , then  , for any orientation of  .\n         "
+},
+{
+  "id": "cor_equal_flux",
+  "level": "2",
+  "url": "s_Divergence.html#cor_equal_flux",
+  "type": "Corollary",
+  "number": "2.8.5",
+  "title": "Identical flux.",
+  "body": "Identical flux \n          Suppose the solid region   has piecewise smooth boundary surface  , where   is the outer boundary of   and   is its inner boundary. If   satisfies the conditions of the divergence theorem and   on  , then\n           ,\n          where for both surface integrals   is taken to be the outer oritentation with respect to the surface.\n         "
+},
+{
+  "id": "th_div_curl",
+  "level": "2",
+  "url": "s_Divergence.html#th_div_curl",
+  "type": "Theorem",
+  "number": "2.8.6",
+  "title": "<span class=\"process-math\">\\(\\diver\\curl\\boldF=0\\)<\/span>.",
+  "body": "\n          If the component functions of   have continuous second-order partial derivatives on the set  , then\n           \n          for all  .\n         "
+},
+{
+  "id": "cor_flux_curl",
+  "level": "2",
+  "url": "s_Divergence.html#cor_flux_curl",
+  "type": "Corollary",
+  "number": "2.8.7",
+  "title": "Curl field has zero flux.",
+  "body": "Curl field has zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for some vector field  , then\n           .\n         "
+},
+{
+  "id": "example-67",
+  "level": "2",
+  "url": "s_Divergence.html#example-67",
+  "type": "Example",
+  "number": "2.8.8",
+  "title": "Gauss's law.",
+  "body": "Gauss's law \n          Given a a point charge of   located at the origin in  , the electrotatic field it produces is given by\n           \n          where   and   is a physical constant called the  permittivity of free space . Prove Gauss's law: if   is a smooth closed surface with outward orientation then\n           \n        Gauss's law can be generalized to a situation where the surface   encloses a region   with continuous charge density  . If   is the resulting electostatic field, then\n         ,\n        where   is the total charge enclosed by  .\n         \n\n         "
+},
+{
+  "id": "th_Divergence_interpretation_curl",
+  "level": "2",
+  "url": "s_Divergence.html#th_Divergence_interpretation_curl",
+  "type": "Theorem",
+  "number": "2.8.9",
+  "title": "Divergence interpretation.",
+  "body": "Divergence interpretation \n          Assume the component functions of   have continuous first-order partial derivatives on an open set containing the point  . For all  , let   be the sphere of radius   centered at   with outward orientation. We have\n           .\n          Thus we interpret   as the  flux density  of   at  , measured in unit flux per unit volume.\n         "
 },
 {
   "id": "appendix-notation",

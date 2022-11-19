@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Let <span class="process-math">\(\mathcal{R}\)</span> be the region enclosed by a simple, piecewise smooth planar curve <span class="process-math">\(\mathcal{C}\)</span> oriented counterclockwise, and suppose <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\)</span> satisfies the conditions of <a href="" class="xref" data-knowl="./knowl/th_Greens.html" title="Theorem 2.4.1: Green's theorem (circulation or tangential form)">Theorem 2.4.1</a>. Define <span class="process-math">\(G(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}\text{,}\)</span> and think of <span class="process-math">\(\mathcal{R}\subseteq\R^3\)</span> as a planar surface living in the <span class="process-math">\(xy\)</span>-plane, with <span class="process-math">\(\mathcal{C}\)</span> is boundary. We choose the orientation <span class="process-math">\(\boldn(x,y,z)=\angvec{0,0,1}=\boldk\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> By Stokes's theorem we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html">
+\begin{align*}
+\int_\mathcal{C}\boldF\cdot d\boldr\amp=\iint_\mathcal{R}\curl G\cdot \boldn \, d\sigma \amp \\
+\amp =\iint_\mathcal{R}\angvec{0,0,\partial F_2/\partial x-\partial F_1/\partial y}\cdot \angvec{0,0,1} \, dA\\
+\amp =\iint_\mathcal{R} \partial F_2/\partial x-\partial F_1/\partial y \, dA\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_Stokes.html#p-499" class="internal">in-context</a></span>
+</body>
+</html>

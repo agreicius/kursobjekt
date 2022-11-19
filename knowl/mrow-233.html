@@ -13,8 +13,13 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\frac{\partial F_3 }{\partial y}-\frac{\partial F_2}{\partial z} \amp = \frac{\partial^2 f }{\partial y\partial z}-\frac{\partial f}{\partial z\partial y} \amp (F_3=f_z, F_2=f_y)\\
-\amp=0 \amp \left( \frac{\partial^2 f }{\partial y\partial z}=\frac{\partial^2 f }{\partial z\partial y}\right) 
+\curl\boldF \amp= \nabla\times \boldF\\
+\amp =\det \begin{pmatrix}
+\boldi \amp \boldj \amp \boldk \\
+\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
+F_1 \amp F_2 \amp F_3
+\end{pmatrix}\\
+\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
 \end{align*}
 </div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#md-69" class="internal">in-context</a></span>
