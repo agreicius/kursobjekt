@@ -12,7 +12,30 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Assume <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable over the bounded solid regions <span class="process-math">\(\mathcal{D},  \text{.}\)</span></p>
+<p>I claim the projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xz\)</span>-plane is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{R}=\{(x,0,z)\colon 0\leq x\leq 1, 0\leq z\leq 1-x\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Indeed, the back face of <span class="process-math">\(D\)</span> is the triangular region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(x,1,z)\colon 0\leq x\leq 1, 0\leq z\leq 1-x\}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which projects onto <span class="process-math">\(\mathcal{R}\text{.}\)</span> It is also clear that this is the “widest” section of <span class="process-math">\(D\)</span> in terms of casting a shadow onto the <span class="process-math">\(xz\)</span>-plane, and hence that the projection is no bigger than <span class="process-math">\(\mathcal{R}\text{.}\)</span> Next, given a point <span class="process-math">\((x,0,z)\in \mathcal{R}\text{,}\)</span> as we move in the <span class="process-math">\(y\)</span> direction we do not enter the tetrahedron until we hit the oblique plane at <span class="process-math">\(y=x+z\text{,}\)</span> and we stay within the tetrahedron until we hit its back wall at <span class="process-math">\(y=1\text{.}\)</span> Thus we can describe <span class="process-math">\(D\)</span> as a type-C region as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D=\{(x,y,z)\colon 0\leq x\leq 1, 0\leq z\leq 1-x,x+z\leq y\leq 1\}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and the corresponding volume integral is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{vol} D=\int_0^1\int_0^{1-x}\int_{x+z}^1 1\, dy\, dz\, dx\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="s_triple_integrals.html#p-205" class="internal">in-context</a></span>
 </body>
 </html>

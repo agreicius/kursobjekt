@@ -12,10 +12,22 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Sketch the region <span class="process-math">\(\mathcal{D}\subseteq \R^3\)</span> whose volume is computed by the iterated integral</p>
+<p>The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xy\)</span>-plane is just its bottom face:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\int_0^1\, \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\, \int_2^{3-y^2-z^2}1\, dx\, dz\, dy\text{.}
+\mathcal{R}=\{(x,y,0)\colon 0\leq x\leq 1, x\leq y\leq 1\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The top part of the tetrahedron lies in the plane containing <span class="process-math">\((0,1,1),(1,1,0),(0,0,0)\text{,}\)</span> which has defining equation <span class="process-math">\(x-y+z=0\text{,}\)</span> or <span class="process-math">\(z=y-x\text{.}\)</span> Thus we can describe <span class="process-math">\(D\)</span> as a type-A region as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D=\{(x,y,z)\colon 0\leq x\leq 1, x\leq y\leq 1, 0\leq z\leq y-x\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and the corresponding volume iterated integral is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{vol} D=\int_0^1\int_x^{1}\int_0^{y-x}1\, dz\, dy\, dx\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="s_triple_integrals.html#p-203" class="internal">in-context</a></span>

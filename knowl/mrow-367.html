@@ -13,13 +13,13 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp= \cancelto{0}{\iint_\mathcal{S_1}\curl\boldF\cdot \boldn\, d\sigma}+\iint_\mathcal{S_2}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp =\iint\limits_{x^2+y^2\leq 1}\angvec{0,0,1+2y}\cdot \angvec{0,0,1}\, dA\\
-\amp =\int_0^{2\pi}\int_0^1(1+2r\sin\theta)r\, dr\, d\theta\\\
-\amp =\pi
+\bolds_r \amp = \langle\cos\theta, \sin\theta, 2r\rangle)\\
+\bolds_\theta \amp= \angvec{-r\sin\theta, r\cos\theta, 0}\\
+\bolds_r\times \bolds_\theta \amp=\angvec{-2r^2\cos\theta, -2r^2\sin\theta, r} \\
+\abs{\bolds_r\times \bolds_\theta} \amp=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2}\\
+\amp = \sqrt{4r^4+r^2}=r\sqrt{4r^2+1}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Stokes.html#md-109" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_surfaces_area.html#md-105" class="internal">in-context</a></span>
 </body>
 </html>

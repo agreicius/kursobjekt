@@ -12,14 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A <dfn class="terminology">surface parametrization</dfn> with <dfn class="terminology">parameter domain</dfn>  <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> is a continuous function</p>
+<p>Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr\colon \mathcal{R} \amp\rightarrow \R^3  \\
-(u,v) \amp\mapsto (f_1(u,v),f_2(u,v),f_3(u,v)) \text{,}
-\end{align*}
+\begin{equation}
+\underset{\text{divergence integral}}{\underbrace{\iint_\mathcal{R} \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\, dA}}=\underset{\operatorname{outward flux}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldn\,  ds}}=\oint_\mathcal{C}-F_2\, dx+F_1\, dy\text{.}\tag{2.4.3}
+\end{equation}
 </div>
-<p class="continuation">that is one-to-one on the interior of <span class="process-math">\(\mathcal{R}\text{.}\)</span> The functions <span class="process-math">\(f_i(t)\)</span> defining <span class="process-math">\(\boldr\)</span> are called <dfn class="terminology">component functions</dfn>.</p>
-<span class="incontext"><a href="s_surfaces_area.html#p-416" class="internal">in-context</a></span>
+<p class="continuation">Here <span class="process-math">\(\boldn\)</span> is understood to be the outward unit normal vector to <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+<span class="incontext"><a href="s_Greens_theorem.html#p-416" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,8 +11,30 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For each <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> imagine the ray <span class="process-math">\(L_\theta\)</span> in the <span class="process-math">\(xy\)</span>-plane that makes an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis. The <span class="process-math">\(r\)</span>-values <span class="process-math">\(g_1(\theta), g_2(\theta)\)</span> of the points where <span class="process-math">\(L_\theta\)</span> enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(r\)</span>-bounds <span class="process-math">\(g_1(\theta)\leq r\leq g_2(\theta)\text{.}\)</span></p>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>We will think of the polar coordinate equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x \amp=r\cos\theta \\
+y \amp=r\sin\theta 
+\end{align*}
+</div>
+<p class="continuation">as defining a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+G\colon \R^2  \amp \rightarrow \R^2\\
+(r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) 
+\end{align*}
+</div>
+<p class="continuation">from one copy of <span class="process-math">\(\R^2\text{,}\)</span> called the <span class="process-math">\(r\theta\)</span>-plane, to another, called the <span class="process-math">\(xy\)</span>-plane. Earlier in your calculus career you learned to translate back and forth between polar equations and Cartesian (or rectangular) ones. We will now think of these translations as evaluations of the function <span class="process-math">\(G\)</span> or its inverse to regions of the <span class="process-math">\(r\theta\)</span>- or <span class="process-math">\(xy\)</span>-plane. For example, <span class="process-math">\(G\)</span> takes the rectangle</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R=[r_1,r_2]\times [\theta_1, \theta_2]=\{(r,\theta)\colon r_1\leq r\leq r_2, \theta_1\leq \theta\leq\theta_2\}
+\end{equation*}
+</div>
+<p class="continuation">lying in the <span class="process-math">\(r\theta\)</span>-plane, and maps it to the set of all points in the <span class="process-math">\(xy\)</span>-plane lying between the circles of radius <span class="process-math">\(r=r_1\)</span> and <span class="process-math">\(r=r_2\text{,}\)</span> centered at the origin, and between the two rays obtained by rotating the positive <span class="process-math">\(x\)</span>-axis by an angle of <span class="process-math">\(\theta=\theta_1\)</span> and <span class="process-math">\(\theta=\theta_2\text{,}\)</span> respectively. <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/polar_square.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.1<span class="period">.</span></span><span class="space"> </span>Action of polar transformation on a rectangle in <span class="process-math">\(r\theta\)</span>-plane.</figcaption></figure> From this observation we can then understand how <span class="process-math">\(G\)</span> transforms an entire rectangular grid in the <span class="process-math">\(r\theta\)</span>-plane to a <em class="emphasis">polar grid</em> in the <span class="process-math">\(xy\)</span>-plane. <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/polar_transform.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Action of polar transformation on a grid in <span class="process-math">\(r\theta\)</span>-plane.</figcaption></figure></p>
 <span class="incontext"><a href="s_substitution_polar_cylindrical.html#p-251" class="internal">in-context</a></span>
 </body>
 </html>

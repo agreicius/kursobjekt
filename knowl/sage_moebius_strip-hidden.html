@@ -24,7 +24,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \end{equation*}
 </div>
 <p class="continuation">where <span class="process-math">\(\ 0\leq \theta\leq 2\pi, -\frac{1}{2}\leq t\leq\frac{1}{2}\text{.}\)</span> The Sage cell below depicts <span class="process-math">\(\mathcal{S}\)</span> along with the labeled line segments we used in its original description.</p>
-<pre class="ptx-sagecell sagecell-sage" id="sage-24"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+<pre class="ptx-sagecell sagecell-sage" id="sage-26"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
 var('theta t s x y z')
 R=3
 c=-1/2
@@ -48,7 +48,7 @@ P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)
 \end{equation*}
 </div>
 <p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
-<pre class="ptx-sagecell sagecell-sage" id="sage-25"><script type="text/x-sage">(theta, t, R)=var('theta t R')
+<pre class="ptx-sagecell sagecell-sage" id="sage-27"><script type="text/x-sage">(theta, t, R)=var('theta t R')
 r(theta, t)=vector([(R+t*cos(theta/2))*cos(theta),(R+t*cos(theta/2))*sin(theta),t*sin(theta/2)])
 r_t=diff(r,t) # r_t(theta,t)
 r_theta=diff(r,theta) # r_theta(theta,t)
@@ -58,7 +58,7 @@ show(g(0,0))
 show(g(2*pi,0))
 </script></pre>
 <p>We can see what's going on by plotting some of the normal vectors given by <span class="process-math">\(\boldr_t\times \boldr_\theta\)</span> for points of the form <span class="process-math">\(P=\boldr(\theta, 0)\text{.}\)</span></p>
-<pre class="ptx-sagecell sagecell-sage" id="sage-26"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+<pre class="ptx-sagecell sagecell-sage" id="sage-28"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
 var('theta t s x y z')
 R=3
 c=-1/2

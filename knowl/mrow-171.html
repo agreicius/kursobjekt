@@ -11,14 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substition_polar.html">
 \begin{align*}
-\int\limits_\mathcal{C}f(x,y,z)\, ds\amp = \int_0^{\pi}f(2\cos t, t, 2\sin t)\abs{\boldr'(t)}\, dt \amp(\knowl{./knowl/th_line_integral_scalar.html}{\text{2.1.6}})\\
-\amp=\int_0^\pi (4\cos^2 t+t^2+4\sin^2 t)\sqrt{5}\, dt  \\
-\amp = \sqrt{5}\int_0^\pi 4+t^2\, dt\\
-\amp = \sqrt{5}(4\pi+\pi^3/3)
+\operatorname{area} \mathcal{S} \amp = \iint\limits_{\mathcal{S}}1\, dA \\
+\amp =\iint_{\mathcal{R}}r\, dA  \amp \text{(polar subst.)}\\
+\amp =\int_{\pi/6}^{5\pi/6}\int_2^{1+2\sin\theta}r\, dr\, d\theta\\
+\amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta+4\sin^2\theta-3\, d\theta\\
+\amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta-2\cos 2\theta-1\, d\theta \amp (\sin^2\theta=\frac{1}{2}(1-\cos 2\theta))\\
+\amp =\frac{1}{2}(-4\cos\theta-\theta-\sin 2\theta)\Bigr\vert_{\pi/6}^{5\pi/6}\\
+\amp =\frac{5\sqrt{3}}{2}-\frac{\pi}{3} 
 \end{align*}
 </div>
-<span class="incontext"><a href="s_line_integal_scalar.html#md-54" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_polar_cylindrical.html#md-52" class="internal">in-context</a></span>
 </body>
 </html>

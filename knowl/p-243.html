@@ -11,14 +11,29 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{S}\subseteq \R^2\)</span> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation</p>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>To compute <span class="process-math">\(\frac{\partial(x,y)}{\partial(u,v)}\)</span> you can either:</p>
+<ol class="lower-alpha">
+<li>
+<p>determine the inverse function <span class="process-math">\(H^{-1}=G=(g_1,g_2)\)</span> by solving for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x \amp = g_1(u,v)\\
+y \amp = g_2(u,v)
+\end{align*}
+</div>
+<p class="continuation">and compute <span class="process-math">\(J(G)=\partial(g_1,g_2)/\partial(u,v)\)</span> directly, or</p>
+</li>
+<li>
+<p>assuming <span class="process-math">\(H\)</span> and <span class="process-math">\(G\)</span> are both continuously differentiable, compute <span class="process-math">\(J(G)\)</span> <em class="emphasis">indirectly</em>, using the fact that</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-r=1+2\sin\theta\text{.}
+J(G)=\frac{1}{J(H)}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Compute the area of <span class="process-math">\(\mathcal{S}\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_cardioid.svg" role="img" class="contained"></div></p>
-<span class="incontext"><a href="s_substitution_polar_cylindrical.html#p-243" class="internal">in-context</a></span>
+<p class="continuation">Observe that <span class="process-math">\(1/J(H)\)</span> is an expression in <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> that you will need to express in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{!}\)</span></p>
+</li>
+</ol>
+<span class="incontext"><a href="s_substitution_linear.html#p-243" class="internal">in-context</a></span>
 </body>
 </html>

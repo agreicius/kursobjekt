@@ -12,29 +12,13 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h4 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h4>
-<p>To compute <span class="process-math">\(\frac{\partial(x,y)}{\partial(u,v)}\)</span> you can either:</p>
-<ol class="lower-alpha">
-<li>
-<p>determine the inverse function <span class="process-math">\(H^{-1}=G=(g_1,g_2)\)</span> by solving for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> as</p>
+<p>We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-x \amp = g_1(u,v)\\
-y \amp = g_2(u,v)
-\end{align*}
-</div>
-<p class="continuation">and compute <span class="process-math">\(J(G)=\partial(g_1,g_2)/\partial(u,v)\)</span> directly, or</p>
-</li>
-<li>
-<p>assuming <span class="process-math">\(H\)</span> and <span class="process-math">\(G\)</span> are both continuously differentiable, compute <span class="process-math">\(J(G)\)</span> <em class="emphasis">indirectly</em>, using the fact that</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-J(G)=\frac{1}{J(H)}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Observe that <span class="process-math">\(1/J(H)\)</span> is an expression in <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> that you will need to express in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{!}\)</span></p>
-</li>
-</ol></article><span class="incontext"><a href="s_substitution_linear.html#li-80" class="internal">in-context</a></span>
+\begin{equation}
+\iint\limits_{\mathcal{R}}f(x,y)\, dA=\iint\limits_{\mathcal{S}}q(u,v)\left\vert\frac{\partial(x,y)}{\partial(u,v)}\right\vert\, dA\text{.}\tag{1.6.7}
+\end{equation}
+</div></article><span class="incontext"><a href="s_substitution_linear.html#li-80" class="internal">in-context</a></span>
 </body>
 </html>

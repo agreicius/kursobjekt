@@ -11,32 +11,24 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="case"><h4 class="heading">Solution 1.</h4>
-<p>The curve <span class="process-math">\(\mathcal{C}\)</span> is the boundary of the elliptical region <span class="process-math">\(\mathcal{S}\)</span> it encloses in the plane <span class="process-math">\(y+z=2\text{.}\)</span> Since <span class="process-math">\(z=2-y\)</span> for points on this plane, we can parametrize as</p>
+<article class="case"><h4 class="heading">Type A.</h4>
+<p>The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xy\)</span>-plane is just its bottom face:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr(r,\theta) \amp =(r\cos\theta, r\sin\theta,2-r\sin\theta)\\
-\mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi \text{.}
-\end{align*}
+\begin{equation*}
+\mathcal{R}=\{(x,y,0)\colon 0\leq x\leq 1, x\leq y\leq 1\}\text{.}
+\end{equation*}
 </div>
-<p class="continuation">Assembling ingredients we have</p>
+<p class="continuation">The top part of the tetrahedron lies in the plane containing <span class="process-math">\((0,1,1),(1,1,0),(0,0,0)\text{,}\)</span> which has defining equation <span class="process-math">\(x-y+z=0\text{,}\)</span> or <span class="process-math">\(z=y-x\text{.}\)</span> Thus we can describe <span class="process-math">\(D\)</span> as a type-A region as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr_r \amp =\angvec{\cos\theta, \sin\theta,-\sin\theta}\\
-\boldr_\theta\amp =\angvec{-r\sin\theta,r\cos\theta,-r\cos\theta}\\
-\boldr_r\times\boldr_\theta\amp=\angvec{0,r,r} \\
-\curl\boldF \amp=\angvec{0,0,1+2y} \text{.}
-\end{align*}
+\begin{equation*}
+D=\{(x,y,z)\colon 0\leq x\leq 1, x\leq y\leq 1, 0\leq z\leq y-x\text{,}
+\end{equation*}
 </div>
-<p class="continuation">Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldr_r\times\boldr_\theta\)</span> is nonnegative, we see that this gives rise to the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> We can now use Stokes's theorem to concude</p>
+<p class="continuation">and the corresponding volume iterated integral is</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp=\iint_\mathcal{R}\angvec{0,0,1+2r\sin\theta}\cdot \angvec{0,r,r}\, dA \\
-\amp =\int_0^{2\pi}\int_0^{1}r+2r^2\sin\theta\, dr\, d\theta\\
-\amp =\int_0^{2\pi}\frac{1}{2}+\frac{2}{3}\sin\theta\, d\theta\\
-\amp =\pi
-\end{align*}
-</div></article><span class="incontext"><a href="s_Stokes.html#case-1" class="internal">in-context</a></span>
+\begin{equation*}
+\operatorname{vol} D=\int_0^1\int_x^{1}\int_0^{y-x}1\, dz\, dy\, dx\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="s_triple_integrals.html#case-1" class="internal">in-context</a></span>
 </body>
 </html>

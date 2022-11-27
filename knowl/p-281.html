@@ -11,8 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p>
-<span class="incontext"><a href="s_multiple_integrals_applications.html#p-281" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Let <span class="process-math">\(D\)</span> be the region lying within the sphere. Observe that the function in question is  <span class="process-math">\(f(x,y,z)=\sqrt{x^2+y^2+z^2}\text{.}\)</span> In spherical coordinates the solid sphere is described as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(\rho, \phi, \theta)\colon 0\leq \theta\leq 2\pi, 0\leq \phi\leq \pi, 0\leq \rho\leq R\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\operatorname{vol} D \amp = \iiint\limits_D \sqrt{x^2+y^2+z^2}\, dV \\
+\amp=\int_0^{2\pi}\int_0^\pi\int_0^R\rho\cdot \rho^2\sin\phi\, d\rho\, d\phi\, d\theta \amp \text{(spher. subst.)}\\
+\amp = 2\pi\int_0^\pi\sin\phi\, d\phi \int_0^R\rho^3\, d\rho\\
+\amp = 2\pi (-\cos\phi)\Bigr\vert_0^{\pi}\left(\frac{1}{4}\rho^4\right)\Bigr\vert_0^R\\
+\amp =\pi R^4\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_substitution_spherical.html#p-281" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,18 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\boldF=\angvec{F_1, F_2, F_3}\)</span> be a vector field on the set <span class="process-math">\(D\subseteq \R^3\text{,}\)</span> and assume the first order partial derivatives of the component functions exist. We define the <dfn class="terminology">curl</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\curl \boldF\)</span> or <span class="process-math">\(\nabla \times \boldF\text{,}\)</span> as the vector field</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<p>Let <span class="process-math">\(\mathcal{C}\)</span> be the unit circle <span class="process-math">\(x^2+y^2=1\text{,}\)</span> with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
 \begin{align*}
-\curl\boldF \amp= \nabla\times \boldF\\
-\amp =\det \begin{pmatrix}
-\boldi \amp \boldj \amp \boldk \\
-\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
-F_1 \amp F_2 \amp F_3
-\end{pmatrix}\\
-\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}\text{.}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
+\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
+\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
+\amp = 2\pi\text{.}
 \end{align*}
 </div>
+<p class="continuation">Since <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> implies that we cannot have <span class="process-math">\(\boldF=\nabla f\text{.}\)</span></p>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-373" class="internal">in-context</a></span>
 </body>
 </html>

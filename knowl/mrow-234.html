@@ -13,15 +13,19 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\curl\boldF \amp= \nabla\times \boldF\\
-\amp =\det \begin{pmatrix}
-\boldi \amp \boldj \amp \boldk \\
-\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
-F_1 \amp F_2 \amp F_3
-\end{pmatrix}\\
-\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
+n =2 \\
+\text{Mass: } M\amp=\iint\limits_\mathcal{R}\delta(x,y)\, dA \\
+\text{First moments}\colon  M_{y}\amp=\iint\limits_\mathcal{R}x\delta(x,y)\, dA
+\amp  M_{x}\amp=\iint\limits_\mathcal{R}y\delta(x,y)\, dA \\
+\text{Center of mass}\colon (\overline{x},\overline{y})\amp=\frac{1}{M}(M_y, M_x) \\
+n =3 \\
+\text{Mass: } M\amp=\iiint\limits_\mathcal{R}\delta(x,y,z)\, dV \\
+\text{First moments}\colon  M_{yz}\amp=\iiint\limits_\mathcal{R}x\delta(x,y,z)\, dV
+\amp  M_{xz}\amp=\iiint\limits_\mathcal{R}y\delta(x,y,z)\, dV
+\amp  M_{xy}\amp=\iiint\limits_\mathcal{R}z\delta(x,y,z)\, dV\\
+\text{Center of mass}\colon (\overline{x},\overline{y},\overline{z})\amp=\frac{1}{M}(M_{yz}, M_{xz}, M_{xy}) 
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-69" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_multiple_integrals_applications.html#md-64" class="internal">in-context</a></span>
 </body>
 </html>

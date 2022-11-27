@@ -13,10 +13,27 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.9.6.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.7.5.1</span><span class="period">.</span>
 </h4>
-<p></p>
+<p>The <span class="process-math">\(r\theta\)</span>-coordinates of points in <span class="process-math">\(\mathcal{S}\)</span> satisfy <span class="process-math">\(r=1+2\sin\theta\geq 2\text{.}\)</span> A little algebra shows this implies <span class="process-math">\(\pi/6\leq \theta\leq 5\pi/6\text{.}\)</span> Thus the polar transformation <span class="process-math">\(G(r,\theta)=(r\cos\theta, r\sin\theta)\)</span> maps the <span class="process-math">\(r\theta\)</span>-region</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substition_polar.html">
+\begin{equation*}
+\mathcal{R}=\{(r,\theta)\colon \pi/6\leq \theta\leq 5\pi/6, 2\leq r\leq 1+2\sin\theta\}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_multiple_integrals_applications.html#solution-20" class="internal">in-context</a></span>
+<p class="continuation">onto <span class="process-math">\(\mathcal{S}\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/th_substition_polar.html" title="Theorem 1.7.3: Polar change of variables">Theorem 1.7.3</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substition_polar.html">
+\begin{align*}
+\operatorname{area} \mathcal{S} \amp = \iint\limits_{\mathcal{S}}1\, dA \\
+\amp =\iint_{\mathcal{R}}r\, dA  \amp \text{(polar subst.)}\\
+\amp =\int_{\pi/6}^{5\pi/6}\int_2^{1+2\sin\theta}r\, dr\, d\theta\\
+\amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta+4\sin^2\theta-3\, d\theta\\
+\amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta-2\cos 2\theta-1\, d\theta \amp (\sin^2\theta=\frac{1}{2}(1-\cos 2\theta))\\
+\amp =\frac{1}{2}(-4\cos\theta-\theta-\sin 2\theta)\Bigr\vert_{\pi/6}^{5\pi/6}\\
+\amp =\frac{5\sqrt{3}}{2}-\frac{\pi}{3} \text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_substitution_polar_cylindrical.html#solution-20" class="internal">in-context</a></span>
 </body>
 </html>

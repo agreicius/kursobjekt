@@ -13,12 +13,15 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx\\
-\amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx \\
-\amp =-\frac{1}{2}\int_1^0 (1-u)u^2\, du \amp (u=1-x, du=-dx)\\
-\amp =\frac{1}{2}(1/3-1/4)=\frac{1}{24}
+\curl\boldF \amp= \nabla\times \boldF\\
+\amp =\det \begin{pmatrix}
+\boldi \amp \boldj \amp \boldk \\
+\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
+F_1 \amp F_2 \amp F_3
+\end{pmatrix}\\
+\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_integrals.html#md-94" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-86" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,13 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The function <span class="process-math">\(\abs{f}\)</span> is integrable, and we have</p>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>The given description of <span class="process-math">\(D\)</span> is basically already a type-A one:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\left\vert \iiint\limits_\mathcal{D}f(x,y,z)\, dV\right\vert\leq
-\iiint\limits_\mathcal{D}\vert f(x,y,z)\vert \, dV\text{.}
+D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq z\leq 1-x\}\text{.}
 \end{equation*}
+</div>
+<p class="continuation">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\operatorname{vol} D \amp =\iiint\limits_{D} 1\, dV \\
+\amp= \int_{-1}^1\int_{y^2}^1\int_0^{1-x}1\, dz\, dx\, dy \\
+\amp = \int_{-1}^1\int_{y^2}^11-x\, dx\, dy\\
+\amp = \frac{1}{2}\int_{-1}^1(1-y^2)^2\, dy\\
+\amp = \int_0^1 1-2y^2+y^4\, dy \amp (\text{even function})\\
+\amp = 1-2/3+1/5=8/15\text{.}
+\end{align*}
 </div>
 <span class="incontext"><a href="s_triple_integrals.html#p-210" class="internal">in-context</a></span>
 </body>

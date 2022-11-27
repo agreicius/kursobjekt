@@ -18,7 +18,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </script>
 </head>
 <body class="ignore-math"><article class="project project-like"><p>The Sage cell below caries out <a href="" class="xref" data-knowl="./knowl/proc_surface_plane.html" title="Procedure 2.5.2: Plane parametrization">Procedure 2.5.2</a> and produces a plot of the plane <span class="process-math">\(\mathcal{S}\)</span> (using <code class="code-inline tex2jax_ignore">parametric_plot3d()</code>) along with a chosen point <span class="process-math">\(P\text{,}\)</span> the chosen vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> (normalized), and the grid on the plane these two vectors define. To solve for <span class="process-math">\(P, \boldw_1, \boldw_2\)</span> we use some linear algebra functions: e.g., <code class="code-inline tex2jax_ignore">solve_right()</code>, <code class="code-inline tex2jax_ignore">right_kernel().basis()</code>.</p>
-<pre class="ptx-sagecell sagecell-sage" id="sage-19"><script type="text/x-sage">  (u,v,r)=var('u v r')
+<pre class="ptx-sagecell sagecell-sage" id="sage-21"><script type="text/x-sage">  (u,v,r)=var('u v r')
 n=[1,1,1] #normal vector
 A=matrix([n])
 d=vector([5]) # d in ax+by+cz=d

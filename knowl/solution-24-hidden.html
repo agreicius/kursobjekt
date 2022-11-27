@@ -11,33 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>The path in question is piecewise smooth, allowing us to use <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar_piecwise.html" title="Theorem 2.1.10: Piecewise smooth line integral">Theorem 2.1.10</a>. We use the straight line parametrizations</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
-\begin{align*}
-\boldr_1(t) \amp= (1-t)P+tQ, \ 0\leq t\leq 1 \\
-\amp =(1,1+t,2t) \\
-\boldr_2(t)\amp= (1-t)Q+tR, \ 0\leq t\leq 1 \\
-\amp =(1+t,2,2+3t) 
-\end{align*}
+<p>Let <span class="process-math">\(D\)</span> be the region lying within the sphere. Observe that the function in question is  <span class="process-math">\(f(x,y,z)=\sqrt{x^2+y^2+z^2}\text{.}\)</span> In spherical coordinates the solid sphere is described as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(\rho, \phi, \theta)\colon 0\leq \theta\leq 2\pi, 0\leq \phi\leq \pi, 0\leq \rho\leq R\}\text{.}
+\end{equation*}
 </div>
-<p class="continuation">and assemble some ingredients</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
+<p class="continuation">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_1'(t) \amp =(0,1,2)\\
-\abs{\boldr_1'(t)} \amp =\sqrt{0^2+1^2+2^2}=\sqrt{5}\\
-\boldr_2'(t) \amp = (1,0,3)\\
-\abs{\boldr_2'(t)} \amp =\sqrt{1^2+(0)^2+3^2}=\sqrt{10}\text{.}
-\end{align*}
-</div>
-<p class="continuation">Lastly we compute</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
-\begin{align*}
-\operatorname{M} \amp =\int\limits_{\mathcal{C}_1}\delta(x,y,z)\, ds+
-\int\limits_{\mathcal{C}_2}\delta(x,y,z)\, ds\\
-\amp=\int_0^1\delta(1,1+t,2t)\sqrt{5}\, dt+
-\int_0^1\delta(1+t,2,2+3t)\sqrt{10}\, dt \\
-\amp =\sqrt{5}\int_0^11+3t\, dt+\sqrt{10}\int_0^1 (1+t)(4+3t)\, dt\\
-\amp = \frac{5\sqrt{5}}{2}+\sqrt{10}\text{.}
+\operatorname{vol} D \amp = \iiint\limits_D \sqrt{x^2+y^2+z^2}\, dV \\
+\amp=\int_0^{2\pi}\int_0^\pi\int_0^R\rho\cdot \rho^2\sin\phi\, d\rho\, d\phi\, d\theta \amp \text{(spher. subst.)}\\
+\amp = 2\pi\int_0^\pi\sin\phi\, d\phi \int_0^R\rho^3\, d\rho\\
+\amp = 2\pi (-\cos\phi)\Bigr\vert_0^{\pi}\left(\frac{1}{4}\rho^4\right)\Bigr\vert_0^R\\
+\amp =\pi R^4\text{.}
 \end{align*}
 </div>
 </div></body>

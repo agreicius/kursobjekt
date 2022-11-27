@@ -11,13 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conservative_iff_gradient.html">
 \begin{align*}
-\iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp \\
-\amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx \\
-\amp =\frac{\sqrt{3}}{24}
+f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) \\
+f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}\\
+\amp \implies \partial/\partial y (G(y,z))=z\cos(yz)\\
+\amp \implies G(y,z)=\sin(yz)+H(z) \text{ for some } H(z)\\
+\amp \implies f(x,y,z)=xy+\sin(yz)+H(z) \text{ for some } H(z)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_integrals.html#md-96" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-90" class="internal">in-context</a></span>
 </body>
 </html>

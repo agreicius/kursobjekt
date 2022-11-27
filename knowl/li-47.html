@@ -12,8 +12,27 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h4 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span><span class="space"> </span><span class="title">Physical: density functions.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h4>
-<p>Assume <span class="process-math">\(f\)</span> is a denisty function of some quantity <span class="process-math">\(Q\text{:}\)</span> e.g. <span class="process-math">\(f\)</span> computes the mass per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at a given point in the region; or <span class="process-math">\(f\)</span> computes the charge per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at a given input in the region. In this case the Riemann sums can be understood as approximations of the total quanty <span class="process-math">\(Q\)</span> over the region; and thus the integral computes the total quantity <span class="process-math">\(Q\)</span> for the region.</p></article><span class="incontext"><a href="s_triple_integrals.html#li-47" class="internal">in-context</a></span>
+<p>First we describe <span class="process-math">\(\mathcal{R}\)</span> as a type-1 region:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{R}=\{(x,y)\colon -R\leq x\leq R, -\sqrt{R-x^2}\leq y\leq \sqrt{R-x^2}\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\operatorname{area}\mathcal{R}  \amp= \iint\limits_{\mathcal{R}}1\, dA \\
+\amp=\int_{-R}^R\int_{-\sqrt{R-x^2}}^{\sqrt{R-x^2}}1\, dy\, dx \\
+\amp = \int_{-R}^R2\sqrt{R-x^2}\, dx\\
+\amp = \int_{-\pi/2}^{\pi/2} 2\sqrt{R^2-R^2\sin^2\theta}\, R\cos\theta\, d\theta \amp (x=R\sin\theta, dx=R\cos\theta\, d\theta)\\
+\amp = 2R^2\int_{-\pi/2}^{\pi/2}\abs{\cos\theta}\cos\theta\, d\theta\\
+\amp =2R^2\int_{-\pi/2}^{\pi/2}\cos^2\theta\, d\theta \amp (\theta\in [0,\pi/2]\implies \cos\theta\geq 0)\\
+\amp =2R^2\int_{-\pi/2}^{\pi/2}\frac{1}{2](1+\cos 2\theta)}\, d\theta\\
+\amp =\pi R^2\text{.}
+\end{align*}
+</div>
+<p class="continuation">We've just derived the familiar area formula for a disk of radius <span class="process-math">\(R\text{!}\)</span></p></article><span class="incontext"><a href="s_double_integrals_area.html#li-47" class="internal">in-context</a></span>
 </body>
 </html>

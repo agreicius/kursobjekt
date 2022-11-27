@@ -17,7 +17,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
                        evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body class="ignore-math"><article class="project project-like"><p>Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <a href="" class="xref" data-knowl="./knowl/eg_volume_slice_para_cyl.html" title="Example 1.5.13: Volume of slice of parabolic cylinder">Example 1.5.13</a>, where we needed to compute <span class="process-math">\(\iiint\limits_\mathcal{D}1\, dV\text{.}\)</span> The hard part was coming up with a suitable description of <span class="process-math">\(\mathcal{D}\text{:}\)</span> e.g.,</p>
+<body class="ignore-math"><article class="project project-like"><p>Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <a href="" class="xref" data-knowl="./knowl/eg_volume_slice_para_cyl.html" title="Example 1.5.13: Volume of slice of parabolic cylinder">Example 1.5.13</a>, where we needed to compute <span class="process-math">\(\iiint\limits_D1\, dV\text{.}\)</span> The hard part was coming up with a suitable description of <span class="process-math">\(D\text{:}\)</span> e.g.,</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
 \begin{equation*}
 D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}\text{.}
@@ -30,7 +30,7 @@ D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">is easy enough to compute.</p>
-<pre class="ptx-sagecell sagecell-sage" id="sage-11"><script type="text/x-sage">var('x y z')
+<pre class="ptx-sagecell sagecell-sage" id="sage-13"><script type="text/x-sage">var('x y z')
 integrate(integrate(integrate(1,z,0,1-x),x,y^2,1),y,-1,1)
 </script></pre></article></body>
 </html>

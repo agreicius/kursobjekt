@@ -12,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{R}\subseteq \R^n\)</span> (<span class="process-math">\(n=2,3\)</span>) represent a solid object, and suppose the function <span class="process-math">\(\delta\colon\mathcal{R}\rightarrow \R\)</span> defines the mass density per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at points in <span class="process-math">\(\mathcal{R}\text{.}\)</span> We define the <dfn class="terminology">mass</dfn>, <dfn class="terminology">first moments</dfn>, and <dfn class="terminology">center of mass</dfn> of <span class="process-math">\(\mathcal{R}\)</span> as follows.</p>
-<span class="incontext"><a href="s_multiple_integrals_applications.html#p-270" class="internal">in-context</a></span>
+<p>First observe that the function in question is just <span class="process-math">\(f(x,y,z)=z\text{.}\)</span> The cylindrical description of <span class="process-math">\(\mathcal{S}\)</span> is similar to the previous example, except now <span class="process-math">\(z\)</span>-values are bounded below by zero:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(r,\theta,z)\colon 0\leq \theta\leq 2\pi, 0\leq r\leq R, 0\leq z\leq \sqrt{R^2-r^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\operatorname{avg}_{\mathcal{S}}f \amp =\frac{1}{\operatorname{vol} \mathcal{S}}\iiint\limits_\mathcal{S}z\, dA \\
+\amp =\frac{3}{2\pi R^3}\int_0^{2\pi}\int_0^R\int_0^{\sqrt{R^2-r^2}}zr\, dz\, dr\, d\theta \amp  \text{(cylind. subst.)}\\
+\amp = \frac{3}{R^3}\int_0^R\frac{1}{2}r(R^2-r^2)\, dr \\
+\amp =\frac{3}{2R^3}\left(\frac{1}{2}R^2r^2-\frac{1}{4}r^4\right)\Bigr\vert_0^R\\
+\amp = \frac{3}{2R^3}\left(\frac{1}{2}R^4-\frac{1}{4}R^4\right)\\
+\amp = \frac{3}{8}R\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_substitution_polar_cylindrical.html#p-270" class="internal">in-context</a></span>
 </body>
 </html>

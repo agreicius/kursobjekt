@@ -10,5 +10,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><p></p></div></body>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Use the substitution <span class="process-math">\(H(x,y)\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u \amp =x-y\\
+v \amp =x+y 
+\end{align*}
+</div>
+<p class="continuation">with inverse <span class="process-math">\(G(u,v)\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x\amp=\frac{1}{2}(u+v) \\
+y \amp=\frac{1}{2}(-u+v) 
+\end{align*}
+</div>
+<p class="continuation">and Jacobian <span class="process-math">\(\partial(x,y)/\partial(u,v)=\frac{1}{2}\text{.}\)</span> The trapezoidal region in the <span class="process-math">\(xy\)</span>-plane has boundary equations <span class="process-math">\(x+y=1, x+y=2, x=0, y=0\text{,}\)</span> which are transformed to the boundary equations <span class="process-math">\(v=1, v=2, u=-v, u=v\text{.}\)</span> This defines the trapezoidal region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{S}=\{(u,v)\colon 1\leq v\leq 2, -v\leq u\leq v\}
+\end{equation*}
+</div>
+<p class="continuation">in the <span class="process-math">\(uv\)</span>-plane, and by substitution we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_{\mathcal{R}}e^{(x-y)/x+y)}\, dA \amp = \iint\limits_\mathcal{S}e^(u/v)\abs{\frac{\partial(x,y)}{\partial(u,v)}}\, dA \\
+\amp=\int_1^2\int_{-v}^v\frac{1}{2}e^(u/v)\, du\, dv\\
+\amp = \frac{1}{2}\int_1^2v(e-1/e)\, dv\\
+\amp =\frac{3}{4}(e-1/e)
+\end{align*}
+</div>
+</div></body>
 </html>

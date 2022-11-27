@@ -239,8 +239,8 @@ window.MathJax = {
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="s_substitution_polar_cylindrical"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Substitution: polar and cylindrical coordinates</span>
 </h2>
-<section class="introduction" id="introduction-8"><p id="p-238">Theorems <a href="" class="xref" data-knowl="./knowl/th_substition_polar.html" title="Theorem 1.7.3: Polar change of variables">1.7.3–1.7.9</a> result from applying <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> to particular transformations, called the <em class="emphasis">polar</em> and <em class="emphasis">cylindrical</em> transformations:</p>
-<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/th_substitution.html" id="md-37">
+<section class="introduction" id="introduction-8"><p id="p-250">Theorems <a href="" class="xref" data-knowl="./knowl/th_substition_polar.html" title="Theorem 1.7.3: Polar change of variables">1.7.3–1.7.9</a> result from applying <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> to particular transformations, called the <em class="emphasis">polar</em> and <em class="emphasis">cylindrical</em> transformations:</p>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/th_substitution.html" id="md-47">
 \begin{align*}
 G\colon \R^2 \amp\rightarrow  \R^2 \amp \text{(polar transformation)}\\
 (r,\theta)\amp\mapsto (r\cos\theta, r\sin\theta) \\
@@ -250,15 +250,15 @@ G\colon \R^3 \amp \rightarrow \R^3 \amp \text{(cylindrical transformation)}\\
 </div></section><section class="subsection" id="ss_polar"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Polar transformation</span>
 </h3>
-<p id="p-239">We will think of the polar coordinate equations</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-38">
+<p id="p-251">We will think of the polar coordinate equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-48">
 \begin{align*}
 x \amp=r\cos\theta \\
 y \amp=r\sin\theta 
 \end{align*}
 </div>
 <p class="continuation">as defining a function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-39">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-49">
 \begin{align*}
 G\colon \R^2  \amp \rightarrow \R^2\\
 (r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) 
@@ -273,12 +273,12 @@ R=[r_1,r_2]\times [\theta_1, \theta_2]=\{(r,\theta)\colon r_1\leq r\leq r_2, \th
 <p class="continuation">lying in the <span class="process-math">\(r\theta\)</span>-plane, and maps it to the set of all points in the <span class="process-math">\(xy\)</span>-plane lying between the circles of radius <span class="process-math">\(r=r_1\)</span> and <span class="process-math">\(r=r_2\text{,}\)</span> centered at the origin, and between the two rays obtained by rotating the positive <span class="process-math">\(x\)</span>-axis by an angle of <span class="process-math">\(\theta=\theta_1\)</span> and <span class="process-math">\(\theta=\theta_2\text{,}\)</span> respectively. <figure class="figure figure-like" id="fig_polar_square"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/polar_square.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.1<span class="period">.</span></span><span class="space"> </span>Action of polar transformation on a rectangle in <span class="process-math">\(r\theta\)</span>-plane.</figcaption></figure> From this observation we can then understand how <span class="process-math">\(G\)</span> transforms an entire rectangular grid in the <span class="process-math">\(r\theta\)</span>-plane to a <em class="emphasis">polar grid</em> in the <span class="process-math">\(xy\)</span>-plane. <figure class="figure figure-like" id="fig_polar_transform"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/polar_transform.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Action of polar transformation on a grid in <span class="process-math">\(r\theta\)</span>-plane.</figcaption></figure></p>
-<p id="p-240">It is easy to see that <span class="process-math">\(G\)</span> is continuously differentiable, and hence is a candidate for an application of <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a>. The only thing we need to be careful about is restricting ourselves to regions <span class="process-math">\(\mathcal{R}\)</span> where <span class="process-math">\(G\)</span> is one-to-one, and hence defines a transformation.</p>
+<p id="p-252">It is easy to see that <span class="process-math">\(G\)</span> is continuously differentiable, and hence is a candidate for an application of <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a>. The only thing we need to be careful about is restricting ourselves to regions <span class="process-math">\(\mathcal{R}\)</span> where <span class="process-math">\(G\)</span> is one-to-one, and hence defines a transformation.</p>
 <article class="theorem theorem-like" id="th_substition_polar"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Polar change of variables.</span>
 </h4>
-<p id="p-241">The function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-40">
+<p id="p-253">The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-50">
 \begin{align*}
 G\colon \R^2 \amp\rightarrow \R^2 \\
 (r,\theta)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}) 
@@ -297,7 +297,7 @@ G\colon \R^2 \amp\rightarrow \R^2 \\
 </div></article><article class="remark remark-like" id="rm_polar_transformation"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Polar transformation.</span>
 </h4>
-<p id="p-242">It is not difficult to show that</p>
+<p id="p-254">It is not difficult to show that</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_polar_injective.html" id="eq_polar_injective">
 \begin{equation}
 (r\cos\theta_1, r\sin\theta_1)=(s\cos\theta_2,s\sin\theta_2)\iff \begin{cases}
@@ -308,7 +308,7 @@ r=-s \text{ and } \theta_2=-\theta_1+2\pi n, n\in \Z
 \end{equation}
 </div>
 <p class="continuation">It follows that the polar function <span class="process-math">\(G(r,\theta)=(r\cos\theta, r\sin\theta)\)</span> is one-to-one on a given set as long as it doesn't contain pairs of points satisfying one of the conditions in <a href="" class="xref" data-knowl="./knowl/eq_polar_injective.html" title="Equation 1.7.4">(1.7.4)</a>. Below you find two common types of sets where <span class="process-math">\(G\)</span> is one-to-one:</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_polar_injective.html" id="md-41">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_polar_injective.html" id="md-51">
 \begin{align*}
 X \amp = \{(r,\theta)\colon r &gt; 0, \alpha \leq \theta &lt; \alpha+2\pi\}\\
 Y \amp = \{(r,\theta)\colon r\ne 0, \alpha\leq \theta &lt; \alpha+\pi\}\\
@@ -318,16 +318,38 @@ Y \amp = \{(r,\theta)\colon r\ne 0, \alpha\leq \theta &lt; \alpha+\pi\}\\
 <p class="continuation">Observe that <span class="process-math">\(r\)</span> values are allowed to be positive or negative in the set <span class="process-math">\(Y\text{,}\)</span> and so the range of <span class="process-math">\(\theta\)</span> needs to be restricted accordingly.</p></article><article class="example example-like" id="example-22"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Area between limaçon and circle.</span>
 </h4>
-<p id="p-243">Let <span class="process-math">\(\mathcal{S}\subseteq \R^2\)</span> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation</p>
+<p id="p-255">Let <span class="process-math">\(\mathcal{S}\subseteq \R^2\)</span> be the region outside the circle of radius 2, centered at the origin, and inside the limaçon with polar equation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 r=1+2\sin\theta\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Compute the area of <span class="process-math">\(\mathcal{S}\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_cardioid.svg" role="img" class="contained"></div></p></article><article class="example example-like" id="example-23"><h4 class="heading">
+<p class="continuation">Compute the area of <span class="process-math">\(\mathcal{S}\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/sageplot_region_cardioid.svg" role="img" class="contained"></div></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
+<p id="p-256">The <span class="process-math">\(r\theta\)</span>-coordinates of points in <span class="process-math">\(\mathcal{S}\)</span> satisfy <span class="process-math">\(r=1+2\sin\theta\geq 2\text{.}\)</span> A little algebra shows this implies <span class="process-math">\(\pi/6\leq \theta\leq 5\pi/6\text{.}\)</span> Thus the polar transformation <span class="process-math">\(G(r,\theta)=(r\cos\theta, r\sin\theta)\)</span> maps the <span class="process-math">\(r\theta\)</span>-region</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substition_polar.html">
+\begin{equation*}
+\mathcal{R}=\{(r,\theta)\colon \pi/6\leq \theta\leq 5\pi/6, 2\leq r\leq 1+2\sin\theta\}
+\end{equation*}
+</div>
+<p class="continuation">onto <span class="process-math">\(\mathcal{S}\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/th_substition_polar.html" title="Theorem 1.7.3: Polar change of variables">Theorem 1.7.3</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substition_polar.html" id="md-52">
+\begin{align*}
+\operatorname{area} \mathcal{S} \amp = \iint\limits_{\mathcal{S}}1\, dA \\
+\amp =\iint_{\mathcal{R}}r\, dA  \amp \text{(polar subst.)}\\
+\amp =\int_{\pi/6}^{5\pi/6}\int_2^{1+2\sin\theta}r\, dr\, d\theta\\
+\amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta+4\sin^2\theta-3\, d\theta\\
+\amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta-2\cos 2\theta-1\, d\theta \amp (\sin^2\theta=\frac{1}{2}(1-\cos 2\theta))\\
+\amp =\frac{1}{2}(-4\cos\theta-\theta-\sin 2\theta)\Bigr\vert_{\pi/6}^{5\pi/6}\\
+\amp =\frac{5\sqrt{3}}{2}-\frac{\pi}{3} \text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="example-23"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over semicircle.</span>
 </h4>
-<p id="p-244">Compute the average value of <span class="process-math">\(f(x,y)=x\)</span> over the semicircular region</p>
+<p id="p-257">Compute the average value of <span class="process-math">\(f(x,y)=x\)</span> over the semicircular region</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{R}=\{(x,y)\in \R^2\colon x^2+y^2\leq R^2, x\geq 0\}\text{,}
@@ -335,12 +357,30 @@ r=1+2\sin\theta\text{.}
 </div>
 <p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant.</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-245"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like">
+<p id="p-258">The half-disk <span class="process-math">\(\mathcal{R}\)</span> corresponds to the the region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{S}=\{(r,\theta)\colon -\pi/2\leq \theta\leq \pi/2, 0\leq r\leq R\}
+\end{equation*}
+</div>
+<p class="continuation">in the <span class="process-math">\(r\theta\)</span>-plane via the polar transformation <span class="process-math">\(G(r,\theta)=(r\cos\theta,r\sin\theta)\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-53">
+\begin{align*}
+\operatorname{avg}_\mathcal{R}f \amp =\frac{1}{\operatorname{area}\mathcal{R}}\iint\limits_\mathcal{R}x\, dA\\
+\amp=\frac{2}{\pi R^2}\iint\limits_{\mathcal{S}}r\cos\theta\cdot r\, dA
+\amp \text{(polar subst.)} \\
+\amp=\frac{2}{\pi R^2}\int_{-\pi/2}^{\pi/2}\cos\theta\, d\theta\int_0^Rr^2\, dr \\
+\amp =\frac{2}{\pi R^2}(\sin\theta)\Bigr\vert_{-\pi/2}^{\pi/2}(r^3/3)\Bigr\vert_0^R\\
+\amp =\frac{4R}{3\pi}\text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article></section><section class="subsection" id="ss_substitution_cylindrical"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Cylindrical transformation</span>
 </h3>
-<p id="p-246">Our discussion in <a href="s_substitution_polar_cylindrical.html#ss_polar" class="internal" title="Subsection 1.7.1: Polar transformation">Subsection 1.7.1</a> generalizes easily to cylindrical coordinates:</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html" id="md-42">
+<p id="p-259">Our discussion in <a href="s_substitution_polar_cylindrical.html#ss_polar" class="internal" title="Subsection 1.7.1: Polar transformation">Subsection 1.7.1</a> generalizes easily to cylindrical coordinates:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html" id="md-54">
 \begin{align*}
 x   \amp=r\cos\theta \\
 y \amp =r\sin\theta\\
@@ -349,7 +389,7 @@ z \amp = z \text{.}
 </div>
 <p class="continuation"><figure class="figure figure-like" id="fig_cylindrical_coordinates"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/cylindrical_coordinates.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.7<span class="period">.</span></span><span class="space"> </span>Cylindrical coordinates</figcaption></figure> As before, we now think of these equations as defining a function</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html" id="md-43">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html" id="md-55">
 \begin{align*}
 G\colon \R^3 \amp \rightarrow \R^3\\
 (r,\theta,z) \amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z)
@@ -366,8 +406,8 @@ B=[r_1,r_2]\times[\theta_1,\theta_2]\times[z_1,z_2]
 <article class="theorem theorem-like" id="th_substition_cylindrical"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Cylindrical change of variables.</span>
 </h4>
-<p id="p-247">The function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-44">
+<p id="p-260">The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-56">
 \begin{align*}
 G\colon \R^3 \amp\rightarrow \R^3 \\
 (r,\theta, z)\amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z) 
@@ -386,22 +426,22 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 </div></article><article class="algorithm theorem-like" id="proc_cylindrical_coord"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using cylindrical change of variables.</span>
 </h4>
-<p id="p-248">When computing an integral <span class="process-math">\(\iiint\limits_Df(x,y,z)\, dV\)</span> using a cylindrical change of variables, we often end up describing the corresponding region in <span class="process-math">\(r\theta z\)</span>-space in type-A form. In this case, proceed as follows.</p>
+<p id="p-261">When computing an integral <span class="process-math">\(\iiint\limits_Df(x,y,z)\, dV\)</span> using a cylindrical change of variables, we often end up describing the corresponding region in <span class="process-math">\(r\theta z\)</span>-space in type-A form. In this case, proceed as follows.</p>
 <ol class="decimal">
-<li id="li-83">
-<span class="heading"><span class="title">Sketch.</span></span><p id="p-249">Sketch <span class="process-math">\(D\)</span> along with its projection <span class="process-math">\(\mathcal{R}\)</span> onto the <span class="process-math">\(xy\)</span>-plane.</p>
-</li>
 <li id="li-84">
-<span class="heading"><span class="title"><span class="process-math">\(z\)</span>-limits of integration.</span></span><p id="p-250">For each point <span class="process-math">\((r,\theta,0)\in \mathcal{R}\)</span> visualize the line parallel to the <span class="process-math">\(z\)</span>-axis passing through it, and observe where this line enters and exits <span class="process-math">\(D\text{.}\)</span> The <span class="process-math">\(z\)</span>-values <span class="process-math">\(p_1(r,\theta), p_2(r,\theta)\)</span> give us our <span class="process-math">\(z\)</span>-bounds <span class="process-math">\(p_1(r,\theta)\leq z\leq p_2(r,\theta)\text{.}\)</span></p>
+<span class="heading"><span class="title">Sketch.</span></span><p id="p-262">Sketch <span class="process-math">\(D\)</span> along with its projection <span class="process-math">\(\mathcal{R}\)</span> onto the <span class="process-math">\(xy\)</span>-plane.</p>
 </li>
 <li id="li-85">
-<span class="heading"><span class="title"><span class="process-math">\(r\)</span>-limits of integration.</span></span><p id="p-251">For each <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> imagine the ray <span class="process-math">\(L_\theta\)</span> in the <span class="process-math">\(xy\)</span>-plane that makes an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis. The <span class="process-math">\(r\)</span>-values <span class="process-math">\(g_1(\theta), g_2(\theta)\)</span> of the points where <span class="process-math">\(L_\theta\)</span> enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(r\)</span>-bounds <span class="process-math">\(g_1(\theta)\leq r\leq g_2(\theta)\text{.}\)</span></p>
+<span class="heading"><span class="title"><span class="process-math">\(z\)</span>-limits of integration.</span></span><p id="p-263">For each point <span class="process-math">\((r,\theta,0)\in \mathcal{R}\)</span> visualize the line parallel to the <span class="process-math">\(z\)</span>-axis passing through it, and observe where this line enters and exits <span class="process-math">\(D\text{.}\)</span> The <span class="process-math">\(z\)</span>-values <span class="process-math">\(p_1(r,\theta), p_2(r,\theta)\)</span> give us our <span class="process-math">\(z\)</span>-bounds <span class="process-math">\(p_1(r,\theta)\leq z\leq p_2(r,\theta)\text{.}\)</span></p>
 </li>
 <li id="li-86">
-<span class="heading"><span class="title"><span class="process-math">\(\theta\)</span>-limits of integration.</span></span><p id="p-252">As we let <span class="process-math">\(\theta\)</span> vary, the ray <span class="process-math">\(L_\theta\)</span> rotates around the <span class="process-math">\(z\)</span>-axis and sweeps across <span class="process-math">\(\mathcal{R}\text{.}\)</span> The <span class="process-math">\(theta\)</span>-values <span class="process-math">\(\theta_1, \theta_2\)</span> of the points where the sweeping ray enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(\theta\)</span>-bounds <span class="process-math">\(\theta_1\leq \theta\leq \theta_2\text{.}\)</span></p>
+<span class="heading"><span class="title"><span class="process-math">\(r\)</span>-limits of integration.</span></span><p id="p-264">For each <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> imagine the ray <span class="process-math">\(L_\theta\)</span> in the <span class="process-math">\(xy\)</span>-plane that makes an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis. The <span class="process-math">\(r\)</span>-values <span class="process-math">\(g_1(\theta), g_2(\theta)\)</span> of the points where <span class="process-math">\(L_\theta\)</span> enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(r\)</span>-bounds <span class="process-math">\(g_1(\theta)\leq r\leq g_2(\theta)\text{.}\)</span></p>
 </li>
 <li id="li-87">
-<span class="heading"><span class="title">Integrate.</span></span><p id="p-253">Use cylindrical substitution and Fubini's theorem to conclude</p>
+<span class="heading"><span class="title"><span class="process-math">\(\theta\)</span>-limits of integration.</span></span><p id="p-265">As we let <span class="process-math">\(\theta\)</span> vary, the ray <span class="process-math">\(L_\theta\)</span> rotates around the <span class="process-math">\(z\)</span>-axis and sweeps across <span class="process-math">\(\mathcal{R}\text{.}\)</span> The <span class="process-math">\(theta\)</span>-values <span class="process-math">\(\theta_1, \theta_2\)</span> of the points where the sweeping ray enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(\theta\)</span>-bounds <span class="process-math">\(\theta_1\leq \theta\leq \theta_2\text{.}\)</span></p>
+</li>
+<li id="li-88">
+<span class="heading"><span class="title">Integrate.</span></span><p id="p-266">Use cylindrical substitution and Fubini's theorem to conclude</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iiint\limits_Df(x,y,z)\, dV=\int_{\theta_1}^{\theta_2}\int_{g_1(\theta)}^{g_2(\theta)}\int_{p_1(r,\theta)}^{p_2(r,\theta)}f(r\cos\theta, r\sin\theta, z)\, r\,  dz\, dr\, d\theta\text{.}
@@ -411,7 +451,7 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 </ol></article><article class="example example-like" id="example-24"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of sphere: cylindrical coordinates.</span>
 </h4>
-<p id="p-254">Consider the solid spherical ball</p>
+<p id="p-267">Consider the solid spherical ball</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2\}\text{,}
@@ -419,11 +459,29 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 </div>
 <p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant. Compute the volume of <span class="process-math">\(\mathcal{S}\)</span> using cylindrical coordinates.</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><p id="p-255"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<p id="p-268">The projection of <span class="process-math">\(\mathcal{S}\)</span> onto the <span class="process-math">\(xy\)</span>-plane is the disk <span class="process-math">\(x^2+y^2\leq R^2\text{,,}\)</span> which is described in cylindrical coordinates as <span class="process-math">\(0\leq \theta\leq 2\pi, 0\leq r\leq R\text{.}\)</span> Next, looking at the vertical line passing through a point <span class="process-math">\((r,\theta,0)\text{,}\)</span> we see we enter and leave <span class="process-math">\(\mathcal{S}\)</span> at the lower and upper surfaces of the sphere. In cylindrical coordinates the defining equation <span class="process-math">\(x^2+y^2+z^2=R^2\)</span> becomes <span class="process-math">\(r^2+z^2=R^2\text{,}\)</span> and thus the lower and upper surfaces of the sphere have cylindrical equations <span class="process-math">\(z=-\sqrt{R^2-r^2}\)</span> and <span class="process-math">\(z=\sqrt{R^2-r^2}\text{,}\)</span> repsectively. We conclude that the cylindrical description of <span class="process-math">\(\mathcal{S}\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(r,\theta, z)\colon 0\leq \theta\leq 2\pi, 0\leq r\leq R, -\sqrt{R^2-r^2}\leq z\leq \sqrt{R^2-r^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Finally, we compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-57">
+\begin{align*}
+\operatorname{vol}\mathcal{S} \amp = \iiint\limits_\mathcal{S}1\, dV \\
+\amp =\int_0^{2\pi}\int_0^R, \int_{-\sqrt{R^2-r^2}}^{\sqrt{R^2-r^2}}r \, dz\, dr\, d\theta  \amp \text{(cylind. subst.)}\\
+\amp = 2\pi\int_0^R2r\sqrt{R^2-r^2}\, dr\\
+\amp =-\frac{4\pi}{3}(R^2-r^2)^{3/2}\Bigr\vert_0^R\\
+\amp =\frac{4}{3}\pi R^3\text{.}
+\end{align*}
+</div>
+<p class="continuation">We've just derived the volume formula for the sphere of radius <span class="process-math">\(R\text{!}\)</span></p>
+</div></div>
 </div></article><article class="example example-like" id="example-25"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">Average value over hemisphere: cylindrical coordinates.</span>
 </h4>
-<p id="p-256">Consider the solid hemisphere</p>
+<p id="p-269">Consider the solid hemisphere</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{S}=\{(x,y,z)\in\R^3\colon 0\leq x^2+y^2+z^2\leq R^2, z\geq 0\}\text{,}
@@ -431,7 +489,25 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 </div>
 <p class="continuation">where <span class="process-math">\(R\in \R\)</span> is a fixed constant.  Find the average height (distance to <span class="process-math">\(xy\)</span>-plane) of points in <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><p id="p-257"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
+<p id="p-270">First observe that the function in question is just <span class="process-math">\(f(x,y,z)=z\text{.}\)</span> The cylindrical description of <span class="process-math">\(\mathcal{S}\)</span> is similar to the previous example, except now <span class="process-math">\(z\)</span>-values are bounded below by zero:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(r,\theta,z)\colon 0\leq \theta\leq 2\pi, 0\leq r\leq R, 0\leq z\leq \sqrt{R^2-r^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-58">
+\begin{align*}
+\operatorname{avg}_{\mathcal{S}}f \amp =\frac{1}{\operatorname{vol} \mathcal{S}}\iiint\limits_\mathcal{S}z\, dA \\
+\amp =\frac{3}{2\pi R^3}\int_0^{2\pi}\int_0^R\int_0^{\sqrt{R^2-r^2}}zr\, dz\, dr\, d\theta \amp  \text{(cylind. subst.)}\\
+\amp = \frac{3}{R^3}\int_0^R\frac{1}{2}r(R^2-r^2)\, dr \\
+\amp =\frac{3}{2R^3}\left(\frac{1}{2}R^2r^2-\frac{1}{4}r^4\right)\Bigr\vert_0^R\\
+\amp = \frac{3}{2R^3}\left(\frac{1}{2}R^4-\frac{1}{4}R^4\right)\\
+\amp = \frac{3}{8}R\text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article></section></section></div></main>
 </div>
 </body>

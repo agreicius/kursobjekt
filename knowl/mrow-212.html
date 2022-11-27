@@ -11,14 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
-\begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
-\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
-\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
-\amp = 2\pi
-\end{align*}
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
+\begin{align}
+\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \abs{\sin\phi}\, dV \tag{1.8.7}\\
+\amp = \iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \sin\phi\, dV
+\amp (\text{assuming } 0\leq \phi\leq \pi)\tag{1.8.8}
+\end{align}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-64" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_spherical.html#eq_substitution_spherical" class="internal">in-context</a></span>
 </body>
 </html>

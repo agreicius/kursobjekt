@@ -13,13 +13,16 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\iiint\limits_B f(x,y,z)\, dV \amp =\int_a^b\int_c^d\int_e^f f(x,y,z)\, dz\, dy\, dx\\
-\amp =\int_c^d\int_a^b \int_e^ff(x,y,z)\, dz\, dx\, dy\\
-\amp \hspace{10pt}\vdots \\
-\amp =\int_a^b\int_e^f\int_c^d f(x,y,z)\, dy\, dz\, dx\\
-\amp =\int_e^f\int_a^b \int_c^df(x,y,z)\, dy\, dx\, dz
+\operatorname{area}\mathcal{R}  \amp= \iint\limits_{\mathcal{R}}1\, dA \\
+\amp=\int_{-R}^R\int_{-\sqrt{R-x^2}}^{\sqrt{R-x^2}}1\, dy\, dx \\
+\amp = \int_{-R}^R2\sqrt{R-x^2}\, dx\\
+\amp = \int_{-\pi/2}^{\pi/2} 2\sqrt{R^2-R^2\sin^2\theta}\, R\cos\theta\, d\theta \amp (x=R\sin\theta, dx=R\cos\theta\, d\theta)\\
+\amp = 2R^2\int_{-\pi/2}^{\pi/2}\abs{\cos\theta}\cos\theta\, d\theta\\
+\amp =2R^2\int_{-\pi/2}^{\pi/2}\cos^2\theta\, d\theta \amp (\theta\in [0,\pi/2]\implies \cos\theta\geq 0)\\
+\amp =2R^2\int_{-\pi/2}^{\pi/2}\frac{1}{2](1+\cos 2\theta)}\, d\theta\\
+\amp =\pi R^2
 \end{align*}
 </div>
-<span class="incontext"><a href="s_triple_integrals.html#md-23" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_double_integrals_area.html#md-22" class="internal">in-context</a></span>
 </body>
 </html>

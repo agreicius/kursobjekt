@@ -239,17 +239,24 @@ window.MathJax = {
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="s_substitution_spherical"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Substitution: spherical coordinates</span>
 </h2>
-<p id="p-258">As our last application of <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we consider the spherical coordinate equations</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="mdn-8">
+<p id="p-271">As our last application of <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we consider the spherical coordinate equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html ./knowl/fig_spherical_coordinates.html" id="mdn-8">
 \begin{align}
 x \amp = \rho\sin\phi\cos\theta\tag{1.8.1}\\
 y\amp =\rho\sin\phi\sin\theta \tag{1.8.2}\\
 z \amp =\rho\cos\phi \text{,}\tag{1.8.3}
 \end{align}
 </div>
-<p class="continuation">where we assume <span class="process-math">\(\rho\geq 0\)</span> and <span class="process-math">\(0\leq \phi\leq \pi\text{.}\)</span> <figure class="figure figure-like" id="fig_spherical_coordinates"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/spherical_coordinates.png" class="contained"></div>
+<p class="continuation">along with the auxiliary equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html ./knowl/fig_spherical_coordinates.html" id="mdn-9">
+\begin{align}
+r \amp = \sqrt{x^2+y^2}=\rho\sin\phi \tag{1.8.4}\\
+\tan \phi  \amp = \frac{z}{r} \text{,}\tag{1.8.5}
+\end{align}
+</div>
+<p class="continuation">derived from the diagram in <a href="" class="xref" data-knowl="./knowl/fig_spherical_coordinates.html" title="Figure 1.8.1">Figure 1.8.1</a>. <figure class="figure figure-like" id="fig_spherical_coordinates"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/spherical_coordinates.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.1<span class="period">.</span></span><span class="space"> </span>Spherical coordinates</figcaption></figure> As before we think of these equations as defining a function</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="md-45">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html ./knowl/fig_spherical_coordinates.html" id="md-59">
 \begin{align*}
 G\colon \R^3 \amp\rightarrow \R^3 \\
 (\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) 
@@ -259,8 +266,8 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 <article class="theorem theorem-like" id="th_substition_spherical"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Spherical change of variables.</span>
 </h3>
-<p id="p-259">The function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-46">
+<p id="p-272">The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-60">
 \begin{align*}
 G\colon \R^3 \amp\rightarrow \R^3 \\
 (\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) 
@@ -271,51 +278,96 @@ G\colon \R^3 \amp\rightarrow \R^3 \\
 \sin\phi\cos\theta \amp\rho\cos\phi\cos\theta\amp -\rho\sin\phi\sin\theta\\
 \sin\phi\sin\theta\amp \rho\cos\phi\sin\theta\amp \rho\sin\phi\cos\theta\\
 \cos\phi\amp -\rho\sin\phi\amp 0
-\end{pmatrix}=\rho^2\sin\phi\text{.}\tag{1.8.4}
+\end{pmatrix}=\rho^2\sin\phi\text{.}\tag{1.8.6}
 \end{equation}
 </div>Assume <span class="process-math">\(G\)</span> is one-to-one on the interior of <span class="process-math">\(\mathcal{R}\subseteq\R^3\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}=G(\mathcal{R})\)</span> be the image under <span class="process-math">\(G\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on the interior of <span class="process-math">\(\mathcal{R}\text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html" id="eq_substitution_spherical">
 \begin{align}
-\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \abs{\sin\phi}\, dV \tag{1.8.5}\\
+\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \abs{\sin\phi}\, dV \tag{1.8.7}\\
 \amp = \iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \sin\phi\, dV
-\amp (\text{assuming } 0\leq \phi\leq \pi)\text{.}\tag{1.8.6}
+\amp (\text{assuming } 0\leq \phi\leq \pi)\text{.}\tag{1.8.8}
 \end{align}
 </div></article><article class="algorithm theorem-like" id="proc_spherical_coord"><h3 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using spherical change of variables.</span>
 </h3>
-<p id="p-260">When computing an integral <span class="process-math">\(\iiint\limits_Df(x,y,z)\, dV\)</span> using a spherical change of variables, we often end up describing the corresponding region in <span class="process-math">\(\rho\phi\theta\)</span>-space in type-B form. In this case, proceed as follows.</p>
+<p id="p-273">When computing an integral <span class="process-math">\(\iiint\limits_Df(x,y,z)\, dV\)</span> using a spherical change of variables, we often end up describing the corresponding region in <span class="process-math">\(\rho\phi\theta\)</span>-space in type-B form. In this case, proceed as follows.</p>
 <ol class="decimal">
-<li id="li-88">
-<span class="heading"><span class="title">Sketch.</span></span><p id="p-261">Sketch <span class="process-math">\(D\)</span> along with its projection <span class="process-math">\(\mathcal{R}\)</span> onto the <span class="process-math">\(xy\)</span>-plane.</p>
-</li>
 <li id="li-89">
-<span class="heading"><span class="title"><span class="process-math">\(\rho\)</span>-limits of integration.</span></span><p id="p-262">For each <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> let <span class="process-math">\(R_{\phi,\theta}\)</span> be the ray through the origin that makes an angle of <span class="process-math">\(\phi\)</span> with the positive <span class="process-math">\(z\)</span>-axis, and whose projection on the <span class="process-math">\(xy\)</span>-plane makes an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis. The <span class="process-math">\(\rho\)</span>-values of the points where the ray <span class="process-math">\(R_{\phi,\theta}\)</span> enters and leaves <span class="process-math">\(D\)</span> give us our <span class="process-math">\(\rho\)</span>-bounds <span class="process-math">\(p_1(\phi,\theta)\leq \rho\leq p_2(\phi,\theta)\text{.}\)</span></p>
+<span class="heading"><span class="title">Sketch.</span></span><p id="p-274">Sketch <span class="process-math">\(D\)</span> along with its projection <span class="process-math">\(\mathcal{R}\)</span> onto the <span class="process-math">\(xy\)</span>-plane.</p>
 </li>
 <li id="li-90">
-<span class="heading"><span class="title"><span class="process-math">\(\phi\)</span>-limits of integration.</span></span><p id="p-263">For each <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> as we let <span class="process-math">\(\phi\)</span> vary the ray <span class="process-math">\(R_{\phi,\theta}\)</span> sweeps through <span class="process-math">\(D\text{.}\)</span> The <span class="process-math">\(\phi\)</span> values <span class="process-math">\(g_1(\theta), g_2(\theta)\)</span> of the points where the sweeping ray enters and leaves <span class="process-math">\(D\)</span> give us our <span class="process-math">\(\phi\)</span>-bounds <span class="process-math">\(g_1(\theta)\leq \phi\leq g_2(\theta)\text{.}\)</span></p>
+<span class="heading"><span class="title"><span class="process-math">\(\rho\)</span>-limits of integration.</span></span><p id="p-275">For each <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> let <span class="process-math">\(R_{\phi,\theta}\)</span> be the ray through the origin that makes an angle of <span class="process-math">\(\phi\)</span> with the positive <span class="process-math">\(z\)</span>-axis, and whose projection on the <span class="process-math">\(xy\)</span>-plane makes an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis. The <span class="process-math">\(\rho\)</span>-values of the points where the ray <span class="process-math">\(R_{\phi,\theta}\)</span> enters and leaves <span class="process-math">\(D\)</span> give us our <span class="process-math">\(\rho\)</span>-bounds <span class="process-math">\(p_1(\phi,\theta)\leq \rho\leq p_2(\phi,\theta)\text{.}\)</span></p>
 </li>
 <li id="li-91">
-<span class="heading"><span class="title"><span class="process-math">\(\theta\)</span>-limits of integration.</span></span><p id="p-264">As we let <span class="process-math">\(\theta\)</span> vary, the ray <span class="process-math">\(L_\theta\)</span> in the <span class="process-math">\(xy\)</span>-plane making an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis rotates around the <span class="process-math">\(z\)</span>-axis and sweeps across <span class="process-math">\(\mathcal{R}\text{.}\)</span> The <span class="process-math">\(theta\)</span>-values <span class="process-math">\(\theta_1, \theta_2\)</span> of the points where the sweeping ray enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(\theta\)</span>-bounds <span class="process-math">\(\theta_1\leq \theta\leq \theta_2\text{.}\)</span></p>
+<span class="heading"><span class="title"><span class="process-math">\(\phi\)</span>-limits of integration.</span></span><p id="p-276">For each <span class="process-math">\(\theta\in [0,2\pi]\text{,}\)</span> as we let <span class="process-math">\(\phi\)</span> vary the ray <span class="process-math">\(R_{\phi,\theta}\)</span> sweeps through <span class="process-math">\(D\text{.}\)</span> The <span class="process-math">\(\phi\)</span> values <span class="process-math">\(g_1(\theta), g_2(\theta)\)</span> of the points where the sweeping ray enters and leaves <span class="process-math">\(D\)</span> give us our <span class="process-math">\(\phi\)</span>-bounds <span class="process-math">\(g_1(\theta)\leq \phi\leq g_2(\theta)\text{.}\)</span></p>
 </li>
 <li id="li-92">
-<span class="heading"><span class="title">Integrate.</span></span><p id="p-265">Use cylindrical substitution and Fubini's theorem to conclude</p>
+<span class="heading"><span class="title"><span class="process-math">\(\theta\)</span>-limits of integration.</span></span><p id="p-277">As we let <span class="process-math">\(\theta\)</span> vary, the ray <span class="process-math">\(L_\theta\)</span> in the <span class="process-math">\(xy\)</span>-plane making an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis rotates around the <span class="process-math">\(z\)</span>-axis and sweeps across <span class="process-math">\(\mathcal{R}\text{.}\)</span> The <span class="process-math">\(\theta\)</span>-values <span class="process-math">\(\theta_1, \theta_2\)</span> of the points where the sweeping ray enters and leaves <span class="process-math">\(\mathcal{R}\)</span> give us our <span class="process-math">\(\theta\)</span>-bounds <span class="process-math">\(\theta_1\leq \theta\leq \theta_2\text{.}\)</span></p>
+</li>
+<li id="li-93">
+<span class="heading"><span class="title">Integrate.</span></span><p id="p-278">Use cylindrical substitution and Fubini's theorem to conclude</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iiint\limits_Df(x,y,z)\, dV=\int_{\theta_1}^{\theta_2}\int_{g_1(\theta)}^{g_2(\theta)}\int_{p_1(\phi,\theta)}^{p_2(\phi,\theta)}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi)\rho^2\sin\phi\, d\rho\, d\phi\, d\theta\text{.}
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="example example-like" id="eg_avg_distance_sphere"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Average distance over a solid sphere.</span>
+</ol></article><article class="remark remark-like" id="rm_spherical_coords"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Converting to spherical coordinates.</span>
 </h3>
-<p id="p-266">Compute the average distance to the origin of points <span class="process-math">\((x,y,z)\)</span> lying within the solid sphere <span class="process-math">\(x^2+y^2+z^2= R^2\text{,}\)</span> where <span class="process-math">\(R\)</span> is a fixed positive constant.</p>
+<p id="p-279"></p></article><article class="example example-like" id="eg_avg_distance_sphere"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Average distance over a solid sphere.</span>
+</h3>
+<p id="p-280">Compute the average distance to the origin of points <span class="process-math">\((x,y,z)\)</span> lying within the sphere <span class="process-math">\(x^2+y^2+z^2= R^2\text{,}\)</span> where <span class="process-math">\(R\)</span> is a fixed positive constant.</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><p id="p-267"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<p id="p-281">Let <span class="process-math">\(D\)</span> be the region lying within the sphere. Observe that the function in question is  <span class="process-math">\(f(x,y,z)=\sqrt{x^2+y^2+z^2}\text{.}\)</span> In spherical coordinates the solid sphere is described as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(\rho, \phi, \theta)\colon 0\leq \theta\leq 2\pi, 0\leq \phi\leq \pi, 0\leq \rho\leq R\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-61">
+\begin{align*}
+\operatorname{vol} D \amp = \iiint\limits_D \sqrt{x^2+y^2+z^2}\, dV \\
+\amp=\int_0^{2\pi}\int_0^\pi\int_0^R\rho\cdot \rho^2\sin\phi\, d\rho\, d\phi\, d\theta \amp \text{(spher. subst.)}\\
+\amp = 2\pi\int_0^\pi\sin\phi\, d\phi \int_0^R\rho^3\, d\rho\\
+\amp = 2\pi (-\cos\phi)\Bigr\vert_0^{\pi}\left(\frac{1}{4}\rho^4\right)\Bigr\vert_0^R\\
+\amp =\pi R^4\text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article><article class="example example-like" id="eg_volume_icecream"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of ice cream cone.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.6</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of ice cream cone.</span>
 </h3>
-<p id="p-268">Let <span class="process-math">\(\mathcal{R}\)</span> be the region lying above the cone <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> and within the sphere <span class="process-math">\(x^2+y^2+(z-R)^2=R^2\text{,}\)</span> where <span class="process-math">\(R\)</span> is a fixed positive constant. Compute the volume of <span class="process-math">\(\mathcal{R}\)</span> as a triple integral.</p>
+<p id="p-282">Let <span class="process-math">\(D\)</span> be the region lying above the cone <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> and within the sphere <span class="process-math">\(x^2+y^2+(z-R)^2=R^2\text{,}\)</span> where <span class="process-math">\(R\)</span> is a fixed positive constant. Compute the volume of <span class="process-math">\(D\)</span> as a triple integral.</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-269"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like">
+<p id="p-283">First we convert the equation <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> defining the cone into spherical coordinates with the help of the auxiliary equations <a href="" class="xref" data-knowl="./knowl/eq_spherical_r.html" title="Equation 1.8.4">(1.8.4)–(1.8.5)</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-62">
+\begin{align*}
+z=\sqrt{x^2+y^2} \amp \iff \frac{z}{r}=1\\
+\amp\iff \tan\phi=1 \\
+\amp \iff \phi=\pi/4\text{.}
+\end{align*}
+</div>
+<p class="continuation">We see that for a point to lie within the cone <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> we need <span class="process-math">\(0\leq \phi\leq \pi/4\text{.}\)</span> Next to lie within the sphere, we need <span class="process-math">\(0\leq \rho\leq R\text{.}\)</span> Since there is no condition on <span class="process-math">\(\theta\text{,}\)</span> the spherical description of <span class="process-math">\(D\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(\rho, \phi,\theta)\colon 0\leq \theta\leq 2\pi, 0\leq \phi\leq \pi/4, 0\leq \rho\leq R\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-63">
+\begin{align*}
+\operatorname{vol} D \amp=\iiint\limits_D 1\, dV \\
+\amp = \int_0^{2\pi}\int_0^{\pi/4}\int_0^{R}\rho^2\sin\phi\, d\rho\, d\phi\, d\theta \amp \text{(spher. coord.)}\\
+\amp =2\pi\int_0^{\pi/4}\sin\phi\, d\phi\int_0^R\rho^2\, d\rho \\
+\amp =2\pi\left(1-\frac{\sqrt{2}}{2}\right)\left(\frac{1}{3}R^3\right)\\
+\amp = \frac{2}{3}\pi R^3\left(1-\frac{\sqrt{2}}{2}\right)\text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article></section></div></main>
 </div>
 </body>

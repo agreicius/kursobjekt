@@ -12,13 +12,30 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>The function</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<p>Our discussion in <a href="s_substitution_polar_cylindrical.html#ss_polar" class="internal" title="Subsection 1.7.1: Polar transformation">Subsection 1.7.1</a> generalizes easily to cylindrical coordinates:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html">
 \begin{align*}
-G\colon \R^3 \amp\rightarrow \R^3 \\
-(\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) 
+x   \amp=r\cos\theta \\
+y \amp =r\sin\theta\\
+z \amp = z \text{.}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_substitution_spherical.html#p-259" class="internal">in-context</a></span>
+<p class="continuation"><figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/cylindrical_coordinates.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.7<span class="period">.</span></span><span class="space"> </span>Cylindrical coordinates</figcaption></figure> As before, we now think of these equations as defining a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html">
+\begin{align*}
+G\colon \R^3 \amp \rightarrow \R^3\\
+(r,\theta,z) \amp \mapsto (\underset{x}{\underbrace{r\cos\theta}}, \underset{y}{\underbrace{r\sin\theta}}, z)
+\end{align*}
+</div>
+<p class="continuation">from <span class="process-math">\(r\theta z\)</span>-space to <span class="process-math">\(xyz\)</span>-space. Recalling some of our translation exercises from cylindrical to and from Cartesian coordinates we see that <span class="process-math">\(G\)</span> maps the box</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_polar.html">
+\begin{equation*}
+B=[r_1,r_2]\times[\theta_1,\theta_2]\times[z_1,z_2]
+\end{equation*}
+</div>
+<p class="continuation">lying in <span class="process-math">\(r\theta z\)</span>-space, to a certain region of <span class="process-math">\(xyz\)</span>-space trapped between two vertical circular cylinders of radius <span class="process-math">\(r_1\)</span> and <span class="process-math">\(r_2\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/cylindrical_transform.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.8<span class="period">.</span></span><span class="space"> </span>Action of cylindrical transformation on box in <span class="process-math">\(r\theta z\)</span>-space.</figcaption></figure></p>
+<span class="incontext"><a href="s_substitution_polar_cylindrical.html#p-259" class="internal">in-context</a></span>
 </body>
 </html>

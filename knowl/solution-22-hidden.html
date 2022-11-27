@@ -11,21 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>Assemble the ingredients:</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html">
+<p>The projection of <span class="process-math">\(\mathcal{S}\)</span> onto the <span class="process-math">\(xy\)</span>-plane is the disk <span class="process-math">\(x^2+y^2\leq R^2\text{,,}\)</span> which is described in cylindrical coordinates as <span class="process-math">\(0\leq \theta\leq 2\pi, 0\leq r\leq R\text{.}\)</span> Next, looking at the vertical line passing through a point <span class="process-math">\((r,\theta,0)\text{,}\)</span> we see we enter and leave <span class="process-math">\(\mathcal{S}\)</span> at the lower and upper surfaces of the sphere. In cylindrical coordinates the defining equation <span class="process-math">\(x^2+y^2+z^2=R^2\)</span> becomes <span class="process-math">\(r^2+z^2=R^2\text{,}\)</span> and thus the lower and upper surfaces of the sphere have cylindrical equations <span class="process-math">\(z=-\sqrt{R^2-r^2}\)</span> and <span class="process-math">\(z=\sqrt{R^2-r^2}\text{,}\)</span> repsectively. We conclude that the cylindrical description of <span class="process-math">\(\mathcal{S}\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(r,\theta, z)\colon 0\leq \theta\leq 2\pi, 0\leq r\leq R, -\sqrt{R^2-r^2}\leq z\leq \sqrt{R^2-r^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Finally, we compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr'(t) \amp = (2\cos t, 1, -2\sin t)\\
-\abs{\boldr'(t)} \amp= \sqrt{4\cos^2 t+4\sin^2t+1}=\sqrt{5} \text{.}
+\operatorname{vol}\mathcal{S} \amp = \iiint\limits_\mathcal{S}1\, dV \\
+\amp =\int_0^{2\pi}\int_0^R, \int_{-\sqrt{R^2-r^2}}^{\sqrt{R^2-r^2}}r \, dz\, dr\, d\theta  \amp \text{(cylind. subst.)}\\
+\amp = 2\pi\int_0^R2r\sqrt{R^2-r^2}\, dr\\
+\amp =-\frac{4\pi}{3}(R^2-r^2)^{3/2}\Bigr\vert_0^R\\
+\amp =\frac{4}{3}\pi R^3\text{.}
 \end{align*}
 </div>
-<p class="continuation">Now compute</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html">
-\begin{align*}
-\int\limits_\mathcal{C}f(x,y,z)\, ds\amp = \int_0^{\pi}f(2\cos t, t, 2\sin t)\abs{\boldr'(t)}\, dt \amp(\knowl{./knowl/th_line_integral_scalar.html}{\text{2.1.6}})\\
-\amp=\int_0^\pi (4\cos^2 t+t^2+4\sin^2 t)\sqrt{5}\, dt  \\
-\amp = \sqrt{5}\int_0^\pi 4+t^2\, dt\\
-\amp = \sqrt{5}(4\pi+\pi^3/3)\text{.}
-\end{align*}
-</div>
+<p class="continuation">We've just derived the volume formula for the sphere of radius <span class="process-math">\(R\text{!}\)</span></p>
 </div></body>
 </html>

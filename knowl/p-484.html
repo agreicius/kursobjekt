@@ -11,8 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Let <span class="process-math">\(\mathcal{S}=\cup_{i=1}^k\mathcal{S}_k\)</span> be a piecewise smooth surface, and assume each surface <span class="process-math">\(\mathcal{S}_k\)</span> is orientable. An orientation of <span class="process-math">\(\mathcal{S}\)</span> is a choice of orientations <span class="process-math">\(\boldn_k\)</span> on each surface <span class="process-math">\(\mathcal{S}_k\)</span> such that the following condition is satisfied: given any two surfaces <span class="process-math">\(\mathcal{S}_{k_1}, \mathcal{S}_{k_2}\)</span> intersecting in the curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> the orientation induced on <span class="process-math">\(\mathcal{C}\)</span> by the orientation <span class="process-math">\(\boldn_{k_1}\)</span> is the opposite of the orientation induced by the orientation <span class="process-math">\(\boldn_{k_2}\text{.}\)</span></p>
-<span class="incontext"><a href="s_Stokes.html#p-484" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Suppose <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface defined as the graph of the function <span class="process-math">\(z=f(x,y)\)</span> for inputs <span class="process-math">\((x,y)\)</span> lying in the region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span>  As usual this gives rise to the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr\colon \mathcal{R} \amp \rightarrow \R^3\\
+(x,y)  \amp\mapsto (x,y,f(x,y)) \text{.}
+\end{align*}
+</div>
+<p class="continuation">We have seen that in this case <span class="process-math">\(\boldr_x\times \boldr_y=\angvec{-f_x, -f_y, 1}\text{.}\)</span> It follows that the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}=\frac{\angvec{-f_x,-f_y,1}}{\sqrt{f_x^2+f_y^2+1}}
+\end{equation*}
+</div>
+<p class="continuation">is an orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldn(x,y,z)\)</span> is positive, this is called the <dfn class="terminology">upward</dfn> orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<span class="incontext"><a href="s_surfaces_integrals.html#p-484" class="internal">in-context</a></span>
 </body>
 </html>

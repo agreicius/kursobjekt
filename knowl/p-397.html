@@ -12,19 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> and if <span class="process-math">\(\boldF\)</span> satisfies</p>
+<p>The curl computation in (a) is straightforward. To see that <span class="process-math">\(\boldF\)</span> is not a gradient vector field, we find a closed curve <span class="process-math">\(\mathcal{C}\)</span> for which <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{.}\)</span> Take <span class="process-math">\(\mathcal{C}\)</span> to be the unit circle with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}=1\text{,}
-\end{equation*}
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t}\, dt \\
+\amp = \int_0^{2\pi}\frac{\sin^2 t+\cos^2 t}{\sin^2 t+\cos^2 t}\, dt \\
+\amp = 2\pi\ne 0\text{.}
+\end{align*}
 </div>
-<p class="continuation">then</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\operatorname{area}\mathcal{R}=\oint_\mathcal{C}\boldF\cdot \boldT\, ds\text{.}
-\end{equation*}
-</div>
-<p class="continuation">A typical example of such a vector field is <span class="process-math">\(\boldF=\frac{1}{2}\angvec{-y,x}\text{.}\)</span></p>
-<span class="incontext"><a href="s_Greens_theorem.html#p-397" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#p-397" class="internal">in-context</a></span>
 </body>
 </html>

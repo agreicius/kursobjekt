@@ -12,13 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The region <span class="process-math">\(\mathcal{S}\)</span> is the region of the plane <span class="process-math">\(x+y+z=1\)</span> lying above the triangular region <span class="process-math">\(\mathcal{R}\colon 0\leq x\leq 1, 0\leq y\leq 1-x\text{.}\)</span> Writing <span class="process-math">\(z=1-x-y\text{,}\)</span> we have parametrization</p>
+<p>Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr(x,y) \amp=(x,y,1-x-y) \\
-\mathcal{R}\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
-\end{align*}
+\begin{equation*}
+P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_Stokes.html#p-489" class="internal">in-context</a></span>
+<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<span class="incontext"><a href="s_surfaces_integrals.html#p-489" class="internal">in-context</a></span>
 </body>
 </html>

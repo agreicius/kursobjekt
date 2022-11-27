@@ -11,24 +11,24 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<p>As our last application of <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we consider the spherical coordinate equations</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
-\begin{align}
-x \amp = \rho\sin\phi\cos\theta\tag{1.8.1}\\
-y\amp =\rho\sin\phi\sin\theta \tag{1.8.2}\\
-z \amp =\rho\cos\phi \text{,}\tag{1.8.3}
-\end{align}
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>The half-disk <span class="process-math">\(\mathcal{R}\)</span> corresponds to the the region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{S}=\{(r,\theta)\colon -\pi/2\leq \theta\leq \pi/2, 0\leq r\leq R\}
+\end{equation*}
 </div>
-<p class="continuation">where we assume <span class="process-math">\(\rho\geq 0\)</span> and <span class="process-math">\(0\leq \phi\leq \pi\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/spherical_coordinates.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.1<span class="period">.</span></span><span class="space"> </span>Spherical coordinates</figcaption></figure> As before we think of these equations as defining a function</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
+<p class="continuation">in the <span class="process-math">\(r\theta\)</span>-plane via the polar transformation <span class="process-math">\(G(r,\theta)=(r\cos\theta,r\sin\theta)\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-G\colon \R^3 \amp\rightarrow \R^3 \\
-(\rho, \phi, \theta)\amp\mapsto (\underset{x}{\underbrace{\rho\sin\phi\cos\theta}},\underset{y}{\underbrace{\rho\sin\phi\sin\theta}}, \underset{z}{\underbrace{\rho\cos\phi}}) 
+\operatorname{avg}_\mathcal{R}f \amp =\frac{1}{\operatorname{area}\mathcal{R}}\iint\limits_\mathcal{R}x\, dA\\
+\amp=\frac{2}{\pi R^2}\iint\limits_{\mathcal{S}}r\cos\theta\cdot r\, dA
+\amp \text{(polar subst.)} \\
+\amp=\frac{2}{\pi R^2}\int_{-\pi/2}^{\pi/2}\cos\theta\, d\theta\int_0^Rr^2\, dr \\
+\amp =\frac{2}{\pi R^2}(\sin\theta)\Bigr\vert_{-\pi/2}^{\pi/2}(r^3/3)\Bigr\vert_0^R\\
+\amp =\frac{4R}{3\pi}\text{.}
 \end{align*}
 </div>
-<p class="continuation">from <span class="process-math">\(\rho\phi\theta\)</span>-space to <span class="process-math">\(xyz\)</span>-space.</p>
-<span class="incontext"><a href="s_substitution_spherical.html#p-258" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_polar_cylindrical.html#p-258" class="internal">in-context</a></span>
 </body>
 </html>

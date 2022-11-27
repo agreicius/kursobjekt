@@ -12,12 +12,39 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>We have</p>
+<p>Let <span class="process-math">\(D, D'\)</span> be elementary regions of <span class="process-math">\(\R^n\text{,}\)</span> where <span class="process-math">\(n=2\)</span> or <span class="process-math">\(n=3\text{.}\)</span> If</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-\iint\limits_{\mathcal{R}}f(x,y)\, dA=\iint\limits_{\mathcal{S}}q(u,v)\left\vert\frac{\partial(x,y)}{\partial(u,v)}\right\vert\, dA\text{.}\tag{1.6.7}
-\end{equation}
+\begin{align*}
+G\colon D \amp\rightarrow D' \\
+(x_1,x_2,\dots, x_n) \amp\mapsto (g_1(x_1,x_2,\dots, x_n),\dots, g_n(x_1,x_2,\dots, x_n)) 
+\end{align*}
 </div>
+<p class="continuation">is a transformation that is continuously differentiable at all points in the interior of <span class="process-math">\(D\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+\iint\limits_{\mathcal{D'}}f(x,y)\, dA \amp =\iint\limits_{\mathcal{D}}f\left(G(x,y)\right)
+\left\vert J(G) \right\vert\, dA\tag{1.6.1}\\
+\amp =\iint\limits_{\mathcal{D}}f(g_1(x,y),g_2(x,y))
+\left\vert\det \begin{pmatrix}
+\frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\\
+\frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}
+\end{pmatrix}\right\vert\, dA\tag{1.6.2}
+\end{align}
+</div>
+<p class="continuation">in the <span class="process-math">\(n=2\)</span> case, and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+\iiint\limits_{\mathcal{D'}}f(x,y,z)\, dV \amp =\iiint\limits_{\mathcal{D}}f\left(G(x,y,z)\right)
+\left\vert J(G)\right\vert\, dV\tag{1.6.3}\\
+\amp =\iiint\limits_{\mathcal{D}}f(g_1(x,y,z),g_2(x,y,z),g_3(x,y,z))
+\left\vert\det \begin{pmatrix}
+\frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\amp \frac{\partial g_1}{\partial z}\\
+\frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}\amp \frac{\partial g_2}{\partial z}\\
+\frac{\partial g_3}{\partial x}\amp \frac{\partial g_3}{\partial y}\amp \frac{\partial g_3}{\partial z}
+\end{pmatrix}\right\vert\, dV\text{,}\tag{1.6.4}
+\end{align}
+</div>
+<p class="continuation">in the <span class="process-math">\(n=3\)</span> case.</p>
 <span class="incontext"><a href="s_substitution_linear.html#p-232" class="internal">in-context</a></span>
 </body>
 </html>

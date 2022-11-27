@@ -12,48 +12,46 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h3 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.7.7.1</span><span class="period">.</span>
-</h3>
-<article class="case"><h4 class="heading">Solution 1.</h4>
-<p>The curve <span class="process-math">\(\mathcal{C}\)</span> is the boundary of the elliptical region <span class="process-math">\(\mathcal{S}\)</span> it encloses in the plane <span class="process-math">\(y+z=2\text{.}\)</span> Since <span class="process-math">\(z=2-y\)</span> for points on this plane, we can parametrize as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.5.14.1</span><span class="period">.</span>
+</h4>
+<ol class="decimal">
+<li>
+<p>First we parametrize <span class="process-math">\(\mathcal{S}\)</span> using</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_sphere_parametrization.html">
 \begin{align*}
-\boldr(r,\theta) \amp =(r\cos\theta, r\sin\theta,2-r\sin\theta)\\
-\mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi \text{.}
+\boldr(\phi,\theta)\amp =(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi)\\
+\mathcal{R}\amp\colon 0\leq \phi\leq \pi, 0\leq \theta\leq 2\pi\text{,}
 \end{align*}
 </div>
-<p class="continuation">Assembling ingredients we have</p>
+<p class="continuation">as in <a href="" class="xref" data-knowl="./knowl/eg_sphere_parametrization.html" title="Example 2.5.5: Sphere of radius R parametrization">Example 2.5.5</a>.</p>
+</li>
+<li>
+<p>Now assemble ingredients:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_r \amp =\angvec{\cos\theta, \sin\theta,-\sin\theta}\\
-\boldr_\theta\amp =\angvec{-r\sin\theta,r\cos\theta,-r\cos\theta}\\
-\boldr_r\times\boldr_\theta\amp=\angvec{0,r,r} \\
-\curl\boldF \amp=\angvec{0,0,1+2y} \text{.}
+\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle \\
+\boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle\\
+\boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} \\
+\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}\\
+\amp=R^2\sin\phi\text{,}
 \end{align*}
 </div>
-<p class="continuation">Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldr_r\times\boldr_\theta\)</span> is nonnegative, we see that this gives rise to the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> We can now use Stokes's theorem to concude</p>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\sin\phi\geq 0\)</span> for <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta,\cos\phi}\)</span> parametrizes points on the unit sphere!</p>
+</li>
+<li>
+<p>Finally, we integrate</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp=\iint_\mathcal{R}\angvec{0,0,1+2r\sin\theta}\cdot \angvec{0,r,r}\, dA \\
-\amp =\int_0^{2\pi}\int_0^{1}r+2r^2\sin\theta\, dr\, d\theta\\
-\amp =\int_0^{2\pi}\frac{1}{2}+\frac{2}{3}\sin\theta\, d\theta\\
-\amp =\pi
-\end{align*}
-</div></article><article class="case"><h4 class="heading">Solution 2.</h4>
-<p>Alternatively, we can treat <span class="process-math">\(\mathcal{C}\)</span> as the boundary of the piecewise smooth surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the portion of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> above the <span class="process-math">\(xy\)</span>-plane and below the plane <span class="process-math">\(y+z=2\text{,}\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is the disc <span class="process-math">\(x^2+y^2\leq 1\)</span> in the <span class="process-math">\(xy\)</span>-plane. To have the given orientation of <span class="process-math">\(\mathcal{C}\)</span> be induced by that of <span class="process-math">\(\mathcal{S}\text{,}\)</span> we must choose the <em class="emphasis">inward</em> orientation <span class="process-math">\(\boldn\)</span> on <span class="process-math">\(\mathcal{S}\)</span> : this orientation is <em class="emphasis">inward</em> on the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> and <em class="emphasis">upward</em> on the disc <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> With this setup we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp= \cancelto{0}{\iint_\mathcal{S_1}\curl\boldF\cdot \boldn\, d\sigma}+\iint_\mathcal{S_2}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp =\iint\limits_{x^2+y^2\leq 1}\angvec{0,0,1+2y}\cdot \angvec{0,0,1}\, dA\\
-\amp =\int_0^{2\pi}\int_0^1(1+2r\sin\theta)r\, dr\, d\theta\\\
-\amp =\pi\text{.}
+\operatorname{area} \mathcal{S} \amp=\iint\limits_\mathcal{R}R^2\sin\phi\, dA \\
+\amp=\int_0^\pi\int_0^{2\pi}R^2\sin\phi\, d\theta\, d\phi \\
+\amp = 2\pi\, R^2(-\cos\phi)\Bigr\vert_0^{\pi}\\
+\amp = 4\pi R^2\text{.}
 \end{align*}
 </div>
-<p class="continuation">A few comments are in order. We have <span class="process-math">\(\iint_{\mathcal{S}_1}\curl\boldF\cdot \boldn\, d\sigma=0\)</span> because the normal vectors to the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> point horizontally, and thus are orthogonal to the curl vectors <span class="process-math">\(\curl\boldF\text{,}\)</span> which point vertically. Secondly, on the disc in the <span class="process-math">\(xy\)</span>-plane we clearly have the upward normal vector equal to <span class="process-math">\(\angvec{0,0,1}\text{.}\)</span></p></article>
+</li>
+</ol>
 </div>
-<span class="incontext"><a href="s_Stokes.html#solution-48" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_surfaces_area.html#solution-48" class="internal">in-context</a></span>
 </body>
 </html>

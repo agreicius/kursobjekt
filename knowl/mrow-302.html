@@ -11,17 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
 \begin{align*}
-\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
-\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
-\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
-\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
-\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
-\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
-\amp =\cos z\sqrt{1+\sin^2z} 
+\int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
+\amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
+\amp = f(P_n)-f(P_0) \amp \text{(telescoping sum)} \\
+\amp = f(Q)-f(P)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_integrals.html#md-91" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-84" class="internal">in-context</a></span>
 </body>
 </html>

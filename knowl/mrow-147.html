@@ -11,13 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
-\begin{align}
-\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \abs{\sin\phi}\, dV \tag{1.8.5}\\
-\amp = \iiint\limits_\mathcal{R}f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \sin\phi\, dV
-\amp (\text{assuming } 0\leq \phi\leq \pi)\tag{1.8.6}
-\end{align}
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_{\mathcal{R}}e^{(x-y)/x+y)}\, dA \amp = \iint\limits_\mathcal{S}e^(u/v)\abs{\frac{\partial(x,y)}{\partial(u,v)}}\, dA \\
+\amp=\int_1^2\int_{-v}^v\frac{1}{2}e^(u/v)\, du\, dv\\
+\amp = \frac{1}{2}\int_1^2v(e-1/e)\, dv\\
+\amp =\frac{3}{4}(e-1/e)
+\end{align*}
 </div>
-<span class="incontext"><a href="s_substitution_spherical.html#eq_substitution_spherical" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_linear.html#md-45" class="internal">in-context</a></span>
 </body>
 </html>

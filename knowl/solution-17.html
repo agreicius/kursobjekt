@@ -9,14 +9,52 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.8.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.5.14.1</span><span class="period">.</span>
 </h3>
-<p></p>
+<p>The iterated integral corresponds to the type-B description of the region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D=\{(x,y,z)\colon 0\leq y\leq 1, -\sqrt{1-y^2}\leq z\leq \sqrt{1-y^2}, 2\leq x\leq 3-y^2-z^2\}\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_substitution_spherical.html#solution-17" class="internal">in-context</a></span>
+<p class="continuation">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(yz\)</span>-plane is the right half of the unit disc</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y^2+z^2\leq 1, x=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The equation <span class="process-math">\(x=3-y^2-z^2\)</span> defines a paraboloid that extends in the negative <span class="process-math">\(x\)</span>-direction from the vertex <span class="process-math">\((3,0,0)\text{.}\)</span> Its intersection with the plane <span class="process-math">\(x=2\)</span> is the circle</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1=y^2+z^2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We conclude <span class="process-math">\(D\)</span> consists of all points <span class="process-math">\((x,y,z)\)</span> satisfying</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+2\amp \leq x\leq 3-y^2-z^2 \\
+0 \amp\leq y \text{.}
+\end{align*}
+</div>
+<p class="continuation">Evaluate the Sage cell below for a graph.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-11"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+var('x y z t')
+p1=implicit_plot3d(x==3-y^2-z^2, (x,2,3),(y,-1.5,1.5),(z,-1.5,1.5),color='red',region=lambda x,y,z: y >= 0 and y^2+z^2<= 1)
+p2=parametric_plot3d([0,x*cos(y),x*sin(y)], (x,0,1),(y,-pi/2,pi/2),color='green')
+p1+p2+axes(1,.5,color='black')
+</script></pre>
+</div>
+<span class="incontext"><a href="s_triple_integrals.html#solution-17" class="internal">in-context</a></span>
 </body>
 </html>

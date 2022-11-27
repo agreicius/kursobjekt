@@ -11,8 +11,31 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Verify that the function f(x,y)=\begin{cases} 6x^2y\amp (x,y)\in [0,1]\times [0,1]\\ 0\amp (x,y)\notin [0,1]\times [0,1] \end{cases} is a joint probability distribution function.</p>
-<span class="incontext"><a href="s_multiple_integrals_applications.html#p-283" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>First we convert the equation <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> defining the cone into spherical coordinates with the help of the auxiliary equations <a href="" class="xref" data-knowl="./knowl/eq_spherical_r.html" title="Equation 1.8.4">(1.8.4)–(1.8.5)</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+z=\sqrt{x^2+y^2} \amp \iff \frac{z}{r}=1\\
+\amp\iff \tan\phi=1 \\
+\amp \iff \phi=\pi/4\text{.}
+\end{align*}
+</div>
+<p class="continuation">We see that for a point to lie within the cone <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> we need <span class="process-math">\(0\leq \phi\leq \pi/4\text{.}\)</span> Next to lie within the sphere, we need <span class="process-math">\(0\leq \rho\leq R\text{.}\)</span> Since there is no condition on <span class="process-math">\(\theta\text{,}\)</span> the spherical description of <span class="process-math">\(D\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(\rho, \phi,\theta)\colon 0\leq \theta\leq 2\pi, 0\leq \phi\leq \pi/4, 0\leq \rho\leq R\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\operatorname{vol} D \amp=\iiint\limits_D 1\, dV \\
+\amp = \int_0^{2\pi}\int_0^{\pi/4}\int_0^{R}\rho^2\sin\phi\, d\rho\, d\phi\, d\theta \amp \text{(spher. coord.)}\\
+\amp =2\pi\int_0^{\pi/4}\sin\phi\, d\phi\int_0^R\rho^2\, d\rho \\
+\amp =2\pi\left(1-\frac{\sqrt{2}}{2}\right)\left(\frac{1}{3}R^3\right)\\
+\amp = \frac{2}{3}\pi R^3\left(1-\frac{\sqrt{2}}{2}\right)\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_substitution_spherical.html#p-283" class="internal">in-context</a></span>
 </body>
 </html>

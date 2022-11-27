@@ -10,5 +10,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><p></p></div></body>
+<body class="ignore-math"><div class="solution solution-like">
+<p>The half-disk <span class="process-math">\(\mathcal{R}\)</span> corresponds to the the region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{S}=\{(r,\theta)\colon -\pi/2\leq \theta\leq \pi/2, 0\leq r\leq R\}
+\end{equation*}
+</div>
+<p class="continuation">in the <span class="process-math">\(r\theta\)</span>-plane via the polar transformation <span class="process-math">\(G(r,\theta)=(r\cos\theta,r\sin\theta)\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\operatorname{avg}_\mathcal{R}f \amp =\frac{1}{\operatorname{area}\mathcal{R}}\iint\limits_\mathcal{R}x\, dA\\
+\amp=\frac{2}{\pi R^2}\iint\limits_{\mathcal{S}}r\cos\theta\cdot r\, dA
+\amp \text{(polar subst.)} \\
+\amp=\frac{2}{\pi R^2}\int_{-\pi/2}^{\pi/2}\cos\theta\, d\theta\int_0^Rr^2\, dr \\
+\amp =\frac{2}{\pi R^2}(\sin\theta)\Bigr\vert_{-\pi/2}^{\pi/2}(r^3/3)\Bigr\vert_0^R\\
+\amp =\frac{4R}{3\pi}\text{.}
+\end{align*}
+</div>
+</div></body>
 </html>

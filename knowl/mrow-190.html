@@ -11,16 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
-\begin{align*}
-\operatorname{M} \amp =\int\limits_{\mathcal{C}_1}\delta(x,y,z)\, ds+
-\int\limits_{\mathcal{C}_2}\delta(x,y,z)\, ds\\
-\amp=\int_0^1\delta(1,1+t,2t)\sqrt{5}\, dt+
-\int_0^1\delta(1+t,2,2+3t)\sqrt{10}\, dt \\
-\amp =\sqrt{5}\int_0^11+3t\, dt+\sqrt{10}\int_0^1 (1+t)(4+3t)\, dt\\
-\amp = \frac{5\sqrt{5}}{2}+\sqrt{10}
-\end{align*}
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
+\begin{align}
+\iiint\limits_\mathcal{S}f(x,y,z)\, dV \amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, \abs{r}\, dV \tag{1.7.6}\\
+\amp =\iiint\limits_\mathcal{R}f(r\cos\theta, r\sin\theta, z) \, r\, dV \amp (\text{assuming } r\geq 0) \tag{1.7.7}
+\end{align}
 </div>
-<span class="incontext"><a href="s_line_integal_scalar.html#md-58" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_polar_cylindrical.html#eq_substitution_cylindrical" class="internal">in-context</a></span>
 </body>
 </html>

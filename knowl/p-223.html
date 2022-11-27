@@ -12,7 +12,19 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Substitution is often described as a <em class="emphasis">change of variable</em> technique. Let's see why, treating the <span class="process-math">\(n=2\)</span> case. Suppose we are asked to compute <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> over the region <span class="process-math">\(\mathcal{R}'\text{.}\)</span> If we want to make use of <a href="" class="xref" data-knowl="./knowl/eq_subst_2_J.html" title="Equation 1.6.1">(1.6.1)</a> to transform this integral to a simpler one, we should treat <span class="process-math">\(\mathcal{R}\)</span> as <span class="process-math">\(\mathcal{D'}\text{,}\)</span> the <em class="emphasis">target</em> region in our substitution setup.</p>
-<span class="incontext"><a href="s_substitution_linear.html#p-223" class="internal">in-context</a></span>
+<p>Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <a href="" class="xref" data-knowl="./knowl/eg_volume_slice_para_cyl.html" title="Example 1.5.13: Volume of slice of parabolic cylinder">Example 1.5.13</a>, where we needed to compute <span class="process-math">\(\iiint\limits_D1\, dV\text{.}\)</span> The hard part was coming up with a suitable description of <span class="process-math">\(D\text{:}\)</span> e.g.,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
+\begin{equation*}
+D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Once this step is completed, the relevant triply iterated integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
+\begin{equation*}
+\int_{-1}^1\int_{y^2}^1\int_0^{1-x}1\, dz\, dx\, dy
+\end{equation*}
+</div>
+<p class="continuation">is easy enough to compute.</p>
+<span class="incontext"><a href="s_triple_integrals.html#p-223" class="internal">in-context</a></span>
 </body>
 </html>

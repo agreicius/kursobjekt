@@ -11,14 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
-\amp = f(Q)-f(P) \\
-\amp = GmM\left (\frac{1}{\sqrt{x_2^2+y_2^2+z_2^2}}-\frac{1}{\sqrt{x_1^2+y_1^2+z_1^2}}\right ) \\
-\amp = GmM\left(\frac{1}{\abs{Q}} -\frac{1}{\abs{P}}\right)
+\operatorname{vol} D \amp = \iiint\limits_D \sqrt{x^2+y^2+z^2}\, dV \\
+\amp=\int_0^{2\pi}\int_0^\pi\int_0^R\rho\cdot \rho^2\sin\phi\, d\rho\, d\phi\, d\theta \amp \text{(spher. subst.)}\\
+\amp = 2\pi\int_0^\pi\sin\phi\, d\phi \int_0^R\rho^3\, d\rho\\
+\amp = 2\pi (-\cos\phi)\Bigr\vert_0^{\pi}\left(\frac{1}{4}\rho^4\right)\Bigr\vert_0^R\\
+\amp =\pi R^4
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-65" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_spherical.html#md-61" class="internal">in-context</a></span>
 </body>
 </html>

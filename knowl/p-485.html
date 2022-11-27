@@ -11,14 +11,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Let <span class="process-math">\(\mathcal{S}\)</span> be a piecewise smooth oriented surface whose boundary <span class="process-math">\(\partial \mathcal{S}=\mathcal{C}\)</span> is a union of closed, piecewise smooth, simple curves. If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{S}\text{,}\)</span> then</p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Assume <span class="process-math">\(\mathcal{S}\)</span> is a smooth orientable surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow\R^3\)</span> and parametrization <span class="process-math">\(\boldr(u,v)\text{.}\)</span> We have the following facts:</p>
+<ol class="decimal">
+<li><p>There are exactly two orientations on <span class="process-math">\(\mathcal{S}\text{:}\)</span> namely, the given orientation <span class="process-math">\(P\mapsto \boldn(P)\)</span> and its opposite <span class="process-math">\(P\mapsto -\boldn(P)\text{.}\)</span></p></li>
+<li>
+<p>The function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\oint\limits_\mathcal{C}\boldF\cdot \boldr=\iint\limits_{\mathcal{S}}\curl\boldF\cdot \boldn\text{,}
+P=\boldr(u_0,v_0)\mapsto \frac{\boldr_u\times \boldr_v(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
 \end{equation*}
 </div>
-<p class="continuation">where (a) <span class="process-math">\(\boldn\)</span> is the orientation of <span class="process-math">\(\mathcal{S}\)</span> and (b) the line integral is computed with respect to the induced orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
-<span class="incontext"><a href="s_Stokes.html#p-485" class="internal">in-context</a></span>
+<p class="continuation">is one orientation on <span class="process-math">\(\mathcal{S}\text{;}\)</span> the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(u_0,v_0)\mapsto \frac{\boldr_v\times \boldr_u(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
+\end{equation*}
+</div>
+<p class="continuation">is the other.</p>
+</li>
+</ol>
+<span class="incontext"><a href="s_surfaces_integrals.html#p-485" class="internal">in-context</a></span>
 </body>
 </html>

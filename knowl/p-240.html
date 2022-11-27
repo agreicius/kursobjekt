@@ -12,7 +12,49 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>It is easy to see that <span class="process-math">\(G\)</span> is continuously differentiable, and hence is a candidate for an application of <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a>. The only thing we need to be careful about is restricting ourselves to regions <span class="process-math">\(\mathcal{R}\)</span> where <span class="process-math">\(G\)</span> is one-to-one, and hence defines a transformation.</p>
-<span class="incontext"><a href="s_substitution_polar_cylindrical.html#p-240" class="internal">in-context</a></span>
+<p>Suppose <span class="process-math">\(f\)</span> is defined over the region <span class="process-math">\(\mathcal{R}\subseteq \R^2\text{,}\)</span> and we have <span class="process-math">\(f(x,y)=q(u,v)\text{,}\)</span> where <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are expressions of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+u \amp = h_1(x,y)\tag{1.6.5}\\
+v \amp = h_2(x,y)\text{.}\tag{1.6.6}
+\end{align}
+</div>
+<p class="continuation">To transform the integral <span class="process-math">\(\iint\limits_\mathcal{R}f(x,y)\,dA\)</span> using the change of variables <a href="" class="xref" data-knowl="./knowl/eqs_change_var1.html" title="Equation 1.6.5">(1.6.5)–(1.6.6)</a>, proceed as follows.</p>
+<ol class="decimal">
+<li><p>Let <span class="process-math">\(H=(h_1,h_2)\text{.}\)</span> Determine the region <span class="process-math">\(\mathcal{S}\)</span> that <span class="process-math">\(\mathcal{R}\)</span> is mapped onto by <span class="process-math">\(H\text{:}\)</span> i.e., compute  <span class="process-math">\(\mathcal{S}=H(\mathcal{R})\text{.}\)</span></p></li>
+<li>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+\iint\limits_{\mathcal{R}}f(x,y)\, dA=\iint\limits_{\mathcal{S}}q(u,v)\left\vert\frac{\partial(x,y)}{\partial(u,v)}\right\vert\, dA\text{.}\tag{1.6.7}
+\end{equation}
+</div>
+</li>
+<li>
+<p>To compute <span class="process-math">\(\frac{\partial(x,y)}{\partial(u,v)}\)</span> you can either:</p>
+<ol class="lower-alpha">
+<li>
+<p>determine the inverse function <span class="process-math">\(H^{-1}=G=(g_1,g_2)\)</span> by solving for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x \amp = g_1(u,v)\\
+y \amp = g_2(u,v)
+\end{align*}
+</div>
+<p class="continuation">and compute <span class="process-math">\(J(G)=\partial(g_1,g_2)/\partial(u,v)\)</span> directly, or</p>
+</li>
+<li>
+<p>assuming <span class="process-math">\(H\)</span> and <span class="process-math">\(G\)</span> are both continuously differentiable, compute <span class="process-math">\(J(G)\)</span> <em class="emphasis">indirectly</em>, using the fact that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+J(G)=\frac{1}{J(H)}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Observe that <span class="process-math">\(1/J(H)\)</span> is an expression in <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> that you will need to express in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{!}\)</span></p>
+</li>
+</ol>
+</li>
+</ol>
+<span class="incontext"><a href="s_substitution_linear.html#p-240" class="internal">in-context</a></span>
 </body>
 </html>

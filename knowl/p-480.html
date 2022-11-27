@@ -11,22 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \mathcal{S}\)</span> be a smooth parametrization of the orientable surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> be the orientation determined by <span class="process-math">\(\frac{\boldr_u\times\boldr_v}{\abs{\boldr_u\times \boldr_v}}\text{.}\)</span> We have</p>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Let <span class="process-math">\(T_4\)</span> be triangle with vertices <span class="process-math">\((1,0,0), (1,0,0),(0,1,0)\text{.}\)</span> This is the region of the plane <span class="process-math">\(z=x+y\)</span> lying over the planar triangle with vertices <span class="process-math">\((0,0,0), (1,0,0), (0,1,0)\text{.}\)</span> Since <span class="process-math">\(z\)</span> is expressed as a function of <span class="process-math">\(x,y\)</span> we parametrize easily as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=
-\iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_u\times \boldr_v)\, dA\text{.}\tag{2.6.2}
-\end{equation}
+\begin{align*}
+\bolds(x,y) \amp =(x,y,x+y)\\
+\mathcal{R}_{2}\colon  0 \amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
+\end{align*}
 </div>
-<p class="continuation">Furthermore letting <span class="process-math">\(-\boldn\)</span> be the opposite orientation of <span class="process-math">\(\boldn\text{,}\)</span> we have</p>
+<p class="continuation">Again, a straightforward computation shows <span class="process-math">\(\abs{\bolds_x\times \bolds_y}=\sqrt{3}\text{,}\)</span> and thus</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-\iint\limits_\mathcal{S}\boldF\cdot (-\boldn)\, d\sigma=
-\iint\limits_{\mathcal{R}}\boldF\cdot (\boldr_v\times \boldr_u)\, dA=
--  \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma\text{.}\tag{2.6.3}
-\end{equation}
+\begin{align*}
+\iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp \\
+\amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx \\
+\amp =\frac{\sqrt{3}}{24}\text{,}
+\end{align*}
 </div>
+<p class="continuation">where we use our work from above for the last equality.</p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-480" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,11 +12,38 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Using <a href="" class="xref" data-knowl="./knowl/th_substitution.html" title="Theorem 1.6.6: Substitution">Theorem 1.6.6</a> we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_substitution.html">
+<p>Recall that the <dfn class="terminology">determinant</dfn> map on <span class="process-math">\(n\times n\)</span> matrices, denoted <span class="process-math">\(\det\text{,}\)</span> is defined in the <span class="process-math">\(n=2,3\)</span> cases as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\iint\limits_{\mathcal{R}}f(x,y)\, dA \amp =\iint\limits_{\mathcal{S}}f(g_1(u,v),g_2(u,v))\vert J(G)\vert\,dA \\
-\amp = \iint\limits_{\mathcal{S}}q(u,v)\left\vert\frac{\partial(x,y)}{\partial(u,v)}\right\vert\, dA\text{.}
+\det\begin{pmatrix}
+a\amp b\\ c\amp d
+\end{pmatrix}\amp=ad-bc \\
+\det \begin{pmatrix}a\amp b\amp c\\
+d\amp e\amp f\\ g\amp h\amp i
+\end{pmatrix} \amp =a(ei-gh)-b(di-fg)+c(dh-eg) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Let <span class="process-math">\(D, D'\subseteq \R^n\text{,}\)</span> where <span class="process-math">\(n=2\)</span> or <span class="process-math">\(n=3\text{.}\)</span> Given a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+G\colon D \amp\rightarrow D' \\
+(x_1,x_2,\dots, x_n) \amp\mapsto (g_1(x_1,x_2,\dots, x_n),\dots, g_n(x_1,x_2,\dots, x_n)) 
+\end{align*}
+</div>
+<p class="continuation">its Jacobian <span class="process-math">\(J(G)=\frac{\partial(g_1,g_2,\dots, g_n)}{\partial(x_1,x_2,\dots, x_n)}\)</span> is the function defined as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+J(G)=\frac{\partial(g_1,g_2)}{\partial(x_1,x_2)} \amp=\det \begin{pmatrix}
+\frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\\
+\frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}
+\end{pmatrix} \amp (n=2)\\
+J(G)=\frac{\partial(g_1,g_2,g_3)}{\partial(x_1,x_2,x_3)}\amp=\det
+\begin{pmatrix}
+\frac{\partial g_1}{\partial x}\amp \frac{\partial g_1}{\partial y}\amp \frac{\partial g_1}{\partial z}\\
+\frac{\partial g_2}{\partial x}\amp \frac{\partial g_2}{\partial y}\amp \frac{\partial g_2}{\partial z}\\
+\frac{\partial g_3}{\partial x}\amp \frac{\partial g_3}{\partial y}\amp \frac{\partial g_3}{\partial z}
+\end{pmatrix}
+\amp (n=3)  
 \end{align*}
 </div>
 <span class="incontext"><a href="s_substitution_linear.html#p-228" class="internal">in-context</a></span>

@@ -12,16 +12,32 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>We have</p>
+<p>The curve <span class="process-math">\(\mathcal{C}\)</span> is the boundary of the elliptical region <span class="process-math">\(\mathcal{S}\)</span> it encloses in the plane <span class="process-math">\(y+z=2\text{.}\)</span> Since <span class="process-math">\(z=2-y\)</span> for points on this plane, we can parametrize as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
-\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
-\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
-\amp = 0\text{,}
+\boldr(r,\theta) \amp =(r\cos\theta, r\sin\theta,2-r\sin\theta)\\
+\mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi \text{.}
 \end{align*}
 </div>
-<p class="continuation">where in the last step we have used Clairaut's theorem to identify the various “mixed partials”: i.e., <span class="process-math">\(\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}\text{.}\)</span></p>
-<span class="incontext"><a href="s_Divergence.html#p-510" class="internal">in-context</a></span>
+<p class="continuation">Assembling ingredients we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr_r \amp =\angvec{\cos\theta, \sin\theta,-\sin\theta}\\
+\boldr_\theta\amp =\angvec{-r\sin\theta,r\cos\theta,-r\cos\theta}\\
+\boldr_r\times\boldr_\theta\amp=\angvec{0,r,r} \\
+\curl\boldF \amp=\angvec{0,0,1+2y} \text{.}
+\end{align*}
+</div>
+<p class="continuation">Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldr_r\times\boldr_\theta\)</span> is nonnegative, we see that this gives rise to the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> We can now use Stokes's theorem to concude</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
+\amp=\iint_\mathcal{R}\angvec{0,0,1+2r\sin\theta}\cdot \angvec{0,r,r}\, dA \\
+\amp =\int_0^{2\pi}\int_0^{1}r+2r^2\sin\theta\, dr\, d\theta\\
+\amp =\int_0^{2\pi}\frac{1}{2}+\frac{2}{3}\sin\theta\, d\theta\\
+\amp =\pi
+\end{align*}
+</div>
+<span class="incontext"><a href="s_Stokes.html#p-510" class="internal">in-context</a></span>
 </body>
 </html>

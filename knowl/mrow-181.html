@@ -11,14 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_1(t) \amp= (1-t)P+tQ, \ 0\leq t\leq 1 \\
-\amp =(1,1+t,2t) \\
-\boldr_2(t)\amp= (1-t)Q+tR, \ 0\leq t\leq 1 \\
-\amp =(1+t,2,2+3t) 
+\operatorname{avg}_\mathcal{R}f \amp =\frac{1}{\operatorname{area}\mathcal{R}}\iint\limits_\mathcal{R}x\, dA\\
+\amp=\frac{2}{\pi R^2}\iint\limits_{\mathcal{S}}r\cos\theta\cdot r\, dA
+\amp \text{(polar subst.)} \\
+\amp=\frac{2}{\pi R^2}\int_{-\pi/2}^{\pi/2}\cos\theta\, d\theta\int_0^Rr^2\, dr \\
+\amp =\frac{2}{\pi R^2}(\sin\theta)\Bigr\vert_{-\pi/2}^{\pi/2}(r^3/3)\Bigr\vert_0^R\\
+\amp =\frac{4R}{3\pi}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_line_integal_scalar.html#md-56" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_polar_cylindrical.html#md-53" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,7 +12,21 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{S}\)</span> be the unit sphere <span class="process-math">\(x^2+y^2+z^2=1\text{.}\)</span> We have seen previously that for a point <span class="process-math">\(P=(x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> the vector <span class="process-math">\(\overrightarrow{OP}=\angvec{x,y,z}\)</span> is a normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{;}\)</span> furthermore, since <span class="process-math">\(P\in \mathcal{S}\text{,}\)</span> its magnitude is <span class="process-math">\(\sqrt{x^2+y^2+z^2}=1\text{.}\)</span> Thus the function <span class="process-math">\(\boldn_1(x,y,z)=\angvec{x,y,z}\)</span> assigns a unit normal vector to each point <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{.}\)</span> Since <span class="process-math">\(\boldn_1\)</span> is clearly continuous, it defines an orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> called the <dfn class="terminology">outward</dfn> orientation. The function <span class="process-math">\(\boldn_2(x,y,z)=-\angvec{x,y,z}\)</span> also defines an orientation on the sphere, called the <dfn class="terminology">inward</dfn> orientation.</p>
+<p>As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_surface_integral_approx.html ./knowl/eq_surface_integral_approx.html">
+\begin{equation}
+\iint\limits_\mathcal{S}f\, d\sigma\approx \sum_{k=1}^{n}f(\boldr(u_k,v_k))\underset{\operatorname{approx. area of} \Delta\sigma_k}{\underbrace{\abs{\boldr_u\times \boldr_v}\Delta u\Delta v}}\text{.}\tag{2.6.1}
+\end{equation}
+</div>
+<p class="continuation">Understanding <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\)</span> as an approximation of the area of one of the subpatches of <span class="process-math">\(\mathcal{S}\text{,}\)</span> the interpretation then depends on what the function <span class="process-math">\(f\)</span> is. Here are two typical examples.</p>
+<ol class="decimal">
+<li>
+<span class="heading"><span class="title">Geometric: surface area.</span></span><p>If <span class="process-math">\(f=1\)</span> (the constant function), then the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> simply adds up <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\text{,}\)</span> yielding an approximation of the area of <span class="process-math">\(S\text{.}\)</span> The integral of <span class="process-math">\(f=1\)</span> computes this area exactly.</p>
+</li>
+<li>
+<span class="heading"><span class="title">Physical: density function.</span></span><p>Assume <span class="process-math">\(f(x,y,z)\geq 0\)</span> gives us the density of quantity <span class="process-math">\(Q\)</span> per unit area at position <span class="process-math">\((x,y,z)\text{.}\)</span> In this case the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> can be understood as an approximation of the total quantity <span class="process-math">\(Q\)</span> over <span class="process-math">\(\mathcal{S}\text{,}\)</span> and thus the integral computes this total quantity exactly.</p>
+</li>
+</ol>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-468" class="internal">in-context</a></span>
 </body>
 </html>

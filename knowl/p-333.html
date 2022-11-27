@@ -12,13 +12,7 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Denote by <span class="process-math">\(\mathcal{C}_1\)</span> the curve <span class="process-math">\(\mathcal{C}\)</span> with parametrization <span class="process-math">\(\boldr\text{,}\)</span> and <span class="process-math">\(\mathcal{C}_2\)</span> the curve <span class="process-math">\(\mathcal{C}\)</span> with parametrization <span class="process-math">\(\bolds\text{.}\)</span> If <span class="process-math">\(\boldr, \bolds\)</span> both traverse <span class="process-math">\(\mathcal{C}\)</span> exactly once, and in the same direction (e.g., both start at <span class="process-math">\(P\)</span> and end at <span class="process-math">\(Q\)</span>), then</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\int_{\mathcal{C}_1}\boldF\cdot d\boldr=\int_{\mathcal{C}_2}\boldF\cdot d\boldr
-\end{equation*}
-</div>
-<p class="continuation">for any continuous vector field <span class="process-math">\(\boldF\text{.}\)</span></p>
-<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-333" class="internal">in-context</a></span>
+<p>The basic ingredients of a line integral are an expression <span class="process-math">\(\boldr(t)\)</span> defining a parametrized curve, the domain <span class="process-math">\([a,b]\)</span> of <span class="process-math">\(\boldr\text{,}\)</span> and the function <span class="process-math">\(f\)</span> we are integrating. You can see how the Sage cell below assembles these basic ingredients, along with the further ingredients <span class="process-math">\(\boldr'(t)\)</span> and  <span class="process-math">\(\abs{\boldr'(t)}\text{,}\)</span> before computing the line integral using <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar.html" title="Theorem 2.1.6: Scalar line integrals">Theorem 2.1.6</a>. Note how we use the <code class="code-inline tex2jax_ignore">vector()</code> command to create vector objects. This is essential for doing any further vector operations: e.g., dot product, norm, etc..</p>
+<span class="incontext"><a href="s_line_integal_scalar.html#p-333" class="internal">in-context</a></span>
 </body>
 </html>

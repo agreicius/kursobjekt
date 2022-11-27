@@ -12,14 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A <dfn class="terminology">vector field</dfn> is a function</p>
+<p>Do different parametrizations of the same curve <span class="process-math">\(\mathcal{C}\)</span> lead to different line integrals of a function <span class="process-math">\(f\text{?}\)</span> Absolutely! Consider</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldF\colon \R^n \amp \rightarrow \R^n\\
-(x_1,x_2,\dots, x_n)\amp\mapsto \left\langle F_1\langle x_1,x_2,\dots, x_n),F_2(x_1,x_2,\dots, x_n),\dots ,F_n(x_1,x_2,\dots, x_n)\right\rangle \text{.}
+\boldr(t) \amp= (\cos t, \sin t),\ 0\leq t\leq 2\pi \\
+\bolds(t) \amp =  (\cos 2t, \sin 2t), \ 0\leq t\leq 2\pi \text{.}
 \end{align*}
 </div>
-<p class="continuation">The scalar functions <span class="process-math">\(F_i\)</span> are called the <dfn class="terminology">component functions</dfn>. The vector field <span class="process-math">\(\boldF\)</span> is <dfn class="terminology">continuous</dfn>, <dfn class="terminology">differentiable</dfn>, <dfn class="terminology">continuously differentiable</dfn>, etc., if each of the component functions is continuous, differentiable, continuously differentiable, etc.</p>
-<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-320" class="internal">in-context</a></span>
+<p class="continuation">Both parametrize the unit circle <span class="process-math">\(\mathcal{C}\colon x^2+y^2=1\text{.}\)</span> However, the integral of the constant function <span class="process-math">\(f(x,y)=1\)</span> over <span class="process-math">\(\boldr(t)\)</span> yields <span class="process-math">\(2\pi\)</span> (the arc length of <span class="process-math">\(\mathcal{C}\)</span>), while the integral of <span class="process-math">\(\bolds(t)\)</span> yields <span class="process-math">\(4\pi\)</span> (twice the arc length of <span class="process-math">\(\mathcal{C}\)</span>). This makes sense, since <span class="process-math">\(\bolds(t)\)</span> traverses <span class="process-math">\(\mathcal{C}\)</span> twice!</p>
+<span class="incontext"><a href="s_line_integal_scalar.html#p-320" class="internal">in-context</a></span>
 </body>
 </html>

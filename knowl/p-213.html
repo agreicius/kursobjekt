@@ -12,19 +12,32 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <a href="" class="xref" data-knowl="./knowl/eg_volume_slice_para_cyl.html" title="Example 1.5.13: Volume of slice of parabolic cylinder">Example 1.5.13</a>, where we needed to compute <span class="process-math">\(\iiint\limits_\mathcal{D}1\, dV\text{.}\)</span> The hard part was coming up with a suitable description of <span class="process-math">\(\mathcal{D}\text{:}\)</span> e.g.,</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
+<p>The iterated integral corresponds to the type-B description of the region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}\text{.}
+D=\{(x,y,z)\colon 0\leq y\leq 1, -\sqrt{1-y^2}\leq z\leq \sqrt{1-y^2}, 2\leq x\leq 3-y^2-z^2\}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Once this step is completed, the relevant triply iterated integral</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_volume_slice_para_cyl.html">
+<p class="continuation">The projection of <span class="process-math">\(D\)</span> onto the <span class="process-math">\(yz\)</span>-plane is the right half of the unit disc</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\int_{-1}^1\int_{y^2}^1\int_0^{1-x}1\, dz\, dx\, dy
+y^2+z^2\leq 1, x=0\text{.}
 \end{equation*}
 </div>
-<p class="continuation">is easy enough to compute.</p>
+<p class="continuation">The equation <span class="process-math">\(x=3-y^2-z^2\)</span> defines a paraboloid that extends in the negative <span class="process-math">\(x\)</span>-direction from the vertex <span class="process-math">\((3,0,0)\text{.}\)</span> Its intersection with the plane <span class="process-math">\(x=2\)</span> is the circle</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1=y^2+z^2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We conclude <span class="process-math">\(D\)</span> consists of all points <span class="process-math">\((x,y,z)\)</span> satisfying</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+2\amp \leq x\leq 3-y^2-z^2 \\
+0 \amp\leq y \text{.}
+\end{align*}
+</div>
+<p class="continuation">Evaluate the Sage cell below for a graph.</p>
 <span class="incontext"><a href="s_triple_integrals.html#p-213" class="internal">in-context</a></span>
 </body>
 </html>
