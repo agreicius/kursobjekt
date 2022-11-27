@@ -95,7 +95,7 @@ It is easy to see that <m>G</m> is continuously differentiable, and hence is a c
   <title>Area between limaçon and circle</title>
   <statement>
     <p>
-      Let <m>\mathcal{S}\subseteq \R^2</m> be the region outside the cirlce of radius 2, centered at the origin, and inside the cardioid with polar equation
+      Let <m>\mathcal{S}\subseteq \R^2</m> be the region outside the circle of radius 2, centered at the origin, and inside the limaçon with polar equation
       <me>
         r=1+2\sin\theta
       </me>.
@@ -108,11 +108,25 @@ It is easy to see that <m>G</m> is continuously differentiable, and hence is a c
        </image>
     </p>
   </statement>
-  <!-- <solution>
+  <solution>
     <p>
+      The <m>r\theta</m>-coordinates of points in <m>\mathcal{S}</m> satisfy <m>r=1+2\sin\theta\geq 2</m>. A little algebra shows this implies <m>\pi/6\leq \theta\leq 5\pi/6</m>. Thus the polar transformation <m>G(r,\theta)=(r\cos\theta, r\sin\theta)</m> maps the <m>r\theta</m>-region
+      <me>
+        \mathcal{R}=\{(r,\theta)\colon \pi/6\leq \theta\leq 5\pi/6, 2\leq r\leq 1+2\sin\theta\}
+      </me>
+      onto <m>\mathcal{S}</m>. Using <xref ref="th_substition_polar"/>, we have
+      <md>
+        <mrow>\operatorname{area} \mathcal{S} \amp = \iint\limits_{\mathcal{S}}1\, dA </mrow>
+        <mrow> \amp =\iint_{\mathcal{R}}r\, dA  \amp \text{(polar subst.)}</mrow>
+        <mrow>  \amp =\int_{\pi/6}^{5\pi/6}\int_2^{1+2\sin\theta}r\, dr\, d\theta</mrow>
+        <mrow>  \amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta+4\sin^2\theta-3\, d\theta</mrow>
+        <mrow>  \amp =\frac{1}{2}\int_{\pi/6}^{5\pi/6}4\sin\theta-2\cos 2\theta-1\, d\theta \amp (\sin^2\theta=\frac{1}{2}(1-\cos 2\theta))</mrow>
+        <mrow>  \amp =\frac{1}{2}(-4\cos\theta-\theta-\sin 2\theta)\Bigr\vert_{\pi/6}^{5\pi/6}</mrow>
+        <mrow>  \amp =\frac{5\sqrt{3}}{2}-\frac{\pi}{3} </mrow>
+      </md>.
 
     </p>
-  </solution> -->
+  </solution>
 </example>
 <example>
   <title>Average value over semicircle</title>
@@ -128,6 +142,19 @@ It is easy to see that <m>G</m> is continuously differentiable, and hence is a c
   </statement>
   <solution>
     <p>
+      The half-disk <m>\mathcal{R}</m> corresponds to the the region
+      <me>
+        \mathcal{S}=\{(r,\theta)\colon -\pi/2\leq \theta\leq \pi/2, 0\leq r\leq R\}
+      </me>
+      in the <m>r\theta</m>-plane via the polar transformation <m>G(r,\theta)=(r\cos\theta,r\sin\theta)</m>. We have
+      <md>
+        <mrow>\operatorname{avg}_\mathcal{R}f \amp =\frac{1}{\operatorname{area}\mathcal{R}}\iint\limits_\mathcal{R}x\, dA</mrow>
+        <mrow> \amp=\frac{2}{\pi R^2}\iint\limits_{\mathcal{S}}r\cos\theta\cdot r\, dA
+        \amp \text{(polar subst.)} </mrow>
+        <mrow>  \amp=\frac{2}{\pi R^2}\int_{-\pi/2}^{\pi/2}\cos\theta\, d\theta\int_0^Rr^2\, dr </mrow>
+        <mrow>  \amp =\frac{2}{\pi R^2}(\sin\theta)\Bigr\vert_{-\pi/2}^{\pi/2}(r^3/3)\Bigr\vert_0^R</mrow>
+        <mrow>  \amp =\frac{4R}{3\pi}</mrow>
+      </md>.
 
     </p>
   </solution>
@@ -243,7 +270,19 @@ It is easy to see that <m>G</m> is continuously differentiable, and hence is a c
   </statement>
   <solution>
     <p>
-
+      The projection of <m>\mathcal{S}</m> onto the <m>xy</m>-plane is the disk <m>x^2+y^2\leq R^2</m>,, which is described in cylindrical coordinates as <m>0\leq \theta\leq 2\pi, 0\leq r\leq R</m>. Next, looking at the vertical line passing through a point <m>(r,\theta,0)</m>, we see we enter and leave <m>\mathcal{S}</m> at the lower and upper surfaces of the sphere. In cylindrical coordinates the defining equation <m>x^2+y^2+z^2=R^2</m> becomes <m>r^2+z^2=R^2</m>, and thus the lower and upper surfaces of the sphere have cylindrical equations <m>z=-\sqrt{R^2-r^2}</m> and <m>z=\sqrt{R^2-r^2}</m>, repsectively. We conclude that the cylindrical description of <m>\mathcal{S}</m> is
+      <me>
+        \{(r,\theta, z)\colon 0\leq \theta\leq 2\pi, 0\leq r\leq R, -\sqrt{R^2-r^2}\leq z\leq \sqrt{R^2-r^2}
+      </me>.
+      Finally, we compute
+      <md>
+        <mrow>\operatorname{vol}\mathcal{S} \amp = \iiint\limits_\mathcal{S}1\, dV </mrow>
+        <mrow> \amp =\int_0^{2\pi}\int_0^R, \int_{-\sqrt{R^2-r^2}}^{\sqrt{R^2-r^2}}r \, dz\, dr\, d\theta  \amp \text{(cylind. subst.)}</mrow>
+        <mrow>  \amp = 2\pi\int_0^R2r\sqrt{R^2-r^2}\, dr</mrow>
+        <mrow>  \amp =-\frac{4\pi}{3}(R^2-r^2)^{3/2}\Bigr\vert_0^R</mrow>
+        <mrow>  \amp =\frac{4}{3}\pi R^3</mrow>
+      </md>.
+      We've just derived the volume formula for the sphere of radius <m>R</m>!
     </p>
   </solution>
 </example>
@@ -259,7 +298,19 @@ It is easy to see that <m>G</m> is continuously differentiable, and hence is a c
   </statement>
   <solution>
     <p>
-
+      First observe that the function in question is just <m>f(x,y,z)=z</m>. The cylindrical description of <m>\mathcal{S}</m> is similar to the previous example, except now <m>z</m>-values are bounded below by zero:
+      <me>
+        \{(r,\theta,z)\colon 0\leq \theta\leq 2\pi, 0\leq r\leq R, 0\leq z\leq \sqrt{R^2-r^2}
+      </me>.
+      Now compute
+      <md>
+        <mrow>\operatorname{avg}_{\mathcal{S}}f \amp =\frac{1}{\operatorname{vol} \mathcal{S}}\iiint\limits_\mathcal{S}z\, dA </mrow>
+        <mrow> \amp =\frac{3}{2\pi R^3}\int_0^{2\pi}\int_0^R\int_0^{\sqrt{R^2-r^2}}zr\, dz\, dr\, d\theta \amp  \text{(cylind. subst.)}</mrow>
+        <mrow>  \amp = \frac{3}{R^3}\int_0^R\frac{1}{2}r(R^2-r^2)\, dr </mrow>
+        <mrow>  \amp =\frac{3}{2R^3}\left(\frac{1}{2}R^2r^2-\frac{1}{4}r^4\right)\Bigr\vert_0^R</mrow>
+        <mrow>  \amp = \frac{3}{2R^3}\left(\frac{1}{2}R^4-\frac{1}{4}R^4\right)</mrow>
+        <mrow>  \amp = \frac{3}{8}R</mrow>
+      </md>.
     </p>
   </solution>
 </example>

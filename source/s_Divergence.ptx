@@ -63,24 +63,24 @@
         <p>
           Suppose the solid region <m>D\subseteq\R^3</m> has piecewise smooth boundary surface <m>\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2</m>, where <m>\mathcal{S}_1</m> is the outer boundary of <m>D</m> and <m>\mathcal{S}_2</m> is its inner boundary. If <m>\boldF</m> satisfies the conditions of the divergence theorem and <m>\diver\boldF=0</m> on <m>D</m>, then
           <me>
-            \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma
+            \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma
           </me>,
-          where for both surface integrals <m>\boldn</m> is taken to be the outer orientation with respect to the surface.
+          where for both surface integrals <m>\boldn_i</m> is taken to be the outer orientation with respect to the surface.
         </p>
       </statement>
       <proof>
         <p>
-          Let <m>D_1, D_2</m> be the solid regions enclosed by <m>\mathcal{S}_1</m> and <m>\mathcal{S}_2</m>, respectively (so that <m>\mathcal{D}=D_2-D_1</m>). Notice that if <m>\boldn</m> is the outward orientation on <m>\mathcal{S}_2</m>, considered as the boundary of <m>D_2</m>, then <m>-\boldn</m> is the outward orientation on <m>\mathcal{S}_2</m> considered as a boundary of <m>D</m>. By the divergence theorem we have
+          Let <m>D_1, D_2</m> be the solid regions enclosed by <m>\mathcal{S}_1</m> and <m>\mathcal{S}_2</m>, respectively (so that <m>\mathcal{D}=D_2-D_1</m>). Notice that if <m>\boldn_2</m> is the outward orientation on <m>\mathcal{S}_2</m>, considered as the boundary of <m>D_2</m>, then <m>-\boldn_2</m> is the outward orientation on <m>\mathcal{S}_2</m> considered as a boundary of <m>D</m>. By the divergence theorem we have
           <md>
             <mrow> 0\amp=\iiint\limits_D \diver \boldF\, dV </mrow>
-            <mrow> \amp=\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma +
-            \iint\limits_{\mathcal{S}_2}\boldF\cdot (-\boldn)\, d\sigma
+            <mrow> \amp=\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma +
+            \iint\limits_{\mathcal{S}_2}\boldF\cdot (-\boldn_2)\, d\sigma
             </mrow>
-            <mrow>  \amp = \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma-\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma</mrow>
+            <mrow>  \amp = \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma-\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma</mrow>
           </md>.
           We conclude that
           <me>
-            \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn\, d\sigma
+            \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma
           </me>,
           as desired.
         </p>
@@ -112,6 +112,43 @@
       </proof>
 
     </theorem>
+        <remark xml:id="rm_grad_curl_div">
+      <title>Gradient, curl, divergence sequence</title>
+      <statement>
+        <p>
+          Let <m>D\subseteq \R^n</m> be an open set. Define <m>C^\infty(D, \R^m)</m> as the set of all functions
+          <m>\boldF\colon D\rightarrow \R^m</m> whose component functions have partial derivatives of all orders. We can think of <m>\grad</m>, <m>\curl</m>, <m>\diver</m> as defining a sequence of operators on such collections of functions.
+          <image xml:id="grad_curl_div" width="80%">
+            <latex-image>
+              \begin{tikzcd}
+     C^1(\R^3,\R) \arrow[r, "{\grad}"] \amp C^1(\R^3, \R^3)  \arrow[r, "{\curl}"] \amp C^1(\R^3, \R^3)  \arrow[r, "{\diver}"]\amp C^1(\R^3, \R) \\
+     f \arrow[r,mapsto] \amp \nabla f \amp\boldG \arrow[r,mapsto] \amp \nabla\cdot \boldG\\
+             \amp \boldF \arrow[r,mapsto] \amp \nabla\times \boldF
+     \end{tikzcd}
+            </latex-image>
+          </image>
+      We use this sequence to conveniently summarize some of our theoretical results about these operators as follows:
+      <ol>
+        <li>
+          <p>
+            Applying two operators in sequence results in a zero function (<m>\curl\grad f=\boldzero</m> and <m>\diver\curl\boldF=0</m>). In other words the image of any one of these operators lies within the set of a functions mapping to zero when applying the next operator.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>D</m> is simply connected, then any vector field that is mapped to <m>\boldzero</m> by <m>\curl</m> is in the image of <m>\grad</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>D</m> is <em>contractible</em> (too technical to define here), then any vector field that is mapped to <m>0</m> by <m>\diver</m> is in the image of <m>\curl</m>.
+          </p>
+        </li>
+      </ol>
+        </p>
+      </statement>
+    </remark>
+
     <corollary xml:id="cor_flux_curl">
       <title>Curl field has zero flux</title>
       <statement>
@@ -147,7 +184,7 @@
               \frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ encloses the point charge.}
           \end{cases}
           </me>
-        Gauss's law can be generalized to a situation where the surface <m>\mathcal{S}</m> encloses a region <m>D</m> with continuous charge density <m>\delta(x,y,z)</m>. If <m>\boldE</m> is the resulting electostatic field, then
+        Gauss's law can be generalized to a situation where the surface <m>\mathcal{S}</m> encloses a region <m>D</m> with continuous charge density <m>\delta(x,y,z)</m>. If <m>\boldE</m> is the resulting electrostatic field, then
         <me>
           \iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\frac{1}{\epsilon_0}\iiint\limits_D\delta(x,y,z)\, dV=\frac{Q}{\epsilon_0}
         </me>,
@@ -155,7 +192,7 @@
         </p>
       </statement>
       <solution>
-        <!-- <p>
+        <p>
           First observe that <m>\boldE</m> satisfies the conditions of the divergence theorem on any solid region that does not contain the origin. Furthermore, a (somewhat onerous) computation shows that
           <me>
             \diver\boldE (x,y,z)=0
@@ -199,7 +236,7 @@
             <mrow>  \amp =\frac{q}{\epsilon_0}</mrow>
           </md>,
           as desired!
-        </p> -->
+        </p>
       </solution>
     </example>
 

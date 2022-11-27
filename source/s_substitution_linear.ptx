@@ -287,11 +287,32 @@ Let's make the discussion above official with a procedure. As above, it is expre
 
     </p>
   </statement>
-  <!-- <solution>
+  <solution>
     <p>
+      Use the substitution <m>H(x,y)</m>
+      <md>
+        <mrow>u \amp =x-y</mrow>
+        <mrow>v \amp =x+y </mrow>
+      </md>
+      with inverse <m>G(u,v)</m>
+      <md>
+        <mrow>x\amp=\frac{1}{2}(u+v) </mrow>
+        <mrow>y \amp=\frac{1}{2}(-u+v) </mrow>
+      </md>
+      and Jacobian <m>\partial(x,y)/\partial(u,v)=\frac{1}{2}</m>. The trapezoidal region in the <m>xy</m>-plane has boundary equations <m>x+y=1, x+y=2, x=0, y=0</m>, which are transformed to the boundary equations <m>v=1, v=2, u=-v, u=v</m>. This defines the trapezoidal region
+      <me>
+        \mathcal{S}=\{(u,v)\colon 1\leq v\leq 2, -v\leq u\leq v\}
+      </me>
+      in the <m>uv</m>-plane, and by substitution we have
+      <md>
+        <mrow>\iint\limits_{\mathcal{R}}e^{(x-y)/x+y)}\, dA \amp = \iint\limits_\mathcal{S}e^(u/v)\abs{\frac{\partial(x,y)}{\partial(u,v)}}\, dA </mrow>
+        <mrow> \amp=\int_1^2\int_{-v}^v\frac{1}{2}e^(u/v)\, du\, dv</mrow>
+        <mrow>  \amp = \frac{1}{2}\int_1^2v(e-1/e)\, dv</mrow>
+        <mrow>  \amp =\frac{3}{4}(e-1/e)</mrow>
+      </md>
 
     </p>
-  </solution> -->
+  </solution>
 </example>
 <example>
   <title>Volume of ellipsoid</title>
@@ -308,11 +329,27 @@ Let's make the discussion above official with a procedure. As above, it is expre
       </me>.
     </p>
   </statement>
-  <!-- <solution>
+  <solution>
     <p>
-
+      The transformation <m>G(u,v,w)=(au,bv,cw)</m> transforms the the solid ball <m>\mathcal{S}\colon u^2+v^2+w^2\leq 1</m> in <m>uvw</m>-space to the given ellispoid <m>\mathcal{R}</m> in <m>xyz</m>-space. The Jacobian of <m>G</m> is
+      <me>
+       J(G)=\det \begin{pmatrix}
+          a\amp 0\amp 0\\
+          0\amp b\amp 0\\
+          0\amp 0\amp c
+        \end{pmatrix}=abc
+      </me>.
+      Now compute
+      <md>
+        <mrow>\operatorname{vol} \mathcal{R}  \amp =\iiint\limits_\mathcal{R}1\, dV </mrow>
+        <mrow> \amp =\iiint\limits_\mathcal{S}1 \abs{J(G)}\, dV \amp \text{(subst.)} </mrow>
+        <mrow>  \amp =abc\iiint\limits_\mathcal{S}1\, dV</mrow>
+        <mrow>  \amp =abc\operatorname{vol}\mathcal{S}</mrow>
+        <mrow>  \amp =\frac{4}{3}\pi abc </mrow>
+      </md>,
+      since the volume of the unit ball <m>\mathcal{R}</m> is <m>4\pi/3</m>.
     </p>
-  </solution> -->
+  </solution>
 </example>
 
 </section>

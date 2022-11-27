@@ -27,6 +27,7 @@
   </statement>
 </remark>
 <example xml:id="eg_double_integral_area">
+  <title>Area of planar regions</title>
   <statement>
     <p>
       Use <xref ref="d_area_planar"/> to compute the area of the given region <m>\mathcal{R}\subseteq \R^2</m>.
@@ -39,7 +40,7 @@
       </li>
       <li>
         <p>
-          <m>\mathcal{R}</m> is the circle of radius <m>R</m> centered at the origin.
+          <m>\mathcal{R}</m> is the disk <m>x^2+y^2\leq R^2</m> of radius <m>R</m> centered at the origin.
         </p>
       </li>
     </ol>
@@ -57,10 +58,32 @@
           </md> .
         </p>
       </li>
+      <li>
+        <p>
+          First we describe <m>\mathcal{R}</m> as a type-1 region:
+          <me>
+            \mathcal{R}=\{(x,y)\colon -R\leq x\leq R, -\sqrt{R-x^2}\leq y\leq \sqrt{R-x^2}\}
+          </me>.
+          Now compute
+          <md>
+            <mrow>\operatorname{area}\mathcal{R}  \amp= \iint\limits_{\mathcal{R}}1\, dA </mrow>
+            <mrow> \amp=\int_{-R}^R\int_{-\sqrt{R-x^2}}^{\sqrt{R-x^2}}1\, dy\, dx </mrow>
+            <mrow>  \amp = \int_{-R}^R2\sqrt{R-x^2}\, dx</mrow>
+            <mrow>  \amp = \int_{-\pi/2}^{\pi/2} 2\sqrt{R^2-R^2\sin^2\theta}\, R\cos\theta\, d\theta \amp (x=R\sin\theta, dx=R\cos\theta\, d\theta)</mrow>
+            <mrow>  \amp = 2R^2\int_{-\pi/2}^{\pi/2}\abs{\cos\theta}\cos\theta\, d\theta</mrow>
+            <mrow>  \amp =2R^2\int_{-\pi/2}^{\pi/2}\cos^2\theta\, d\theta \amp (\theta\in [0,\pi/2]\implies \cos\theta\geq 0)</mrow>
+            <mrow>  \amp =2R^2\int_{-\pi/2}^{\pi/2}\frac{1}{2](1+\cos 2\theta)}\, d\theta</mrow>
+            <mrow>  \amp =\pi R^2</mrow>
+          </md>.
+          We've just derived the familiar area formula for a disk of radius <m>R</m>!
+        </p>
+      </li>
     </ol>
   </solution>
 </example>
 <definition xml:id="d_average_value_planar">
+  <title>Average value</title>
+
   <idx><h>average value</h><h>planar region</h></idx>
   <notation>
     <usage><m>\operatorname{avg}_\mathcal{R}(f)</m></usage>
@@ -77,11 +100,35 @@
   </statement>
 </definition>
 <example xml:id="eg_average_value_planar">
+  <title>Average temperature over region</title>
   <statement>
     <p>
       The temperature <m>T</m> (in degrees Celsius) at a point <m>(x,y)</m> in the bounded region <m>\mathcal{R}</m> between the graphs of <m>y=1-x^2</m> and <m>y=x^2-1</m> is given by <m>T=f(x,y)=x^2+1</m>. Compute the average temperature over <m>\mathcal{R}</m>.
     </p>
   </statement>
-
+  <solution>
+    <p>
+      Observe that the curves <m>y=1-x^2</m> and <m>y=x^2-1</m> intersect at the points <m>(1,0)</m> and <m>(-1,0)</m>, and that we have <m>x^2-1\leq 1-x^2</m> for <m>x\in [-1,1]</m>. We describe <m>\mathcal{R}</m> as a type-1 region:
+      <me>
+        \mathcal{R}=\{(x,y)\colon -1\leq x\leq 1, x^2-1\leq y\leq 1-x^2
+      </me>.
+      First compute the area of <m>\mathcal{R}</m>:
+      <md>
+        <mrow>\operatorname{area}\mathcal{R} \amp=\iint\limits_{\mathcal{R}}1\, dA </mrow>
+        <mrow> \amp=\int_{-1}^1\int_{x^2-1}^{1-x^2}1\, dy\, dx </mrow>
+        <mrow>  \amp = \int_{-1}^12(1-x^2)\, dx</mrow>
+        <mrow>  \amp =\frac{8}{3}</mrow>
+      </md>.
+      Now compute
+      <md>
+        <mrow>\operatorname{avg}_{\mathcal{R}} T \amp=\frac{1}{\operatorname{area}\mathcal{R}}\iint\limits_{\mathcal{R}} x^2+1\, dA </mrow>
+        <mrow> \amp=\frac{3}{8}\int_{-1}^1\int_{x^2-1}^{1-x^2}x^2+1\, dy\, dx </mrow>
+        <mrow>  \amp = \frac{3}{8}\int_{-1}^12x^2(1-x^2)+2(1-x^2)\, dx</mrow>
+        <mrow>  \amp = \frac{3}{4}\int_{-1}^1 2(1-x^2)(1+x^2)\, dx</mrow>
+        <mrow>  \amp =\frac{3}{2}(x-\frac{1}{5}x^5)\Bigr\vert_{0}^1</mrow>
+        <mrow>  \amp = \frac{6}{5} \text{ degrees celcius}</mrow>
+      </md>.
+    </p>
+  </solution>
 </example>
 </section>

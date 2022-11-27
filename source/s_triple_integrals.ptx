@@ -52,21 +52,21 @@
   <idx><h>triple integral</h><h>bounded region</h></idx>
   <idx><h>integralable</h><h>over bounded solid region</h></idx>
   <notation>
-    <usage><m>\iiint\limits_\mathcal{D} f(x,y,z)\, dV</m></usage>
-    <description>double integral over region <m>\mathcal{D}</m></description>
+    <usage><m>\iiint\limits_D f(x,y,z)\, dV</m></usage>
+    <description>double integral over region <m>D</m></description>
   </notation>
   <title>Triple integral over bounded region</title>
   <statement>
     <p>
-      Let <m>f</m> be a function of three variables defined over the bounded region <m>\mathcal{D}\subseteq\R^3</m>. Let <m>B</m> be any box containing <m>\mathcal{D}</m> and let <m>f^*</m> be the function defined on the box <m>B</m> as follows:
+      Let <m>f</m> be a function of three variables defined over the bounded region <m>D\subseteq\R^3</m>. Let <m>B</m> be any box containing <m>D</m> and let <m>f^*</m> be the function defined on the box <m>B</m> as follows:
       <me>
-        f^*(x,y,z)=\begin{cases}f(x,y,z)\amp \text{if } (x,y,z)\in \mathcal{D}\\
-        0\amp \text{if } (x,y,z)\notin \mathcal{D}
+        f^*(x,y,z)=\begin{cases}f(x,y,z)\amp \text{if } (x,y,z)\in D\\
+        0\amp \text{if } (x,y,z)\notin D
       \end{cases}
       </me>.
-      The function <m>f</m> is <term>integrable</term> over <m>\mathcal{D}</m> if the function <m>f^*</m> is integrable over the box <m>B</m>, and in this case we define
+      The function <m>f</m> is <term>integrable</term> over <m>D</m> if the function <m>f^*</m> is integrable over the box <m>B</m>, and in this case we define
       <me>
-        \iiint\limits_\mathcal{D}f(x,y,z)\, dV=\iiint\limits_{B}f^*(x,y,z)\, dV
+        \iiint\limits_Df(x,y,z)\, dV=\iiint\limits_{B}f^*(x,y,z)\, dV
       </me>.
     </p>
   </statement>
@@ -97,7 +97,7 @@
             Assume we are integrating the constant function <m>f(x,y)=1</m> (<m>n=2</m>) or <m>f(x,y,z)=1</m> (<m>n=3</m>). Here the Riemann sums <xref ref="eq_Riemann_sums"/> can be understood as approximations of the area (<m>n=2</m>) or volume (<m>n=3</m>) of the region. We conclude
             <md>
               <mrow> \iint\limits_{\mathcal{R}}1\, dA\amp=\operatorname{area} \mathcal{R} \amp
-              \iiint\limits_\mathcal{D}1\, dV=\operatorname{vol} \mathcal{D} </mrow>
+              \iiint\limits_D1\, dV=\operatorname{vol} D </mrow>
             </md>
           </p>
         </li>
@@ -116,9 +116,9 @@
     <title>Volume of solid region</title>
     <statement>
       <p>
-        A bounded region <m>\mathcal{D}\subseteq \R^3</m> is <term>measurable</term> if the constant function <m>f(x,y,z)=1</m> is integrable over <m>\mathcal{D}</m>. In this case we define the <term>volume</term> of <m>\mathcal{D}</m> as
+        A bounded region <m>D\subseteq \R^3</m> is <term>measurable</term> if the constant function <m>f(x,y,z)=1</m> is integrable over <m>D</m>. In this case we define the <term>volume</term> of <m>D</m> as
         <men xml:id="eq_volume_triple">
-          \operatorname{vol}\mathcal{D}=\iiint\limits_\mathcal{D} 1 \, dV
+          \operatorname{vol}D=\iiint\limits_D 1 \, dV
         </men>.
       </p>
     </statement>
@@ -127,7 +127,7 @@
     <title>Elementary solid region</title>
     <statement>
       <p>
-        An <term>elementary solid region</term>  is a subset <m>\mathcal{D}\subseteq \R^3</m> of one of the following forms.
+        An <term>elementary solid region</term>  is a subset <m>D\subseteq \R^3</m> of one of the following forms.
         <ul>
           <li>
             <title>Type A</title>
@@ -168,7 +168,7 @@
   <title>Fubini's theorem over elementary solid regions</title>
   <statement>
     <p>
-    Assume <m>f</m> is continuous on the elementary region <m>\mathcal{D}\subseteq \R^3</m>.
+    Assume <m>f</m> is continuous on the elementary region <m>D\subseteq \R^3</m>.
     </p>
     <ul>
       <li>
@@ -180,7 +180,7 @@
           </m>,
           where <m>\mathcal{R}</m> is an elementary region of <m>\R^2</m>, then
           <men xml:id="eq_Fubini_A">
-            \iiint\limits_\mathcal{D}f(x,y,z)\, dV=\iint\limits_{\mathcal{R}}\left(\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\right)\, dA
+            \iiint\limits_Df(x,y,z)\, dV=\iint\limits_{\mathcal{R}}\left(\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\right)\, dA
           </men>.
         </p>
       </li>
@@ -193,7 +193,7 @@
           </m>,
           where <m>\mathcal{R}</m> is an elementary region of <m>\R^2</m>, then
           <men xml:id="eq_Fubini_B">
-            \iiint\limits_\mathcal{D}f(x,y,z)\, dV=\iint\limits_{\mathcal{R}}\left(\int_{q_1(y,z)}^{q_2(y,z)}f(x,y,z)\, dx\right)\, dA
+            \iiint\limits_Df(x,y,z)\, dV=\iint\limits_{\mathcal{R}}\left(\int_{q_1(y,z)}^{q_2(y,z)}f(x,y,z)\, dx\right)\, dA
           </men>.
         </p>
       </li>
@@ -206,7 +206,7 @@
           </m>,
           where <m>\mathcal{R}</m> is an elementary region of <m>\R^2</m>, then
           <men xml:id="eq_Fubini_C">
-            \iiint\limits_\mathcal{D}f(x,y,z)\, dV=\iint\limits_{\mathcal{R}}\left(\int_{r_1(x,z)}^{r_2(y,z)}f(x,y,z)\, dy\right)\, dA
+            \iiint\limits_Df(x,y,z)\, dV=\iint\limits_{\mathcal{R}}\left(\int_{r_1(x,z)}^{r_2(y,z)}f(x,y,z)\, dy\right)\, dA
           </men>.
         </p>
       </li>
@@ -224,24 +224,24 @@
   <title>Fubini's theorem expanded</title>
   <statement>
     <p>
-      Assume <m>f</m> is continuous on the elementary region <m>\mathcal{D}\subseteq\R^3</m>.
+      Assume <m>f</m> is continuous on the elementary region <m>D\subseteq\R^3</m>.
     </p>
     <ul>
       <li>
         <title>Type A1</title>
         <p>
-          If <m>\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq y\leq g_2(x), p_1(x,y)\leq z\leq p_2(x,y)\}</m>, then
+          If <m>D=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq y\leq g_2(x), p_1(x,y)\leq z\leq p_2(x,y)\}</m>, then
           <men xml:id="eq_Fubini_A1">
-            \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\, dy\, dx.
+            \iiint\limits_Df(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\, dy\, dx.
           </men>
         </p>
       </li>
       <li>
         <title>Type A2</title>
         <p>
-          If <m>\mathcal{D}=\{(x,y,z)\in \R^3, c\leq y\leq d, h_1(y)\leq x\leq h_2(y), p_1(x,y)\leq z\leq p_2(x,y)\}</m>, then
+          If <m>D=\{(x,y,z)\in \R^3, c\leq y\leq d, h_1(y)\leq x\leq h_2(y), p_1(x,y)\leq z\leq p_2(x,y)\}</m>, then
           <men xml:id="eq_Fubini_A2">
-            \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(y)}^{h_2(y)}\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\, dx\, dy.
+            \iiint\limits_Df(x,y,z)=\int_c^d\int_{h_1(y)}^{h_2(y)}\int_{p_1(x,y)}^{p_2(x,y)}f(x,y,z)\, dz\, dx\, dy.
           </men>
         </p>
       </li>
@@ -250,27 +250,27 @@
   <li>
     <title>Type B1</title>
     <p>
-      If <m>\mathcal{D}=\{(x,y,z)\in \R^3, a\leq y\leq b, g_1(y)\leq z\leq g_2(y),q_1(y,z)\leq x\leq q_2(y,z)\}</m>, then
+      If <m>D=\{(x,y,z)\in \R^3, a\leq y\leq b, g_1(y)\leq z\leq g_2(y),q_1(y,z)\leq x\leq q_2(y,z)\}</m>, then
       <men xml:id="eq_Fubini_B1">
-        \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(y)}^{g_2(y)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.
+        \iiint\limits_Df(x,y,z)=\int_a^b\int_{g_1(y)}^{g_2(y)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.
       </men>
     </p>
   </li>
   <li>
     <title>Type B2</title>
     <p>
-      If <m>\mathcal{D}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq y\leq h_2(z), q_1(y,z)\leq x\leq q_2(y,z)\}</m>, then
+      If <m>D=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq y\leq h_2(z), q_1(y,z)\leq x\leq q_2(y,z)\}</m>, then
       <men xml:id="eq_Fubini_B2">
-        \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.
+        \iiint\limits_Df(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.
       </men>
     </p>
   </li>
   <li>
     <title>Type C1</title>
     <p>
-      If <m>\mathcal{D}=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq z\leq g_2(x), r_1(x,z)\leq y\leq r_2(y,z)\}</m>, then
+      If <m>D=\{(x,y,z)\in \R^3, a\leq x\leq b, g_1(x)\leq z\leq g_2(x), r_1(x,z)\leq y\leq r_2(y,z)\}</m>, then
       <men xml:id="eq_Fubini_C1">
-        \iiint\limits_\mathcal{D}f(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.
+        \iiint\limits_Df(x,y,z)=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dz\, dy.
       </men>
     </p>
   </li>
@@ -279,7 +279,7 @@
     <p>
       If <m>\mathcal{R}=\{(x,y,z)\in \R^3, c\leq z\leq d, h_1(z)\leq x\leq h_2(z), r_1(x,z)\leq y\leq r_2(y,z)\}</m>, then
       <men xml:id="eq_Fubini_C2">
-        \iiint\limits_\mathcal{D}f(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.
+        \iiint\limits_Df(x,y,z)=\int_c^d\int_{h_1(z)}^{h_2(z)}\int_{p_1(y,z)}^{p_2(y,z)}f(x,y,z)\, dx\, dy\, dz.
       </men>
     </p>
   </li>
@@ -308,74 +308,216 @@
   <title>Triple integral over a box</title>
   <statement>
     <p>
-      Compute the integral of <m>f(x,y,z)=xz^2\sin(\pi xyz)</m> over the box <m>B=[0,1]\times [0,1]\times [0,1]</m>.
+      Compute the integral of <m>f(x,y,z)=xz\sin(\pi x^2yz)</m> over the box <m>B=[0,1]\times [0,1]\times [0,1]</m>.
     </p>
   </statement>
+  <solution>
+    <p>
+      Making full use of Fubini's theorem we use the sequence of integration <m>dy\, dx\, dz</m>We have
+      <md>
+        <mrow>\iiint\limits_B f(x,y,z)\, dV \amp=\int_0^1\int_0^1\int_0^1xz\sin(\pi x^2yz)\, dy\, dx\, dz</mrow>
+        <mrow> \amp= \int_0^1\int_0^1-\frac{1}{\pi}xz(\cos(\pi xz) </mrow>
+      </md>
+    </p>
+  </solution>
 </example>
 <example xml:id="eg_volume_tetrahedron">
   <title>Volume of tetrahedron</title>
   <statement>
     <p>
-      Let <m>\mathcal{D}</m> be the tetrahedron with vertices <m>(0,0,0), (0,1,0), (1,1,0), (0,1,1) </m>.
+      Let <m>D</m> be the tetrahedron with vertices <m>(0,0,0), (0,1,0), (1,1,0), (0,1,1) </m>.
     </p>
     <ol>
       <li>
         <p>
-          Set up three separate integrals, of type A, B, and C, that compute the volume of <m>\mathcal{D}</m>.
+          Set up three separate integrals, of type A, B, and C, that compute the volume of <m>D</m>.
         </p>
       </li>
       <li>
         <p>
-          Compute the volume of <m>\mathcal{D}</m> using one of the integrals above.
+          Compute the volume of <m>D</m> using one of the integrals above.
         </p>
       </li>
     </ol>
   </statement>
-  <!-- <solution>
+  <solution>
+    <case>
+     <title>Type A</title>
     <p>
-
+      The projection of <m>D</m> onto the <m>xy</m>-plane is just its bottom face:
+      <me>
+        \mathcal{R}=\{(x,y,0)\colon 0\leq x\leq 1, x\leq y\leq 1\}
+      </me>.
+      The top part of the tetrahedron lies in the plane containing <m>(0,1,1),(1,1,0),(0,0,0)</m>, which has defining equation <m>x-y+z=0</m>, or <m>z=y-x</m>. Thus we can describe <m>D</m> as a type-A region as
+      <me>
+        D=\{(x,y,z)\colon 0\leq x\leq 1, x\leq y\leq 1, 0\leq z\leq y-x
+      </me>,
+      and the corresponding volume iterated integral is
+      <me>
+        \operatorname{vol} D=\int_0^1\int_x^{1}\int_0^{y-x}1\, dz\, dy\, dx
+      </me>.
     </p>
-  </solution> -->
+    </case>
+    <case>
+     <title>Type B</title>
+     <p>
+       The projection of <m>D</m> onto the <m>yz</m>-plane is just its left vertical face:
+       <me>
+         \mathcal{R}=\{(0,y,z)\colon 0\leq y\leq 1, 0\leq z\leq y\}
+       </me>.
+       Starting with a point <m>(0,y,z)</m> in this projection and moving in the positive <m>x</m>-direction, we see that we lie within <m>D</m> until hitting its oblique plane at <m>x=y-z</m>. Thus we can describe <m>D</m> as a type-B region as
+       <me>
+         D=\{(x,y,z)\colon 0\leq y\leq 1, 0\leq z\leq x, 0\leq x\leq y-z
+       </me>,
+       and the corresponding volume iterated integral is
+       <me>
+         \operatorname{vol} D=\int_0^1\int_0^{y}\int_0^{y-z}1\, dx\, dz\, dy
+       </me>.
+     </p>
+    </case>
+    <case>
+     <title>Type C</title>
+    <p>
+    I claim the projection of <m>D</m> onto the <m>xz</m>-plane is
+    <me>
+      \mathcal{R}=\{(x,0,z)\colon 0\leq x\leq 1, 0\leq z\leq 1-x\}
+    </me>.
+    Indeed, the back face of <m>D</m> is the triangular region
+    <me>
+      \{(x,1,z)\colon 0\leq x\leq 1, 0\leq z\leq 1-x\}
+    </me>,
+    which projects onto <m>\mathcal{R}</m>. It is also clear that this is the <q>widest</q> section of <m>D</m> in terms of casting a shadow onto the <m>xz</m>-plane, and hence that the projection is no bigger than <m>\mathcal{R}</m>. Next, given a point <m>(x,0,z)\in \mathcal{R}</m>, as we move in the <m>y</m> direction we do not enter the tetrahedron until we hit the oblique plane at <m>y=x+z</m>, and we stay within the tetrahedron until we hit its back wall at <m>y=1</m>. Thus we can describe <m>D</m> as a type-C region as
+    <me>
+      D=\{(x,y,z)\colon 0\leq x\leq 1, 0\leq z\leq 1-x,x+z\leq y\leq 1\}
+    </me>,
+    and the corresponding volume integral is
+    <me>
+      \operatorname{vol} D=\int_0^1\int_0^{1-x}\int_{x+z}^1 1\, dy\, dz\, dx
+    </me>.
+    </p>
+    </case>
+    All these integrals evaluate to <m>1/6</m>, the volume of <m>D</m>.
+  </solution>
 </example>
 <example xml:id="eg_volume_slice_para_cyl">
   <title>Volume of slice of parabolic cylinder</title>
   <statement>
     <p>
-      Let <m>\mathcal{D}\subseteq\R^3</m> be the region bounded by the parabolic cylinder <m>x=y^2</m>, the plane <m>x+z=1</m>, and the <m>xy</m>-plane.
+      Let <m>D\subseteq\R^3</m> be the region bounded by the parabolic cylinder <m>x=y^2</m>, the plane <m>x+z=1</m>, and the <m>xy</m>-plane.
     </p>
+    <ol>
+      <li>
+        <p>
+          Set up two integrals, of type A and B, that compute the volume of <m>D</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute the volume of <m>D</m> using one of the integrals above.
+        </p>
+      </li>
+    </ol>
   </statement>
-  <ol>
-    <li>
-      <p>
-        Set up three separate integrals, of type A, B, and C, that compute the volume of <m>\mathcal{D}</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Compute the volume of <m>\mathcal{D}</m> using one of the integrals above.
-      </p>
-    </li>
-  </ol>
-  <!-- <solution>
+  <solution>
     <p>
-
+      Evaluate the Sage cell below to see a graph of the three surfaces delimiting the region <m>D</m>.
     </p>
-  </solution> -->
+      <sage>
+      <input>
+        from sage.plot.plot3d.plot3d import axes
+  var('x y z t')
+  s1=implicit_plot3d(y^2-x, (x,-1,1),(y,-1,1),(z,0,1),color='blue', opacity=.3)
+  s2=implicit_plot3d(x+z==1,(x,-1,1),(y,-1,1),(z,0,1),color='red',opacity=.5)
+  s3=implicit_plot3d(z,(x,-1,1),(y,-1,1),(z,-1/2,1),color='green')
+  C=parametric_plot3d([t^2,t,1-t^2],(t,-1,1),color='blue', thickness=3)
+  s1+s2+s3+C+axes(1,.5, color='black')
+      </input>
+      <output>
+
+      </output>
+      </sage>
+      <case>
+       <title>Type A</title>
+      <p>
+        The given description of <m>D</m> is basically already a type-A one:
+        <me>
+          D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq z\leq 1-x\}
+        </me>.
+        Thus
+        <md>
+          <mrow>\operatorname{vol} D \amp =\iiint\limits_{D} 1\, dV </mrow>
+          <mrow> \amp= \int_{-1}^1\int_{y^2}^1\int_0^{1-x}1\, dz\, dx\, dy </mrow>
+          <mrow>  \amp = \int_{-1}^1\int_{y^2}^11-x\, dx\, dy</mrow>
+          <mrow>  \amp = \frac{1}{2}\int_{-1}^1(1-y^2)^2\, dy</mrow>
+          <mrow>  \amp = \int_0^1 1-2y^2+y^4\, dy \amp (\text{even function})</mrow>
+          <mrow>  \amp = 1-2/3+1/5=8/15</mrow>
+        </md>.
+      </p>
+      </case>
+      <case>
+       <title>Type B</title>
+      <p>
+        The type-B description of <m>D</m> is somewhat trickier, as we must first identify the projection of <m>D</m> onto the <m>yz</m>-plane. Since all points <m>(x,y,z)\in D</m> satisfy <m>y^2\leq x</m> and <m>x\leq 1-z</m>,
+        we conclude that <m>y^2\leq 1-z</m> for all <m>(x,y,z)\in D</m>, and hence the projection onto the <m>yz</m>-plane lies within the set
+        <me>
+          \mathcal{R}=\{(0,y,z)\colon -1\leq y\leq 1, y^2\leq 1-z\}=\{(0,y,z)\colon -1\leq y\leq 1, 0\leq z\leq 1-y^2\}
+        </me>.
+        To see that the projection is in fact <em>all</em> of <m>\mathcal{R}</m>, notice that for any <m>z\leq 1-y^2</m> the point <m>(y^2,y,z)</m> lies above the the curve <m>x=y^2</m> and below the plane <m>x+z=1</m>, and hence is an element of <m>D</m>. Thus any point <m>(0,y,z)\in \mathcal{R}</m> is the projection of the point <m>(y^2,y,z)\in D</m>. Finally, for any point <m>(0,y,z)\in \mathcal{R}</m>, as we move in the <m>x</m>-direction we enter <m>D</m> at the cylinder <m>x=y^2</m> and exit <m>D</m> at the plane <m>x=1-z</m>. This yields the type-B description
+        <me>
+          D=\{(x,y,z)\colon -1\leq y\leq 1,0\leq z\leq 1-y^2, y^2\leq x\leq 1\}
+        </me>.
+        Verify for yourself that the volume computation
+        <me>
+          \operatorname{vol} D=\int_{-1}^1\int_0^{1-y^2}\int_{y^2}^11\, dx\, dz\, dy
+        </me>
+        yields <m>8/15</m>, just as above.
+      </p>
+      </case>
+  </solution>
 </example>
 <example>
   <title>Region from iterated integral</title>
   <statement>
     <p>
-      Sketch the region <m>\mathcal{D}\subseteq \R^3</m> whose volume is computed by the iterated integral
+      Sketch the region <m>D\subseteq \R^3</m> whose volume is computed by the iterated integral
       <me>\int_0^1\, \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\, \int_2^{3-y^2-z^2}1\, dx\, dz\, dy
       </me>.
     </p>
   </statement>
-  <!-- <solution>
+  <solution>
     <p>
-
+      The iterated integral corresponds to the type-B description of the region
+      <me>
+        D=\{(x,y,z)\colon 0\leq y\leq 1, -\sqrt{1-y^2}\leq z\leq \sqrt{1-y^2}, 2\leq x\leq 3-y^2-z^2\}
+      </me>.
+      The projection of <m>D</m> onto the <m>yz</m>-plane is the right half of the unit disc
+      <me>
+        y^2+z^2\leq 1, x=0
+      </me>.
+      The equation <m>x=3-y^2-z^2</m> defines a paraboloid that extends in the negative <m>x</m>-direction from the vertex <m>(3,0,0)</m>. Its intersection with the plane <m>x=2</m> is the circle
+      <me>
+        1=y^2+z^2
+      </me>.
+      We conclude <m>D</m> consists of all points <m>(x,y,z)</m> satisfying
+      <md>
+      <mrow>2\amp \leq x\leq 3-y^2-z^2 </mrow>
+      <mrow>  0 \amp\leq y </mrow>
+      </md>.
+      Evaluate the Sage cell below for a graph.
     </p>
-  </solution> -->
+    <sage>
+    <input>
+  from sage.plot.plot3d.plot3d import axes
+  var('x y z t')
+  p1=implicit_plot3d(x==3-y^2-z^2, (x,2,3),(y,-1.5,1.5),(z,-1.5,1.5),color='red',region=lambda x,y,z: y &gt;= 0 and y^2+z^2&lt;= 1)
+  p2=parametric_plot3d([0,x*cos(y),x*sin(y)], (x,0,1),(y,-pi/2,pi/2),color='green')
+  p1+p2+axes(1,.5,color='black')
+    </input>
+    <output>
+
+    </output>
+    </sage>
+  </solution>
 </example>
 
 <p>
@@ -385,7 +527,7 @@
   <title>Properties of triple integrals</title>
   <statement>
     <p>
-      Assume <m>f</m> and <m>g</m> are integrable over the bounded solid regions <m>\mathcal{D}, <m>\mathcal{D}_1</m>, <m>\mathcal{D}_2</m></m>.
+      Assume <m>f</m> and <m>g</m> are integrable over the bounded solid regions <m>D, <m>D_1</m>, <m>D_2</m></m>.
     </p>
     <ol>
       <li>
@@ -393,8 +535,8 @@
         <p>
           Given any constants <m>c,d\in \R</m>, we have
           <me>
-            \iiint\limits_\mathcal{D}cf(x,y,z)+dg(x,y,z)\, dV=
-            c  \iiint\limits_\mathcal{D}f(x,y,z)\, dV+d  \iiint\limits_\mathcal{D}g(x,y,z)\, dV
+            \iiint\limits_Dcf(x,y,z)+dg(x,y,z)\, dV=
+            c  \iiint\limits_Df(x,y,z)\, dV+d  \iiint\limits_Dg(x,y,z)\, dV
           </me>
         </p>
       </li>
@@ -403,12 +545,12 @@
         <ol>
           <li>
             <p>
-              If <m>f\geq 0</m> on <m>\mathcal{D}</m>, then <m>\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq 0</m>
+              If <m>f\geq 0</m> on <m>D</m>, then <m>\iiint\limits_Df(x,y,z)\, dV\geq 0</m>
             </p>
           </li>
           <li>
             <p>
-              If <m>f\geq g</m> on <m>\mathcal{D}</m>, then <m>\iiint\limits_\mathcal{D}f(x,y,z)\, dV\geq \iiint\limits_{\mathcal{D}}g(x,y,z)\, dV</m>.
+              If <m>f\geq g</m> on <m>D</m>, then <m>\iiint\limits_Df(x,y,z)\, dV\geq \iiint\limits_{D}g(x,y,z)\, dV</m>.
             </p>
           </li>
         </ol>
@@ -416,9 +558,9 @@
       <li>
         <title>Additivity</title>
         <p>
-          If <m>\mathcal{D}=\mathcal{D}_1\cup \mathcal{D}_2</m>, where <m>\mathcal{D}_1</m> and <m>\mathcal{D}_2</m> are non-overlapping, then
+          If <m>D=D_1\cup D_2</m>, where <m>D_1</m> and <m>D_2</m> are non-overlapping, then
           <me>
-            \iiint\limits_{\mathcal{D}}f(x,y,z)\, dV=\iiint\limits_{\mathcal{D}_1}f(x,y,z)\, dV+\iiint\limits_{\mathcal{D}_2}f(x,y,z)\, dV
+            \iiint\limits_{D}f(x,y,z)\, dV=\iiint\limits_{D_1}f(x,y,z)\, dV+\iiint\limits_{D_2}f(x,y,z)\, dV
           </me>.
         </p>
       </li>
@@ -427,8 +569,8 @@
         <p>
           The function <m>\abs{f}</m> is integrable, and we have
           <me>
-            \left\vert \iiint\limits_\mathcal{D}f(x,y,z)\, dV\right\vert\leq
-            \iiint\limits_\mathcal{D}\vert f(x,y,z)\vert \, dV
+            \left\vert \iiint\limits_Df(x,y,z)\, dV\right\vert\leq
+            \iiint\limits_D\vert f(x,y,z)\vert \, dV
           </me>.
         </p>
       </li>
@@ -444,9 +586,9 @@
   <title>Average value over solid region</title>
   <statement>
     <p>
-      Assume <m>f</m> is integrable over the measurable solid region <m>\mathcal{D}\subseteq \R^3</m>. The <term>average value</term> of <m>f</m> over <m>\mathcal{D}</m>, denoted <m>\operatorname{avg}_\mathcal{D}(f)</m>, is defined as
+      Assume <m>f</m> is integrable over the measurable solid region <m>D\subseteq \R^3</m>. The <term>average value</term> of <m>f</m> over <m>D</m>, denoted <m>\operatorname{avg}_D(f)</m>, is defined as
       <men xml:id="eq_average_value_solid">
-        \operatorname{avg}_\mathcal{D}(f)=\frac{1}{\operatorname{vol} \mathcal{D}}\iiint\limits_\mathcal{D}f(x,y,z)\, dV
+        \operatorname{avg}_D(f)=\frac{1}{\operatorname{vol} D}\iiint\limits_Df(x,y,z)\, dV
       </men>.
     </p>
   </statement>
@@ -473,7 +615,7 @@
 <project xml:id="sage_triple_integral_elementary">
   <title>Iterated integrals over solid regions</title>
   <p>
-    Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <xref ref="eg_volume_slice_para_cyl"/>, where we needed to compute <m>\iiint\limits_\mathcal{D}1\, dV</m>. The hard part was coming up with a suitable description of <m>\mathcal{D}</m>: <eg />,
+    Sage allows us to easily integrate over elementary regions via iterated integrals. As usual, the hard part is identifying the correct iterated integral to compute; Sage can then do the rest. Consider <xref ref="eg_volume_slice_para_cyl"/>, where we needed to compute <m>\iiint\limits_D1\, dV</m>. The hard part was coming up with a suitable description of <m>D</m>: <eg />,
     <me>
       D=\{(x,y,z)\colon -1\leq y\leq 1, y^2\leq x\leq 1, 0\leq 0\leq 1-x\}
     </me>.
