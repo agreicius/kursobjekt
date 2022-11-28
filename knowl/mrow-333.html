@@ -13,10 +13,13 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr\colon \mathcal{R} \amp\rightarrow \R^3  \\
-(u,v) \amp\mapsto (f_1(u,v),f_2(u,v),f_3(u,v)) 
+\int_\mathcal{C}\boldF\cdot d\boldr   \amp = \int_a^b\boldF(\boldr(t))\boldr'(t)\, dt \\
+\amp= \int_a^b \nabla f(\boldr(t))\cdot \boldr'(t)\, dt \\
+\amp = \int_a^b (f(\boldr(t))'\, dt \amp \text{(chain rule)}\\
+\amp = f(\boldr(b))-f(\boldr(a)) \amp \text{(FTC)}\\
+\amp =f(Q)-f(P)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_area.html#md-93" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-84" class="internal">in-context</a></span>
 </body>
 </html>

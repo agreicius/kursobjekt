@@ -14,6 +14,24 @@
 <article class="li"><h5 class="heading">
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
-<p><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p></article><span class="incontext"><a href="s_multiple_integrals_applications.html#li-98" class="internal">in-context</a></span>
+<p>We compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+M \amp = \iint\limits_T x+y\, dA \\
+\amp=\int_0^1\int_0^{1-x}x+y\, dy\, dx \\
+\amp =\int_0^1x(1-x)+\frac{1}{2}(1-x)^2\, dx\\
+\amp = \frac{1}{3}\\
+M_y  \amp =\iint\limits_T x(x+y)\, dA\\
+\amp = \int_0^1\int_0^{1-x}x^2+xy\, dy\, dx\\
+\amp = \int_0^1x^2(1-x)+\frac{1}{2}x(1-x)^2\, dx\\
+\amp = \frac{1}{8}\\
+M_x \amp = \iint\limits_T y(x+y)\, dA \\
+\amp =\int_0^1\int_0^{1-y}xy+y^2\, dx\, dy\\
+\amp =\frac{1}{8}\\
+(\overline{x},\overline{y}) \amp=(M_y/M, M_x/M) \\
+\amp = (3/8, 3/8)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Again, it is no surprise that the center of mass lies along the line <span class="process-math">\(y=x\text{,}\)</span> since both <span class="process-math">\(T\)</span> and the density function <span class="process-math">\(\delta(x,y)=x+y\)</span> are symmetric with respect to this line. In contrast to the previous computation, the center of mass is further from the origin. This makes sense in terms of our “balancing point” interpretation of center of mass: in this case the greater amount of mass in the upper right of the triangle moves the balancing point up and to the right.</p></article><span class="incontext"><a href="s_multiple_integrals_applications.html#li-98" class="internal">in-context</a></span>
 </body>
 </html>

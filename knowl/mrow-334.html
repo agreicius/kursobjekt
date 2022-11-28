@@ -11,12 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
 \begin{align*}
-\boldr\colon [0,\pi]\times [0,2\pi] \amp \rightarrow \R^3\\
-(\phi, \theta) \amp\mapsto (R\sin\phi\cos\theta, R\sin\phi\sin\theta,R\cos\phi) 
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
+\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
+\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
+\amp = 2\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_area.html#md-94" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-85" class="internal">in-context</a></span>
 </body>
 </html>

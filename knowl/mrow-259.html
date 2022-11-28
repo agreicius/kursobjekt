@@ -11,14 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_1(t) \amp= (1-t)P+tQ, \ 0\leq t\leq 1 \\
-\amp =(1,1+t,2t) \\
-\boldr_2(t)\amp= (1-t)Q+tR, \ 0\leq t\leq 1 \\
-\amp =(1+t,2,2+3t) 
+M \amp = \iint\limits_T x+y\, dA \\
+\amp=\int_0^1\int_0^{1-x}x+y\, dy\, dx \\
+\amp =\int_0^1x(1-x)+\frac{1}{2}(1-x)^2\, dx\\
+\amp = \frac{1}{3}\\
+M_y  \amp =\iint\limits_T x(x+y)\, dA\\
+\amp = \int_0^1\int_0^{1-x}x^2+xy\, dy\, dx\\
+\amp = \int_0^1x^2(1-x)+\frac{1}{2}x(1-x)^2\, dx\\
+\amp = \frac{1}{8}\\
+M_x \amp = \iint\limits_T y(x+y)\, dA \\
+\amp =\int_0^1\int_0^{1-y}xy+y^2\, dx\, dy\\
+\amp =\frac{1}{8}\\
+(\overline{x},\overline{y}) \amp=(M_y/M, M_x/M) \\
+\amp = (3/8, 3/8)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_line_integal_scalar.html#md-73" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_multiple_integrals_applications.html#md-67" class="internal">in-context</a></span>
 </body>
 </html>

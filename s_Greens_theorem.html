@@ -245,7 +245,7 @@ window.MathJax = {
 <article class="theorem theorem-like" id="th_Greens"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Green's theorem (circulation or tangential form).</span>
 </h4>
-<p id="p-407">Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> then</p>
+<p id="p-409">Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Greens_thm_tangent">
 \begin{equation}
 \underset{\operatorname{curl integral}}{\underbrace{\iint_\mathcal{R} \left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y} \right)\, dA}}=\underset{\operatorname{circulation}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldT\,  ds}}=\oint_\mathcal{C}F_1\, dx+F_2\, dy\text{.}\tag{2.4.1}
@@ -253,13 +253,13 @@ window.MathJax = {
 </div></article><article class="example example-like" id="example-44"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
 </h4>
-<p id="p-408">Use Green's theorem to Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\text{,}\)</span> where <span class="process-math">\(\boldF=\angvec{y^2, 3xy}\)</span> and <span class="process-math">\(\mathcal{C}\)</span> is the simple positively oriented curve obtained by joining the line segment from <span class="process-math">\((-1,0)\)</span> to <span class="process-math">\((1,0)\)</span> the the upper half of the circle <span class="process-math">\(x^2+y^2=1\text{.}\)</span></p>
+<p id="p-410">Use Green's theorem to Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\text{,}\)</span> where <span class="process-math">\(\boldF=\angvec{y^2, 3xy}\)</span> and <span class="process-math">\(\mathcal{C}\)</span> is the simple positively oriented curve obtained by joining the line segment from <span class="process-math">\((-1,0)\)</span> to <span class="process-math">\((1,0)\)</span> the the upper half of the circle <span class="process-math">\(x^2+y^2=1\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><p id="p-409"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><p id="p-411"></p></div></div>
 </div></article><article class="definition definition-like" id="d_scalar_curl"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar curl.</span>
 </h4>
-<p id="p-410">Assume the component functions of the vector field <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have first-order partial derivatives on a domain <span class="process-math">\(D\text{.}\)</span> The <dfn class="terminology">scalar curl</dfn> (or <dfn class="terminology"><span class="process-math">\(k\)</span> component of curl</dfn> or <dfn class="terminology">circulation density</dfn>) of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\((\curl \boldF)\cdot \boldk\text{,}\)</span> is defined as</p>
+<p id="p-412">Assume the component functions of the vector field <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have first-order partial derivatives on a domain <span class="process-math">\(D\text{.}\)</span> The <dfn class="terminology">scalar curl</dfn> (or <dfn class="terminology"><span class="process-math">\(k\)</span> component of curl</dfn> or <dfn class="terminology">circulation density</dfn>) of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\((\curl \boldF)\cdot \boldk\text{,}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 (\curl \boldF\cdot \boldk)=  \frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\text{.}
@@ -274,7 +274,7 @@ window.MathJax = {
 <p class="continuation">for all <span class="process-math">\((x,y)\in D\text{.}\)</span></p></article><article class="corollary theorem-like" id="cor_Greens_theorem"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Area via line integral.</span>
 </h4>
-<p id="p-411">Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> and if <span class="process-math">\(\boldF\)</span> satisfies</p>
+<p id="p-413">Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> and if <span class="process-math">\(\boldF\)</span> satisfies</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}=1\text{,}
@@ -289,13 +289,13 @@ window.MathJax = {
 <p class="continuation">A typical example of such a vector field is <span class="process-math">\(\boldF=\frac{1}{2}\angvec{-y,x}\text{.}\)</span></p></article><article class="example example-like" id="example-45"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
 </h4>
-<p id="p-412">Use <a href="" class="xref" data-knowl="./knowl/cor_Greens_theorem.html" title="Corollary 2.4.4: Area via line integral">Corollary 2.4.4</a> to compute the area of the astroid curve <span class="process-math">\(\mathcal{C}\colon x^{2/3}+y^{2/3}=4\)</span> with parametrization <span class="process-math">\(\boldr(t)=\angvec{8\cos^3 t,8\sin^3 t}\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/astroid.png" class="contained"></div></p>
+<p id="p-414">Use <a href="" class="xref" data-knowl="./knowl/cor_Greens_theorem.html" title="Corollary 2.4.4: Area via line integral">Corollary 2.4.4</a> to compute the area of the astroid curve <span class="process-math">\(\mathcal{C}\colon x^{2/3}+y^{2/3}=4\)</span> with parametrization <span class="process-math">\(\boldr(t)=\angvec{8\cos^3 t,8\sin^3 t}\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/astroid.png" class="contained"></div></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><p id="p-413"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><p id="p-415"></p></div></div>
 </div></article><article class="theorem theorem-like" id="th_Greens_theorem__curl_interpretation"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar curl interpretation.</span>
 </h4>
-<p id="p-414">If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y)\text{,}\)</span> then</p>
+<p id="p-416">If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y)\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Greens_theorem_interpretation">
 \begin{equation}
 (\curl\boldF)\cdot \boldk (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldT\, ds\text{,}\tag{2.4.2}
@@ -304,7 +304,7 @@ window.MathJax = {
 <p class="continuation">where <span class="process-math">\(C_R\)</span> is the simple positively oriented circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\text{.}\)</span></p></article><article class="remark remark-like" id="rm_Greens_theorem_interpretation"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar curl interpretation.</span>
 </h4>
-<p id="p-415">From the limit expression <a href="" class="xref" data-knowl="./knowl/eq_Greens_theorem_interpretation.html" title="Equation 2.4.2">(2.4.2)</a> we extract the valuable approximation formula</p>
+<p id="p-417">From the limit expression <a href="" class="xref" data-knowl="./knowl/eq_Greens_theorem_interpretation.html" title="Equation 2.4.2">(2.4.2)</a> we extract the valuable approximation formula</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_Greens_theorem_interpretation.html">
 \begin{equation*}
 (\curl\boldF)\cdot \boldk\,  (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)\approx \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot\boldT\, ds\text{.}
@@ -322,7 +322,7 @@ window.MathJax = {
 <article class="corollary theorem-like" id="cor_Greens_normal"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Green's theorem (flux or normal form).</span>
 </h4>
-<p id="p-416">Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> then</p>
+<p id="p-418">Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Greens_thm_normal">
 \begin{equation}
 \underset{\text{divergence integral}}{\underbrace{\iint_\mathcal{R} \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\, dA}}=\underset{\operatorname{outward flux}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldn\,  ds}}=\oint_\mathcal{C}-F_2\, dx+F_1\, dy\text{.}\tag{2.4.3}
@@ -331,7 +331,7 @@ window.MathJax = {
 <p class="continuation">Here <span class="process-math">\(\boldn\)</span> is understood to be the outward unit normal vector to <span class="process-math">\(\mathcal{C}\text{.}\)</span></p></article><article class="definition definition-like" id="d_divergence"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence.</span>
 </h4>
-<p id="p-417">Assume the component functions of the vector field <span class="process-math">\(\boldF=\angvec{F_1, F_2,\dots, F_n}\)</span> have first-order partial derivatives on a domain <span class="process-math">\(D\subseteq \R^n\text{.}\)</span> The <dfn class="terminology">divergence</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\diver \boldF\)</span> or <span class="process-math">\(\nabla\cdot \boldF\text{,}\)</span> is defined as</p>
+<p id="p-419">Assume the component functions of the vector field <span class="process-math">\(\boldF=\angvec{F_1, F_2,\dots, F_n}\)</span> have first-order partial derivatives on a domain <span class="process-math">\(D\subseteq \R^n\text{.}\)</span> The <dfn class="terminology">divergence</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\diver \boldF\)</span> or <span class="process-math">\(\nabla\cdot \boldF\text{,}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \nabla \cdot \boldF= \frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}+\cdots +\frac{\partial F_n}{\partial x_n}\text{.}
@@ -346,13 +346,13 @@ window.MathJax = {
 <p class="continuation">for all <span class="process-math">\(((x_1,x_2,\dots, x_n)\in D\text{.}\)</span></p></article><article class="example example-like" id="example-46"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span>
 </h4>
-<p id="p-418">Compute the outward flux of <span class="process-math">\(\boldF(x,y)=\angvec{2e^{xy},y^3}\)</span> across the square bounded by the lines <span class="process-math">\(x=\pm 1\text{,}\)</span> <span class="process-math">\(y=\pm 1\text{.}\)</span></p>
+<p id="p-420">Compute the outward flux of <span class="process-math">\(\boldF(x,y)=\angvec{2e^{xy},y^3}\)</span> across the square bounded by the lines <span class="process-math">\(x=\pm 1\text{,}\)</span> <span class="process-math">\(y=\pm 1\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><p id="p-419"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><p id="p-421"></p></div></div>
 </div></article><article class="theorem theorem-like" id="th_Greens_theorem_div_interpretation"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence interpretation.</span>
 </h4>
-<p id="p-420">If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y)\text{,}\)</span> then</p>
+<p id="p-422">If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y)\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Greens_theorem_normal_interpretation">
 \begin{equation}
 \nabla\cdot \boldF (x,y)=\frac{\partial F_1}{\partial x}(x,y)+\frac{\partial F_2}{\partial y}(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldn\, ds\text{,}\tag{2.4.4}
@@ -361,7 +361,7 @@ window.MathJax = {
 <p class="continuation">where <span class="process-math">\(C_R\)</span> is the simple positively oriented circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\text{,}\)</span> and <span class="process-math">\(\boldn\)</span> is the unit outward normal vector to <span class="process-math">\(C_R\text{.}\)</span></p></article><article class="remark remark-like" id="rm_Greens_theorem__normal_interpretation"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence interpretation.</span>
 </h4>
-<p id="p-421">From the limit expression <a href="" class="xref" data-knowl="./knowl/eq_Greens_theorem_normal_interpretation.html" title="Equation 2.4.4">(2.4.4)</a> we extract the valuable approximation formula</p>
+<p id="p-423">From the limit expression <a href="" class="xref" data-knowl="./knowl/eq_Greens_theorem_normal_interpretation.html" title="Equation 2.4.4">(2.4.4)</a> we extract the valuable approximation formula</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_Greens_theorem_normal_interpretation.html ./knowl/cor_Greens_normal.html">
 \begin{equation*}
 \nabla\cdot \boldF (x,y)=\left(\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\right)(x,y)\approx \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot\boldn\, ds\text{.}
@@ -376,24 +376,24 @@ window.MathJax = {
 <p class="continuation">whose units are of the form unit flux per unit area. This allows us to understand the divergence at <span class="process-math">\(P\)</span> to be a measure of how the fluid flows out from or in toward <span class="process-math">\(P\text{.}\)</span> Even more concretely, if <span class="process-math">\(\nabla \cdot \boldF(x,y)=0\)</span> for all <span class="process-math">\((x,y)\text{,}\)</span> then it follows from <a href="" class="xref" data-knowl="./knowl/cor_Greens_normal.html" title="Corollary 2.4.8: Green's theorem (flux or normal form)">Corollary 2.4.8</a> that the flux through any closed curve around <span class="process-math">\(P=(x,y)=0\text{.}\)</span> Thus a fluid's being incompressible (<span class="process-math">\(\nabla\cdot \boldF=0\)</span>) means that whatever amount of fluid enters a given enclosed region is equal to the amount that leaves it. In fluid dynamics this is sometimes described as there being no <em class="emphasis">sources</em> or <em class="emphasis">sinks</em> in the region.</p></article><article class="example example-like" id="example-47"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.13</span><span class="period">.</span>
 </h4>
-<p id="p-422">The vector field diagram is provided for each <span class="process-math">\(\boldF\)</span> below. Using our interpretations of curl and divergence, try your best to visually identify points <span class="process-math">\(P\)</span> where <span class="process-math">\((\curl F)\cdot\boldk(P)=0\)</span> and/or <span class="process-math">\(\nabla\cdot \boldF(P)=0\text{.}\)</span> Confirm your answers by computing <span class="process-math">\((\curl F)\cdot\boldk\)</span> and <span class="process-math">\(\nabla\cdot \boldF\)</span> algebraically. Assume <span class="process-math">\(c\)</span> is a nonzero fixed constant.</p>
+<p id="p-424">The vector field diagram is provided for each <span class="process-math">\(\boldF\)</span> below. Using our interpretations of curl and divergence, try your best to visually identify points <span class="process-math">\(P\)</span> where <span class="process-math">\((\curl F)\cdot\boldk(P)=0\)</span> and/or <span class="process-math">\(\nabla\cdot \boldF(P)=0\text{.}\)</span> Confirm your answers by computing <span class="process-math">\((\curl F)\cdot\boldk\)</span> and <span class="process-math">\(\nabla\cdot \boldF\)</span> algebraically. Assume <span class="process-math">\(c\)</span> is a nonzero fixed constant.</p>
 <ol class="decimal">
-<li id="li-122">
-<span class="heading"><span class="title">Uniform expansion/compression.</span></span><p id="p-423"><span class="process-math">\(\displaystyle \boldF(x,y)=\angvec{cx, cy}\)</span></p>
-</li>
-<li id="li-123">
-<span class="heading"><span class="title">Uniform rotation.</span></span><p id="p-424"><span class="process-math">\(\displaystyle \boldF(x,y)=\angvec{-cy, cx}\)</span></p>
-</li>
-<li id="li-124">
-<span class="heading"><span class="title">Shearing flow.</span></span><p id="p-425"><span class="process-math">\(\displaystyle \boldF(x,y)=\angvec{cy, 0}\)</span></p>
-</li>
 <li id="li-125">
-<span class="heading"><span class="title">Whirlpool.</span></span><p id="p-426"><span class="process-math">\(\displaystyle \boldF(x,y)=\frac{1}{x^2+y^2}\angvec{-y, x}\)</span></p>
+<span class="heading"><span class="title">Uniform expansion/compression.</span></span><p id="p-425"><span class="process-math">\(\displaystyle \boldF(x,y)=\angvec{cx, cy}\)</span></p>
+</li>
+<li id="li-126">
+<span class="heading"><span class="title">Uniform rotation.</span></span><p id="p-426"><span class="process-math">\(\displaystyle \boldF(x,y)=\angvec{-cy, cx}\)</span></p>
+</li>
+<li id="li-127">
+<span class="heading"><span class="title">Shearing flow.</span></span><p id="p-427"><span class="process-math">\(\displaystyle \boldF(x,y)=\angvec{cy, 0}\)</span></p>
+</li>
+<li id="li-128">
+<span class="heading"><span class="title">Whirlpool.</span></span><p id="p-428"><span class="process-math">\(\displaystyle \boldF(x,y)=\frac{1}{x^2+y^2}\angvec{-y, x}\)</span></p>
 </li>
 </ol>
 <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/vector_fields_curl.png" class="contained"></div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like"><p id="p-427"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like"><p id="p-429"></p></div></div>
 </div></article></section></section></div></main>
 </div>
 </body>

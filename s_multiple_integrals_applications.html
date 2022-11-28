@@ -246,7 +246,7 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Center of mass.</span>
 </h4>
 <p id="p-284">Let <span class="process-math">\(\mathcal{R}\subseteq \R^n\)</span> (<span class="process-math">\(n=2,3\)</span>) represent a solid object, and suppose the function <span class="process-math">\(\delta\colon\mathcal{R}\rightarrow \R\)</span> defines the mass density per unit area (<span class="process-math">\(n=2\)</span>) or unit volume (<span class="process-math">\(n=3\)</span>) at points in <span class="process-math">\(\mathcal{R}\text{.}\)</span> We define the <dfn class="terminology">mass</dfn>, <dfn class="terminology">first moments</dfn>, and <dfn class="terminology">center of mass</dfn> of <span class="process-math">\(\mathcal{R}\)</span> as follows.</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-64">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-65">
 \begin{align*}
 n =2 \\
 \text{Mass: } M\amp=\iint\limits_\mathcal{R}\delta(x,y)\, dA \\
@@ -266,25 +266,95 @@ n =3 \\
 <p id="p-285">Let <span class="process-math">\(T\)</span> be the solid triangular region with vertices <span class="process-math">\((0,0),(1,0),(0,1)\text{.}\)</span></p>
 <ol class="decimal">
 <li id="li-94"><p id="p-286">Compute the center of mass of <span class="process-math">\(T\)</span> when the density function <span class="process-math">\(\delta(x,y)=c\)</span> is constant. (In other words, compute the centroid of <span class="process-math">\(T\)</span>).</p></li>
-<li id="li-95"><p id="p-287">Compute the center of mass of <span class="process-math">\(T\)</span> when the denisty function is given by <span class="process-math">\(\delta(x,y)=x+y\text{.}\)</span></p></li>
+<li id="li-95"><p id="p-287">Compute the center of mass of <span class="process-math">\(T\)</span> when the density function is given by <span class="process-math">\(\delta(x,y)=x+y\text{.}\)</span></p></li>
 <li id="li-96"><p id="p-288">Let <span class="process-math">\(T'\)</span> be the solid triangular region with vertices <span class="process-math">\((0,0),(a,b),(c,d)\text{.}\)</span> Give a formula for the centroid of <span class="process-math">\(T'\)</span> in terms of <span class="process-math">\(a,b,c,d\text{.}\)</span></p></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like"><p id="p-289"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like"><ol class="decimal">
+<li id="li-97">
+<p id="p-289">We compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-66">
+\begin{align*}
+M \amp = \iint\limits_Tc\, dA \\
+\amp =c\operatorname{area} T=\frac{c}{2}\\
+M_y \amp=\iint\limits_T cx\, dA \\
+\amp=c\int_0^1\int_0^{1-x}x\, dy\, dx \\
+\amp = c\left(\frac{1}{2}x-\frac{1}{3}x^3\right)\Bigr\vert_0^1\\
+\amp = \frac{c}{6}\\
+M_x \amp =\iint\limits_T cy\, dA \\
+\amp =c\int_0^1\int_0^{1-y}y\, dx\, dy\\
+\amp =\frac{c}{6} \\
+(\overline{x},\overline{y}) \amp=(M_y/M, M_x/M) \\
+\amp = (1/3,1/3))\text{.}
+\end{align*}
+</div>
+<p class="continuation">Note: intuitively it is no surprise that the center of mass of <span class="process-math">\(T\)</span> lies along the line <span class="process-math">\(y=x\text{,}\)</span> since this is an axis of symmetry of <span class="process-math">\(T\text{.}\)</span> To make this symmetry argument rigorous, however, requires some finessing.</p>
+</li>
+<li id="li-98">
+<p id="p-290">We compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-67">
+\begin{align*}
+M \amp = \iint\limits_T x+y\, dA \\
+\amp=\int_0^1\int_0^{1-x}x+y\, dy\, dx \\
+\amp =\int_0^1x(1-x)+\frac{1}{2}(1-x)^2\, dx\\
+\amp = \frac{1}{3}\\
+M_y  \amp =\iint\limits_T x(x+y)\, dA\\
+\amp = \int_0^1\int_0^{1-x}x^2+xy\, dy\, dx\\
+\amp = \int_0^1x^2(1-x)+\frac{1}{2}x(1-x)^2\, dx\\
+\amp = \frac{1}{8}\\
+M_x \amp = \iint\limits_T y(x+y)\, dA \\
+\amp =\int_0^1\int_0^{1-y}xy+y^2\, dx\, dy\\
+\amp =\frac{1}{8}\\
+(\overline{x},\overline{y}) \amp=(M_y/M, M_x/M) \\
+\amp = (3/8, 3/8)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Again, it is no surprise that the center of mass lies along the line <span class="process-math">\(y=x\text{,}\)</span> since both <span class="process-math">\(T\)</span> and the density function <span class="process-math">\(\delta(x,y)=x+y\)</span> are symmetric with respect to this line. In contrast to the previous computation, the center of mass is further from the origin. This makes sense in terms of our “balancing point” interpretation of center of mass: in this case the greater amount of mass in the upper right of the triangle moves the balancing point up and to the right.</p>
+</li>
+<li id="li-99">
+<p id="p-291">The transformation <span class="process-math">\(G(u,v)=(au+cv, bu+dv)\)</span> maps the triangle <span class="process-math">\(T\)</span> with vertices <span class="process-math">\((0,0),(1,0), (0,1)\)</span> in the <span class="process-math">\(uv\)</span>-plane to the given triangle <span class="process-math">\(T'\)</span> in the <span class="process-math">\(xy\)</span>-plane. We can use substitution to reduce the computation for <span class="process-math">\(T'\)</span> to that of <span class="process-math">\(T\text{.}\)</span> Let <span class="process-math">\(M, M_y, M_x\)</span> be the mass and moments of <span class="process-math">\(T\text{,}\)</span> and <span class="process-math">\(M', M_y', M_x'\)</span> the mass and moments of <span class="process-math">\(T'\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-68">
+\begin{align*}
+M'\amp=\iint\limits_{T'}1\, dA \\
+\amp =\iint\limits_T \abs{J(G)}\, dA \\
+\amp =\iint\limits_T\abs{ad-bc}\, dA\\
+\amp =\abs{ad-bc}M\\
+M_y' \amp=\iint\limits_{T'}x\, dA \\
+\amp =\iint\limits_T (au+cv) \abs{ad-bc}\, dA\\
+\amp =\abs{ad-bc}(a\iint\limits_Tu\, dA+c\iint\limits_T v\, dA)\\
+\amp =\abs{ad-bc}(aM_y+cM_x)\\
+M_x' \amp=\iint\limits_{T'}y\, dA \\
+\amp =\iint\limits_T (bu+dv) \abs{ad-bc}\, dA\\
+\amp =\abs{ad-bc}(b\iint\limits_Tu\, dA+d\iint\limits_T v\, dA)\\
+\amp =\abs{ad-bc}(bM_y+dM_x)\\
+(\overline{x}',\overline{y}') \amp = (M_y'/M', M_x'/M') \\
+\amp = \frac{1}{M}(aM_y+cM_x, bM_y+dM_x)\\
+\amp = \frac{1}{3}(a+c,b+d)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Note: looking closely at the penultimate line, we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(\overline{x}',\overline{y}')=G(\overline{x}, \overline{y})\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, the center of mass of <span class="process-math">\(T'=G(T)\)</span> is the result of applying <span class="process-math">\(G\)</span> to the center of mass of <span class="process-math">\(T\text{!}\)</span> This is a consequence of the fact that <span class="process-math">\(G\)</span> is a <em class="emphasis">linear</em> transformation.</p>
+</li>
+</ol></div></div>
 </div></article><article class="example example-like" id="example-29"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">Centroid of hemisphere.</span>
 </h4>
-<p id="p-290">Let <span class="process-math">\(D\)</span> be the hemisphere <span class="process-math">\(x^2+y^2+z^2\leq 4\text{,}\)</span> <span class="process-math">\(z\geq 0\text{.}\)</span> Find the center of mass of <span class="process-math">\(D\)</span> assuming the mass density function is given by <span class="process-math">\(\delta(x,y,z)=z\text{.}\)</span></p>
+<p id="p-292">Let <span class="process-math">\(D\)</span> be the hemisphere <span class="process-math">\(x^2+y^2+z^2\leq 4\text{,}\)</span> <span class="process-math">\(z\geq 0\text{.}\)</span> Find the center of mass of <span class="process-math">\(D\)</span> assuming the mass density function is given by <span class="process-math">\(\delta(x,y,z)=z\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like"><p id="p-291"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like"><p id="p-293"></p></div></div>
 </div></article></section><section class="subsection" id="ss_joint_probability_function"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Probability and density functions</span>
 </h3>
 <article class="definition definition-like" id="d_random_variable"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">Random variable.</span>
 </h4>
-<p id="p-292">Let <span class="process-math">\(S\)</span> be any set, which we will consider to be a sample space. A <dfn class="terminology">random variable</dfn> is a function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-65">
+<p id="p-294">Let <span class="process-math">\(S\)</span> be any set, which we will consider to be a sample space. A <dfn class="terminology">random variable</dfn> is a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-69">
 \begin{align*}
 X\colon S \amp\rightarrow \R \\
 s\amp \mapsto X(s)\text{.}
@@ -292,21 +362,21 @@ s\amp \mapsto X(s)\text{.}
 </div></article><article class="definition definition-like" id="d_probability_functions"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.5</span><span class="period">.</span>
 </h4>
-<p id="p-293">Let <span class="process-math">\(X, Y\)</span> be random variables defined on the sample space <span class="process-math">\(S\text{.}\)</span>  A <dfn class="terminology">joint probability density function</dfn> for <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> is a function <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> satisfying the following properties.</p>
+<p id="p-295">Let <span class="process-math">\(X, Y\)</span> be random variables defined on the sample space <span class="process-math">\(S\text{.}\)</span>  A <dfn class="terminology">joint probability density function</dfn> for <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> is a function <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> satisfying the following properties.</p>
 <ol class="decimal">
-<li id="li-97"><p id="p-294"><span class="process-math">\(\displaystyle f(x,y)\geq 0\)</span></p></li>
-<li id="li-98"><p id="p-295"><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p></li>
-<li id="li-99"><p id="p-296"><span class="process-math">\(\operatorname{Prob}\left( \{s\in S\colon (X(s),Y(s))\in \mathcal{R}\} \right)=\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> for any <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> over which <span class="process-math">\(f\)</span> is integrable.</p></li>
+<li id="li-100"><p id="p-296"><span class="process-math">\(\displaystyle f(x,y)\geq 0\)</span></p></li>
+<li id="li-101"><p id="p-297"><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p></li>
+<li id="li-102"><p id="p-298"><span class="process-math">\(\operatorname{Prob}\left( \{s\in S\colon (X(s),Y(s))\in \mathcal{R}\} \right)=\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> for any <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> over which <span class="process-math">\(f\)</span> is integrable.</p></li>
 </ol></article><article class="example example-like" id="example-30"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
 </h4>
-<p id="p-297">Verify that the function f(x,y)=\begin{cases} 6x^2y\amp (x,y)\in [0,1]\times [0,1]\\ 0\amp (x,y)\notin [0,1]\times [0,1] \end{cases} is a joint probability distribution function.</p>
+<p id="p-299">Verify that the function f(x,y)=\begin{cases} 6x^2y\amp (x,y)\in [0,1]\times [0,1]\\ 0\amp (x,y)\notin [0,1]\times [0,1] \end{cases} is a joint probability distribution function.</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><p id="p-298"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><p id="p-300"></p></div></div>
 </div></article><article class="definition definition-like" id="d_uniformly_distibuted"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="period">.</span>
 </h4>
-<p id="p-299">Let <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> have area <span class="process-math">\(A\text{.}\)</span> The random variables <span class="process-math">\(X, Y\)</span> are <dfn class="terminology">uniformly distributed</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if their joint probabiltity disribution function is given by</p>
+<p id="p-301">Let <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> have area <span class="process-math">\(A\text{.}\)</span> The random variables <span class="process-math">\(X, Y\)</span> are <dfn class="terminology">uniformly distributed</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if their joint probabiltity disribution function is given by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f(x,y)=\begin{cases}
@@ -317,8 +387,8 @@ f(x,y)=\begin{cases}
 </div></article><article class="definition definition-like" id="d_expected_value"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.8</span><span class="period">.</span><span class="space"> </span><span class="title">Expected value.</span>
 </h4>
-<p id="p-300">Assume the random variables <span class="process-math">\(X,Y\)</span> on the sample set <span class="process-math">\(S\)</span> have joint probability density function <span class="process-math">\(f(x,y)\text{.}\)</span> We define the <dfn class="terminology">expected values</dfn> of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> denoted <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\text{,}\)</span> as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-66">
+<p id="p-302">Assume the random variables <span class="process-math">\(X,Y\)</span> on the sample set <span class="process-math">\(S\)</span> have joint probability density function <span class="process-math">\(f(x,y)\text{.}\)</span> We define the <dfn class="terminology">expected values</dfn> of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> denoted <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\text{,}\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-70">
 \begin{align*}
 \mu_X\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty x\, f(x,y)\, dx\, dy\\
 \mu_Y\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty y\, f(x,y)\, dx\, dy
@@ -326,7 +396,7 @@ f(x,y)=\begin{cases}
 </div></article><article class="example example-like" id="example-31"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
 </h4>
-<p id="p-301">Let</p>
+<p id="p-303">Let</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f(x,y)=\begin{cases}
@@ -336,11 +406,11 @@ f(x,y)=\begin{cases}
 \end{equation*}
 </div>
 <ol class="decimal">
-<li id="li-100"><p id="p-302">Verify that <span class="process-math">\(f\)</span> is a probability distribution function.</p></li>
-<li id="li-101"><p id="p-303">Compute <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\)</span> for any two random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> with joint probabilty distribution function <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-103"><p id="p-304">Verify that <span class="process-math">\(f\)</span> is a probability distribution function.</p></li>
+<li id="li-104"><p id="p-305">Compute <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\)</span> for any two random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> with joint probabilty distribution function <span class="process-math">\(f\text{.}\)</span></p></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><p id="p-304"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><p id="p-306"></p></div></div>
 </div></article></section></section></div></main>
 </div>
 </body>

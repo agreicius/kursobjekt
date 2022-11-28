@@ -17,12 +17,13 @@
 <p>Now assemble ingredients:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\bolds_r \amp = \langle\cos\theta, \sin\theta, 2r\rangle)\\
-\bolds_\theta \amp= \angvec{-r\sin\theta, r\cos\theta, 0}\\
-\bolds_r\times \bolds_\theta \amp=\angvec{-2r^2\cos\theta, -2r^2\sin\theta, r} \\
-\abs{\bolds_r\times \bolds_\theta} \amp=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2}\\
-\amp = \sqrt{4r^4+r^2}=r\sqrt{4r^2+1}\text{.}
+\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle \\
+\boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle\\
+\boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} \\
+\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}\\
+\amp=R^2\sin\phi\text{,}
 \end{align*}
-</div></article><span class="incontext"><a href="s_surfaces_area.html#li-134" class="internal">in-context</a></span>
+</div>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\sin\phi\geq 0\)</span> for <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta,\cos\phi}\)</span> parametrizes points on the unit sphere!</p></article><span class="incontext"><a href="s_surfaces_area.html#li-134" class="internal">in-context</a></span>
 </body>
 </html>

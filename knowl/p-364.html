@@ -12,19 +12,20 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The vector field</p>
+<p>If <span class="process-math">\(\boldr(t)=(g_1(t),g_2(t))\)</span> is a parametrization of <span class="process-math">\(\mathcal{C}\)</span> with <em class="emphasis">counterclockwise</em> (positive) orientation, then the outward unit normal vector can be expressed as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\boldF=\angvec{yz, xz, xy}
+\boldn(t)=\frac{\angvec{g_2'(t),-g_1'(t)}}{\sqrt{g_1^2(t)+g_2^2(t)}}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">is a gradient vector field. Indeed, we have <span class="process-math">\(\boldF=\nabla f\text{,}\)</span> where</p>
+<p class="continuation">Furthermore, if <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-f(x,y,z)=xyz\text{.}
-\end{equation*}
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot \boldn \, ds\amp =  \int_a^b\angvec{F_1(\boldr(t)),F_2(\boldr(t))}\cdot \angvec{g_2'(t),-g_1'(t)}\, dt\\
+\amp =  \int_a^b F_1(g_1(t),g_2(t))g_2'(t)-F(g_1(t),g_2(t))g_1'(t)\, dt\\
+\amp = \oint_\mathcal{C} F_1\, dy -F_2\, dx\text{.}
+\end{align*}
 </div>
-<p class="continuation">Thus <span class="process-math">\(f\)</span> is a potential function for <span class="process-math">\(\boldF\text{.}\)</span> The function <span class="process-math">\(g(x,y,z)=xyz+5\)</span> is another potential function of <span class="process-math">\(\boldF\text{.}\)</span></p>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#p-364" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-364" class="internal">in-context</a></span>
 </body>
 </html>

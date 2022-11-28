@@ -12,7 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>More generally, if a surface is defined implicitly in the form <span class="process-math">\(z=f(x,y)\)</span> or <span class="process-math">\(x=g(y,z)\)</span> or <span class="process-math">\(y=h(x,z)\)</span> (i.e., one variable is described as a function of the others), then we have immediate parametrizations of the form <span class="process-math">\(\boldr(x,y)=(x,y,f(x,y))\text{,}\)</span> <span class="process-math">\(\bolds(y,z)=(g(y,z),y,z)\text{,}\)</span> <span class="process-math">\(\boldp(x,z)=(x,h(x,z),z)\text{.}\)</span> This is <em class="emphasis">sometimes</em> a useful trick.</p>
+<p>Fix <span class="process-math">\(R&gt;0\)</span> and consider the surface parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr\colon [0,2\pi]\times [-2, 2] \amp \rightarrow \R^3 \\
+(\theta,v)  \amp\mapsto (R\cos \theta, R\sin \theta, v) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Fixing <span class="process-math">\(v=d\)</span> for any <span class="process-math">\(-2\leq d\leq 2\text{,}\)</span> we see that the corresponding curve parametrization <span class="process-math">\(\bolds(\theta)=(R\cos \theta, R\sin \theta, d)\)</span> is a circle of radius <span class="process-math">\(R\)</span> centered around the <span class="process-math">\(z\)</span>-axis. Thus as we let <span class="process-math">\(d\)</span> range between <span class="process-math">\(-2\)</span> and <span class="process-math">\(2\)</span> the <span class="process-math">\(v=d\)</span>-level curves sweep out the cylinder of radius <span class="process-math">\(R\text{,}\)</span> centered around the <span class="process-math">\(z\)</span>-axis, between the planes <span class="process-math">\(z=-2\)</span> and <span class="process-math">\(z=2\text{.}\)</span></p>
 <span class="incontext"><a href="s_surfaces_area.html#p-445" class="internal">in-context</a></span>
 </body>
 </html>

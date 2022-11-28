@@ -251,7 +251,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <article class="definition definition-like" id="d_scalar_surface_integral"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral of scalar function.</span>
 </h4>
-<p id="p-465">Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> be a smooth parametrization of the surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(f\)</span> be a continuous function defined on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
+<p id="p-467">Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> be a smooth parametrization of the surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(f\)</span> be a continuous function defined on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{S}f(x,y,z)\, d\sigma=\iint\limits_{\mathcal{R}}f(\boldr(u,v))\abs{\boldr_u\times \boldr_v}\, dA\text{.}
@@ -259,7 +259,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div></article><article class="remark remark-like" id="rm_scalar_integrals"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Taxonomy of scalar integrals.</span>
 </h4>
-<p id="p-466">It might be useful to list (and organize) all the different forms of scalar integrals we have met thus far.</p>
+<p id="p-468">It might be useful to list (and organize) all the different forms of scalar integrals we have met thus far.</p>
 <figure class="figure figure-like" id="figure-10"><div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{c|c|c}
@@ -276,10 +276,10 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.3<span class="period">.</span></span><span class="space"> </span>Taxonomy of scalar integrals</figcaption></figure></article><article class="remark remark-like" id="rm_surface_integral_ind"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of parametrization.</span>
 </h4>
-<p id="p-467">As with scalar line integrals, it is possible to show that our definition of the surface integral of <span class="process-math">\(f\)</span> over a smoothly parametrized surface <span class="process-math">\(\mathcal{S}\)</span> is independent of the parametrization chosen. (Recall that by definition a surface parametrization is one-to-one on the interior of the parameter domain.)</p></article><article class="convention remark-like" id="interp_surface_integral_interp"><h4 class="heading">
+<p id="p-469">As with scalar line integrals, it is possible to show that our definition of the surface integral of <span class="process-math">\(f\)</span> over a smoothly parametrized surface <span class="process-math">\(\mathcal{S}\)</span> is independent of the parametrization chosen. (Recall that by definition a surface parametrization is one-to-one on the interior of the parameter domain.)</p></article><article class="convention remark-like" id="interp_surface_integral_interp"><h4 class="heading">
 <span class="type">Interpretation</span><span class="space"> </span><span class="codenumber">2.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral interpretation.</span>
 </h4>
-<p id="p-468">As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula</p>
+<p id="p-470">As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_surface_integral_approx.html ./knowl/eq_surface_integral_approx.html" id="eq_surface_integral_approx">
 \begin{equation}
 \iint\limits_\mathcal{S}f\, d\sigma\approx \sum_{k=1}^{n}f(\boldr(u_k,v_k))\underset{\operatorname{approx. area of} \Delta\sigma_k}{\underbrace{\abs{\boldr_u\times \boldr_v}\Delta u\Delta v}}\text{.}\tag{2.6.1}
@@ -287,16 +287,16 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div>
 <p class="continuation">Understanding <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\)</span> as an approximation of the area of one of the subpatches of <span class="process-math">\(\mathcal{S}\text{,}\)</span> the interpretation then depends on what the function <span class="process-math">\(f\)</span> is. Here are two typical examples.</p>
 <ol class="decimal">
-<li id="li-136">
-<span class="heading"><span class="title">Geometric: surface area.</span></span><p id="p-469">If <span class="process-math">\(f=1\)</span> (the constant function), then the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> simply adds up <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\text{,}\)</span> yielding an approximation of the area of <span class="process-math">\(S\text{.}\)</span> The integral of <span class="process-math">\(f=1\)</span> computes this area exactly.</p>
+<li id="li-139">
+<span class="heading"><span class="title">Geometric: surface area.</span></span><p id="p-471">If <span class="process-math">\(f=1\)</span> (the constant function), then the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> simply adds up <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\text{,}\)</span> yielding an approximation of the area of <span class="process-math">\(S\text{.}\)</span> The integral of <span class="process-math">\(f=1\)</span> computes this area exactly.</p>
 </li>
-<li id="li-137">
-<span class="heading"><span class="title">Physical: density function.</span></span><p id="p-470">Assume <span class="process-math">\(f(x,y,z)\geq 0\)</span> gives us the density of quantity <span class="process-math">\(Q\)</span> per unit area at position <span class="process-math">\((x,y,z)\text{.}\)</span> In this case the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> can be understood as an approximation of the total quantity <span class="process-math">\(Q\)</span> over <span class="process-math">\(\mathcal{S}\text{,}\)</span> and thus the integral computes this total quantity exactly.</p>
+<li id="li-140">
+<span class="heading"><span class="title">Physical: density function.</span></span><p id="p-472">Assume <span class="process-math">\(f(x,y,z)\geq 0\)</span> gives us the density of quantity <span class="process-math">\(Q\)</span> per unit area at position <span class="process-math">\((x,y,z)\text{.}\)</span> In this case the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> can be understood as an approximation of the total quantity <span class="process-math">\(Q\)</span> over <span class="process-math">\(\mathcal{S}\text{,}\)</span> and thus the integral computes this total quantity exactly.</p>
 </li>
 </ol></article><article class="example example-like" id="example-56"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
 </h4>
-<p id="p-471">Let <span class="process-math">\(\mathcal{S}\)</span> be the surface obtained by rotating the curve</p>
+<p id="p-473">Let <span class="process-math">\(\mathcal{S}\)</span> be the surface obtained by rotating the curve</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathcal{C}\colon x=\cos z, y=0, -\pi/2\leq z\leq \pi/2
@@ -304,25 +304,25 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div>
 <p class="continuation">around the <span class="process-math">\(z\)</span>-axis. Assume the mass density at a point <span class="process-math">\((x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> is given by <span class="process-math">\(f(x,y,z)=\sqrt{1-x^2-y^2}\text{.}\)</span> Compute the total mass of <span class="process-math">\(\mathcal{S}\)</span> assuming the variables <span class="process-math">\(x,y,z\)</span> are measured in cm, and <span class="process-math">\(f(x,y,z)\)</span> is measured in g per cm<span class="process-math">\(^2\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like"><ol id="p-472" class="decimal">
-<li id="li-138">
-<p id="p-473">First we parametrize <span class="process-math">\(\mathcal{S}\text{.}\)</span> Observe that intersecting <span class="process-math">\(\mathcal{S}\)</span> with the plane <span class="process-math">\(z=z_0\)</span>  yields a circle centered at <span class="process-math">\((0,0,z_0)\)</span> of radius <span class="process-math">\(R=\cos z_0 \text{,}\)</span> which we can parametrize as</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like"><ol id="p-474" class="decimal">
+<li id="li-141">
+<p id="p-475">First we parametrize <span class="process-math">\(\mathcal{S}\text{.}\)</span> Observe that intersecting <span class="process-math">\(\mathcal{S}\)</span> with the plane <span class="process-math">\(z=z_0\)</span>  yields a circle centered at <span class="process-math">\((0,0,z_0)\)</span> of radius <span class="process-math">\(R=\cos z_0 \text{,}\)</span> which we can parametrize as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 (R\cos\theta, R\sin\theta, z_0)=(\cos z_0\cos\theta, \cos z_0\sin\theta, z_0)\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Letting <span class="process-math">\(z\)</span> vary between <span class="process-math">\(-\pi/2\)</span> and <span class="process-math">\(\pi/2\text{,}\)</span> we get the parametrization</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-107">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-111">
 \begin{align*}
 \boldr(\theta, z) \amp = (\cos z\cos\theta, \cos z\sin\theta, z) \\
 \mathcal{R} \colon 0\amp \leq \theta\leq 2\pi, -\pi/2\leq z\leq \pi/2 \text{.}
 \end{align*}
 </div>
 </li>
-<li id="li-139">
-<p id="p-474">Assemble the necessary ingredients:</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-108">
+<li id="li-142">
+<p id="p-476">Assemble the necessary ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-112">
 \begin{align*}
 \boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
 \boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
@@ -335,9 +335,9 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div>
 <p class="continuation">where the last equality follows since <span class="process-math">\(\cos z\geq 0\)</span> for <span class="process-math">\(z\in [-\pi/2, \pi/2]\text{.}\)</span></p>
 </li>
-<li id="li-140">
-<p id="p-475">According to <a href="" class="xref" data-knowl="./knowl/interp_surface_integral_interp.html" title="Interpretation 2.6.5: Surface integral interpretation">Interpretation 2.6.5</a>, integrating a mass density function over <span class="process-math">\(\mathcal{S}\)</span> gives us the total mass of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Thus</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/interp_surface_integral_interp.html" id="md-109">
+<li id="li-143">
+<p id="p-477">According to <a href="" class="xref" data-knowl="./knowl/interp_surface_integral_interp.html" title="Interpretation 2.6.5: Surface integral interpretation">Interpretation 2.6.5</a>, integrating a mass density function over <span class="process-math">\(\mathcal{S}\)</span> gives us the total mass of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/interp_surface_integral_interp.html" id="md-113">
 \begin{align*}
 \operatorname{mass}\mathcal{S} \amp = \iint\limits_{\mathcal{S}}f(x,y,z)\, d\sigma \\
 \amp=\iint\limits_{\mathcal{R}}f(\boldr(\theta, z))\, \abs{\boldr_\theta\times \boldr_z}\, dA \\
@@ -355,7 +355,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div></article><article class="definition definition-like" id="d_surface_integral_piecewise"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral for piecewise smooth surfaces.</span>
 </h4>
-<p id="p-476">A <dfn class="terminology">piecewise smooth surface</dfn> is the union of smoothly parametrized surfaces whose interiors are non-overlapping, and whose intersections form piecewise smooth curves. If <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup\mathcal{S}_2\cdots\cup\mathcal{S}_n\)</span> is piecewise smooth, and if <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> we define the surface integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(S\)</span> as</p>
+<p id="p-478">A <dfn class="terminology">piecewise smooth surface</dfn> is the union of smoothly parametrized surfaces whose interiors are non-overlapping, and whose intersections form piecewise smooth curves. If <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup\mathcal{S}_2\cdots\cup\mathcal{S}_n\)</span> is piecewise smooth, and if <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> we define the surface integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(S\)</span> as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{S}f\, d\sigma=\sum_{k=1}^n \iint\limits_{S_k}f\, d\sigma\text{.}
@@ -363,10 +363,10 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div></article><article class="example example-like" id="example-57"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Piecewise smooth surface.</span>
 </h4>
-<p id="p-477">Compute the surface integral of <span class="process-math">\(f(x,y,z)=xy\)</span> over the tetrahedron <span class="process-math">\(\mathcal{T}\)</span> with vertices <span class="process-math">\((0,0,0),(1,0,0),(0,1,0),(0,0,1)\text{.}\)</span></p>
+<p id="p-479">Compute the surface integral of <span class="process-math">\(f(x,y,z)=xy\)</span> over the tetrahedron <span class="process-math">\(\mathcal{T}\)</span> with vertices <span class="process-math">\((0,0,0),(1,0,0),(0,1,0),(0,0,1)\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like">
-<p id="p-478">We have <span class="process-math">\(\mathcal{T}=T_1\cup T_2\cup T_3\cup T_4\text{,}\)</span> where the <span class="process-math">\(T_k\)</span> are the four triangular faces of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and thus</p>
+<p id="p-480">We have <span class="process-math">\(\mathcal{T}=T_1\cup T_2\cup T_3\cup T_4\text{,}\)</span> where the <span class="process-math">\(T_k\)</span> are the four triangular faces of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and thus</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint\limits_\mathcal{T}f\, d\sigma=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma+\iint\limits_{T_3}f\, d\sigma+\iint\limits_{T_4}f\, d\sigma\text{.}
@@ -374,16 +374,16 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </div>
 <p class="continuation">Let <span class="process-math">\(T_1, T_2\)</span> be the triangular faces lying in the coordinate planes <span class="process-math">\(x=0\)</span> and <span class="process-math">\(y=0\text{,}\)</span> respectively. Since <span class="process-math">\(f(x,y,z)=0\)</span> for all points in these two surfaces, the corresponding surface integrals <span class="process-math">\(\iint_{T_k}f\, d\sigma\text{,}\)</span> <span class="process-math">\(k=1,2\text{,}\)</span> are equal to zero. Thus we need only compute the integrals of <span class="process-math">\(f\)</span> over <span class="process-math">\(T_3\)</span> and <span class="process-math">\(T_4\text{.}\)</span></p>
 <ul class="disc">
-<li id="li-141">
-<span class="heading"><span class="title">Integral over <span class="process-math">\(T_3\)</span>.</span></span><p id="p-479">Let <span class="process-math">\(T_3\)</span> be the face of the tetrahedron in the <span class="process-math">\(xy\)</span>-plane. We parametrize as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-110">
+<li id="li-144">
+<span class="heading"><span class="title">Integral over <span class="process-math">\(T_3\)</span>.</span></span><p id="p-481">Let <span class="process-math">\(T_3\)</span> be the face of the tetrahedron in the <span class="process-math">\(xy\)</span>-plane. We parametrize as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-114">
 \begin{align*}
 \boldr(x,y) \amp =(x,y,0)\\
 \mathcal{R}_1\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
 \end{align*}
 </div>
 <p class="continuation">A simple computation shows <span class="process-math">\(\abs{\boldr_x\times \boldr_y}=1\text{.}\)</span> Thus</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-111">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-115">
 \begin{align*}
 \iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx\\
 \amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx \\
@@ -392,16 +392,16 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \end{align*}
 </div>
 </li>
-<li id="li-142">
-<span class="heading"><span class="title">Integral over <span class="process-math">\(T_4\)</span>.</span></span><p id="p-480">Let <span class="process-math">\(T_4\)</span> be triangle with vertices <span class="process-math">\((1,0,0), (1,0,0),(0,1,0)\text{.}\)</span> This is the region of the plane <span class="process-math">\(z=x+y\)</span> lying over the planar triangle with vertices <span class="process-math">\((0,0,0), (1,0,0), (0,1,0)\text{.}\)</span> Since <span class="process-math">\(z\)</span> is expressed as a function of <span class="process-math">\(x,y\)</span> we parametrize easily as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-112">
+<li id="li-145">
+<span class="heading"><span class="title">Integral over <span class="process-math">\(T_4\)</span>.</span></span><p id="p-482">Let <span class="process-math">\(T_4\)</span> be triangle with vertices <span class="process-math">\((1,0,0), (1,0,0),(0,1,0)\text{.}\)</span> This is the region of the plane <span class="process-math">\(z=x+y\)</span> lying over the planar triangle with vertices <span class="process-math">\((0,0,0), (1,0,0), (0,1,0)\text{.}\)</span> Since <span class="process-math">\(z\)</span> is expressed as a function of <span class="process-math">\(x,y\)</span> we parametrize easily as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-116">
 \begin{align*}
 \bolds(x,y) \amp =(x,y,x+y)\\
 \mathcal{R}_{2}\colon  0 \amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
 \end{align*}
 </div>
 <p class="continuation">Again, a straightforward computation shows <span class="process-math">\(\abs{\bolds_x\times \bolds_y}=\sqrt{3}\text{,}\)</span> and thus</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-113">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-117">
 \begin{align*}
 \iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp \\
 \amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx \\
@@ -422,8 +422,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <article class="definition definition-like" id="d_orientation"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Surface orientation.</span>
 </h4>
-<p id="p-481">Let <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> be a smoothly parametrized surface. Informally, an <dfn class="terminology">orientation</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is a continuous choice of unit normal vectors to points on the surface. More precisely, an orientation is a continuous function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-114">
+<p id="p-483">Let <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> be a smoothly parametrized surface. Informally, an <dfn class="terminology">orientation</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is a continuous choice of unit normal vectors to points on the surface. More precisely, an orientation is a continuous function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-118">
 \begin{align*}
 \boldn \colon \mathcal{S}\amp\rightarrow \R^3 \\
 (x,y,z)\amp\mapsto \boldn(x,y,z) \text{,}
@@ -432,12 +432,12 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <p class="continuation">where for each <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{,}\)</span> <span class="process-math">\(\boldn(P)\)</span> is a unit normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{.}\)</span> The surface <span class="process-math">\(\mathcal{S}\)</span> is <dfn class="terminology">orientable</dfn> if an orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> exists for <span class="process-math">\(\mathcal{S}\text{.}\)</span> If no orientation function exists, the surface is <dfn class="terminology">nonorientable</dfn>.</p></article><article class="example example-like" id="eg_orientable_sphere"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Orientations of the sphere.</span>
 </h4>
-<p id="p-482">Let <span class="process-math">\(\mathcal{S}\)</span> be the unit sphere <span class="process-math">\(x^2+y^2+z^2=1\text{.}\)</span> We have seen previously that for a point <span class="process-math">\(P=(x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> the vector <span class="process-math">\(\overrightarrow{OP}=\angvec{x,y,z}\)</span> is a normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{;}\)</span> furthermore, since <span class="process-math">\(P\in \mathcal{S}\text{,}\)</span> its magnitude is <span class="process-math">\(\sqrt{x^2+y^2+z^2}=1\text{.}\)</span> Thus the function <span class="process-math">\(\boldn_1(x,y,z)=\angvec{x,y,z}\)</span> assigns a unit normal vector to each point <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{.}\)</span> Since <span class="process-math">\(\boldn_1\)</span> is clearly continuous, it defines an orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> called the <dfn class="terminology">outward</dfn> orientation. The function <span class="process-math">\(\boldn_2(x,y,z)=-\angvec{x,y,z}\)</span> also defines an orientation on the sphere, called the <dfn class="terminology">inward</dfn> orientation.</p>
-<p id="p-483">More generally, if <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface that is the boundary of a bounded solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> then <span class="process-math">\(\mathcal{S}\)</span> has both an outward and inward orientation. In particular, all such surfaces are orientable. The sphere discussed above is one such surface: it is the boundary of the solid ball <span class="process-math">\(x^2+y^2+z^2\leq 1\text{.}\)</span> Another example is the <dfn class="terminology">torus</dfn>: the boundary surface of a solid doughnut.</p></article><article class="example example-like" id="eg_orientable_graph"><h4 class="heading">
+<p id="p-484">Let <span class="process-math">\(\mathcal{S}\)</span> be the unit sphere <span class="process-math">\(x^2+y^2+z^2=1\text{.}\)</span> We have seen previously that for a point <span class="process-math">\(P=(x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> the vector <span class="process-math">\(\overrightarrow{OP}=\angvec{x,y,z}\)</span> is a normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{;}\)</span> furthermore, since <span class="process-math">\(P\in \mathcal{S}\text{,}\)</span> its magnitude is <span class="process-math">\(\sqrt{x^2+y^2+z^2}=1\text{.}\)</span> Thus the function <span class="process-math">\(\boldn_1(x,y,z)=\angvec{x,y,z}\)</span> assigns a unit normal vector to each point <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{.}\)</span> Since <span class="process-math">\(\boldn_1\)</span> is clearly continuous, it defines an orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> called the <dfn class="terminology">outward</dfn> orientation. The function <span class="process-math">\(\boldn_2(x,y,z)=-\angvec{x,y,z}\)</span> also defines an orientation on the sphere, called the <dfn class="terminology">inward</dfn> orientation.</p>
+<p id="p-485">More generally, if <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface that is the boundary of a bounded solid region <span class="process-math">\(D\subseteq\R^3\text{,}\)</span> then <span class="process-math">\(\mathcal{S}\)</span> has both an outward and inward orientation. In particular, all such surfaces are orientable. The sphere discussed above is one such surface: it is the boundary of the solid ball <span class="process-math">\(x^2+y^2+z^2\leq 1\text{.}\)</span> Another example is the <dfn class="terminology">torus</dfn>: the boundary surface of a solid doughnut.</p></article><article class="example example-like" id="eg_orientable_graph"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Graph of function.</span>
 </h4>
-<p id="p-484">Suppose <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface defined as the graph of the function <span class="process-math">\(z=f(x,y)\)</span> for inputs <span class="process-math">\((x,y)\)</span> lying in the region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span>  As usual this gives rise to the parametrization</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-115">
+<p id="p-486">Suppose <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface defined as the graph of the function <span class="process-math">\(z=f(x,y)\)</span> for inputs <span class="process-math">\((x,y)\)</span> lying in the region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span>  As usual this gives rise to the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-119">
 \begin{align*}
 \boldr\colon \mathcal{R} \amp \rightarrow \R^3\\
 (x,y)  \amp\mapsto (x,y,f(x,y)) \text{.}
@@ -452,11 +452,11 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <p class="continuation">is an orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldn(x,y,z)\)</span> is positive, this is called the <dfn class="terminology">upward</dfn> orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p></article><article class="remark remark-like" id="rm_orientable"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Orientations of orientable surfaces.</span>
 </h4>
-<p id="p-485">Assume <span class="process-math">\(\mathcal{S}\)</span> is a smooth orientable surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow\R^3\)</span> and parametrization <span class="process-math">\(\boldr(u,v)\text{.}\)</span> We have the following facts:</p>
+<p id="p-487">Assume <span class="process-math">\(\mathcal{S}\)</span> is a smooth orientable surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow\R^3\)</span> and parametrization <span class="process-math">\(\boldr(u,v)\text{.}\)</span> We have the following facts:</p>
 <ol class="decimal">
-<li id="li-143"><p id="p-486">There are exactly two orientations on <span class="process-math">\(\mathcal{S}\text{:}\)</span> namely, the given orientation <span class="process-math">\(P\mapsto \boldn(P)\)</span> and its opposite <span class="process-math">\(P\mapsto -\boldn(P)\text{.}\)</span></p></li>
-<li id="li-144">
-<p id="p-487">The function</p>
+<li id="li-146"><p id="p-488">There are exactly two orientations on <span class="process-math">\(\mathcal{S}\text{:}\)</span> namely, the given orientation <span class="process-math">\(P\mapsto \boldn(P)\)</span> and its opposite <span class="process-math">\(P\mapsto -\boldn(P)\text{.}\)</span></p></li>
+<li id="li-147">
+<p id="p-489">The function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 P=\boldr(u_0,v_0)\mapsto \frac{\boldr_u\times \boldr_v(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
@@ -472,7 +472,7 @@ P=\boldr(u_0,v_0)\mapsto \frac{\boldr_v\times \boldr_u(u_0,v_0)}{\abs{\boldr_u\t
 </li>
 </ol></article><article class="project project-like" id="sage_moebius_strip"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_moebius_strip"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Nonorientable surface: Möbius strip.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_moebius_strip"><article class="project project-like"><p id="p-488">Fix a constant <span class="process-math">\(R&gt;1/2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the Möbius strip with parametrization</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_moebius_strip"><article class="project project-like"><p id="p-490">Fix a constant <span class="process-math">\(R&gt;1/2\text{,}\)</span> and let <span class="process-math">\(\mathcal{S}\)</span> be the Möbius strip with parametrization</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldr(\theta, t)=\left((R+t\cos(\theta/2))\cos\theta, (R+t\cos(\theta/2))\sin\theta, t\sin(\theta/2\right)\text{,}
@@ -496,7 +496,7 @@ grid1=sum(parametric_plot3d(r(a+(b-a)*x/8,t),(t,c,d),color='red') for x in range
 grid2=sum(parametric_plot3d(r(t,c+(d-c)*x/2),(t,a,b),color='blue') for x in range(3)) #theta-level curves
 S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels
 </script></pre>
-<p id="p-489">Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
+<p id="p-491">Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
@@ -512,7 +512,7 @@ show((g(theta,t)*g(theta,t)).simplify_full()) # |r_t x r_theta|^2
 show(g(0,0))
 show(g(2*pi,0))
 </script></pre>
-<p id="p-490">We can see what's going on by plotting some of the normal vectors given by <span class="process-math">\(\boldr_t\times \boldr_\theta\)</span> for points of the form <span class="process-math">\(P=\boldr(\theta, 0)\text{.}\)</span></p>
+<p id="p-492">We can see what's going on by plotting some of the normal vectors given by <span class="process-math">\(\boldr_t\times \boldr_\theta\)</span> for points of the form <span class="process-math">\(P=\boldr(\theta, 0)\text{.}\)</span></p>
 <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-28"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
 var('theta t s x y z')
 R=3
@@ -537,7 +537,7 @@ S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
 <article class="definition definition-like" id="d_surface_integral_vector"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.13</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral of vector field.</span>
 </h4>
-<p id="p-491">Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth orientable surface, and let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{.}\)</span> We define the <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(\boldF\)</span> over <span class="process-math">\(\mathcal{S}\)</span> with respect to the orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> as the scalar surface integral</p>
+<p id="p-493">Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth orientable surface, and let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{.}\)</span> We define the <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(\boldF\)</span> over <span class="process-math">\(\mathcal{S}\)</span> with respect to the orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> as the scalar surface integral</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint_\mathcal{S}\boldF\cdot \boldn\, d\sigma\text{.}
@@ -546,11 +546,11 @@ S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
 <p class="continuation">This integral is also called the <dfn class="terminology">flux</dfn> of <span class="process-math">\(\boldF\)</span> across <span class="process-math">\(\mathcal{S}\)</span> with respect to the orientation <span class="process-math">\(\boldn\text{.}\)</span></p></article><article class="example example-like" id="example-60"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Flux across a sphere.</span>
 </h4>
-<p id="p-492">Let <span class="process-math">\(\mathcal{S}\)</span> be the sphere <span class="process-math">\(x^2+y^2+z^2=4\text{.}\)</span> Compute the flux of <span class="process-math">\(\boldF(x,y,z)=\angvec{z,y,x}\)</span> out of the sphere: i.e., with respect to the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<p id="p-494">Let <span class="process-math">\(\mathcal{S}\)</span> be the sphere <span class="process-math">\(x^2+y^2+z^2=4\text{.}\)</span> Compute the flux of <span class="process-math">\(\boldF(x,y,z)=\angvec{z,y,x}\)</span> out of the sphere: i.e., with respect to the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
-<p id="p-493">We use the usual parametrization of the sphere of radius 2:</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-116">
+<p id="p-495">We use the usual parametrization of the sphere of radius 2:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-120">
 \begin{align*}
 \boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta)\\
 \amp 
@@ -563,7 +563,7 @@ S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
 \end{equation*}
 </div>
 <p class="continuation">and thus that</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-117">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-121">
 \begin{align*}
 \iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma\amp
 = \frac{1}{2}\iint\limits_\mathcal{S}2xz+y^2\, d\sigma \\
@@ -580,7 +580,7 @@ S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
 </div></article><article class="theorem theorem-like" id="th_surface_integral_vector"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.15</span><span class="period">.</span><span class="space"> </span><span class="title">Surface integral of vector field.</span>
 </h4>
-<p id="p-494">Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \mathcal{S}\)</span> be a smooth parametrization of the orientable surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> be the orientation determined by <span class="process-math">\(\frac{\boldr_u\times\boldr_v}{\abs{\boldr_u\times \boldr_v}}\text{.}\)</span> We have</p>
+<p id="p-496">Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \mathcal{S}\)</span> be a smooth parametrization of the orientable surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> be the orientation determined by <span class="process-math">\(\frac{\boldr_u\times\boldr_v}{\abs{\boldr_u\times \boldr_v}}\text{.}\)</span> We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_surface_integral_vector">
 \begin{equation}
 \iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma=
@@ -597,9 +597,9 @@ S+grid2+grid1+axes(3,1,color='black')+Points+Points2+Alabels+Blabels+Arrows
 </div></article><article class="example example-like" id="eg_surface_integral_vector_cone"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.16</span><span class="period">.</span><span class="space"> </span><span class="title">Flux across a cone.</span>
 </h4>
-<p id="p-495">Let <span class="process-math">\(\mathcal{S}\)</span> be the cone <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> and let <span class="process-math">\(\boldF(x,y,z)=\angvec{xy,0,-z}\text{.}\)</span> Compute the flux of <span class="process-math">\(\boldF\)</span> across <span class="process-math">\(\mathcal{S}\)</span> with respect to the outward (away from the <span class="process-math">\(z\)</span>-axis) orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<p id="p-497">Let <span class="process-math">\(\mathcal{S}\)</span> be the cone <span class="process-math">\(z=\sqrt{x^2+y^2}\)</span> and let <span class="process-math">\(\boldF(x,y,z)=\angvec{xy,0,-z}\text{.}\)</span> Compute the flux of <span class="process-math">\(\boldF\)</span> across <span class="process-math">\(\mathcal{S}\)</span> with respect to the outward (away from the <span class="process-math">\(z\)</span>-axis) orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like"><p id="p-496"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like"><p id="p-498"></p></div></div>
 </div></article></section></section></div></main>
 </div>
 </body>

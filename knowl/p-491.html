@@ -12,13 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth orientable surface, and let <span class="process-math">\(\boldF\)</span> be a vector field that is continuous on <span class="process-math">\(\mathcal{S}\text{.}\)</span> We define the <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(\boldF\)</span> over <span class="process-math">\(\mathcal{S}\)</span> with respect to the orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> as the scalar surface integral</p>
+<p>Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\iint_\mathcal{S}\boldF\cdot \boldn\, d\sigma\text{.}
+P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
 \end{equation*}
 </div>
-<p class="continuation">This integral is also called the <dfn class="terminology">flux</dfn> of <span class="process-math">\(\boldF\)</span> across <span class="process-math">\(\mathcal{S}\)</span> with respect to the orientation <span class="process-math">\(\boldn\text{.}\)</span></p>
+<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-491" class="internal">in-context</a></span>
 </body>
 </html>

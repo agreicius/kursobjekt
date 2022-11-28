@@ -12,33 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The path in question is piecewise smooth, allowing us to use <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar_piecwise.html" title="Theorem 2.1.10: Piecewise smooth line integral">Theorem 2.1.10</a>. We use the straight line parametrizations</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
+<p>The segment of the curve in question has parametrization <span class="process-math">\(\boldr(t)=(t^2,t)\text{,}\)</span> <span class="process-math">\(-1\leq t\leq 2 \text{.}\)</span> (Observe that <span class="process-math">\(\boldr(-1)=(1,-1)=P, \boldr(2)=(4,2)=Q\text{.}\)</span>) According to <a href="" class="xref" data-knowl="./knowl/th_line_integral_interpretations.html" title="Theorem 2.1.8: Interpretations">Theorem 2.1.8</a> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_interpretations.html">
 \begin{align*}
-\boldr_1(t) \amp= (1-t)P+tQ, \ 0\leq t\leq 1 \\
-\amp =(1,1+t,2t) \\
-\boldr_2(t)\amp= (1-t)Q+tR, \ 0\leq t\leq 1 \\
-\amp =(1+t,2,2+3t) 
-\end{align*}
-</div>
-<p class="continuation">and assemble some ingredients</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
-\begin{align*}
-\boldr_1'(t) \amp =(0,1,2)\\
-\abs{\boldr_1'(t)} \amp =\sqrt{0^2+1^2+2^2}=\sqrt{5}\\
-\boldr_2'(t) \amp = (1,0,3)\\
-\abs{\boldr_2'(t)} \amp =\sqrt{1^2+(0)^2+3^2}=\sqrt{10}\text{.}
-\end{align*}
-</div>
-<p class="continuation">Lastly we compute</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
-\begin{align*}
-\operatorname{M} \amp =\int\limits_{\mathcal{C}_1}\delta(x,y,z)\, ds+
-\int\limits_{\mathcal{C}_2}\delta(x,y,z)\, ds\\
-\amp=\int_0^1\delta(1,1+t,2t)\sqrt{5}\, dt+
-\int_0^1\delta(1+t,2,2+3t)\sqrt{10}\, dt \\
-\amp =\sqrt{5}\int_0^11+3t\, dt+\sqrt{10}\int_0^1 (1+t)(4+3t)\, dt\\
-\amp = \frac{5\sqrt{5}}{2}+\sqrt{10}\text{.}
+\operatorname{area} \amp =\int\limits_\mathcal{C} f\, ds \\
+\amp=\int_{-1}^2f(t^2,t)\abs{\boldr'(t)}\, dt \\
+\amp = \int_{-1}^2(\sqrt{t^2}+\abs{t})\sqrt{4t^2+1}\, dt\\
+\amp = \int_{-1}^2 2\abs{t}\sqrt{4t^2+1}\, dt\\
+\amp = \int_{-1}^0-2t\sqrt{4t^2+1}\, dt+\int_0^2 2t\sqrt{4t^2+1}\, dt\\
+\amp = \frac{5}{6}\sqrt{5}-\frac{1}{6}+\frac{17}{6}\sqrt{17}-\frac{1}{6}\\
+\amp = \frac{17}{6}\sqrt{17}+\frac{5}{6}\sqrt{5}-\frac{1}{3}\text{.}
 \end{align*}
 </div>
 <span class="incontext"><a href="s_line_integal_scalar.html#p-332" class="internal">in-context</a></span>

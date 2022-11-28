@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<p>For all <span class="process-math">\(R &gt; 0\)</span> let <span class="process-math">\(B_R\)</span> be the solid ball of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\text{.}\)</span> We have <span class="process-math">\(S_R=\partial B_R\)</span> and so by the divergence theorem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_{B_R}\diver\boldF\, dV=\iint\limits_{S_R}\boldF\cdot \boldn\, d\sigma\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Next a generalization of the integral average value theorem to triple integrals imlies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint\limits_{B_R}\diver\boldF\, dV=\diver\boldF(P_R)\cdot \operatorname{vol} B_R,
+\end{equation*}
+</div>
+<p class="continuation">for some point <span class="process-math">\(P_R\)</span> in the ball <span class="process-math">\(B_R\)</span> centered around <span class="process-math">\(P\text{.}\)</span> Since <span class="process-math">\(\diver\boldF\)</span> is continuous at <span class="process-math">\(P\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\diver\boldF(P) \amp =\lim_{R\to 0} P_R\\
+\amp=\lim_{R\to 0}\frac{1}{\operatorname{vol} B_R}\iiint\limits_{B_R}\diver \boldF\, dV \amp \text{(avg. value thm.)}\\
+\amp =\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{\mathcal{S_R}}\boldF\cdot \boldn\, d\sigma
+\amp \text{(divergence thm.)} \text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_Divergence.html#p-536" class="internal">in-context</a></span>
+</body>
+</html>

@@ -12,12 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A <dfn class="terminology">piecewise smooth surface</dfn> is the union of smoothly parametrized surfaces whose interiors are non-overlapping, and whose intersections form piecewise smooth curves. If <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup\mathcal{S}_2\cdots\cup\mathcal{S}_n\)</span> is piecewise smooth, and if <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> we define the surface integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(S\)</span> as</p>
+<p>Assemble the necessary ingredients:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\iint\limits_\mathcal{S}f\, d\sigma=\sum_{k=1}^n \iint\limits_{S_k}f\, d\sigma\text{.}
-\end{equation*}
+\begin{align*}
+\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
+\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
+\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
+\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
+\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
+\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
+\amp =\cos z\sqrt{1+\sin^2z} \text{,}
+\end{align*}
 </div>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\cos z\geq 0\)</span> for <span class="process-math">\(z\in [-\pi/2, \pi/2]\text{.}\)</span></p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-476" class="internal">in-context</a></span>
 </body>
 </html>

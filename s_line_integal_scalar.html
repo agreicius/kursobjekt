@@ -251,8 +251,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <article class="definition definition-like" id="d_curve_parametrization"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Curve parametrization.</span>
 </h4>
-<p id="p-305">A <dfn class="terminology">curve parametrization</dfn> (or <dfn class="terminology">path</dfn>) is a continuous function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-67">
+<p id="p-307">A <dfn class="terminology">curve parametrization</dfn> (or <dfn class="terminology">path</dfn>) is a continuous function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-71">
 \begin{align*}
 \boldr\colon I \amp\rightarrow \R^n  \\
 t \amp\mapsto (x_1(t),x_2(t),\dots, x_n(t)) \text{,}
@@ -262,12 +262,12 @@ t \amp\mapsto (x_1(t),x_2(t),\dots, x_n(t)) \text{,}
 \begin{equation*}
 \mathcal{C}=\{(x_1(t),x_2(t),\dots, x_n(t))\colon t\in I\}
 \end{equation*}
-</div>of outputs of <span class="process-math">\(\boldr\)</span>is called the <dfn class="terminology">curve</dfn> parametrized by <span class="process-math">\(\boldr\text{.}\)</span> <p id="p-306">When <span class="process-math">\(n=2\)</span> we call <span class="process-math">\(\boldr\colon I\rightarrow \R^2\)</span> a <dfn class="terminology">parametrized planar curve</dfn>; when <span class="process-math">\(n=3\)</span> we call <span class="process-math">\(\boldr\colon I\rightarrow \R^3\)</span> a <dfn class="terminology">parametrized space curve</dfn>.</p>
-<p id="p-307">A path <span class="process-math">\(\boldr(t)=(x_1(t),x_2(t),\dots, x_n(t))\)</span> is <dfn class="terminology">smooth</dfn> on an interval <span class="process-math">\(I\)</span> if the functions <span class="process-math">\(x_i(t)\)</span> are continuously differentiable on <span class="process-math">\(I\)</span> and <span class="process-math">\(\boldr'(t)\ne \boldzero\)</span> for all <span class="process-math">\(t\in I\text{.}\)</span></p></article><article class="remark remark-like" id="rm_paths_vector_valued_function"><h4 class="heading">
+</div>of outputs of <span class="process-math">\(\boldr\)</span>is called the <dfn class="terminology">curve</dfn> parametrized by <span class="process-math">\(\boldr\text{.}\)</span> <p id="p-308">When <span class="process-math">\(n=2\)</span> we call <span class="process-math">\(\boldr\colon I\rightarrow \R^2\)</span> a <dfn class="terminology">parametrized planar curve</dfn>; when <span class="process-math">\(n=3\)</span> we call <span class="process-math">\(\boldr\colon I\rightarrow \R^3\)</span> a <dfn class="terminology">parametrized space curve</dfn>.</p>
+<p id="p-309">A path <span class="process-math">\(\boldr(t)=(x_1(t),x_2(t),\dots, x_n(t))\)</span> is <dfn class="terminology">smooth</dfn> on an interval <span class="process-math">\(I\)</span> if the functions <span class="process-math">\(x_i(t)\)</span> are continuously differentiable on <span class="process-math">\(I\)</span> and <span class="process-math">\(\boldr'(t)\ne \boldzero\)</span> for all <span class="process-math">\(t\in I\text{.}\)</span></p></article><article class="remark remark-like" id="rm_paths_vector_valued_function"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
 </h4>
-<p id="p-308">Qualitatively, a parametrization <span class="process-math">\(\boldr\colon I\rightarrow \R^n\)</span> takes as an input a real number <span class="process-math">\(t\text{,}\)</span> and returns as an output a tuple <span class="process-math">\(\boldr(t)=(x_1(t),x_2(t),\dots, x_n(t))\text{.}\)</span> This is an example of what we call a <dfn class="terminology">vector-valued function</dfn>, as the output of the function is not a scalar, but a tuple (pair if <span class="process-math">\(n=2\text{,}\)</span> triple if <span class="process-math">\(n=3\)</span>).</p>
-<p id="p-309">Geometrically, we can think of a tuple either as a <em class="emphasis">point</em> <span class="process-math">\(P\)</span> in <span class="process-math">\(\R^n\text{,}\)</span> or as an <span class="process-math">\(n\)</span>-vector <span class="process-math">\(\boldv=\langle v_1,v_2,\dots, v_n\rangle\text{.}\)</span> When visualizing a path <span class="process-math">\(\boldr\)</span> and its outputs, we will make use of <em class="emphasis">both</em> interpretations. The table below recalls some standard interpretations of <span class="process-math">\(\boldr(t)\)</span> and <span class="process-math">\(\boldr'(t)\)</span> along these lines. For simplicity, we assume <span class="process-math">\(n=3\text{.}\)</span></p>
+<p id="p-310">Qualitatively, a parametrization <span class="process-math">\(\boldr\colon I\rightarrow \R^n\)</span> takes as an input a real number <span class="process-math">\(t\text{,}\)</span> and returns as an output a tuple <span class="process-math">\(\boldr(t)=(x_1(t),x_2(t),\dots, x_n(t))\text{.}\)</span> This is an example of what we call a <dfn class="terminology">vector-valued function</dfn>, as the output of the function is not a scalar, but a tuple (pair if <span class="process-math">\(n=2\text{,}\)</span> triple if <span class="process-math">\(n=3\)</span>).</p>
+<p id="p-311">Geometrically, we can think of a tuple either as a <em class="emphasis">point</em> <span class="process-math">\(P\)</span> in <span class="process-math">\(\R^n\text{,}\)</span> or as an <span class="process-math">\(n\)</span>-vector <span class="process-math">\(\boldv=\langle v_1,v_2,\dots, v_n\rangle\text{.}\)</span> When visualizing a path <span class="process-math">\(\boldr\)</span> and its outputs, we will make use of <em class="emphasis">both</em> interpretations. The table below recalls some standard interpretations of <span class="process-math">\(\boldr(t)\)</span> and <span class="process-math">\(\boldr'(t)\)</span> along these lines. For simplicity, we assume <span class="process-math">\(n=3\text{.}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{c|c|c}
@@ -293,40 +293,40 @@ t \amp\mapsto (x_1(t),x_2(t),\dots, x_n(t)) \text{,}
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Parametrizations you should know.</span>
 </h4>
 <ol class="decimal">
-<li id="li-102">
-<p id="p-310">Line through <span class="process-math">\(P=(a,b,c)\)</span> with direction vector <span class="process-math">\(\boldv=(v_1,v_2,v_3)\text{:}\)</span></p>
+<li id="li-105">
+<p id="p-312">Line through <span class="process-math">\(P=(a,b,c)\)</span> with direction vector <span class="process-math">\(\boldv=(v_1,v_2,v_3)\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldr(t)=(a,b,c)+t\boldv=(a+tv_1,b+tv_2,c+tv_3)\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-103">
-<p id="p-311">Line segment between points <span class="process-math">\(P=(a,b,c), Q=(d,e,f)\text{:}\)</span></p>
+<li id="li-106">
+<p id="p-313">Line segment between points <span class="process-math">\(P=(a,b,c), Q=(d,e,f)\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldr(t)=P+t(Q-P)=(1-t)P+tQ, \ 0\leq t\leq 1\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-104">
-<p id="p-312">Circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\((a,b)\text{:}\)</span></p>
+<li id="li-107">
+<p id="p-314">Circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\((a,b)\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldr(t)=(a,b)+R(\cos t, \sin t)=(a+R\cos t, b+R\sin t), \ 0\leq t\leq 2\pi\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-105">
-<p id="p-313">Ellipse <span class="process-math">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\text{:}\)</span></p>
+<li id="li-108">
+<p id="p-315">Ellipse <span class="process-math">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldr(t)=(a\cos t, b\sin t), \ 0\leq t\leq 2\pi\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-106">
-<p id="p-314">Helix of radius <span class="process-math">\(R\)</span> along a given coordinate axis in <span class="process-math">\(3\)</span>-space. Example:</p>
+<li id="li-109">
+<p id="p-316">Helix of radius <span class="process-math">\(R\)</span> along a given coordinate axis in <span class="process-math">\(3\)</span>-space. Example:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldr(t)=(R\cos t, t, R\sin t)\text{.}
@@ -360,21 +360,21 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 <article class="definition definition-like" id="d_line_integral_scalar"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Line integral of scalar function.</span>
 </h4>
-<p id="p-315">Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^3\)</span> be a parametrization of the curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> and let <span class="process-math">\(f(x,y,z)\)</span> be a scalar function defined on <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
-<p id="p-316">Let <span class="process-math">\(P=\boldr(a)\)</span> and <span class="process-math">\(Q=\boldr(b)\)</span> be the start and end points of the path <span class="process-math">\(\boldr\text{.}\)</span> A <dfn class="terminology">pointed partition</dfn> of of the path <span class="process-math">\(\boldr\)</span> along <span class="process-math">\(\mathcal{C}\)</span> is the sequence of points <span class="process-math">\(P=\boldr(a), P_1=\boldr(t_1), P_2=\boldr(t_2), \dots, Q=\boldr(b)\)</span> corresponding to a partition <span class="process-math">\(a=t_0 &lt; t_1&lt; t_2\dots &lt; t_n=b \)</span> of the interval <span class="process-math">\([a,b]\text{,}\)</span> along with a selection of points <span class="process-math">\((x_k,y_k,z_k)\)</span> lying in the <span class="process-math">\(k\)</span>-th segment of the partitioned path. We define <span class="process-math">\(\Delta s_k\)</span> to be the arc length of the curve segment between <span class="process-math">\(P_{k-1}\)</span> and <span class="process-math">\(P_k\text{.}\)</span></p>
-<p id="p-317">The <dfn class="terminology">line integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{C}\text{,}\)</span> denoted <span class="process-math">\(\int\limits_\mathcal{C}f(x,y,z)\, ds\text{,}\)</span> is defined as</p>
+<p id="p-317">Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^3\)</span> be a parametrization of the curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> and let <span class="process-math">\(f(x,y,z)\)</span> be a scalar function defined on <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+<p id="p-318">Let <span class="process-math">\(P=\boldr(a)\)</span> and <span class="process-math">\(Q=\boldr(b)\)</span> be the start and end points of the path <span class="process-math">\(\boldr\text{.}\)</span> A <dfn class="terminology">pointed partition</dfn> of of the path <span class="process-math">\(\boldr\)</span> along <span class="process-math">\(\mathcal{C}\)</span> is the sequence of points <span class="process-math">\(P=\boldr(a), P_1=\boldr(t_1), P_2=\boldr(t_2), \dots, Q=\boldr(b)\)</span> corresponding to a partition <span class="process-math">\(a=t_0 &lt; t_1&lt; t_2\dots &lt; t_n=b \)</span> of the interval <span class="process-math">\([a,b]\text{,}\)</span> along with a selection of points <span class="process-math">\((x_k,y_k,z_k)\)</span> lying in the <span class="process-math">\(k\)</span>-th segment of the partitioned path. We define <span class="process-math">\(\Delta s_k\)</span> to be the arc length of the curve segment between <span class="process-math">\(P_{k-1}\)</span> and <span class="process-math">\(P_k\text{.}\)</span></p>
+<p id="p-319">The <dfn class="terminology">line integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{C}\text{,}\)</span> denoted <span class="process-math">\(\int\limits_\mathcal{C}f(x,y,z)\, ds\text{,}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \int\limits_\mathcal{C} f(x,y,z)\, ds=\lim_{n\to\infty}\sum_{k=1}^n f(x_k,y_k,z_k)\Delta s_k\text{,}
 \end{equation*}
 </div>
 <p class="continuation">where the limit is understood to be taken over any sequence of pointed partitions <span class="process-math">\(P_n\)</span> of <span class="process-math">\(\mathcal{C}\)</span> into <span class="process-math">\(n\)</span> curve segments, provided this limit exists and is independent of our choice of partitions.</p></article><figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/line_integral_scalar.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.5<span class="period">.</span></span><span class="space"> </span>Partition of curve parametrization <span class="process-math">\(\boldr\colon[a,b]\rightarrow\R^3\)</span></figcaption></figure><p id="p-318">As with double and triple integrals, the limit definition of line integrals is useful for interpretation purposes, but not so convenient for computation. The following theorem is the essential tool we will use for computing line integrals.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.5<span class="period">.</span></span><span class="space"> </span>Partition of curve parametrization <span class="process-math">\(\boldr\colon[a,b]\rightarrow\R^3\)</span></figcaption></figure><p id="p-320">As with double and triple integrals, the limit definition of line integrals is useful for interpretation purposes, but not so convenient for computation. The following theorem is the essential tool we will use for computing line integrals.</p>
 <article class="theorem theorem-like" id="th_line_integral_scalar"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar line integrals.</span>
 </h4>
-<p id="p-319">Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\)</span> be a parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq \R^n\text{,}\)</span> and let <span class="process-math">\(f(x_1,x_2,\dots, x_n)\)</span> be a scalar function defined on <span class="process-math">\(\mathcal{C}\text{.}\)</span> If (a) <span class="process-math">\(\boldr\)</span> is <em class="emphasis">smooth</em> on <span class="process-math">\([a,b]\)</span> and (b) <span class="process-math">\(f(x,y,z)\)</span> is <em class="emphasis">continuous</em> on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-68">
+<p id="p-321">Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\)</span> be a parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq \R^n\text{,}\)</span> and let <span class="process-math">\(f(x_1,x_2,\dots, x_n)\)</span> be a scalar function defined on <span class="process-math">\(\mathcal{C}\text{.}\)</span> If (a) <span class="process-math">\(\boldr\)</span> is <em class="emphasis">smooth</em> on <span class="process-math">\([a,b]\)</span> and (b) <span class="process-math">\(f(x,y,z)\)</span> is <em class="emphasis">continuous</em> on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-72">
 \begin{align*}
 \int\limits_\mathcal{C}f(x_1,x_2,\dots, x_n)\, ds  \amp= \int_a^b f(\boldr(t))\abs{\boldr'(t)}\, dt \\
 \amp = \int_a^b f(x_1(t),x_2(t),\dots, x_n(t))\sqrt{(x_1'(t))^2+(x_2'(t))^2+\cdots +(x_n'(t))^2}\, dt \text{.}
@@ -382,27 +382,27 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 </div></article><article class="remark remark-like" id="rm_line_integral_independence"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of parametrization.</span>
 </h4>
-<p id="p-320">Do different parametrizations of the same curve <span class="process-math">\(\mathcal{C}\)</span> lead to different line integrals of a function <span class="process-math">\(f\text{?}\)</span> Absolutely! Consider</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-69">
+<p id="p-322">Do different parametrizations of the same curve <span class="process-math">\(\mathcal{C}\)</span> lead to different line integrals of a function <span class="process-math">\(f\text{?}\)</span> Absolutely! Consider</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-73">
 \begin{align*}
 \boldr(t) \amp= (\cos t, \sin t),\ 0\leq t\leq 2\pi \\
 \bolds(t) \amp =  (\cos 2t, \sin 2t), \ 0\leq t\leq 2\pi \text{.}
 \end{align*}
 </div>
 <p class="continuation">Both parametrize the unit circle <span class="process-math">\(\mathcal{C}\colon x^2+y^2=1\text{.}\)</span> However, the integral of the constant function <span class="process-math">\(f(x,y)=1\)</span> over <span class="process-math">\(\boldr(t)\)</span> yields <span class="process-math">\(2\pi\)</span> (the arc length of <span class="process-math">\(\mathcal{C}\)</span>), while the integral of <span class="process-math">\(\bolds(t)\)</span> yields <span class="process-math">\(4\pi\)</span> (twice the arc length of <span class="process-math">\(\mathcal{C}\)</span>). This makes sense, since <span class="process-math">\(\bolds(t)\)</span> traverses <span class="process-math">\(\mathcal{C}\)</span> twice!</p>
-<p id="p-321">On the other hand, you can show that if the parametrizations <span class="process-math">\(\boldr\)</span> and <span class="process-math">\(\bolds\)</span> are smooth and one-to-one on <span class="process-math">\([a,b]\text{,}\)</span> except possibly at the endpoints, then indeed the two line integrals will be equal. Thus, we say the line integral is <em class="emphasis">independent</em> of your choice of smooth, one-to-one parametrization.</p></article><article class="theorem theorem-like" id="th_line_integral_interpretations"><h4 class="heading">
+<p id="p-323">On the other hand, you can show that if the parametrizations <span class="process-math">\(\boldr\)</span> and <span class="process-math">\(\bolds\)</span> are smooth and one-to-one on <span class="process-math">\([a,b]\text{,}\)</span> except possibly at the endpoints, then indeed the two line integrals will be equal. Thus, we say the line integral is <em class="emphasis">independent</em> of your choice of smooth, one-to-one parametrization.</p></article><article class="theorem theorem-like" id="th_line_integral_interpretations"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Interpretations.</span>
 </h4>
-<p id="p-322">Assume <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\)</span> is a smooth parametrization of <span class="process-math">\(\mathcal{C}\)</span> and that <span class="process-math">\(\boldr\)</span> is one-to-one on <span class="process-math">\([a,b]\text{,}\)</span> except potentially at the endpoints (i.e., “<span class="process-math">\(\boldr\)</span> traverses <span class="process-math">\(\mathcal{C}\)</span> exactly once”).</p>
+<p id="p-324">Assume <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\)</span> is a smooth parametrization of <span class="process-math">\(\mathcal{C}\)</span> and that <span class="process-math">\(\boldr\)</span> is one-to-one on <span class="process-math">\([a,b]\text{,}\)</span> except potentially at the endpoints (i.e., “<span class="process-math">\(\boldr\)</span> traverses <span class="process-math">\(\mathcal{C}\)</span> exactly once”).</p>
 <ol class="decimal">
-<li id="li-107"><p id="p-323">The line integral <span class="process-math">\(\int_\mathcal{C} 1\, ds\)</span> computes the arc length of <span class="process-math">\(\mathcal{C}\)</span> between <span class="process-math">\(P=\boldr(a)\)</span> and <span class="process-math">\(Q=\boldr(b)\text{.}\)</span></p></li>
-<li id="li-108"><p id="p-324">If <span class="process-math">\(n=2\)</span> and <span class="process-math">\(f(x,y)\geq 0\)</span> is continuous on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then <span class="process-math">\(\int_\mathcal{C}f(x,y)\, ds\)</span> computes the area of the “curtain” over <span class="process-math">\(\mathcal{C}\)</span> with heights given by <span class="process-math">\(f(x,y)\text{.}\)</span></p></li>
-<li id="li-109"><p id="p-325">If <span class="process-math">\(\delta(x_1,x_2,\dots, x_n)\geq 0\)</span> is a continuous mass density on <span class="process-math">\(\mathcal{C}\text{,}\)</span> where <span class="process-math">\(\mathcal{C}\)</span> is treated as an infinitely thin wire, then <span class="process-math">\(\int_\mathcal{C}\delta(x_1,x_2,\dots, x_n)\, ds\)</span> computes the mass of <span class="process-math">\(\mathcal{C}\text{.}\)</span></p></li>
+<li id="li-110"><p id="p-325">The line integral <span class="process-math">\(\int_\mathcal{C} 1\, ds\)</span> computes the arc length of <span class="process-math">\(\mathcal{C}\)</span> between <span class="process-math">\(P=\boldr(a)\)</span> and <span class="process-math">\(Q=\boldr(b)\text{.}\)</span></p></li>
+<li id="li-111"><p id="p-326">If <span class="process-math">\(n=2\)</span> and <span class="process-math">\(f(x,y)\geq 0\)</span> is continuous on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then <span class="process-math">\(\int_\mathcal{C}f(x,y)\, ds\)</span> computes the area of the “curtain” over <span class="process-math">\(\mathcal{C}\)</span> with heights given by <span class="process-math">\(f(x,y)\text{.}\)</span></p></li>
+<li id="li-112"><p id="p-327">If <span class="process-math">\(\delta(x_1,x_2,\dots, x_n)\geq 0\)</span> is a continuous mass density on <span class="process-math">\(\mathcal{C}\text{,}\)</span> where <span class="process-math">\(\mathcal{C}\)</span> is treated as an infinitely thin wire, then <span class="process-math">\(\int_\mathcal{C}\delta(x_1,x_2,\dots, x_n)\, ds\)</span> computes the mass of <span class="process-math">\(\mathcal{C}\text{.}\)</span></p></li>
 </ol></article><figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/curtain.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.9<span class="period">.</span></span><span class="space"> </span>Area of a curtain over <span class="process-math">\(\mathcal{C}\)</span></figcaption></figure><article class="theorem theorem-like" id="th_line_integral_scalar_piecwise"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Piecewise smooth line integral.</span>
 </h4>
-<p id="p-326">Assume the parametrized curve <span class="process-math">\(\mathcal{C}\)</span> is a union of smoothly parametrized curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2,\dots, \mathcal{C}_r\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
+<p id="p-328">Assume the parametrized curve <span class="process-math">\(\mathcal{C}\)</span> is a union of smoothly parametrized curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2,\dots, \mathcal{C}_r\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \int\limits_\mathcal{C}f\, ds=\int\limits_{\mathcal{C}_1}f\, ds+\int\limits_{\mathcal{C}_2}f\, ds+\cdots +\int\limits_{\mathcal{C}_r}f\, ds\text{.}
@@ -410,18 +410,18 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 </div></article><article class="example example-like" id="example-32"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Line integral of helix.</span>
 </h4>
-<p id="p-327">Let <span class="process-math">\(\mathcal{C}\)</span> be the helix with parametrization <span class="process-math">\(\colon \boldr(t)=(2\sin t, t, 2\cos t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq \pi\text{,}\)</span> and let <span class="process-math">\(f(x,y,z)=x^2+y^2+z^2\text{.}\)</span> Compute <span class="process-math">\(\int\limits_\mathcal{C}f(x,y,z)\, ds\text{.}\)</span></p>
+<p id="p-329">Let <span class="process-math">\(\mathcal{C}\)</span> be the helix with parametrization <span class="process-math">\(\colon \boldr(t)=(2\sin t, t, 2\cos t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq \pi\text{,}\)</span> and let <span class="process-math">\(f(x,y,z)=x^2+y^2+z^2\text{.}\)</span> Compute <span class="process-math">\(\int\limits_\mathcal{C}f(x,y,z)\, ds\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like">
-<p id="p-328">Assemble the ingredients:</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html" id="md-70">
+<p id="p-330">Assemble the ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html" id="md-74">
 \begin{align*}
 \boldr'(t) \amp = (2\cos t, 1, -2\sin t)\\
 \abs{\boldr'(t)} \amp= \sqrt{4\cos^2 t+4\sin^2t+1}=\sqrt{5} \text{.}
 \end{align*}
 </div>
 <p class="continuation">Now compute</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html" id="md-71">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html" id="md-75">
 \begin{align*}
 \int\limits_\mathcal{C}f(x,y,z)\, ds\amp = \int_0^{\pi}f(2\cos t, t, 2\sin t)\abs{\boldr'(t)}\, dt \amp(\knowl{./knowl/th_line_integral_scalar.html}{\text{2.1.6}})\\
 \amp=\int_0^\pi (4\cos^2 t+t^2+4\sin^2 t)\sqrt{5}\, dt  \\
@@ -433,12 +433,12 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 </div></article><article class="example example-like" id="example-33"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Area of a curtain.</span>
 </h4>
-<p id="p-329">Compute the area of the curtain over the curve <span class="process-math">\(x=y^2\)</span> between the points <span class="process-math">\(P=(1,-1)\)</span> and <span class="process-math">\(Q=(4,2)\text{,}\)</span> with height function given by <span class="process-math">\(f(x,y)=\sqrt{x}+\abs{y}\)</span></p>
+<p id="p-331">Compute the area of the curtain over the curve <span class="process-math">\(x=y^2\)</span> between the points <span class="process-math">\(P=(1,-1)\)</span> and <span class="process-math">\(Q=(4,2)\text{,}\)</span> with height function given by <span class="process-math">\(f(x,y)=\sqrt{x}+\abs{y}\)</span></p>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><iframe width="300" height="300" src="generated/sageplot/im_curtain_eg.html"></iframe></div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like">
-<p id="p-330">The segment of the curve in question has parametrization <span class="process-math">\(\boldr(t)=(t^2,t)\text{,}\)</span> <span class="process-math">\(-1\leq t\leq 2 \text{.}\)</span> (Observe that <span class="process-math">\(\boldr(-1)=(1,-1)=P, \boldr(2)=(4,2)=Q\text{.}\)</span>) According to <a href="" class="xref" data-knowl="./knowl/th_line_integral_interpretations.html" title="Theorem 2.1.8: Interpretations">Theorem 2.1.8</a> we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_interpretations.html" id="md-72">
+<p id="p-332">The segment of the curve in question has parametrization <span class="process-math">\(\boldr(t)=(t^2,t)\text{,}\)</span> <span class="process-math">\(-1\leq t\leq 2 \text{.}\)</span> (Observe that <span class="process-math">\(\boldr(-1)=(1,-1)=P, \boldr(2)=(4,2)=Q\text{.}\)</span>) According to <a href="" class="xref" data-knowl="./knowl/th_line_integral_interpretations.html" title="Theorem 2.1.8: Interpretations">Theorem 2.1.8</a> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_interpretations.html" id="md-76">
 \begin{align*}
 \operatorname{area} \amp =\int\limits_\mathcal{C} f\, ds \\
 \amp=\int_{-1}^2f(t^2,t)\abs{\boldr'(t)}\, dt \\
@@ -453,11 +453,11 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 </div></article><article class="example example-like" id="example-34"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Mass of wire.</span>
 </h4>
-<p id="p-331">Let <span class="process-math">\(P=(1,1,0), Q=(1,2,2), R=(2,2,5)\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the polygonal wire connecting <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> and <span class="process-math">\(Q\)</span> to <span class="process-math">\(R\text{.}\)</span> Compute the mass <span class="process-math">\(M\)</span> of the wire assuming its density function is given by <span class="process-math">\(\delta(x,y,z)=x(y+z)\text{.}\)</span></p>
+<p id="p-333">Let <span class="process-math">\(P=(1,1,0), Q=(1,2,2), R=(2,2,5)\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the polygonal wire connecting <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> and <span class="process-math">\(Q\)</span> to <span class="process-math">\(R\text{.}\)</span> Compute the mass <span class="process-math">\(M\)</span> of the wire assuming its density function is given by <span class="process-math">\(\delta(x,y,z)=x(y+z)\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like">
-<p id="p-332">The path in question is piecewise smooth, allowing us to use <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar_piecwise.html" title="Theorem 2.1.10: Piecewise smooth line integral">Theorem 2.1.10</a>. We use the straight line parametrizations</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html" id="md-73">
+<p id="p-334">The path in question is piecewise smooth, allowing us to use <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar_piecwise.html" title="Theorem 2.1.10: Piecewise smooth line integral">Theorem 2.1.10</a>. We use the straight line parametrizations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html" id="md-77">
 \begin{align*}
 \boldr_1(t) \amp= (1-t)P+tQ, \ 0\leq t\leq 1 \\
 \amp =(1,1+t,2t) \\
@@ -466,7 +466,7 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 \end{align*}
 </div>
 <p class="continuation">and assemble some ingredients</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html" id="md-74">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html" id="md-78">
 \begin{align*}
 \boldr_1'(t) \amp =(0,1,2)\\
 \abs{\boldr_1'(t)} \amp =\sqrt{0^2+1^2+2^2}=\sqrt{5}\\
@@ -475,7 +475,7 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 \end{align*}
 </div>
 <p class="continuation">Lastly we compute</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html" id="md-75">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html" id="md-79">
 \begin{align*}
 \operatorname{M} \amp =\int\limits_{\mathcal{C}_1}\delta(x,y,z)\, ds+
 \int\limits_{\mathcal{C}_2}\delta(x,y,z)\, ds\\
@@ -488,7 +488,7 @@ r(t)=[  ] #Enter comma-separated list of expressions btwn [ ]
 </div></div>
 </div></article><article class="project project-like" id="sage_line_integrals_scalar"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-sage_line_integrals_scalar"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar line integral.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_line_integrals_scalar"><article class="project project-like"><p id="p-333">The basic ingredients of a line integral are an expression <span class="process-math">\(\boldr(t)\)</span> defining a parametrized curve, the domain <span class="process-math">\([a,b]\)</span> of <span class="process-math">\(\boldr\text{,}\)</span> and the function <span class="process-math">\(f\)</span> we are integrating. You can see how the Sage cell below assembles these basic ingredients, along with the further ingredients <span class="process-math">\(\boldr'(t)\)</span> and  <span class="process-math">\(\abs{\boldr'(t)}\text{,}\)</span> before computing the line integral using <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar.html" title="Theorem 2.1.6: Scalar line integrals">Theorem 2.1.6</a>. Note how we use the <code class="code-inline tex2jax_ignore">vector()</code> command to create vector objects. This is essential for doing any further vector operations: e.g., dot product, norm, etc..</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-sage_line_integrals_scalar"><article class="project project-like"><p id="p-335">The basic ingredients of a line integral are an expression <span class="process-math">\(\boldr(t)\)</span> defining a parametrized curve, the domain <span class="process-math">\([a,b]\)</span> of <span class="process-math">\(\boldr\text{,}\)</span> and the function <span class="process-math">\(f\)</span> we are integrating. You can see how the Sage cell below assembles these basic ingredients, along with the further ingredients <span class="process-math">\(\boldr'(t)\)</span> and  <span class="process-math">\(\abs{\boldr'(t)}\text{,}\)</span> before computing the line integral using <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar.html" title="Theorem 2.1.6: Scalar line integrals">Theorem 2.1.6</a>. Note how we use the <code class="code-inline tex2jax_ignore">vector()</code> command to create vector objects. This is essential for doing any further vector operations: e.g., dot product, norm, etc..</p>
 <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-17"><script type="text/x-sage">(x,y,z,t)=var('x y z t')
 r(t)=vector([t, 2*t, 4*t])
 a=0

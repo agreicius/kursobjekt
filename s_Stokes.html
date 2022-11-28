@@ -242,13 +242,13 @@ window.MathJax = {
 <article class="definition definition-like" id="d_induced_orientation"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Induced orientation.</span>
 </h3>
-<p id="p-497">Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\text{.}\)</span> Given a simple curve <span class="process-math">\(\mathcal{C}\subseteq \mathcal{S}\)</span> lying partly on the boundary of <span class="process-math">\(\mathcal{S}\)</span> the <dfn class="terminology">induced</dfn> orientation on <span class="process-math">\(\mathcal{C}\)</span> is the one given by the following <dfn class="terminology">right-hand rule</dfn>: if your thumb points along <span class="process-math">\(\boldn\text{,}\)</span> then your fingers curl in the direction of the orientation of <span class="process-math">\(\mathcal{C}\text{.}\)</span> Alternatively, the orientation of <span class="process-math">\(\mathcal{C}\)</span> is induced by <span class="process-math">\(\boldn\)</span> if looking <em class="emphasis">down</em> along <span class="process-math">\(\boldn\text{,}\)</span> the orientation of <span class="process-math">\(\mathcal{C}\)</span> is such that the portion of <span class="process-math">\(\mathcal{S}\)</span> the curve bounds lies <em class="emphasis">on the left</em>.</p></article><article class="definition definition-like" id="d_orientation_piecewise"><h3 class="heading">
+<p id="p-499">Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\text{.}\)</span> Given a simple curve <span class="process-math">\(\mathcal{C}\subseteq \mathcal{S}\)</span> lying partly on the boundary of <span class="process-math">\(\mathcal{S}\)</span> the <dfn class="terminology">induced</dfn> orientation on <span class="process-math">\(\mathcal{C}\)</span> is the one given by the following <dfn class="terminology">right-hand rule</dfn>: if your thumb points along <span class="process-math">\(\boldn\text{,}\)</span> then your fingers curl in the direction of the orientation of <span class="process-math">\(\mathcal{C}\text{.}\)</span> Alternatively, the orientation of <span class="process-math">\(\mathcal{C}\)</span> is induced by <span class="process-math">\(\boldn\)</span> if looking <em class="emphasis">down</em> along <span class="process-math">\(\boldn\text{,}\)</span> the orientation of <span class="process-math">\(\mathcal{C}\)</span> is such that the portion of <span class="process-math">\(\mathcal{S}\)</span> the curve bounds lies <em class="emphasis">on the left</em>.</p></article><article class="definition definition-like" id="d_orientation_piecewise"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">Orientation of piecewise smooth surface.</span>
 </h3>
-<p id="p-498">Let <span class="process-math">\(\mathcal{S}=\cup_{i=1}^k\mathcal{S}_k\)</span> be a piecewise smooth surface, and assume each surface <span class="process-math">\(\mathcal{S}_k\)</span> is orientable. An orientation of <span class="process-math">\(\mathcal{S}\)</span> is a choice of orientations <span class="process-math">\(\boldn_k\)</span> on each surface <span class="process-math">\(\mathcal{S}_k\)</span> such that the following condition is satisfied: given any two surfaces <span class="process-math">\(\mathcal{S}_{k_1}, \mathcal{S}_{k_2}\)</span> intersecting in the curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> the orientation induced on <span class="process-math">\(\mathcal{C}\)</span> by the orientation <span class="process-math">\(\boldn_{k_1}\)</span> is the opposite of the orientation induced by the orientation <span class="process-math">\(\boldn_{k_2}\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_Stokes"><h3 class="heading">
+<p id="p-500">Let <span class="process-math">\(\mathcal{S}=\cup_{i=1}^k\mathcal{S}_k\)</span> be a piecewise smooth surface, and assume each surface <span class="process-math">\(\mathcal{S}_k\)</span> is orientable. An orientation of <span class="process-math">\(\mathcal{S}\)</span> is a choice of orientations <span class="process-math">\(\boldn_k\)</span> on each surface <span class="process-math">\(\mathcal{S}_k\)</span> such that the following condition is satisfied: given any two surfaces <span class="process-math">\(\mathcal{S}_{k_1}, \mathcal{S}_{k_2}\)</span> intersecting in the curve <span class="process-math">\(\mathcal{C}\text{,}\)</span> the orientation induced on <span class="process-math">\(\mathcal{C}\)</span> by the orientation <span class="process-math">\(\boldn_{k_1}\)</span> is the opposite of the orientation induced by the orientation <span class="process-math">\(\boldn_{k_2}\text{.}\)</span></p></article><article class="theorem theorem-like" id="th_Stokes"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Stokes's theorem.</span>
 </h3>
-<p id="p-499">Let <span class="process-math">\(\mathcal{S}\)</span> be a piecewise smooth oriented surface whose boundary <span class="process-math">\(\partial \mathcal{S}=\mathcal{C}\)</span> is a union of closed, piecewise smooth, simple curves. If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{S}\text{,}\)</span> then</p>
+<p id="p-501">Let <span class="process-math">\(\mathcal{S}\)</span> be a piecewise smooth oriented surface whose boundary <span class="process-math">\(\partial \mathcal{S}=\mathcal{C}\)</span> is a union of closed, piecewise smooth, simple curves. If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{S}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \oint\limits_\mathcal{C}\boldF\cdot \boldr=\iint\limits_{\mathcal{S}}\curl\boldF\cdot \boldn\text{,}
@@ -257,23 +257,23 @@ window.MathJax = {
 <p class="continuation">where (a) <span class="process-math">\(\boldn\)</span> is the orientation of <span class="process-math">\(\mathcal{S}\)</span> and (b) the line integral is computed with respect to the induced orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span></p></article><article class="example example-like" id="example-62"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Line integral over triangle.</span>
 </h3>
-<p id="p-500">Let <span class="process-math">\(\mathcal{C}\)</span> be the triangle with vertices <span class="process-math">\((1,0,0), (0,1,0), (0,0,1)\)</span> oriented counterclockwise from above. Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\boldF(x,y,z)=\angvec{z^2, y^2, x}\text{.}\)</span></p>
+<p id="p-502">Let <span class="process-math">\(\mathcal{C}\)</span> be the triangle with vertices <span class="process-math">\((1,0,0), (0,1,0), (0,0,1)\)</span> oriented counterclockwise from above. Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\boldF(x,y,z)=\angvec{z^2, y^2, x}\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like"><ol id="p-501" class="decimal">
-<li id="li-145">
-<span class="heading"><span class="title">Identify as boundary of surface.</span></span><p id="p-502">We have <span class="process-math">\(\mathcal{C}=\partial \mathcal{S}\text{,}\)</span> where <span class="process-math">\(\mathcal{S}\)</span> is the triangular region enclosed by <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like"><ol id="p-503" class="decimal">
+<li id="li-148">
+<span class="heading"><span class="title">Identify as boundary of surface.</span></span><p id="p-504">We have <span class="process-math">\(\mathcal{C}=\partial \mathcal{S}\text{,}\)</span> where <span class="process-math">\(\mathcal{S}\)</span> is the triangular region enclosed by <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
 </li>
-<li id="li-146">
-<span class="heading"><span class="title">Parametrize surface.</span></span><p id="p-503">The region <span class="process-math">\(\mathcal{S}\)</span> is the region of the plane <span class="process-math">\(x+y+z=1\)</span> lying above the triangular region <span class="process-math">\(\mathcal{R}\colon 0\leq x\leq 1, 0\leq y\leq 1-x\text{.}\)</span> Writing <span class="process-math">\(z=1-x-y\text{,}\)</span> we have parametrization</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-118">
+<li id="li-149">
+<span class="heading"><span class="title">Parametrize surface.</span></span><p id="p-505">The region <span class="process-math">\(\mathcal{S}\)</span> is the region of the plane <span class="process-math">\(x+y+z=1\)</span> lying above the triangular region <span class="process-math">\(\mathcal{R}\colon 0\leq x\leq 1, 0\leq y\leq 1-x\text{.}\)</span> Writing <span class="process-math">\(z=1-x-y\text{,}\)</span> we have parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-122">
 \begin{align*}
 \boldr(x,y) \amp=(x,y,1-x-y) \\
 \mathcal{R}\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
 \end{align*}
 </div>
 </li>
-<li id="li-147">
-<span class="heading"><span class="title">Identify appropriate orientation of surface.</span></span><p id="p-504">For the induced orientation on <span class="process-math">\(\mathcal{C}\)</span> to be counterclockwise from above, we want the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> We know that for a parametrization of the form <span class="process-math">\(r(x,y)=(x,y,1-x-y)\)</span> the orientation</p>
+<li id="li-150">
+<span class="heading"><span class="title">Identify appropriate orientation of surface.</span></span><p id="p-506">For the induced orientation on <span class="process-math">\(\mathcal{C}\)</span> to be counterclockwise from above, we want the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> We know that for a parametrization of the form <span class="process-math">\(r(x,y)=(x,y,1-x-y)\)</span> the orientation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}
@@ -281,9 +281,9 @@ window.MathJax = {
 </div>
 <p class="continuation">is the upward one. For the step below we need just the denominator of this expression: <span class="process-math">\(\boldr_x\times \boldr_y=\angvec{1,1,1}\text{.}\)</span></p>
 </li>
-<li id="li-148">
-<span class="heading"><span class="title">Integrate <span class="process-math">\(\curl\boldF\)</span>.</span></span><p id="p-505">A straightforward computation gives us <span class="process-math">\(\curl\boldF=\angvec{0,2z-1,0}\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/th_surface_integral_vector.html" title="Theorem 2.6.15: Surface integral of vector field">Theorem 2.6.15</a> we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_surface_integral_vector.html" id="md-119">
+<li id="li-151">
+<span class="heading"><span class="title">Integrate <span class="process-math">\(\curl\boldF\)</span>.</span></span><p id="p-507">A straightforward computation gives us <span class="process-math">\(\curl\boldF=\angvec{0,2z-1,0}\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/th_surface_integral_vector.html" title="Theorem 2.6.15: Surface integral of vector field">Theorem 2.6.15</a> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_surface_integral_vector.html" id="md-123">
 \begin{align*}
 \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=
 \iint_{\mathcal{R}}\curl\boldF(\boldr(x,y))\cdot (\boldr_x\times \boldr_y)\, dA \\
@@ -299,11 +299,11 @@ window.MathJax = {
 </div></article><article class="example example-like" id="example-63"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Stokes over a pringle.</span>
 </h3>
-<p id="p-506">Let <span class="process-math">\(\mathcal{S}\)</span> be a portion of the surface <span class="process-math">\(z=y^2-x^2\)</span> lying within the cylinder <span class="process-math">\(x^2+y^2=1\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be its boundary. Let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> be the upward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> Verify Stokes's theorem for <span class="process-math">\(\mathcal{S}, \mathcal{C}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF=y\boldi-x\boldj+x^2\boldk\text{.}\)</span></p>
+<p id="p-508">Let <span class="process-math">\(\mathcal{S}\)</span> be a portion of the surface <span class="process-math">\(z=y^2-x^2\)</span> lying within the cylinder <span class="process-math">\(x^2+y^2=1\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be its boundary. Let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> be the upward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> Verify Stokes's theorem for <span class="process-math">\(\mathcal{S}, \mathcal{C}\text{,}\)</span> and the vector field <span class="process-math">\(\boldF=y\boldi-x\boldj+x^2\boldk\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
-<p id="p-507">I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-120">
+<p id="p-509">I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-124">
 \begin{align*}
 \boldr(r,\theta) \amp=(r\cos\theta, r\sin\theta, r^2(\sin^2\theta-\cos^2\theta))=(r\cos\theta,r\sin\theta,-r^2\cos 2\theta) \\
 \mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi \text{,}
@@ -316,7 +316,7 @@ window.MathJax = {
 \end{equation*}
 </div>
 <p class="continuation">(Evaluate Sage cell below for a visualization.) Next compute</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-121">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-125">
 \begin{align*}
 \boldr_r \amp =\angvec{\cos\theta,\sin\theta,-2r\cos 2\theta}\\
 \boldr_\theta\amp=\angvec{-r\sin\theta,r\cos\theta,2r^2\sin 2\theta} \\
@@ -330,7 +330,7 @@ r
 \end{align*}
 </div>
 <p class="continuation">Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldr_r\times\boldr_\theta\)</span> is <span class="process-math">\(r\geq 0\text{,}\)</span> we see that it gives rise to the given choice of <em class="emphasis">upward</em> orientation. With all the ingredients assembled, I leave it to you to verify that</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-122">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-126">
 \begin{align*}
 \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=\iint_\mathcal{R}4r^3\cos\theta(\cos\theta\sin 2\theta+\sin\theta\cos 2\theta)-2r\, dA \\
 \amp=-2\pi \\
@@ -342,7 +342,7 @@ r
 </div></article><article class="corollary theorem-like" id="cor_Stokes_same_boundary"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Two surfaces, same boundary.</span>
 </h3>
-<p id="p-508">Let <span class="process-math">\(\mathcal{S}_1, \mathcal{S}_2\)</span> be two piecewise smooth oriented surfaces with a shared boundary curve <span class="process-math">\(\mathcal{C}\)</span> satisfying the conditions of Stokes's theorem, and assume that the orientation on <span class="process-math">\(\mathcal{C}\)</span> induced by <span class="process-math">\(\mathcal{S}_1\)</span> is equal to the orientation induced by <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous partial derivatives on an open set containing <span class="process-math">\(S_1\)</span> and <span class="process-math">\(S_2\text{,}\)</span> then</p>
+<p id="p-510">Let <span class="process-math">\(\mathcal{S}_1, \mathcal{S}_2\)</span> be two piecewise smooth oriented surfaces with a shared boundary curve <span class="process-math">\(\mathcal{C}\)</span> satisfying the conditions of Stokes's theorem, and assume that the orientation on <span class="process-math">\(\mathcal{C}\)</span> induced by <span class="process-math">\(\mathcal{S}_1\)</span> is equal to the orientation induced by <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous partial derivatives on an open set containing <span class="process-math">\(S_1\)</span> and <span class="process-math">\(S_2\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \iint_{\mathcal{S}_1}\curl \boldF\cdot \boldn_1\, d\sigma=\iint_{\mathcal{S}_2} \curl\boldF\cdot \boldn_2\, d\sigma\text{,}
@@ -351,19 +351,19 @@ r
 <p class="continuation">where <span class="process-math">\(\boldn_1, \boldn_2\)</span> are the orientations of <span class="process-math">\(\mathcal{S}_1,\mathcal{S}_2\text{,}\)</span> respectively.</p></article><article class="example example-like" id="example-64"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
 </h3>
-<p id="p-509">Let <span class="process-math">\(\boldF=\angvec{-y^2, x, z^2}\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the intersection of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> and the plane <span class="process-math">\(y+z=2\text{.}\)</span> Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\mathcal{C}\)</span> is oriented counterclockwise, viewed from above.</p>
+<p id="p-511">Let <span class="process-math">\(\boldF=\angvec{-y^2, x, z^2}\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the intersection of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> and the plane <span class="process-math">\(y+z=2\text{.}\)</span> Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\mathcal{C}\)</span> is oriented counterclockwise, viewed from above.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
 <article class="case" id="case-6"><h4 class="heading">Solution 1.</h4>
-<p id="p-510">The curve <span class="process-math">\(\mathcal{C}\)</span> is the boundary of the elliptical region <span class="process-math">\(\mathcal{S}\)</span> it encloses in the plane <span class="process-math">\(y+z=2\text{.}\)</span> Since <span class="process-math">\(z=2-y\)</span> for points on this plane, we can parametrize as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-123">
+<p id="p-512">The curve <span class="process-math">\(\mathcal{C}\)</span> is the boundary of the elliptical region <span class="process-math">\(\mathcal{S}\)</span> it encloses in the plane <span class="process-math">\(y+z=2\text{.}\)</span> Since <span class="process-math">\(z=2-y\)</span> for points on this plane, we can parametrize as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-127">
 \begin{align*}
 \boldr(r,\theta) \amp =(r\cos\theta, r\sin\theta,2-r\sin\theta)\\
 \mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi \text{.}
 \end{align*}
 </div>
 <p class="continuation">Assembling ingredients we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-124">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-128">
 \begin{align*}
 \boldr_r \amp =\angvec{\cos\theta, \sin\theta,-\sin\theta}\\
 \boldr_\theta\amp =\angvec{-r\sin\theta,r\cos\theta,-r\cos\theta}\\
@@ -372,7 +372,7 @@ r
 \end{align*}
 </div>
 <p class="continuation">Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldr_r\times\boldr_\theta\)</span> is nonnegative, we see that this gives rise to the <em class="emphasis">upward</em> orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> We can now use Stokes's theorem to concude</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-125">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-129">
 \begin{align*}
 \oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
 \amp=\iint_\mathcal{R}\angvec{0,0,1+2r\sin\theta}\cdot \angvec{0,r,r}\, dA \\
@@ -381,8 +381,8 @@ r
 \amp =\pi
 \end{align*}
 </div></article><article class="case" id="case-7"><h4 class="heading">Solution 2.</h4>
-<p id="p-511">Alternatively, we can treat <span class="process-math">\(\mathcal{C}\)</span> as the boundary of the piecewise smooth surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the portion of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> above the <span class="process-math">\(xy\)</span>-plane and below the plane <span class="process-math">\(y+z=2\text{,}\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is the disc <span class="process-math">\(x^2+y^2\leq 1\)</span> in the <span class="process-math">\(xy\)</span>-plane. To have the given orientation of <span class="process-math">\(\mathcal{C}\)</span> be induced by that of <span class="process-math">\(\mathcal{S}\text{,}\)</span> we must choose the <em class="emphasis">inward</em> orientation <span class="process-math">\(\boldn\)</span> on <span class="process-math">\(\mathcal{S}\)</span> : this orientation is <em class="emphasis">inward</em> on the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> and <em class="emphasis">upward</em> on the disc <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> With this setup we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-126">
+<p id="p-513">Alternatively, we can treat <span class="process-math">\(\mathcal{C}\)</span> as the boundary of the piecewise smooth surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the portion of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> above the <span class="process-math">\(xy\)</span>-plane and below the plane <span class="process-math">\(y+z=2\text{,}\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is the disc <span class="process-math">\(x^2+y^2\leq 1\)</span> in the <span class="process-math">\(xy\)</span>-plane. To have the given orientation of <span class="process-math">\(\mathcal{C}\)</span> be induced by that of <span class="process-math">\(\mathcal{S}\text{,}\)</span> we must choose the <em class="emphasis">inward</em> orientation <span class="process-math">\(\boldn\)</span> on <span class="process-math">\(\mathcal{S}\)</span> : this orientation is <em class="emphasis">inward</em> on the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> and <em class="emphasis">upward</em> on the disc <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> With this setup we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-130">
 \begin{align*}
 \oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
 \amp= \cancelto{0}{\iint_\mathcal{S_1}\curl\boldF\cdot \boldn\, d\sigma}+\iint_\mathcal{S_2}\curl\boldF\cdot \boldn\, d\sigma\\
@@ -396,11 +396,11 @@ r
 </div></article><article class="example example-like" id="example-65"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.8</span><span class="period">.</span>
 </h3>
-<p id="p-512">Show that Stokes's theorem implies Green's theorem.</p>
+<p id="p-514">Show that Stokes's theorem implies Green's theorem.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
-<p id="p-513">Let <span class="process-math">\(\mathcal{R}\)</span> be the region enclosed by a simple, piecewise smooth planar curve <span class="process-math">\(\mathcal{C}\)</span> oriented counterclockwise, and suppose <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\)</span> satisfies the conditions of <a href="" class="xref" data-knowl="./knowl/th_Greens.html" title="Theorem 2.4.1: Green's theorem (circulation or tangential form)">Theorem 2.4.1</a>. Define <span class="process-math">\(G(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}\text{,}\)</span> and think of <span class="process-math">\(\mathcal{R}\subseteq\R^3\)</span> as a planar surface living in the <span class="process-math">\(xy\)</span>-plane, with <span class="process-math">\(\mathcal{C}\)</span> is boundary. We choose the orientation <span class="process-math">\(\boldn(x,y,z)=\angvec{0,0,1}=\boldk\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> By Stokes's theorem we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html" id="md-127">
+<p id="p-515">Let <span class="process-math">\(\mathcal{R}\)</span> be the region enclosed by a simple, piecewise smooth planar curve <span class="process-math">\(\mathcal{C}\)</span> oriented counterclockwise, and suppose <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\)</span> satisfies the conditions of <a href="" class="xref" data-knowl="./knowl/th_Greens.html" title="Theorem 2.4.1: Green's theorem (circulation or tangential form)">Theorem 2.4.1</a>. Define <span class="process-math">\(G(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}\text{,}\)</span> and think of <span class="process-math">\(\mathcal{R}\subseteq\R^3\)</span> as a planar surface living in the <span class="process-math">\(xy\)</span>-plane, with <span class="process-math">\(\mathcal{C}\)</span> is boundary. We choose the orientation <span class="process-math">\(\boldn(x,y,z)=\angvec{0,0,1}=\boldk\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> By Stokes's theorem we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html" id="md-131">
 \begin{align*}
 \int_\mathcal{C}\boldF\cdot d\boldr\amp=\iint_\mathcal{R}\curl G\cdot \boldn \, d\sigma \amp \\
 \amp =\iint_\mathcal{R}\angvec{0,0,\partial F_2/\partial x-\partial F_1/\partial y}\cdot \angvec{0,0,1} \, dA\\
@@ -411,7 +411,7 @@ r
 </div></article><article class="theorem theorem-like" id="th_Stokes_interpretation_curl"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Curl interpretation.</span>
 </h3>
-<p id="p-514">Assume the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y,z)\text{.}\)</span> Let <span class="process-math">\(\boldn\)</span> be any unit vector, and for all <span class="process-math">\(R &gt; 0\text{,}\)</span> let <span class="process-math">\(C_R\)</span> be the circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\)</span> and lying in the plane orthogonal to <span class="process-math">\(\boldn\text{.}\)</span> We have</p>
+<p id="p-516">Assume the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y,z)\text{.}\)</span> Let <span class="process-math">\(\boldn\)</span> be any unit vector, and for all <span class="process-math">\(R &gt; 0\text{,}\)</span> let <span class="process-math">\(C_R\)</span> be the circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\)</span> and lying in the plane orthogonal to <span class="process-math">\(\boldn\text{.}\)</span> We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq_Stokes_theorem_interpretation">
 \begin{equation}
 (\curl\boldF)\cdot \boldn (x,y,z)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot d\boldr\text{,}\tag{2.7.1}

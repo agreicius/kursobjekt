@@ -12,21 +12,11 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Assemble the ingredients:</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html">
-\begin{align*}
-\boldr'(t) \amp = (2\cos t, 1, -2\sin t)\\
-\abs{\boldr'(t)} \amp= \sqrt{4\cos^2 t+4\sin^2t+1}=\sqrt{5} \text{.}
-\end{align*}
-</div>
-<p class="continuation">Now compute</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html">
-\begin{align*}
-\int\limits_\mathcal{C}f(x,y,z)\, ds\amp = \int_0^{\pi}f(2\cos t, t, 2\sin t)\abs{\boldr'(t)}\, dt \amp(\knowl{./knowl/th_line_integral_scalar.html}{\text{2.1.6}})\\
-\amp=\int_0^\pi (4\cos^2 t+t^2+4\sin^2 t)\sqrt{5}\, dt  \\
-\amp = \sqrt{5}\int_0^\pi 4+t^2\, dt\\
-\amp = \sqrt{5}(4\pi+\pi^3/3)\text{.}
-\end{align*}
+<p>Assume the parametrized curve <span class="process-math">\(\mathcal{C}\)</span> is a union of smoothly parametrized curves <span class="process-math">\(\mathcal{C}_1, \mathcal{C}_2,\dots, \mathcal{C}_r\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\limits_\mathcal{C}f\, ds=\int\limits_{\mathcal{C}_1}f\, ds+\int\limits_{\mathcal{C}_2}f\, ds+\cdots +\int\limits_{\mathcal{C}_r}f\, ds\text{.}
+\end{equation*}
 </div>
 <span class="incontext"><a href="s_line_integal_scalar.html#p-328" class="internal">in-context</a></span>
 </body>

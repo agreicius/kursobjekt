@@ -12,7 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>On the other hand, you can show that if the parametrizations <span class="process-math">\(\boldr\)</span> and <span class="process-math">\(\bolds\)</span> are smooth and one-to-one on <span class="process-math">\([a,b]\text{,}\)</span> except possibly at the endpoints, then indeed the two line integrals will be equal. Thus, we say the line integral is <em class="emphasis">independent</em> of your choice of smooth, one-to-one parametrization.</p>
+<p>Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\)</span> be a parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq \R^n\text{,}\)</span> and let <span class="process-math">\(f(x_1,x_2,\dots, x_n)\)</span> be a scalar function defined on <span class="process-math">\(\mathcal{C}\text{.}\)</span> If (a) <span class="process-math">\(\boldr\)</span> is <em class="emphasis">smooth</em> on <span class="process-math">\([a,b]\)</span> and (b) <span class="process-math">\(f(x,y,z)\)</span> is <em class="emphasis">continuous</em> on <span class="process-math">\(\mathcal{C}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int\limits_\mathcal{C}f(x_1,x_2,\dots, x_n)\, ds  \amp= \int_a^b f(\boldr(t))\abs{\boldr'(t)}\, dt \\
+\amp = \int_a^b f(x_1(t),x_2(t),\dots, x_n(t))\sqrt{(x_1'(t))^2+(x_2'(t))^2+\cdots +(x_n'(t))^2}\, dt \text{.}
+\end{align*}
+</div>
 <span class="incontext"><a href="s_line_integal_scalar.html#p-321" class="internal">in-context</a></span>
 </body>
 </html>

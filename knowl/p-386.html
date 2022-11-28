@@ -12,26 +12,12 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Our proof will assume <span class="process-math">\(n=2\)</span> for simplicity of notation; it works just as well for <span class="process-math">\(n=3\text{.}\)</span> Assume <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> is conservative. We define the scalar function <span class="process-math">\(f\)</span> as follows: fix any <span class="process-math">\(P=(x_0,y_0)\)</span> in <span class="process-math">\(D\text{;}\)</span> for any <span class="process-math">\((x,y)\in D\)</span> define</p>
+<p>If <span class="process-math">\(\boldF\)</span> is a continuous vector field on the open connected set <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(\boldF\)</span> is conservative if and only if <span class="process-math">\(\boldF=\nabla f\)</span> for some function <span class="process-math">\(f\)</span> defined on <span class="process-math">\(D\text{.}\)</span> Using logical shorthand:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-f(x,y)=\int_P^{(x,y)}\boldF\cdot d\boldr\text{,}
-\end{equation*}
+\begin{equation}
+\boldF=\nabla f \iff \boldF \text{ conservative}\text{.}\tag{2.3.6}
+\end{equation}
 </div>
-<p class="continuation">where the notation <span class="process-math">\(\int_P^{(x,y)}\boldF\cdot d\boldr\)</span> is understood to mean the line integral of <span class="process-math">\(\boldF\)</span> over any choice of piecewise smooth curve <span class="process-math">\(\mathcal{C}\subseteq D\text{.}\)</span> That <span class="process-math">\(f(x,y)\)</span> is a well-defined function follows from the fact that (a) there is <em class="emphasis">some</em> choice of curve <span class="process-math">\(\mathcal{C}\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\((x,y)\)</span> (<span class="process-math">\(D\)</span> is connected), and (b) the value of the line integral <em class="emphasis">does not depend</em> on this choice (<span class="process-math">\(\boldF\)</span> is conservative). Next, we claim that <span class="process-math">\(f\)</span> is a potential function for <span class="process-math">\(\boldF\text{:}\)</span> i.e., <span class="process-math">\(\nabla f=\boldF\text{.}\)</span> Indeed, we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-f_x(x,y) \amp =\lim_{h\rightarrow 0}\frac{1}{h}(f(x+h,y)-f(x,y)) \amp \text{def. of } f_x\\
-\amp=\lim_{h\rightarrow 0}\frac{1}{h}(\int_P^{(x+h,y)}\boldF\cdot d\boldr-\int_P^{(x,y)}\boldF\cdot d\boldr) \\
-\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_{(x,y)}^{(x+h,y)}\boldF\cdot d\boldr \amp \text{(integral props.)}\\
-\amp = \lim_{h\rightarrow 0}\frac{1}{h}\int_0^h\boldF(x+t, y)\cdot \angvec{1,0}\, dt \amp \boldr(t)=(x+t,y), 0\leq t\leq h \\
-\amp =\lim_{h\rightarrow 0}\frac{1}{h}\int_0^hF_1(x+t, y)\, dt\\
-\amp = \frac{d}{dh}\left( \int_0^h F_1(x+t,y)\, dt \right)\Bigr\vert_{h=0}\\
-\amp = F_1(x+0, y) \amp \text{(FTC!)}\\
-\amp = F_1(x,y)\text{.}
-\end{align*}
-</div>
-<p class="continuation">This proves <span class="process-math">\(f_x=F_1\text{;}\)</span> the argument that <span class="process-math">\(f_y=F_2\)</span> is exactly similar. We conclude <span class="process-math">\(\nabla f=\angvec{F_1, F_2}=\boldF\text{.}\)</span></p>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-386" class="internal">in-context</a></span>
 </body>
 </html>

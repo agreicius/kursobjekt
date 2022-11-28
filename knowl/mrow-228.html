@@ -13,19 +13,16 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-n =2 \\
-\text{Mass: } M\amp=\iint\limits_\mathcal{R}\delta(x,y)\, dA \\
-\text{First moments}\colon  M_{y}\amp=\iint\limits_\mathcal{R}x\delta(x,y)\, dA
-\amp  M_{x}\amp=\iint\limits_\mathcal{R}y\delta(x,y)\, dA \\
-\text{Center of mass}\colon (\overline{x},\overline{y})\amp=\frac{1}{M}(M_y, M_x) \\
-n =3 \\
-\text{Mass: } M\amp=\iiint\limits_\mathcal{R}\delta(x,y,z)\, dV \\
-\text{First moments}\colon  M_{yz}\amp=\iiint\limits_\mathcal{R}x\delta(x,y,z)\, dV
-\amp  M_{xz}\amp=\iiint\limits_\mathcal{R}y\delta(x,y,z)\, dV
-\amp  M_{xy}\amp=\iiint\limits_\mathcal{R}z\delta(x,y,z)\, dV\\
-\text{Center of mass}\colon (\overline{x},\overline{y},\overline{z})\amp=\frac{1}{M}(M_{yz}, M_{xz}, M_{xy}) 
+\operatorname{vol} D \amp=\iiint\limits_D 1\, dV \\
+\amp = \int_0^{2\pi}\int_0^{\pi/4}\int_0^{2R\cos\phi}\rho^2\sin\phi\, d\rho\, d\phi\, d\theta \amp \text{(spher. coord.)}\\
+\amp =2\pi\int_0^{\pi/4}\frac{1}{3}\sin\phi(2R\cos\phi)^3\, d\phi \\
+\amp =\frac{16}{3}\pi R^3\int_0^{\pi/4}\sin\phi\cos^3\phi\, d\phi\\
+\amp =\frac{16}{3}\pi R^3\left(-\frac{1}{4}\cos^4\phi\right)\Bigr\vert_0^{\pi/4}\\
+\amp =\frac{16}{12}\pi R^3(1-(\sqrt{2}/2)^4)\\
+\amp =\frac{16}{12}\pi R^3(3/4)\\
+\amp =\pi R^3
 \end{align*}
 </div>
-<span class="incontext"><a href="s_multiple_integrals_applications.html#md-64" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_substitution_spherical.html#md-64" class="internal">in-context</a></span>
 </body>
 </html>

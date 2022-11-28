@@ -13,12 +13,12 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\diver\boldF(P) \amp =\lim_{R\to 0} P_R\\
-\amp=\lim_{R\to 0}\frac{1}{\operatorname{vol} B_R}\iiint\limits_{B_R}\diver \boldF\, dV \amp \text{(avg. value thm.)}\\
-\amp =\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{\mathcal{S_R}}\boldF\cdot \boldn\, d\sigma
-\amp \text{(divergence thm.)} 
+\iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=\iint_\mathcal{R}4r^3\cos\theta(\cos\theta\sin 2\theta+\sin\theta\cos 2\theta)-2r\, dA \\
+\amp=-2\pi \\
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi}\boldF(\bolds(t))\cdot \bolds'(t)\, dt\\
+\amp =-2\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Divergence.html#md-135" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_Stokes.html#md-126" class="internal">in-context</a></span>
 </body>
 </html>

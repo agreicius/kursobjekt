@@ -12,13 +12,28 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Assume the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y,z)\text{.}\)</span> For all <span class="process-math">\(R&gt;0\text{,}\)</span> let <span class="process-math">\(S_R\)</span> be the sphere of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\)</span> with outward orientation. We have</p>
+<p>Given a a point charge <span class="process-math">\(q\)</span> located at the origin in <span class="process-math">\(\R^3\text{,}\)</span> the electrostatic field it produces is given by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-\diver\boldF(P)=\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{S_R}\boldF\cdot\boldn\, d\sigma\text{.}\tag{2.8.1}
-\end{equation}
+\begin{equation*}
+\boldE(x,y,z)=\frac{q}{4\pi \epsilon_0}\frac{\angvec{x,y,z}}{(x^2+y^2+z^2)^{3/2}}=\frac{q}{4\pi \epsilon_0}\frac{\boldr}{\abs{\boldr}^3},
+\end{equation*}
 </div>
-<p class="continuation">Thus we interpret <span class="process-math">\(\diver\boldF(P)\)</span> as the <em class="emphasis">flux density</em> of <span class="process-math">\(\boldF\)</span> at <span class="process-math">\(P\text{,}\)</span> measured in unit flux per unit volume.</p>
+<p class="continuation">where <span class="process-math">\(\boldr=\angvec{x,y,z}\)</span> and <span class="process-math">\(\epsilon_0\)</span> is a physical constant called the <em class="emphasis">permittivity of free space</em>. Prove Gauss's law: if <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> is a smooth closed surface with outward orientation then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\begin{cases}
+0 \amp \text{if } \mathcal{S} \text{ does not enclose the point charge;}\\
+\frac{q}{\epsilon_0}\amp \text{if } \mathcal{S} \text{ encloses the point charge.}
+\end{cases}
+\end{equation*}
+</div>
+<p class="continuation">Gauss's law can be generalized to a situation where the surface <span class="process-math">\(\mathcal{S}\)</span> encloses a region <span class="process-math">\(D\)</span> with continuous charge density <span class="process-math">\(\delta(x,y,z)\text{.}\)</span> If <span class="process-math">\(\boldE\)</span> is the resulting electrostatic field, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_\mathcal{S}\boldE\cdot \boldn\, d\sigma=\frac{1}{\epsilon_0}\iiint\limits_D\delta(x,y,z)\, dV=\frac{Q}{\epsilon_0}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(Q=\iiint_D\delta(x,y,z)\, dV\)</span> is the total charge enclosed by <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <span class="incontext"><a href="s_Divergence.html#p-533" class="internal">in-context</a></span>
 </body>
 </html>

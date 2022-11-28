@@ -12,12 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> be a smooth parametrization of the surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(f\)</span> be a continuous function defined on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
+<p>Now assemble ingredients:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\iint\limits_\mathcal{S}f(x,y,z)\, d\sigma=\iint\limits_{\mathcal{R}}f(\boldr(u,v))\abs{\boldr_u\times \boldr_v}\, dA\text{.}
-\end{equation*}
+\begin{align*}
+\bolds_r \amp = \langle\cos\theta, \sin\theta, 2r\rangle)\\
+\bolds_\theta \amp= \angvec{-r\sin\theta, r\cos\theta, 0}\\
+\bolds_r\times \bolds_\theta \amp=\angvec{-2r^2\cos\theta, -2r^2\sin\theta, r} \\
+\abs{\bolds_r\times \bolds_\theta} \amp=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2}\\
+\amp = \sqrt{4r^4+r^2}=r\sqrt{4r^2+1}\text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_integrals.html#p-465" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_surfaces_area.html#p-465" class="internal">in-context</a></span>
 </body>
 </html>

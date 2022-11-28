@@ -12,19 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Looking at the equation, we can take <span class="process-math">\(\boldn=\angvec{1,2,-3}\)</span> to be our normal vector. Next, the point <span class="process-math">\(P=(5,0,0)\)</span> is easily seen to be a point of <span class="process-math">\(\mathcal{S}\text{.}\)</span> To find vectors <span class="process-math">\(\boldw=\angvec{w_1,w_2,w_3}\)</span> orthogonal to <span class="process-math">\(\boldn\)</span> we solve <em class="emphasis">by inspection</em> the linear equation</p>
+<p>If <span class="process-math">\(\boldw_1=\angvec{r_1,r_2,r_3}\)</span> and <span class="process-math">\(\boldw_2=\angvec{s_1,s_2,s_3}\text{,}\)</span> then the function <span class="process-math">\(\boldr\colon \R^2\rightarrow \R^3\)</span> defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\boldn\cdot\angvec{w_1,w_2,w_3}=w_1+2w_2-3w_3=0\text{.}
+\boldr(u,v)=(x_0,y_0,z_0)+u\boldw_1+v\boldw_2=(x_0+ur_1+vs_1,y_0+ur_2+vs_2,z_0+ur_3+vs_3)
 \end{equation*}
 </div>
-<p class="continuation">The vectors <span class="process-math">\(\boldw_1=\angvec{2,-1,0}\)</span> and <span class="process-math">\(\boldw_2=\angvec{3,0,1}\)</span> are two such solutions, and clearly <span class="process-math">\(\boldw_1\ne c\boldw_2\)</span> for any <span class="process-math">\(c\in \R\text{.}\)</span> We conclude that</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\boldr(u,v)=(5,0,0)+u\boldw_1+v\boldw_2=(5+2u+3v,-u, v)
-\end{equation*}
-</div>
-<p class="continuation">is a parametrization of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<p class="continuation">is a parametrization of the plane <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
 <span class="incontext"><a href="s_surfaces_area.html#p-439" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,23 +12,20 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="period">.</span><span class="space"> </span><span class="title">Integral over <span class="process-math">\(T_4\)</span>.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
-<p>Let <span class="process-math">\(T_4\)</span> be triangle with vertices <span class="process-math">\((1,0,0), (1,0,0),(0,1,0)\text{.}\)</span> This is the region of the plane <span class="process-math">\(z=x+y\)</span> lying over the planar triangle with vertices <span class="process-math">\((0,0,0), (1,0,0), (0,1,0)\text{.}\)</span> Since <span class="process-math">\(z\)</span> is expressed as a function of <span class="process-math">\(x,y\)</span> we parametrize easily as</p>
+<p>Assemble the necessary ingredients:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\bolds(x,y) \amp =(x,y,x+y)\\
-\mathcal{R}_{2}\colon  0 \amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
+\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
+\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
+\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
+\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
+\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
+\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
+\amp =\cos z\sqrt{1+\sin^2z} \text{,}
 \end{align*}
 </div>
-<p class="continuation">Again, a straightforward computation shows <span class="process-math">\(\abs{\bolds_x\times \bolds_y}=\sqrt{3}\text{,}\)</span> and thus</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp \\
-\amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx \\
-\amp =\frac{\sqrt{3}}{24}\text{,}
-\end{align*}
-</div>
-<p class="continuation">where we use our work from above for the last equality.</p></article><span class="incontext"><a href="s_surfaces_integrals.html#li-142" class="internal">in-context</a></span>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\cos z\geq 0\)</span> for <span class="process-math">\(z\in [-\pi/2, \pi/2]\text{.}\)</span></p></article><span class="incontext"><a href="s_surfaces_integrals.html#li-142" class="internal">in-context</a></span>
 </body>
 </html>

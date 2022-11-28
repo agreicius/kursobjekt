@@ -12,20 +12,7 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>If <span class="process-math">\(\boldr(t)=(g_1(t),g_2(t))\)</span> is a parametrization of <span class="process-math">\(\mathcal{C}\)</span> with <em class="emphasis">counterclockwise</em> (positive) orientation, then the outward unit normal vector can be expressed as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\boldn(t)=\frac{\angvec{g_2'(t),-g_1'(t)}}{\sqrt{g_1^2(t)+g_2^2(t)}}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Furthermore, if <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\text{,}\)</span> then</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\oint_\mathcal{C}\boldF\cdot \boldn \, ds\amp =  \int_a^b\angvec{F_1(\boldr(t)),F_2(\boldr(t))}\cdot \angvec{g_2'(t),-g_1'(t)}\, dt\\
-\amp =  \int_a^b F_1(g_1(t),g_2(t))g_2'(t)-F(g_1(t),g_2(t))g_1'(t)\, dt\\
-\amp = \oint_\mathcal{C} F_1\, dy -F_2\, dx\text{.}
-\end{align*}
-</div>
+<p>It is not difficult to modify our Sage cell from <a href="" class="xref" data-knowl="./knowl/sage_line_integrals_scalar.html" title="Sage example 2.1.2: Scalar line integral">Sage example 2.1.2</a> to compute vector line integrals. As in that example, we use the <code class="code-inline tex2jax_ignore">vector()</code> function to make vector objects out of our lists: this is essential for using vector operations like dot product, norm, etc.. Here is the line integral from <a href="" class="xref" data-knowl="./knowl/eg_vector_line_integral_helix.html" title="Example 2.2.7: Vector field integral over helix">Example 2.2.7</a>.</p>
 <span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-362" class="internal">in-context</a></span>
 </body>
 </html>

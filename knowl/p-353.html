@@ -12,7 +12,21 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^m\)</span> be a a smooth parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq\R^n\text{,}\)</span> and assume the vector field <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> is continuous on <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+<p>Let <span class="process-math">\(\boldr(t)=(g_1(t),g_2(t),g_3(t))\text{,}\)</span> <span class="process-math">\(a\leq t\leq b\text{,}\)</span> be a smooth parametrization of the curve <span class="process-math">\(\mathcal{C}\subseteq\R^n\text{.}\)</span> Given a vector field <span class="process-math">\(\boldF=(F_1, F_2,F_3)\)</span> that is continuous on the curve <span class="process-math">\(\mathcal{C}\subseteq \R^n\text{,}\)</span> we define the line integrals with respect to <span class="process-math">\(dx, dy, dz\)</span> as follows.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_line_integral_vector.html">
+\begin{align*}
+\int_\mathcal{C}F_1\, dx \amp :=\int_a^b F_1(\boldr(t))\, g_1'(t)\, dt \\
+\int_\mathcal{C}F_2\, dy \amp :=\int_a^b F_2(\boldr(t))\, g_2'(t)\, dt \\
+\int_\mathcal{C}F_3\, dz \amp :=\int_a^b F_3(\boldr(t))\, g_3'(t)\, dt \text{.}
+\end{align*}
+</div>
+<p class="continuation">From <a href="" class="xref" data-knowl="./knowl/d_line_integral_vector.html" title="Definition 2.2.3: Integral of a vector field along a curve">Definition 2.2.3</a> we see that we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_line_integral_vector.html">
+\begin{align*}
+\int_\mathcal{C}\boldF\cdot d\boldr\amp =\int_\mathcal{C}F_1\, dx +\int_\mathcal{C}F_2\, dy +\int_\mathcal{C}F_3\, dz\\
+\amp = \int_{\mathcal{C}}F_1\, dx+F_2\, dy+F_3\, dz \amp \text{(abbreviated notation)}\text{.}
+\end{align*}
+</div>
 <span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-353" class="internal">in-context</a></span>
 </body>
 </html>
