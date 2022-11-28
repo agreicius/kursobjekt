@@ -39,7 +39,7 @@
         </li>
           <li>
             <p>
-              Compute the center of mass of <m>T</m> when the denisty function is given by <m>\delta(x,y)=x+y</m>.
+              Compute the center of mass of <m>T</m> when the density function is given by <m>\delta(x,y)=x+y</m>.
             </p>
         </li>
         <li>
@@ -50,9 +50,75 @@
       </ol>
     </statement>
     <solution>
-      <p>
-
-      </p>
+      <ol>
+        <li>
+          <p>
+            We compute
+            <md>
+              <mrow> M \amp = \iint\limits_Tc\, dA </mrow>
+              <mrow>  \amp =c\operatorname{area} T=\frac{c}{2}</mrow>
+              <mrow> M_y \amp=\iint\limits_T cx\, dA </mrow>
+              <mrow> \amp=c\int_0^1\int_0^{1-x}x\, dy\, dx </mrow>
+              <mrow>  \amp = c\left(\frac{1}{2}x-\frac{1}{3}x^3\right)\Bigr\vert_0^1</mrow>
+              <mrow>  \amp = \frac{c}{6}</mrow>
+              <mrow> M_x \amp =\iint\limits_T cy\, dA </mrow>
+              <mrow>  \amp =c\int_0^1\int_0^{1-y}y\, dx\, dy</mrow>
+              <mrow>  \amp =\frac{c}{6} </mrow>
+              <mrow> (\overline{x},\overline{y}) \amp=(M_y/M, M_x/M) </mrow>
+              <mrow>  \amp = (1/3,1/3))</mrow>
+            </md>.
+          Note: intuitively it is no surprise that the center of mass of <m>T</m> lies along the line <m>y=x</m>, since this is an axis of symmetry of <m>T</m>. To make this symmetry argument rigorous, however, requires some finessing.
+          </p>
+        </li>
+        <li>
+          <p>
+            We compute
+            <md>
+              <mrow>M \amp = \iint\limits_T x+y\, dA </mrow>
+              <mrow> \amp=\int_0^1\int_0^{1-x}x+y\, dy\, dx </mrow>
+              <mrow>  \amp =\int_0^1x(1-x)+\frac{1}{2}(1-x)^2\, dx</mrow>
+              <mrow>  \amp = \frac{1}{3}</mrow>
+              <mrow> M_y  \amp =\iint\limits_T x(x+y)\, dA</mrow>
+              <mrow>  \amp = \int_0^1\int_0^{1-x}x^2+xy\, dy\, dx</mrow>
+              <mrow>  \amp = \int_0^1x^2(1-x)+\frac{1}{2}x(1-x)^2\, dx</mrow>
+              <mrow>  \amp = \frac{1}{8}</mrow>
+              <mrow> M_x \amp = \iint\limits_T y(x+y)\, dA </mrow>
+              <mrow>  \amp =\int_0^1\int_0^{1-y}xy+y^2\, dx\, dy</mrow>
+              <mrow>  \amp =\frac{1}{8}</mrow>
+              <mrow> (\overline{x},\overline{y}) \amp=(M_y/M, M_x/M) </mrow>
+              <mrow>  \amp = (3/8, 3/8)</mrow>
+            </md>.
+            Again, it is no surprise that the center of mass lies along the line <m>y=x</m>, since both <m>T</m> and the density function <m>\delta(x,y)=x+y</m> are symmetric with respect to this line. In contrast to the previous computation, the center of mass is further from the origin. This makes sense in terms of our <q>balancing point</q> interpretation of center of mass: in this case the greater amount of mass in the upper right of the triangle moves the balancing point up and to the right.
+          </p>
+        </li>
+        <li>
+          <p>
+            The transformation <m>G(u,v)=(au+cv, bu+dv)</m> maps the triangle <m>T</m> with vertices <m>(0,0),(1,0), (0,1)</m> in the <m>uv</m>-plane to the given triangle <m>T'</m> in the <m>xy</m>-plane. We can use substitution to reduce the computation for <m>T'</m> to that of <m>T</m>. Let <m>M, M_y, M_x</m> be the mass and moments of <m>T</m>, and <m>M', M_y', M_x'</m> the mass and moments of <m>T'</m>.
+            <md>
+              <mrow> M'\amp=\iint\limits_{T'}1\, dA </mrow>
+              <mrow> \amp =\iint\limits_T \abs{J(G)}\, dA </mrow>
+              <mrow>  \amp =\iint\limits_T\abs{ad-bc}\, dA</mrow>
+              <mrow>  \amp =\abs{ad-bc}M</mrow>
+              <mrow> M_y' \amp=\iint\limits_{T'}x\, dA </mrow>
+              <mrow>  \amp =\iint\limits_T (au+cv) \abs{ad-bc}\, dA</mrow>
+              <mrow>  \amp =\abs{ad-bc}(a\iint\limits_Tu\, dA+c\iint\limits_T v\, dA)</mrow>
+              <mrow>  \amp =\abs{ad-bc}(aM_y+cM_x)</mrow>
+              <mrow> M_x' \amp=\iint\limits_{T'}y\, dA </mrow>
+              <mrow>  \amp =\iint\limits_T (bu+dv) \abs{ad-bc}\, dA</mrow>
+              <mrow>  \amp =\abs{ad-bc}(b\iint\limits_Tu\, dA+d\iint\limits_T v\, dA)</mrow>
+              <mrow>  \amp =\abs{ad-bc}(bM_y+dM_x)</mrow>
+              <mrow> (\overline{x}',\overline{y}') \amp = (M_y'/M', M_x'/M') </mrow>
+              <mrow>  \amp = \frac{1}{M}(aM_y+cM_x, bM_y+dM_x)</mrow>
+              <mrow>  \amp = \frac{1}{3}(a+c,b+d)</mrow>
+            </md>.
+            Note: looking closely at the penultimate line, we see that
+            <me>
+              (\overline{x}',\overline{y}')=G(\overline{x}, \overline{y})
+            </me>.
+            In other words, the center of mass of <m>T'=G(T)</m> is the result of applying <m>G</m> to the center of mass of <m>T</m>! This is a consequence of the fact that <m>G</m> is a <em>linear</em> transformation.
+          </p>
+        </li>
+      </ol>
     </solution>
   </example>
   <example>
@@ -170,7 +236,7 @@
           </li>
           <li>
             <p>
-              Compute <m>\mu_X</m> and <m>\mu_Y</m> for any two random variables <m>X</m> and <m>Y</m> with joint probabilty distribution function <m>f</m>. 
+              Compute <m>\mu_X</m> and <m>\mu_Y</m> for any two random variables <m>X</m> and <m>Y</m> with joint probabilty distribution function <m>f</m>.
             </p>
           </li>
         </ol>
