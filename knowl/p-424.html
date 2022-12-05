@@ -12,7 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The vector field diagram is provided for each <span class="process-math">\(\boldF\)</span> below. Using our interpretations of curl and divergence, try your best to visually identify points <span class="process-math">\(P\)</span> where <span class="process-math">\((\curl F)\cdot\boldk(P)=0\)</span> and/or <span class="process-math">\(\nabla\cdot \boldF(P)=0\text{.}\)</span> Confirm your answers by computing <span class="process-math">\((\curl F)\cdot\boldk\)</span> and <span class="process-math">\(\nabla\cdot \boldF\)</span> algebraically. Assume <span class="process-math">\(c\)</span> is a nonzero fixed constant.</p>
+<p>If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y)\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+(\curl\boldF)\cdot \boldk (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldT\, ds\text{,}\tag{2.4.2}
+\end{equation}
+</div>
+<p class="continuation">where <span class="process-math">\(C_R\)</span> is the simple positively oriented circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\text{.}\)</span></p>
 <span class="incontext"><a href="s_Greens_theorem.html#p-424" class="internal">in-context</a></span>
 </body>
 </html>

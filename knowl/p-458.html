@@ -12,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Fix <span class="process-math">\(R&gt; 0\text{.}\)</span> Compute the area of the sphere <span class="process-math">\(\mathcal{S}\colon x^2+y^2+z^2=R^2\text{.}\)</span></p>
+<p>If we wanted to settle for a piecewise parametrization of <span class="process-math">\(\mathcal{S}_2\)</span> we could proceed exactly as above, parametrizing the right half of <span class="process-math">\(\mathcal{S}_2\)</span> as <span class="process-math">\(\boldr_1(u,v)=(u,\sqrt{u^2+v^2})\)</span> and the left half as <span class="process-math">\(\boldr_2(u,v)=(u,v,-(u^2+v^2))\text{.}\)</span> Instead, we use a variant of spherical coordinates. For <span class="process-math">\(P=(x,y,z)\in \R^3\text{,}\)</span> let <span class="process-math">\(\rho=\abs{(x,y,z)}\text{,}\)</span> let <span class="process-math">\(\phi\)</span> be the angle between <span class="process-math">\(\overrightarrow{OP}\)</span> and the positive <span class="process-math">\(y\)</span>-axis (as opposed to the <span class="process-math">\(z\)</span>-axis), and let <span class="process-math">\(\theta\)</span> be the angle between the positive <span class="process-math">\(z\)</span>-axis and the projection of <span class="process-math">\(\overrightarrow{OP}\)</span> onto the <span class="process-math">\(xz\)</span>-plane. With this setup we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x \amp=\rho\sin\phi\sin\theta \\
+y \amp=\rho\cos\phi \\
+z \amp=\rho\sin\phi\cos\theta \\
+r^2 \amp=z^2+x^2=\rho^2\sin^2\phi \text{.}
+\end{align*}
+</div>
+<p class="continuation">(Essentially this is just the usual spherical coordinates along with the “cyclical” renaming of the axes <span class="process-math">\(y\rightarrow z, z\rightarrow x, x\rightarrow y\text{.}\)</span>) With respect to these coordinates, the half-cone <span class="process-math">\(\mathcal{S}_1\)</span> can be described implicitly as <span class="process-math">\(\phi=\pi/4\text{,}\)</span> <span class="process-math">\(0\leq \rho\text{.}\)</span> To get the full cone <span class="process-math">\(\mathcal{S}_2\)</span> we simply remove the restriction that <span class="process-math">\(\rho\)</span> be nonnegative. This gives rise to the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr(\rho,\theta)\amp=(\rho\sin(\pi/4)\sin\theta, \rho\cos(\pi/4), \rho\sin(\pi/4)\cos\theta) \\
+\amp=\frac{\sqrt{2}}{2}(\rho\cos\theta, \rho, \rho\sin\theta) \\
+\mathcal{R}\amp\colon 0\leq \phi\leq \pi, -\infty &lt; \rho &lt; \infty \text{.}
+\end{align*}
+</div>
 <span class="incontext"><a href="s_surfaces_area.html#p-458" class="internal">in-context</a></span>
 </body>
 </html>

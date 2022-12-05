@@ -14,11 +14,12 @@
 <article class="li"><h5 class="heading">
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
-<p>Pick two nonzero vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> that are orthogonal to <span class="process-math">\(\boldn\)</span> and are not scalar multiples of one another: i.e.,</p>
+<p>For any point on the circle, its tangent vector points <em class="emphasis">orthogonally</em> to its position vector. It follows that in this case <span class="process-math">\(\boldF(x,y)=\angvec{x,y}\)</span> is always orthogonal to the tangent vectors on the curve (equivalently, that the tangential component of <span class="process-math">\(\boldF\)</span> is always zero), and hence that the line integral is 0. More explicitly, using the parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\boldn\cdot \boldw_1=\boldn\cdot \boldw_2=0, \boldv_1\ne c\boldv_2\text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="s_surfaces_area.html#li-130" class="internal">in-context</a></span>
+\begin{align*}
+\boldF(\boldr(t))\cdot \boldr'(t) \amp =\angvec{\cos t, \sin t}\cdot \angvec{-\sin t, \cos t}\\
+\amp=-\cos t\sin t+\cos t\sin t=0 \text{.}
+\end{align*}
+</div></article><span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#li-130" class="internal">in-context</a></span>
 </body>
 </html>

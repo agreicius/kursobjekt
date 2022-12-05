@@ -11,13 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\int_\mathcal{C}\boldF\cdot d\boldr\amp=\iint_\mathcal{R}\curl G\cdot \boldn \, d\sigma \amp \\
-\amp =\iint_\mathcal{R}\angvec{0,0,\partial F_2/\partial x-\partial F_1/\partial y}\cdot \angvec{0,0,1} \, dA\\
-\amp =\iint_\mathcal{R} \partial F_2/\partial x-\partial F_1/\partial y \, dA
+\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
+\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
+\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
+\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
+\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
+\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
+\amp =\cos z\sqrt{1+\sin^2z} 
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Stokes.html#md-131" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_surfaces_integrals.html#md-125" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,19 +12,22 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Assume the component functions of the vector field <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have first-order partial derivatives on a domain <span class="process-math">\(D\text{.}\)</span> The <dfn class="terminology">scalar curl</dfn> (or <dfn class="terminology"><span class="process-math">\(k\)</span> component of curl</dfn> or <dfn class="terminology">circulation density</dfn>) of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\((\curl \boldF)\cdot \boldk\text{,}\)</span> is defined as</p>
+<p>Let <span class="process-math">\(\boldF\)</span> be a vector field on the set <span class="process-math">\(D\subseteq\R^n\text{.}\)</span> We use the abbreviations ‘o’, ‘c’, ‘sc’ for open, connected, and simply connected. For statements involving curl, assume the partial derivatives of the component functions of <span class="process-math">\(\boldF\)</span> are continuous.</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(\curl \boldF\cdot \boldk)=  \frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\text{.}
+\begin{array}{rccccc}
+D \text{ is o}\colon \amp \boldF \operatorname{ conservative} \amp \impliedby \amp \boldF=\nabla f\amp \implies\amp  \nabla\times \boldF=\boldzero. \\
+D \text{ is o+c}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \implies\amp  \nabla\times \boldF=\boldzero. \\
+D \text{ is o+c+sc}\colon \amp \boldF \operatorname{ conservative} \amp \iff \amp \boldF=\nabla f\amp \iff\amp  \nabla\times \boldF=\boldzero.
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">The vector field is <dfn class="terminology">irrotational</dfn> on the domain <span class="process-math">\(D\)</span> if</p>
+<p class="continuation">Additionally, for any domain <span class="process-math">\(D\)</span> we always have the following loop property equivalence:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(\curl\boldF)\cdot \boldk\, (x,y)=\frac{\partial F_2}{\partial x}(x,y)-\frac{\partial F_1}{\partial y}(x,y)=0
+\boldF \ \operatorname{ conservative}\iff \oint_\mathcal{C}\boldF\cdot d\boldr=0\text{.}
 \end{equation*}
 </div>
-<p class="continuation">for all <span class="process-math">\((x,y)\in D\text{.}\)</span></p>
-<span class="incontext"><a href="s_Greens_theorem.html#p-412" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#p-412" class="internal">in-context</a></span>
 </body>
 </html>

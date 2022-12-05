@@ -13,35 +13,57 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.6.14.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.6.8.1</span><span class="period">.</span>
 </h4>
-<p>We use the usual parametrization of the sphere of radius 2:</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta)\\
-\amp 
-\end{align*}
-</div>
-<p class="continuation">Given a point <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\)</span> the vector <span class="process-math">\(\angvec{x,y,z}\)</span> is an outward pointing normal vector of magnitude <span class="process-math">\(\sqrt{x^2+y^2+z^2}=2\text{.}\)</span> Thus the function <span class="process-math">\(\boldn(x,y,z)=\frac{1}{2}\angvec{x,y,z}\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> It follows that</p>
+<p>We have <span class="process-math">\(\mathcal{T}=T_1\cup T_2\cup T_3\cup T_4\text{,}\)</span> where the <span class="process-math">\(T_k\)</span> are the four triangular faces of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and thus</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\boldF(x,y,z)\cdot \boldn(x,y,z)=\frac{1}{2}\angvec{z,y,x}\cdot \angvec{x,y,z}=\frac{1}{2}(2xz+y^2)\text{,}
+\iint\limits_\mathcal{T}f\, d\sigma=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma+\iint\limits_{T_3}f\, d\sigma+\iint\limits_{T_4}f\, d\sigma\text{.}
 \end{equation*}
 </div>
-<p class="continuation">and thus that</p>
+<p class="continuation">Let <span class="process-math">\(T_1, T_2\)</span> be the triangular faces lying in the coordinate planes <span class="process-math">\(x=0\)</span> and <span class="process-math">\(y=0\text{,}\)</span> respectively. Since <span class="process-math">\(f(x,y,z)=0\)</span> for all points in these two surfaces, the corresponding surface integrals <span class="process-math">\(\iint_{T_k}f\, d\sigma\text{,}\)</span> <span class="process-math">\(k=1,2\text{,}\)</span> are equal to zero. Thus we need only compute the integrals of <span class="process-math">\(f\)</span> over <span class="process-math">\(T_3\)</span> and <span class="process-math">\(T_4\text{.}\)</span></p>
+<ul class="disc">
+<li>
+<span class="heading"><span class="title">Integral over <span class="process-math">\(T_3\)</span>.</span></span><p>Let <span class="process-math">\(T_3\)</span> be the face of the tetrahedron in the <span class="process-math">\(xy\)</span>-plane. We parametrize as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma\amp
-= \frac{1}{2}\iint\limits_\mathcal{S}2xz+y^2\, d\sigma \\
-\amp = \frac{1}{2}\iint\limits_{\mathcal{R}}(8\sin\phi\cos\phi\cos\theta+4\sin^2\phi\sin^2\theta)(4\sin\phi)\, dA\\
-\amp =8\int_0^{2\pi}\int_0^\pi2\sin^2\phi\cos\phi\cos\theta+\sin^3\phi\sin^2\theta\, d\phi\, d\theta\\\
-\amp =
-8\left(\cancelto{0}{\int_0^{2\pi}\cos\theta\, d\theta}\int_0^{\pi}\sin^2\phi\cos\phi\, d\phi+\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\right)\\
-\amp =8\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\\
-\amp =\frac{32\pi}{3}\text{.}
+\boldr(x,y) \amp =(x,y,0)\\
+\mathcal{R}_1\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
 \end{align*}
 </div>
-<p class="continuation">The last step above is done using the identity <span class="process-math">\(\sin^2\theta=\frac{1}{2}(1-\cos 2\theta)\)</span> and the fact that <span class="process-math">\(\sin^3\phi=\sin\phi(1-\cos^2\phi)=\sin\phi-\sin\phi\cos^2\phi\)</span> has antiderivative <span class="process-math">\(-\cos\phi+\frac{1}{3}\cos^3\phi\text{.}\)</span></p>
+<p class="continuation">A simple computation shows <span class="process-math">\(\abs{\boldr_x\times \boldr_y}=1\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx\\
+\amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx \\
+\amp =-\frac{1}{2}\int_1^0 (1-u)u^2\, du \amp (u=1-x, du=-dx)\\
+\amp =\frac{1}{2}(1/3-1/4)=\frac{1}{24}
+\end{align*}
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Integral over <span class="process-math">\(T_4\)</span>.</span></span><p>Let <span class="process-math">\(T_4\)</span> be triangle with vertices <span class="process-math">\((1,0,0), (1,0,0),(0,1,0)\text{.}\)</span> This is the region of the plane <span class="process-math">\(z=x+y\)</span> lying over the planar triangle with vertices <span class="process-math">\((0,0,0), (1,0,0), (0,1,0)\text{.}\)</span> Since <span class="process-math">\(z\)</span> is expressed as a function of <span class="process-math">\(x,y\)</span> we parametrize easily as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\bolds(x,y) \amp =(x,y,x+y)\\
+\mathcal{R}_{2}\colon  0 \amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
+\end{align*}
+</div>
+<p class="continuation">Again, a straightforward computation shows <span class="process-math">\(\abs{\bolds_x\times \bolds_y}=\sqrt{3}\text{,}\)</span> and thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint\limits_{T_4}f\, d\sigma\amp =\iint\limits_{\mathcal{R}_2}f(\bolds(x,y))\sqrt{3}\, dA \amp \\
+\amp= \sqrt{3}\int_0^1\int_0^{1-x}xy\, dy\, dx \\
+\amp =\frac{\sqrt{3}}{24}\text{,}
+\end{align*}
+</div>
+<p class="continuation">where we use our work from above for the last equality.</p>
+</li>
+</ul> In conclusion we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_{\mathcal{T}}=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma =\frac{\sqrt{3}+1}{24}\text{.}
+\end{equation*}
+</div>
 </div>
 <span class="incontext"><a href="s_surfaces_integrals.html#solution-52" class="internal">in-context</a></span>
 </body>

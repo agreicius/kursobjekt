@@ -13,16 +13,16 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.16.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.15.1</span><span class="period">.</span>
 </h4>
-<p>The curl computation in (a) is straightforward. To see that <span class="process-math">\(\boldF\)</span> is not a gradient vector field, we find a closed curve <span class="process-math">\(\mathcal{C}\)</span> for which <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{.}\)</span> Take <span class="process-math">\(\mathcal{C}\)</span> to be the unit circle with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<p>The curl of <span class="process-math">\(\boldF\)</span> is the vector field</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_gradient_implies_curlzero.html">
 \begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t}\, dt \\
-\amp = \int_0^{2\pi}\frac{\sin^2 t+\cos^2 t}{\sin^2 t+\cos^2 t}\, dt \\
-\amp = 2\pi\ne 0\text{.}
+\nabla\times \boldF (x,y,z) \amp =\angvec{\partial/\partial y (y)-\partial/\partial z (z), -(\partial/\partial x(y)-\partial/\partial z (x+xy^2)), \partial/\partial x (z)-\partial/\partial y (x+xy^2)}\\
+\amp=\angvec{0,0,-2xy}\ne \boldzero \text{.}
 \end{align*}
 </div>
+<p class="continuation">Thus <span class="process-math">\(\boldF\)</span> is not a gradient vector field by <a href="" class="xref" data-knowl="./knowl/th_gradient_implies_curlzero.html" title="Theorem 2.3.13: Gradient implies zero curl">Theorem 2.3.13</a>.</p>
 </div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#solution-39" class="internal">in-context</a></span>
 </body>

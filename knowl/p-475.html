@@ -12,18 +12,11 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>First we parametrize <span class="process-math">\(\mathcal{S}\text{.}\)</span> Observe that intersecting <span class="process-math">\(\mathcal{S}\)</span> with the plane <span class="process-math">\(z=z_0\)</span>  yields a circle centered at <span class="process-math">\((0,0,z_0)\)</span> of radius <span class="process-math">\(R=\cos z_0 \text{,}\)</span> which we can parametrize as</p>
+<p>Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> be a smooth parametrization of the surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(f\)</span> be a continuous function defined on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(R\cos\theta, R\sin\theta, z_0)=(\cos z_0\cos\theta, \cos z_0\sin\theta, z_0)\text{.}
+\iint\limits_\mathcal{S}f(x,y,z)\, d\sigma=\iint\limits_{\mathcal{R}}f(\boldr(u,v))\abs{\boldr_u\times \boldr_v}\, dA\text{.}
 \end{equation*}
-</div>
-<p class="continuation">Letting <span class="process-math">\(z\)</span> vary between <span class="process-math">\(-\pi/2\)</span> and <span class="process-math">\(\pi/2\text{,}\)</span> we get the parametrization</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr(\theta, z) \amp = (\cos z\cos\theta, \cos z\sin\theta, z) \\
-\mathcal{R} \colon 0\amp \leq \theta\leq 2\pi, -\pi/2\leq z\leq \pi/2 \text{.}
-\end{align*}
 </div>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-475" class="internal">in-context</a></span>
 </body>

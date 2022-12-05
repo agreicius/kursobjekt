@@ -11,16 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>It is straightforward, if somewhat tiresome, to show <span class="process-math">\(\nabla\times \boldF=\angvec{0,0,0}\text{.}\)</span> Since the domain of <span class="process-math">\(\boldF\)</span> is <span class="process-math">\(\R^3\text{,}\)</span> which is connected and simply connected, we conclude from <a href="" class="xref" data-knowl="./knowl/th_conservative_iff_gradient.html" title="Theorem 2.3.11: Gradient iff conservative (connected domain)">Theorem 2.3.11</a> that <span class="process-math">\(\boldF\)</span> is a gradient vector field. Let <span class="process-math">\(f\)</span> be a potential function for <span class="process-math">\(\boldF\text{.}\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conservative_iff_gradient.html">
+<p>The curl computation in (a) is straightforward. To see that <span class="process-math">\(\boldF\)</span> is not a gradient vector field, we find a closed curve <span class="process-math">\(\mathcal{C}\)</span> for which <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{.}\)</span> Take <span class="process-math">\(\mathcal{C}\)</span> to be the unit circle with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) \\
-f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}\\
-\amp \implies \partial/\partial y (G(y,z))=z\cos(yz)\\
-\amp \implies G(y,z)=\sin(yz)+H(z) \text{ for some } H(z)\\
-\amp \implies f(x,y,z)=xy+\sin(yz)+H(z) \text{ for some } H(z)\text{.}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t}\, dt \\
+\amp = \int_0^{2\pi}\frac{\sin^2 t+\cos^2 t}{\sin^2 t+\cos^2 t}\, dt \\
+\amp = 2\pi\ne 0\text{.}
 \end{align*}
 </div>
-<p class="continuation">Looking at the partial formula for <span class="process-math">\(f\)</span> in our last line, we observe that setting <span class="process-math">\(H(z)=0\)</span> results in the function <span class="process-math">\(f(x,y,z)=xy+\sin(yz)\text{,}\)</span> which satisfies <span class="process-math">\(\nabla f=\boldF\text{.}\)</span></p>
 </div></body>
 </html>

@@ -12,13 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A vector field <span class="process-math">\(\boldF\colon \R^n\rightarrow \R^n\)</span> is a <dfn class="terminology">gradient vector field</dfn> if there is a scalar function <span class="process-math">\(f\colon \R^n\rightarrow \R\)</span> such that</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_gradient_field.html">
-\begin{equation}
-\nabla f=\boldF\text{.}\tag{2.3.1}
-\end{equation}
+<p>For any point on the circle, its tangent vector points <em class="emphasis">orthogonally</em> to its position vector. It follows that in this case <span class="process-math">\(\boldF(x,y)=\angvec{x,y}\)</span> is always orthogonal to the tangent vectors on the curve (equivalently, that the tangential component of <span class="process-math">\(\boldF\)</span> is always zero), and hence that the line integral is 0. More explicitly, using the parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldF(\boldr(t))\cdot \boldr'(t) \amp =\angvec{\cos t, \sin t}\cdot \angvec{-\sin t, \cos t}\\
+\amp=-\cos t\sin t+\cos t\sin t=0 \text{.}
+\end{align*}
 </div>
-<p class="continuation">A function <span class="process-math">\(f\)</span> satisfying <a href="" class="xref" data-knowl="./knowl/eq_gradient_field.html" title="Equation 2.3.1">(2.3.1)</a> is a <dfn class="terminology">potential function</dfn> of <span class="process-math">\(\boldF\text{.}\)</span></p>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#p-365" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-365" class="internal">in-context</a></span>
 </body>
 </html>

@@ -13,15 +13,15 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
-\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
-\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
-\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
-\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
-\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
-\amp =\cos z\sqrt{1+\sin^2z} 
+\curl\boldF \amp= \nabla\times \boldF\\
+\amp =\det \begin{pmatrix}
+\boldi \amp \boldj \amp \boldk \\
+\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
+F_1 \amp F_2 \amp F_3
+\end{pmatrix}\\
+\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_integrals.html#md-112" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#md-103" class="internal">in-context</a></span>
 </body>
 </html>

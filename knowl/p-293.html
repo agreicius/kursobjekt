@@ -12,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p></p>
+<p>It is inuitively clear from the symmetry of <span class="process-math">\(D\text{,}\)</span> as well as the fact that <span class="process-math">\(\delta(x,y,z)=z\)</span> does not depend on <span class="process-math">\(x\)</span> or <span class="process-math">\(y\text{,}\)</span> that <span class="process-math">\(M_{yz}=M_{xz}=0\text{.}\)</span> In more detail let <span class="process-math">\(D=D_1\cup D_2\)</span> where <span class="process-math">\(D_1\)</span> is the right half of <span class="process-math">\(D\)</span> (i.e., where <span class="process-math">\(x\geq 0\)</span>), and <span class="process-math">\(D_2\)</span> is the left half. Let <span class="process-math">\(f(x,y,z)=x\delta(x,y,z)=xz\text{.}\)</span> The transformation <span class="process-math">\(G(x,y,z)=(-x,y,z)\)</span> maps <span class="process-math">\(D_1\)</span> onto <span class="process-math">\(D_2\text{.}\)</span> By substitution we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iiint_{D_2}f(x,y,z)\, dV\amp =\iiint_{D_1}f(-x,y,z)\abs{J(G)}\, dV\\
+\amp =\iiint_{D_1}-xz\, dV\\
+\amp =-\iiint_{D_1}f(x,y,z)\, dV\text{,}
+\end{align*}
+</div>
+<p class="continuation">and thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+M_{yz} \amp=\iiint_D xz\, dV \\
+\amp=\iiint_{D_1}xz\, dV+\iiint_{D_2}xz\, dV \\
+\amp =\iiint_{D_1}xz\, dV-\iiint_{D_1}xz\, dV=0\text{.}
+\end{align*}
+</div>
+<p class="continuation">A similar argument works to show <span class="process-math">\(M_x=0\text{.}\)</span></p>
 <span class="incontext"><a href="s_multiple_integrals_applications.html#p-293" class="internal">in-context</a></span>
 </body>
 </html>

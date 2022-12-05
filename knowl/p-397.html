@@ -12,14 +12,18 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The curl of <span class="process-math">\(\boldF\)</span> is the vector field</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_gradient_implies_curlzero.html">
+<p>Let <span class="process-math">\(\boldF=\angvec{F_1, F_2, F_3}\)</span> be a vector field on the set <span class="process-math">\(D\subseteq \R^3\text{,}\)</span> and assume the first order partial derivatives of the component functions exist. We define the <dfn class="terminology">curl</dfn> of <span class="process-math">\(\boldF\text{,}\)</span> denoted <span class="process-math">\(\curl \boldF\)</span> or <span class="process-math">\(\nabla \times \boldF\text{,}\)</span> as the vector field</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\nabla\times \boldF (x,y,z) \amp =\angvec{\partial/\partial y (y)-\partial/\partial z (z), -(\partial/\partial x(y)-\partial/\partial z (x+xy^2)), \partial/\partial x (z)-\partial/\partial y (x+xy^2)}\\
-\amp=\angvec{0,0,-2xy}\ne \boldzero \text{.}
+\curl\boldF \amp= \nabla\times \boldF\\
+\amp =\det \begin{pmatrix}
+\boldi \amp \boldj \amp \boldk \\
+\frac{\partial}{\partial x} \amp \frac{\partial}{\partial y} \amp\frac{\partial}{\partial z}\\
+F_1 \amp F_2 \amp F_3
+\end{pmatrix}\\
+\amp =\angvec{\partial F_3/\partial y-\partial F_2/\partial z,-(\partial F_3/\partial x-\partial F_1/\partial z), \partial F_2/\partial x-\partial F_1/\partial y}\text{.}
 \end{align*}
 </div>
-<p class="continuation">Thus <span class="process-math">\(\boldF\)</span> is not a gradient vector field by <a href="" class="xref" data-knowl="./knowl/th_gradient_implies_curlzero.html" title="Theorem 2.3.13: Gradient implies zero curl">Theorem 2.3.13</a>.</p>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-397" class="internal">in-context</a></span>
 </body>
 </html>

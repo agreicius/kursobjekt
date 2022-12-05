@@ -12,16 +12,18 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{C}\)</span> be the unit circle <span class="process-math">\(x^2+y^2=1\text{,}\)</span> with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
-\begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
-\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
-\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
-\amp = 2\pi\text{.}
-\end{align*}
+<p>The vector field</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldF=\angvec{-\frac{x}{\sqrt{x^2+y^2}}, -\frac{y}{\sqrt{x^2+y^2}}}, (x,y)\ne (0,0)
+\end{equation*}
 </div>
-<p class="continuation">Since <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> implies that we cannot have <span class="process-math">\(\boldF=\nabla f\text{.}\)</span></p>
+<p class="continuation">is a gradient vector field, with potential function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y)=\frac{1}{\sqrt{x^2+y^2}}=\frac{1}{\abs{(x,y)}}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#p-375" class="internal">in-context</a></span>
 </body>
 </html>

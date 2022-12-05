@@ -11,13 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>Let <span class="process-math">\(D\)</span> be the solid cube <span class="process-math">\([0,1]\times [0,1]\times [0,1]\text{.}\)</span> Since <span class="process-math">\(\boldF\)</span> clearly satisfies the conditions for the divergence theorem, we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<p>Let <span class="process-math">\(\mathcal{R}\)</span> be the region enclosed by a simple, piecewise smooth planar curve <span class="process-math">\(\mathcal{C}\)</span> oriented counterclockwise, and suppose <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\)</span> satisfies the conditions of <a href="" class="xref" data-knowl="./knowl/th_Greens.html" title="Theorem 2.4.1: Green's theorem (circulation or tangential form)">Theorem 2.4.1</a>. Define <span class="process-math">\(G(x,y,z)=\angvec{F_1(x,y),F_2(x,y),0}\text{,}\)</span> and think of <span class="process-math">\(\mathcal{R}\subseteq\R^3\)</span> as a planar surface living in the <span class="process-math">\(xy\)</span>-plane, with <span class="process-math">\(\mathcal{C}\)</span> is boundary. We choose the orientation <span class="process-math">\(\boldn(x,y,z)=\angvec{0,0,1}=\boldk\)</span> on <span class="process-math">\(\mathcal{R}\text{,}\)</span> which induces the counterclockwise orientation on <span class="process-math">\(\mathcal{C}\text{.}\)</span> By Stokes's theorem we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html">
 \begin{align*}
-\iint\limits_{\mathcal{S}}\boldF\cdot \boldn\, d\sigma \amp =
-\iiint\limits_D\diver\boldF\, dV\\
-\amp = \int_0^1\int_0^1\int_0^12 2x+4xz+e^x\, dy\, dz\, dx\\
-\amp =e+1\text{.}
+\int_\mathcal{C}\boldF\cdot d\boldr\amp=\iint_\mathcal{R}\curl G\cdot \boldn \, d\sigma \amp \\
+\amp =\iint_\mathcal{R}\angvec{0,0,\partial F_2/\partial x-\partial F_1/\partial y}\cdot \angvec{0,0,1} \, dA\\
+\amp =\iint_\mathcal{R} \partial F_2/\partial x-\partial F_1/\partial y \, dA\text{.}
 \end{align*}
 </div>
 </div></body>

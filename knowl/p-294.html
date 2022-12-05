@@ -12,11 +12,29 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(S\)</span> be any set, which we will consider to be a sample space. A <dfn class="terminology">random variable</dfn> is a function</p>
+<p>To compute the remaining ingredients we will use spherical coordinates. Observe that the solid hemisphere <span class="process-math">\(D\)</span> has spherical description</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(\rho, \phi,\theta)\colon 0\leq \theta\leq 2\pi, 0\leq \phi\leq \pi/2, 0\leq \rho\leq 2\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now compute:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-X\colon S \amp\rightarrow \R \\
-s\amp \mapsto X(s)\text{.}
+M \amp=\iiint_D \delta(x,y,z)\, dV \\
+\amp =\iiint_{D}z\, dV\\
+\amp =\int_0^{2\pi}\int_0^{\pi/2}\int_0^2\rho\cos\phi\cdot \rho^2\sin\phi \amp \text{(spher. subst.)}\\
+\amp = 2\pi \int_0^{\pi/2}\cos\phi\sin\phi\, d\phi\int_0^2\rho^3\, d\rho\\
+\amp =\frac{2}{8}\pi(\sin^2\phi)\vert_0^{\pi/2}(\rho^4)\vert_0^{2}\\
+\amp =\frac{1}{4}\pi 2^4=4\pi\\
+M_{xy} \amp =\iiint_D z\delta(x,y,z)\, dV \\
+\amp =\iiint_{D}z^2\, dV\\
+\amp =\int_0^{2\pi}\int_0^{\pi/2}\int_0^2\rho^2\cos^2\phi\cdot \rho^2\sin\phi \amp \text{(spher. subst.)}\\
+\amp = 2\pi \int_0^{\pi/2}\cos^2\phi\sin\phi\, d\phi\int_0^2\rho^4\, d\rho\\
+\amp =\frac{2}{15}\pi(-\cos^3\phi)\vert_0^{\pi/2}(\rho^5)\vert_0^{2}\\
+\amp =\frac{2}{15}\pi 2^5=\frac{64}{15}\pi\\
+(\overline{x},\overline{y},\overline{z}) \amp = (0,0,M_{xy}/M)\\
+\amp = \left(0,0,\frac{16}{15}\right)\text{.}
 \end{align*}
 </div>
 <span class="incontext"><a href="s_multiple_integrals_applications.html#p-294" class="internal">in-context</a></span>

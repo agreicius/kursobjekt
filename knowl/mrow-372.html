@@ -11,15 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conservative_iff_gradient.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) \\
-f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}\\
-\amp \implies \partial/\partial y (G(y,z))=z\cos(yz)\\
-\amp \implies G(y,z)=\sin(yz)+H(z) \text{ for some } H(z)\\
-\amp \implies f(x,y,z)=xy+\sin(yz)+H(z) \text{ for some } H(z)
+\int_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi}\boldF(\boldr(t))\cdot \boldr'(t)\, dt\\
+\amp =\int_0^{2\pi}\boldF(\cos t, \sin t, t)\cdot \angvec{-\sin t, \cos t, 1}\, dt \\
+\amp =\int_0^{2\pi}\angvec{-\sin t, t,2\cos t}\cdot \angvec{-\sin t, \cos t, 1}\, dt\\
+\amp =\int_0^{2\pi}\sin^2 t+t\cos t+2\cos t\, dt\\
+\amp = \pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-94" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#md-89" class="internal">in-context</a></span>
 </body>
 </html>

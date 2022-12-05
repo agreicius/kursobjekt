@@ -12,13 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
+<p>Let <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> be a smoothly parametrized surface. Informally, an <dfn class="terminology">orientation</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is a continuous choice of unit normal vectors to points on the surface. More precisely, an orientation is a continuous function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
-\end{equation*}
+\begin{align*}
+\boldn \colon \mathcal{S}\amp\rightarrow \R^3 \\
+(x,y,z)\amp\mapsto \boldn(x,y,z) \text{,}
+\end{align*}
 </div>
-<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<p class="continuation">where for each <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{,}\)</span> <span class="process-math">\(\boldn(P)\)</span> is a unit normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{.}\)</span> The surface <span class="process-math">\(\mathcal{S}\)</span> is <dfn class="terminology">orientable</dfn> if an orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> exists for <span class="process-math">\(\mathcal{S}\text{.}\)</span> If no orientation function exists, the surface is <dfn class="terminology">nonorientable</dfn>.</p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-491" class="internal">in-context</a></span>
 </body>
 </html>

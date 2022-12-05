@@ -11,27 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>To make sense of what a vector field line integral computes in a given context, it is best to consider its formulation as the <em class="emphasis">scalar line integral</em> of the scalar function <span class="process-math">\(\boldF\cdot \boldT\text{.}\)</span> Given a partition of a parametrized curve into curve segments with endpoints</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-P=\boldr(a), P_1=\boldr(t_1),\dots, P_{n-1}=\boldr(t_{n-1}), P_n=\boldr(t_n)
-\end{equation*}
-</div>
-<p class="continuation">we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\int_\mathcal{C}\boldF\cdot T\, ds\approx \sum_{k=1}^n \boldF(x_k, y_k, z_k)\cdot \boldT(x_k, y_k, z_k)\Delta s_k,
-\end{equation*}
-</div>
-<p class="continuation">where <span class="process-math">\((x_k,y_k,z_k)\)</span> is a sample point in the <span class="process-math">\(k\)</span>-th segment of the partition of <span class="process-math">\(\mathcal{C}\text{,}\)</span> and <span class="process-math">\(\Delta s_k\)</span> is the arc length of that segment. Focusing in on one term <span class="process-math">\(\boldF(x_k, y_k, z_k)\cdot \boldT(x_k, y_k, z_k)\Delta s_k\)</span> and recalling our dot product cosine formula</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\boldF\cdot \boldT=\abs{\boldF}\abs{\boldT}\cos\theta\text{,}
-\end{equation*}
-</div>
-<p class="continuation">where <span class="process-math">\(\theta\)</span> is the angle between <span class="process-math">\(\boldF\)</span> and <span class="process-math">\(\boldT\)</span> at <span class="process-math">\((x_k, y_k, z_k)\text{,}\)</span> we see that this term multiplies the <em class="emphasis">component</em> of <span class="process-math">\(\boldF\)</span> in the direction of <span class="process-math">\(\boldT\)</span> by the arc length <span class="process-math">\(\Delta s_k\)</span> of the <span class="process-math">\(k\)</span>-th segment. We have thus reduced our interpretation problem to understanding what type of quantity is obtained by summing these products. The definition of <em class="emphasis">work</em> and <em class="emphasis">circulation</em> below are two examples of doing just this. <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/interp_vector_line_integral.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>Interpreting <span class="process-math">\(\int_\mathcal{C}\boldF\cdot \boldT\, ds\)</span></figcaption></figure></p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Let <span class="process-math">\(\mathcal{C}\)</span> be the helix with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t, t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> Compute <span class="process-math">\(\int_\mathcal{C}\boldF\cdot d\boldr\text{,}\)</span> where <span class="process-math">\(\boldF=\angvec{-y,z,2x}\text{.}\)</span></p>
 <span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-354" class="internal">in-context</a></span>
 </body>
 </html>

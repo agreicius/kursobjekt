@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>When <span class="process-math">\(n=2\)</span> we call <span class="process-math">\(\boldr\colon I\rightarrow \R^2\)</span> a <dfn class="terminology">parametrized planar curve</dfn>; when <span class="process-math">\(n=3\)</span> we call <span class="process-math">\(\boldr\colon I\rightarrow \R^3\)</span> a <dfn class="terminology">parametrized space curve</dfn>.</p>
-<span class="incontext"><a href="s_line_integal_scalar.html#p-308" class="internal">in-context</a></span>
+<p>Let <span class="process-math">\(\mathcal{R}=\{(x,y)\in [0,1]\times[0,1]\colon x\geq y\}\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_probability_functions.html">
+\begin{align*}
+\operatorname{Prob}(\{s\in S\colon X(s)\geq Y(s)\}) \amp= \operatorname{Prob}(\{s\in S\colon (X(s),Y(s))\in \mathcal{R}\}) \\
+\amp = \iint\limits_\mathcal{R}f(x,y)\, dA \amp (\knowl{./knowl/d_probability_functions.html}{\text{1.9.5}}) \\
+\amp =\int_0^1\int_0^{x}6x^2y\, dy\, dx \\
+\amp = \int_0^13x^4\\
+\amp =\frac{3}{5}\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_multiple_integrals_applications.html#p-308" class="internal">in-context</a></span>
 </body>
 </html>

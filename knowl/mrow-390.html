@@ -13,11 +13,14 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr(\rho,\theta)\amp=(\rho\sin(\pi/4)\sin\theta, \rho\cos(\pi/4), \rho\sin(\pi/4)\cos\theta) \\
-\amp=\frac{\sqrt{2}}{2}(\rho\cos\theta, \rho, \rho\sin\theta) \\
-\mathcal{R}\amp\colon 0\leq \phi\leq \pi, -\infty &lt; \rho &lt; \infty 
+\int_\mathcal{C}\boldF\cdot \boldn\, ds \amp=
+\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \boldn(t)\, ds \\
+\amp = \int_0^{2\pi}\angvec{\cos t-\sin t, \cos t+\sin t}\cdot \angvec{\cos t, \sin t}\, dt\\
+\amp = \int_0^{2\pi} \cos^2 t-\cos t\sin t+\cos t\sin t+\sin^2 t\, dt\\
+\amp = \int_0^{2\pi}1\, dt\\
+\amp = 2\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_area.html#md-102" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#md-95" class="internal">in-context</a></span>
 </body>
 </html>

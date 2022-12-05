@@ -13,10 +13,20 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.4.2.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.20.1</span><span class="period">.</span>
 </h4>
-<p></p>
+<p>It is straightforward, if somewhat tiresome, to show <span class="process-math">\(\nabla\times \boldF=\angvec{0,0,0}\text{.}\)</span> Since the domain of <span class="process-math">\(\boldF\)</span> is <span class="process-math">\(\R^3\text{,}\)</span> which is connected and simply connected, we conclude from <a href="" class="xref" data-knowl="./knowl/th_conservative_iff_gradient.html" title="Theorem 2.3.11: Gradient iff conservative (connected domain)">Theorem 2.3.11</a> that <span class="process-math">\(\boldF\)</span> is a gradient vector field. Let <span class="process-math">\(f\)</span> be a potential function for <span class="process-math">\(\boldF\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conservative_iff_gradient.html">
+\begin{align*}
+f_x=y \amp\implies f=xy+G(y,z) \ \text{ for some } G(y,z) \\
+f_y=x+z\cos (yz)\amp\implies x+\partial G(y,z)/\partial y y=x+z\cos(yz)\amp \text{(by partial formula above)}\\
+\amp \implies \partial/\partial y (G(y,z))=z\cos(yz)\\
+\amp \implies G(y,z)=\sin(yz)+H(z) \text{ for some } H(z)\\
+\amp \implies f(x,y,z)=xy+\sin(yz)+H(z) \text{ for some } H(z)\text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_Greens_theorem.html#solution-41" class="internal">in-context</a></span>
+<p class="continuation">Looking at the partial formula for <span class="process-math">\(f\)</span> in our last line, we observe that setting <span class="process-math">\(H(z)=0\)</span> results in the function <span class="process-math">\(f(x,y,z)=xy+\sin(yz)\text{,}\)</span> which satisfies <span class="process-math">\(\nabla f=\boldF\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="s_pathind_conservative_potential.html#solution-41" class="internal">in-context</a></span>
 </body>
 </html>

@@ -13,24 +13,18 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.6.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.3.5.1</span><span class="period">.</span>
 </h4>
-<p>As suggested by the setup, we suspect <span class="process-math">\(\boldF\)</span> is a gradient vector field. Indeed, we have <span class="process-math">\(\boldF=\nabla f\text{,}\)</span> where</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
-\begin{equation*}
-f(x,y,z)=\frac{GmM}{\sqrt{x^2+y^2+z^2}}=\frac{GmM}{\abs{(x,y,z)}}\text{,}
-\end{equation*}
-</div>
-<p class="continuation">as you can easily check. According to <a href="" class="xref" data-knowl="./knowl/th_fund_thm_line_integrals.html" title="Theorem 2.3.3: Fundamental theorem of line integrals">Theorem 2.3.3</a>, we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<p>Let <span class="process-math">\(\mathcal{C}\)</span> be the unit circle <span class="process-math">\(x^2+y^2=1\text{,}\)</span> with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
 \begin{align*}
-W\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
-\amp = f(Q)-f(P) \\
-\amp = GmM\left (\frac{1}{\sqrt{x_2^2+y_2^2+z_2^2}}-\frac{1}{\sqrt{x_1^2+y_1^2+z_1^2}}\right ) \\
-\amp = GmM\left(\frac{1}{\abs{Q}} -\frac{1}{\abs{P}}\right)\text{.}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
+\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
+\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
+\amp = 2\pi\text{.}
 \end{align*}
 </div>
-<p class="continuation">Observe that this expression for the work <span class="process-math">\(W\)</span> is equal to the change in the object's kinetic energy the object undergoes as it moves from position <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span></p>
+<p class="continuation">Since <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> implies that we cannot have <span class="process-math">\(\boldF=\nabla f\text{.}\)</span></p>
 </div>
 <span class="incontext"><a href="s_pathind_conservative_potential.html#solution-37" class="internal">in-context</a></span>
 </body>

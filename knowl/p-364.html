@@ -12,18 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>If <span class="process-math">\(\boldr(t)=(g_1(t),g_2(t))\)</span> is a parametrization of <span class="process-math">\(\mathcal{C}\)</span> with <em class="emphasis">counterclockwise</em> (positive) orientation, then the outward unit normal vector can be expressed as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\boldn(t)=\frac{\angvec{g_2'(t),-g_1'(t)}}{\sqrt{g_1^2(t)+g_2^2(t)}}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Furthermore, if <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\text{,}\)</span> then</p>
+<p>Parametrize <span class="process-math">\(\mathcal{C}\)</span> as <span class="process-math">\(\boldr( t )=(\cos t ,\sin t )\text{,}\)</span> <span class="process-math">\(0\leq  t \leq 2\pi\text{.}\)</span> Now compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\oint_\mathcal{C}\boldF\cdot \boldn \, ds\amp =  \int_a^b\angvec{F_1(\boldr(t)),F_2(\boldr(t))}\cdot \angvec{g_2'(t),-g_1'(t)}\, dt\\
-\amp =  \int_a^b F_1(g_1(t),g_2(t))g_2'(t)-F(g_1(t),g_2(t))g_1'(t)\, dt\\
-\amp = \oint_\mathcal{C} F_1\, dy -F_2\, dx\text{.}
+\int\limits_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t , \sin t )\cdot\boldr'(t)\, d t  \\
+\amp =\int_0^{2\pi}\angvec{\cos t -\sin t ,\cos t +\sin t }\cdot \angvec{-\sin t ,\cos t }\, d t \\
+\amp=\int_0^{2\pi}-\cos t \sin t +\sin^2 t +\cos^2 t +\cos t \sin t \, d t  \\
+\amp =\int_0^{2\pi}1 d t \\
+\amp =0 
 \end{align*}
 </div>
 <span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-364" class="internal">in-context</a></span>

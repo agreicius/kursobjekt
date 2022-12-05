@@ -12,14 +12,35 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A <dfn class="terminology">vector field</dfn> is a function</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<p>The path in question is piecewise smooth, allowing us to use <a href="" class="xref" data-knowl="./knowl/th_line_integral_scalar_piecwise.html" title="Theorem 2.1.10: Piecewise smooth line integral">Theorem 2.1.10</a>. We use the straight line parametrizations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
 \begin{align*}
-\boldF\colon \R^n \amp \rightarrow \R^n\\
-(x_1,x_2,\dots, x_n)\amp\mapsto \left\langle F_1\langle x_1,x_2,\dots, x_n),F_2(x_1,x_2,\dots, x_n),\dots ,F_n(x_1,x_2,\dots, x_n)\right\rangle \text{.}
+\boldr_1(t) \amp= (1-t)P+tQ, \ 0\leq t\leq 1 \\
+\amp =(1,1+t,2t) \\
+\boldr_2(t)\amp= (1-t)Q+tR, \ 0\leq t\leq 1 \\
+\amp =(1+t,2,2+3t) 
 \end{align*}
 </div>
-<p class="continuation">The scalar functions <span class="process-math">\(F_i\)</span> are called the <dfn class="terminology">component functions</dfn>. The vector field <span class="process-math">\(\boldF\)</span> is <dfn class="terminology">continuous</dfn>, <dfn class="terminology">differentiable</dfn>, <dfn class="terminology">continuously differentiable</dfn>, etc., if each of the component functions is continuous, differentiable, continuously differentiable, etc.</p>
-<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-336" class="internal">in-context</a></span>
+<p class="continuation">and assemble some ingredients</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
+\begin{align*}
+\boldr_1'(t) \amp =(0,1,2)\\
+\abs{\boldr_1'(t)} \amp =\sqrt{0^2+1^2+2^2}=\sqrt{5}\\
+\boldr_2'(t) \amp = (1,0,3)\\
+\abs{\boldr_2'(t)} \amp =\sqrt{1^2+(0)^2+3^2}=\sqrt{10}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Lastly we compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
+\begin{align*}
+\operatorname{M} \amp =\int\limits_{\mathcal{C}_1}\delta(x,y,z)\, ds+
+\int\limits_{\mathcal{C}_2}\delta(x,y,z)\, ds\\
+\amp=\int_0^1\delta(1,1+t,2t)\sqrt{5}\, dt+
+\int_0^1\delta(1+t,2,2+3t)\sqrt{10}\, dt \\
+\amp =\sqrt{5}\int_0^11+3t\, dt+\sqrt{10}\int_0^1 (1+t)(4+3t)\, dt\\
+\amp = \frac{5\sqrt{5}}{2}+\sqrt{10}\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_line_integal_scalar.html#p-336" class="internal">in-context</a></span>
 </body>
 </html>

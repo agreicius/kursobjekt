@@ -11,14 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_fund_thm_line_integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar_piecwise.html">
 \begin{align*}
-\int_\mathcal{C}\boldF\cdot d\boldr \amp = \sum_{k=1}^n \int_{\mathcal{C}_k}\boldF\cdot d\boldr\\
-\amp =\sum_{k=1}^n (f(P_k)-f(P_{k-1})) \amp \knowl{./knowl/th_fund_thm_line_integrals.html}{\text{2.3.3}} \\
-\amp = f(P_n)-f(P_0) \amp \text{(telescoping sum)} \\
-\amp = f(Q)-f(P)
+\operatorname{M} \amp =\int\limits_{\mathcal{C}_1}\delta(x,y,z)\, ds+
+\int\limits_{\mathcal{C}_2}\delta(x,y,z)\, ds\\
+\amp=\int_0^1\delta(1,1+t,2t)\sqrt{5}\, dt+
+\int_0^1\delta(1+t,2,2+3t)\sqrt{10}\, dt \\
+\amp =\sqrt{5}\int_0^11+3t\, dt+\sqrt{10}\int_0^1 (1+t)(4+3t)\, dt\\
+\amp = \frac{5\sqrt{5}}{2}+\sqrt{10}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-88" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar.html#md-85" class="internal">in-context</a></span>
 </body>
 </html>

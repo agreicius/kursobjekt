@@ -12,16 +12,12 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>We have</p>
+<p>Let <span class="process-math">\(D\subseteq\R^3\)</span> be a bounded solid region whose boundary <span class="process-math">\(\partial D=\mathcal{S}\)</span> is a union of finitely many piecewise smooth surfaces. Let <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow\R^3\)</span> be the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> If <span class="process-math">\(\boldF\)</span> is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{S}\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
-\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
-\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
-\amp = 0\text{,}
-\end{align*}
+\begin{equation*}
+\iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma=\iiint\limits_D\diver \boldF\, dV\text{.}
+\end{equation*}
 </div>
-<p class="continuation">where in the last step we have used Clairaut's theorem to identify the various “mixed partials”: i.e., <span class="process-math">\(\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}\text{.}\)</span></p>
 <span class="incontext"><a href="s_Divergence.html#p-526" class="internal">in-context</a></span>
 </body>
 </html>

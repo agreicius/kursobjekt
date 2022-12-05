@@ -11,15 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_line_integral_scalar.html">
 \begin{align*}
-\int_\mathcal{C}\boldF\cdot d\boldr   \amp = \int_a^b\boldF(\boldr(t))\boldr'(t)\, dt \\
-\amp= \int_a^b \nabla f(\boldr(t))\cdot \boldr'(t)\, dt \\
-\amp = \int_a^b (f(\boldr(t))'\, dt \amp \text{(chain rule)}\\
-\amp = f(\boldr(b))-f(\boldr(a)) \amp \text{(FTC)}\\
-\amp =f(Q)-f(P)
+\int\limits_\mathcal{C}f(x,y,z)\, ds\amp = \int_0^{\pi}f(2\cos t, t, 2\sin t)\abs{\boldr'(t)}\, dt \amp(\knowl{./knowl/th_line_integral_scalar.html}{\text{2.1.6}})\\
+\amp=\int_0^\pi (4\cos^2 t+t^2+4\sin^2 t)\sqrt{5}\, dt  \\
+\amp = \sqrt{5}\int_0^\pi 4+t^2\, dt\\
+\amp = \sqrt{5}(4\pi+\pi^3/3)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#md-84" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar.html#md-81" class="internal">in-context</a></span>
 </body>
 </html>

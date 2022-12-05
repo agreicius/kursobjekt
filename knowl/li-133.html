@@ -14,13 +14,15 @@
 <article class="li"><h5 class="heading">
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h5>
-<p>First we parametrize <span class="process-math">\(\mathcal{S}\)</span> using</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_sphere_parametrization.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr(\phi,\theta)\amp =(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi)\\
-\mathcal{R}\amp\colon 0\leq \phi\leq \pi, 0\leq \theta\leq 2\pi\text{,}
+\int_\mathcal{C}\boldF\cdot \boldn\, ds \amp=
+\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \boldn(t)\, ds \\
+\amp = \int_0^{2\pi}\angvec{\cos t-\sin t, \cos t+\sin t}\cdot \angvec{\cos t, \sin t}\, dt\\
+\amp = \int_0^{2\pi} \cos^2 t-\cos t\sin t+\cos t\sin t+\sin^2 t\, dt\\
+\amp = \int_0^{2\pi}1\, dt\\
+\amp = 2\pi\text{.}
 \end{align*}
-</div>
-<p class="continuation">as in <a href="" class="xref" data-knowl="./knowl/eg_sphere_parametrization.html" title="Example 2.5.5: Sphere of radius R parametrization">Example 2.5.5</a>.</p></article><span class="incontext"><a href="s_surfaces_area.html#li-133" class="internal">in-context</a></span>
+</div></article><span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#li-133" class="internal">in-context</a></span>
 </body>
 </html>

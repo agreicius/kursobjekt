@@ -10,52 +10,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><ol class="decimal">
+<body class="ignore-math"><div class="solution solution-like">
+<ol class="decimal">
 <li>
-<p>First we parametrize <span class="process-math">\(\mathcal{S}\text{.}\)</span> Observe that intersecting <span class="process-math">\(\mathcal{S}\)</span> with the plane <span class="process-math">\(z=z_0\)</span>  yields a circle centered at <span class="process-math">\((0,0,z_0)\)</span> of radius <span class="process-math">\(R=\cos z_0 \text{,}\)</span> which we can parametrize as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-(R\cos\theta, R\sin\theta, z_0)=(\cos z_0\cos\theta, \cos z_0\sin\theta, z_0)\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Letting <span class="process-math">\(z\)</span> vary between <span class="process-math">\(-\pi/2\)</span> and <span class="process-math">\(\pi/2\text{,}\)</span> we get the parametrization</p>
+<p>First parametrize, using cylindrical coordinates:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr(\theta, z) \amp = (\cos z\cos\theta, \cos z\sin\theta, z) \\
-\mathcal{R} \colon 0\amp \leq \theta\leq 2\pi, -\pi/2\leq z\leq \pi/2 \text{.}
+\bolds(r, \theta) \amp = (r\cos\theta, r\sin\theta, r^2)\\
+\mathcal{R}\amp\colon 0\leq r\leq 2, 0\leq \theta\leq 2\pi \text{.}
+\end{align*}
+</div>
+<p class="continuation">Here the region <span class="process-math">\(\mathcal{R}\)</span> is a polar description of the projection of <span class="process-math">\(\mathcal{S}\)</span> on the <span class="process-math">\(xy\)</span>-plane, obtained by first observing that the intersection of the paraboloid with the plane <span class="process-math">\(z=4\)</span> is given by <span class="process-math">\(z=r^2=4\text{,}\)</span> or <span class="process-math">\(r=2\text{.}\)</span></p>
+</li>
+<li>
+<p>Now assemble ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\bolds_r \amp = \langle\cos\theta, \sin\theta, 2r\rangle)\\
+\bolds_\theta \amp= \angvec{-r\sin\theta, r\cos\theta, 0}\\
+\bolds_r\times \bolds_\theta \amp=\angvec{-2r^2\cos\theta, -2r^2\sin\theta, r} \\
+\abs{\bolds_r\times \bolds_\theta} \amp=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2}\\
+\amp = \sqrt{4r^4+r^2}=r\sqrt{4r^2+1}\text{.}
 \end{align*}
 </div>
 </li>
 <li>
-<p>Assemble the necessary ingredients:</p>
+<p>Finally, we integrate</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
-\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
-\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
-\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
-\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
-\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
-\amp =\cos z\sqrt{1+\sin^2z} \text{,}
-\end{align*}
-</div>
-<p class="continuation">where the last equality follows since <span class="process-math">\(\cos z\geq 0\)</span> for <span class="process-math">\(z\in [-\pi/2, \pi/2]\text{.}\)</span></p>
-</li>
-<li>
-<p>According to <a href="" class="xref" data-knowl="./knowl/interp_surface_integral_interp.html" title="Interpretation 2.6.5: Surface integral interpretation">Interpretation 2.6.5</a>, integrating a mass density function over <span class="process-math">\(\mathcal{S}\)</span> gives us the total mass of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Thus</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/interp_surface_integral_interp.html">
-\begin{align*}
-\operatorname{mass}\mathcal{S} \amp = \iint\limits_{\mathcal{S}}f(x,y,z)\, d\sigma \\
-\amp=\iint\limits_{\mathcal{R}}f(\boldr(\theta, z))\, \abs{\boldr_\theta\times \boldr_z}\, dA \\
-\amp = \int_0^{2\pi}\int_{-\pi/2}^{\pi/2}\cos z\sqrt{1-\cos^2 z\cos^2\theta-\cos^2z\sin^2\theta}\sqrt{1+\sin^2z}\, dz\, d\theta\\
-\amp =2\pi\int_{-\pi/2}^{\pi/2}\cos z\sqrt{\sin^2z(1+\sin^2z)}\, dz\\
-\amp = 2\pi \int_{-\pi/2}^{\pi/2}\abs{\sin z}\cos z\sqrt{1+\sin^2z}\, dz\\
-\amp =4\pi\int_0^{\pi/2}\sin z\cos z\sqrt{1+\sin^2 z}\, dz
-, \hspace{5pt} \ (\abs{\sin z} \text{ even})\\
-\amp =4\pi\left( \frac{1}{3}(1+\sin^2 z)^{3/2}\right)\Bigr\vert_0^{\pi/2}\\
-\amp =\frac{4\pi}{3}(2^{3/2}-1)\ \operatorname{grams} \text{.}
+\operatorname{area}\mathcal{S}  \amp= \iint\limits_\mathcal{R}r\sqrt{4r^2+1}\, dA \\
+\amp=\int_0^{2\pi}\int_0^2r\sqrt{4r^2+1}\, dr\, d\theta \\
+\amp =2\pi \left(\frac{1}{12}(4r^2+1)^{3/2}\right)\Bigr\vert_0^2\\
+\amp= \frac{\pi}{6}(17^{3/2}-1) \text{.}
 \end{align*}
 </div>
 </li>
-</ol></div></body>
+</ol> Note: we could have used the more straightforward parametrization <span class="process-math">\(\boldr(x,y)=(x,y,x^2+y^2)\text{,}\)</span> noticing that <span class="process-math">\(z=x^2+y^2\)</span> expresses <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> (see <a href="" class="xref" data-knowl="./knowl/eg_function_parametrization.html" title="Example 2.5.7: Parametrizing graphs of functions">Example 2.5.7</a>). Interestingly, the integral in (3) for this choice of parametrization is best computed using a polar coordinates change of variable.</div></body>
 </html>

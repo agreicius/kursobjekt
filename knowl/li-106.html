@@ -14,11 +14,15 @@
 <article class="li"><h5 class="heading">
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
-<p>Line segment between points <span class="process-math">\(P=(a,b,c), Q=(d,e,f)\text{:}\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\boldr(t)=P+t(Q-P)=(1-t)P+tQ, \ 0\leq t\leq 1\text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="s_line_integal_scalar.html#li-106" class="internal">in-context</a></span>
+<p>Let <span class="process-math">\(\mathcal{R}=\{(x,y)\in [0,1]\times[0,1]\colon x\geq y\}\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_probability_functions.html">
+\begin{align*}
+\operatorname{Prob}(\{s\in S\colon X(s)\geq Y(s)\}) \amp= \operatorname{Prob}(\{s\in S\colon (X(s),Y(s))\in \mathcal{R}\}) \\
+\amp = \iint\limits_\mathcal{R}f(x,y)\, dA \amp (\knowl{./knowl/d_probability_functions.html}{\text{1.9.5}}) \\
+\amp =\int_0^1\int_0^{x}6x^2y\, dy\, dx \\
+\amp = \int_0^13x^4\\
+\amp =\frac{3}{5}\text{.}
+\end{align*}
+</div></article><span class="incontext"><a href="s_multiple_integrals_applications.html#li-106" class="internal">in-context</a></span>
 </body>
 </html>

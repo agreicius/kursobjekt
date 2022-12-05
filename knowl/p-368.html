@@ -11,8 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Gradient vector fields <span class="process-math">\(\boldF=\nabla f\)</span> are nice to compute with, as the following theorem indicates.</p>
-<span class="incontext"><a href="s_pathind_conservative_potential.html#p-368" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>If <span class="process-math">\(\boldr(t)=(g_1(t),g_2(t))\)</span> is a parametrization of <span class="process-math">\(\mathcal{C}\)</span> with <em class="emphasis">counterclockwise</em> (positive) orientation, then the outward unit normal vector can be expressed as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldn(t)=\frac{\angvec{g_2'(t),-g_1'(t)}}{\sqrt{g_1^2(t)+g_2^2(t)}}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Furthermore, if <span class="process-math">\(\boldF(x,y)=\angvec{F_1(x,y),F_2(x,y)}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot \boldn \, ds\amp =  \int_a^b\angvec{F_1(\boldr(t)),F_2(\boldr(t))}\cdot \angvec{g_2'(t),-g_1'(t)}\, dt\\
+\amp =  \int_a^b F_1(g_1(t),g_2(t))g_2'(t)-F(g_1(t),g_2(t))g_1'(t)\, dt\\
+\amp = \oint_\mathcal{C} F_1\, dy -F_2\, dx\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#p-368" class="internal">in-context</a></span>
 </body>
 </html>

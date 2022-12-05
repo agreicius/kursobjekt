@@ -13,10 +13,13 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr(r,\theta) \amp=(r\cos\theta, r\sin\theta, r^2(\sin^2\theta-\cos^2\theta))=(r\cos\theta,r\sin\theta,-r^2\cos 2\theta) \\
-\mathcal{R}\colon 0\amp\leq r\leq 1, 0\leq \theta\leq 2\pi 
+\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle \\
+\boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle\\
+\boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} \\
+\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}\\
+\amp=R^2\sin\phi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Stokes.html#md-124" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_surfaces_area.html#md-119" class="internal">in-context</a></span>
 </body>
 </html>

@@ -10,40 +10,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><ol class="decimal">
-<li>
-<p>First we parametrize <span class="process-math">\(\mathcal{S}\)</span> using</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_sphere_parametrization.html">
-\begin{align*}
-\boldr(\phi,\theta)\amp =(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi)\\
-\mathcal{R}\amp\colon 0\leq \phi\leq \pi, 0\leq \theta\leq 2\pi\text{,}
-\end{align*}
-</div>
-<p class="continuation">as in <a href="" class="xref" data-knowl="./knowl/eg_sphere_parametrization.html" title="Example 2.5.5: Sphere of radius R parametrization">Example 2.5.5</a>.</p>
-</li>
-<li>
-<p>Now assemble ingredients:</p>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle \\
-\boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle\\
-\boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} \\
-\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}\\
-\amp=R^2\sin\phi\text{,}
+\boldr_u \amp= \angvec{2u, 0, v}  \\
+\boldr_v\amp=\angvec{0,2v, u} \\
+\boldr_u\times\boldr_v \amp=\angvec{-2v^2, -2u^2, 4uv} \text{.}
 \end{align*}
 </div>
-<p class="continuation">where the last equality follows since <span class="process-math">\(\sin\phi\geq 0\)</span> for <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta,\cos\phi}\)</span> parametrizes points on the unit sphere!</p>
-</li>
-<li>
-<p>Finally, we integrate</p>
+<p class="continuation">At <span class="process-math">\(P=(1,1,1)=\boldr(1,1)\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\operatorname{area} \mathcal{S} \amp=\iint\limits_\mathcal{R}R^2\sin\phi\, dA \\
-\amp=\int_0^\pi\int_0^{2\pi}R^2\sin\phi\, d\theta\, d\phi \\
-\amp = 2\pi\, R^2(-\cos\phi)\Bigr\vert_0^{\pi}\\
-\amp = 4\pi R^2\text{.}
-\end{align*}
+\begin{equation*}
+\boldr_u\times\boldr_v(1,1)=\angvec{-2,-2,4}\text{.}
+\end{equation*}
 </div>
-</li>
-</ol></div></body>
+<p class="continuation">This <span class="process-math">\(\angvec{-2,-2,4}\)</span> is <em class="emphasis">a</em> normal vector of the tangent plane. We can always scale this by any nonzero constant to get another, more convenient normal vector: e.g., <span class="process-math">\(\boldn=-\frac{1}{2}\angvec{-2,-2,4}=\angvec{1,1,-2}\text{.}\)</span> Lastly, the plane passing through <span class="process-math">\(P=(1,1,1)\)</span> with normal vector <span class="process-math">\(\boldn=\angvec{1,1,-2}\)</span> has defining equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x-1)+(y-1)-2(z-1)=0\text{.}
+\end{equation*}
+</div>
+</div></body>
 </html>

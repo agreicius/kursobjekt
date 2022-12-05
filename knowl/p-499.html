@@ -11,8 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Let <span class="process-math">\(\mathcal{S}\)</span> be a smooth surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\text{.}\)</span> Given a simple curve <span class="process-math">\(\mathcal{C}\subseteq \mathcal{S}\)</span> lying partly on the boundary of <span class="process-math">\(\mathcal{S}\)</span> the <dfn class="terminology">induced</dfn> orientation on <span class="process-math">\(\mathcal{C}\)</span> is the one given by the following <dfn class="terminology">right-hand rule</dfn>: if your thumb points along <span class="process-math">\(\boldn\text{,}\)</span> then your fingers curl in the direction of the orientation of <span class="process-math">\(\mathcal{C}\text{.}\)</span> Alternatively, the orientation of <span class="process-math">\(\mathcal{C}\)</span> is induced by <span class="process-math">\(\boldn\)</span> if looking <em class="emphasis">down</em> along <span class="process-math">\(\boldn\text{,}\)</span> the orientation of <span class="process-math">\(\mathcal{C}\)</span> is such that the portion of <span class="process-math">\(\mathcal{S}\)</span> the curve bounds lies <em class="emphasis">on the left</em>.</p>
-<span class="incontext"><a href="s_Stokes.html#p-499" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+\end{equation*}
+</div>
+<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<span class="incontext"><a href="s_surfaces_integrals.html#p-499" class="internal">in-context</a></span>
 </body>
 </html>

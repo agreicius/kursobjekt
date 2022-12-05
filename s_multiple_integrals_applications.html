@@ -344,17 +344,60 @@ M_x' \amp=\iint\limits_{T'}y\, dA \\
 </div></article><article class="example example-like" id="example-29"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">Centroid of hemisphere.</span>
 </h4>
-<p id="p-292">Let <span class="process-math">\(D\)</span> be the hemisphere <span class="process-math">\(x^2+y^2+z^2\leq 4\text{,}\)</span> <span class="process-math">\(z\geq 0\text{.}\)</span> Find the center of mass of <span class="process-math">\(D\)</span> assuming the mass density function is given by <span class="process-math">\(\delta(x,y,z)=z\text{.}\)</span></p>
+<p id="p-292">Let <span class="process-math">\(D\)</span> be the solid hemisphere <span class="process-math">\(x^2+y^2+z^2\leq 4\text{,}\)</span> <span class="process-math">\(z\geq 0\text{.}\)</span> Find the center of mass of <span class="process-math">\(D\)</span> assuming the mass density function is given by <span class="process-math">\(\delta(x,y,z)=z\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like"><p id="p-293"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like">
+<p id="p-293">It is inuitively clear from the symmetry of <span class="process-math">\(D\text{,}\)</span> as well as the fact that <span class="process-math">\(\delta(x,y,z)=z\)</span> does not depend on <span class="process-math">\(x\)</span> or <span class="process-math">\(y\text{,}\)</span> that <span class="process-math">\(M_{yz}=M_{xz}=0\text{.}\)</span> In more detail let <span class="process-math">\(D=D_1\cup D_2\)</span> where <span class="process-math">\(D_1\)</span> is the right half of <span class="process-math">\(D\)</span> (i.e., where <span class="process-math">\(x\geq 0\)</span>), and <span class="process-math">\(D_2\)</span> is the left half. Let <span class="process-math">\(f(x,y,z)=x\delta(x,y,z)=xz\text{.}\)</span> The transformation <span class="process-math">\(G(x,y,z)=(-x,y,z)\)</span> maps <span class="process-math">\(D_1\)</span> onto <span class="process-math">\(D_2\text{.}\)</span> By substitution we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-69">
+\begin{align*}
+\iiint_{D_2}f(x,y,z)\, dV\amp =\iiint_{D_1}f(-x,y,z)\abs{J(G)}\, dV\\
+\amp =\iiint_{D_1}-xz\, dV\\
+\amp =-\iiint_{D_1}f(x,y,z)\, dV\text{,}
+\end{align*}
+</div>
+<p class="continuation">and thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-70">
+\begin{align*}
+M_{yz} \amp=\iiint_D xz\, dV \\
+\amp=\iiint_{D_1}xz\, dV+\iiint_{D_2}xz\, dV \\
+\amp =\iiint_{D_1}xz\, dV-\iiint_{D_1}xz\, dV=0\text{.}
+\end{align*}
+</div>
+<p class="continuation">A similar argument works to show <span class="process-math">\(M_x=0\text{.}\)</span></p>
+<p id="p-294">To compute the remaining ingredients we will use spherical coordinates. Observe that the solid hemisphere <span class="process-math">\(D\)</span> has spherical description</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(\rho, \phi,\theta)\colon 0\leq \theta\leq 2\pi, 0\leq \phi\leq \pi/2, 0\leq \rho\leq 2\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now compute:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-71">
+\begin{align*}
+M \amp=\iiint_D \delta(x,y,z)\, dV \\
+\amp =\iiint_{D}z\, dV\\
+\amp =\int_0^{2\pi}\int_0^{\pi/2}\int_0^2\rho\cos\phi\cdot \rho^2\sin\phi \amp \text{(spher. subst.)}\\
+\amp = 2\pi \int_0^{\pi/2}\cos\phi\sin\phi\, d\phi\int_0^2\rho^3\, d\rho\\
+\amp =\frac{2}{8}\pi(\sin^2\phi)\vert_0^{\pi/2}(\rho^4)\vert_0^{2}\\
+\amp =\frac{1}{4}\pi 2^4=4\pi\\
+M_{xy} \amp =\iiint_D z\delta(x,y,z)\, dV \\
+\amp =\iiint_{D}z^2\, dV\\
+\amp =\int_0^{2\pi}\int_0^{\pi/2}\int_0^2\rho^2\cos^2\phi\cdot \rho^2\sin\phi \amp \text{(spher. subst.)}\\
+\amp = 2\pi \int_0^{\pi/2}\cos^2\phi\sin\phi\, d\phi\int_0^2\rho^4\, d\rho\\
+\amp =\frac{2}{15}\pi(-\cos^3\phi)\vert_0^{\pi/2}(\rho^5)\vert_0^{2}\\
+\amp =\frac{2}{15}\pi 2^5=\frac{64}{15}\pi\\
+(\overline{x},\overline{y},\overline{z}) \amp = (0,0,M_{xy}/M)\\
+\amp = \left(0,0,\frac{16}{15}\right)\text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article></section><section class="subsection" id="ss_joint_probability_function"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Probability and density functions</span>
 </h3>
 <article class="definition definition-like" id="d_random_variable"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">Random variable.</span>
 </h4>
-<p id="p-294">Let <span class="process-math">\(S\)</span> be any set, which we will consider to be a sample space. A <dfn class="terminology">random variable</dfn> is a function</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-69">
+<p id="p-295">Let <span class="process-math">\(S\)</span> be any set, which we will consider to be a sample space. A <dfn class="terminology">random variable</dfn> is a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-72">
 \begin{align*}
 X\colon S \amp\rightarrow \R \\
 s\amp \mapsto X(s)\text{.}
@@ -362,21 +405,40 @@ s\amp \mapsto X(s)\text{.}
 </div></article><article class="definition definition-like" id="d_probability_functions"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.5</span><span class="period">.</span>
 </h4>
-<p id="p-295">Let <span class="process-math">\(X, Y\)</span> be random variables defined on the sample space <span class="process-math">\(S\text{.}\)</span>  A <dfn class="terminology">joint probability density function</dfn> for <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> is a function <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> satisfying the following properties.</p>
+<p id="p-296">Let <span class="process-math">\(X, Y\)</span> be random variables defined on the sample space <span class="process-math">\(S\text{.}\)</span>  A <dfn class="terminology">joint probability density function</dfn> for <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> is a function <span class="process-math">\(f\colon \R^2\rightarrow \R\)</span> satisfying the following properties.</p>
 <ol class="decimal">
-<li id="li-100"><p id="p-296"><span class="process-math">\(\displaystyle f(x,y)\geq 0\)</span></p></li>
-<li id="li-101"><p id="p-297"><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p></li>
-<li id="li-102"><p id="p-298"><span class="process-math">\(\operatorname{Prob}\left( \{s\in S\colon (X(s),Y(s))\in \mathcal{R}\} \right)=\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> for any <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> over which <span class="process-math">\(f\)</span> is integrable.</p></li>
+<li id="li-100"><p id="p-297"><span class="process-math">\(\displaystyle f(x,y)\geq 0\)</span></p></li>
+<li id="li-101"><p id="p-298"><span class="process-math">\(\displaystyle \int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)\, dx\, dy=1\)</span></p></li>
+<li id="li-102"><p id="p-299"><span class="process-math">\(\operatorname{Prob}\left( \{s\in S\colon (X(s),Y(s))\in \mathcal{R}\} \right)=\iint\limits_\mathcal{R}f(x,y)\, dA\)</span> for any <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> over which <span class="process-math">\(f\)</span> is integrable.</p></li>
 </ol></article><article class="example example-like" id="example-30"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
 </h4>
-<p id="p-299">Verify that the function f(x,y)=\begin{cases} 6x^2y\amp (x,y)\in [0,1]\times [0,1]\\ 0\amp (x,y)\notin [0,1]\times [0,1] \end{cases} is a joint probability distribution function.</p>
+<p id="p-300">Verify that the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y)=\begin{cases}
+6x^2y\amp (x,y)\in [0,1]\times [0,1]\\
+0\amp (x,y)\notin [0,1]\times [0,1]
+\end{cases}
+\end{equation*}
+</div>
+<p class="continuation">is a joint probability distribution function.</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><p id="p-300"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like">
+<p id="p-301">Let <span class="process-math">\(R=[0,1]\times [0,1]\text{.}\)</span> It is clear that <span class="process-math">\(f(x,y)\geq 0\)</span> for all <span class="process-math">\((x,y)\text{.}\)</span> Furthermore, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-73">
+\begin{align*}
+\iint\limits_{\R^2}f(x,y)\, dA \amp = \iint\limits_{R}f(x,y)\, dA \amp ((x,y)\notin R\implies f(x,y)=0)\\
+\amp=\int_0^1\int_0^16x^2y\, dy\, dx \\
+\amp =6\int_0^1x^2\, dx\int_0^1 y\, dy\\
+\amp =6(1/3)(1/2)=1\text{.}
+\end{align*}
+</div>
+</div></div>
 </div></article><article class="definition definition-like" id="d_uniformly_distibuted"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="period">.</span>
 </h4>
-<p id="p-301">Let <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> have area <span class="process-math">\(A\text{.}\)</span> The random variables <span class="process-math">\(X, Y\)</span> are <dfn class="terminology">uniformly distributed</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if their joint probabiltity disribution function is given by</p>
+<p id="p-302">Let <span class="process-math">\(\mathcal{R}\subseteq\R^2\)</span> have area <span class="process-math">\(A\text{.}\)</span> The random variables <span class="process-math">\(X, Y\)</span> are <dfn class="terminology">uniformly distributed</dfn> over <span class="process-math">\(\mathcal{R}\)</span> if their joint probabiltity disribution function is given by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f(x,y)=\begin{cases}
@@ -387,8 +449,8 @@ f(x,y)=\begin{cases}
 </div></article><article class="definition definition-like" id="d_expected_value"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.8</span><span class="period">.</span><span class="space"> </span><span class="title">Expected value.</span>
 </h4>
-<p id="p-302">Assume the random variables <span class="process-math">\(X,Y\)</span> on the sample set <span class="process-math">\(S\)</span> have joint probability density function <span class="process-math">\(f(x,y)\text{.}\)</span> We define the <dfn class="terminology">expected values</dfn> of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> denoted <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\text{,}\)</span> as</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-70">
+<p id="p-303">Assume the random variables <span class="process-math">\(X,Y\)</span> on the sample set <span class="process-math">\(S\)</span> have joint probability density function <span class="process-math">\(f(x,y)\text{.}\)</span> We define the <dfn class="terminology">expected values</dfn> of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> denoted <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\text{,}\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-74">
 \begin{align*}
 \mu_X\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty x\, f(x,y)\, dx\, dy\\
 \mu_Y\amp= \int_{-\infty}^\infty\int_{-\infty}^\infty y\, f(x,y)\, dx\, dy
@@ -396,7 +458,7 @@ f(x,y)=\begin{cases}
 </div></article><article class="example example-like" id="example-31"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Joint probability density function.</span>
 </h4>
-<p id="p-303">Let</p>
+<p id="p-304">Assume random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> have joint probability density function</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f(x,y)=\begin{cases}
@@ -406,11 +468,39 @@ f(x,y)=\begin{cases}
 \end{equation*}
 </div>
 <ol class="decimal">
-<li id="li-103"><p id="p-304">Verify that <span class="process-math">\(f\)</span> is a probability distribution function.</p></li>
-<li id="li-104"><p id="p-305">Compute <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\)</span> for any two random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> with joint probabilty distribution function <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-103"><p id="p-305">Compute <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\)</span> for any two random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> with joint probability distribution function <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-104"><p id="p-306">Compute the probability that <span class="process-math">\(X\geq Y\text{.}\)</span></p></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><p id="p-306"></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><ol class="decimal">
+<li id="li-105">
+<p id="p-307">We compute:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-75">
+\begin{align*}
+\mu_X \amp =\iint\limits_R xf(x,y)\, dA  \\
+\amp = \int_0^1\int_0^16x^3y\, dx\, dy \\
+\amp = 6\int_0^1x^3\, dx\int_0^1y\, dy\\
+\amp =6(1/4)(1/2)=3/4 \\
+\mu_Y \amp =\iint\limits_R yf(x,y)\, dA  \\
+\amp = \int_0^1\int_0^16x^2y^2\, dx\, dy \\
+\amp = 6\int_0^1x^2\, dx\int_0^1y^2\, dy\\
+\amp =6(1/3)(1/3)=2/3\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-106">
+<p id="p-308">Let <span class="process-math">\(\mathcal{R}=\{(x,y)\in [0,1]\times[0,1]\colon x\geq y\}\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_probability_functions.html" id="md-76">
+\begin{align*}
+\operatorname{Prob}(\{s\in S\colon X(s)\geq Y(s)\}) \amp= \operatorname{Prob}(\{s\in S\colon (X(s),Y(s))\in \mathcal{R}\}) \\
+\amp = \iint\limits_\mathcal{R}f(x,y)\, dA \amp (\knowl{./knowl/d_probability_functions.html}{\text{1.9.5}}) \\
+\amp =\int_0^1\int_0^{x}6x^2y\, dy\, dx \\
+\amp = \int_0^13x^4\\
+\amp =\frac{3}{5}\text{.}
+\end{align*}
+</div>
+</li>
+</ol></div></div>
 </div></article></section></section></div></main>
 </div>
 </body>

@@ -12,7 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{S}\)</span> be the unit sphere <span class="process-math">\(x^2+y^2+z^2=1\text{.}\)</span> We have seen previously that for a point <span class="process-math">\(P=(x,y,z)\)</span> on <span class="process-math">\(\mathcal{S}\)</span> the vector <span class="process-math">\(\overrightarrow{OP}=\angvec{x,y,z}\)</span> is a normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{;}\)</span> furthermore, since <span class="process-math">\(P\in \mathcal{S}\text{,}\)</span> its magnitude is <span class="process-math">\(\sqrt{x^2+y^2+z^2}=1\text{.}\)</span> Thus the function <span class="process-math">\(\boldn_1(x,y,z)=\angvec{x,y,z}\)</span> assigns a unit normal vector to each point <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{.}\)</span> Since <span class="process-math">\(\boldn_1\)</span> is clearly continuous, it defines an orientation on <span class="process-math">\(\mathcal{S}\text{,}\)</span> called the <dfn class="terminology">outward</dfn> orientation. The function <span class="process-math">\(\boldn_2(x,y,z)=-\angvec{x,y,z}\)</span> also defines an orientation on the sphere, called the <dfn class="terminology">inward</dfn> orientation.</p>
+<p>Assemble the necessary ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
+\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
+\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
+\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
+\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
+\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
+\amp =\cos z\sqrt{1+\sin^2z} \text{,}
+\end{align*}
+</div>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\cos z\geq 0\)</span> for <span class="process-math">\(z\in [-\pi/2, \pi/2]\text{.}\)</span></p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-484" class="internal">in-context</a></span>
 </body>
 </html>

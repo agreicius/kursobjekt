@@ -11,15 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>We use two distinct methods of describing curves in <span class="process-math">\(\R^2\)</span> or <span class="process-math">\(\R^3\text{:}\)</span> <em class="emphasis">implicitly</em>, as the set of solutions to an equation, and <em class="emphasis">parametrically</em> as the image of a parametrization <span class="process-math">\(\boldr\colon [a,b]\rightarrow \R^n\text{.}\)</span> For example, we typically describe the unit circle <span class="process-math">\(\mathcal{C}\)</span> centered at the origin either as <span class="process-math">\(\mathcal{C}\colon x^2+y^2=1\)</span> or <span class="process-math">\(\mathcal{C}\colon \boldr(t)=(\cos t, \sin t), 0\leq t\leq 2\pi\text{.}\)</span> These are abbreviated forms of the following implicit and parametric representations of <span class="process-math">\(\mathcal{C}\text{:}\)</span></p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing the point <span class="process-math">\(P=(x,y)\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\text{Implicit: } \ \mathcal{C}\amp=\{(x,y)\in \R^2\colon x^2+y^2=1\}\\
-\text{Parametric: } \ \mathcal{C}\amp=\{(\cos t, \sin t)\colon  0\leq t\leq 2\pi\}  \text{.}
-\end{align*}
+\begin{equation}
+\nabla\cdot \boldF (x,y)=\frac{\partial F_1}{\partial x}(x,y)+\frac{\partial F_2}{\partial y}(x,y)=\lim_{R\to 0}\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot \boldn\, ds\text{,}\tag{2.4.4}
+\end{equation}
 </div>
-<p class="continuation">The first description is called <em class="emphasis">implicit</em>, as it is up to us to find actual pairs <span class="process-math">\((x,y)\)</span> satisfying the defining equation; the parametrization, in contrast, gives us an <em class="emphasis">explit</em> recipe for producing points on <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
-<span class="incontext"><a href="s_surfaces_area.html#p-430" class="internal">in-context</a></span>
+<p class="continuation">where <span class="process-math">\(C_R\)</span> is the simple positively oriented circle of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\text{,}\)</span> and <span class="process-math">\(\boldn\)</span> is the unit outward normal vector to <span class="process-math">\(C_R\text{.}\)</span></p>
+<span class="incontext"><a href="s_Greens_theorem.html#p-430" class="internal">in-context</a></span>
 </body>
 </html>

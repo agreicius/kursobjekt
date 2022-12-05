@@ -15,7 +15,17 @@
 <h4 class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.2.7.1</span><span class="period">.</span>
 </h4>
-<p></p>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi}\boldF(\boldr(t))\cdot \boldr'(t)\, dt\\
+\amp =\int_0^{2\pi}\boldF(\cos t, \sin t, t)\cdot \angvec{-\sin t, \cos t, 1}\, dt \\
+\amp =\int_0^{2\pi}\angvec{-\sin t, t,2\cos t}\cdot \angvec{-\sin t, \cos t, 1}\, dt\\
+\amp =\int_0^{2\pi}\sin^2 t+t\cos t+2\cos t\, dt\\
+\amp = \pi\text{.}
+\end{align*}
+</div>
+<p class="continuation">(To perform the integration in the penulitimate line, use the double-angle formula <span class="process-math">\(\sin^2 t=\frac{1}{2}(1-\cos 2\t)\text{,}\)</span> and integration by parts.)</p>
 </div>
 <span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#solution-34" class="internal">in-context</a></span>
 </body>

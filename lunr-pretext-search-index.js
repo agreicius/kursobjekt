@@ -1113,7 +1113,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Applications of multiple integrals",
-  "body": "Applications of multiple integrals Center of mass mass of soli Center of mass mass first moments center of mass .\n      When the mass density function   is a constant function ( ,   for fixed  ), we call the center of mass of   its  centroid . Equivalently, the centroid of   is its center of mass, assuming   everywhere.\n     Centroids of triangles \n        Let   be the solid triangular region with vertices  .\n       \n           \n            Compute the center of mass of   when the density function   is constant. (In other words, compute the centroid of  ).\n           \n         \n             \n              Compute the center of mass of   when the density function is given by  .\n             \n         \n           \n            Let   be the solid triangular region with vertices  . Give a formula for the centroid of   in terms of  .\n           \n         \n           \n            We compute\n             .\n          Note: intuitively it is no surprise that the center of mass of   lies along the line  , since this is an axis of symmetry of  . To make this symmetry argument rigorous, however, requires some finessing.\n           \n         \n           \n            We compute\n             .\n            Again, it is no surprise that the center of mass lies along the line  , since both   and the density function   are symmetric with respect to this line. In contrast to the previous computation, the center of mass is further from the origin. This makes sense in terms of our  balancing point  interpretation of center of mass: in this case the greater amount of mass in the upper right of the triangle moves the balancing point up and to the right.\n           \n         \n           \n            The transformation   maps the triangle   with vertices   in the  -plane to the given triangle   in the  -plane. We can use substitution to reduce the computation for   to that of  . Let   be the mass and moments of  , and   the mass and moments of  .\n             .\n            Note: looking closely at the penultimate line, we see that\n             .\n            In other words, the center of mass of   is the result of applying   to the center of mass of  ! This is a consequence of the fact that   is a  linear  transformation.\n           \n         Centroid of hemisphere .\n     \n        Let   be the hemisphere  ,  . Find the center of mass of   assuming the mass density function is given by  .\n       \n\n       Probability and density functions Random variable random variable joint probability density function Joint probability density function  \n        Verify that the function\n        f(x,y)=\\begin{cases}\n          6x^2y\\amp (x,y)\\in [0,1]\\times [0,1]\\\\\n          0\\amp (x,y)\\notin [0,1]\\times [0,1]\n        \\end{cases}\n        is a joint probability distribution function.\n       \n\n       uniformly distributed Expected value expected values Joint probability density function  \n        Let\n         .\n         \n             \n              Verify that   is a probability distribution function.\n             \n           \n             \n              Compute   and   for any two random variables   and   with joint probabilty distribution function  .\n             \n           \n       \n\n       "
+  "body": "Applications of multiple integrals Center of mass mass of soli Center of mass mass first moments center of mass .\n      When the mass density function   is a constant function ( ,   for fixed  ), we call the center of mass of   its  centroid . Equivalently, the centroid of   is its center of mass, assuming   everywhere.\n     Centroids of triangles \n        Let   be the solid triangular region with vertices  .\n       \n           \n            Compute the center of mass of   when the density function   is constant. (In other words, compute the centroid of  ).\n           \n         \n             \n              Compute the center of mass of   when the density function is given by  .\n             \n         \n           \n            Let   be the solid triangular region with vertices  . Give a formula for the centroid of   in terms of  .\n           \n         \n           \n            We compute\n             .\n          Note: intuitively it is no surprise that the center of mass of   lies along the line  , since this is an axis of symmetry of  . To make this symmetry argument rigorous, however, requires some finessing.\n           \n         \n           \n            We compute\n             .\n            Again, it is no surprise that the center of mass lies along the line  , since both   and the density function   are symmetric with respect to this line. In contrast to the previous computation, the center of mass is further from the origin. This makes sense in terms of our  balancing point  interpretation of center of mass: in this case the greater amount of mass in the upper right of the triangle moves the balancing point up and to the right.\n           \n         \n           \n            The transformation   maps the triangle   with vertices   in the  -plane to the given triangle   in the  -plane. We can use substitution to reduce the computation for   to that of  . Let   be the mass and moments of  , and   the mass and moments of  .\n             .\n            Note: looking closely at the penultimate line, we see that\n             .\n            In other words, the center of mass of   is the result of applying   to the center of mass of  ! This is a consequence of the fact that   is a  linear  transformation.\n           \n         Centroid of hemisphere .\n     \n        Let   be the solid hemisphere  ,  . Find the center of mass of   assuming the mass density function is given by  .\n       \n        It is inuitively clear from the symmetry of  , as well as the fact that   does not depend on   or  , that  . In more detail let   where   is the right half of   ( , where  ), and   is the left half. Let  . The transformation   maps   onto  . By substitution we have\n         ,\n        and thus\n         .\n        A similar argument works to show  .\n       To compute the remaining ingredients we will use spherical coordinates. Observe that the solid hemisphere   has spherical description\n       .\n      Now compute:\n         .\n       Probability and density functions Random variable random variable joint probability density function Joint probability density function  \n        Verify that the function\n         \n        is a joint probability distribution function.\n       \n        Let  . It is clear that   for all  . Furthermore, we have\n           .\n       uniformly distributed Expected value expected values Joint probability density function  \n        Assume random variables   and   have joint probability density function\n         .\n         \n             \n              Compute   and   for any two random variables   and   with joint probability distribution function  .\n             \n           \n             \n            Compute the probability that  .\n             \n           \n       \n           \n            We compute:\n             .\n           \n         \n           \n            Let  . We have\n             .\n           \n         "
 },
 {
   "id": "d_center_of_mass",
@@ -1140,7 +1140,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.3",
   "title": "Centroid of hemisphere.",
-  "body": "Centroid of hemisphere .\n     \n        Let   be the hemisphere  ,  . Find the center of mass of   assuming the mass density function is given by  .\n       \n\n       "
+  "body": "Centroid of hemisphere .\n     \n        Let   be the solid hemisphere  ,  . Find the center of mass of   assuming the mass density function is given by  .\n       \n        It is inuitively clear from the symmetry of  , as well as the fact that   does not depend on   or  , that  . In more detail let   where   is the right half of   ( , where  ), and   is the left half. Let  . The transformation   maps   onto  . By substitution we have\n         ,\n        and thus\n         .\n        A similar argument works to show  .\n       To compute the remaining ingredients we will use spherical coordinates. Observe that the solid hemisphere   has spherical description\n       .\n      Now compute:\n         .\n       "
 },
 {
   "id": "d_random_variable",
@@ -1167,7 +1167,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.6",
   "title": "Joint probability density function.",
-  "body": "Joint probability density function  \n        Verify that the function\n        f(x,y)=\\begin{cases}\n          6x^2y\\amp (x,y)\\in [0,1]\\times [0,1]\\\\\n          0\\amp (x,y)\\notin [0,1]\\times [0,1]\n        \\end{cases}\n        is a joint probability distribution function.\n       \n\n       "
+  "body": "Joint probability density function  \n        Verify that the function\n         \n        is a joint probability distribution function.\n       \n        Let  . It is clear that   for all  . Furthermore, we have\n           .\n       "
 },
 {
   "id": "d_uniformly_distibuted",
@@ -1194,7 +1194,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.9",
   "title": "Joint probability density function.",
-  "body": "Joint probability density function  \n        Let\n         .\n         \n             \n              Verify that   is a probability distribution function.\n             \n           \n             \n              Compute   and   for any two random variables   and   with joint probabilty distribution function  .\n             \n           \n       \n\n       "
+  "body": "Joint probability density function  \n        Assume random variables   and   have joint probability density function\n         .\n         \n             \n              Compute   and   for any two random variables   and   with joint probability distribution function  .\n             \n           \n             \n            Compute the probability that  .\n             \n           \n       \n           \n            We compute:\n             .\n           \n         \n           \n            Let  . We have\n             .\n           \n         "
 },
 {
   "id": "s_line_integal_scalar",
@@ -1347,7 +1347,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Line integrals of vector fields",
-  "body": "Line integrals of vector fields Vector fields vector field Vector fields vector field component functions continuous differentiable continuously differentiable Visualizing vector fields \n          Like a curve parametrization, a vector field   is yet another example of a  vector-valued function . In contrast to parametrizations, however, note that both the input and output of   are  -tuples. This makes visualizing   slightly more complicated. We use the following method to do so. As always,   is equal to 2 or 3 for us.\n         \n             \n              Interpret the input tuple   as a  point  in  -space.\n             \n           \n             \n              Treat the output tuple   as an  -vector .\n             \n           \n             \n              For a given input  , draw the output   as a vector with  initial point  equal to  :  , the  tail  of the vector   is chosen to be the point  .\n             \n           \n             \n              Sketch the entire vector field by performing Step 3 for  many  input points!\n             \n           Line integrals of vector fields  line integral of a vector field Integral of a vector field along a curve line integral Vector field line integral notation \n          The first equality among   should be considered purely notational:  , it states simply that the integral being defined can be denoted by either of the expressions   or  . The remaining equalities   then give actual meaning to these two expressions.\n         Vector line integral in plane \n          Let  . Let   be the curve  .\n           \n               \n                Compute the integral of   along the segment of   starting at   and ending at  .\n               \n             \n               \n                Compute the integral of   along the segment of   starting at   and ending at  .\n               \n             \n         \n\n         Independence of parametrization reverse Vector field integral over helix \n          Let   be the helix with parametrization  ,  . Compute  , where  .\n         \n\n         Line integrals with respect to  \n          Let  ,  , be a smooth parametrization of the curve  . Given a vector field   that is continuous on the curve  , we define the line integrals with respect to   as follows.\n           .\n        From   we see that we have\n         .\n         \n      To make sense of what a vector field line integral computes in a given context, it is best to consider its formulation as the  scalar line integral  of the scalar function  . Given a partition of a parametrized curve into curve segments with endpoints\n       \n      we have\n       \n      where   is a sample point in the  -th segment of the partition of  , and   is the arc length of that segment. Focusing in on one term   and recalling our dot product cosine formula\n       ,\n      where   is the angle between   and   at  , we see that this term multiplies the  component  of   in the direction of   by the arc length   of the  -th segment. We have thus reduced our interpretation problem to understanding what type of quantity is obtained by summing these products. The definition of  work  and  circulation  below are two examples of doing just this.\n       Interpreting  \n     Work and flow \n          Let   be a a smooth parametrization of the curve  , and assume the vector field   is continuous on  .\n         \n             work \n           \n             flow simple closed circulation \n           \n          Let   be the unit circle  . Compute the the circulation around   for the given fluid velocity field.\n           \n               \n                 \n               \n             \n               \n               \n               \n             \n         \n\n         Vector line integral \n        It is not difficult to modify our Sage cell from   to compute vector line integrals. As in that example, we use the  vector()  function to make vector objects out of our lists: this is essential for using vector operations like dot product, norm,  . Here is the line integral from  .\n       Flux across a planar curve flux across planar curve Flux flux \n        If   is a parametrization of   with  counterclockwise  (positive) orientation, then the outward unit normal vector can be expressed as\n         .\n        Furthermore, if  , then\n         .\n       "
+  "body": "Line integrals of vector fields Vector fields vector field Vector fields vector field component functions continuous differentiable continuously differentiable Visualizing vector fields \n          Like a curve parametrization, a vector field   is yet another example of a  vector-valued function . In contrast to parametrizations, however, note that both the input and output of   are  -tuples. This makes visualizing   slightly more complicated. We use the following method to do so. As always,   is equal to 2 or 3 for us.\n         \n             \n              Interpret the input tuple   as a  point  in  -space.\n             \n           \n             \n              Treat the output tuple   as an  -vector .\n             \n           \n             \n              For a given input  , draw the output   as a vector with  initial point  equal to  :  , the  tail  of the vector   is chosen to be the point  .\n             \n           \n             \n              Sketch the entire vector field by performing Step 3 for  many  input points!\n             \n           Line integrals of vector fields  line integral of a vector field Integral of a vector field along a curve line integral Vector field line integral notation \n          The first equality among   should be considered purely notational:  , it states simply that the integral being defined can be denoted by either of the expressions   or  . The remaining equalities   then give actual meaning to these two expressions.\n         Vector line integral in plane \n          Let  .\n           \n               \n                Compute the integral of   along the segment   of the curve   that starts at   and ends at  .\n               \n             \n               \n                Compute the integral of   along the reverse   of the path in (1):  , the segment of the curve   that starts at   and ends at  .\n               \n             \n         \n             \n              We parametrize   as  ,  . Now compute\n               .\n             \n           \n             \n               According to   we should have  . We verify this directly by parametrizing   and computing. In general if   is parametrized by  , where  , then   is parametrized by  , where  .\n               Indeed, since  , we have   and  . Thus in our case we can parametrize   as  , where  . Now compute\n                .\n             \n           Independence of parametrization reverse Vector field integral over helix \n          Let   be the helix with parametrization  ,  . Compute  , where  .\n         \n          We have\n           .\n          (To perform the integration in the penulitimate line, use the double-angle formula  , and integration by parts.)\n         Line integrals with respect to  \n          Let  ,  , be a smooth parametrization of the curve  . Given a vector field   that is continuous on the curve  , we define the line integrals with respect to   as follows.\n           .\n        From   we see that we have\n         .\n         \n      To make sense of what a vector field line integral computes in a given context, it is best to consider its formulation as the  scalar line integral  of the scalar function  . Given a partition of a parametrized curve into curve segments with endpoints\n       \n      we have\n       \n      where   is a sample point in the  -th segment of the partition of  , and   is the arc length of that segment. Focusing in on one term   and recalling our dot product cosine formula\n       ,\n      where   is the angle between   and   at  , we see that this term multiplies the  component  of   in the direction of   by the arc length   of the  -th segment. We have thus reduced our interpretation problem to understanding what type of quantity is obtained by summing these products. The definition of  work  and  circulation  below are two examples of doing just this.\n       Interpreting  \n     Work and flow \n          Let   be a a smooth parametrization of the curve  , and assume the vector field   is continuous on  .\n         \n             work \n           \n             flow simple closed circulation \n           Circulation \n          Let   be the unit circle  , oriented in the counterclockwise direction. Compute the the circulation around   for the given fluid velocity field.\n           \n               \n                 \n               \n             \n               \n               \n               \n             \n         \n             \n              Parametrize   as  ,  . Now compute\n               \n             \n           \n             \n              For any point on the circle, its tangent vector points  orthogonally  to its position vector. It follows that in this case   is always orthogonal to the tangent vectors on the curve (equivalently, that the tangential component of   is always zero), and hence that the line integral is 0. More explicitly, using the parametrization   we have\n               .\n             \n           Vector line integral \n        It is not difficult to modify our Sage cell from   to compute vector line integrals. As in that example, we use the  vector()  function to make vector objects out of our lists: this is essential for using vector operations like dot product, norm,  . Here is the line integral from  .\n       Flux across a planar curve flux across planar curve Flux flux \n        If   is a parametrization of   with  counterclockwise  (positive) orientation, then the outward unit normal vector can be expressed as\n         .\n        Furthermore, if  , then\n         .\n       Flux \n          Let   be the unit circle  , oriented in the counterclockwise direction. Compute the the flux around   for the given fluid velocity field.\n           \n               \n                 \n               \n             \n               \n               \n               \n             \n         \n          Parametrize   as  ,  . It follows that  , and hence that the outward unit normal vector is  . We now compute the flux in each case using  .\n         \n             .\n           \n             .\n           "
 },
 {
   "id": "d_vector_field",
@@ -1392,7 +1392,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.2.5",
   "title": "Vector line integral in plane.",
-  "body": "Vector line integral in plane \n          Let  . Let   be the curve  .\n           \n               \n                Compute the integral of   along the segment of   starting at   and ending at  .\n               \n             \n               \n                Compute the integral of   along the segment of   starting at   and ending at  .\n               \n             \n         \n\n         "
+  "body": "Vector line integral in plane \n          Let  .\n           \n               \n                Compute the integral of   along the segment   of the curve   that starts at   and ends at  .\n               \n             \n               \n                Compute the integral of   along the reverse   of the path in (1):  , the segment of the curve   that starts at   and ends at  .\n               \n             \n         \n             \n              We parametrize   as  ,  . Now compute\n               .\n             \n           \n             \n               According to   we should have  . We verify this directly by parametrizing   and computing. In general if   is parametrized by  , where  , then   is parametrized by  , where  .\n               Indeed, since  , we have   and  . Thus in our case we can parametrize   as  , where  . Now compute\n                .\n             \n           "
 },
 {
   "id": "rm_vector_line_integral_independence",
@@ -1410,7 +1410,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.2.7",
   "title": "Vector field integral over helix.",
-  "body": "Vector field integral over helix \n          Let   be the helix with parametrization  ,  . Compute  , where  .\n         \n\n         "
+  "body": "Vector field integral over helix \n          Let   be the helix with parametrization  ,  . Compute  , where  .\n         \n          We have\n           .\n          (To perform the integration in the penulitimate line, use the double-angle formula  , and integration by parts.)\n         "
 },
 {
   "id": "d_line_integrals_dxdydz",
@@ -1445,8 +1445,8 @@ var ptx_lunr_docs = [
   "url": "s_line_integal_scalar_vector_fields.html#example-37",
   "type": "Example",
   "number": "2.2.11",
-  "title": "",
-  "body": "\n          Let   be the unit circle  . Compute the the circulation around   for the given fluid velocity field.\n           \n               \n                 \n               \n             \n               \n               \n               \n             \n         \n\n         "
+  "title": "Circulation.",
+  "body": "Circulation \n          Let   be the unit circle  , oriented in the counterclockwise direction. Compute the the circulation around   for the given fluid velocity field.\n           \n               \n                 \n               \n             \n               \n               \n               \n             \n         \n             \n              Parametrize   as  ,  . Now compute\n               \n             \n           \n             \n              For any point on the circle, its tangent vector points  orthogonally  to its position vector. It follows that in this case   is always orthogonal to the tangent vectors on the curve (equivalently, that the tangential component of   is always zero), and hence that the line integral is 0. More explicitly, using the parametrization   we have\n               .\n             \n           "
 },
 {
   "id": "sage_vector_line_integral",
@@ -1465,6 +1465,15 @@ var ptx_lunr_docs = [
   "number": "2.2.12",
   "title": "Flux.",
   "body": "flux across planar curve Flux flux \n        If   is a parametrization of   with  counterclockwise  (positive) orientation, then the outward unit normal vector can be expressed as\n         .\n        Furthermore, if  , then\n         .\n       "
+},
+{
+  "id": "example-38",
+  "level": "2",
+  "url": "s_line_integal_scalar_vector_fields.html#example-38",
+  "type": "Example",
+  "number": "2.2.13",
+  "title": "Flux.",
+  "body": "Flux \n          Let   be the unit circle  , oriented in the counterclockwise direction. Compute the the flux around   for the given fluid velocity field.\n           \n               \n                 \n               \n             \n               \n               \n               \n             \n         \n          Parametrize   as  ,  . It follows that  , and hence that the outward unit normal vector is  . We now compute the flux in each case using  .\n         \n             .\n           \n             .\n           "
 },
 {
   "id": "s_pathind_conservative_potential",
@@ -1521,18 +1530,18 @@ var ptx_lunr_docs = [
   "body": "\n      Let   be the initial and end point of the closed curve  . According to   we have\n       .\n     "
 },
 {
-  "id": "example-39",
+  "id": "example-40",
   "level": "2",
-  "url": "s_pathind_conservative_potential.html#example-39",
+  "url": "s_pathind_conservative_potential.html#example-40",
   "type": "Example",
   "number": "2.3.5",
   "title": "A non-gradient vector field.",
   "body": "A non-gradient vector field \n        Use   to show that   is not a gradient vector field.\n       \n        Let   be the unit circle  , with parametrization  . We have\n         .\n        Since  ,   implies that we cannot have  .\n       "
 },
 {
-  "id": "example-40",
+  "id": "example-41",
   "level": "2",
-  "url": "s_pathind_conservative_potential.html#example-40",
+  "url": "s_pathind_conservative_potential.html#example-41",
   "type": "Example",
   "number": "2.3.6",
   "title": "Work done by gravity.",
@@ -1701,9 +1710,9 @@ var ptx_lunr_docs = [
   "body": "Green's theorem (circulation or tangential form) \n        Let   be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let   be the region it encloses. If the component functions of   have continuous first-order partial derivatives on an open set containing  , then\n         .\n       "
 },
 {
-  "id": "example-44",
+  "id": "example-45",
   "level": "2",
-  "url": "s_Greens_theorem.html#example-44",
+  "url": "s_Greens_theorem.html#example-45",
   "type": "Example",
   "number": "2.4.2",
   "title": "",
@@ -1728,9 +1737,9 @@ var ptx_lunr_docs = [
   "body": "Area via line integral \n        Let   be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let   be the region it encloses. If the component functions of   have continuous first-order partial derivatives on an open set containing  , and if   satisfies\n         ,\n        then\n         .\n        A typical example of such a vector field is  .\n       "
 },
 {
-  "id": "example-45",
+  "id": "example-46",
   "level": "2",
-  "url": "s_Greens_theorem.html#example-45",
+  "url": "s_Greens_theorem.html#example-46",
   "type": "Example",
   "number": "2.4.5",
   "title": "",
@@ -1773,9 +1782,9 @@ var ptx_lunr_docs = [
   "body": "divergence divergence of vector field  Divergence divergence incompressible "
 },
 {
-  "id": "example-46",
+  "id": "example-47",
   "level": "2",
-  "url": "s_Greens_theorem.html#example-46",
+  "url": "s_Greens_theorem.html#example-47",
   "type": "Example",
   "number": "2.4.10",
   "title": "",
@@ -1800,9 +1809,9 @@ var ptx_lunr_docs = [
   "body": "Divergence interpretation \n      From the limit expression   we extract the valuable approximation formula\n       .\n      This can be understood as saying that the divergence of   at a point   is approximated by the flux quantity\n       ,\n      whose units are of the form unit flux per unit area. This allows us to understand the divergence at   to be a measure of how the fluid flows out from or in toward  . Even more concretely, if   for all  , then it follows from   that the flux through any closed curve around  . Thus a fluid's being incompressible ( ) means that whatever amount of fluid enters a given enclosed region is equal to the amount that leaves it. In fluid dynamics this is sometimes described as there being no  sources  or  sinks  in the region.\n     "
 },
 {
-  "id": "example-47",
+  "id": "example-48",
   "level": "2",
-  "url": "s_Greens_theorem.html#example-47",
+  "url": "s_Greens_theorem.html#example-48",
   "type": "Example",
   "number": "2.4.13",
   "title": "",
@@ -1872,9 +1881,9 @@ var ptx_lunr_docs = [
   "body": "Sphere of radius   parametrization \n      Fix  . Spherical coordinates tells us that the points of the sphere   can be described in the form   for   and  . This gives rise to the parametrization\n       .\n    Line of the form   and   in the parameter domain   get mapped by   to latitudinal and longitudinal circles on the sphere, respectively; these are the  - and  -level curves of the parametrization.\n     "
 },
 {
-  "id": "example-50",
+  "id": "example-51",
   "level": "2",
-  "url": "s_surfaces_area.html#example-50",
+  "url": "s_surfaces_area.html#example-51",
   "type": "Example",
   "number": "2.5.6",
   "title": "Circular cylinder.",
@@ -1890,9 +1899,9 @@ var ptx_lunr_docs = [
   "body": "Parametrizing graphs of functions \n      Recall that given a function   with domain   we define its graph to the be the surface\n       .\n      It follows directly from this description that   is parametrized by\n       .\n      Thus all graphs of functions   can be thought of as parametrized surfaces. The converse is not true: the sphere   has a surface parametrization, but it is not the graph of a function.\n     \n      More generally, if a surface is defined implicitly in the form   or   or   ( , one variable is described as a function of the others), then we have immediate parametrizations of the form  ,  ,  . This is  sometimes  a useful trick.\n     "
 },
 {
-  "id": "example-52",
+  "id": "example-53",
   "level": "2",
-  "url": "s_surfaces_area.html#example-52",
+  "url": "s_surfaces_area.html#example-53",
   "type": "Example",
   "number": "2.5.8",
   "title": "Cone parametrization.",
@@ -1953,18 +1962,18 @@ var ptx_lunr_docs = [
   "body": "Surface area area "
 },
 {
-  "id": "example-54",
+  "id": "example-55",
   "level": "2",
-  "url": "s_surfaces_area.html#example-54",
+  "url": "s_surfaces_area.html#example-55",
   "type": "Example",
   "number": "2.5.14",
   "title": "",
   "body": "\n        Fix  . Compute the area of the sphere  .\n       \n         \n             \n              First we parametrize   using\n               ,\n              as in  .\n             \n           \n             \n              Now assemble ingredients:\n               ,\n              where the last equality follows since   for   and   parametrizes points on the unit sphere!\n             \n           \n             \n              Finally, we integrate\n               .\n             \n           \n       "
 },
 {
-  "id": "example-55",
+  "id": "example-56",
   "level": "2",
-  "url": "s_surfaces_area.html#example-55",
+  "url": "s_surfaces_area.html#example-56",
   "type": "Example",
   "number": "2.5.15",
   "title": "",
@@ -2016,9 +2025,9 @@ var ptx_lunr_docs = [
   "body": "Surface integral interpretation \n          As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula\n           .\n        Understanding   as an approximation of the area of one of the subpatches of  , the interpretation then depends on what the function   is. Here are two typical examples.\n         \n             Geometric: surface area \n             \n              If   (the constant function), then the right-hand side of   simply adds up  , yielding an approximation of the area of  . The integral of   computes this area exactly.\n             \n           \n             Physical: density function \n             \n              Assume   gives us the density of quantity   per unit area at position  . In this case the right-hand side of   can be understood as an approximation of the total quantity   over  , and thus the integral computes this total quantity exactly.\n             \n           \n         "
 },
 {
-  "id": "example-56",
+  "id": "example-57",
   "level": "2",
-  "url": "s_surfaces_integrals.html#example-56",
+  "url": "s_surfaces_integrals.html#example-57",
   "type": "Example",
   "number": "2.6.6",
   "title": "",
@@ -2034,9 +2043,9 @@ var ptx_lunr_docs = [
   "body": "piecewise smooth surface Surface integral for piecewise smooth surfaces piecewise smooth surface "
 },
 {
-  "id": "example-57",
+  "id": "example-58",
   "level": "2",
-  "url": "s_surfaces_integrals.html#example-57",
+  "url": "s_surfaces_integrals.html#example-58",
   "type": "Example",
   "number": "2.6.8",
   "title": "Piecewise smooth surface.",
@@ -2097,9 +2106,9 @@ var ptx_lunr_docs = [
   "body": "Surface integral of vector field surface integral flux "
 },
 {
-  "id": "example-60",
+  "id": "example-61",
   "level": "2",
-  "url": "s_surfaces_integrals.html#example-60",
+  "url": "s_surfaces_integrals.html#example-61",
   "type": "Example",
   "number": "2.6.14",
   "title": "Flux across a sphere.",
@@ -2160,18 +2169,18 @@ var ptx_lunr_docs = [
   "body": "Stokes's theorem \n          Let   be a piecewise smooth oriented surface whose boundary   is a union of closed, piecewise smooth, simple curves. If   is a continuous vector field whose component functions have continuous first-order partial derivatives on an open set containing  , then\n           ,\n          where (a)   is the orientation of   and (b) the line integral is computed with respect to the induced orientation on  .\n\n         "
 },
 {
-  "id": "example-62",
+  "id": "example-63",
   "level": "2",
-  "url": "s_Stokes.html#example-62",
+  "url": "s_Stokes.html#example-63",
   "type": "Example",
   "number": "2.7.4",
   "title": "Line integral over triangle.",
   "body": "Line integral over triangle \n          Let   be the triangle with vertices   oriented counterclockwise from above. Compute  , where  .\n         \n           \n               Identify as boundary of surface \n               \n                We have  , where   is the triangular region enclosed by  .\n               \n             \n               Parametrize surface \n               \n                The region   is the region of the plane   lying above the triangular region  . Writing  , we have parametrization\n                 .\n               \n             \n               Identify appropriate orientation of surface \n               \n                For the induced orientation on   to be counterclockwise from above, we want the  upward  orientation on  . We know that for a parametrization of the form   the orientation\n                 \n                is the upward one. For the step below we need just the denominator of this expression:  .\n               \n             \n               Integrate  \n               \n                A straightforward computation gives us  . Using   we have\n                 \n               \n             \n         "
 },
 {
-  "id": "example-63",
+  "id": "example-64",
   "level": "2",
-  "url": "s_Stokes.html#example-63",
+  "url": "s_Stokes.html#example-64",
   "type": "Example",
   "number": "2.7.5",
   "title": "Stokes over a pringle.",
@@ -2187,18 +2196,18 @@ var ptx_lunr_docs = [
   "body": "Two surfaces, same boundary \n        Let   be two piecewise smooth oriented surfaces with a shared boundary curve   satisfying the conditions of Stokes's theorem, and assume that the orientation on   induced by   is equal to the orientation induced by  . If   is a continuous vector field whose component functions have continuous partial derivatives on an open set containing   and  , then\n         ,\n         where   are the orientations of  , respectively.\n       "
 },
 {
-  "id": "example-64",
+  "id": "example-65",
   "level": "2",
-  "url": "s_Stokes.html#example-64",
+  "url": "s_Stokes.html#example-65",
   "type": "Example",
   "number": "2.7.7",
   "title": "",
   "body": "\n        Let  , and let   be the intersection of the cylinder   and the plane  . Compute  , where   is oriented counterclockwise, viewed from above.\n       Solution 1 \n        The curve   is the boundary of the elliptical region   it encloses in the plane  . Since   for points on this plane, we can parametrize as\n         .\n        Assembling ingredients we have\n         .\n        Since the  -component of   is nonnegative, we see that this gives rise to the  upward  orientation on  , which induces the counterclockwise orientation on  . We can now use Stokes's theorem to concude\n         \n       Solution 2 \n      Alternatively, we can treat   as the boundary of the piecewise smooth surface  , where   is the portion of the cylinder   above the  -plane and below the plane  , and   is the disc   in the  -plane. To have the given orientation of   be induced by that of  , we must choose the  inward  orientation   on  \n      : this orientation is  inward  on the cylinder   and  upward  on the disc  . With this setup we have\n       .\n      A few comments are in order. We have   because the normal vectors to the cylinder   point horizontally, and thus are orthogonal to the curl vectors  , which point vertically. Secondly, on the disc in the  -plane we clearly have the upward normal vector equal to  .\n       "
 },
 {
-  "id": "example-65",
+  "id": "example-66",
   "level": "2",
-  "url": "s_Stokes.html#example-65",
+  "url": "s_Stokes.html#example-66",
   "type": "Example",
   "number": "2.7.8",
   "title": "",
@@ -2295,9 +2304,9 @@ var ptx_lunr_docs = [
   "body": "Curl field has zero flux \n          Assume the solid region  , its boundary  , and the vector field   satisfy the conditions of the divergence theorem. If   for some vector field  , then\n           .\n         \n          This is an easy consequence of   and   since\n           .\n         "
 },
 {
-  "id": "example-67",
+  "id": "example-68",
   "level": "2",
-  "url": "s_Divergence.html#example-67",
+  "url": "s_Divergence.html#example-68",
   "type": "Example",
   "number": "2.8.9",
   "title": "Gauss's law.",

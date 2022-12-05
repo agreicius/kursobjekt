@@ -11,15 +11,27 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>Let <span class="process-math">\(\mathcal{C}\)</span> be the unit circle <span class="process-math">\(x^2+y^2=1\text{,}\)</span> with parametrization <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{.}\)</span> We have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_fund_thm_line_integrals.html">
+<p>Parametrize <span class="process-math">\(\mathcal{C}\)</span> as <span class="process-math">\(\boldr(t)=(\cos t, \sin t)\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> It follows that <span class="process-math">\(\boldr'(t)=\angvec{-\sin t, \cos t}\text{,}\)</span> and hence that the outward unit normal vector is <span class="process-math">\(\boldn(t)=\angvec{\cos t, \sin t}\text{.}\)</span> We now compute the flux in each case using <a href="" class="xref" data-knowl="./knowl/d_flux.html" title="Definition 2.2.12: Flux">Definition 2.2.12</a>.</p>
+<ol class="decimal">
+<li><p><div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi} \boldF(\cos t, \sin t)\cdot \angvec{-\sin t, \cos t} \, dt\\
-\amp = \int_0^{2\pi}\angvec{-\sin t, \cos t}\cdot \angvec{-\sin t, \cos t}\, dt\\
-\amp = \int_0^{2\pi}\sin^2 t+\cos^2 t\, dt \\
+\int_\mathcal{C}\boldF\cdot \boldn\, ds \amp=
+\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \boldn(t)\, ds \\
+\amp = \int_0^{2\pi}\angvec{\cos t-\sin t, \cos t+\sin t}\cdot \angvec{\cos t, \sin t}\, dt\\
+\amp = \int_0^{2\pi} \cos^2 t-\cos t\sin t+\cos t\sin t+\sin^2 t\, dt\\
+\amp = \int_0^{2\pi}1\, dt\\
 \amp = 2\pi\text{.}
 \end{align*}
-</div>
-<p class="continuation">Since <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot d\boldr\ne 0\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_fund_thm_line_integrals.html" title="Corollary 2.3.4: Integral of gradient field over closed curve">Corollary 2.3.4</a> implies that we cannot have <span class="process-math">\(\boldF=\nabla f\text{.}\)</span></p>
+</div></p></li>
+<li><p><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_\mathcal{C}\boldF\cdot \boldn\, ds \amp=
+\int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \boldn(t)\, ds \\
+\amp = \int_0^{2\pi}\angvec{\cos t, \sin t}\cdot \angvec{\cos t, \sin t}\, dt\\
+\amp = \int_0^{2\pi} 1 dt\\
+\amp = 2\pi\text{.}
+\end{align*}
+</div></p></li>
+</ol>
 </div></body>
 </html>

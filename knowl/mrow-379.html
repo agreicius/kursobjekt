@@ -13,10 +13,13 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr\colon \mathcal{R} \amp\rightarrow \R^3  \\
-(u,v) \amp\mapsto (f_1(u,v),f_2(u,v),f_3(u,v)) 
+\int\limits_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t , \sin t )\cdot\boldr'(t)\, d t  \\
+\amp =\int_0^{2\pi}\angvec{\cos t -\sin t ,\cos t +\sin t }\cdot \angvec{-\sin t ,\cos t }\, d t \\
+\amp=\int_0^{2\pi}-\cos t \sin t +\sin^2 t +\cos^2 t +\cos t \sin t \, d t  \\
+\amp =\int_0^{2\pi}1 d t \\
+\amp =0 
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_area.html#md-97" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_line_integal_scalar_vector_fields.html#md-92" class="internal">in-context</a></span>
 </body>
 </html>
