@@ -90,7 +90,7 @@
       </solution>
     </example>
     <example>
-      <title>Stokes over a pringle</title>
+      <title>Stokes for a pringle</title>
       <statement>
         <p>
           Let <m>\mathcal{S}</m> be a portion of the surface <m>z=y^2-x^2</m> lying within the cylinder <m>x^2+y^2=1</m>, and let <m>\mathcal{C}</m> be its boundary. Let <m>\boldn\colon \mathcal{S}\rightarrow \R^3</m> be the upward orientation on <m>\mathcal{S}</m>. Verify Stokes's theorem for <m>\mathcal{S}, \mathcal{C}</m>, and the vector field <m>\boldF=y\boldi-x\boldj+x^2\boldk</m>.
@@ -128,6 +128,20 @@
             <mrow>  \amp =-2\pi</mrow>
           </md>.
         </p>
+        <sage>
+        <input>
+          from sage.plot.plot3d.plot3d import axes
+  (v,theta,s,t)=var('v theta s t')
+  r(theta,v)=vector([v*cos(theta),v*sin(theta),-v^2*cos(2*theta)])
+  S=parametric_plot3d(r(s,t),(s,0,2*pi),(t,0,1), color='red', opacity=.1)
+  grid1=sum(parametric_plot3d(r(c*pi/8,t),(t,0,1),color='red') for c in range(16)) #theta-level curves
+  grid2=sum(parametric_plot3d(r(t,c/5),(t,0,2*pi),color='blue') for c in range(0,6)) #v-level curves
+  S+grid1+grid2+axes(.75,0.5,color="black")
+        </input>
+        <output>
+
+        </output>
+        </sage>
       </solution>
     </example>
 
@@ -145,6 +159,7 @@
     </statement>
   </corollary>
   <example>
+    <title>Stokes for sliced cylinder</title>
     <statement>
       <p>
         Let <m>\boldF=\angvec{-y^2, x, z^2}</m>, and let <m>\mathcal{C}</m> be the intersection of the cylinder <m>x^2+y^2=1</m> and the plane <m>y+z=2</m>. Compute <m>\oint_\mathcal{C}\boldF\cdot \boldr</m>, where <m>\mathcal{C}</m> is oriented counterclockwise, viewed from above.
@@ -194,6 +209,7 @@
     </solution>
   </example>
   <example>
+    <title>Stokes's implies Green's</title>
     <statement>
       <p>
         Show that Stokes's theorem implies Green's theorem.

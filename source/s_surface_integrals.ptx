@@ -459,9 +459,39 @@
     </p>
   </statement>
   <solution>
-    <p>
-
-    </p>
+    <ul>
+      <li>
+        <p>
+          Parametrize. Using cylindrical coordinates, we see that <m>\mathcal{S}</m> has parametrization
+          <md>
+            <mrow>\bolds(r,\theta) \amp = (r\cos\theta, r\sin\theta, r)</mrow>
+            <mrow> \mathcal{R}\colon 0\amp\leq \theta\leq 2\pi, 0\leq r\leq 4 </mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Ingredients.
+          <md>
+            <mrow>\bolds_r \amp = \angvec{\cos\theta, \sin\theta, 1}</mrow>
+            <mrow> \bolds_\theta  \amp= \angvec{-r\sin\theta, r\cos\theta, 0} </mrow>
+            <mrow> \bolds_r\times\bolds_\theta \amp =\angvec{-r\cos\theta, -r\sin\theta, r} </mrow>
+          </md>.
+          Observe that since <m>r\geq 0</m>, the normal vector <m>\bolds_r\times\bolds_\theta</m> points <em>upward</em>, and hence <em>toward</em> the <m>z</m>-axis. Thus the outward orientation  <m>\boldn</m> comes from <m>\bolds_\theta\times\bolds_r</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now compute
+          <md>
+            <mrow>\iint_\mathcal{S}\boldF\cdot\boldn\, d\sigma \amp = \iint_\mathcal{R}\boldF(r\cos\theta, r\sin\theta, r)\cdot \angvec{r\cos\theta,r\sin\theta, -r}\, dA </mrow>
+            <mrow> \amp =\iint_\mathcal{R}\angvec{r^2\cos\theta\sin\theta,0,-r}\cdot\angvec{r\cos\theta,r\sin\theta, -r}\, dA </mrow>
+            <mrow>  \amp =\int_0^{2\pi}\int_0^4r^3\cos^2\theta\sin\theta+r^2\, dr\, d\theta</mrow>
+            <mrow>  \amp = \frac{128}{3}\pi</mrow>
+          </md>.
+        </p>
+      </li>
+    </ul>
   </solution>
 </example>
   </subsection>

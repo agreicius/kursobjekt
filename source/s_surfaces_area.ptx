@@ -373,6 +373,9 @@ S+grid1+grid2
     </statement>
   </definition>
   <example>
+    <title>Surface area of sphere</title>
+
+
     <statement>
       <p>
         Fix <m>R&gt; 0</m>. Compute the area of the sphere <m>\mathcal{S}\colon x^2+y^2+z^2=R^2</m>.
@@ -420,6 +423,9 @@ S+grid1+grid2
     </solution>
   </example>
   <example>
+    <title>Surface area of paraboloid</title>
+
+
     <statement>
       <p>
         Find the surface area of the portion of the paraboloid <m>\mathcal{S}\colon z=x^2+y^2</m> that lies below the plane <m>z=4</m>.

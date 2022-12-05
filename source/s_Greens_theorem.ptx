@@ -15,6 +15,9 @@
     </statement>
   </theorem>
   <example>
+    <title>Circulation around semicircle</title>
+
+
     <statement>
       <p>
         Use Green's theorem to Compute <m>\oint_\mathcal{C}\boldF\cdot d\boldr</m>, where <m>\boldF=\angvec{y^2, 3xy}</m> and <m>\mathcal{C}</m> is the simple positively oriented curve obtained by joining the line segment from <m>(-1,0)</m> to <m>(1,0)</m> the the upper half of the circle <m>x^2+y^2=1</m>.
@@ -22,6 +25,17 @@
     </statement>
     <solution>
       <p>
+        Letting <m>\boldF=\angvec{F_1, F_2}</m>. The curve <m>\mathcal{C}</m> bounds the region
+        <me>
+          \mathcal{R}\colon x^2+y^2\leq 1, y\geq 0
+        </me>.
+        Since <m>\mathcal{C}</m> is oriented counterclockwise, we apply Green's theorem to conclude
+        <md>
+          <mrow>\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{R}\partial F_2/\partial x-\partial F_1/\partial y\, dA</mrow>
+          <mrow> \amp=\int_{-1}^1\int_0^{\sqrt{1-x^2}}3y-2y\, dy\, dx </mrow>
+          <mrow>  \amp =\int_{-1}^1\frac{1}{2}(1-x^2)\, dx</mrow>
+          <mrow>  \amp =2/3</mrow>
+        </md>.
 
       </p>
     </solution>
@@ -62,6 +76,9 @@
     </statement>
   </corollary>
   <example>
+    <title>Area of astroid</title>
+
+
     <statement>
       <p>
         Use <xref ref="cor_Greens_theorem"/> to compute the area of the astroid curve <m>\mathcal{C}\colon x^{2/3}+y^{2/3}=4</m> with parametrization <m>\boldr(t)=\angvec{8\cos^3 t,8\sin^3 t}</m>, <m>0\leq t\leq 2\pi</m>.
@@ -71,7 +88,21 @@
     </statement>
     <solution>
       <p>
-
+        Evaluating <m>\boldr(t)</m> at <m>t=0</m> and <m>t=\pi/2</m>, we see that <m>\boldr(t)</m> traverses <m>\mathcal{C}</m> in the counterclockwise direction. While we're at it, we compute:
+        <md>
+          <mrow>\boldr'(t) \amp =24\sin t\cos t\angvec{-\cos t, \sin t}</mrow>
+          <mrow>  \amp =12\sin 2t\angvec{-\cos t, \sin t}</mrow>
+        </md>.
+        Applying <xref ref="th_Greens"/> to the vector field <m>\boldF=\angvec{0,x}</m>, which satisfies <m>\curl\boldF\cdot \boldk=1</m>, we compute
+        <md>
+          <mrow>\operatorname{area}\mathcal{R} \amp=\iint_\mathcal{R}1\, dA </mrow>
+          <mrow> \amp=\iint_\mathcal{R}\curl\boldF\cdot \boldk\, dA </mrow>
+          <mrow>  \amp =\int_\mathcal{C}\boldF\cdot d\boldr</mrow>
+          <mrow>  \amp =\int_0^{2\pi}\angvec{0,8\cos^3 t}\cdot 12\sin 2t\angvec{-\cos t, \sin t}\, dt\</mrow>
+          <mrow>  \amp = 96\int_0^{2\pi}\sin 2t(\sin t\cos t)\cos^2 t\, dt</mrow>
+          <mrow>  \amp =24\int_0^{2\pi}(\sin 2t)^2(1+\cos^2 t)\, dt</mrow>
+          <mrow>  \amp =24\pi</mrow>
+        </md>
       </p>
     </solution>
   </example>
@@ -88,6 +119,12 @@
       where <m>C_R</m> is the simple positively oriented circle of radius <m>R</m> centered at <m>P</m>.
     </p>
   </statement>
+  <proof>
+    <p>
+      See proof of the more general result <xref ref="th_Stokes_interpretation_curl"/> .
+    </p>
+  </proof>
+
 </theorem>
 <remark xml:id="rm_Greens_theorem_interpretation">
 <title>Scalar curl interpretation</title>
@@ -129,7 +166,7 @@
       <p>
         Assume the component functions of the vector field <m>\boldF=\angvec{F_1, F_2,\dots, F_n}</m> have first-order partial derivatives on a domain <m>D\subseteq \R^n</m>. The <term>divergence</term> of <m>\boldF</m>, denoted <m>\diver \boldF</m> or <m>\nabla\cdot \boldF</m>, is defined as
         <me>
-        \nabla \cdot \boldF= \frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}+\cdots +\frac{\partial F_n}{\partial x_n}
+        \diver\boldF=\nabla \cdot \boldF  = \frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}+\cdots +\frac{\partial F_n}{\partial x_n}
         </me>.
         The vector field is <term>incompressible</term> on the domain <m>D</m> if
         <me>
@@ -140,6 +177,9 @@
     </statement>
   </definition>
 <example>
+  <title>Flux across square</title>
+
+
   <statement>
     <p>
       Compute the outward flux of <m>\boldF(x,y)=\angvec{2e^{xy},y^3}</m> across the square bounded by the lines <m>x=\pm 1</m>, <m>y=\pm 1</m>.
@@ -147,7 +187,12 @@
   </statement>
   <solution>
     <p>
-
+      Let <m>\mathcal{R}=[-1,1]\times [-1,1]</m> be the given square region, and let <m>\mathcal{C}</m> be the perimeter of <m>\mathcal{R}</m>, oriented counterclockwise. By <xref ref="cor_Greens_normal"/>, we have
+      <md>
+        <mrow>\oint_\mathcal{C}\boldF\cdot \boldn\, ds \amp = \iint_\mathcal{R}\partial F_1/\partial x+\partial F_2/\partial y\, dA </mrow>
+        <mrow> \amp = \int_{-1}^1\int_{-1}^12ye^{xy}+3y^2\, dx\, dy </mrow>
+        <mrow>  \amp = 4</mrow>
+      </md>.
     </p>
   </solution>
 </example>
@@ -162,6 +207,12 @@
       where <m>C_R</m> is the simple positively oriented circle of radius <m>R</m> centered at <m>P</m>, and <m>\boldn</m> is the unit outward normal vector to <m>C_R</m>.
     </p>
   </statement>
+  <proof>
+    <p>
+      See proof of the more general result <xref ref="th_Divergence_interpretation_curl"/>.
+    </p>
+  </proof>
+
 </theorem>
 <remark xml:id="rm_Greens_theorem__normal_interpretation">
 <title>Divergence interpretation</title>
@@ -178,11 +229,14 @@
     </p>
 </remark>
 <example>
+  <title>Visualizing curl and divergence</title>
+
+
   <statement>
     <p>
       The vector field diagram is provided for each <m>\boldF</m> below. Using our interpretations of curl and divergence, try your best to visually identify points <m>P</m> where <m>(\curl F)\cdot\boldk(P)=0</m> and/or <m>\nabla\cdot \boldF(P)=0</m>. Confirm your answers by computing <m>(\curl F)\cdot\boldk</m> and <m>\nabla\cdot \boldF</m> algebraically. Assume <m>c</m> is a nonzero fixed constant.
     </p>
-    <ol>
+    <ol marker="(a)">
       <li>
         <title>Uniform expansion/compression</title>
         <p>
@@ -213,9 +267,64 @@
     </image>
   </statement>
   <solution>
-    <p>
-
-    </p>
+    <ol marker="(a)">
+      <li>
+        <p>
+          Algebraically, we have <m>\curl\boldF\cdot \boldk=0</m> and <m>\diver \boldF=2c</m>. Can we see this in the diagram?
+        </p>
+        <ul>
+          <li>
+            <p>
+              Curl. Put a pinwheel down in the first quadrant. By symmetry about the line connecting the origin to the center of the pinwheel, we see that what ever <em>counterclockwise</em> push there is on the lower right section of the pinwheel is matched by a symmetric <em>clockwise</em> push on the upper left. Thus total circulation around any small circle is zero, making flux zero. The same argument applies to any quadrant.
+            </p>
+          </li>
+          <li>
+            <p>
+              Divergence. We can at least estimate a positive divergence using flux across a small circle. Place a little circle somewhere in the first quadrant. Since the inward arrows at the bottom left of the dist are beaten out by larger outward arrows at the upper left of the circle, net flux out is positive.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Algebraically, we have <m>\curl\boldF\cdot \boldk=2c</m> and <m>\diver \boldF=0</m>. Can we see this in the diagram?
+        </p>
+        <ul>
+          <li>
+            <p>
+              Curl. We can at least estimate a positive curl using circulation of the pinwheel. Again, place the pinwheel anywhere in the first quadrant. The <em>coutnerclockwise</em> push from the arrows at the upper right beat the <em>clockwise</em> push from the arrows at the lower left, giving this a positive circulation. Since flux at a point <m>P</m> can be estimated by the circulation around a small circle at <m>P</m>, we can estimate that the flux at any point <m>P</m> is positive.
+            </p>
+          </li>
+          <li>
+            <p>
+              Divergence. Now place a little disk down somewhere. It is clear by the symmetry about the line from the origin to the center of the disk that for each inward arrow there is a matching outward one, flux across the circle zero.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Algebraically, we have <m>\curl\boldF\cdot \boldk=-c</m> and <m>\diver \boldF=0</m>. Can we see this in the diagram?
+        </p>
+        <ul>
+          <li>
+            <p>
+              Curl. We can at least estimate a negative curl at each point in the plane, by looking at the circulation of a little pinwheel. Placing a pinwheel in the first quadrant, for example, we see that the clockwise push at the top beats out the counterclockwise push at the bottom, resulting in a negative circulation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Divergence. This we can see. For any disk placed in the upper half of the plane, for each arrow in at the left of the disk there is an equal arrow out of the disk directly to the right.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Algebraically, we have <m>\curl\boldF\cdot \boldk=0</m> and <m>\diver \boldF=0</m>. Can we see this in the diagram? A by now familiar argument easily convinces us that flux across any circle (not centered at the origin) is zero, and hence that divergence is zero everywhere. The fact that curl is zero is harder to see. Indeed, the vector field is very similar in nature to (b), where the scalar curl is positive. This indicates the limitations of our ability to <q>see</q> curl in a vector field diagram!
+        </p>
+      </li>
+    </ol>
   </solution>
 </example>
 </subsection>

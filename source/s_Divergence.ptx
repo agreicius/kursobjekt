@@ -48,7 +48,7 @@
         <p>
           An easy consequence of the divergence theorem:
           <md>
-            <mrow>\iint\limits_\mathal{S}\boldF\cdot \boldn\, d\sigma \amp =
+            <mrow>\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma \amp =
             \iiint\limits_D\diver\boldF\, dV</mrow>
             <mrow> \amp =\iiint\limits_D 0\, dV</mrow>
             <mrow>  \amp =0</mrow>
