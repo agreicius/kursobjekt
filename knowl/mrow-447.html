@@ -11,12 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html">
 \begin{align*}
-\boldr\colon \mathcal{R} \amp\rightarrow \R^3  \\
-(u,v) \amp\mapsto (f_1(u,v),f_2(u,v),f_3(u,v)) 
+\operatorname{area}\mathcal{R} \amp=\iint_\mathcal{R}1\, dA \\
+\amp=\iint_\mathcal{R}\curl\boldF\cdot \boldk\, dA \\
+\amp =\int_\mathcal{C}\boldF\cdot d\boldr\\
+\amp =\int_0^{2\pi}\angvec{0,8\cos^3 t}\cdot 12\sin 2t\angvec{-\cos t, \sin t}\, dt\\\
+\amp = 96\int_0^{2\pi}\sin 2t(\sin t\cos t)\cos^2 t\, dt\\
+\amp =24\int_0^{2\pi}(\sin 2t)^2(1+\cos^2 t)\, dt\\
+\amp =24\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_surfaces_area.html#md-110" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_Greens_theorem.html#md-110" class="internal">in-context</a></span>
 </body>
 </html>

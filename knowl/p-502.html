@@ -12,7 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{S}\)</span> be the sphere <span class="process-math">\(x^2+y^2+z^2=4\text{.}\)</span> Compute the flux of <span class="process-math">\(\boldF(x,y,z)=\angvec{z,y,x}\)</span> out of the sphere: i.e., with respect to the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<p>Let <span class="process-math">\(\mathcal{S}\subseteq\R^3\)</span> be a smoothly parametrized surface. Informally, an <dfn class="terminology">orientation</dfn> of <span class="process-math">\(\mathcal{S}\)</span> is a continuous choice of unit normal vectors to points on the surface. More precisely, an orientation is a continuous function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldn \colon \mathcal{S}\amp\rightarrow \R^3 \\
+(x,y,z)\amp\mapsto \boldn(x,y,z) \text{,}
+\end{align*}
+</div>
+<p class="continuation">where for each <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\text{,}\)</span> <span class="process-math">\(\boldn(P)\)</span> is a unit normal vector to <span class="process-math">\(\mathcal{S}\)</span> at <span class="process-math">\(P\text{.}\)</span> The surface <span class="process-math">\(\mathcal{S}\)</span> is <dfn class="terminology">orientable</dfn> if an orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow \R^3\)</span> exists for <span class="process-math">\(\mathcal{S}\text{.}\)</span> If no orientation function exists, the surface is <dfn class="terminology">nonorientable</dfn>.</p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-502" class="internal">in-context</a></span>
 </body>
 </html>

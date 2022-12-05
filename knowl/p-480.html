@@ -11,8 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Assume <span class="process-math">\(f(x,y,z)\geq 0\)</span> gives us the density of quantity <span class="process-math">\(Q\)</span> per unit area at position <span class="process-math">\((x,y,z)\text{.}\)</span> In this case the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> can be understood as an approximation of the total quantity <span class="process-math">\(Q\)</span> over <span class="process-math">\(\mathcal{S}\text{,}\)</span> and thus the integral computes this total quantity exactly.</p>
-<span class="incontext"><a href="s_surfaces_integrals.html#p-480" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Now assemble ingredients:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle \\
+\boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle\\
+\boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} \\
+\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}\\
+\amp=R^2\sin\phi\text{,}
+\end{align*}
+</div>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\sin\phi\geq 0\)</span> for <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta,\cos\phi}\)</span> parametrizes points on the unit sphere!</p>
+<span class="incontext"><a href="s_surfaces_area.html#p-480" class="internal">in-context</a></span>
 </body>
 </html>

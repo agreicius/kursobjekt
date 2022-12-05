@@ -12,10 +12,10 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A <dfn class="terminology">piecewise smooth surface</dfn> is the union of smoothly parametrized surfaces whose interiors are non-overlapping, and whose intersections form piecewise smooth curves. If <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup\mathcal{S}_2\cdots\cup\mathcal{S}_n\)</span> is piecewise smooth, and if <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\mathcal{S}\text{,}\)</span> we define the surface integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(S\)</span> as</p>
+<p>Let <span class="process-math">\(\boldr\colon \mathcal{R}\rightarrow \R^3\)</span> be a smooth parametrization of the surface <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(f\)</span> be a continuous function defined on <span class="process-math">\(\mathcal{S}\text{.}\)</span> The <dfn class="terminology">surface integral</dfn> of <span class="process-math">\(f\)</span> over <span class="process-math">\(\mathcal{S}\)</span> is defined as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\iint\limits_\mathcal{S}f\, d\sigma=\sum_{k=1}^n \iint\limits_{S_k}f\, d\sigma\text{.}
+\iint\limits_\mathcal{S}f(x,y,z)\, d\sigma=\iint\limits_{\mathcal{R}}f(\boldr(u,v))\abs{\boldr_u\times \boldr_v}\, dA\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-486" class="internal">in-context</a></span>

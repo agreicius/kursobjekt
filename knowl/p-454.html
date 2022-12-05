@@ -12,20 +12,36 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Recall that given a function <span class="process-math">\(z=f(x,y)\)</span> with domain <span class="process-math">\(D\)</span> we define its graph to the be the surface</p>
+<p>To parametrize a plane <span class="process-math">\(\mathcal{S}\)</span> defined by <a href="" class="xref" data-knowl="./knowl/eq_plane.html" title="Equation 2.5.1">(2.5.1)</a> proceed as follows.</p>
+<ol class="decimal">
+<li><p>Find a point <span class="process-math">\(P=(x_0,y_0,z_0)\)</span> on <span class="process-math">\(\mathcal{S}\text{:}\)</span> i.e., find one solution to <a href="" class="xref" data-knowl="./knowl/eq_plane.html" title="Equation 2.5.1">(2.5.1)</a>.</p></li>
+<li>
+<p>Pick two nonzero vectors <span class="process-math">\(\boldw_1, \boldw_2\)</span> that are orthogonal to <span class="process-math">\(\boldn\)</span> and are not scalar multiples of one another: i.e.,</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\mathcal{S}=\{(x,y,f(x,y))\colon (x,y)\in D\}\text{.}
+\boldn\cdot \boldw_1=\boldn\cdot \boldw_2=0, \boldv_1\ne c\boldv_2\text{.}
 \end{equation*}
 </div>
-<p class="continuation">It follows directly from this description that <span class="process-math">\(\mathcal{S}\)</span> is parametrized by</p>
+</li>
+<li>
+<p>The plane <span class="process-math">\(\mathcal{S}\)</span> is the set of points <span class="process-math">\(Q\)</span> of the form</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr\colon D \amp\rightarrow \R^3 \\
-(x,y)\amp\mapsto (x,y,f(x,y)) \text{.}
-\end{align*}
+\begin{equation*}
+Q=P+u\boldw_1+v\boldw_2\text{,}
+\end{equation*}
 </div>
-<p class="continuation">Thus all graphs of functions <span class="process-math">\(z=f(x,y)\)</span> can be thought of as parametrized surfaces. The converse is not true: the sphere <span class="process-math">\(x^2+y^2+z^2=1\)</span> has a surface parametrization, but it is not the graph of a function.</p>
+<p class="continuation">for some choice of scalars <span class="process-math">\(u,v\in \R\text{.}\)</span></p>
+</li>
+<li>
+<p>If <span class="process-math">\(\boldw_1=\angvec{r_1,r_2,r_3}\)</span> and <span class="process-math">\(\boldw_2=\angvec{s_1,s_2,s_3}\text{,}\)</span> then the function <span class="process-math">\(\boldr\colon \R^2\rightarrow \R^3\)</span> defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boldr(u,v)=(x_0,y_0,z_0)+u\boldw_1+v\boldw_2=(x_0+ur_1+vs_1,y_0+ur_2+vs_2,z_0+ur_3+vs_3)
+\end{equation*}
+</div>
+<p class="continuation">is a parametrization of the plane <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+</li>
+</ol>
 <span class="incontext"><a href="s_surfaces_area.html#p-454" class="internal">in-context</a></span>
 </body>
 </html>

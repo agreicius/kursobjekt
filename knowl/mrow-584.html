@@ -11,14 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldE\cdot \boldn(x,y,z)\amp=\frac{q}{4\pi R\epsilon_0}\frac{1}{(x^2+y^2+z^2)^{3/2}}(x^2+y^2+z^2)\\
-\amp = \frac{q}{4\pi R\epsilon_0}\frac{1}{(x^2+y^2+z^2)^{1/2}}\\
-\amp =\frac{q}{4\pi R\epsilon_0}\frac{1}{R} \\
-\amp =\frac{q}{4\pi R^2\epsilon_0}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
+\amp= \cancelto{0}{\iint_\mathcal{S_1}\curl\boldF\cdot \boldn\, d\sigma}+\iint_\mathcal{S_2}\curl\boldF\cdot \boldn\, d\sigma\\
+\amp =\iint\limits_{x^2+y^2\leq 1}\angvec{0,0,1+2y}\cdot \angvec{0,0,1}\, dA\\
+\amp =\int_0^{2\pi}\int_0^1(1+2r\sin\theta)r\, dr\, d\theta\\\
+\amp =\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Divergence.html#md-150" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_Stokes.html#md-150" class="internal">in-context</a></span>
 </body>
 </html>

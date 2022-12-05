@@ -13,12 +13,16 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma \amp=\iint_\mathcal{R}4r^3\cos\theta(\cos\theta\sin 2\theta+\sin\theta\cos 2\theta)-2r\, dA \\
-\amp=-2\pi \\
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi}\boldF(\bolds(t))\cdot \bolds'(t)\, dt\\
-\amp =-2\pi
+\iint\limits_\mathcal{S}\boldF\cdot\boldn\, d\sigma\amp
+= \frac{1}{2}\iint\limits_\mathcal{S}2xz+y^2\, d\sigma \\
+\amp = \frac{1}{2}\iint\limits_{\mathcal{R}}(8\sin\phi\cos\phi\cos\theta+4\sin^2\phi\sin^2\theta)(4\sin\phi)\, dA\\
+\amp =8\int_0^{2\pi}\int_0^\pi2\sin^2\phi\cos\phi\cos\theta+\sin^3\phi\sin^2\theta\, d\phi\, d\theta\\\
+\amp =
+8\left(\cancelto{0}{\int_0^{2\pi}\cos\theta\, d\theta}\int_0^{\pi}\sin^2\phi\cos\phi\, d\phi+\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\right)\\
+\amp =8\int_0^{2\pi}\sin^2\theta\, d\theta\int_0^{\pi}\sin^3\phi\, d\phi\\
+\amp =\frac{32\pi}{3}
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Stokes.html#md-139" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_surfaces_integrals.html#md-138" class="internal">in-context</a></span>
 </body>
 </html>

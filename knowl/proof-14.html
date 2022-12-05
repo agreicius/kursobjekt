@@ -12,26 +12,15 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
-<p>For all <span class="process-math">\(R &gt; 0\)</span> let <span class="process-math">\(B_R\)</span> be the solid ball of radius <span class="process-math">\(R\)</span> centered at <span class="process-math">\(P\text{.}\)</span> We have <span class="process-math">\(S_R=\partial B_R\)</span> and so by the divergence theorem</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\iiint\limits_{B_R}\diver\boldF\, dV=\iint\limits_{S_R}\boldF\cdot \boldn\, d\sigma\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Next a generalization of the integral average value theorem to triple integrals imlies</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\iiint\limits_{B_R}\diver\boldF\, dV=\diver\boldF(P_R)\cdot \operatorname{vol} B_R,
-\end{equation*}
-</div>
-<p class="continuation">for some point <span class="process-math">\(P_R\)</span> in the ball <span class="process-math">\(B_R\)</span> centered around <span class="process-math">\(P\text{.}\)</span> Since <span class="process-math">\(\diver\boldF\)</span> is continuous at <span class="process-math">\(P\)</span> we have</p>
+<p>We have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\diver\boldF(P) \amp =\lim_{R\to 0} P_R\\
-\amp=\lim_{R\to 0}\frac{1}{\operatorname{vol} B_R}\iiint\limits_{B_R}\diver \boldF\, dV \amp \text{(avg. value thm.)}\\
-\amp =\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{\mathcal{S_R}}\boldF\cdot \boldn\, d\sigma
-\amp \text{(divergence thm.)} \text{.}
+\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
+\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
+\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
+\amp = 0\text{,}
 \end{align*}
-</div></article><span class="incontext"><a href="s_Divergence.html#proof-14" class="internal">in-context</a></span>
+</div>
+<p class="continuation">where in the last step we have used Clairaut's theorem to identify the various “mixed partials”: i.e., <span class="process-math">\(\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}\text{.}\)</span></p></article><span class="incontext"><a href="s_Divergence.html#proof-14" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,13 +12,13 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Fact: <span class="process-math">\(\mathcal{S}\)</span> is a nonorientable surface! If this is so, why doesn't the function</p>
+<p>We have <span class="process-math">\(\mathcal{T}=T_1\cup T_2\cup T_3\cup T_4\text{,}\)</span> where the <span class="process-math">\(T_k\)</span> are the four triangular faces of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and thus</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-P=\boldr(\theta_0, t_0)\mapsto  \frac{\boldr_t\times \boldr_\theta(\theta_0,t_0)}{\abs{\boldr_\theta\times\boldr_t(\theta_0,t_0)}}
+\iint\limits_\mathcal{T}f\, d\sigma=\iint\limits_{T_1}f\, d\sigma+\iint\limits_{T_2}f\, d\sigma+\iint\limits_{T_3}f\, d\sigma+\iint\limits_{T_4}f\, d\sigma\text{.}
 \end{equation*}
 </div>
-<p class="continuation">provide us with an orientation? The answer: this is a well-defined function on the <em class="emphasis">parameter domain</em> <span class="process-math">\([0,2\pi]\times[-1/2,1/2]\text{,}\)</span> but not on the actual <em class="emphasis">surface</em> <span class="process-math">\(\mathcal{S}\text{!}\)</span> Indeed, the point <span class="process-math">\(P=(R,0,0)\)</span> can be expressed as both <span class="process-math">\(\boldr(0,0)\)</span> and <span class="process-math">\(\boldr(2\pi, 0)\text{.}\)</span> As the Sage cell below illustrates the two normal vectors corresponding to <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((2\pi,0)\)</span> are <span class="process-math">\(\angvec{1,0,0}\)</span> and <span class="process-math">\(\angvec{-1,0,0}\text{!}\)</span></p>
+<p class="continuation">Let <span class="process-math">\(T_1, T_2\)</span> be the triangular faces lying in the coordinate planes <span class="process-math">\(x=0\)</span> and <span class="process-math">\(y=0\text{,}\)</span> respectively. Since <span class="process-math">\(f(x,y,z)=0\)</span> for all points in these two surfaces, the corresponding surface integrals <span class="process-math">\(\iint_{T_k}f\, d\sigma\text{,}\)</span> <span class="process-math">\(k=1,2\text{,}\)</span> are equal to zero. Thus we need only compute the integrals of <span class="process-math">\(f\)</span> over <span class="process-math">\(T_3\)</span> and <span class="process-math">\(T_4\text{.}\)</span></p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-499" class="internal">in-context</a></span>
 </body>
 </html>

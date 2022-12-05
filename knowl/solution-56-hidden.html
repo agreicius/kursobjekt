@@ -9,6 +9,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
 <p>I include this mainly as a nice parametrization example. The surface is parametrized using cylindrical coordinates as</p>
@@ -47,5 +54,13 @@ r
 \amp =-2\pi\text{.}
 \end{align*}
 </div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-29"><script type="text/x-sage">        from sage.plot.plot3d.plot3d import axes
+(v,theta,s,t)=var('v theta s t')
+r(theta,v)=vector([v*cos(theta),v*sin(theta),-v^2*cos(2*theta)])
+S=parametric_plot3d(r(s,t),(s,0,2*pi),(t,0,1), color='red', opacity=.1)
+grid1=sum(parametric_plot3d(r(c*pi/8,t),(t,0,1),color='red') for c in range(16)) #theta-level curves
+grid2=sum(parametric_plot3d(r(t,c/5),(t,0,2*pi),color='blue') for c in range(0,6)) #v-level curves
+S+grid1+grid2+axes(.75,0.5,color="black")
+</script></pre>
 </div></body>
 </html>

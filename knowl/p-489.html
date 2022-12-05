@@ -11,23 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let <span class="process-math">\(T_3\)</span> be the face of the tetrahedron in the <span class="process-math">\(xy\)</span>-plane. We parametrize as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr(x,y) \amp =(x,y,0)\\
-\mathcal{R}_1\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
-\end{align*}
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>As always, the key to understanding the meaning of a surface integral is to make sense of the right-hand side of the approximation formula</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_surface_integral_approx.html ./knowl/eq_surface_integral_approx.html">
+\begin{equation}
+\iint\limits_\mathcal{S}f\, d\sigma\approx \sum_{k=1}^{n}f(\boldr(u_k,v_k))\underset{\operatorname{approx. area of} \Delta\sigma_k}{\underbrace{\abs{\boldr_u\times \boldr_v}\Delta u\Delta v}}\text{.}\tag{2.6.1}
+\end{equation}
 </div>
-<p class="continuation">A simple computation shows <span class="process-math">\(\abs{\boldr_x\times \boldr_y}=1\text{.}\)</span> Thus</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx\\
-\amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx \\
-\amp =-\frac{1}{2}\int_1^0 (1-u)u^2\, du \amp (u=1-x, du=-dx)\\
-\amp =\frac{1}{2}(1/3-1/4)=\frac{1}{24}
-\end{align*}
-</div>
+<p class="continuation">Understanding <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\)</span> as an approximation of the area of one of the subpatches of <span class="process-math">\(\mathcal{S}\text{,}\)</span> the interpretation then depends on what the function <span class="process-math">\(f\)</span> is. Here are two typical examples.</p>
+<ol class="decimal">
+<li>
+<span class="heading"><span class="title">Geometric: surface area.</span></span><p>If <span class="process-math">\(f=1\)</span> (the constant function), then the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> simply adds up <span class="process-math">\(\abs{\boldr_u\times \boldr_v}\Delta u\Delta v\text{,}\)</span> yielding an approximation of the area of <span class="process-math">\(S\text{.}\)</span> The integral of <span class="process-math">\(f=1\)</span> computes this area exactly.</p>
+</li>
+<li>
+<span class="heading"><span class="title">Physical: density function.</span></span><p>Assume <span class="process-math">\(f(x,y,z)\geq 0\)</span> gives us the density of quantity <span class="process-math">\(Q\)</span> per unit area at position <span class="process-math">\((x,y,z)\text{.}\)</span> In this case the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_surface_integral_approx.html" title="Equation 2.6.1">(2.6.1)</a> can be understood as an approximation of the total quantity <span class="process-math">\(Q\)</span> over <span class="process-math">\(\mathcal{S}\text{,}\)</span> and thus the integral computes this total quantity exactly.</p>
+</li>
+</ol>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-489" class="internal">in-context</a></span>
 </body>
 </html>

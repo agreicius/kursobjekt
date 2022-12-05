@@ -12,23 +12,18 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="period">.</span><span class="space"> </span><span class="title">Integral over <span class="process-math">\(T_3\)</span>.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
-<p>Let <span class="process-math">\(T_3\)</span> be the face of the tetrahedron in the <span class="process-math">\(xy\)</span>-plane. We parametrize as</p>
+<p>Now assemble ingredients:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr(x,y) \amp =(x,y,0)\\
-\mathcal{R}_1\colon 0\amp\leq x\leq 1, 0\leq y\leq 1-x \text{.}
+\boldr_\phi \amp=\langle R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\rangle \\
+\boldr_\theta\amp=\langle-R\sin\phi\sin\theta, R\sin\phi\sin\theta, 0\rangle\\
+\boldr_\phi\times \boldr_\theta\amp=R^2\sin\phi\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi} \\
+\abs{\boldr_\phi\times\boldr_\theta}\amp =\val{R^2\sin\phi}\abs{\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi}}\\
+\amp=R^2\sin\phi\text{,}
 \end{align*}
 </div>
-<p class="continuation">A simple computation shows <span class="process-math">\(\abs{\boldr_x\times \boldr_y}=1\text{.}\)</span> Thus</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\iint\limits_{T_1}f\, d\sigma\amp =\int_0^1\int_0^{1-x}xy\, dy\, dx\\
-\amp =\frac{1}{2}\int_0^1x(1-x)^2\, dx \\
-\amp =-\frac{1}{2}\int_1^0 (1-u)u^2\, du \amp (u=1-x, du=-dx)\\
-\amp =\frac{1}{2}(1/3-1/4)=\frac{1}{24}
-\end{align*}
-</div></article><span class="incontext"><a href="s_surfaces_integrals.html#li-154" class="internal">in-context</a></span>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\sin\phi\geq 0\)</span> for <span class="process-math">\(\phi\in [0,\pi]\)</span> and <span class="process-math">\(\angvec{\sin\phi\cos\theta, \sin\phi\sin\theta,\cos\phi}\)</span> parametrizes points on the unit sphere!</p></article><span class="incontext"><a href="s_surfaces_area.html#li-154" class="internal">in-context</a></span>
 </body>
 </html>

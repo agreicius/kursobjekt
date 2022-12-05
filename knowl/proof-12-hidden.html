@@ -10,14 +10,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><p>We have</p>
+<body class="ignore-math"><article class="hiddenproof"><p>An easy consequence of the divergence theorem:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
-\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
-\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
-\amp = 0\text{,}
+\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma \amp =
+\iiint\limits_D\diver\boldF\, dV\\
+\amp =\iiint\limits_D 0\, dV\\
+\amp =0\text{.}
 \end{align*}
-</div>
-<p class="continuation">where in the last step we have used Clairaut's theorem to identify the various “mixed partials”: i.e., <span class="process-math">\(\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}\text{.}\)</span></p></article></body>
+</div></article></body>
 </html>

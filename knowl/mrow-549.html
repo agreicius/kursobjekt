@@ -13,12 +13,12 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr_r \amp =\angvec{\cos\theta, \sin\theta,-\sin\theta}\\
-\boldr_\theta\amp =\angvec{-r\sin\theta,r\cos\theta,-r\cos\theta}\\
-\boldr_r\times\boldr_\theta\amp=\angvec{0,r,r} \\
-\curl\boldF \amp=\angvec{0,0,1+2y} 
+\iint_\mathcal{S}\boldF\cdot\boldn\, d\sigma \amp = \iint_\mathcal{R}\boldF(r\cos\theta, r\sin\theta, r)\cdot \angvec{r\cos\theta,r\sin\theta, -r}\, dA \\
+\amp =\iint_\mathcal{R}\angvec{r^2\cos\theta\sin\theta,0,-r}\cdot\angvec{r\cos\theta,r\sin\theta, -r}\, dA \\
+\amp =\int_0^{2\pi}\int_0^4r^3\cos^2\theta\sin\theta+r^2\, dr\, d\theta\\
+\amp = \frac{128}{3}\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Stokes.html#md-141" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_surfaces_integrals.html#md-141" class="internal">in-context</a></span>
 </body>
 </html>

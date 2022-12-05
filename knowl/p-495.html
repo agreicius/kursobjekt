@@ -12,25 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Assume <span class="process-math">\(\mathcal{S}\)</span> is a smooth orientable surface with orientation <span class="process-math">\(\boldn\colon \mathcal{S}\rightarrow\R^3\)</span> and parametrization <span class="process-math">\(\boldr(u,v)\text{.}\)</span> We have the following facts:</p>
-<ol class="decimal">
-<li><p>There are exactly two orientations on <span class="process-math">\(\mathcal{S}\text{:}\)</span> namely, the given orientation <span class="process-math">\(P\mapsto \boldn(P)\)</span> and its opposite <span class="process-math">\(P\mapsto -\boldn(P)\text{.}\)</span></p></li>
-<li>
-<p>The function</p>
+<p>Assemble the necessary ingredients:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-P=\boldr(u_0,v_0)\mapsto \frac{\boldr_u\times \boldr_v(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
-\end{equation*}
+\begin{align*}
+\boldr_\theta \amp = \angvec{-\cos z\sin\theta, \cos z\cos\theta, 0}\\
+\boldr_z\amp =\angvec{-\sin z\cos\theta, -\sin z\sin\theta, 1} \\
+\boldr_\theta\times \boldr_z \amp=\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z\sin^2\theta+\sin z\cos z\cos^2\theta} \\
+\amp =\angvec{\cos z\cos\theta,\cos z\sin\theta, \sin z\cos z}\\
+\abs{\boldr_\theta\times \boldr_z} \amp = \sqrt{\cos^2(1+\sin^2 z)} \\
+\amp =\abs{\cos z}\sqrt{1+\sin^2 z}\\
+\amp =\cos z\sqrt{1+\sin^2z} \text{,}
+\end{align*}
 </div>
-<p class="continuation">is one orientation on <span class="process-math">\(\mathcal{S}\text{;}\)</span> the function</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-P=\boldr(u_0,v_0)\mapsto \frac{\boldr_v\times \boldr_u(u_0,v_0)}{\abs{\boldr_u\times\boldr_v(u_0,v_0)}}
-\end{equation*}
-</div>
-<p class="continuation">is the other.</p>
-</li>
-</ol>
+<p class="continuation">where the last equality follows since <span class="process-math">\(\cos z\geq 0\)</span> for <span class="process-math">\(z\in [-\pi/2, \pi/2]\text{.}\)</span></p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-495" class="internal">in-context</a></span>
 </body>
 </html>

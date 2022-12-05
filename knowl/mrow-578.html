@@ -13,12 +13,13 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
-\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
-\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
-\amp = 0
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
+\amp=\iint_\mathcal{R}\angvec{0,0,1+2r\sin\theta}\cdot \angvec{0,r,r}\, dA \\
+\amp =\int_0^{2\pi}\int_0^{1}r+2r^2\sin\theta\, dr\, d\theta\\
+\amp =\int_0^{2\pi}\frac{1}{2}+\frac{2}{3}\sin\theta\, d\theta\\
+\amp =\pi
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Divergence.html#md-148" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_Stokes.html#md-149" class="internal">in-context</a></span>
 </body>
 </html>

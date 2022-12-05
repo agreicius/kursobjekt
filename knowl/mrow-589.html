@@ -11,14 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_Greens.html">
 \begin{align*}
-\diver\boldF(P) \amp =\lim_{R\to 0} P_R\\
-\amp=\lim_{R\to 0}\frac{1}{\operatorname{vol} B_R}\iiint\limits_{B_R}\diver \boldF\, dV \amp \text{(avg. value thm.)}\\
-\amp =\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{\mathcal{S_R}}\boldF\cdot \boldn\, d\sigma
-\amp \text{(divergence thm.)} 
+\int_\mathcal{C}\boldF\cdot d\boldr\amp=\iint_\mathcal{R}\curl G\cdot \boldn \, d\sigma \amp \\
+\amp =\iint_\mathcal{R}\angvec{0,0,\partial F_2/\partial x-\partial F_1/\partial y}\cdot \angvec{0,0,1} \, dA\\
+\amp =\iint_\mathcal{R} \partial F_2/\partial x-\partial F_1/\partial y \, dA
 \end{align*}
 </div>
-<span class="incontext"><a href="s_Divergence.html#md-152" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_Stokes.html#md-151" class="internal">in-context</a></span>
 </body>
 </html>

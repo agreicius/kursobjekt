@@ -11,8 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Let <span class="process-math">\(\boldF=\angvec{-y^2, x, z^2}\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the intersection of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> and the plane <span class="process-math">\(y+z=2\text{.}\)</span> Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\mathcal{C}\)</span> is oriented counterclockwise, viewed from above.</p>
-<span class="incontext"><a href="s_Stokes.html#p-519" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Now compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint_\mathcal{S}\boldF\cdot\boldn\, d\sigma \amp = \iint_\mathcal{R}\boldF(r\cos\theta, r\sin\theta, r)\cdot \angvec{r\cos\theta,r\sin\theta, -r}\, dA \\
+\amp =\iint_\mathcal{R}\angvec{r^2\cos\theta\sin\theta,0,-r}\cdot\angvec{r\cos\theta,r\sin\theta, -r}\, dA \\
+\amp =\int_0^{2\pi}\int_0^4r^3\cos^2\theta\sin\theta+r^2\, dr\, d\theta\\
+\amp = \frac{128}{3}\pi\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_surfaces_integrals.html#p-519" class="internal">in-context</a></span>
 </body>
 </html>

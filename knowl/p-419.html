@@ -12,7 +12,21 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p></p>
+<p>Letting <span class="process-math">\(\boldF=\angvec{F_1, F_2}\text{.}\)</span> The curve <span class="process-math">\(\mathcal{C}\)</span> bounds the region</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathcal{R}\colon x^2+y^2\leq 1, y\geq 0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since <span class="process-math">\(\mathcal{C}\)</span> is oriented counterclockwise, we apply Green's theorem to conclude</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{R}\partial F_2/\partial x-\partial F_1/\partial y\, dA\\
+\amp=\int_{-1}^1\int_0^{\sqrt{1-x^2}}3y-2y\, dy\, dx \\
+\amp =\int_{-1}^1\frac{1}{2}(1-x^2)\, dx\\
+\amp =2/3\text{.}
+\end{align*}
+</div>
 <span class="incontext"><a href="s_Greens_theorem.html#p-419" class="internal">in-context</a></span>
 </body>
 </html>

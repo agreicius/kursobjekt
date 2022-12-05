@@ -12,20 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Suppose <span class="process-math">\(\mathcal{S}\)</span> is a smooth surface defined as the graph of the function <span class="process-math">\(z=f(x,y)\)</span> for inputs <span class="process-math">\((x,y)\)</span> lying in the region <span class="process-math">\(\mathcal{R}\subseteq\R^2\text{.}\)</span>  As usual this gives rise to the parametrization</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\boldr\colon \mathcal{R} \amp \rightarrow \R^3\\
-(x,y)  \amp\mapsto (x,y,f(x,y)) \text{.}
-\end{align*}
-</div>
-<p class="continuation">We have seen that in this case <span class="process-math">\(\boldr_x\times \boldr_y=\angvec{-f_x, -f_y, 1}\text{.}\)</span> It follows that the function</p>
+<p>First we parametrize <span class="process-math">\(\mathcal{S}\text{.}\)</span> Observe that intersecting <span class="process-math">\(\mathcal{S}\)</span> with the plane <span class="process-math">\(z=z_0\)</span>  yields a circle centered at <span class="process-math">\((0,0,z_0)\)</span> of radius <span class="process-math">\(R=\cos z_0 \text{,}\)</span> which we can parametrize as</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\boldn(x,y,z)=\frac{\boldr_x\times \boldr_y}{\abs{\boldr_x\times \boldr_y}}=\frac{\angvec{-f_x,-f_y,1}}{\sqrt{f_x^2+f_y^2+1}}
+(R\cos\theta, R\sin\theta, z_0)=(\cos z_0\cos\theta, \cos z_0\sin\theta, z_0)\text{.}
 \end{equation*}
 </div>
-<p class="continuation">is an orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span> Since the <span class="process-math">\(z\)</span>-component of <span class="process-math">\(\boldn(x,y,z)\)</span> is positive, this is called the <dfn class="terminology">upward</dfn> orientation of <span class="process-math">\(\mathcal{S}\text{.}\)</span></p>
+<p class="continuation">Letting <span class="process-math">\(z\)</span> vary between <span class="process-math">\(-\pi/2\)</span> and <span class="process-math">\(\pi/2\text{,}\)</span> we get the parametrization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\boldr(\theta, z) \amp = (\cos z\cos\theta, \cos z\sin\theta, z) \\
+\mathcal{R} \colon 0\amp \leq \theta\leq 2\pi, -\pi/2\leq z\leq \pi/2 \text{.}
+\end{align*}
+</div>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-494" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,13 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be a piecewise smooth simple curve with positive (counterclockwise) orientation, and let <span class="process-math">\(\mathcal{R}\subseteq \R^2\)</span> be the region it encloses. If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2}\)</span> have continuous first-order partial derivatives on an open set containing <span class="process-math">\(\mathcal{R}\text{,}\)</span> then</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation}
-\underset{\text{divergence integral}}{\underbrace{\iint_\mathcal{R} \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}\, dA}}=\underset{\operatorname{outward flux}}{\underbrace{\oint_\mathcal{C}\boldF\cdot \boldn\,  ds}}=\oint_\mathcal{C}-F_2\, dx+F_1\, dy\text{.}\tag{2.4.3}
-\end{equation}
+<p>From the limit expression <a href="" class="xref" data-knowl="./knowl/eq_Greens_theorem_interpretation.html" title="Equation 2.4.2">(2.4.2)</a> we extract the valuable approximation formula</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_Greens_theorem_interpretation.html">
+\begin{equation*}
+(\curl\boldF)\cdot \boldk\,  (x,y)=\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)(x,y)\approx \frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot\boldT\, ds\text{.}
+\end{equation*}
 </div>
-<p class="continuation">Here <span class="process-math">\(\boldn\)</span> is understood to be the outward unit normal vector to <span class="process-math">\(\mathcal{C}\text{.}\)</span></p>
+<p class="continuation">This can be understood as saying that the scalar component of curl at a point <span class="process-math">\(P=(x,y)\)</span> is approximated by the circulation density quantity</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_Greens_theorem_interpretation.html">
+\begin{equation*}
+\frac{1}{\pi R^2}\oint_{C_R}\boldF\cdot d\boldr\text{,}
+\end{equation*}
+</div>
+<p class="continuation">whose units are of the form unit circulation per unit area. This gives us a more concrete understanding curl as a measure of the fluid's tendency to rotate about a given <span class="process-math">\(P\text{.}\)</span> In particular if the fluid is assumed to be <em class="emphasis">irrotational</em> (<span class="process-math">\(\partial F_2/\partial x-\partial F_1/y=0\)</span>), this means that the region contains no <em class="emphasis">vortices</em>, points about which the fluid rotates like a whirlpool.</p>
 <span class="incontext"><a href="s_Greens_theorem.html#p-426" class="internal">in-context</a></span>
 </body>
 </html>
