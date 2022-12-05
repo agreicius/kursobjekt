@@ -79,25 +79,49 @@
       <title>Vector line integral in plane</title>
       <statement>
         <p>
-          Let <m>\boldF(x,y)=(xy,x+y)</m>. Let <m>\mathcal{C}</m> be the curve <m>x=y^2</m>.
+          Let <m>\boldF(x,y)=(xy,x+y)</m>.
           <ol>
             <li>
               <p>
-                Compute the integral of <m>\boldF</m> along the segment of <m>\mathcal{C}</m> starting at <m>(1,-1)</m> and ending at <m>(4,2)</m>.
+                Compute the integral of <m>\boldF</m> along the segment <m>\mathcal{C}</m> of the curve <m>x=y^2</m> that starts at <m>(1,-1)</m> and ends at <m>(4,2)</m>.
               </p>
             </li>
             <li>
               <p>
-                Compute the integral of <m>\boldF</m> along the segment of <m>\mathcal{C}</m> starting at <m>(4,-2)</m> and ending at <m>(1,-1)</m>.
+                Compute the integral of <m>\boldF</m> along the reverse <m>-\mathcal{C}</m> of the path in (1): <ie />, the segment of the curve <m>x=y^2</m> that starts at <m>(4,2)</m> and ends at <m>(1,-1)</m>.
               </p>
             </li>
           </ol>
         </p>
       </statement>
       <solution>
-        <p>
-
-        </p>
+        <ol>
+          <li>
+            <p>
+              We parametrize <m>\mathcal{C}</m> as <m>\boldr(t)=(t^2,t)</m>, <m>-1\leq t\leq 2</m>. Now compute
+              <md>
+                <mrow>\int\limits_{\mathcal{C}}\boldF\cdot d\boldr \amp = \int_{-1}^2\boldF(t^2,t)\cdot \boldr'(t)\, dt </mrow>
+                <mrow> \amp = \int_{-1}^2\angvec{t^3,t^2+t}\cdot\angvec{2t,1}\, dt </mrow>
+                <mrow>  \amp = \int_{-1}^22t^4+t^2+t\, dt</mrow>
+                <mrow>  \amp =\left(\frac{2}{5}t^5+\frac{1}{3}t^3+\frac{1}{2}t^2\right)\Bigr\vert_{-1}^2</mrow>
+                <mrow>  \amp = \frac{177}{10}</mrow>
+                </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+               According to <xref ref="rm_vector_line_integral_independence"/> we should have <m>\int_{-\mathcal{C}}\boldF\cdot d\boldr=-\int_{\mathcal{C}}\boldF\cdot d\boldr</m>. We verify this directly by parametrizing <m>-\mathcal{C}</m> and computing. In general if <m>\mathcal{C}</m> is parametrized by <m>\boldr(t)</m>, where <m>a\leq t\leq b</m>, then <m>-\mathcal{C}</m> is parametrized by <m>\bolds(t)=\boldr(-t)</m>, where <m>-b\leq t\leq -a</m>.
+               Indeed, since <m>\bolds(t)=\boldr(-t)</m>, we have <m>\bolds(-b)=\boldr(b)</m> and <m>\bolds(-a)=\boldr(a)</m>. Thus in our case we can parametrize <m>-\mathcal{C}</m> as <m>\bolds(t)=((-t)^2,-t)=(t^2,-t)</m>, where <m>-2\leq t\leq 1</m>. Now compute
+               <md>
+                 <mrow>\int_{-\mathcal{C}}\boldF\cdot d\boldr \amp = \int_{-2}^1\boldF(\bolds(t))\cdot \bolds'(t)\, dt</mrow>
+                 <mrow> \amp = \int_{-2}^1\boldF(t^2,-t)\cdot \angvec{2t,-1}\, dt </mrow>
+                 <mrow>  \amp =\int_{-2}^1\angvec{-t^3,t^2-t}\cdot \angvec{2t,-1}\, dt</mrow>
+                 <mrow>  \amp =\int_{-2}^1-2t^4-t^2+t\, dt</mrow>
+                 <mrow>  \amp =-\frac{177}{10}</mrow>
+               </md>.
+            </p>
+          </li>
+        </ol>
       </solution>
     </example>
     <remark xml:id="rm_vector_line_integral_independence">
@@ -134,7 +158,15 @@
       </statement>
       <solution>
         <p>
-
+          We have
+          <md>
+            <mrow>\int_\mathcal{C}\boldF\cdot d\boldr \amp = \int_0^{2\pi}\boldF(\boldr(t))\cdot \boldr'(t)\, dt</mrow>
+            <mrow> \amp =\int_0^{2\pi}\boldF(\cos t, \sin t, t)\cdot \angvec{-\sin t, \cos t, 1}\, dt </mrow>
+            <mrow>  \amp =\int_0^{2\pi}\angvec{-\sin t, t,2\cos t}\cdot \angvec{-\sin t, \cos t, 1}\, dt</mrow>
+            <mrow>  \amp =\int_0^{2\pi}\sin^2 t+t\cos t+2\cos t\, dt</mrow>
+            <mrow>  \amp = \pi</mrow>
+          </md>.
+          (To perform the integration in the penulitimate line, use the double-angle formula <m>\sin^2 t=\frac{1}{2}(1-\cos 2\t)</m>, and integration by parts.)
         </p>
       </solution>
     </example>
@@ -202,13 +234,15 @@
       </statement>
     </definition>
     <example>
+      <title>Circulation</title>
+
       <statement>
         <p>
-          Let <m>\mathcal{C}</m> be the unit circle <m>x^2+y^2=1</m>. Compute the the circulation around <m>\mathcal{C}</m> for the given fluid velocity field.
+          Let <m>\mathcal{C}</m> be the unit circle <m>x^2+y^2=1</m>, oriented in the counterclockwise direction. Compute the the circulation around <m>\mathcal{C}</m> for the given fluid velocity field.
           <ol>
             <li>
               <p>
-                <m>\boldF(x,y,)=\angvec{x-y,x+y}</m>
+                <m>\boldF(x,y)=\angvec{x-y,x+y}</m>
               </p>
             </li>
             <li>
@@ -220,9 +254,29 @@
         </p>
       </statement>
       <solution>
-        <p>
-
-        </p>
+        <ol>
+          <li>
+            <p>
+              Parametrize <m>\mathcal{C}</m> as <m>\boldr( t )=(\cos t ,\sin t )</m>, <m>0\leq  t \leq 2\pi</m>. Now compute
+              <md>
+                <mrow>\int\limits_\mathcal{C}\boldF\cdot d\boldr \amp =\int_0^{2\pi}\boldF(\cos t , \sin t )\cdot\boldr'(t)\, d t  </mrow>
+                <mrow>  \amp =\int_0^{2\pi}\angvec{\cos t -\sin t ,\cos t +\sin t }\cdot \angvec{-\sin t ,\cos t }\, d t </mrow>
+                <mrow> \amp=\int_0^{2\pi}-\cos t \sin t +\sin^2 t +\cos^2 t +\cos t \sin t \, d t  </mrow>
+                <mrow>  \amp =\int_0^{2\pi}1 d t </mrow>
+                <mrow>  \amp =0 </mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              For any point on the circle, its tangent vector points <em>orthogonally</em> to its position vector. It follows that in this case <m>\boldF(x,y)=\angvec{x,y}</m> is always orthogonal to the tangent vectors on the curve (equivalently, that the tangential component of <m>\boldF</m> is always zero), and hence that the line integral is 0. More explicitly, using the parametrization <m>\boldr(t)=(\cos t, \sin t)</m> we have
+              <md>
+                <mrow>\boldF(\boldr(t))\cdot \boldr'(t) \amp =\angvec{\cos t, \sin t}\cdot \angvec{-\sin t, \cos t}</mrow>
+                <mrow> \amp=-\cos t\sin t+\cos t\sin t=0 </mrow>
+              </md>.
+            </p>
+          </li>
+        </ol>
       </solution>
     </example>
     <project xml:id="sage_vector_line_integral">
@@ -279,5 +333,52 @@
       </p>
       </statement>
     </definition>
+    <example>
+      <title>Flux</title>
+
+      <statement>
+        <p>
+          Let <m>\mathcal{C}</m> be the unit circle <m>x^2+y^2=1</m>, oriented in the counterclockwise direction. Compute the the flux around <m>\mathcal{C}</m> for the given fluid velocity field.
+          <ol>
+            <li>
+              <p>
+                <m>\boldF(x,y)=\angvec{x-y,x+y}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+              <m>\boldF(x,y)=\angvec{x,y}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Parametrize <m>\mathcal{C}</m> as <m>\boldr(t)=(\cos t, \sin t)</m>, <m>0\leq t\leq 2\pi</m>. It follows that <m>\boldr'(t)=\angvec{-\sin t, \cos t}</m>, and hence that the outward unit normal vector is <m>\boldn(t)=\angvec{\cos t, \sin t}</m>. We now compute the flux in each case using <xref ref="d_flux"/>.
+        </p>
+        <ol>
+          <li>
+            <md>
+              <mrow>\int_\mathcal{C}\boldF\cdot \boldn\, ds \amp=
+              \int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \boldn(t)\, ds </mrow>
+              <mrow> \amp = \int_0^{2\pi}\angvec{\cos t-\sin t, \cos t+\sin t}\cdot \angvec{\cos t, \sin t}\, dt</mrow>
+              <mrow>  \amp = \int_0^{2\pi} \cos^2 t-\cos t\sin t+\cos t\sin t+\sin^2 t\, dt</mrow>
+              <mrow>  \amp = \int_0^{2\pi}1\, dt</mrow>
+              <mrow>  \amp = 2\pi</mrow>
+            </md>.
+          </li>
+          <li>
+            <md>
+              <mrow>\int_\mathcal{C}\boldF\cdot \boldn\, ds \amp=
+              \int_0^{2\pi}\boldF(\cos t, \sin t)\cdot \boldn(t)\, ds </mrow>
+              <mrow> \amp = \int_0^{2\pi}\angvec{\cos t, \sin t}\cdot \angvec{\cos t, \sin t}\, dt</mrow>
+              <mrow>  \amp = \int_0^{2\pi} 1 dt</mrow>
+              <mrow>  \amp = 2\pi</mrow>
+            </md>.
+          </li>
+        </ol>
+      </solution>
+    </example>
   </subsection>
 </section>

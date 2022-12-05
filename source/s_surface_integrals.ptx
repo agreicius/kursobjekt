@@ -455,7 +455,7 @@
   <title>Flux across a cone</title>
   <statement>
     <p>
-      Let <m>\mathcal{S}</m> be the cone <m>z=\sqrt{x^2+y^2}</m> and let <m>\boldF(x,y,z)=\angvec{xy,0,-z}</m>. Compute the flux of <m>\boldF</m> across <m>\mathcal{S}</m> with respect to the outward (away from the <m>z</m>-axis) orientation of <m>\mathcal{S}</m>.
+      Let <m>\mathcal{S}</m> be the portion of the cone <m>z=\sqrt{x^2+y^2}</m> lying below the plane <m>z=4</m>, and let <m>\boldF(x,y,z)=\angvec{xy,0,-z}</m>. Compute the flux of <m>\boldF</m> across <m>\mathcal{S}</m> with respect to the outward (away from the <m>z</m>-axis) orientation of <m>\mathcal{S}</m>.
     </p>
   </statement>
   <solution>
