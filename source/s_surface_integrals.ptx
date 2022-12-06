@@ -410,9 +410,9 @@
     <p>
       We use the usual parametrization of the sphere of radius 2:
       <md>
-        <mrow>\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta)</mrow>
-        <mrow> \amp </mrow>
-      </md>
+        <mrow>\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi)</mrow>
+        <mrow> \mathcal{R}\colon 0 \amp\leq \phi\leq \pi, 0\leq \theta\leq 2\pi </mrow>
+      </md>.
       Given a point <m>P=(x,y,z)\in \mathcal{S}</m> the vector <m>\angvec{x,y,z}</m> is an outward pointing normal vector of magnitude <m>\sqrt{x^2+y^2+z^2}=2</m>. Thus the function <m>\boldn(x,y,z)=\frac{1}{2}\angvec{x,y,z}</m> is the outward orientation on <m>\mathcal{S}</m>. It follows that
       <me>
         \boldF(x,y,z)\cdot \boldn(x,y,z)=\frac{1}{2}\angvec{z,y,x}\cdot \angvec{x,y,z}=\frac{1}{2}(2xz+y^2)
@@ -429,6 +429,10 @@
         <mrow>  \amp =\frac{32\pi}{3}</mrow>
       </md>.
       The last step above is done using the identity <m>\sin^2\theta=\frac{1}{2}(1-\cos 2\theta)</m> and the fact that <m>\sin^3\phi=\sin\phi(1-\cos^2\phi)=\sin\phi-\sin\phi\cos^2\phi</m> has antiderivative <m>-\cos\phi+\frac{1}{3}\cos^3\phi</m>.
+    </p>
+    <p>
+      Note that in this case we computed the surface integral by (a) identifying the outward orientation <m>\boldn</m> on <m>\mathcal{S}</m> <em>geometrically</em> (as opposed to using <m>\boldr_\phi\times \boldr_\theta</m> or its opposite), (b) computing the scalar function <m>\boldF(x,y,z)\cdot \boldn(x,y,z)</m>, and (c) integrating with respect to <m>d\sigma=\vert \boldr_\phi\times\boldr_\theta\vert=4\sin\phi</m>. This method works in this case because we could <em>easily</em> identify the orientation function <m>\boldn(x,y,z)</m>. When this is not easily done, resort to the procedure indicated in <xref ref="th_surface_integral_vector"/>.
+      See <xref ref="eg_surface_integral_vector_cone"/> for an illustration of this technique.
     </p>
   </solution>
 </example>
@@ -494,5 +498,38 @@
     </ul>
   </solution>
 </example>
+<project xml:id="sage_surface_integral_vector">
+  <title>Surface integrals of vector fields</title>
+  <p>
+    The Sage cell below assembles the many necessary ingredients to compute a surface integral of a vector field <m>\boldF</m>, then returns the value of the integral, as well as a diagram of the surface, some normal vectors (in green), and the vector field. You can use this to check your surface integral computations by adjusting the parametrization <c>r(u,v)</c> and its parameter domain description. You may also want to adjust the domain specified for the vector field plot <c>Field</c>. 
+  </p>
+  <sage>
+  <input>
+    from sage.plot.plot3d.plot3d import axes
+  (theta,phi,t,s,u,v,x,y,z)=var('theta phi t s u v x y z')
+  r(u,v)=vector([2*sin(u)*cos(v),2*sin(u)*sin(v),2*cos(u)]) #surface parametrization
+  a=0    # Parameter domain description
+  b=pi   # I below computed assuming a "type-1"
+  c=0    # description of param. domain. Adjust
+  d=2*pi # as necessary
+  F(x,y,z)=vector([z,y,x])
+  r_u=diff(r,u)
+  r_v=diff(r,v)
+  n=r_u.cross_product(r_v) #The usual choice of orientation on surface
+  G(u,v)=F(r(u,v)[0],r(u,v)[1],r(u,v)[2])*n(u,v) #F dot (r_u x r_v)
+  I=integrate(integrate(G(u,v),(v,c,d)),(u,a,b)) #Surface integral
+  S=parametric_plot3d(r(u,v),(u,a,b),(v,c,d), color='red', opacity=.2)
+  Field=plot_vector_field3d([F(x,y,z)[0],F(x,y,z)[1],F(x,y,z)[2]],(x,-3,3),(y,-3,3),(z,-3,3), plot_points=5)
+  normals=sum(arrow3d(r(a+k*(b-a)/3,c+j*(d-c)/3),r(a+k*(b-a)/3,c+j*(d-c)/3)+vector(n(a+k*(b-a)/3,c+j*(d-c)/3).normalized()),color='green') for k in range(1,3) for j in range(1,3))
+  Diag=Field+S+normals
+  print("Surface integral=",I)
+  print("Diagram of surface, orientation (green arrows), and vector field")
+  Diag
+  </input>
+  <output>
+
+  </output>
+  </sage>
+</project>
   </subsection>
 </section>
