@@ -12,15 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Now compute</p>
+<p>Ingredients.</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\iint_\mathcal{S}\boldF\cdot\boldn\, d\sigma \amp = \iint_\mathcal{R}\boldF(r\cos\theta, r\sin\theta, r)\cdot \angvec{r\cos\theta,r\sin\theta, -r}\, dA \\
-\amp =\iint_\mathcal{R}\angvec{r^2\cos\theta\sin\theta,0,-r}\cdot\angvec{r\cos\theta,r\sin\theta, -r}\, dA \\
-\amp =\int_0^{2\pi}\int_0^4r^3\cos^2\theta\sin\theta+r^2\, dr\, d\theta\\
-\amp = \frac{128}{3}\pi\text{.}
+\bolds_r \amp = \angvec{\cos\theta, \sin\theta, 1}\\
+\bolds_\theta  \amp= \angvec{-r\sin\theta, r\cos\theta, 0} \\
+\bolds_r\times\bolds_\theta \amp =\angvec{-r\cos\theta, -r\sin\theta, r} \text{.}
 \end{align*}
 </div>
+<p class="continuation">Observe that since <span class="process-math">\(r\geq 0\text{,}\)</span> the normal vector <span class="process-math">\(\bolds_r\times\bolds_\theta\)</span> points <em class="emphasis">upward</em>, and hence <em class="emphasis">toward</em> the <span class="process-math">\(z\)</span>-axis. Thus the outward orientation  <span class="process-math">\(\boldn\)</span> comes from <span class="process-math">\(\bolds_\theta\times\bolds_r\text{.}\)</span></p>
 <span class="incontext"><a href="s_surfaces_integrals.html#p-519" class="internal">in-context</a></span>
 </body>
 </html>

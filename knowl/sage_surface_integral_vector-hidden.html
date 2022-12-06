@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><article class="project project-like"><p>The Sage cell below assembles the many necessary ingredients to compute a surface integral of a vector field <span class="process-math">\(\boldF\text{,}\)</span> then returns the value of the integral, as well as a diagram of the surface, some normal vectors (in green), and the vector field. You can use this to check your surface integral computations by adjusting the parametrization <code class="code-inline tex2jax_ignore">r(u,v)</code> and its parameter domain description. You may also want to adjust the domain specified for the vector field plot <code class="code-inline tex2jax_ignore">Field</code>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-29"><script type="text/x-sage">  from sage.plot.plot3d.plot3d import axes
+(theta,phi,t,s,u,v,x,y,z)=var('theta phi t s u v x y z')
+r(u,v)=vector([2*sin(u)*cos(v),2*sin(u)*sin(v),2*cos(u)]) #surface parametrization
+a=0    # Parameter domain description
+b=pi   # I below computed assuming a "type-1"
+c=0    # description of param. domain. Adjust
+d=2*pi # as necessary
+F(x,y,z)=vector([z,y,x])
+r_u=diff(r,u)
+r_v=diff(r,v)
+n=r_u.cross_product(r_v) #The usual choice of orientation on surface
+G(u,v)=F(r(u,v)[0],r(u,v)[1],r(u,v)[2])*n(u,v) #F dot (r_u x r_v)
+I=integrate(integrate(G(u,v),(v,c,d)),(u,a,b)) #Surface integral
+S=parametric_plot3d(r(u,v),(u,a,b),(v,c,d), color='red', opacity=.2)
+Field=plot_vector_field3d([F(x,y,z)[0],F(x,y,z)[1],F(x,y,z)[2]],(x,-3,3),(y,-3,3),(z,-3,3), plot_points=5)
+normals=sum(arrow3d(r(a+k*(b-a)/3,c+j*(d-c)/3),r(a+k*(b-a)/3,c+j*(d-c)/3)+vector(n(a+k*(b-a)/3,c+j*(d-c)/3).normalized()),color='green') for k in range(1,3) for j in range(1,3))
+Diag=Field+S+normals
+print("Surface integral=",I)
+print("Diagram of surface, orientation (green arrows), and vector field")
+Diag
+</script></pre></article></body>
+</html>

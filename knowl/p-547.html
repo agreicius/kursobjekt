@@ -12,16 +12,22 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>We have</p>
+<p>Let <span class="process-math">\(D_1, D_2\)</span> be the solid regions enclosed by <span class="process-math">\(\mathcal{S}_1\)</span> and <span class="process-math">\(\mathcal{S}_2\text{,}\)</span> respectively (so that <span class="process-math">\(\mathcal{D}=D_2-D_1\)</span>). Notice that if <span class="process-math">\(\boldn_2\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}_2\text{,}\)</span> considered as the boundary of <span class="process-math">\(D_2\text{,}\)</span> then <span class="process-math">\(-\boldn_2\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}_2\)</span> considered as a boundary of <span class="process-math">\(D\text{.}\)</span> By the divergence theorem we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
-\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
-\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
-\amp = 0\text{,}
+0\amp=\iiint\limits_D \diver \boldF\, dV \\
+\amp=\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma +
+\iint\limits_{\mathcal{S}_2}\boldF\cdot (-\boldn_2)\, d\sigma\\
+\amp = \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma-\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma\text{.}
 \end{align*}
 </div>
-<p class="continuation">where in the last step we have used Clairaut's theorem to identify the various “mixed partials”: i.e., <span class="process-math">\(\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}\text{.}\)</span></p>
+<p class="continuation">We conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma\text{,}
+\end{equation*}
+</div>
+<p class="continuation">as desired.</p>
 <span class="incontext"><a href="s_Divergence.html#p-547" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,8 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Applying two operators in sequence results in a zero function (<span class="process-math">\(\curl\grad f=\boldzero\)</span> and <span class="process-math">\(\diver\curl\boldF=0\)</span>). In other words the image of any one of these operators lies within the set of a functions mapping to zero when applying the next operator.</p>
-<span class="incontext"><a href="s_Divergence.html#p-551" class="internal">in-context</a></span>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\diver\boldF(P) \amp =\lim_{R\to 0} P_R\\
+\amp=\lim_{R\to 0}\frac{1}{\operatorname{vol} B_R}\iiint\limits_{B_R}\diver \boldF\, dV \amp \text{(avg. value thm.)}\\
+\amp =\lim_{R\to 0}\frac{1}{(4/3)\pi R^3}\iint\limits_{\mathcal{S_R}}\boldF\cdot \boldn\, d\sigma
+\amp \text{(divergence thm.)} 
+\end{align*}
+</div>
+<span class="incontext"><a href="s_Divergence.html#md-159" class="internal">in-context</a></span>
 </body>
 </html>

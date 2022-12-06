@@ -12,17 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Alternatively, we can treat <span class="process-math">\(\mathcal{C}\)</span> as the boundary of the piecewise smooth surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the portion of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> above the <span class="process-math">\(xy\)</span>-plane and below the plane <span class="process-math">\(y+z=2\text{,}\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is the disc <span class="process-math">\(x^2+y^2\leq 1\)</span> in the <span class="process-math">\(xy\)</span>-plane. To have the given orientation of <span class="process-math">\(\mathcal{C}\)</span> be induced by that of <span class="process-math">\(\mathcal{S}\text{,}\)</span> we must choose the <em class="emphasis">inward</em> orientation <span class="process-math">\(\boldn\)</span> on <span class="process-math">\(\mathcal{S}\)</span> : this orientation is <em class="emphasis">inward</em> on the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> and <em class="emphasis">upward</em> on the disc <span class="process-math">\(\mathcal{S}_2\text{.}\)</span> With this setup we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-\oint_\mathcal{C}\boldF\cdot d\boldr \amp = \iint_\mathcal{S}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp= \cancelto{0}{\iint_\mathcal{S_1}\curl\boldF\cdot \boldn\, d\sigma}+\iint_\mathcal{S_2}\curl\boldF\cdot \boldn\, d\sigma\\
-\amp =\iint\limits_{x^2+y^2\leq 1}\angvec{0,0,1+2y}\cdot \angvec{0,0,1}\, dA\\
-\amp =\int_0^{2\pi}\int_0^1(1+2r\sin\theta)r\, dr\, d\theta\\\
-\amp =\pi\text{.}
-\end{align*}
-</div>
-<p class="continuation">A few comments are in order. We have <span class="process-math">\(\iint_{\mathcal{S}_1}\curl\boldF\cdot \boldn\, d\sigma=0\)</span> because the normal vectors to the cylinder <span class="process-math">\(\mathcal{S}_1\)</span> point horizontally, and thus are orthogonal to the curl vectors <span class="process-math">\(\curl\boldF\text{,}\)</span> which point vertically. Secondly, on the disc in the <span class="process-math">\(xy\)</span>-plane we clearly have the upward normal vector equal to <span class="process-math">\(\angvec{0,0,1}\text{.}\)</span></p>
+<p>Let <span class="process-math">\(\boldF=\angvec{-y^2, x, z^2}\text{,}\)</span> and let <span class="process-math">\(\mathcal{C}\)</span> be the intersection of the cylinder <span class="process-math">\(x^2+y^2=1\)</span> and the plane <span class="process-math">\(y+z=2\text{.}\)</span> Compute <span class="process-math">\(\oint_\mathcal{C}\boldF\cdot \boldr\text{,}\)</span> where <span class="process-math">\(\mathcal{C}\)</span> is oriented counterclockwise, viewed from above.</p>
 <span class="incontext"><a href="s_Stokes.html#p-534" class="internal">in-context</a></span>
 </body>
 </html>

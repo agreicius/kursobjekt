@@ -12,22 +12,15 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Let <span class="process-math">\(D_1, D_2\)</span> be the solid regions enclosed by <span class="process-math">\(\mathcal{S}_1\)</span> and <span class="process-math">\(\mathcal{S}_2\text{,}\)</span> respectively (so that <span class="process-math">\(\mathcal{D}=D_2-D_1\)</span>). Notice that if <span class="process-math">\(\boldn_2\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}_2\text{,}\)</span> considered as the boundary of <span class="process-math">\(D_2\text{,}\)</span> then <span class="process-math">\(-\boldn_2\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}_2\)</span> considered as a boundary of <span class="process-math">\(D\text{.}\)</span> By the divergence theorem we have</p>
+<p>An easy consequence of the divergence theorem:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-0\amp=\iiint\limits_D \diver \boldF\, dV \\
-\amp=\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma +
-\iint\limits_{\mathcal{S}_2}\boldF\cdot (-\boldn_2)\, d\sigma\\
-\amp = \iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma-\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma\text{.}
+\iint\limits_\mathcal{S}\boldF\cdot \boldn\, d\sigma \amp =
+\iiint\limits_D\diver\boldF\, dV\\
+\amp =\iiint\limits_D 0\, dV\\
+\amp =0\text{.}
 \end{align*}
 </div>
-<p class="continuation">We conclude that</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma\text{,}
-\end{equation*}
-</div>
-<p class="continuation">as desired.</p>
 <span class="incontext"><a href="s_Divergence.html#p-545" class="internal">in-context</a></span>
 </body>
 </html>

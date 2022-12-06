@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Applying two operators in sequence results in a zero function (<span class="process-math">\(\curl\grad f=\boldzero\)</span> and <span class="process-math">\(\diver\curl\boldF=0\)</span>). In other words the image of any one of these operators lies within the set of a functions mapping to zero when applying the next operator.</p>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\diver\curl \boldF \amp =\nabla\cdot \Bigl\langle \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} , \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Bigr\rangle \\
+\amp=\frac{\partial}{\partial x}\left( \frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \right)+ \frac{\partial}{\partial y}\left( \frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \right)+\frac{\partial}{\partial z}\left( \frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \right)\\
+\amp = \frac{\partial F_3}{\partial x \partial y}- \frac{\partial F_2}{\partial x \partial z}+\frac{\partial F_3}{\partial y \partial x}- \frac{\partial F_1}{\partial y \partial z}+\frac{\partial F_2}{\partial z \partial x}- \frac{\partial F_1}{\partial z \partial y}\\
+\amp = 0\text{,}
+\end{align*}
+</div>
+<p class="continuation">where in the last step we have used Clairaut's theorem to identify the various “mixed partials”: i.e., <span class="process-math">\(\frac{\partial F_3}{\partial x \partial y}=\frac{\partial F_3}{\partial y \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_2}{\partial x \partial z}=\frac{\partial F_3}{\partial z \partial x}\text{,}\)</span> <span class="process-math">\(\frac{\partial F_1}{\partial y \partial z}=\frac{\partial F_1}{\partial z \partial y}\text{.}\)</span></p>
 <span class="incontext"><a href="s_Divergence.html#p-549" class="internal">in-context</a></span>
 </body>
 </html>

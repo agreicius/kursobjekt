@@ -14,8 +14,8 @@
 <p>We use the usual parametrization of the sphere of radius 2:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
-\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta)\\
-\amp 
+\boldr(\phi,\theta) \amp = (2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi)\\
+\mathcal{R}\colon 0 \amp\leq \phi\leq \pi, 0\leq \theta\leq 2\pi \text{.}
 \end{align*}
 </div>
 <p class="continuation">Given a point <span class="process-math">\(P=(x,y,z)\in \mathcal{S}\)</span> the vector <span class="process-math">\(\angvec{x,y,z}\)</span> is an outward pointing normal vector of magnitude <span class="process-math">\(\sqrt{x^2+y^2+z^2}=2\text{.}\)</span> Thus the function <span class="process-math">\(\boldn(x,y,z)=\frac{1}{2}\angvec{x,y,z}\)</span> is the outward orientation on <span class="process-math">\(\mathcal{S}\text{.}\)</span> It follows that</p>
@@ -38,5 +38,6 @@
 \end{align*}
 </div>
 <p class="continuation">The last step above is done using the identity <span class="process-math">\(\sin^2\theta=\frac{1}{2}(1-\cos 2\theta)\)</span> and the fact that <span class="process-math">\(\sin^3\phi=\sin\phi(1-\cos^2\phi)=\sin\phi-\sin\phi\cos^2\phi\)</span> has antiderivative <span class="process-math">\(-\cos\phi+\frac{1}{3}\cos^3\phi\text{.}\)</span></p>
+<p>Note that in this case we computed the surface integral by (a) identifying the outward orientation <span class="process-math">\(\boldn\)</span> on <span class="process-math">\(\mathcal{S}\)</span> <em class="emphasis">geometrically</em> (as opposed to using <span class="process-math">\(\boldr_\phi\times \boldr_\theta\)</span> or its opposite), (b) computing the scalar function <span class="process-math">\(\boldF(x,y,z)\cdot \boldn(x,y,z)\text{,}\)</span> and (c) integrating with respect to <span class="process-math">\(d\sigma=\vert \boldr_\phi\times\boldr_\theta\vert=4\sin\phi\text{.}\)</span> This method works in this case because we could <em class="emphasis">easily</em> identify the orientation function <span class="process-math">\(\boldn(x,y,z)\text{.}\)</span> When this is not easily done, resort to the procedure indicated in <a href="" class="xref" data-knowl="./knowl/th_surface_integral_vector.html" title="Theorem 2.6.15: Surface integral of vector field">Theorem 2.6.15</a>. See <a href="" class="xref" data-knowl="./knowl/eg_surface_integral_vector_cone.html" title="Example 2.6.16: Flux across a cone">Example 2.6.16</a> for an illustration of this technique.</p>
 </div></body>
 </html>

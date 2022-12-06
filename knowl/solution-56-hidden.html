@@ -54,7 +54,7 @@ r
 \amp =-2\pi\text{.}
 \end{align*}
 </div>
-<pre class="ptx-sagecell sagecell-sage" id="sage-29"><script type="text/x-sage">        from sage.plot.plot3d.plot3d import axes
+<pre class="ptx-sagecell sagecell-sage" id="sage-30"><script type="text/x-sage">        from sage.plot.plot3d.plot3d import axes
 (v,theta,s,t)=var('v theta s t')
 r(theta,v)=vector([v*cos(theta),v*sin(theta),-v^2*cos(2*theta)])
 S=parametric_plot3d(r(s,t),(s,0,2*pi),(t,0,1), color='red', opacity=.1)

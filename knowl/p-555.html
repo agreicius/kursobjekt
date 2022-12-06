@@ -12,65 +12,12 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>First observe that <span class="process-math">\(\boldE\)</span> satisfies the conditions of the divergence theorem on any solid region that does not contain the origin. Furthermore, a (somewhat onerous) computation shows that</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
+<p>This is an easy consequence of <a href="" class="xref" data-knowl="./knowl/th_div_curl.html" title="Theorem 2.8.6: \diver\curl\boldF=0">Theorem 2.8.6</a> and <a href="" class="xref" data-knowl="./knowl/cor_divergence_zero.html" title="Corollary 2.8.4: Zero divergence implies zero flux">Corollary 2.8.4</a> since</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_div_curl.html ./knowl/cor_divergence_zero.html">
 \begin{equation*}
-\diver\boldE (x,y,z)=0
+\diver\boldF=\diver\curl \boldG=0\text{.}
 \end{equation*}
 </div>
-<p class="continuation">for all <span class="process-math">\((x,y,z)\ne (0,0,0)\text{.}\)</span> It follows that if <span class="process-math">\(\mathcal{S}\)</span> does not enclose the origin, then the divergence theorem applies to the solid region <span class="process-math">\(D\)</span> it encloses, and we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
-\begin{align*}
-\iint\limits_\mathcal{S}\boldE\cdot\boldn\, d\sigma \amp=
-\iiint\limits_D\diver\boldE\, dV \amp \text{(divergence thm.)}\\
-\amp=\iiint\limits_D 0\, dV=0 \text{.}
-\end{align*}
-</div>
-<p class="continuation">Next, assume <span class="process-math">\(\mathcal{S}\)</span> does enclose the origin. Pick <span class="process-math">\(R&gt; 0\)</span> small enough so that the solid ball <span class="process-math">\(B_R\)</span> centered at the origin lies inside <span class="process-math">\(\mathcal{S}\text{,}\)</span> and let <span class="process-math">\(D\)</span> be the region within <span class="process-math">\(\mathcal{S}\)</span> and outside of <span class="process-math">\(B_R\text{.}\)</span> Since <span class="process-math">\(D\)</span> does not contain the origin, <span class="process-math">\(\boldE\)</span> satisfies the conditions of the divergence theorem. By <a href="" class="xref" data-knowl="./knowl/cor_equal_flux.html" title="Corollary 2.8.5: Identical flux">Corollary 2.8.5</a>, it follows that</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
-\begin{equation*}
-\iint\limits_\mathcal{S}\boldE\cdot\boldn\, d\sigma=
-\iint\limits_{S_R}\boldE\cdot\boldn\, d\sigma\text{,}
-\end{equation*}
-</div>
-<p class="continuation">where <span class="process-math">\(S_R\)</span> is the sphere of radius <span class="process-math">\(R\)</span> centered at the origin. It remains only to show that</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
-\begin{equation*}
-\iint\limits_{S_R}\boldE\cdot \boldn\, d\sigma=\frac{q}{\epsilon_0}\text{,}
-\end{equation*}
-</div>
-<p class="continuation">which one can show directly using the definition of the surface integral and the standard parametrization of <span class="process-math">\(S_R\text{.}\)</span> Indeed, the outward unit normal vector on <span class="process-math">\(S_R\)</span>  at a point <span class="process-math">\((x,y,z)\)</span> is given by <span class="process-math">\(\boldn=\frac{1}{R}\angvec{x,y,z}\text{,}\)</span> and thus for all <span class="process-math">\((x,y,z)\in S_R\)</span> we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
-\begin{align*}
-\boldE\cdot \boldn(x,y,z)\amp=\frac{q}{4\pi R\epsilon_0}\frac{1}{(x^2+y^2+z^2)^{3/2}}(x^2+y^2+z^2)\\
-\amp = \frac{q}{4\pi R\epsilon_0}\frac{1}{(x^2+y^2+z^2)^{1/2}}\\
-\amp =\frac{q}{4\pi R\epsilon_0}\frac{1}{R} \\
-\amp =\frac{q}{4\pi R^2\epsilon_0}\text{.}
-\end{align*}
-</div>
-<p class="continuation">Finally, using the usual parametrization</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
-\begin{equation*}
-\boldr(\phi, \theta) =R(\sin\phi\cos\theta,\sin\phi\sin\theta,\cos\phi)\text{,}
-\end{equation*}
-</div>
-<p class="continuation">which satisfies</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
-\begin{equation*}
-\abs{\boldr_\phi\times \boldr_\theta}=R^2\sin\phi\text{,}
-\end{equation*}
-</div>
-<p class="continuation">we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_equal_flux.html">
-\begin{align*}
-\iint\limits_{S_R}\boldE\cdot\boldn\, d\sigma \amp =
-\int_0^{2\pi}\int_0^\pi \frac{q}{4\pi R^2\epsilon_0}\abs{\boldr_\phi\times r_\theta}\, d\phi\, d\theta \\
-\amp = \int_0^{2\pi}\int_0^\pi \frac{q}{4\pi \cancel{R^2}\epsilon_0}\cancel{R^2}\sin\phi\, d\phi\, d\theta \\
-\amp=\frac{q}{4\pi\epsilon_0}4\pi  \\
-\amp =\frac{q}{\epsilon_0}\text{,}
-\end{align*}
-</div>
-<p class="continuation">as desired!</p>
 <span class="incontext"><a href="s_Divergence.html#p-555" class="internal">in-context</a></span>
 </body>
 </html>

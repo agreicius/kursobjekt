@@ -12,13 +12,13 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>If the component functions of <span class="process-math">\(\boldF=\angvec{F_1, F_2,F_3}\)</span> have continuous second-order partial derivatives on the set <span class="process-math">\(D\text{,}\)</span> then</p>
+<p>Suppose the solid region <span class="process-math">\(D\subseteq\R^3\)</span> has piecewise smooth boundary surface <span class="process-math">\(\mathcal{S}=\mathcal{S}_1\cup \mathcal{S}_2\text{,}\)</span> where <span class="process-math">\(\mathcal{S}_1\)</span> is the outer boundary of <span class="process-math">\(D\)</span> and <span class="process-math">\(\mathcal{S}_2\)</span> is its inner boundary. If <span class="process-math">\(\boldF\)</span> satisfies the conditions of the divergence theorem and <span class="process-math">\(\diver\boldF=0\)</span> on <span class="process-math">\(D\text{,}\)</span> then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\diver\curl\boldF(x,y,z)=\nabla\cdot (\nabla\times \boldF)(x,y,z)=0
+\iint\limits_{\mathcal{S}_1}\boldF\cdot \boldn_1\, d\sigma=\iint\limits_{\mathcal{S}_2}\boldF\cdot \boldn_2\, d\sigma\text{,}
 \end{equation*}
 </div>
-<p class="continuation">for all <span class="process-math">\((x,y,z)\in D\text{.}\)</span></p>
+<p class="continuation">where for both surface integrals <span class="process-math">\(\boldn_i\)</span> is taken to be the outer orientation with respect to the surface.</p>
 <span class="incontext"><a href="s_Divergence.html#p-546" class="internal">in-context</a></span>
 </body>
 </html>
